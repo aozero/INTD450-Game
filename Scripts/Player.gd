@@ -22,6 +22,9 @@ func _input(event):
 		# Vertical camera
 		rotation_degrees.x -= MOUSE_SENS * event.relative.y
 		rotation_degrees.x = max(min(rotation_degrees.x, 85), -85)
+	if event.is_action_pressed("toggle_fullscreen"):
+		print("full screen")
+		OS.window_fullscreen = !OS.window_fullscreen
 
 func _process(delta):
 	if Input.is_action_pressed("exit"):
