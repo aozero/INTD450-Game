@@ -1,6 +1,8 @@
 # Firelight
 It's an indie game, baby.
 
+[Git Tutorial](https://github.com/aozero/INTD450-Game/wiki/Git-Tutorial)
+
 ## Repository Structure 
 ### Materials
 Materials are textures for 3D objects. For us, these will likely be entirely textures for the ground.
