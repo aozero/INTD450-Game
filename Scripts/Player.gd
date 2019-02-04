@@ -54,11 +54,14 @@ func _physics_process(delta):
 	move_and_collide(move_vec * MOVE_SPEED * delta)
 	
 	if Input.is_action_pressed("shoot") and !anim_player.is_playing():
+		
+		
+		if !get_node("Torch").visible:
+			anim_player.play("light")
+		else:
+			anim_player.play_backwards("light")
+			
 		get_node("Torch").visible = !get_node("Torch").visible
-		anim_player.play("shoot")
-		#var coll = raycast.get_collider()
-		#if raycast.is_colliding() and coll.has_method("kill"):
-		#	coll.kill()
 	
 	# Check if player is looking at anything interactable that is within range
 	var coll = raycast.get_collider()
