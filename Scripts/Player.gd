@@ -5,10 +5,17 @@ extends KinematicBody
 
 const MOVE_SPEED = 4
 const MOUSE_SENS = 0.2
+const INTERACT_RANGE = 2 # Range player can interact with objects
 
 onready var anim_player = $AnimationPlayer
 onready var raycast = $RayCast
+onready var prompt_label = $"CanvasLayer/Prompt Label"
 
+# Return "Player" instead of "KinematicBody" 
+# This is so we can check if an object is the player
+func get_class():
+	return "Player"
+	
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	yield(get_tree(), "idle_frame")
@@ -52,9 +59,29 @@ func _physics_process(delta):
 		#var coll = raycast.get_collider()
 		#if raycast.is_colliding() and coll.has_method("kill"):
 		#	coll.kill()
+	
+	# Check if player is looking at anything interactable that is within range
+	var coll = raycast.get_collider()
+	if raycast.is_colliding() and coll != null and coll.has_method("interact"): 
+		if raycast.get_collision_point().distance_to(translation) < INTERACT_RANGE:
+			enable_prompt_label()
+			
+			if Input.is_action_pressed("interact"):
+				coll.interact()
+		else:
+			disable_prompt_label()
+		
+	else:
+		disable_prompt_label()
+
+func enable_prompt_label():
+	prompt_label.visible_characters = -1
+
+func disable_prompt_label():
+	prompt_label.visible_characters = 0
+
+func get_torch_visible():
+	return get_node("Torch").visible
 
 func kill():
 	get_tree().reload_current_scene()
-	
-func get_torch_visible():
-	return get_node("Torch").visible

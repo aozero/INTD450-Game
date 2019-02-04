@@ -61,9 +61,7 @@ func _physics_process(delta):
 				anim_player.play("walk")
 			
 			var collision = move_and_collide(vec_to_player * MOVE_SPEED * delta)
-			if collision != null:
-				print(collision.get_collider().name)
-			if collision != null and collision.get_collider().name == "Player":
+			if collision != null and collision.get_collider().get_class() == "Player":
 				kill()
 		else:
 			anim_player.stop()	
