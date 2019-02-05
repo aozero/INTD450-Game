@@ -95,7 +95,7 @@ adjustment_contrast = 1.0
 adjustment_saturation = 1.0
 _sections_unfolded = [ "Ambient Light", "Background", "Glow" ]
 
-[sub_resource type="DynamicFont" id=8]
+[sub_resource type="DynamicFont" id=4]
 
 size = 30
 use_mipmaps = false
@@ -149,7 +149,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0.1, 0.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 140, -180 ), Vector2( 260, -250 ) ]
+"values": [ Vector2( 140, -180 ), Vector2( 140, -250 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("CanvasLayer/Control/Sprite:rotation_degrees")
@@ -201,7 +201,7 @@ v_offset = 0.0
 doppler_tracking = 0
 projection = 0
 current = true
-fov = 70.0
+fov = 50.0
 size = 1.0
 near = 0.05
 far = 100.0
@@ -249,9 +249,11 @@ _sections_unfolded = [ "Anchor", "Margin" ]
 
 [node name="Sprite" type="Sprite" parent="CanvasLayer/Control" index="0"]
 
-position = Vector2( 260, -250 )
+position = Vector2( 140, -250 )
+scale = Vector2( 1.1, 1.1 )
 texture = ExtResource( 3 )
 hframes = 2
+frame = 1
 _sections_unfolded = [ "Animation", "Transform" ]
 
 [node name="Prompt Label" type="Label" parent="CanvasLayer" index="2"]
@@ -270,7 +272,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 4 )
 text = "Press E to interact"
 align = 1
 valign = 1
