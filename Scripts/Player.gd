@@ -7,9 +7,11 @@ const MOVE_SPEED = 4
 const MOUSE_SENS = 0.2
 const INTERACT_RANGE = 2 # Range player can interact with objects
 
-var INTERACT_PROMPT = "Press " + InputMap.get_action_list("interact")[0].as_text() + " to interact"
+onready var LIGHTING_SOUND = load("res://Sound/Effects/match_light.wav")
+onready var INTERACT_PROMPT = "Press " + InputMap.get_action_list("interact")[0].as_text() + " to interact"
 
 onready var anim_player = $AnimationPlayer
+onready var audio_player = $FirstPersonAudio
 onready var raycast = $RayCast
 onready var prompt_label = $"CanvasLayer/Prompt Label"
 
@@ -57,6 +59,8 @@ func _physics_process(delta):
 	if Input.is_action_pressed("shoot") and !anim_player.is_playing():
 		
 		if !get_node("Torch").visible:
+			audio_player.set_stream(LIGHTING_SOUND)
+			audio_player.play()
 			anim_player.play("light")
 		else:
 			anim_player.play_backwards("light")
