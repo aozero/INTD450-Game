@@ -145,6 +145,7 @@ _sections_unfolded = [ "Visibility" ]
 
 [node name="MeshInstance" type="MeshInstance" parent="." index="16"]
 
+visible = false
 layers = 1
 material_override = null
 cast_shadow = 1
@@ -157,6 +158,6 @@ lod_max_hysteresis = 0.0
 mesh = SubResource( 2 )
 skeleton = NodePath("..")
 material/0 = SubResource( 3 )
-_sections_unfolded = [ "material" ]
+_sections_unfolded = [ "Visibility", "material" ]
 
 
