@@ -12,6 +12,7 @@ config_version=3
 
 config/name="Firelight"
 run/main_scene="res://Scenes/TestWorld.tscn"
+boot_splash/image="res://Sprites/Logo_mayo.png"
 config/icon="res://icon.png"
 
 [display]
