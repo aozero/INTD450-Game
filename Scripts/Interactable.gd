@@ -10,7 +10,8 @@ func _ready():
 	# Initialization here
 	pass
 
-func interact():
+func interact(player):
+	player.anim_player.play("Fade To White")
 	kill()
 
 func kill():

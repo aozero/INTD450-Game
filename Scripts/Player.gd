@@ -85,7 +85,7 @@ func _physics_process(delta):
 			enable_interact_prompt()
 			
 			if Input.is_action_pressed("interact"):
-				coll.interact()
+				coll.interact(self)
 		else:
 			disable_prompt()
 		
