@@ -128,7 +128,8 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 
 
 func _on_FirstPersonAudio_finished():
-	in_memory = false
-	move_to_start_pos()
-	anim_player.play("Fade From White")
+	if in_memory:
+		in_memory = false
+		move_to_start_pos()
+		anim_player.play("Fade From White")
 	
