@@ -6,7 +6,7 @@
 
 radius = 1.0
 
-[sub_resource type="SpatialMaterial" id=2]
+[sub_resource type="SpatialMaterial" id=4]
 
 render_priority = 0
 flags_transparent = true
@@ -26,9 +26,12 @@ params_cull_mode = 0
 params_depth_draw_mode = 0
 params_line_width = 1.0
 params_point_size = 1.0
-params_billboard_mode = 2
+params_billboard_mode = 3
 params_grow = false
 params_use_alpha_scissor = false
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = 0
 albedo_color = Color( 1, 1, 1, 1 )
 metallic = 0.0
 metallic_specular = 0.5
@@ -56,7 +59,7 @@ uv2_triplanar = false
 uv2_triplanar_sharpness = 1.0
 proximity_fade_enable = false
 distance_fade_enable = false
-_sections_unfolded = [ "Clearcoat", "Flags", "Parameters", "Rim" ]
+_sections_unfolded = [ "Flags", "Parameters" ]
 
 [sub_resource type="Animation" id=3]
 
@@ -124,7 +127,7 @@ _sections_unfolded = [ "Transform" ]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0 )
 layers = 1
-material_override = SubResource( 2 )
+material_override = SubResource( 4 )
 cast_shadow = 1
 extra_cull_margin = 0.0
 use_in_baked_light = false

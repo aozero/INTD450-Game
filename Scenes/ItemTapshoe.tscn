@@ -27,9 +27,12 @@ params_cull_mode = 0
 params_depth_draw_mode = 0
 params_line_width = 1.0
 params_point_size = 1.0
-params_billboard_mode = 0
+params_billboard_mode = 3
 params_grow = false
 params_use_alpha_scissor = false
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = 0
 albedo_color = Color( 1, 1, 1, 1 )
 metallic = 0.0
 metallic_specular = 0.5
@@ -57,7 +60,7 @@ uv2_triplanar = false
 uv2_triplanar_sharpness = 1.0
 proximity_fade_enable = false
 distance_fade_enable = false
-_sections_unfolded = [ "Flags" ]
+_sections_unfolded = [ "Flags", "Parameters" ]
 
 [node name="ItemTapshoe" instance=ExtResource( 1 )]
 
@@ -70,6 +73,6 @@ shape = SubResource( 1 )
 transform = Transform( 0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0.0181589, 0, -0.00263119 )
 material_override = SubResource( 2 )
 texture = ExtResource( 2 )
-_sections_unfolded = [ "Animation", "Flags", "Geometry", "Region", "Transform" ]
+_sections_unfolded = [ "Geometry", "Transform" ]
 
 
