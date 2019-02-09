@@ -7,7 +7,8 @@ const MOVE_SPEED = 4
 const MOUSE_SENS = 0.2
 const INTERACT_RANGE = 2 # Range player can interact with objects
 
-onready var LIGHTING_SOUND = load("res://Sound/Effects/match_light.wav")
+onready var SOUND_LIGHTING = load("res://Sound/Effects/match_light.wav")
+onready var SOUND_TAPSHOE = load("res://Sound/Effects/Memory Clips/Tap Shoe.wav")
 onready var INTERACT_PROMPT = "Press " + InputMap.get_action_list("interact")[0].as_text() + " to interact"
 
 onready var anim_player = $AnimationPlayer
@@ -15,7 +16,10 @@ onready var audio_player = $FirstPersonAudio
 onready var raycast = $RayCast
 onready var prompt_label = $"CanvasLayer/Prompt Label"
 
+onready var start_pos = translation
+
 var dying = false
+var in_memory = false
 
 # Return "Player" instead of "KinematicBody" 
 # This is so we can check if an object is the player
@@ -32,7 +36,7 @@ func _input(event):
 	if event.is_action_pressed("toggle_fullscreen"):
 		OS.window_fullscreen = !OS.window_fullscreen
 	
-	if dying: 
+	if dying or in_memory: 
 		return
 	
 	if event is InputEventMouseMotion:
@@ -51,7 +55,7 @@ func _process(delta):
 		kill()
 
 func _physics_process(delta):
-	if dying:
+	if dying or in_memory:
 		return
 	
 	var move_vec = Vector3()
@@ -70,8 +74,7 @@ func _physics_process(delta):
 	if Input.is_action_pressed("shoot") and !anim_player.is_playing():
 		
 		if !get_node("Torch").visible:
-			audio_player.set_stream(LIGHTING_SOUND)
-			audio_player.play()
+			play_audio(SOUND_LIGHTING)
 			anim_player.play("light")
 		else:
 			anim_player.play_backwards("light")
@@ -107,8 +110,25 @@ func kill():
 		dying = true
 		anim_player.play("Fade To Black")
 
+func move_to_start_pos():
+	translation = start_pos
+
+func play_audio(stream):
+	audio_player.set_stream(stream)
+	audio_player.play()
+
 # Called when animation player finishes any animation
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if dying == true and anim_name == "Fade To Black":
 		# We died, restart
 		get_tree().reload_current_scene()
+	if anim_name == "Fade To White":
+		in_memory = true
+		play_audio(SOUND_TAPSHOE)
+
+
+func _on_FirstPersonAudio_finished():
+	in_memory = false
+	move_to_start_pos()
+	anim_player.play("Fade From White")
+	

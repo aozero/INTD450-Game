@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://Sound/Effects/Match Lighting 1.wav" type="AudioStream" id=2]
@@ -112,7 +112,7 @@ adjustment_enabled = false
 adjustment_brightness = 1.0
 adjustment_contrast = 1.0
 adjustment_saturation = 1.0
-_sections_unfolded = [ "Ambient Light", "Background", "Glow" ]
+_sections_unfolded = [ "Fog" ]
 
 [sub_resource type="DynamicFont" id=4]
 
@@ -122,7 +122,38 @@ use_filter = false
 font_data = ExtResource( 5 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=10]
+
+resource_name = "Fade From White"
+length = 1.0
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("CanvasLayer/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.894531, 0.894531, 0.894531, 1 ), Color( 0.894531, 0.894531, 0.894531, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CanvasLayer/Item Sprite:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=5]
 
 resource_name = "Fade To Black"
 length = 1.0
@@ -141,7 +172,7 @@ tracks/0/keys = {
 "values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=6]
 
 resource_name = "Fade To White"
 length = 1.0
@@ -172,7 +203,7 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=7]
 
 length = 1.0
 loop = false
@@ -190,9 +221,8 @@ tracks/0/keys = {
 "values": [ 0 ]
 }
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=8]
 
-resource_name = "light"
 length = 0.7
 loop = false
 step = 0.1
@@ -233,7 +263,7 @@ tracks/2/keys = {
 "values": [ -45.0, 0.0 ]
 }
 
-[sub_resource type="SphereShape" id=7]
+[sub_resource type="SphereShape" id=9]
 
 radius = 50.0
 
@@ -412,10 +442,11 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-"anims/Fade To Black" = SubResource( 8 )
-"anims/Fade To White" = SubResource( 9 )
-anims/idle = SubResource( 5 )
-anims/light = SubResource( 6 )
+"anims/Fade From White" = SubResource( 10 )
+"anims/Fade To Black" = SubResource( 5 )
+"anims/Fade To White" = SubResource( 6 )
+anims/idle = SubResource( 7 )
+anims/light = SubResource( 8 )
 blend_times = [  ]
 _sections_unfolded = [ "Playback Options" ]
 
@@ -452,8 +483,10 @@ script = ExtResource( 7 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Player Area" index="0"]
 
-shape = SubResource( 7 )
+shape = SubResource( 9 )
 disabled = false
+
+[connection signal="finished" from="FirstPersonAudio" to="." method="_on_FirstPersonAudio_finished"]
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
 
