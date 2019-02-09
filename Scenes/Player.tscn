@@ -21,17 +21,17 @@ sky_curve = 0.25
 sky_energy = 1.0
 ground_bottom_color = Color( 0.101961, 0.145098, 0.188235, 1 )
 ground_horizon_color = Color( 0.129412, 0.160784, 0.360784, 1 )
-ground_curve = 0.01
+ground_curve = 0.0123114
 ground_energy = 1.0
 sun_color = Color( 1, 1, 1, 1 )
-sun_latitude = 35.0
+sun_latitude = -35.0
 sun_longitude = 0.0
 sun_angle_min = 1.0
 sun_angle_max = 100.0
 sun_curve = 0.05
-sun_energy = 16.0
+sun_energy = 0.5
 texture_size = 2
-_sections_unfolded = [ "Ground", "Sky" ]
+_sections_unfolded = [ "Ground", "Sky", "Sun" ]
 
 [sub_resource type="Environment" id=3]
 
@@ -213,7 +213,7 @@ bus = "Master"
 
 [node name="CollisionShape" type="CollisionShape" parent="." index="1"]
 
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-008, -1, 0, 1, -4.37114e-008, 0, 0, 0 )
 shape = SubResource( 1 )
 disabled = false
 _sections_unfolded = [ "Transform" ]
@@ -238,7 +238,7 @@ omni_range = 10.0
 omni_attenuation = 1.8025
 omni_shadow_mode = 1
 omni_shadow_detail = 1
-_sections_unfolded = [ "Light", "Omni", "Transform" ]
+_sections_unfolded = [ "Editor", "Light", "Omni", "Shadow" ]
 
 [node name="Camera" type="Camera" parent="." index="3"]
 
@@ -340,6 +340,7 @@ playback_speed = 1.0
 anims/idle = SubResource( 5 )
 anims/light = SubResource( 6 )
 blend_times = [  ]
+_sections_unfolded = [ "Playback Options" ]
 
 [node name="RayCast" type="RayCast" parent="." index="6"]
 
