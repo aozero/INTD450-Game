@@ -7,7 +7,8 @@ const MOVE_SPEED = 4
 const MOUSE_SENS = 0.2
 const INTERACT_RANGE = 2 # Range player can interact with objects
 
-onready var SOUND_LIGHTING = load("res://Sound/Effects/match_light.wav")
+onready var SOUND_MATCH_ON = load("res://Sound/Effects/match_on.wav")
+onready var SOUND_MATCH_OFF = load("res://Sound/Effects/match_off.wav")
 onready var SOUND_TAPSHOE = load("res://Sound/Effects/Memory Clips/Tap Shoe.wav")
 onready var INTERACT_PROMPT = "Press " + InputMap.get_action_list("interact")[0].as_text() + " to interact"
 
@@ -74,9 +75,10 @@ func _physics_process(delta):
 	if Input.is_action_pressed("shoot") and !anim_player.is_playing():
 		
 		if !get_node("Torch").visible:
-			play_audio(SOUND_LIGHTING)
+			play_audio(SOUND_MATCH_ON)
 			anim_player.play("light")
 		else:
+			play_audio(SOUND_MATCH_OFF)
 			anim_player.play_backwards("light")
 		
 		get_node("Torch").visible = !get_node("Torch").visible
@@ -132,4 +134,3 @@ func _on_FirstPersonAudio_finished():
 		in_memory = false
 		move_to_start_pos()
 		anim_player.play("Fade From White")
-	

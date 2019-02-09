@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/match_light.wav-2faf075d8c887b8292ce32e732b58685.sample"
+path="res://.import/match_on.wav-9f8515cfa3460e5a1deac8b3b09196af.sample"
 
 [deps]
 
-source_file="res://Sound/Effects/match_light.wav"
-dest_files=[ "res://.import/match_light.wav-2faf075d8c887b8292ce32e732b58685.sample" ]
+source_file="res://Sound/Effects/match_on.wav"
+dest_files=[ "res://.import/match_on.wav-9f8515cfa3460e5a1deac8b3b09196af.sample" ]
 
 [params]
 
