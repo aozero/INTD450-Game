@@ -62,7 +62,7 @@ func _physics_process(delta):
 			
 			var collision = move_and_collide(vec_to_player * MOVE_SPEED * delta)
 			if collision != null and collision.get_collider().get_class() == "Player":
-				kill()
+				collision.get_collider().kill()
 		else:
 			anim_player.stop()	
 	else: 

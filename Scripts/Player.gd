@@ -15,6 +15,8 @@ onready var audio_player = $FirstPersonAudio
 onready var raycast = $RayCast
 onready var prompt_label = $"CanvasLayer/Prompt Label"
 
+var dying = false
+
 # Return "Player" instead of "KinematicBody" 
 # This is so we can check if an object is the player
 func get_class():
@@ -24,8 +26,15 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	yield(get_tree(), "idle_frame")
 	get_tree().call_group("monsters", "set_player", self)
+	anim_player.play_backwards("Fade To Black")
 
 func _input(event):
+	if event.is_action_pressed("toggle_fullscreen"):
+		OS.window_fullscreen = !OS.window_fullscreen
+	
+	if dying: 
+		return
+	
 	if event is InputEventMouseMotion:
 		# Horizontal camera
 		rotation_degrees.y -= MOUSE_SENS * event.relative.x
@@ -33,8 +42,7 @@ func _input(event):
 		# Vertical camera
 		rotation_degrees.x -= MOUSE_SENS * event.relative.y
 		rotation_degrees.x = max(min(rotation_degrees.x, 85), -85)
-	if event.is_action_pressed("toggle_fullscreen"):
-		OS.window_fullscreen = !OS.window_fullscreen
+	
 
 func _process(delta):
 	if Input.is_action_pressed("exit"):
@@ -43,6 +51,9 @@ func _process(delta):
 		kill()
 
 func _physics_process(delta):
+	if dying:
+		return
+	
 	var move_vec = Vector3()
 	if Input.is_action_pressed("move_forwards"):
 		move_vec.z -= 1
@@ -92,4 +103,12 @@ func get_torch_visible():
 	return get_node("Torch").visible
 
 func kill():
-	get_tree().reload_current_scene()
+	if not dying:
+		dying = true
+		anim_player.play("Fade To Black")
+
+# Called when animation player finishes any animation
+func _on_AnimationPlayer_animation_finished(anim_name):
+	if dying == true and anim_name == "Fade To Black":
+		# We died, restart
+		get_tree().reload_current_scene()
