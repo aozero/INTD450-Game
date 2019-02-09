@@ -18,6 +18,7 @@ onready var anim_player = $AnimationPlayer
 var player = null
 var in_player_area = false # If not in range of the player, don't run AI
 var dead = false
+var detected_player = false
 
 # Return "Monster" instead of "KinematicBody" 
 # This is so we can check if an object is a monster
@@ -26,6 +27,7 @@ func get_class():
 
 func _ready():
 	add_to_group("monsters")
+	anim_player.play("idle")
 
 # Called by Player
 func set_player(p):
@@ -57,17 +59,28 @@ func _physics_process(delta):
 		# Make sure what the ray is colliding with is actually the player
 		var raycast_collider = detection_raycast.get_collider()
 		if raycast_collider != null and raycast_collider.name == "Player":
-			if not anim_player.is_playing():
-				anim_player.play("walk")
+			if not detected_player:
+				anim_player.stop()
+				detected_player = true
 			
 			var collision = move_and_collide(vec_to_player * MOVE_SPEED * delta)
 			if collision != null and collision.get_collider().get_class() == "Player":
 				collision.get_collider().kill()
 		else:
-			anim_player.stop()	
+			stop_chasing()
 	else: 
-		anim_player.stop()	
+		stop_chasing()
 	
+	if not anim_player.is_playing():
+		if detected_player:
+			anim_player.play("walk")
+		else:
+			anim_player.play("idle")
+
+func stop_chasing():
+	if detected_player:
+		anim_player.stop()
+		detected_player = false
 
 func kill():
 	dead = true

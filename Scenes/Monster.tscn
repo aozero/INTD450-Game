@@ -2,36 +2,37 @@
 
 [ext_resource path="res://Scripts/Monster.gd" type="Script" id=1]
 [ext_resource path="res://Materials/Billboard.tres" type="Material" id=2]
-[ext_resource path="res://Sprites/fps_monster_sprites.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/brainboi1blinklesss.png" type="Texture" id=3]
 
 [sub_resource type="CapsuleShape" id=1]
 
 radius = 0.8
 height = 1.0
 
+[sub_resource type="Animation" id=2]
+
+resource_name = "idle"
+length = 4.0
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite3D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 1 ]
+}
+
 [sub_resource type="Animation" id=3]
 
-length = 0.75
-loop = false
-step = 0.15
-tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite3D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.15, 0.3, 0.45, 0.6 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 5, 6, 7, 8, 9 ]
-}
-
-[sub_resource type="Animation" id=4]
-
-length = 0.6
+length = 0.8
 loop = true
-step = 0.15
+step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite3D:frame")
 tracks/0/interp = 1
@@ -39,13 +40,25 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.15, 0.3, 0.45 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 0, 1, 2, 3 ]
+"values": [ 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite3D:translation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0.25, 0, 0 ) ]
 }
 
-[node name="Monster" type="KinematicBody"]
+[node name="Monster" type="KinematicBody" index="0"]
 
 input_ray_pickable = true
 input_capture_on_drag = false
@@ -59,6 +72,7 @@ axis_lock_angular_y = false
 axis_lock_angular_z = false
 collision/safe_margin = 0.001
 script = ExtResource( 1 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape" type="CollisionShape" parent="." index="0"]
 
@@ -68,6 +82,7 @@ disabled = false
 
 [node name="Sprite3D" type="Sprite3D" parent="." index="1"]
 
+transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0.25, 0, 0 )
 layers = 1
 material_override = ExtResource( 2 )
 cast_shadow = 1
@@ -90,12 +105,12 @@ shaded = true
 double_sided = true
 alpha_cut = 0
 texture = ExtResource( 3 )
-vframes = 2
-hframes = 5
-frame = 1
+vframes = 1
+hframes = 2
+frame = 0
 region_enabled = false
 region_rect = Rect2( 0, 0, 0, 0 )
-_sections_unfolded = [ "Animation", "Flags", "Geometry", "Region" ]
+_sections_unfolded = [ "Animation", "Flags", "Geometry", "Region", "Transform" ]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="2"]
 
@@ -104,8 +119,8 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/die = SubResource( 3 )
-anims/walk = SubResource( 4 )
+anims/idle = SubResource( 2 )
+anims/walk = SubResource( 3 )
 blend_times = [  ]
 
 [node name="RayCast" type="RayCast" parent="." index="3"]
