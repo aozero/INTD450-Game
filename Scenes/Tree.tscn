@@ -8,7 +8,7 @@
 radius = 0.5
 height = 3.0
 
-[node name="Tree" type="StaticBody" index="0"]
+[node name="Tree" type="StaticBody"]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0 )
 input_ray_pickable = true
