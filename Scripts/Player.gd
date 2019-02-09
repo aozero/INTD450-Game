@@ -19,6 +19,7 @@ onready var prompt_label = $"CanvasLayer/Prompt Label"
 
 onready var start_pos = translation
 
+var game_over = false
 var dying = false
 var in_memory = false
 
@@ -112,25 +113,39 @@ func kill():
 		dying = true
 		anim_player.play("Fade To Black")
 
-func move_to_start_pos():
-	translation = start_pos
-
 func play_audio(stream):
 	audio_player.set_stream(stream)
 	audio_player.play()
 
-# Called when animation player finishes any animation
+# When animation player finishes any animation
 func _on_AnimationPlayer_animation_finished(anim_name):
-	if dying == true and anim_name == "Fade To Black":
-		# We died, restart
-		get_tree().reload_current_scene()
+	if anim_name == "Fade To Black":
+		if game_over == true:
+			# Finished the game
+			get_tree().quit()
+		elif dying == true:
+			# We died, restart
+			get_tree().reload_current_scene()
+	
 	if anim_name == "Fade To White":
 		in_memory = true
 		play_audio(SOUND_TAPSHOE)
+		
+	if anim_name == "Fade From White":
+		$Timer.start()
 
-
+# When audio player finishes playing audio
 func _on_FirstPersonAudio_finished():
 	if in_memory:
 		in_memory = false
-		move_to_start_pos()
 		anim_player.play("Fade From White")
+		
+		translation = start_pos
+		rotation = Vector3(0, 180, 0)
+		
+		owner.get_node("BlockedPath").hide()
+
+# When timer finishes
+func _on_Timer_timeout():
+	game_over = true
+	anim_player.play("Fade To Black")

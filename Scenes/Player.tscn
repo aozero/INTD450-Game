@@ -456,7 +456,14 @@ exclude_parent = true
 cast_to = Vector3( 0, 0, -2000 )
 collision_mask = 1
 
-[node name="Player Area" type="Area" parent="." index="7"]
+[node name="Timer" type="Timer" parent="." index="7"]
+
+process_mode = 1
+wait_time = 5.0
+one_shot = false
+autostart = false
+
+[node name="Player Area" type="Area" parent="." index="8"]
 
 input_ray_pickable = false
 input_capture_on_drag = false
@@ -488,5 +495,7 @@ disabled = false
 [connection signal="finished" from="FirstPersonAudio" to="." method="_on_FirstPersonAudio_finished"]
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 
 
