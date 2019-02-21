@@ -2,14 +2,10 @@
 
 [ext_resource path="res://Scenes/ForestWall.tscn" type="PackedScene" id=1]
 
-[node name="BGForestSmall" type="Spatial" index="0"]
+[node name="BGForestSmall" type="Spatial"]
 
 [node name="ForestWall" parent="." index="0" instance=ExtResource( 1 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0588293, 0, 4.68993 )
-
-[node name="ForestWall2" parent="." index="1" instance=ExtResource( 1 )]
-
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.727848, 0, 0.385306 )
 
 

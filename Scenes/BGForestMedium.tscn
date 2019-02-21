@@ -12,10 +12,12 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="BGForestSmall2" parent="." index="1" instance=ExtResource( 1 )]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.93389, 0, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.225, 0, 0 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="BGForestSmall3" parent="." index="2" instance=ExtResource( 1 )]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.8602, 0, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.61954, 0, 0 )
+_sections_unfolded = [ "Transform" ]
 
 
