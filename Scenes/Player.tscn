@@ -1,11 +1,12 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/crosshair.png" type="Texture" id=2]
-[ext_resource path="res://Sprites/first_person.png" type="Texture" id=3]
-[ext_resource path="res://Fonts/Prompt.ttf" type="DynamicFontData" id=4]
-[ext_resource path="res://Sprites/item_tapshoe.png" type="Texture" id=5]
-[ext_resource path="res://Scripts/PlayerArea.gd" type="Script" id=6]
+[ext_resource path="res://Scripts/FPS Display.gd" type="Script" id=3]
+[ext_resource path="res://Sprites/first_person.png" type="Texture" id=4]
+[ext_resource path="res://Fonts/Prompt.ttf" type="DynamicFontData" id=5]
+[ext_resource path="res://Sprites/item_tapshoe.png" type="Texture" id=6]
+[ext_resource path="res://Scripts/PlayerArea.gd" type="Script" id=7]
 
 [sub_resource type="CapsuleShape" id=1]
 
@@ -118,7 +119,7 @@ _sections_unfolded = [ "Ambient Light", "Background", "Fog" ]
 size = 30
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 4 )
+font_data = ExtResource( 5 )
 _sections_unfolded = [ "Font", "Settings" ]
 
 [sub_resource type="Animation" id=5]
@@ -362,7 +363,26 @@ texture = ExtResource( 2 )
 stretch_mode = 4
 _sections_unfolded = [ "Anchor", "Margin" ]
 
-[node name="Control" type="Control" parent="CanvasLayer" index="1"]
+[node name="FPS Display" type="Label" parent="CanvasLayer" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 40.0
+margin_bottom = 14.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+script = ExtResource( 3 )
+
+[node name="Control" type="Control" parent="CanvasLayer" index="2"]
 
 anchor_left = 0.5
 anchor_top = 1.0
@@ -380,12 +400,12 @@ _sections_unfolded = [ "Anchor", "Margin" ]
 
 position = Vector2( 140, -250 )
 scale = Vector2( 1.1, 1.1 )
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 hframes = 2
 frame = 1
 _sections_unfolded = [ "Animation", "Transform" ]
 
-[node name="Prompt Label" type="Label" parent="CanvasLayer" index="2"]
+[node name="Prompt Label" type="Label" parent="CanvasLayer" index="3"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -410,7 +430,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer" index="3"]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" index="4"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -427,11 +447,11 @@ size_flags_vertical = 1
 color = Color( 0, 0, 0, 1 )
 _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Margin", "Rect", "Visibility" ]
 
-[node name="Item Sprite" type="Sprite" parent="CanvasLayer" index="4"]
+[node name="Item Sprite" type="Sprite" parent="CanvasLayer" index="5"]
 
 modulate = Color( 1, 1, 1, 0 )
 position = Vector2( 507.736, 305.643 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 _sections_unfolded = [ "Region", "Transform", "Visibility" ]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="5"]
@@ -485,7 +505,7 @@ reverb_bus_enable = false
 reverb_bus_name = "Master"
 reverb_bus_amount = 0.0
 reverb_bus_uniformity = 0.0
-script = ExtResource( 6 )
+script = ExtResource( 7 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Player Area" index="0"]
 
