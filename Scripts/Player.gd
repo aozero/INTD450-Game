@@ -137,13 +137,15 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 # When audio player finishes playing audio
 func _on_FirstPersonAudio_finished():
 	if in_memory:
-		in_memory = false
+		in_memory = false 
 		anim_player.play("Fade From White")
 		
 		translation = start_pos
 		rotation = Vector3(0, 180, 0)
 		
-		owner.get_node("BlockedPath").hide()
+		var blockedPath = owner.get_node("BlockedPath")
+		if blockedPath != null:
+			blockedPath.hide()
 
 # When timer finishes
 func _on_Timer_timeout():
