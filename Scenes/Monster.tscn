@@ -59,9 +59,8 @@ tracks/1/keys = {
 "values": [ Vector3( 0, 0, 0 ), Vector3( 0.25, 0, 0 ) ]
 }
 
-[node name="Monster" type="KinematicBody" index="0"]
+[node name="Monster" type="KinematicBody"]
 
-transform = Transform( 0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0 )
 input_ray_pickable = true
 input_capture_on_drag = false
 collision_layer = 1
@@ -84,7 +83,7 @@ disabled = false
 
 [node name="Sprite3D" type="Sprite3D" parent="CollisionShape" index="0"]
 
-transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 0.170032, 0, 0 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 0, 0, 0 )
 layers = 1
 material_override = ExtResource( 2 )
 cast_shadow = 1
@@ -100,7 +99,7 @@ flip_h = false
 flip_v = false
 modulate = Color( 1, 1, 1, 1 )
 opacity = 1.0
-pixel_size = 0.01
+pixel_size = 0.0025
 axis = 2
 transparent = true
 shaded = true
