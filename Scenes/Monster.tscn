@@ -7,7 +7,7 @@
 
 [sub_resource type="CapsuleShape" id=1]
 
-radius = 0.8
+radius = 0.4
 height = 1.0
 
 [sub_resource type="Animation" id=2]
@@ -59,7 +59,7 @@ tracks/1/keys = {
 "values": [ Vector3( 0, 0, 0 ), Vector3( 0.25, 0, 0 ) ]
 }
 
-[node name="Monster" type="KinematicBody" index="0"]
+[node name="Monster" type="KinematicBody"]
 
 input_ray_pickable = true
 input_capture_on_drag = false

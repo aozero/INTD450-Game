@@ -3,9 +3,9 @@
 [ext_resource path="res://Materials/Billboard.tres" type="Material" id=1]
 [ext_resource path="res://Sprites/Foliage/bush1.png" type="Texture" id=2]
 
-[sub_resource type="SphereShape" id=1]
+[sub_resource type="BoxShape" id=1]
 
-radius = 1.0
+extents = Vector3( 0.1, 0.3, 0.1 )
 
 [node name="Bush1" type="StaticBody"]
 
@@ -22,8 +22,10 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape" type="CollisionShape" parent="." index="0"]
 
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3, 0 )
 shape = SubResource( 1 )
 disabled = false
+_sections_unfolded = [ "Transform" ]
 
 [node name="Sprite3D" type="Sprite3D" parent="." index="1"]
 
