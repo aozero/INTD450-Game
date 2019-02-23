@@ -14,6 +14,7 @@ onready var SOUND_TAPSHOE = load("res://Sound/Effects/Memory Clips/Tap Shoe.wav"
 onready var INTERACT_PROMPT = "Press " + InputMap.get_action_list("interact")[0].as_text() + " to interact"
 
 onready var anim_player = $AnimationPlayer
+onready var headbobber = $Headbobber
 onready var audio_player = $FirstPersonAudio
 onready var raycast = $RayCast
 onready var prompt_label = $"CanvasLayer/Prompt Label"
@@ -62,12 +63,6 @@ func _physics_process(delta):
 	if dying or in_memory:
 		return
 	
-	var move_speed = SNEAK_SPEED
-	running = false
-	if Input.is_action_pressed("run"):
-		move_speed = RUN_SPEED
-		running = true
-	
 	var move_vec = Vector3()
 	if Input.is_action_pressed("move_forwards"):
 		move_vec.z -= 1
@@ -79,6 +74,27 @@ func _physics_process(delta):
 		move_vec.x += 1
 	move_vec = move_vec.normalized()
 	move_vec = move_vec.rotated(Vector3(0, 1, 0), rotation.y)
+		
+	var move_speed = SNEAK_SPEED
+	running = false
+	headbobber.playback_speed = 1
+	# If we are actually moving:
+	if move_vec.x != 0 or move_vec.z != 0:
+		if not headbobber.is_playing():
+			headbobber.play("headbob")
+		
+		if Input.is_action_pressed("run"):
+			running = true
+			move_speed = RUN_SPEED
+			headbobber.playback_speed = 2
+		else:
+			headbobber.playback_speed = 1
+	else:
+		if headbobber.is_playing():
+			headbobber.stop()
+			# Plays an animation that goes back to default position
+			headbobber.play("reset")  
+	
 	move_and_collide(move_vec * move_speed * delta)
 	
 	if Input.is_action_pressed("shoot") and !anim_player.is_playing():

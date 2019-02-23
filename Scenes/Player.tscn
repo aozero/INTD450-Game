@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/crosshair.png" type="Texture" id=2]
@@ -209,7 +209,7 @@ length = 1.0
 loop = false
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("CanvasLayer/Control/Sprite:frame")
+tracks/0/path = NodePath("CanvasLayer/Control/Hand Sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -227,7 +227,7 @@ length = 0.7
 loop = false
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("CanvasLayer/Control/Sprite:frame")
+tracks/0/path = NodePath("CanvasLayer/Control/Hand Sprite:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -239,7 +239,7 @@ tracks/0/keys = {
 "values": [ 0, 1 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("CanvasLayer/Control/Sprite:position")
+tracks/1/path = NodePath("CanvasLayer/Control/Hand Sprite:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -251,7 +251,7 @@ tracks/1/keys = {
 "values": [ Vector2( 140, -180 ), Vector2( 140, -250 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath("CanvasLayer/Control/Sprite:rotation_degrees")
+tracks/2/path = NodePath("CanvasLayer/Control/Hand Sprite:rotation_degrees")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -263,11 +263,49 @@ tracks/2/keys = {
 "values": [ -45.0, 0.0 ]
 }
 
+[sub_resource type="Animation" id=11]
+
+resource_name = "headbob"
+length = 0.6
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Camera:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.3, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, -0.05, 0 ), Vector3( 0, 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=12]
+
+resource_name = "reset"
+length = 0.5
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Camera:translation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ) ]
+}
+
 [sub_resource type="SphereShape" id=10]
 
 radius = 50.0
 
-[node name="Player" type="KinematicBody"]
+[node name="Player" type="KinematicBody" index="0"]
 
 input_ray_pickable = true
 input_capture_on_drag = false
@@ -396,9 +434,9 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 _sections_unfolded = [ "Anchor", "Margin" ]
 
-[node name="Sprite" type="Sprite" parent="CanvasLayer/Control" index="0"]
+[node name="Hand Sprite" type="Sprite" parent="CanvasLayer/Control" index="0"]
 
-position = Vector2( 140, -250 )
+position = Vector2( 140, -245.714 )
 scale = Vector2( 1.1, 1.1 )
 texture = ExtResource( 4 )
 hframes = 2
@@ -444,7 +482,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-color = Color( 0, 0, 0, 1 )
+color = Color( 0, 0, 0, 0 )
 _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Margin", "Rect", "Visibility" ]
 
 [node name="Item Sprite" type="Sprite" parent="CanvasLayer" index="5"]
@@ -469,21 +507,32 @@ anims/light = SubResource( 9 )
 blend_times = [  ]
 _sections_unfolded = [ "Playback Options" ]
 
-[node name="RayCast" type="RayCast" parent="." index="6"]
+[node name="Headbobber" type="AnimationPlayer" parent="." index="6"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/headbob = SubResource( 11 )
+anims/reset = SubResource( 12 )
+blend_times = [  ]
+
+[node name="RayCast" type="RayCast" parent="." index="7"]
 
 enabled = true
 exclude_parent = true
 cast_to = Vector3( 0, 0, -2000 )
 collision_mask = 32
 
-[node name="Timer" type="Timer" parent="." index="7"]
+[node name="Timer" type="Timer" parent="." index="8"]
 
 process_mode = 1
 wait_time = 5.0
 one_shot = false
 autostart = false
 
-[node name="Player Area" type="Area" parent="." index="8"]
+[node name="Player Area" type="Area" parent="." index="9"]
 
 input_ray_pickable = false
 input_capture_on_drag = false
