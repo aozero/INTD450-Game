@@ -6,8 +6,9 @@ extends KinematicBody
 const MOVE_SPEED = 2
 
 # How far the monster can see the player when player is dark or lit
-const DETECT_DARK_RANGE = 5
-const DETECT_LIT_RANGE = 25 
+const DETECT_DARK_RANGE = 4
+const DETECT_LIT_RANGE = 10 
+const DETECT_RUN_MULTIPLIER = 2
 
 # How far away before the monster overwhelms the player
 const ATTACK_RANGE = 1
@@ -50,6 +51,9 @@ func _physics_process(delta):
 	var detection_range = DETECT_DARK_RANGE
 	if player.get_torch_visible():
 		detection_range = DETECT_LIT_RANGE
+	if player.running:
+		detection_range *= DETECT_RUN_MULTIPLIER
+	print(detection_range)
 	
 	var vec_to_player = player.translation - translation
 	vec_to_player = vec_to_player.normalized()

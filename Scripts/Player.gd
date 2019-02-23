@@ -3,7 +3,8 @@ extends KinematicBody
 # Script controlling the camera, player animations, input, and movement
 ##################################
 
-const MOVE_SPEED = 4
+const RUN_SPEED = 4
+const SNEAK_SPEED = 2
 const MOUSE_SENS = 0.2
 const INTERACT_RANGE = 2 # Range player can interact with objects
 
@@ -22,6 +23,7 @@ onready var start_pos = translation
 var game_over = false
 var dying = false
 var in_memory = false
+var running = false
 
 # Return "Player" instead of "KinematicBody" 
 # This is so we can check if an object is the player
@@ -60,6 +62,12 @@ func _physics_process(delta):
 	if dying or in_memory:
 		return
 	
+	var move_speed = SNEAK_SPEED
+	running = false
+	if Input.is_action_pressed("run"):
+		move_speed = RUN_SPEED
+		running = true
+	
 	var move_vec = Vector3()
 	if Input.is_action_pressed("move_forwards"):
 		move_vec.z -= 1
@@ -71,7 +79,7 @@ func _physics_process(delta):
 		move_vec.x += 1
 	move_vec = move_vec.normalized()
 	move_vec = move_vec.rotated(Vector3(0, 1, 0), rotation.y)
-	move_and_collide(move_vec * MOVE_SPEED * delta)
+	move_and_collide(move_vec * move_speed * delta)
 	
 	if Input.is_action_pressed("shoot") and !anim_player.is_playing():
 		
