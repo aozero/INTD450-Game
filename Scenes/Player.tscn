@@ -248,7 +248,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0.3, 0.7 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector2( 140, -180 ), Vector2( 140, -250 ) ]
+"values": [ Vector2( 140, -180 ), Vector2( 140, -350 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("CanvasLayer/Control/Hand Sprite:rotation_degrees")
@@ -263,7 +263,7 @@ tracks/2/keys = {
 "values": [ -45.0, 0.0 ]
 }
 
-[sub_resource type="Animation" id=11]
+[sub_resource type="Animation" id=10]
 
 resource_name = "headbob"
 length = 0.6
@@ -282,7 +282,7 @@ tracks/0/keys = {
 "values": [ Vector3( 0, -0.05, 0 ), Vector3( 0, 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=12]
+[sub_resource type="Animation" id=11]
 
 resource_name = "reset"
 length = 0.5
@@ -301,7 +301,7 @@ tracks/0/keys = {
 "values": [ Vector3( 0, 0, 0 ) ]
 }
 
-[sub_resource type="SphereShape" id=10]
+[sub_resource type="SphereShape" id=12]
 
 radius = 50.0
 
@@ -436,8 +436,8 @@ _sections_unfolded = [ "Anchor", "Margin" ]
 
 [node name="Hand Sprite" type="Sprite" parent="CanvasLayer/Control" index="0"]
 
-position = Vector2( 140, -245.714 )
-scale = Vector2( 1.1, 1.1 )
+position = Vector2( 140, -350 )
+scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 4 )
 hframes = 2
 frame = 1
@@ -514,8 +514,8 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/headbob = SubResource( 11 )
-anims/reset = SubResource( 12 )
+anims/headbob = SubResource( 10 )
+anims/reset = SubResource( 11 )
 blend_times = [  ]
 
 [node name="RayCast" type="RayCast" parent="." index="7"]
@@ -558,7 +558,7 @@ script = ExtResource( 7 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Player Area" index="0"]
 
-shape = SubResource( 10 )
+shape = SubResource( 12 )
 disabled = false
 
 [connection signal="finished" from="FirstPersonAudio" to="." method="_on_FirstPersonAudio_finished"]
