@@ -15,10 +15,11 @@ const ATTACK_RANGE = 1
 onready var detection_raycast = $RayCast
 onready var anim_player = $AnimationPlayer
 
+onready var target_pos = null # target position we want to move to 
 var player = null
 var in_player_area = false # If not in range of the player, don't run AI
 var dead = false
-var detected_player = false
+
 
 # Return "Monster" instead of "KinematicBody" 
 # This is so we can check if an object is a monster
@@ -44,7 +45,7 @@ func _physics_process(delta):
 		return
 	if player == null:
 		return
-
+	
 	# Set detection range based on player's state
 	var detection_range = DETECT_DARK_RANGE
 	if player.get_torch_visible():
@@ -59,28 +60,40 @@ func _physics_process(delta):
 		# Make sure what the ray is colliding with is actually the player
 		var raycast_collider = detection_raycast.get_collider()
 		if raycast_collider != null and raycast_collider.name == "Player":
-			if not detected_player:
-				anim_player.stop()
-				detected_player = true
+			if target_pos == null:
+				start_moving()
 			
-			var collision = move_and_collide(vec_to_player * MOVE_SPEED * delta)
+			target_pos = player.translation
+	
+	# If we have a target_pos, we are currently moving towards that point
+	if target_pos != null:
+		if is_at_pos(target_pos):
+			# We have reached our target
+			stop_moving()
+		else:
+			# We have not reached our target; keep moving
+			var vec_to_target = target_pos - translation
+			vec_to_target = vec_to_target.normalized()
+			
+			var collision = move_and_collide(vec_to_target * MOVE_SPEED * delta)
 			if collision != null and collision.get_collider().get_class() == "Player":
 				collision.get_collider().kill()
-		else:
-			stop_chasing()
-	else: 
-		stop_chasing()
-	
-	if not anim_player.is_playing():
-		if detected_player:
-			anim_player.play("walk")
-		else:
-			anim_player.play("idle")
 
-func stop_chasing():
-	if detected_player:
-		anim_player.stop()
-		detected_player = false
+# Called when changing from idle to moving
+func start_moving():
+	anim_player.stop()
+	anim_player.play("walk")
+
+# Called when changing from moving to idle
+func stop_moving():
+	target_pos = null
+	anim_player.stop()
+	anim_player.play("idle")
+
+# slightly fuzzy position check
+func is_at_pos(pos):
+	var my_pos = translation
+	return my_pos.x - pos.x < 0.5 && my_pos.y - pos.y < 0.5 && my_pos.z - pos.z < 0.5
 
 func kill():
 	dead = true
