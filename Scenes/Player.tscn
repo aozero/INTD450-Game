@@ -490,6 +490,7 @@ _sections_unfolded = [ "Anchor", "Margin" ]
 [node name="Item Sprite" type="Sprite" parent="CanvasLayer/TextureRect" index="0"]
 
 modulate = Color( 1, 1, 1, 0 )
+scale = Vector2( 2, 2 )
 texture = ExtResource( 6 )
 _sections_unfolded = [ "Region", "Transform", "Visibility" ]
 
