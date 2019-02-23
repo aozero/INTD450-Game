@@ -21,7 +21,6 @@ var player = null
 var in_player_area = false # If not in range of the player, don't run AI
 var dead = false
 
-
 # Return "Monster" instead of "KinematicBody" 
 # This is so we can check if an object is a monster
 func get_class():
@@ -53,7 +52,6 @@ func _physics_process(delta):
 		detection_range = DETECT_LIT_RANGE
 	if player.running:
 		detection_range *= DETECT_RUN_MULTIPLIER
-	print(detection_range)
 	
 	var vec_to_player = player.translation - translation
 	vec_to_player = vec_to_player.normalized()
