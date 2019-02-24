@@ -16,9 +16,15 @@ const ATTACK_RANGE = 1
 onready var detection_raycast = $RayCast
 onready var anim_player = $AnimationPlayer
 
-onready var target_pos = null # target position we want to move to 
+# for pathfinding
+onready var navigation = get_parent().get_node("Navigation")
+var path = []
+var path_ind = 0
+# for pathfinding testing
+onready var draw = get_parent().get_node("Draw")
+var draw_path = true 
+
 var player = null
-var in_player_area = false # If not in range of the player, don't run AI
 var dead = false
 
 # Return "Monster" instead of "KinematicBody" 
@@ -29,6 +35,7 @@ func get_class():
 func _ready():
 	add_to_group("monsters")
 	anim_player.play("idle")
+	set_in_player_area(false)
 
 # Called by Player
 func set_player(p):
@@ -36,11 +43,9 @@ func set_player(p):
 
 # Called by Player Area
 func set_in_player_area(value):
-	in_player_area = value
+	set_physics_process(value)
 
 func _physics_process(delta):
-	if not in_player_area:
-		return
 	if dead:
 		return
 	if player == null:
@@ -58,28 +63,33 @@ func _physics_process(delta):
 	
 	# Check if a ray to player within detection range can be cast
 	detection_raycast.cast_to = vec_to_player * detection_range	
-	if detection_raycast.is_colliding():
+	if detection_raycast.is_colliding(): 
 		# Make sure what the ray is colliding with is actually the player
 		var raycast_collider = detection_raycast.get_collider()
 		if raycast_collider != null and raycast_collider.name == "Player":
-			if target_pos == null:
+			if path.size() == 0:
+				update_path() 
 				start_moving()
-			
-			target_pos = player.translation
+			else:
+				# Only set path again if the player's position has significantly changed
+				if path[path.size() - 1].distance_to(player.translation) > 1:
+					update_path() 
 	
-	# If we have a target_pos, we are currently moving towards that point
-	if target_pos != null:
-		if is_at_pos(target_pos):
-			# We have reached our target
-			stop_moving()
+	# If we haven't traversed the path yet
+	if path_ind < path.size():
+		var move_vec = (path[path_ind] - global_transform.origin)
+		move_vec.y = 0
+		if move_vec.length() < 0.1:
+			path_ind += 1
 		else:
-			# We have not reached our target; keep moving
-			var vec_to_target = target_pos - translation
-			vec_to_target = vec_to_target.normalized()
-			
-			var collision = move_and_collide(vec_to_target * MOVE_SPEED * delta)
+			move_vec = move_vec.normalized()
+			var collision = move_and_collide(move_vec * MOVE_SPEED * delta)
 			if collision != null and collision.get_collider().get_class() == "Player":
 				collision.get_collider().kill()
+		
+		# If that finished the path
+		if path_ind >= path.size():
+			stop_moving()
 
 # Called when changing from idle to moving
 func start_moving():
@@ -88,16 +98,38 @@ func start_moving():
 
 # Called when changing from moving to idle
 func stop_moving():
-	target_pos = null
+	path = []
 	anim_player.stop()
 	anim_player.play("idle")
 
 # slightly fuzzy position check
 func is_at_pos(pos):
-	var my_pos = translation
-	return my_pos.x - pos.x < 0.5 && my_pos.y - pos.y < 0.5 && my_pos.z - pos.z < 0.5
+	return !(translation.x - pos.x > 0.1 || translation.y - pos.y > 0.1 || translation.z - pos.z > 0.1)
 
 func kill():
 	dead = true
 	$CollisionShape.disabled = true
 	anim_player.play("die")
+
+func update_path():
+	if navigation != null:
+		var begin = global_transform.origin
+		var end = player.translation
+		
+		var p = navigation.get_simple_path(begin, end)
+		path = p
+		path_ind = 0
+		
+		# debug pathfinding by drawing the monster's path.
+		# if there are multiple paths they will flicker b/c they are all using the same draw object
+		if (draw_path):
+			var im = draw
+			im.clear()
+			im.begin(Mesh.PRIMITIVE_POINTS, null)
+			im.add_vertex(begin)
+			im.add_vertex(end)
+			im.end()
+			im.begin(Mesh.PRIMITIVE_LINE_STRIP, null)
+			for x in p:
+				im.add_vertex(x)
+			im.end()
