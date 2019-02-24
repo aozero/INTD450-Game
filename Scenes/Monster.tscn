@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Scripts/Monster.gd" type="Script" id=1]
 [ext_resource path="res://Materials/Billboard.tres" type="Material" id=2]
-[ext_resource path="res://Sprites/brainboi1blinklesss.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/4dir_spritesheet.png" type="Texture" id=3]
 [ext_resource path="res://Sound/Effects/brain_boi_breathing.wav" type="AudioStream" id=4]
 
 [sub_resource type="CapsuleShape" id=1]
@@ -77,13 +77,12 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape" type="CollisionShape" parent="." index="0"]
 
-transform = Transform( 1, 0, 0, 0, -4.37114e-008, -1, 0, 1, -4.37114e-008, 0, 0, 0 )
 shape = SubResource( 1 )
 disabled = false
+_sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="Sprite3D" type="Sprite3D" parent="CollisionShape" index="0"]
 
-transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 0.25, 0, 0 )
 layers = 1
 material_override = ExtResource( 2 )
 cast_shadow = 1
@@ -102,16 +101,16 @@ opacity = 1.0
 pixel_size = 0.0025
 axis = 2
 transparent = true
-shaded = true
+shaded = false
 double_sided = true
 alpha_cut = 0
 texture = ExtResource( 3 )
-vframes = 1
+vframes = 4
 hframes = 2
 frame = 0
 region_enabled = false
 region_rect = Rect2( 0, 0, 0, 0 )
-_sections_unfolded = [ "Animation", "Flags", "Geometry", "Region", "Transform" ]
+_sections_unfolded = [ "Animation", "Geometry", "Region", "Transform", "Visibility" ]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1"]
 
