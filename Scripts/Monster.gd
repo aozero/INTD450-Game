@@ -22,7 +22,7 @@ var path = []
 var path_ind = 0
 # for pathfinding testing
 onready var draw = get_parent().get_node("Draw")
-var draw_path = true 
+var draw_path = false 
 
 var player = null
 var dead = false
