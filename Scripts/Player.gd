@@ -34,7 +34,7 @@ func get_class():
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	yield(get_tree(), "idle_frame")
-	get_tree().call_group("monsters", "set_player", self)
+	get_tree().call_group("multidirectionals", "set_player", self)
 	anim_player.play_backwards("Fade To Black")
 	
 	# DEVELOPMENT: Make window size start small

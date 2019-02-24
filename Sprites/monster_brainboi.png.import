@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/brainboi1blinklesss.png-873c107add253ab630baec4fb1006213.stex"
+path="res://.import/monster_brainboi.png-a6964f6e14a455114c70651b7191c605.stex"
 
 [deps]
 
-source_file="res://Sprites/brainboi1blinklesss.png"
-dest_files=[ "res://.import/brainboi1blinklesss.png-873c107add253ab630baec4fb1006213.stex" ]
+source_file="res://Sprites/monster_brainboi.png"
+dest_files=[ "res://.import/monster_brainboi.png-a6964f6e14a455114c70651b7191c605.stex" ]
 
 [params]
 
@@ -17,7 +17,7 @@ compress/hdr_mode=0
 compress/normal_map=0
 flags/repeat=true
 flags/filter=true
-flags/mipmaps=false
+flags/mipmaps=true
 flags/anisotropic=false
 flags/srgb=2
 process/fix_alpha_border=true

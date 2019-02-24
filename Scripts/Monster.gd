@@ -1,8 +1,7 @@
-extends KinematicBody
+extends "res://scripts/Multidirectional.gd"
 
 # Script controlling the monsters
 ##################################
-
 const MOVE_SPEED = 2
 
 # How far the monster can see the player when player is dark or lit
@@ -14,7 +13,6 @@ const DETECT_RUN_MULTIPLIER = 2
 const ATTACK_RANGE = 1
 
 onready var detection_raycast = $RayCast
-onready var anim_player = $AnimationPlayer
 
 # for pathfinding
 onready var navigation = get_parent().get_node("Navigation")
@@ -24,7 +22,6 @@ var path_ind = 0
 onready var draw = get_parent().get_node("Draw")
 var draw_path = false 
 
-var player = null
 var dead = false
 
 # Return "Monster" instead of "KinematicBody" 
@@ -33,13 +30,8 @@ func get_class():
 	return "Monster"
 
 func _ready():
-	add_to_group("monsters")
 	anim_player.play("idle")
 	set_in_player_area(false)
-
-# Called by Player
-func set_player(p):
-	player = p
 
 # Called by Player Area
 func set_in_player_area(value):
@@ -79,6 +71,7 @@ func _physics_process(delta):
 	if path_ind < path.size():
 		var move_vec = (path[path_ind] - global_transform.origin)
 		move_vec.y = 0
+		look_at(move_vec, UP)
 		if move_vec.length() < 0.1:
 			path_ind += 1
 		else:
@@ -94,13 +87,15 @@ func _physics_process(delta):
 # Called when changing from idle to moving
 func start_moving():
 	anim_player.stop()
-	anim_player.play("walk")
+	anim_player.play("walk_0")
+	update_sprite_direction()
 
 # Called when changing from moving to idle
 func stop_moving():
 	path = []
 	anim_player.stop()
-	anim_player.play("idle")
+	anim_player.play("idle_0")
+	update_sprite_direction()
 
 # slightly fuzzy position check
 func is_at_pos(pos):
