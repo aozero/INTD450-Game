@@ -30,7 +30,7 @@ func get_class():
 	return "Monster"
 
 func _ready():
-	anim_player.play("idle")
+	stop_moving()
 	set_in_player_area(false)
 
 # Called by Player Area
