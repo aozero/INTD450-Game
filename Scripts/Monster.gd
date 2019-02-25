@@ -1,4 +1,4 @@
-extends "res://scripts/Multidirectional.gd"
+extends "res://Scripts/Multidirectional.gd"
 
 # Script controlling the monsters
 ##################################
