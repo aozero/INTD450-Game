@@ -9,10 +9,9 @@ func _ready():
 	connect("body_exited", self, "_on_body_exited")
 	
 func _on_body_entered(body):	
-	if body.get_class() == "Monster":
+	if body.has_method("set_in_player_area"):
 		body.set_in_player_area(true)
 	
 func _on_body_exited(body):	
-	if body.get_class() == "Monster":
-		body.set_in_player_area(false)
-
+	if body.has_method("set_in_player_area"):
+		body.set_in_player_area(true)
