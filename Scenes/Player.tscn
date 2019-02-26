@@ -9,7 +9,6 @@
 [ext_resource path="res://Sprites/Items/item_tapshoe.png" type="Texture" id=7]
 [ext_resource path="res://Scripts/PlayerArea.gd" type="Script" id=8]
 
-
 [sub_resource type="CapsuleShape" id=1]
 
 radius = 1.0
@@ -307,7 +306,7 @@ tracks/0/keys = {
 
 radius = 50.0
 
-[node name="Player" type="KinematicBody"]
+[node name="Player" type="KinematicBody" index="0"]
 
 input_ray_pickable = true
 input_capture_on_drag = false
@@ -328,7 +327,7 @@ _sections_unfolded = [ "Collision" ]
 stream = ExtResource( 2 )
 volume_db = -10.0
 pitch_scale = 1.0
-autoplay = false
+autoplay = true
 mix_target = 0
 bus = "Master"
 
