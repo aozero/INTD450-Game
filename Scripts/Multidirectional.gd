@@ -7,17 +7,14 @@ onready var top_looker = $TopLooker
 onready var sprite_looker = $TopLooker/SpriteLooker
 onready var anim_player = $AnimationPlayer
 
-# Use this to set the objects facing direction
-# DO NOT USE THE DEFAULT ROTATION SETTING
-export(float) var starting_direction = 0
-
 var degree_cutoff = 360 / NUM_DIRECTIONS
 
 var old_sprite_direction = 0
 var player = null
 
 func _ready():
-	top_looker.rotation_degrees.y = starting_direction
+	top_looker.rotation_degrees.y = rotation_degrees.y
+	rotation_degrees = Vector3(0, 0, 0)
 	set_in_player_area(false)
 	add_to_group("multidirectionals")
 
