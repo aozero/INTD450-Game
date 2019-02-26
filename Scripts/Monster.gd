@@ -15,11 +15,11 @@ const ATTACK_RANGE = 1
 onready var detection_raycast = $RayCast
 
 # for pathfinding
-onready var navigation = get_parent().get_node("Navigation")
+onready var navigation = get_tree().get_root().get_node("World/Navigation")
 var path = []
 var path_ind = 0
 # for pathfinding testing
-onready var draw = get_parent().get_node("Draw")
+onready var draw = get_tree().get_root().get_node("World/Draw")
 var draw_path = false
 
 var dead = false
