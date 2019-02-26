@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scenes/Worlds/World.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/BGForestMedium.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/BGForestSmall.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Fires/Campfire.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Items/ItemTapshoe.tscn" type="PackedScene" id=5]
 
 [sub_resource type="NavigationMesh" id=1]
 
@@ -223,6 +224,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Clearing" type="Spatial" parent="Navigation/NavigationMeshInstance" index="3"]
 
+editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 41.4713, 0, 0 )
 _sections_unfolded = [ "Transform" ]
 
@@ -260,5 +262,9 @@ transform = Transform( 0.950468, 0, -0.310822, 0, 1, 0, 0.310822, 0, 0.950468, -
 [node name="Player" parent="." index="1"]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 36.4386, 0, 27.5485 )
+
+[node name="ItemTapshoe" parent="." index="4" instance=ExtResource( 5 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -22.0169, 0, -16.6595 )
 
 
