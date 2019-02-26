@@ -31,11 +31,6 @@ func get_class():
 
 func _ready():
 	stop_moving()
-	set_in_player_area(false)
-
-# Called by Player Area
-func set_in_player_area(value):
-	set_physics_process(value)
 
 func _physics_process(delta):
 	if dead:
