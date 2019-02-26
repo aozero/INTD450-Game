@@ -6,7 +6,7 @@ const MOVE_SPEED = 2
 
 # How far the monster can see the player when player is dark or lit
 const DETECT_DARK_RANGE = 4
-const DETECT_LIT_RANGE = 10 
+const DETECT_LIT_RANGE = 10
 const DETECT_RUN_MULTIPLIER = 2
 
 # How far away before the monster overwhelms the player
@@ -45,11 +45,11 @@ func _physics_process(delta):
 	if player.running:
 		detection_range *= DETECT_RUN_MULTIPLIER
 	
-	var vec_to_player = player.translation - translation
+	var vec_to_player = player.global_transform.origin - global_transform.origin
 	vec_to_player = vec_to_player.normalized()
 	
 	# Check if a ray to player within detection range can be cast
-	detection_raycast.cast_to = vec_to_player * detection_range	
+	detection_raycast.cast_to = vec_to_player * detection_range
 	if detection_raycast.is_colliding(): 
 		# Make sure what the ray is colliding with is actually the player
 		var raycast_collider = detection_raycast.get_collider()
@@ -66,7 +66,7 @@ func _physics_process(delta):
 	if path_ind < path.size():
 		var target_pos = path[path_ind]
 		target_pos.y = global_transform.origin.y
-		look_at(target_pos, UP)
+		top_looker.look_at(target_pos, UP)
 		
 		var move_vec = (target_pos - global_transform.origin)
 		if move_vec.length() < 0.1:

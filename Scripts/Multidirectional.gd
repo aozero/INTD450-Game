@@ -3,15 +3,21 @@ extends KinematicBody
 const NUM_DIRECTIONS = 4
 const UP = Vector3(0, 1, 0)
 
+onready var top_looker = $TopLooker
+onready var sprite_looker = $TopLooker/SpriteLooker
 onready var anim_player = $AnimationPlayer
-onready var sprite = $CollisionShape/Sprite3D
+
+# Use this to set the objects facing direction
+# DO NOT USE THE DEFAULT ROTATION SETTING
+export(float) var starting_direction = 0
 
 var degree_cutoff = 360 / NUM_DIRECTIONS
 
-var old_direction = 0
+var old_sprite_direction = 0
 var player = null
 
 func _ready():
+	top_looker.rotation_degrees.y = starting_direction
 	set_in_player_area(false)
 	add_to_group("multidirectionals")
 
@@ -26,15 +32,15 @@ func set_in_player_area(value):
 
 func _process(delta):
 	#var direction = round(rotation_degrees
-	sprite.look_at(Vector3(player.global_transform.origin.x, sprite.global_transform.origin.y, player.global_transform.origin.z), UP)
-	sprite.rotation_degrees.y += 180
+	sprite_looker.look_at(Vector3(player.global_transform.origin.x, sprite_looker.global_transform.origin.y, player.global_transform.origin.z), UP)
+	sprite_looker.rotation_degrees.y += 180
 
-	var sprite_direction = round(sprite.rotation_degrees.y/degree_cutoff)
+	var sprite_direction = round(sprite_looker.rotation_degrees.y/degree_cutoff)
 	if sprite_direction == NUM_DIRECTIONS:
 		sprite_direction = 0
 
-	if old_direction != sprite_direction:
-		old_direction = sprite_direction
+	if old_sprite_direction != sprite_direction:
+		old_sprite_direction = sprite_direction
 		update_sprite_direction()
 
 func update_sprite_direction():
@@ -42,6 +48,6 @@ func update_sprite_direction():
 			var anim_time = anim_player.current_animation_position
 			var anim_name = anim_player.current_animation
 
-			anim_name = anim_name.substr(0, anim_name.length()-1) + String(old_direction)
+			anim_name = anim_name.substr(0, anim_name.length()-1) + String(old_sprite_direction)
 			anim_player.play(anim_name)
 			anim_player.advance(anim_time)
