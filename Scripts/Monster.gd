@@ -20,7 +20,7 @@ var path = []
 var path_ind = 0
 # for pathfinding testing
 onready var draw = get_parent().get_node("Draw")
-var draw_path = false 
+var draw_path = false
 
 var dead = false
 
@@ -64,9 +64,11 @@ func _physics_process(delta):
 	
 	# If we haven't traversed the path yet
 	if path_ind < path.size():
-		var move_vec = (path[path_ind] - global_transform.origin)
-		move_vec.y = 0
-		look_at(move_vec, UP)
+		var target_pos = path[path_ind]
+		target_pos.y = global_transform.origin.y
+		look_at(target_pos, UP)
+		
+		var move_vec = (target_pos - global_transform.origin)
 		if move_vec.length() < 0.1:
 			path_ind += 1
 		else:
@@ -104,7 +106,7 @@ func kill():
 func update_path():
 	if navigation != null:
 		var begin = global_transform.origin
-		var end = player.translation
+		var end = player.global_transform.origin
 		
 		var p = navigation.get_simple_path(begin, end)
 		path = p
