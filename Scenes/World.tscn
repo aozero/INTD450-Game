@@ -1,0 +1,286 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Materials/wormy_ground_diffuse.tga" type="Texture" id=1]
+[ext_resource path="res://Materials/wormy_ground_normals.tga" type="Texture" id=2]
+[ext_resource path="res://Scenes/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Sound/Music/PrototypeLoop.ogg" type="AudioStream" id=4]
+
+[sub_resource type="NavigationMesh" id=1]
+
+vertices = PoolVector3Array( 40, -0.7, 5.9, 42.1, -0.7, 3.5, 39.4, -0.7, 3.2, 40, -0.7, 5.9, 39.4, -0.7, 3.2, 38.8, -0.7, 2.3, 11.8, -0.7, 38.6, 17.8, -0.7, 38.6, 39.7, -0.7, 7.7, 43, -0.7, -0.0999985, 43.6, -0.7, 2, 43.9, -0.7, -4, 42.1, -0.7, -0.699997, 43, -0.7, -0.0999985, 43.9, -0.7, -4, 40, -0.7, -0.699997, 42.1, -0.7, -0.699997, 43.9, -0.7, -4, 48.4, -0.7, -13.3, 48.4, -0.7, 15.5, 48.4, -0.7, 8, 45.7, -0.7, 11, 11.8, -0.7, 38.6, 38.8, -0.7, 2.3, 38.8, -0.7, 0.5, -0.199997, -0.7, 38.6, 48.4, -0.7, 15.5, 45.7, -0.7, 11, 43.3, -0.7, 11, 48.4, -0.7, 23.3, 44.8, -0.7, -4.6, 48.4, -0.7, -4.6, 48.4, -0.7, -13.3, 42.1, -0.7, 38.6, 48.4, -0.7, 38.6, 48.4, -0.7, 30.8, 43.9, -0.7, -4, 44.8, -0.7, -4.6, 48.4, -0.7, -13.3, 48.4, -0.7, -30.1, 48.4, -0.7, -38.5, 42.1, -0.7, -38.5, 48.4, -0.7, -21.7, 17.8, -0.7, -38.5, 11.8, -0.7, -38.5, 36.1, -0.7, 38.6, 42.1, -0.7, 38.6, 48.4, -0.7, 30.8, 48.4, -0.7, -30.1, 42.1, -0.7, -38.5, 36.1, -0.7, -38.5, -6.5, -0.7, 38.6, -0.199997, -0.7, 38.6, 38.8, -0.7, 0.5, -0.199997, -0.7, -38.5, -6.5, -0.7, -38.5, -48.5, -0.7, -0.0999985, -36.5, -0.7, -38.5, -48.5, -0.7, -38.5, -48.5, -0.7, -28.9, -48.5, -0.7, 28.7, -48.5, -0.7, 38.6, -36.5, -0.7, 38.6, 38.8, -0.7, 0.5, 40, -0.7, -0.699997, 48.4, -0.7, -13.3, 48.4, -0.7, -21.7, 11.8, -0.7, -38.5, -0.199997, -0.7, -38.5, 48.4, -0.7, 23.3, 43.3, -0.7, 11, 39.7, -0.7, 7.7, 17.8, -0.7, 38.6, 24.1, -0.7, 38.6, 36.1, -0.7, 38.6, 48.4, -0.7, 30.8, 48.4, -0.7, 23.3, 24.1, -0.7, 38.6, 48.4, -0.7, -21.7, 48.4, -0.7, -30.1, 36.1, -0.7, -38.5, 24.1, -0.7, -38.5, -36.5, -0.7, -38.5, -48.5, -0.7, -28.9, -48.5, -0.7, -19.3, -48.5, -0.7, 19.1, -48.5, -0.7, 28.7, -36.5, -0.7, 38.6, -6.5, -0.7, -38.5, -12.5, -0.7, -38.5, -48.5, -0.7, -0.0999985, -24.5, -0.7, -38.5, -48.5, -0.7, -9.7, -48.5, -0.7, -0.0999985, -12.5, -0.7, -38.5, -48.5, -0.7, -0.0999985, -48.5, -0.7, 9.5, -24.5, -0.7, 38.6, -12.5, -0.7, 38.6, -24.5, -0.7, -38.5, -36.5, -0.7, -38.5, -48.5, -0.7, -19.3, -48.5, -0.7, -9.7, -48.5, -0.7, 19.1, -36.5, -0.7, 38.6, -24.5, -0.7, 38.6, -48.5, -0.7, 9.5, -48.5, -0.7, -0.0999985, -12.5, -0.7, 38.6, -6.5, -0.7, 38.6, 48.4, -0.7, -21.7, 24.1, -0.7, -38.5, 17.8, -0.7, -38.5 )
+polygons = [ PoolIntArray( 2, 0, 1 ), PoolIntArray( 8, 3, 7 ), PoolIntArray( 3, 4, 7 ), PoolIntArray( 4, 5, 7 ), PoolIntArray( 5, 6, 7 ), PoolIntArray( 11, 9, 10 ), PoolIntArray( 14, 12, 13 ), PoolIntArray( 18, 15, 17 ), PoolIntArray( 15, 16, 17 ), PoolIntArray( 21, 19, 20 ), PoolIntArray( 25, 22, 24 ), PoolIntArray( 22, 23, 24 ), PoolIntArray( 29, 26, 28 ), PoolIntArray( 26, 27, 28 ), PoolIntArray( 32, 30, 31 ), PoolIntArray( 35, 33, 34 ), PoolIntArray( 38, 36, 37 ), PoolIntArray( 41, 39, 40 ), PoolIntArray( 44, 42, 43 ), PoolIntArray( 47, 45, 46 ), PoolIntArray( 50, 48, 49 ), PoolIntArray( 56, 51, 55 ), PoolIntArray( 51, 54, 55 ), PoolIntArray( 51, 52, 54 ), PoolIntArray( 52, 53, 54 ), PoolIntArray( 59, 57, 58 ), PoolIntArray( 62, 60, 61 ), PoolIntArray( 68, 63, 67 ), PoolIntArray( 63, 64, 67 ), PoolIntArray( 64, 65, 67 ), PoolIntArray( 65, 66, 67 ), PoolIntArray( 73, 69, 72 ), PoolIntArray( 69, 70, 72 ), PoolIntArray( 70, 71, 72 ), PoolIntArray( 77, 74, 76 ), PoolIntArray( 74, 75, 76 ), PoolIntArray( 81, 78, 80 ), PoolIntArray( 78, 79, 80 ), PoolIntArray( 84, 82, 83 ), PoolIntArray( 87, 85, 86 ), PoolIntArray( 90, 88, 89 ), PoolIntArray( 94, 91, 93 ), PoolIntArray( 91, 92, 93 ), PoolIntArray( 98, 95, 97 ), PoolIntArray( 95, 96, 97 ), PoolIntArray( 102, 99, 101 ), PoolIntArray( 99, 100, 101 ), PoolIntArray( 106, 103, 105 ), PoolIntArray( 103, 104, 105 ), PoolIntArray( 109, 107, 108 ), PoolIntArray( 112, 110, 111 ) ]
+sample_partition_type/sample_partition_type = 0
+cell/size = 0.3
+cell/height = 0.2
+agent/height = 2.0
+agent/radius = 1.5
+agent/max_climb = 0.1
+agent/max_slope = 45.0
+region/min_size = 8.0
+region/merge_size = 20.0
+edge/max_length = 12.0
+edge/max_error = 1.3
+polygon/verts_per_poly = 6.0
+detail/sample_distance = 6.0
+detail/sample_max_error = 1.0
+filter/low_hanging_obstacles = false
+filter/ledge_spans = false
+filter/filter_walkable_low_height_spans = false
+_sections_unfolded = [ "agent" ]
+
+[sub_resource type="SpatialMaterial" id=2]
+
+render_priority = 0
+flags_transparent = false
+flags_unshaded = false
+flags_vertex_lighting = false
+flags_no_depth_test = false
+flags_use_point_size = false
+flags_world_triplanar = false
+flags_fixed_size = false
+flags_albedo_tex_force_srgb = false
+vertex_color_use_as_albedo = false
+vertex_color_is_srgb = false
+params_diffuse_mode = 0
+params_specular_mode = 0
+params_blend_mode = 0
+params_cull_mode = 0
+params_depth_draw_mode = 0
+params_line_width = 1.0
+params_point_size = 1.0
+params_billboard_mode = 0
+params_grow = false
+params_use_alpha_scissor = false
+albedo_color = Color( 1, 1, 1, 1 )
+albedo_texture = ExtResource( 1 )
+metallic = 0.0
+metallic_specular = 0.5
+metallic_texture_channel = 0
+roughness = 0.0
+roughness_texture_channel = 0
+emission_enabled = false
+normal_enabled = true
+normal_scale = 1.0
+normal_texture = ExtResource( 2 )
+rim_enabled = false
+clearcoat_enabled = false
+anisotropy_enabled = false
+ao_enabled = false
+depth_enabled = false
+subsurf_scatter_enabled = false
+transmission_enabled = false
+refraction_enabled = false
+detail_enabled = false
+uv1_scale = Vector3( 1, 1, 1 )
+uv1_offset = Vector3( 0, 0, 0 )
+uv1_triplanar = true
+uv1_triplanar_sharpness = 1.0
+uv2_scale = Vector3( 1, 1, 1 )
+uv2_offset = Vector3( 0, 0, 0 )
+uv2_triplanar = false
+uv2_triplanar_sharpness = 1.0
+proximity_fade_enable = false
+distance_fade_enable = false
+_sections_unfolded = [ "Metallic", "UV1", "UV2" ]
+
+[sub_resource type="PlaneMesh" id=3]
+
+material = SubResource( 2 )
+custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
+size = Vector2( 100, 80 )
+subdivide_width = 0
+subdivide_depth = 0
+
+[sub_resource type="Environment" id=4]
+
+background_mode = 0
+background_sky_custom_fov = 0.0
+background_color = Color( 0, 0, 0, 1 )
+background_energy = 1.0
+background_canvas_max_layer = 0
+ambient_light_color = Color( 1, 1, 1, 1 )
+ambient_light_energy = 1.0
+ambient_light_sky_contribution = 1.0
+fog_enabled = false
+fog_color = Color( 0.5, 0.6, 0.7, 1 )
+fog_sun_color = Color( 1, 0.9, 0.7, 1 )
+fog_sun_amount = 0.0
+fog_depth_enabled = true
+fog_depth_begin = 10.0
+fog_depth_curve = 1.0
+fog_transmit_enabled = false
+fog_transmit_curve = 1.0
+fog_height_enabled = false
+fog_height_min = 0.0
+fog_height_max = 100.0
+fog_height_curve = 1.0
+tonemap_mode = 0
+tonemap_exposure = 1.0
+tonemap_white = 1.0
+auto_exposure_enabled = false
+auto_exposure_scale = 0.4
+auto_exposure_min_luma = 0.05
+auto_exposure_max_luma = 8.0
+auto_exposure_speed = 0.5
+ss_reflections_enabled = false
+ss_reflections_max_steps = 64
+ss_reflections_fade_in = 0.15
+ss_reflections_fade_out = 2.0
+ss_reflections_depth_tolerance = 0.2
+ss_reflections_roughness = true
+ssao_enabled = false
+ssao_radius = 1.0
+ssao_intensity = 1.0
+ssao_radius2 = 0.0
+ssao_intensity2 = 1.0
+ssao_bias = 0.01
+ssao_light_affect = 0.0
+ssao_color = Color( 0, 0, 0, 1 )
+ssao_quality = 0
+ssao_blur = 3
+ssao_edge_sharpness = 4.0
+dof_blur_far_enabled = false
+dof_blur_far_distance = 10.0
+dof_blur_far_transition = 5.0
+dof_blur_far_amount = 0.1
+dof_blur_far_quality = 1
+dof_blur_near_enabled = false
+dof_blur_near_distance = 2.0
+dof_blur_near_transition = 1.0
+dof_blur_near_amount = 0.1
+dof_blur_near_quality = 1
+glow_enabled = false
+glow_levels/1 = false
+glow_levels/2 = false
+glow_levels/3 = true
+glow_levels/4 = false
+glow_levels/5 = true
+glow_levels/6 = false
+glow_levels/7 = false
+glow_intensity = 0.8
+glow_strength = 1.0
+glow_bloom = 0.0
+glow_blend_mode = 2
+glow_hdr_threshold = 1.0
+glow_hdr_scale = 2.0
+glow_bicubic_upscale = false
+adjustment_enabled = false
+adjustment_brightness = 1.0
+adjustment_contrast = 1.0
+adjustment_saturation = 1.0
+_sections_unfolded = [ "Ambient Light", "Background" ]
+
+[sub_resource type="SpatialMaterial" id=5]
+
+render_priority = 0
+flags_transparent = false
+flags_unshaded = true
+flags_vertex_lighting = false
+flags_no_depth_test = false
+flags_use_point_size = true
+flags_world_triplanar = false
+flags_fixed_size = false
+flags_albedo_tex_force_srgb = false
+vertex_color_use_as_albedo = false
+vertex_color_is_srgb = false
+params_diffuse_mode = 0
+params_specular_mode = 0
+params_blend_mode = 0
+params_cull_mode = 0
+params_depth_draw_mode = 0
+params_line_width = 1.0
+params_point_size = 1.0
+params_billboard_mode = 0
+params_grow = false
+params_use_alpha_scissor = false
+albedo_color = Color( 1, 1, 1, 1 )
+metallic = 0.0
+metallic_specular = 0.5
+metallic_texture_channel = 0
+roughness = 0.0
+roughness_texture_channel = 0
+emission_enabled = false
+normal_enabled = false
+rim_enabled = false
+clearcoat_enabled = false
+anisotropy_enabled = false
+ao_enabled = false
+depth_enabled = false
+subsurf_scatter_enabled = false
+transmission_enabled = false
+refraction_enabled = false
+detail_enabled = false
+uv1_scale = Vector3( 1, 1, 1 )
+uv1_offset = Vector3( 0, 0, 0 )
+uv1_triplanar = false
+uv1_triplanar_sharpness = 1.0
+uv2_scale = Vector3( 1, 1, 1 )
+uv2_offset = Vector3( 0, 0, 0 )
+uv2_triplanar = false
+uv2_triplanar_sharpness = 1.0
+proximity_fade_enable = false
+distance_fade_enable = false
+_sections_unfolded = [ "Flags" ]
+
+[node name="World" type="Spatial"]
+
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="Navigation" type="Navigation" parent="." index="0"]
+
+up_vector = Vector3( 0, 1, 0 )
+
+[node name="NavigationMeshInstance" type="NavigationMeshInstance" parent="Navigation" index="0"]
+
+navmesh = SubResource( 1 )
+enabled = true
+
+[node name="FloorPlane" type="MeshInstance" parent="Navigation/NavigationMeshInstance" index="0"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 3 )
+skeleton = NodePath("..")
+material/0 = null
+_sections_unfolded = [ "Transform" ]
+
+[node name="Player" parent="." index="1" instance=ExtResource( 3 )]
+
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="2"]
+
+environment = SubResource( 4 )
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="." index="3"]
+
+stream = ExtResource( 4 )
+volume_db = -10.0
+pitch_scale = 1.0
+autoplay = true
+mix_target = 0
+bus = "Master"
+_sections_unfolded = [ "Pause" ]
+
+[node name="Draw" type="ImmediateGeometry" parent="." index="4"]
+
+layers = 1
+material_override = SubResource( 5 )
+cast_shadow = 0
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+_sections_unfolded = [ "Geometry" ]
+
+
