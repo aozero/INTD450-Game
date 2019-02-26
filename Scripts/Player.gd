@@ -36,10 +36,6 @@ func _ready():
 	yield(get_tree(), "idle_frame")
 	get_tree().call_group("multidirectionals", "set_player", self)
 	anim_player.play_backwards("Fade To Black")
-	
-	# DEVELOPMENT: Make window size start small
-	OS.window_fullscreen = false
-	OS.set_window_size(Vector2(1024, 600))
 
 func _input(event):
 	if event.is_action_pressed("toggle_fullscreen"):
