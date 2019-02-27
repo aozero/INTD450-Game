@@ -6,21 +6,16 @@ const UP = Vector3(0, 1, 0)
 onready var top_looker = $TopLooker
 onready var sprite_looker = $TopLooker/SpriteLooker
 onready var anim_player = $AnimationPlayer
+onready var player = get_tree().get_root().get_node("World/Player")
 
 var degree_cutoff = 360 / NUM_DIRECTIONS
 
 var old_sprite_direction = 0
-var player = null
 
 func _ready():
 	top_looker.rotation_degrees.y = rotation_degrees.y
 	rotation_degrees = Vector3(0, 0, 0)
 	set_in_player_area(false)
-	add_to_group("multidirectionals")
-
-# Called by Player
-func set_player(p):
-	player = p
 
 # Called by Player Area
 func set_in_player_area(value):

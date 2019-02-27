@@ -39,7 +39,6 @@ func get_class():
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	yield(get_tree(), "idle_frame")
-	get_tree().call_group("multidirectionals", "set_player", self)
 	anim_player.play_backwards("Fade To Black")
 	
 	audio_fader.play("fade in music")
