@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/bedroom_musicbox.wav-2f391b625acb2c4abe7e9706bf5be1b7.sample"
+
+[deps]
+
+source_file="res://Sound/Effects/Memory Clips/bedroom_musicbox.wav"
+dest_files=[ "res://.import/bedroom_musicbox.wav-2f391b625acb2c4abe7e9706bf5be1b7.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
