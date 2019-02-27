@@ -13,6 +13,7 @@ const DETECT_RUN_MULTIPLIER = 2
 const ATTACK_RANGE = 1
 
 onready var detection_raycast = $RayCast
+onready var audio_walking = $AudioWalking
 
 # for pathfinding
 onready var navigation = get_tree().get_root().get_node("World/Navigation")
@@ -85,6 +86,7 @@ func _physics_process(delta):
 func start_moving():
 	anim_player.stop()
 	anim_player.play("walk_0")
+	audio_walking.play()
 	update_sprite_direction()
 
 # Called when changing from moving to idle
@@ -92,6 +94,7 @@ func stop_moving():
 	path = []
 	anim_player.stop()
 	anim_player.play("idle_0")
+	audio_walking.stop()
 	update_sprite_direction()
 
 # slightly fuzzy position check
