@@ -8,10 +8,10 @@ const SNEAK_SPEED = 2
 const MOUSE_SENS = 0.2
 const INTERACT_RANGE = 2 # Range player can interact with objects
 
-onready var SOUND_MATCH_ON = load("res://Sound/Effects/match_on.wav")
-onready var SOUND_MATCH_OFF = load("res://Sound/Effects/match_off.wav")
-onready var SOUND_MATCH_BURNING = load("res://Sound/Effects/match_burning.wav")
-onready var SOUND_TAPSHOE = load("res://Sound/Effects/Memory Clips/Tap Shoe.wav")
+onready var SOUND_MATCH_ON = load("res://Sound/Effects/Match/match_on.wav")
+onready var SOUND_MATCH_OFF = load("res://Sound/Effects/Match/match_off.wav")
+onready var SOUND_MATCH_BURNING = load("res://Sound/Effects/Match/match_burning.wav")
+onready var SOUND_TAPSHOE = load("res://Sound/Effects/Memory/Tap Shoe.wav")
 onready var INTERACT_PROMPT = "Press " + InputMap.get_action_list("interact")[0].as_text() + " to interact"
 
 onready var audio_player = $FirstPersonAudio

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/walking_step2.wav-db72a4773f8d9c73b035f40965b28393.sample"
+
+[deps]
+
+source_file="res://Sound/Effects/Walking/walking_step2.wav"
+dest_files=[ "res://.import/walking_step2.wav-db72a4773f8d9c73b035f40965b28393.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

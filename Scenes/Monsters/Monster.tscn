@@ -3,7 +3,8 @@
 [ext_resource path="res://Scripts/Monster.gd" type="Script" id=1]
 [ext_resource path="res://Materials/Billboard.tres" type="Material" id=2]
 [ext_resource path="res://Sprites/Monsters/brainboi.png" type="Texture" id=3]
-[ext_resource path="res://Sound/Effects/brain_boi_breathing.wav" type="AudioStream" id=4]
+[ext_resource path="res://Sound/Effects/Monster/brain_boi_breathing.wav" type="AudioStream" id=4]
+
 
 [sub_resource type="CapsuleShape" id=1]
 
