@@ -6,10 +6,9 @@
 [ext_resource path="res://Sound/Effects/Monster/brain_boi_breathing.wav" type="AudioStream" id=4]
 [ext_resource path="res://Sound/Effects/Monster/brain_boi_walking.wav" type="AudioStream" id=5]
 
-[sub_resource type="CapsuleShape" id=1]
+[sub_resource type="SphereShape" id=10]
 
-radius = 0.4
-height = 1.0
+radius = 1.0
 
 [sub_resource type="Animation" id=2]
 
@@ -210,7 +209,7 @@ tracks/1/keys = {
 "values": [ Vector3( 0, 0, 0 ), Vector3( 0.25, 0, 0 ) ]
 }
 
-[node name="Monster" type="KinematicBody"]
+[node name="Monster" type="KinematicBody" index="0"]
 
 input_ray_pickable = true
 input_capture_on_drag = false
@@ -229,7 +228,7 @@ _sections_unfolded = [ "Transform" ]
 [node name="CollisionShape" type="CollisionShape" parent="." index="0"]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3, 0 )
-shape = SubResource( 1 )
+shape = SubResource( 10 )
 disabled = false
 _sections_unfolded = [ "Transform", "Visibility" ]
 
