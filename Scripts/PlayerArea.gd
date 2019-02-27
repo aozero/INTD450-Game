@@ -14,4 +14,4 @@ func _on_body_entered(body):
 	
 func _on_body_exited(body):	
 	if body.has_method("set_in_player_area"):
-		body.set_in_player_area(true)
+		body.set_in_player_area(false)
