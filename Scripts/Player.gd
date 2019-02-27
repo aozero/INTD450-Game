@@ -178,10 +178,7 @@ func _on_FirstPersonAudio_finished():
 		in_memory = false 
 		anim_player.play("Fade From White")
 		
-		translation = start_pos
-		rotation = Vector3(0, 180, 0)
-		
-		var blockedPath = owner.get_node("BlockedPath")
+		var blockedPath = get_tree().get_root().get_node("World/Navigation/NavigationMeshInstance/BlockedPath")
 		if blockedPath != null:
 			blockedPath.hide()
 
