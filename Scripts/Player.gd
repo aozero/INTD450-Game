@@ -12,6 +12,7 @@ onready var SOUND_MATCH_ON = load("res://Sound/Effects/Match/match_on.wav")
 onready var SOUND_MATCH_OFF = load("res://Sound/Effects/Match/match_off.wav")
 onready var SOUND_MATCH_BURNING = load("res://Sound/Effects/Match/match_burning.wav")
 onready var SOUND_TAPSHOE = load("res://Sound/Effects/Memory/study_tapshoe.wav")
+
 onready var INTERACT_PROMPT = "Press " + InputMap.get_action_list("interact")[0].as_text() + " to interact"
 
 onready var audio_player = $FirstPersonAudio
@@ -21,6 +22,7 @@ onready var audio_fader = $AudioFader
 onready var anim_player = $AnimationPlayer
 onready var headbobber = $Headbobber
 onready var raycast = $RayCast
+onready var torch_collision_shape = $Torch/TorchArea/CollisionShape
 onready var prompt_label = $"CanvasLayer/Prompt Label"
 onready var torch = $Torch
 
@@ -118,6 +120,7 @@ func _physics_process(delta):
 			anim_player.play_backwards("light")
 		
 		torch.visible = !torch.visible
+		torch_collision_shape.disabled = !torch.visible
 	
 	# Check if player is looking at anything interactable that is within range
 	var coll = raycast.get_collider()
