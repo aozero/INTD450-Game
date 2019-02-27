@@ -4,8 +4,7 @@
 [ext_resource path="res://Scripts/TreeRandom.gd" type="Script" id=2]
 [ext_resource path="res://Sprites/Foliage/tree_sheet.png" type="Texture" id=3]
 
-
-[node name="RandomTree" instance=ExtResource( 1 )]
+[node name="TreeRandom" instance=ExtResource( 1 )]
 
 script = ExtResource( 2 )
 
