@@ -10,14 +10,19 @@ const INTERACT_RANGE = 2 # Range player can interact with objects
 
 onready var SOUND_MATCH_ON = load("res://Sound/Effects/match_on.wav")
 onready var SOUND_MATCH_OFF = load("res://Sound/Effects/match_off.wav")
+onready var SOUND_MATCH_BURNING = load("res://Sound/Effects/match_burning.wav")
 onready var SOUND_TAPSHOE = load("res://Sound/Effects/Memory Clips/Tap Shoe.wav")
 onready var INTERACT_PROMPT = "Press " + InputMap.get_action_list("interact")[0].as_text() + " to interact"
 
+onready var audio_player = $FirstPersonAudio
+onready var match_burning_audio = $MatchBurningAudio
+onready var audio_fader = $AudioFader
+
 onready var anim_player = $AnimationPlayer
 onready var headbobber = $Headbobber
-onready var audio_player = $FirstPersonAudio
 onready var raycast = $RayCast
 onready var prompt_label = $"CanvasLayer/Prompt Label"
+onready var torch = $Torch
 
 onready var start_pos = translation
 
@@ -36,6 +41,11 @@ func _ready():
 	yield(get_tree(), "idle_frame")
 	get_tree().call_group("multidirectionals", "set_player", self)
 	anim_player.play_backwards("Fade To Black")
+	
+	audio_fader.play("fade in music")
+	# Play audio depending on torch state
+	if torch.visible:
+		match_burning_audio.play()
 
 func _input(event):
 	if event.is_action_pressed("toggle_fullscreen"):
@@ -98,15 +108,17 @@ func _physics_process(delta):
 	move_and_collide(move_vec * move_speed * delta)
 	
 	if Input.is_action_pressed("shoot") and !anim_player.is_playing():
-		
-		if !get_node("Torch").visible:
+		if !torch.visible:
+			match_burning_audio.play()
+			audio_fader.play("fade in burning")
 			play_audio(SOUND_MATCH_ON)
 			anim_player.play("light")
 		else:
+			match_burning_audio.stop()
 			play_audio(SOUND_MATCH_OFF)
 			anim_player.play_backwards("light")
 		
-		get_node("Torch").visible = !get_node("Torch").visible
+		torch.visible = !torch.visible
 	
 	# Check if player is looking at anything interactable that is within range
 	var coll = raycast.get_collider()
@@ -130,7 +142,7 @@ func disable_prompt():
 	prompt_label.visible_characters = 0
 
 func get_torch_visible():
-	return get_node("Torch").visible
+	return torch.visible
 
 func kill():
 	if not dying:

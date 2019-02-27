@@ -1,13 +1,52 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://Sound/Music/Drone.wav" type="AudioStream" id=2]
-[ext_resource path="res://Scripts/FPS Display.gd" type="Script" id=3]
-[ext_resource path="res://Sprites/first_person.png" type="Texture" id=4]
-[ext_resource path="res://Fonts/Prompt.ttf" type="DynamicFontData" id=5]
-[ext_resource path="res://Sprites/crosshair.png" type="Texture" id=6]
-[ext_resource path="res://Sprites/Items/item_tapshoe.png" type="Texture" id=7]
-[ext_resource path="res://Scripts/PlayerArea.gd" type="Script" id=8]
+[ext_resource path="res://Sound/Effects/match_burning.wav" type="AudioStream" id=3]
+[ext_resource path="res://Scripts/FPS Display.gd" type="Script" id=4]
+[ext_resource path="res://Sprites/first_person.png" type="Texture" id=5]
+[ext_resource path="res://Fonts/Prompt.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://Sprites/crosshair.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Items/item_tapshoe.png" type="Texture" id=8]
+[ext_resource path="res://Scripts/PlayerArea.gd" type="Script" id=9]
+
+[sub_resource type="Animation" id=14]
+
+resource_name = "fade in burning"
+length = 0.2
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("MatchBurningAudio:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ -80.0, -10.0 ]
+}
+
+[sub_resource type="Animation" id=13]
+
+resource_name = "fade in music"
+length = 1.5
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("DronePlayer:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -60.0, -30.0 ]
+}
 
 [sub_resource type="CapsuleShape" id=1]
 
@@ -120,7 +159,7 @@ _sections_unfolded = [ "Ambient Light", "Background", "Fog" ]
 size = 48
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 5 )
+font_data = ExtResource( 6 )
 _sections_unfolded = [ "Font", "Settings" ]
 
 [sub_resource type="Animation" id=5]
@@ -322,16 +361,27 @@ collision/safe_margin = 0.001
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision" ]
 
-[node name="DronePlayer" type="AudioStreamPlayer" parent="." index="0"]
+[node name="AudioFader" type="AnimationPlayer" parent="." index="0"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+"anims/fade in burning" = SubResource( 14 )
+"anims/fade in music" = SubResource( 13 )
+blend_times = [  ]
+
+[node name="DronePlayer" type="AudioStreamPlayer" parent="." index="1"]
 
 stream = ExtResource( 2 )
-volume_db = -10.0
+volume_db = -60.0
 pitch_scale = 1.0
 autoplay = true
 mix_target = 0
 bus = "Master"
 
-[node name="FirstPersonAudio" type="AudioStreamPlayer" parent="." index="1"]
+[node name="FirstPersonAudio" type="AudioStreamPlayer" parent="." index="2"]
 
 stream = null
 volume_db = -5.0
@@ -340,14 +390,23 @@ autoplay = false
 mix_target = 0
 bus = "Master"
 
-[node name="CollisionShape" type="CollisionShape" parent="." index="2"]
+[node name="MatchBurningAudio" type="AudioStreamPlayer" parent="." index="3"]
+
+stream = ExtResource( 3 )
+volume_db = -80.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="CollisionShape" type="CollisionShape" parent="." index="4"]
 
 transform = Transform( 1, 0, 0, 0, -4.37114e-008, -1, 0, 1, -4.37114e-008, 0, 0, 0 )
 shape = SubResource( 1 )
 disabled = false
 _sections_unfolded = [ "Transform" ]
 
-[node name="Torch" type="OmniLight" parent="." index="3"]
+[node name="Torch" type="OmniLight" parent="." index="5"]
 
 layers = 1
 light_color = Color( 0.863281, 0.575802, 0.269775, 1 )
@@ -369,7 +428,7 @@ omni_shadow_mode = 1
 omni_shadow_detail = 1
 _sections_unfolded = [ "Editor", "Light", "Omni", "Shadow" ]
 
-[node name="Camera" type="Camera" parent="." index="4"]
+[node name="Camera" type="Camera" parent="." index="6"]
 
 keep_aspect = 1
 cull_mask = 1048575
@@ -385,7 +444,7 @@ near = 0.05
 far = 30.0
 _sections_unfolded = [ "Transform", "Visibility" ]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." index="5"]
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="7"]
 
 layer = 1
 offset = Vector2( 0, 0 )
@@ -410,7 +469,7 @@ size_flags_vertical = 4
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-script = ExtResource( 3 )
+script = ExtResource( 4 )
 
 [node name="Control" type="Control" parent="CanvasLayer" index="1"]
 
@@ -430,7 +489,7 @@ _sections_unfolded = [ "Anchor", "Margin" ]
 
 position = Vector2( 140, -350 )
 scale = Vector2( 1.5, 1.5 )
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 hframes = 2
 frame = 1
 _sections_unfolded = [ "Animation", "Transform" ]
@@ -493,7 +552,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 6 )
+texture = ExtResource( 7 )
 stretch_mode = 4
 _sections_unfolded = [ "Anchor", "Margin" ]
 
@@ -501,10 +560,10 @@ _sections_unfolded = [ "Anchor", "Margin" ]
 
 modulate = Color( 1, 1, 1, 0 )
 scale = Vector2( 2, 2 )
-texture = ExtResource( 7 )
+texture = ExtResource( 8 )
 _sections_unfolded = [ "Region", "Transform", "Visibility" ]
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="6"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="8"]
 
 root_node = NodePath("..")
 autoplay = ""
@@ -519,7 +578,7 @@ anims/light = SubResource( 9 )
 blend_times = [  ]
 _sections_unfolded = [ "Playback Options" ]
 
-[node name="Headbobber" type="AnimationPlayer" parent="." index="7"]
+[node name="Headbobber" type="AnimationPlayer" parent="." index="9"]
 
 root_node = NodePath("..")
 autoplay = ""
@@ -530,21 +589,21 @@ anims/headbob = SubResource( 10 )
 anims/reset = SubResource( 11 )
 blend_times = [  ]
 
-[node name="RayCast" type="RayCast" parent="." index="8"]
+[node name="RayCast" type="RayCast" parent="." index="10"]
 
 enabled = true
 exclude_parent = true
 cast_to = Vector3( 0, 0, -2000 )
 collision_mask = 32
 
-[node name="Timer" type="Timer" parent="." index="9"]
+[node name="Timer" type="Timer" parent="." index="11"]
 
 process_mode = 1
 wait_time = 5.0
 one_shot = false
 autostart = false
 
-[node name="Player Area" type="Area" parent="." index="10"]
+[node name="Player Area" type="Area" parent="." index="12"]
 
 input_ray_pickable = false
 input_capture_on_drag = false
@@ -566,7 +625,7 @@ reverb_bus_enable = false
 reverb_bus_name = "Master"
 reverb_bus_amount = 0.0
 reverb_bus_uniformity = 0.0
-script = ExtResource( 8 )
+script = ExtResource( 9 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Player Area" index="0"]
 

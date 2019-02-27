@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/match_burning.wav-d7cfa4dfe97111856c2b5c8b74c95be2.sample"
+
+[deps]
+
+source_file="res://Sound/Effects/match_burning.wav"
+dest_files=[ "res://.import/match_burning.wav-d7cfa4dfe97111856c2b5c8b74c95be2.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=false
+edit/loop=true
+compress/mode=0
