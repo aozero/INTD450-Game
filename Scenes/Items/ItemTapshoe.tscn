@@ -1,16 +1,25 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scenes/Items/Interactable.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Sprites/Items/item_tapshoe.png" type="Texture" id=2]
-[ext_resource path="res://Sound/Music/StudyArea.wav" type="AudioStream" id=3]
+[ext_resource path="res://Scripts/Items/ItemTapshoe.gd" type="Script" id=2]
+[ext_resource path="res://Sprites/Items/item_tapshoe.png" type="Texture" id=3]
+[ext_resource path="res://Sound/Music/StudyArea.wav" type="AudioStream" id=4]
 
 [sub_resource type="BoxShape" id=1]
 
 extents = Vector3( 0.5, 0.5, 0.5 )
 
-[node name="ItemTapshoe" instance=ExtResource( 1 )]
+[sub_resource type="Animation" id=2]
+
+resource_name = "fade in music"
+length = 1.0
+loop = false
+step = 0.1
+
+[node name="ItemTapshoe" index="0" instance=ExtResource( 1 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+script = ExtResource( 2 )
 
 [node name="CollisionShape" parent="." index="0"]
 
@@ -20,10 +29,26 @@ shape = SubResource( 1 )
 [node name="Sprite3D" parent="CollisionShape" index="0"]
 
 pixel_size = 0.002
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
+
+[node name="AnimationPlayer" parent="." index="1"]
+
+"anims/fade in music" = SubResource( 2 )
 
 [node name="MusicPlayer" parent="." index="2"]
 
-stream = ExtResource( 3 )
+stream = ExtResource( 4 )
+unit_db = -15.0
+max_db = -8.0
+autoplay = false
+
+[node name="Timer" type="Timer" parent="." index="3"]
+
+process_mode = 1
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 
 
