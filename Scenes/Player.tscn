@@ -345,7 +345,7 @@ tracks/0/keys = {
 
 radius = 50.0
 
-[node name="Player" type="KinematicBody"]
+[node name="Player" type="KinematicBody" index="0"]
 
 input_ray_pickable = true
 input_capture_on_drag = false
@@ -408,6 +408,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Torch" type="OmniLight" parent="." index="5"]
 
+visible = false
 layers = 1
 light_color = Color( 0.863281, 0.575802, 0.269775, 1 )
 light_energy = 2.0
@@ -426,7 +427,7 @@ omni_range = 20.0
 omni_attenuation = 1.8025
 omni_shadow_mode = 1
 omni_shadow_detail = 1
-_sections_unfolded = [ "Editor", "Light", "Omni", "Shadow" ]
+_sections_unfolded = [ "Editor", "Light", "Omni", "Shadow", "Visibility" ]
 
 [node name="TorchArea" type="Area" parent="Torch" index="0"]
 
@@ -520,7 +521,6 @@ position = Vector2( 140, -350 )
 scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 6 )
 hframes = 2
-frame = 1
 _sections_unfolded = [ "Animation", "Transform" ]
 
 [node name="Prompt Label" type="Label" parent="CanvasLayer" index="2"]
