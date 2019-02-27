@@ -17,6 +17,7 @@ onready var audio_walking = $AudioWalking
 
 # for pathfinding
 onready var navigation = get_tree().get_root().get_node("World/Navigation")
+var player_pos = null
 var path = []
 var path_ind = 0
 # for pathfinding testing
@@ -60,14 +61,13 @@ func _physics_process(delta):
 				start_moving()
 			else:
 				# Only set path again if the player's position has significantly changed
-				if path[path.size() - 1].distance_to(player.translation) > 1:
+				if player_pos.distance_to(player.translation) > 1:
 					update_path() 
 	
 	# If we haven't traversed the path yet
 	if path_ind < path.size():
 		var target_pos = path[path_ind]
 		target_pos.y = global_transform.origin.y
-		top_looker.look_at(target_pos, UP)
 		
 		var move_vec = (target_pos - global_transform.origin)
 		if move_vec.length() < 0.1:
@@ -77,6 +77,8 @@ func _physics_process(delta):
 			var collision = move_and_collide(move_vec * MOVE_SPEED * delta)
 			if collision != null and collision.get_collider().get_class() == "Player":
 				collision.get_collider().kill()
+		
+		top_looker.look_at(target_pos, UP)
 		
 		# If that finished the path
 		if path_ind >= path.size():
@@ -108,8 +110,10 @@ func kill():
 
 func update_path():
 	if navigation != null:
+		player_pos = player.global_transform.origin
+		
 		var begin = global_transform.origin
-		var end = player.global_transform.origin
+		var end = player_pos
 		
 		var p = navigation.get_simple_path(begin, end)
 		path = p
