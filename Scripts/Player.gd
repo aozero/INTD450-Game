@@ -41,12 +41,10 @@ func get_class():
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	yield(get_tree(), "idle_frame")
-	anim_player.play_backwards("Fade To Black")
 	
+	anim_player.play_backwards("Fade To Black")
 	audio_fader.play("fade in music")
-	# Play audio depending on torch state
-	if torch.visible:
-		match_burning_audio.play()
+	set_torch(false)
 
 func _input(event):
 	if event.is_action_pressed("toggle_fullscreen"):
@@ -109,18 +107,7 @@ func _physics_process(delta):
 	move_and_collide(move_vec * move_speed * delta)
 	
 	if Input.is_action_pressed("shoot") and !anim_player.is_playing():
-		if !torch.visible:
-			match_burning_audio.play()
-			audio_fader.play("fade in burning")
-			play_audio(SOUND_MATCH_ON)
-			anim_player.play("light")
-		else:
-			match_burning_audio.stop()
-			play_audio(SOUND_MATCH_OFF)
-			anim_player.play_backwards("light")
-		
-		torch.visible = !torch.visible
-		torch_collision_shape.disabled = !torch.visible
+		toggle_torch()
 	
 	# Check if player is looking at anything interactable that is within range
 	var coll = raycast.get_collider()
@@ -142,6 +129,23 @@ func enable_interact_prompt():
 
 func disable_prompt():
 	prompt_label.visible_characters = 0
+
+func toggle_torch():
+	set_torch(!torch.visible)
+
+func set_torch(on):
+	if on && !torch.visible:
+		match_burning_audio.play()
+		audio_fader.play("fade in burning")
+		play_audio(SOUND_MATCH_ON)
+		anim_player.play("light")
+	elif !on && torch.visible:
+		match_burning_audio.stop()
+		play_audio(SOUND_MATCH_OFF)
+		anim_player.play_backwards("light")
+	
+	torch.visible = on
+	torch_collision_shape.disabled = !on
 
 func get_torch_visible():
 	return torch.visible
@@ -167,7 +171,15 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 	
 	if anim_name == "Fade To White":
 		in_memory = true
+		set_torch(false)
 		play_audio(SOUND_TAPSHOE)
+		
+		var blockedPath = get_tree().get_root().get_node("World/Navigation/NavigationMeshInstance/End Area/BlockedPath")
+		if blockedPath != null:
+			blockedPath.hide()
+		var fireplace = get_tree().get_root().get_node("World/Navigation/NavigationMeshInstance/End Area/Fireplace")
+		if fireplace != null:
+			fireplace.turn_on()
 		
 	if anim_name == "Fade From White":
 		$Timer.start()
@@ -177,10 +189,6 @@ func _on_FirstPersonAudio_finished():
 	if in_memory:
 		in_memory = false 
 		anim_player.play("Fade From White")
-		
-		var blockedPath = get_tree().get_root().get_node("World/Navigation/NavigationMeshInstance/BlockedPath")
-		if blockedPath != null:
-			blockedPath.hide()
 
 # When timer finishes
 func _on_Timer_timeout():
