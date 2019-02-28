@@ -38,9 +38,6 @@ texture = ExtResource( 3 )
 [node name="MusicPlayer" parent="." index="2"]
 
 stream = ExtResource( 4 )
-unit_db = -14.0
-unit_size = 1.5
-max_db = -5.0
 autoplay = false
 
 [node name="Timer" type="Timer" parent="." index="3"]
