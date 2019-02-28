@@ -1,14 +1,15 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scenes/Worlds/World.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Scenes/BGForestMedium.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/ForestWall.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/BGForestSmall.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scenes/Fires/Campfire.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/Fires/Fireplace.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Scenes/Items/ItemTapshoe.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Scenes/Foliage/TreeChanging.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Scenes/Monsters/Monster.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Foliage/TreeDeadCurvy.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Foliage/Bush1.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/BGForestMedium.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/ForestWall.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/BGForestSmall.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Fires/Campfire.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Fires/Fireplace.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Items/ItemTapshoe.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Monsters/Monster.tscn" type="PackedScene" id=10]
 
 [sub_resource type="NavigationMesh" id=1]
 
@@ -39,73 +40,81 @@ _sections_unfolded = [ "agent", "region" ]
 
 navmesh = SubResource( 1 )
 
-[node name="Level Boundaries" type="Spatial" parent="Navigation/NavigationMeshInstance" index="1"]
+[node name="TreeDeadCurvy" parent="Navigation/NavigationMeshInstance" index="1" instance=ExtResource( 2 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 35.7029, 0, -8.62057 )
+
+[node name="Bush1" parent="Navigation/NavigationMeshInstance" index="2" instance=ExtResource( 3 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25.7477, 0, 3.21999 )
+
+[node name="Level Boundaries" type="Spatial" parent="Navigation/NavigationMeshInstance" index="3"]
 
 editor/display_folded = true
 transform = Transform( -0.0320956, 0, -0.999485, 0, 1, 0, 0.999485, 0, -0.0320956, 46.4833, 0.0198364, 7.97507 )
 
-[node name="BGForestMedium2" parent="Navigation/NavigationMeshInstance/Level Boundaries" index="0" instance=ExtResource( 2 )]
+[node name="BGForestMedium2" parent="Navigation/NavigationMeshInstance/Level Boundaries" index="0" instance=ExtResource( 4 )]
 
 transform = Transform( -0.203442, 0, 0.979088, 0, 1, 0, -0.979088, 0, -0.203442, 19.7975, 0, 24.6736 )
 
-[node name="BGForestMedium3" parent="Navigation/NavigationMeshInstance/Level Boundaries" index="1" instance=ExtResource( 2 )]
+[node name="BGForestMedium3" parent="Navigation/NavigationMeshInstance/Level Boundaries" index="1" instance=ExtResource( 4 )]
 
 transform = Transform( 0.717693, 0, 0.696362, 0, 1, 0, -0.696362, 0, 0.717693, 0.490414, 0, 61.5379 )
 
-[node name="BGForestMedium4" parent="Navigation/NavigationMeshInstance/Level Boundaries" index="2" instance=ExtResource( 2 )]
+[node name="BGForestMedium4" parent="Navigation/NavigationMeshInstance/Level Boundaries" index="2" instance=ExtResource( 4 )]
 
 transform = Transform( 0.521325, 0, 0.853359, 0, 1, 0, -0.853359, 0, 0.521325, 18.6103, 0, 40.5933 )
 
-[node name="BGForestMedium5" parent="Navigation/NavigationMeshInstance/Level Boundaries" index="3" instance=ExtResource( 2 )]
+[node name="BGForestMedium5" parent="Navigation/NavigationMeshInstance/Level Boundaries" index="3" instance=ExtResource( 4 )]
 
 transform = Transform( 0.74969, 0, 0.661792, 0, 1, 0, -0.661792, 0, 0.74969, -6.47138, 0, 72.4022 )
 
-[node name="BGForestMedium6" parent="Navigation/NavigationMeshInstance/Level Boundaries" index="4" instance=ExtResource( 2 )]
+[node name="BGForestMedium6" parent="Navigation/NavigationMeshInstance/Level Boundaries" index="4" instance=ExtResource( 4 )]
 
 transform = Transform( 0.998194, 0, 0.0601087, 0, 1, 0, -0.0601087, 0, 0.998194, -30.8502, 0, 85.8385 )
 
-[node name="BGForestMedium13" parent="Navigation/NavigationMeshInstance/Level Boundaries" index="5" instance=ExtResource( 2 )]
+[node name="BGForestMedium13" parent="Navigation/NavigationMeshInstance/Level Boundaries" index="5" instance=ExtResource( 4 )]
 
 transform = Transform( 0.374917, 0, -0.927062, 0, 1, 0, 0.927062, 0, 0.374917, -43.2923, 0, 79.0156 )
 
-[node name="BGForestMedium15" parent="Navigation/NavigationMeshInstance/Level Boundaries" index="6" instance=ExtResource( 2 )]
+[node name="BGForestMedium15" parent="Navigation/NavigationMeshInstance/Level Boundaries" index="6" instance=ExtResource( 4 )]
 
 transform = Transform( 0.724495, 0, 0.689283, 0, 1, 0, -0.689283, 0, 0.724495, -18.5571, 0, 79.6602 )
 
-[node name="BGForestMedium7" parent="Navigation/NavigationMeshInstance/Level Boundaries" index="7" instance=ExtResource( 2 )]
+[node name="BGForestMedium7" parent="Navigation/NavigationMeshInstance/Level Boundaries" index="7" instance=ExtResource( 4 )]
 
 transform = Transform( -0.392008, 0, -0.919965, 0, 1, 0, 0.919965, 0, -0.392008, -39.5466, 0, 58.1591 )
 
-[node name="BGForestMedium8" parent="Navigation/NavigationMeshInstance/Level Boundaries" index="8" instance=ExtResource( 2 )]
+[node name="BGForestMedium8" parent="Navigation/NavigationMeshInstance/Level Boundaries" index="8" instance=ExtResource( 4 )]
 
 transform = Transform( 0.575713, 0, 0.817654, 0, 1, 0, -0.817654, 0, 0.575713, 9.87389, 0, 51.7187 )
 
-[node name="BGForestMedium9" parent="Navigation/NavigationMeshInstance/Level Boundaries" index="9" instance=ExtResource( 2 )]
+[node name="BGForestMedium9" parent="Navigation/NavigationMeshInstance/Level Boundaries" index="9" instance=ExtResource( 4 )]
 
 transform = Transform( -0.392008, 0, -0.919965, 0, 1, 0, 0.919965, 0, -0.392008, -33.729, 0, 41.48 )
 
-[node name="BGForestMedium10" parent="Navigation/NavigationMeshInstance/Level Boundaries" index="10" instance=ExtResource( 2 )]
+[node name="BGForestMedium10" parent="Navigation/NavigationMeshInstance/Level Boundaries" index="10" instance=ExtResource( 4 )]
 
 transform = Transform( -0.392008, 0, -0.919965, 0, 1, 0, 0.919965, 0, -0.392008, -28.1161, 0, 26.1952 )
 
-[node name="BGForestMedium11" parent="Navigation/NavigationMeshInstance/Level Boundaries" index="11" instance=ExtResource( 2 )]
+[node name="BGForestMedium11" parent="Navigation/NavigationMeshInstance/Level Boundaries" index="11" instance=ExtResource( 4 )]
 
 transform = Transform( -0.392008, 0, -0.919965, 0, 1, 0, 0.919965, 0, -0.392008, -25.9565, 0, 10.4987 )
 
-[node name="BGForestMedium12" parent="Navigation/NavigationMeshInstance/Level Boundaries" index="12" instance=ExtResource( 2 )]
+[node name="BGForestMedium12" parent="Navigation/NavigationMeshInstance/Level Boundaries" index="12" instance=ExtResource( 4 )]
 
 transform = Transform( -0.999731, 1.02154e-008, 0.0233434, 1.12944e-008, 1, 4.60887e-008, -0.0233434, 4.63396e-008, -0.999731, -13.9632, 0, 1.82011 )
 
-[node name="BGForestMedium14" parent="Navigation/NavigationMeshInstance/Level Boundaries" index="13" instance=ExtResource( 2 )]
+[node name="BGForestMedium14" parent="Navigation/NavigationMeshInstance/Level Boundaries" index="13" instance=ExtResource( 4 )]
 
 transform = Transform( -0.994101, 1.15231e-008, 0.108508, 1.71281e-008, 1, 5.07236e-008, -0.108508, 5.22825e-008, -0.994101, 3.6584, 0, 2.96536 )
 
-[node name="Inner Trees" type="Spatial" parent="Navigation/NavigationMeshInstance" index="2"]
+[node name="Inner Trees" type="Spatial" parent="Navigation/NavigationMeshInstance" index="4"]
 
 editor/display_folded = true
 transform = Transform( -0.632099, 0, -0.774888, 0, 1, 0, 0.774888, 0, -0.632099, 43.0767, 0, 29.6455 )
 
-[node name="ForestWall4" parent="Navigation/NavigationMeshInstance/Inner Trees" index="0" instance=ExtResource( 3 )]
+[node name="ForestWall4" parent="Navigation/NavigationMeshInstance/Inner Trees" index="0" instance=ExtResource( 5 )]
 
 transform = Transform( 0.99691, 0, -0.0785523, 0, 1, 0, 0.0785523, 0, 0.99691, -25.1718, 0, 23.3933 )
 
@@ -114,19 +123,19 @@ transform = Transform( 0.99691, 0, -0.0785523, 0, 1, 0, 0.0785523, 0, 0.99691, -
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3591, 0, 24.2635 )
 
-[node name="ForestWall5" parent="Navigation/NavigationMeshInstance/Inner Trees/Spatial" index="0" instance=ExtResource( 3 )]
+[node name="ForestWall5" parent="Navigation/NavigationMeshInstance/Inner Trees/Spatial" index="0" instance=ExtResource( 5 )]
 
 transform = Transform( 0.99691, 0, -0.0785523, 0, 1, 0, 0.0785523, 0, 0.99691, -11.963, 0, -1.52411 )
 
-[node name="ForestWall2" parent="Navigation/NavigationMeshInstance/Inner Trees/Spatial" index="1" instance=ExtResource( 3 )]
+[node name="ForestWall2" parent="Navigation/NavigationMeshInstance/Inner Trees/Spatial" index="1" instance=ExtResource( 5 )]
 
 transform = Transform( 0.99691, 0, -0.0785523, 0, 1, 0, 0.0785523, 0, 0.99691, -5.92052, 0, 0.390888 )
 
-[node name="ForestWall3" parent="Navigation/NavigationMeshInstance/Inner Trees/Spatial" index="2" instance=ExtResource( 3 )]
+[node name="ForestWall3" parent="Navigation/NavigationMeshInstance/Inner Trees/Spatial" index="2" instance=ExtResource( 5 )]
 
 transform = Transform( 0.99691, 0, -0.0785523, 0, 1, 0, 0.0785523, 0, 0.99691, -0.0193176, 0, 0.346186 )
 
-[node name="ForestWall4" parent="Navigation/NavigationMeshInstance/Inner Trees/Spatial" index="3" instance=ExtResource( 3 )]
+[node name="ForestWall4" parent="Navigation/NavigationMeshInstance/Inner Trees/Spatial" index="3" instance=ExtResource( 5 )]
 
 transform = Transform( 0.607076, 0, 0.794644, 0, 1, 0, -0.794644, 0, 0.607076, 5.9382, 0, -0.409908 )
 
@@ -135,31 +144,31 @@ transform = Transform( 0.607076, 0, 0.794644, 0, 1, 0, -0.794644, 0, 0.607076, 5
 editor/display_folded = true
 transform = Transform( -0.261099, 0, -0.965312, 0, 1, 0, 0.965312, 0, -0.261099, -14.3308, 0, 36.0569 )
 
-[node name="ForestWall2" parent="Navigation/NavigationMeshInstance/Inner Trees/Spatial2" index="0" instance=ExtResource( 3 )]
+[node name="ForestWall2" parent="Navigation/NavigationMeshInstance/Inner Trees/Spatial2" index="0" instance=ExtResource( 5 )]
 
 transform = Transform( 1, 0, 2.98023e-008, 0, 1, 0, -2.98023e-008, 0, 1, 3.76378, 0, 8.65232 )
 
-[node name="ForestWall3" parent="Navigation/NavigationMeshInstance/Inner Trees/Spatial2" index="1" instance=ExtResource( 3 )]
+[node name="ForestWall3" parent="Navigation/NavigationMeshInstance/Inner Trees/Spatial2" index="1" instance=ExtResource( 5 )]
 
 transform = Transform( -0.184465, 0, 0.982839, 0, 1, 0, -0.982839, 0, -0.184465, -1.00152, 0, 3.97747 )
 
-[node name="ForestWall5" parent="Navigation/NavigationMeshInstance/Inner Trees/Spatial2" index="2" instance=ExtResource( 3 )]
+[node name="ForestWall5" parent="Navigation/NavigationMeshInstance/Inner Trees/Spatial2" index="2" instance=ExtResource( 5 )]
 
 transform = Transform( -0.184465, 0, 0.982839, 0, 1, 0, -0.982839, 0, -0.184465, 0.159712, 0, -2.03229 )
 
-[node name="ForestWall6" parent="Navigation/NavigationMeshInstance/Inner Trees/Spatial2" index="3" instance=ExtResource( 3 )]
+[node name="ForestWall6" parent="Navigation/NavigationMeshInstance/Inner Trees/Spatial2" index="3" instance=ExtResource( 5 )]
 
 transform = Transform( -0.184465, 0, 0.982839, 0, 1, 0, -0.982839, 0, -0.184465, 4.14869, 0, -2.93078 )
 
-[node name="ForestWall7" parent="Navigation/NavigationMeshInstance/Inner Trees/Spatial2" index="4" instance=ExtResource( 3 )]
+[node name="ForestWall7" parent="Navigation/NavigationMeshInstance/Inner Trees/Spatial2" index="4" instance=ExtResource( 5 )]
 
 transform = Transform( -0.184465, 0, 0.982839, 0, 1, 0, -0.982839, 0, -0.184465, 5.58925, 0, -8.76386 )
 
-[node name="ForestWall8" parent="Navigation/NavigationMeshInstance/Inner Trees/Spatial2" index="5" instance=ExtResource( 3 )]
+[node name="ForestWall8" parent="Navigation/NavigationMeshInstance/Inner Trees/Spatial2" index="5" instance=ExtResource( 5 )]
 
 transform = Transform( -0.474998, 0, 0.879987, 0, 1, 0, -0.879987, 0, -0.474998, 8.37404, 0, 5.49294 )
 
-[node name="ForestWall9" parent="Navigation/NavigationMeshInstance/Inner Trees/Spatial2" index="6" instance=ExtResource( 3 )]
+[node name="ForestWall9" parent="Navigation/NavigationMeshInstance/Inner Trees/Spatial2" index="6" instance=ExtResource( 5 )]
 
 transform = Transform( 0.834366, 0, 0.551211, 0, 1, 0, -0.551211, 0, 0.834366, 5.138, 0, 1.97437 )
 
@@ -168,11 +177,11 @@ transform = Transform( 0.834366, 0, 0.551211, 0, 1, 0, -0.551211, 0, 0.834366, 5
 editor/display_folded = true
 transform = Transform( 0.99691, 0, -0.0785523, 0, 1, 0, 0.0785523, 0, 0.99691, -0.364718, 0, 35.3261 )
 
-[node name="ForestWall2" parent="Navigation/NavigationMeshInstance/Inner Trees/Spatial3" index="0" instance=ExtResource( 3 )]
+[node name="ForestWall2" parent="Navigation/NavigationMeshInstance/Inner Trees/Spatial3" index="0" instance=ExtResource( 5 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.76837e-007, 0, -3.8147e-006 )
 
-[node name="ForestWall3" parent="Navigation/NavigationMeshInstance/Inner Trees/Spatial3" index="1" instance=ExtResource( 3 )]
+[node name="ForestWall3" parent="Navigation/NavigationMeshInstance/Inner Trees/Spatial3" index="1" instance=ExtResource( 5 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.78127, 0, -0.1499 )
 
@@ -181,15 +190,15 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.78127, 0, -0.1499 )
 editor/display_folded = true
 transform = Transform( 0.99691, 0, -0.0785523, 0, 1, 0, 0.0785523, 0, 0.99691, 8.04913, 0, 49.5417 )
 
-[node name="ForestWall2" parent="Navigation/NavigationMeshInstance/Inner Trees/Spatial5" index="0" instance=ExtResource( 3 )]
+[node name="ForestWall2" parent="Navigation/NavigationMeshInstance/Inner Trees/Spatial5" index="0" instance=ExtResource( 5 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.12549, 0, -2.94568 )
 
-[node name="ForestWall6" parent="Navigation/NavigationMeshInstance/Inner Trees/Spatial5" index="1" instance=ExtResource( 3 )]
+[node name="ForestWall6" parent="Navigation/NavigationMeshInstance/Inner Trees/Spatial5" index="1" instance=ExtResource( 5 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.46345, 0, -0.606476 )
 
-[node name="ForestWall3" parent="Navigation/NavigationMeshInstance/Inner Trees/Spatial5" index="2" instance=ExtResource( 3 )]
+[node name="ForestWall3" parent="Navigation/NavigationMeshInstance/Inner Trees/Spatial5" index="2" instance=ExtResource( 5 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.01283, 0, 0.830834 )
 
@@ -198,11 +207,11 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.01283, 0, 0.830834 )
 editor/display_folded = true
 transform = Transform( 0.907622, 0, 0.419789, 0, 1, 0, -0.419789, 0, 0.907622, -15.1225, 0, 54.2313 )
 
-[node name="ForestWall6" parent="Navigation/NavigationMeshInstance/Inner Trees/Spatial4" index="0" instance=ExtResource( 3 )]
+[node name="ForestWall6" parent="Navigation/NavigationMeshInstance/Inner Trees/Spatial4" index="0" instance=ExtResource( 5 )]
 
 transform = Transform( 1, 0, 1.49012e-008, 0, 1, 0, -1.49012e-008, 0, 1, 2.70579, 0, 0.981161 )
 
-[node name="ForestWall7" parent="Navigation/NavigationMeshInstance/Inner Trees/Spatial4" index="1" instance=ExtResource( 3 )]
+[node name="ForestWall7" parent="Navigation/NavigationMeshInstance/Inner Trees/Spatial4" index="1" instance=ExtResource( 5 )]
 
 transform = Transform( 1, 0, 1.49012e-008, 0, 1, 0, -1.49012e-008, 0, 1, -3.63818, 0, 0.802088 )
 
@@ -211,27 +220,27 @@ transform = Transform( 1, 0, 1.49012e-008, 0, 1, 0, -1.49012e-008, 0, 1, -3.6381
 editor/display_folded = true
 transform = Transform( 0.284097, 0, 0.958796, 0, 1, 0, -0.958796, 0, 0.284097, 5.92178, 0, 70.6544 )
 
-[node name="ForestWall5" parent="Navigation/NavigationMeshInstance/Inner Trees/Spatial6" index="0" instance=ExtResource( 3 )]
+[node name="ForestWall5" parent="Navigation/NavigationMeshInstance/Inner Trees/Spatial6" index="0" instance=ExtResource( 5 )]
 
 transform = Transform( 1, 0, 5.96046e-008, 0, 1, 0, -5.96046e-008, 0, 1, 7.23384, 0, -10.6084 )
 
-[node name="ForestWall7" parent="Navigation/NavigationMeshInstance/Inner Trees/Spatial6" index="1" instance=ExtResource( 3 )]
+[node name="ForestWall7" parent="Navigation/NavigationMeshInstance/Inner Trees/Spatial6" index="1" instance=ExtResource( 5 )]
 
 transform = Transform( 0.207903, 0, -0.978149, 0, 1, 0, 0.978149, 0, 0.207903, 3.2965, 0, -7.38626 )
 
-[node name="ForestWall8" parent="Navigation/NavigationMeshInstance/Inner Trees/Spatial6" index="2" instance=ExtResource( 3 )]
+[node name="ForestWall8" parent="Navigation/NavigationMeshInstance/Inner Trees/Spatial6" index="2" instance=ExtResource( 5 )]
 
 transform = Transform( 0.207903, 0, -0.978149, 0, 1, 0, 0.978149, 0, 0.207903, 1.79425, 0, -0.840102 )
 
-[node name="ForestWall9" parent="Navigation/NavigationMeshInstance/Inner Trees/Spatial6" index="3" instance=ExtResource( 3 )]
+[node name="ForestWall9" parent="Navigation/NavigationMeshInstance/Inner Trees/Spatial6" index="3" instance=ExtResource( 5 )]
 
 transform = Transform( 0.207903, 0, -0.978149, 0, 1, 0, 0.978149, 0, 0.207903, 0.599548, 0, 5.49938 )
 
-[node name="ForestWall10" parent="Navigation/NavigationMeshInstance/Inner Trees/Spatial6" index="4" instance=ExtResource( 3 )]
+[node name="ForestWall10" parent="Navigation/NavigationMeshInstance/Inner Trees/Spatial6" index="4" instance=ExtResource( 5 )]
 
 transform = Transform( 0.207903, 0, -0.978149, 0, 1, 0, 0.978149, 0, 0.207903, -2.3999, 0, 9.41996 )
 
-[node name="ForestWall11" parent="Navigation/NavigationMeshInstance/Inner Trees" index="7" instance=ExtResource( 3 )]
+[node name="ForestWall11" parent="Navigation/NavigationMeshInstance/Inner Trees" index="7" instance=ExtResource( 5 )]
 
 transform = Transform( 0.99691, 0, -0.0785523, 0, 1, 0, 0.0785523, 0, 0.99691, -13.6683, 0, 70.3088 )
 
@@ -240,15 +249,15 @@ transform = Transform( 0.99691, 0, -0.0785523, 0, 1, 0, 0.0785523, 0, 0.99691, -
 editor/display_folded = true
 transform = Transform( 0.99691, 0, -0.0785523, 0, 1, 0, 0.0785523, 0, 0.99691, -3.79365, 0, 86.2927 )
 
-[node name="ForestWall12" parent="Navigation/NavigationMeshInstance/Inner Trees/Spatial7" index="0" instance=ExtResource( 3 )]
+[node name="ForestWall12" parent="Navigation/NavigationMeshInstance/Inner Trees/Spatial7" index="0" instance=ExtResource( 5 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.69126, 0, -0.236313 )
 
-[node name="ForestWall13" parent="Navigation/NavigationMeshInstance/Inner Trees/Spatial7" index="1" instance=ExtResource( 3 )]
+[node name="ForestWall13" parent="Navigation/NavigationMeshInstance/Inner Trees/Spatial7" index="1" instance=ExtResource( 5 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.25072, 0, -0.776333 )
 
-[node name="Clearing" type="Spatial" parent="Navigation/NavigationMeshInstance" index="3"]
+[node name="Clearing" type="Spatial" parent="Navigation/NavigationMeshInstance" index="5"]
 
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 41.4713, 0, 0 )
@@ -256,37 +265,38 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="ClearingTrees" type="Spatial" parent="Navigation/NavigationMeshInstance/Clearing" index="0"]
 
-[node name="BGForestSmall" parent="Navigation/NavigationMeshInstance/Clearing/ClearingTrees" index="0" instance=ExtResource( 4 )]
+[node name="BGForestSmall" parent="Navigation/NavigationMeshInstance/Clearing/ClearingTrees" index="0" instance=ExtResource( 6 )]
 
 transform = Transform( 0.0334768, 0, 0.999439, 0, 1, 0, -0.999439, 0, 0.0334768, -10.578, 0, 23.9865 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="BGForestSmall4" parent="Navigation/NavigationMeshInstance/Clearing/ClearingTrees" index="1" instance=ExtResource( 4 )]
+[node name="BGForestSmall4" parent="Navigation/NavigationMeshInstance/Clearing/ClearingTrees" index="1" instance=ExtResource( 6 )]
 
 transform = Transform( -0.632099, 0, -0.774888, 0, 1, 0, 0.774888, 0, -0.632099, -1.27712, -7.62939e-006, 28.5604 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="BGForestSmall5" parent="Navigation/NavigationMeshInstance/Clearing/ClearingTrees" index="2" instance=ExtResource( 4 )]
+[node name="BGForestSmall5" parent="Navigation/NavigationMeshInstance/Clearing/ClearingTrees" index="2" instance=ExtResource( 6 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.8768, -7.62939e-006, 30.2616 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="BGForestSmall6" parent="Navigation/NavigationMeshInstance/Clearing/ClearingTrees" index="3" instance=ExtResource( 4 )]
+[node name="BGForestSmall6" parent="Navigation/NavigationMeshInstance/Clearing/ClearingTrees" index="3" instance=ExtResource( 6 )]
 
 transform = Transform( -0.528993, 0, 0.848626, 0, 1, 0, -0.848626, 0, -0.528993, -9.44237, -7.62939e-006, 28.6415 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="BGForestSmall2" parent="Navigation/NavigationMeshInstance/Clearing/ClearingTrees" index="4" instance=ExtResource( 4 )]
+[node name="BGForestSmall2" parent="Navigation/NavigationMeshInstance/Clearing/ClearingTrees" index="4" instance=ExtResource( 6 )]
 
 transform = Transform( 0.0334768, 0, 0.999439, 0, 1, 0, -0.999439, 0, 0.0334768, 0.519581, 0, 23.772 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Campfire" parent="Navigation/NavigationMeshInstance/Clearing" index="1" instance=ExtResource( 5 )]
+[node name="Campfire" parent="Navigation/NavigationMeshInstance/Clearing" index="1" instance=ExtResource( 7 )]
 
 transform = Transform( 0.950468, 0, -0.310822, 0, 1, 0, 0.310822, 0, 0.950468, -5.16019, 0, 25.4719 )
 
-[node name="End Area" type="Spatial" parent="Navigation/NavigationMeshInstance" index="4"]
+[node name="End Area" type="Spatial" parent="Navigation/NavigationMeshInstance" index="6"]
 
+editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.1253, 0, -20.1152 )
 
 [node name="BlockedPath" type="Spatial" parent="Navigation/NavigationMeshInstance/End Area" index="0"]
@@ -294,20 +304,20 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.1253, 0, -20.1152 )
 editor/display_folded = true
 transform = Transform( -0.632099, 0, -0.774888, 0, 1, 0, 0.774888, 0, -0.632099, -10.7583, 0, 0.287582 )
 
-[node name="BGForestSmall" parent="Navigation/NavigationMeshInstance/End Area/BlockedPath" index="0" instance=ExtResource( 4 )]
+[node name="BGForestSmall" parent="Navigation/NavigationMeshInstance/End Area/BlockedPath" index="0" instance=ExtResource( 6 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.63624, 0, -0.190613 )
 
-[node name="BGForestSmall2" parent="Navigation/NavigationMeshInstance/End Area/BlockedPath" index="1" instance=ExtResource( 4 )]
+[node name="BGForestSmall2" parent="Navigation/NavigationMeshInstance/End Area/BlockedPath" index="1" instance=ExtResource( 6 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.56036, 0, -0.0277519 )
 
-[node name="Fireplace" parent="Navigation/NavigationMeshInstance/End Area" index="1" instance=ExtResource( 6 )]
+[node name="Fireplace" parent="Navigation/NavigationMeshInstance/End Area" index="1" instance=ExtResource( 8 )]
 
 transform = Transform( 0.642159, 0, 0.766572, 0, 1, 0, -0.766572, 0, 0.642159, -9.0944, 0, 2.2494 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="ItemTapshoe" parent="Navigation/NavigationMeshInstance/End Area" index="2" instance=ExtResource( 7 )]
+[node name="ItemTapshoe" parent="Navigation/NavigationMeshInstance/End Area" index="2" instance=ExtResource( 9 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.69332, 0, 3.75815 )
 
@@ -315,19 +325,15 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.69332, 0, 3.75815 )
 
 transform = Transform( -1, 0, -8.74228e-008, 0, 1, 0, 8.74228e-008, 0, -1, 36.4386, 0, 23.387 )
 
-[node name="TreeChanging" parent="." index="4" instance=ExtResource( 8 )]
-
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 37.707, 0, 5.286 )
-
-[node name="Monsters" type="Spatial" parent="." index="5"]
+[node name="Monsters" type="Spatial" parent="." index="4"]
 
 _sections_unfolded = [ "Transform", "Visibility" ]
 
-[node name="Monster" parent="Monsters" index="0" instance=ExtResource( 9 )]
+[node name="Monster" parent="Monsters" index="0" instance=ExtResource( 10 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.0332, 0, 1.52664 )
 
-[node name="Monster2" parent="Monsters" index="1" instance=ExtResource( 9 )]
+[node name="Monster2" parent="Monsters" index="1" instance=ExtResource( 10 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.64656, 0, -23.7854 )
 
