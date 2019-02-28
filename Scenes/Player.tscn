@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://Sound/Music/Drone.wav" type="AudioStream" id=2]
@@ -58,6 +58,25 @@ height = 1.0
 [sub_resource type="SphereShape" id=4]
 
 radius = 18.0
+
+[sub_resource type="Animation" id=16]
+
+resource_name = "Fire"
+length = 4.0
+loop = true
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:light_energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 2.0, 1.0 ]
+}
 
 [sub_resource type="ProceduralSky" id=5]
 
@@ -396,7 +415,7 @@ tracks/0/keys = {
 
 radius = 50.0
 
-[node name="Player" type="KinematicBody"]
+[node name="Player" type="KinematicBody" index="0"]
 
 input_ray_pickable = true
 input_capture_on_drag = false
@@ -471,7 +490,7 @@ _sections_unfolded = [ "Transform" ]
 visible = false
 layers = 1
 light_color = Color( 0.863281, 0.575802, 0.269775, 1 )
-light_energy = 2.0
+light_energy = 1.20327
 light_indirect_energy = 1.0
 light_negative = false
 light_specular = 0.5
@@ -517,6 +536,16 @@ script = ExtResource( 5 )
 
 shape = SubResource( 4 )
 disabled = false
+
+[node name="MatchAnimator" type="AnimationPlayer" parent="Torch" index="1"]
+
+root_node = NodePath("..")
+autoplay = "Fire"
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/Fire = SubResource( 16 )
+blend_times = [  ]
 
 [node name="Camera" type="Camera" parent="." index="7"]
 
