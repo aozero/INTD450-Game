@@ -7,11 +7,6 @@ onready var anim_player = $AnimationPlayer
 func get_class():
 	return "Interactable"
 
-func _ready():
-	# Called when the node is added to the scene for the first time.
-	# Initialization here
-	pass
-
 func interact(player):
 	anim_player.play("Fade Out")
 	player.start_tapshoe_memory()
@@ -19,6 +14,6 @@ func interact(player):
 func kill():
 	queue_free()
 
-func _on_MusicPlayer_finished(anim_name):
-	if anim_name == "Fade To Black":
+func _on_AnimationPlayer_animation_finished(anim_name):
+	if anim_name == "Fade Out":
 		kill()
