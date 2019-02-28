@@ -13,6 +13,7 @@ const DETECT_RUN_MULTIPLIER = 2
 const ATTACK_RANGE = 1
 
 onready var detection_raycast = $RayCast
+onready var audio_breathing = $AudioBreathing
 onready var audio_walking = $AudioWalking
 
 # for pathfinding
@@ -32,6 +33,9 @@ func get_class():
 func _ready():
 	add_to_group("monsters")
 	stop_moving()
+	
+	# Start breathing at some random interval so monster's aren't all breathing in sync
+	audio_breathing.play(rand_range(0, 5))
 
 func _physics_process(delta):
 	if player == null:
