@@ -160,6 +160,7 @@ func play_audio(stream):
 	audio_player.play()
 
 func start_tapshoe_memory():
+	get_tree().call_group("monsters", "kill")
 	anim_player.play("Fade To Tapshoe")
 
 # When animation player finishes any animation

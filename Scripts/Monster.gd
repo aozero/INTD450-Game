@@ -24,19 +24,16 @@ var path_ind = 0
 onready var draw = get_tree().get_root().get_node("World/Draw")
 var draw_path = false
 
-var dead = false
-
 # Return "Monster" instead of "KinematicBody" 
 # This is so we can check if an object is a monster
 func get_class():
 	return "Monster"
 
 func _ready():
+	add_to_group("monsters")
 	stop_moving()
 
 func _physics_process(delta):
-	if dead:
-		return
 	if player == null:
 		return
 	
@@ -104,9 +101,8 @@ func is_at_pos(pos):
 	return !(translation.x - pos.x > 0.1 || translation.y - pos.y > 0.1 || translation.z - pos.z > 0.1)
 
 func kill():
-	dead = true
-	$CollisionShape.disabled = true
-	anim_player.play("die")
+	remove_from_group("monsters")
+	queue_free()
 
 func update_path():
 	if navigation != null:
