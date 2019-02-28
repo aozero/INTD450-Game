@@ -67,8 +67,7 @@ func _physics_process(delta):
 	
 	# If we haven't traversed the path yet
 	if path_ind < path.size():
-		var target_pos = path[path_ind]
-		target_pos.y = global_transform.origin.y
+		var target_pos = get_curr_path_section_target_pos()
 		
 		var move_vec = (target_pos - global_transform.origin)
 		if move_vec.length() < 0.1:
@@ -79,11 +78,21 @@ func _physics_process(delta):
 			if collision != null and collision.get_collider().get_class() == "Player":
 				collision.get_collider().kill()
 		
+		# Look where we're going
+		# We may have just finished a section of the path, so get the newest target_pos for looking
+		target_pos = get_curr_path_section_target_pos()
 		top_looker.look_at(target_pos, UP)
 		
 		# If that finished the path
 		if path_ind >= path.size():
 			stop_moving()
+
+# Get the target position of the path subsection we are currently following
+# Since the world is flat, we don't want to consider the y dimension
+func get_curr_path_section_target_pos():
+	var target_pos = path[path_ind]
+	target_pos.y = global_transform.origin.y
+	return target_pos
 
 # Called when changing from idle to moving
 func start_moving():
