@@ -1,5 +1,7 @@
 extends KinematicBody
 
+onready var anim_player = $AnimationPlayer
+
 # Return "Interactable" instead of "KinematicBody" 
 # This is so we can check if an object is an interactable
 func get_class():
@@ -11,8 +13,12 @@ func _ready():
 	pass
 
 func interact(player):
+	anim_player.play("Fade Out")
 	player.start_tapshoe_memory()
-	kill()
 
 func kill():
 	queue_free()
+
+func _on_MusicPlayer_finished(anim_name):
+	if anim_name == "Fade To Black":
+		kill()
