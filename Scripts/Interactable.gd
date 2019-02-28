@@ -11,7 +11,7 @@ func _ready():
 	pass
 
 func interact(player):
-	player.anim_player.play("Fade To White")
+	player.start_tapshoe_memory()
 	kill()
 
 func kill():

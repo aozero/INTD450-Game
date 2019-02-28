@@ -159,6 +159,9 @@ func play_audio(stream):
 	audio_player.set_stream(stream)
 	audio_player.play()
 
+func start_tapshoe_memory():
+	anim_player.play("Fade To Tapshoe")
+
 # When animation player finishes any animation
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == "Fade To Black":
@@ -169,7 +172,7 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 			# We died, restart
 			get_tree().reload_current_scene()
 	
-	if anim_name == "Fade To White":
+	if anim_name == "Fade To Tapshoe":
 		in_memory = true
 		set_torch(false)
 		play_audio(SOUND_TAPSHOE)
@@ -181,14 +184,14 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 		if fireplace != null:
 			fireplace.turn_on()
 		
-	if anim_name == "Fade From White":
+	if anim_name == "Fade From Tapshoe":
 		$Timer.start()
 
 # When audio player finishes playing audio
 func _on_FirstPersonAudio_finished():
 	if in_memory:
 		in_memory = false 
-		anim_player.play("Fade From White")
+		anim_player.play("Fade From Tapshoe")
 
 # When timer finishes
 func _on_Timer_timeout():
