@@ -1,6 +1,6 @@
 extends Area
 
-# An area around the player that turns Monster AI on/off when they enter/leave the area around the player
+# An area around the player that signals to objects when they enter the range of the torch
 ##################################
 
 func _ready():
