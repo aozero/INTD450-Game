@@ -10,9 +10,6 @@ const DETECT_DARK_WALK_RANGE = 4
 const DETECT_LIT_WALK_RANGE = 10
 const DETECT_DARK_RUN_RANGE = 8
 const DETECT_LIT_RUN_RANGE = 20
-
-# How far away before the monster overwhelms the player
-const ATTACK_RANGE = 1
 ##################################
 
 onready var detection_raycast = $RayCast
