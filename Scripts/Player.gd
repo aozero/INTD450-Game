@@ -3,10 +3,11 @@ extends KinematicBody
 # Script controlling the camera, player animations, input, and movement
 ##################################
 
-const RUN_SPEED = 4
+const RUN_SPEED = 4      
 const SNEAK_SPEED = 2
 const MOUSE_SENS = 0.2
 const INTERACT_RANGE = 2 # Range player can interact with objects
+##################################
 
 onready var SOUND_MATCH_ON = load("res://Sound/Effects/Match/match_on.wav")
 onready var SOUND_MATCH_OFF = load("res://Sound/Effects/Match/match_off.wav")

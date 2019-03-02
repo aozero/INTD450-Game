@@ -2,15 +2,19 @@ extends "res://Scripts/Multidirectional.gd"
 
 # Script controlling the monsters
 ##################################
+# How fast the monster can move
 const MOVE_SPEED = 2
 
 # How far the monster can see the player when player is dark or lit
-const DETECT_DARK_RANGE = 4
-const DETECT_LIT_RANGE = 10
+const DETECT_DARK_WALK_RANGE = 4
+const DETECT_LIT_WALK_RANGE = 10
+const DETECT_DARK_RUN_RANGE = 8
+const DETECT_LIT_RUN_RANGE = 20
 const DETECT_RUN_MULTIPLIER = 2
 
 # How far away before the monster overwhelms the player
 const ATTACK_RANGE = 1
+##################################
 
 onready var detection_raycast = $RayCast
 onready var audio_breathing = $AudioBreathing
@@ -42,11 +46,15 @@ func _physics_process(delta):
 		return
 	
 	# Set detection range based on player's state
-	var detection_range = DETECT_DARK_RANGE
-	if player.get_torch_visible():
-		detection_range = DETECT_LIT_RANGE
-	if player.running:
-		detection_range *= DETECT_RUN_MULTIPLIER
+	var detection_range
+	if player.get_torch_visible() && player.running:
+		detection_range = DETECT_LIT_RUN_RANGE
+	elif player.get_torch_visible():
+		detection_range = DETECT_LIT_WALK_RANGE
+	elif player.running:
+		detection_range = DETECT_DARK_RUN_RANGE
+	else:
+		detection_range = DETECT_DARK_WALK_RANGE
 	
 	var vec_to_player = player.global_transform.origin - global_transform.origin
 	vec_to_player = vec_to_player.normalized()
