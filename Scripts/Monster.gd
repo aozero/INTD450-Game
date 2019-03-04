@@ -3,7 +3,8 @@ extends "res://Scripts/Multidirectional.gd"
 # Script controlling the monsters
 ##################################
 # How fast the monster can move
-const MOVE_SPEED = 2
+const NORMAL_SPEED = 1
+const SEE_PLAYER_SPEED = 2
 
 # How far the monster can see the player when player is dark or lit
 const DETECT_DARK_WALK_RANGE = 4
@@ -55,12 +56,14 @@ func _physics_process(delta):
 	var vec_to_player = player.global_transform.origin - global_transform.origin
 	vec_to_player = vec_to_player.normalized()
 	
+	var see_player = false
 	# Check if a ray to player within detection range can be cast
 	detection_raycast.cast_to = vec_to_player * detection_range
 	if detection_raycast.is_colliding(): 
 		# Make sure what the ray is colliding with is actually the player
 		var raycast_collider = detection_raycast.get_collider()
 		if raycast_collider != null and raycast_collider.name == "Player":
+			see_player = true
 			if path.size() == 0:
 				update_path() 
 				start_moving()
@@ -69,8 +72,16 @@ func _physics_process(delta):
 				if player_pos.distance_to(player.translation) > 1:
 					update_path() 
 	
-	# If we haven't traversed the path yet
+	# If we haven't finished the path yet
 	if path_ind < path.size():
+		var move_speed
+		if see_player:
+			move_speed = SEE_PLAYER_SPEED
+			anim_player.playback_speed = 1
+		else:
+			move_speed= NORMAL_SPEED
+			anim_player.playback_speed = float(NORMAL_SPEED) / SEE_PLAYER_SPEED
+		
 		var target_pos = get_curr_path_section_target_pos()
 		
 		var move_vec = (target_pos - global_transform.origin)
@@ -78,7 +89,7 @@ func _physics_process(delta):
 			path_ind += 1
 		else:
 			move_vec = move_vec.normalized()
-			var collision = move_and_collide(move_vec * MOVE_SPEED * delta)
+			var collision = move_and_collide(move_vec * move_speed * delta)
 			if collision != null and collision.get_collider().get_class() == "Player":
 				collision.get_collider().kill()
 		
@@ -94,7 +105,12 @@ func _physics_process(delta):
 # Get the target position of the path subsection we are currently following
 # Since the world is flat, we don't want to consider the y dimension
 func get_curr_path_section_target_pos():
-	var target_pos = path[path_ind]
+	var i = path_ind
+	if path_ind >= path.size():
+		# If path is finished, use end of path
+		i = path.size() - 1
+	
+	var target_pos = path[i]
 	target_pos.y = global_transform.origin.y
 	return target_pos
 
