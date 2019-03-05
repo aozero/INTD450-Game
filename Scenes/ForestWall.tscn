@@ -152,7 +152,6 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="MeshInstance" type="MeshInstance" parent="." index="2"]
 
-visible = false
 layers = 1
 material_override = null
 cast_shadow = 1

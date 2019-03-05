@@ -1,0 +1,119 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Scenes/Worlds/World.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/BGForestSmall.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/BGForestMedium.tscn" type="PackedScene" id=3]
+
+[node name="World" index="0" instance=ExtResource( 1 )]
+
+[node name="FloorPlane" parent="Navigation/NavigationMeshInstance" index="0"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00310516, -1, 0.715633 )
+
+[node name="Level Boundaries" type="Spatial" parent="." index="1"]
+
+editor/display_folded = true
+
+[node name="BGForestSmall1" parent="Level Boundaries" index="0" instance=ExtResource( 2 )]
+
+transform = Transform( 0.749091, 0, -0.662467, 0, 1, 0, 0.662467, 0, 0.749091, 11.9442, 1.7959, -12.6842 )
+
+[node name="BGForestSmall2" parent="Level Boundaries" index="1" instance=ExtResource( 2 )]
+
+transform = Transform( -0.471475, 0, -0.881879, 0, 1, 0, 0.881879, 0, -0.471475, 1.95564, 1.70892, -10.8724 )
+
+[node name="BGForestSmall3" parent="Level Boundaries" index="2" instance=ExtResource( 2 )]
+
+transform = Transform( 0.714876, 0, -0.699251, 0, 1, 0, 0.699251, 0, 0.714876, -1.15378, 3.39613, -35.2605 )
+
+[node name="BGForestSmall6" parent="Level Boundaries" index="3" instance=ExtResource( 2 )]
+
+transform = Transform( 0.714876, 0, -0.699251, 0, 1, 0, 0.699251, 0, 0.714876, -10.9046, 1.8133, -11.6885 )
+
+[node name="BGForestSmall5" parent="Level Boundaries" index="4" instance=ExtResource( 2 )]
+
+transform = Transform( 0.853841, 0, 0.520533, 0, 1, 0, -0.520533, 0, 0.853841, -15.8592, 1.83939, -11.7975 )
+
+[node name="BGForestSmall4" parent="Level Boundaries" index="5" instance=ExtResource( 2 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.7499, -0.286995, 17.699 )
+
+[node name="BGForestMedium6" parent="Level Boundaries" index="6" instance=ExtResource( 3 )]
+
+transform = Transform( 0.39929, 0.0870082, 0.912687, 0.144903, 0.976986, -0.156531, -0.905301, 0.194752, 0.377493, -24.4934, -0.165863, 14.2452 )
+
+[node name="BGForestMedium7" parent="Level Boundaries" index="7" instance=ExtResource( 3 )]
+
+transform = Transform( -0.696079, -0.0302177, -0.717329, 0.102449, 0.98471, -0.140895, 0.710618, -0.171564, -0.68234, -9.75649, 4.31813, -33.9529 )
+
+[node name="BGForestMedium18" parent="Level Boundaries" index="8" instance=ExtResource( 3 )]
+
+transform = Transform( -0.0150823, -0.140087, -0.990024, 0.102449, 0.98471, -0.140895, 0.994624, -0.103552, -0.000499845, -14.583, 3.48674, -21.5876 )
+
+[node name="BGForestMedium17" parent="Level Boundaries" index="9" instance=ExtResource( 3 )]
+
+transform = Transform( 0.975839, -0.0720107, 0.206282, 0.102449, 0.98471, -0.140895, -0.192982, 0.158624, 0.968295, -26.6888, 0.745033, -8.93458 )
+
+[node name="BGForestMedium16" parent="Level Boundaries" index="10" instance=ExtResource( 3 )]
+
+transform = Transform( 0.0791079, 0.146255, 0.986079, 0.144903, 0.976986, -0.156531, -0.986278, 0.155268, 0.0560946, -34.5631, 0, 2.34067 )
+
+[node name="BGForestMedium1" parent="Level Boundaries" index="11" instance=ExtResource( 3 )]
+
+transform = Transform( 0.790869, -0.0898166, 0.605358, -0.00367816, 0.988456, 0.151462, -0.611974, -0.122013, 0.781409, -2.75331, 0.0193558, 3.39623 )
+
+[node name="BGForestMedium2" parent="Level Boundaries" index="12" instance=ExtResource( 3 )]
+
+transform = Transform( 0.240661, 0, -0.970609, 0, 1, 0, 0.970609, 0, 0.240661, -44.7779, 0, 27.456 )
+
+[node name="BGForestMedium3" parent="Level Boundaries" index="13" instance=ExtResource( 3 )]
+
+transform = Transform( -0.725156, 0, -0.688584, 0, 1, 0, 0.688584, 0, -0.725156, -33.8924, -7.62939e-06, 27.5631 )
+
+[node name="BGForestMedium4" parent="Level Boundaries" index="14" instance=ExtResource( 3 )]
+
+transform = Transform( -0.92369, 0, -0.383141, 0, 1, 0, 0.383141, 0, -0.92369, -13.1961, -0.352959, 5.51831 )
+
+[node name="BGForestMedium9" parent="Level Boundaries" index="15" instance=ExtResource( 3 )]
+
+transform = Transform( -0.546663, 0, 0.837353, 0, 1, 0, -0.837353, 0, -0.546663, 2.34996, -0.534912, 12.3563 )
+
+[node name="BGForestMedium8" parent="Level Boundaries" index="16" instance=ExtResource( 3 )]
+
+transform = Transform( -0.96174, 0, 0.273962, 0, 1, 0, -0.273962, 0, -0.96174, 23.718, 0.767738, -12.8116 )
+
+[node name="BGForestMedium14" parent="Level Boundaries" index="17" instance=ExtResource( 3 )]
+
+transform = Transform( 0.471552, 0, -0.881838, 0, 1, 0, 0.881838, 0, 0.471552, 1.03911, 0.66967, -20.4706 )
+
+[node name="BGForestMedium15" parent="Level Boundaries" index="18" instance=ExtResource( 3 )]
+
+transform = Transform( 0.68538, 0, -0.728186, 0, 1, 0, 0.728186, 0, 0.68538, 7.53735, 1.56975, -33.3769 )
+
+[node name="BGForestMedium19" parent="Level Boundaries" index="19" instance=ExtResource( 3 )]
+
+transform = Transform( 0.471552, 0, -0.881838, 0, 1, 0, 0.881838, 0, 0.471552, 9.99284, 0.843544, -22.9407 )
+
+[node name="BGForestMedium13" parent="Level Boundaries" index="20" instance=ExtResource( 3 )]
+
+transform = Transform( -0.894166, 0, 0.447736, 0, 1, 0, -0.447736, 0, -0.894166, 39.9698, 0.264748, -6.37864 )
+
+[node name="BGForestMedium12" parent="Level Boundaries" index="21" instance=ExtResource( 3 )]
+
+transform = Transform( -0.894166, 0, 0.447736, 0, 1, 0, -0.447736, 0, -0.894166, 39.9323, -0.577965, 5.88976 )
+
+[node name="BGForestMedium11" parent="Level Boundaries" index="22" instance=ExtResource( 3 )]
+
+transform = Transform( -0.954203, 0, 0.299161, 0, 1, 0, -0.299161, 0, -0.954203, 22.8811, -0.119118, 0.142674 )
+
+[node name="BGForestMedium10" parent="Level Boundaries" index="23" instance=ExtResource( 3 )]
+
+transform = Transform( -0.119184, 0, -0.992872, 0, 1, 0, 0.992872, 0, -0.119184, 14.8045, -0.617683, 7.84117 )
+
+[node name="BGForestMedium5" parent="Level Boundaries" index="24" instance=ExtResource( 3 )]
+
+transform = Transform( -0.73384, 0, -0.679323, 0.144903, 0.976986, -0.156531, 0.663689, -0.213304, -0.716951, -40.5405, 0, 13.9081 )
+
+[node name="Placeholders" type="Spatial" parent="." index="2"]
+
+
