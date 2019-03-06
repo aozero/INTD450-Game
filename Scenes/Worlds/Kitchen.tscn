@@ -34,10 +34,6 @@ _sections_unfolded = [ "agent" ]
 
 navmesh = SubResource( 1 )
 
-[node name="FloorPlane" parent="Navigation/NavigationMeshInstance" index="0"]
-
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00310516, -1, 0.715633 )
-
 [node name="Level Boundaries" type="Spatial" parent="Navigation/NavigationMeshInstance" index="1"]
 
 editor/display_folded = true
