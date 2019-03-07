@@ -14,6 +14,9 @@ onready var SOUND_MATCH_OFF = load("res://Sound/Effects/Match/match_off.wav")
 onready var SOUND_MATCH_BURNING = load("res://Sound/Effects/Match/match_burning.wav")
 onready var SOUND_TAPSHOE = load("res://Sound/Effects/Memory/study_tapshoe.wav")
 
+const DIALOGUE_START = "[center]"
+const DIALOGUE_END = "[/center]"
+
 onready var INTERACT_PROMPT = "Press " + InputMap.get_action_list("interact")[0].as_text() + " to interact"
 
 onready var audio_player = $FirstPersonAudio
@@ -25,6 +28,8 @@ onready var headbobber = $Headbobber
 onready var raycast = $RayCast
 onready var torch_collision_shape = $Torch/TorchArea/CollisionShape
 onready var prompt_label = $"CanvasLayer/Prompt Label"
+onready var dialogue_label = $"CanvasLayer/Dialogue Label"
+onready var dialogue_timer = $"CanvasLayer/Dialogue Label/Dialogue Timer"
 onready var torch = $Torch
 
 onready var start_pos = translation
@@ -163,6 +168,14 @@ func play_audio(stream):
 func start_tapshoe_memory():
 	get_tree().call_group("monsters", "kill")
 	anim_player.play("Fade To Tapshoe")
+
+func start_minor_memory(memory_text):
+	dialogue_label.bbcode_text = DIALOGUE_START + memory_text + DIALOGUE_END
+	dialogue_label.visible_characters = -1
+	dialogue_timer.start()
+
+func _on_Dialogue_Timer_timeout():
+	prompt_label.visible_characters = 0
 
 # When animation player finishes any animation
 func _on_AnimationPlayer_animation_finished(anim_name):
