@@ -2,13 +2,13 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/paper.png-9d2b1c1cb7aa7ca0bd998f76af2ba695.s3tc.stex"
-path.etc2="res://.import/paper.png-9d2b1c1cb7aa7ca0bd998f76af2ba695.etc2.stex"
+path.s3tc="res://.import/study_ship.png-9b0067edc6c9a1a9e1184e7b16c2bf98.s3tc.stex"
+path.etc2="res://.import/study_ship.png-9b0067edc6c9a1a9e1184e7b16c2bf98.etc2.stex"
 
 [deps]
 
-source_file="res://Sprites/Items/paper.png"
-dest_files=[ "res://.import/paper.png-9d2b1c1cb7aa7ca0bd998f76af2ba695.s3tc.stex", "res://.import/paper.png-9d2b1c1cb7aa7ca0bd998f76af2ba695.etc2.stex" ]
+source_file="res://Sprites/Items/study_ship.png"
+dest_files=[ "res://.import/study_ship.png-9b0067edc6c9a1a9e1184e7b16c2bf98.s3tc.stex", "res://.import/study_ship.png-9b0067edc6c9a1a9e1184e7b16c2bf98.etc2.stex" ]
 
 [params]
 
