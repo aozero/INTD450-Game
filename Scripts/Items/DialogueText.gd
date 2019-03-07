@@ -1,6 +1,8 @@
 extends Node
 
 # Contains the text for all the dialogue in the game.
+# For example, if you want to change text for the ship in a bottle,
+# change the content of what comes after STUDY_SHIP = "
 # Make sure that every text constant starts and ends with quotation marks.
 # To make quotation marks in the actual text, use \" instead
 
