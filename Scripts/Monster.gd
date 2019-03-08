@@ -8,9 +8,9 @@ const SEE_PLAYER_SPEED = 2
 
 # How far the monster can see the player when player is dark or lit
 const DETECT_DARK_WALK_RANGE = 4
-const DETECT_LIT_WALK_RANGE = 10
+const DETECT_LIT_WALK_RANGE = 8
 const DETECT_DARK_RUN_RANGE = 8
-const DETECT_LIT_RUN_RANGE = 15
+const DETECT_LIT_RUN_RANGE = 12
 ##################################
 
 onready var detection_raycast = $RayCast
