@@ -175,7 +175,7 @@ func start_minor_memory(memory_text):
 	dialogue_timer.start()
 
 func _on_Dialogue_Timer_timeout():
-	prompt_label.visible_characters = 0
+	dialogue_label.visible_characters = 0
 
 # When animation player finishes any animation
 func _on_AnimationPlayer_animation_finished(anim_name):
