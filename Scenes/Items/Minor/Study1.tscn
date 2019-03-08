@@ -1,7 +1,9 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Scenes/Items/Minor Item.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Scripts/Items/StudyShip.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/Items/Minor/Study1.gd" type="Script" id=2]
+
+
 
 [node name="ItemShip" index="0" instance=ExtResource( 1 )]
 
