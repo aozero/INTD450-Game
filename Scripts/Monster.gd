@@ -22,6 +22,9 @@ onready var navigation = get_tree().get_root().get_node("World/Navigation")
 var player_pos = null
 var path = []
 var path_ind = 0
+
+var patrol_waypoints = []
+var patrol_ind = 0
 # for pathfinding testing
 onready var draw = get_tree().get_root().get_node("World/Draw")
 var draw_path = false
@@ -35,8 +38,22 @@ func _ready():
 	add_to_group("monsters")
 	stop_moving()
 	
+	process_child_waypoints()
+	
 	# Start breathing at some random interval so monster's aren't all breathing in sync
 	audio_breathing.play(rand_range(0, 5))
+
+# If we have waypoint objects as children, 
+# Store their positions in an array and delete them (we only need their original position)
+func process_child_waypoints():
+	for c in get_children():
+		if c.get_class() == "Waypoint":
+			patrol_waypoints.append(c.pos)
+			c.queue_free()
+	
+	if !patrol_waypoints.empty():
+		path_to_point(patrol_waypoints[patrol_ind])
+		start_moving()
 
 func _physics_process(delta):
 	if player == null:
@@ -65,12 +82,21 @@ func _physics_process(delta):
 		if raycast_collider != null and raycast_collider.name == "Player":
 			see_player = true
 			if path.size() == 0:
-				update_path() 
+				path_to_player() 
 				start_moving()
 			else:
 				# Only set path again if the player's position has significantly changed
-				if player_pos.distance_to(player.translation) > 1:
-					update_path() 
+				if player_pos == null || player_pos.distance_to(player.translation) > 1:
+					path_to_player() 
+	
+	# If we have waypoints stored and haven't seen the player yet, start patrolling between the points in order
+	if !patrol_waypoints.empty() && player_pos == null && path.size() == 0:
+		patrol_ind += 1
+		if patrol_ind >= patrol_waypoints.size():
+			patrol_ind = 0
+		
+		path_to_point(patrol_waypoints[patrol_ind])
+		start_moving()
 	
 	# If we haven't finished the path yet
 	if path_ind < path.size():
@@ -137,12 +163,14 @@ func kill():
 	remove_from_group("monsters")
 	queue_free()
 
-func update_path():
-	if navigation != null:
-		player_pos = player.global_transform.origin
-		
+func path_to_player():
+	player_pos = player.global_transform.origin
+	path_to_point(player_pos)
+
+func path_to_point(point):
+	if navigation != null:		
 		var begin = global_transform.origin
-		var end = player_pos
+		var end = point
 		
 		var p = navigation.get_simple_path(begin, end)
 		path = p
