@@ -14,27 +14,27 @@ extends Node
 # Cookie Jar
 const KITCHEN_1 = "Oatmeal raisin! I thought they were chocolate chip? This is a jar of LIES!"
 # Coffee Mug
-const KITCHEN_2 = "You don’t like your sandwich, Jamie? Come on, gluten free bread isn’t that bad."
+const KITCHEN_2 = "Oh NOW you don’t like your sandwich? Come on, you would have never known it was vegan cheese if I hadn;t told you. The store said it tasted exactly the same."
 # Drawing of Clubhouse
-const KITCHEN_FINAL = "This is a Boys Only Clubhouse, Jamie. If you want up, you gotta give me the password."
+const KITCHEN_FINAL = "Too slow, Jamie. If you want me to drop the ladder, you gotta give me the password."
 ###############################
 
 # Study
 ###############################
 # Ship in a Bottle
-const STUDY_1 = "Daddy, you should read me [i]this[/i] story. It’s a pirate story."
+const STUDY_1 = "I'm sorry, Daddy! It was an accident, I swear. I didn't think the ball would go that far?."
 # Leather-bound Planner
-const STUDY_2 = ""
+const STUDY_2 = "May 14th, 2009. Jamie (Caterpillar) and Riley's (Queen of Hearts) school play. Alice in Wonderland - school gym 4:30PM. [crossed out]. Red eye flight to Taiwan 5:40 AM. "
 # Tapshoe
-const STUDY_FINAL = ""
+const STUDY_FINAL = "Jamie, get you sister to cool it would ya? I'm getting a headache."
 ###############################
 
 # Bedroom
 ###############################
 # Water Wings
-const BEDROOM_1 = "[coughing] I wanted to swim without them. Davy and Jamie don’t have to wear them."
+const BEDROOM_1 = "I th-thought... th-the ice w-was th-thick en-enough t-to skate on."
 # Tricycle
-const BEDROOM_2 = "You can have a big kid bike when you’re tall enough to reach the pedals, silly girl. Why do you wanna grow up so fast anyway?"
+const BEDROOM_2 = "Sweetie, I love all your art but if you don't clean this room, I'm taking all your paint and crayons away for a week."
 # Flamingo
-const BEDROOM_FINAL = "" 
+const BEDROOM_FINAL = "Jamie? I can't see you. Ouch! Oh my gosh, it's burning! Jamie, where are you? H-help!" 
 ###############################
