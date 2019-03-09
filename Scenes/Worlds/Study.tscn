@@ -569,7 +569,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.615274, 0, 5.99735 )
 
 [node name="Player" parent="." index="1"]
 
-transform = Transform( -1, 0, -8.74228e-008, 0, 1, 0, 8.74228e-008, 0, -1, 36.4386, 0, 23.387 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 36.4386, 0, 27.4462 )
 
 [node name="Monsters" type="Spatial" parent="." index="4"]
 
