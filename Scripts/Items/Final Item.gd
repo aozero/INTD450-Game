@@ -5,7 +5,6 @@ onready var music_player = $MusicPlayer
 
 func interact(player):
 	anim_player.play("Fade Out")
-	player.start_tapshoe_memory()
 
 func _on_Timer_timeout():
 	music_player.play()
