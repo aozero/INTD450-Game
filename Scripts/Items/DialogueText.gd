@@ -5,6 +5,7 @@ extends Node
  Make sure that every text constant starts and ends with quotation marks.
  To make quotation marks in the actual text, use \" instead
 
+ CURRENTLY YOU ACTUALLY CAN'T BOLD/ITALICIZE THINGS
  You can make things bold or italicized or underlined etc. using BBCode, described here: 
  https://docs.godotengine.org/en/3.0/tutorials/gui/bbcode_in_richtextlabel.html
 """

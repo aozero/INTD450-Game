@@ -14,9 +14,6 @@ onready var SOUND_MATCH_OFF = load("res://Sound/Effects/Match/match_off.wav")
 onready var SOUND_MATCH_BURNING = load("res://Sound/Effects/Match/match_burning.wav")
 onready var SOUND_TAPSHOE = load("res://Sound/Effects/Memory/study_tapshoe.wav")
 
-const DIALOGUE_START = "[center]"
-const DIALOGUE_END = "[/center]"
-
 onready var INTERACT_PROMPT = "Press " + InputMap.get_action_list("interact")[0].as_text() + " to interact"
 
 onready var audio_player = $FirstPersonAudio
@@ -170,7 +167,7 @@ func start_tapshoe_memory():
 	anim_player.play("Fade To Tapshoe")
 
 func start_minor_memory(memory_text):
-	dialogue_label.bbcode_text = DIALOGUE_START + memory_text + DIALOGUE_END
+	dialogue_label.text = memory_text 
 	dialogue_label.visible_characters = -1
 	dialogue_timer.start()
 
