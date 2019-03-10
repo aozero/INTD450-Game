@@ -13,8 +13,6 @@ const DETECT_DARK_RUN_RANGE = 8
 const DETECT_LIT_RUN_RANGE = 12
 ##################################
 
-onready var SOUND_WALKING = load("res://Sound/Effects/Monster/brain_boi_walking.wav") 
-onready var SOUND_RUNNING = load("res://Sound/Effects/Monster/brain_boi_running.wav")
 onready var SOUND_BREATHING = load("res://Sound/Effects/Monster/brain_boi_breathing.wav") 
 onready var SOUND_ALERTED = load("res://Sound/Effects/Monster/brain_boi_alerted.wav")
 
