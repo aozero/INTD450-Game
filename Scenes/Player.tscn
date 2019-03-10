@@ -72,7 +72,7 @@ loop = true
 step = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:light_energy")
-tracks/0/interp = 1
+tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -80,7 +80,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ 2.0, 1.0 ]
+"values": [ 1.5, 1.0 ]
 }
 
 [sub_resource type="ProceduralSky" id=6]
@@ -538,7 +538,7 @@ _sections_unfolded = [ "Transform" ]
 visible = false
 layers = 1
 light_color = Color( 0.863281, 0.575802, 0.269775, 1 )
-light_energy = 1.20327
+light_energy = 1.5
 light_indirect_energy = 1.0
 light_negative = false
 light_specular = 0.5
