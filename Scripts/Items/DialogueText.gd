@@ -14,7 +14,7 @@ extends Node
 # Cookie Jar
 const KITCHEN_1 = "Oatmeal raisin! I thought they were chocolate chip? This is a jar of LIES!"
 # Coffee Mug
-const KITCHEN_2 = "Oh NOW you don’t like your sandwich? Come on, you would have never known it was vegan cheese if I hadn;t told you. The store said it tasted exactly the same."
+const KITCHEN_2 = "Oh NOW you don’t like your sandwich? Come on, you would have never known it was vegan cheese if I hadn't told you. The store said it tasted exactly the same."
 # Drawing of Clubhouse
 const KITCHEN_FINAL = "Too slow, Jamie. If you want me to drop the ladder, you gotta give me the password."
 ###############################
