@@ -107,7 +107,7 @@ func _physics_process(delta):
 			# Plays an animation that goes back to default position
 			headbobber.play("reset")  
 	
-	move_and_collide(move_vec * move_speed * delta)
+	move_and_slide(move_vec * move_speed)
 	
 	if Input.is_action_pressed("shoot") and !anim_player.is_playing():
 		toggle_torch()
