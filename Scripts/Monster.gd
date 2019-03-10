@@ -4,7 +4,7 @@ extends "res://Scripts/Multidirectional.gd"
 ##################################
 # How fast the monster can move
 const NORMAL_SPEED = 1
-const SEE_PLAYER_SPEED = 2
+const ALERTED_SPEED = 2
 
 # How far the monster can see the player when player is dark or lit
 const DETECT_DARK_WALK_RANGE = 4
@@ -12,6 +12,11 @@ const DETECT_LIT_WALK_RANGE = 8
 const DETECT_DARK_RUN_RANGE = 8
 const DETECT_LIT_RUN_RANGE = 12
 ##################################
+
+onready var SOUND_WALKING = load("res://Sound/Effects/Monster/brain_boi_walking.wav") 
+onready var SOUND_RUNNING = load("res://Sound/Effects/Monster/brain_boi_running.wav")
+onready var SOUND_BREATHING = load("res://Sound/Effects/Monster/brain_boi_breathing.wav") 
+onready var SOUND_ALERTED = load("res://Sound/Effects/Monster/brain_boi_alerted.wav")
 
 onready var detection_raycast = $RayCast
 onready var audio_breathing = $AudioBreathing
@@ -28,6 +33,9 @@ var patrol_ind = 0
 # for pathfinding testing
 onready var draw = get_tree().get_root().get_node("World/Draw")
 var draw_path = false
+
+var alerted = false
+var curr_move_speed = NORMAL_SPEED
 
 # Return "Monster" instead of "KinematicBody" 
 # This is so we can check if an object is a monster
@@ -89,6 +97,11 @@ func _physics_process(delta):
 				if player_pos == null || player_pos.distance_to(player.translation) > 1:
 					path_to_player() 
 	
+	if !alerted && see_player:
+		start_alerted()
+	elif alerted && !see_player:
+		stop_alerted()
+	
 	# If we have waypoints stored and haven't seen the player yet, start patrolling between the points in order
 	if !patrol_waypoints.empty() && player_pos == null && path.size() == 0:
 		patrol_ind += 1
@@ -100,14 +113,6 @@ func _physics_process(delta):
 	
 	# If we haven't finished the path yet
 	if path_ind < path.size():
-		var move_speed
-		if see_player:
-			move_speed = SEE_PLAYER_SPEED
-			anim_player.playback_speed = 1
-		else:
-			move_speed= NORMAL_SPEED
-			anim_player.playback_speed = float(NORMAL_SPEED) / SEE_PLAYER_SPEED
-		
 		var target_pos = get_curr_path_section_target_pos()
 		
 		var move_vec = (target_pos - global_transform.origin)
@@ -115,7 +120,7 @@ func _physics_process(delta):
 			path_ind += 1
 		else:
 			move_vec = move_vec.normalized()
-			var collision = move_and_collide(move_vec * move_speed * delta)
+			var collision = move_and_collide(move_vec * curr_move_speed * delta)
 			if collision != null and collision.get_collider().get_class() == "Player":
 				collision.get_collider().kill()
 		
@@ -127,18 +132,6 @@ func _physics_process(delta):
 		# If that finished the path
 		if path_ind >= path.size():
 			stop_moving()
-
-# Get the target position of the path subsection we are currently following
-# Since the world is flat, we don't want to consider the y dimension
-func get_curr_path_section_target_pos():
-	var i = path_ind
-	if path_ind >= path.size():
-		# If path is finished, use end of path
-		i = path.size() - 1
-	
-	var target_pos = path[i]
-	target_pos.y = global_transform.origin.y
-	return target_pos
 
 # Called when changing from idle to moving
 func start_moving():
@@ -155,18 +148,32 @@ func stop_moving():
 	audio_walking.stop()
 	update_sprite_direction()
 
+func start_alerted():
+	alerted = true
+	curr_move_speed = ALERTED_SPEED
+	anim_player.playback_speed = 1
+	
+	audio_breathing.set_stream(SOUND_ALERTED)
+	audio_breathing.play()
+
+func stop_alerted():
+	alerted = false
+	curr_move_speed = NORMAL_SPEED
+	anim_player.playback_speed = float(NORMAL_SPEED) / ALERTED_SPEED
+	
+	audio_breathing.set_stream(SOUND_BREATHING)
+	audio_breathing.play()
+
 # slightly fuzzy position check
 func is_at_pos(pos):
 	return !(translation.x - pos.x > 0.1 || translation.y - pos.y > 0.1 || translation.z - pos.z > 0.1)
 
-func kill():
-	remove_from_group("monsters")
-	queue_free()
-
+# Set a path to the player
 func path_to_player():
 	player_pos = player.global_transform.origin
 	path_to_point(player_pos)
 
+# Set a path to a point
 func path_to_point(point):
 	if navigation != null:		
 		var begin = global_transform.origin
@@ -189,3 +196,19 @@ func path_to_point(point):
 			for x in p:
 				im.add_vertex(x)
 			im.end()
+
+# Get the target position of the path subsection we are currently following
+# Since the world is flat, we don't want to consider the y dimension
+func get_curr_path_section_target_pos():
+	var i = path_ind
+	if path_ind >= path.size():
+		# If path is finished, use end of path
+		i = path.size() - 1
+	
+	var target_pos = path[i]
+	target_pos.y = global_transform.origin.y
+	return target_pos
+
+func kill():
+	remove_from_group("monsters")
+	queue_free()
