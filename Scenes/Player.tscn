@@ -54,7 +54,7 @@ tracks/0/keys = {
 
 [sub_resource type="CapsuleShape" id=3]
 
-radius = 1.0
+radius = 0.8
 height = 0.01
 
 [sub_resource type="SphereShape" id=4]
@@ -189,7 +189,7 @@ use_filter = false
 font_data = ExtResource( 8 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[sub_resource type="DynamicFont" id=21]
+[sub_resource type="DynamicFont" id=9]
 
 size = 36
 use_mipmaps = false
@@ -197,7 +197,7 @@ use_filter = false
 font_data = ExtResource( 8 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
-[sub_resource type="Animation" id=13]
+[sub_resource type="Animation" id=10]
 
 length = 1.0
 loop = false
@@ -251,7 +251,7 @@ tracks/3/keys = {
 "values": [ -40.0, -60.0 ]
 }
 
-[sub_resource type="Animation" id=14]
+[sub_resource type="Animation" id=11]
 
 length = 1.0
 loop = false
@@ -269,7 +269,7 @@ tracks/0/keys = {
 "values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
 }
 
-[sub_resource type="Animation" id=15]
+[sub_resource type="Animation" id=12]
 
 length = 1.0
 loop = false
@@ -323,7 +323,7 @@ tracks/3/keys = {
 "values": [ true ]
 }
 
-[sub_resource type="Animation" id=16]
+[sub_resource type="Animation" id=13]
 
 length = 1.0
 loop = false
@@ -341,7 +341,7 @@ tracks/0/keys = {
 "values": [ 0 ]
 }
 
-[sub_resource type="Animation" id=17]
+[sub_resource type="Animation" id=14]
 
 length = 0.7
 loop = false
@@ -383,7 +383,7 @@ tracks/2/keys = {
 "values": [ -45.0, 0.0 ]
 }
 
-[sub_resource type="Animation" id=18]
+[sub_resource type="Animation" id=15]
 
 length = 0.6
 loop = true
@@ -415,7 +415,7 @@ tracks/1/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=19]
+[sub_resource type="Animation" id=16]
 
 length = 0.5
 loop = false
@@ -433,11 +433,11 @@ tracks/0/keys = {
 "values": [ Vector3( 0, 0, 0 ) ]
 }
 
-[sub_resource type="SphereShape" id=20]
+[sub_resource type="SphereShape" id=17]
 
 radius = 50.0
 
-[node name="Player" type="KinematicBody" index="0"]
+[node name="Player" type="KinematicBody"]
 
 input_ray_pickable = true
 input_capture_on_drag = false
@@ -676,7 +676,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 21 )
+custom_fonts/font = SubResource( 9 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 align = 1
@@ -686,7 +686,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "BBCode", "custom_fonts" ]
 
-[node name="Dialogue Timer" type="Timer" parent="CanvasLayer/Dialogue Label" index="1"]
+[node name="Dialogue Timer" type="Timer" parent="CanvasLayer/Dialogue Label" index="0"]
 
 process_mode = 1
 wait_time = 15.0
@@ -742,11 +742,11 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-"anims/Fade From Tapshoe" = SubResource( 13 )
-"anims/Fade To Black" = SubResource( 14 )
-"anims/Fade To Tapshoe" = SubResource( 15 )
-anims/idle = SubResource( 16 )
-anims/light = SubResource( 17 )
+"anims/Fade From Tapshoe" = SubResource( 10 )
+"anims/Fade To Black" = SubResource( 11 )
+"anims/Fade To Tapshoe" = SubResource( 12 )
+anims/idle = SubResource( 13 )
+anims/light = SubResource( 14 )
 blend_times = [  ]
 _sections_unfolded = [ "Playback Options" ]
 
@@ -757,8 +757,8 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/headbob = SubResource( 18 )
-anims/reset = SubResource( 19 )
+anims/headbob = SubResource( 15 )
+anims/reset = SubResource( 16 )
 blend_times = [  ]
 
 [node name="FootstepsPlayer" type="AudioStreamPlayer" parent="Headbobber" index="0"]
@@ -811,7 +811,7 @@ script = ExtResource( 13 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Player Area" index="0"]
 
-shape = SubResource( 20 )
+shape = SubResource( 17 )
 disabled = false
 
 [connection signal="finished" from="FirstPersonAudio" to="." method="_on_FirstPersonAudio_finished"]
