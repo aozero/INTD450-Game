@@ -20,6 +20,7 @@ onready var INTERACT_PROMPT = "Press " + InputMap.get_action_list("interact")[0]
 onready var audio_player = $FirstPersonAudio
 onready var match_burning_audio = $MatchBurningAudio
 onready var audio_fader = $AudioFader
+onready var music_player = get_node("/root/MusicPlayer")
 
 onready var anim_player = $AnimationPlayer
 onready var headbobber = $Headbobber
@@ -47,7 +48,6 @@ func _ready():
 	yield(get_tree(), "idle_frame")
 	
 	anim_player.play_backwards("Fade To Black")
-	audio_fader.play("fade in music")
 	set_torch(false)
 
 func _input(event):
@@ -157,7 +157,7 @@ func get_torch_visible():
 func kill():
 	if not dying:
 		dying = true
-		play_audio(SOUND_DYING)
+		music_player.play_melody(SOUND_DYING, music_player.LOUD)
 		anim_player.play("Fade To Black")
 
 func play_audio(stream):
@@ -166,6 +166,7 @@ func play_audio(stream):
 
 func start_tapshoe_memory():
 	get_tree().call_group("monsters", "kill")
+	music_player.play_melody(music_player.MUSIC_TAPSHOE, music_player.NORMAL)
 	anim_player.play("Fade To Tapshoe")
 
 func start_minor_memory(memory_text):
@@ -199,6 +200,7 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 			fireplace.turn_on()
 		
 	if anim_name == "Fade From Tapshoe":
+		music_player.stop_melody()
 		$Timer.start()
 
 # When audio player finishes playing audio
