@@ -163,9 +163,9 @@ func play_audio(stream):
 	audio_player.set_stream(stream)
 	audio_player.play()
 
-func start_tapshoe_memory():
+func start_tapshoe_memory(music):
 	get_tree().call_group("monsters", "kill")
-	music_player.play_melody(music_player.MUSIC_TAPSHOE)
+	music_player.play_melody(music)
 	anim_player.play("Fade To Tapshoe")
 
 func start_minor_memory(memory_text):
