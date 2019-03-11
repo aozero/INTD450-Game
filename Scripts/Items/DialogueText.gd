@@ -32,9 +32,9 @@ const STUDY_FINAL = "Jamie, get you sister to cool it would ya? I'm getting a he
 
 # Bedroom
 ###############################
-# Water Wings
+# Ice Skate
 const BEDROOM_1 = "I th-thought... th-the ice w-was th-thick en-enough t-to skate on."
-# Tricycle
+# Small Painting Easel
 const BEDROOM_2 = "Sweetie, I love all your art but if you don't clean this room, I'm taking all your paint and crayons away for a week."
 # Flamingo
 const BEDROOM_FINAL = "Jamie? I can't see you. Ouch! Oh my gosh, it's burning! Jamie, where are you? H-help!" 
