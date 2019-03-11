@@ -4,7 +4,7 @@ extends "res://Scripts/Multidirectional.gd"
 ##################################
 # How fast the monster can move
 const NORMAL_SPEED = 1
-const ALERTED_SPEED = 2
+const ALERTED_SPEED = 2.5
 
 # How far the monster can see the player when player is dark or lit
 const DETECT_DARK_WALK_RANGE = 4
