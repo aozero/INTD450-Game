@@ -13,11 +13,12 @@ const DETECT_DARK_RUN_RANGE = 8
 const DETECT_LIT_RUN_RANGE = 12
 ##################################
 
-onready var SOUND_BREATHING = load("res://Sound/Effects/Monster/brain_boi_breathing.wav") 
 onready var SOUND_ALERTED = load("res://Sound/Effects/Monster/brain_boi_alerted.wav")
+onready var SOUND_LOST_PLAYER = load("res://Sound/Effects/Monster/brain_boi_lost.wav")
 
 onready var detection_raycast = $RayCast
 onready var audio_breathing = $AudioBreathing
+onready var audio_alerted = $AudioAlerted
 onready var audio_walking = $AudioWalking
 
 # for pathfinding
@@ -151,16 +152,16 @@ func start_alerted():
 	curr_move_speed = ALERTED_SPEED
 	anim_player.playback_speed = 1
 	
-	audio_breathing.set_stream(SOUND_ALERTED)
-	audio_breathing.play()
+	audio_alerted.set_stream(SOUND_ALERTED)
+	audio_alerted.play()
 
 func stop_alerted():
 	alerted = false
 	curr_move_speed = NORMAL_SPEED
 	anim_player.playback_speed = float(NORMAL_SPEED) / ALERTED_SPEED
 	
-	audio_breathing.set_stream(SOUND_BREATHING)
-	audio_breathing.play()
+	audio_alerted.set_stream(SOUND_LOST_PLAYER)
+	audio_alerted.play()
 
 # slightly fuzzy position check
 func is_at_pos(pos):
