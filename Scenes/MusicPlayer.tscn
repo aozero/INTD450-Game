@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scripts/MusicPlayer.gd" type="Script" id=1]
 [ext_resource path="res://Sound/Music/Drone.wav" type="AudioStream" id=2]
 [ext_resource path="res://Sound/Music/DadMelody.wav" type="AudioStream" id=3]
+[ext_resource path="res://Sound/Effects/dying_sound_1.wav" type="AudioStream" id=4]
 
 [node name="Node" type="Node" index="0"]
 
@@ -21,6 +22,15 @@ bus = "Master"
 
 stream = ExtResource( 3 )
 volume_db = -40.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="DyingPlayer" type="AudioStreamPlayer" parent="." index="2"]
+
+stream = ExtResource( 4 )
+volume_db = -20.0
 pitch_scale = 1.0
 autoplay = false
 mix_target = 0
