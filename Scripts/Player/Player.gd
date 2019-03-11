@@ -5,6 +5,7 @@ extends KinematicBody
 
 const RUN_SPEED = 4      
 const SNEAK_SPEED = 2
+const BACKWARDS_SLOWDOWN = 0.5
 const MOUSE_SENS = 0.2
 const INTERACT_RANGE = 2 # Range player can interact with objects
 ##################################
@@ -75,20 +76,25 @@ func _physics_process(delta):
 	if dying or in_memory:
 		return
 	
+	# Move more slowly backwards
+	var moving_backwards = false
+	
 	var move_vec = Vector3()
 	if Input.is_action_pressed("move_forwards"):
 		move_vec.z -= 1
 	if Input.is_action_pressed("move_backwards"):
 		move_vec.z += 1
+		moving_backwards = true
 	if Input.is_action_pressed("move_left"):
 		move_vec.x -= 1
 	if Input.is_action_pressed("move_right"):
 		move_vec.x += 1
 	move_vec = move_vec.normalized()
 	move_vec = move_vec.rotated(Vector3(0, 1, 0), rotation.y)
-		
-	var move_speed = SNEAK_SPEED
+	
+	# Handling movement speed and headbob speed
 	running = false
+	var move_speed = SNEAK_SPEED
 	headbobber.playback_speed = 1
 	# If we are actually moving:
 	if move_vec.x != 0 or move_vec.z != 0:
@@ -99,16 +105,22 @@ func _physics_process(delta):
 			running = true
 			move_speed = RUN_SPEED
 			headbobber.playback_speed = 2
-		else:
-			headbobber.playback_speed = 1
+		
+		# Move more slowly backwards
+		if moving_backwards:
+			move_speed *= BACKWARDS_SLOWDOWN
+			headbobber.playback_speed *= BACKWARDS_SLOWDOWN
 	else:
 		if headbobber.is_playing():
 			headbobber.stop()
 			# Plays an animation that goes back to default position
 			headbobber.play("reset")  
 	
+	# Actually move
 	move_and_slide(move_vec * move_speed)
 	
+	# Check for torch toggling
+	# TODO: Minor, but this would be better in an event based input system rather than checking constantly
 	if Input.is_action_pressed("shoot") and !anim_player.is_playing():
 		toggle_torch()
 	
