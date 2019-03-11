@@ -19,7 +19,6 @@ onready var SOUND_LOST_PLAYER = load("res://Sound/Effects/Monster/brain_boi_lost
 onready var detection_raycast = $RayCast
 onready var audio_breathing = $AudioBreathing
 onready var audio_alerted = $AudioAlerted
-onready var audio_walking = $AudioWalking
 
 # for pathfinding
 onready var navigation = get_tree().get_root().get_node("World/Navigation")
@@ -136,7 +135,6 @@ func _physics_process(delta):
 func start_moving():
 	anim_player.stop()
 	anim_player.play("walk_0")
-	audio_walking.play()
 	update_sprite_direction()
 
 # Called when changing from moving to idle
@@ -144,7 +142,6 @@ func stop_moving():
 	path = []
 	anim_player.stop()
 	anim_player.play("idle_0")
-	audio_walking.stop()
 	update_sprite_direction()
 
 func start_alerted():

@@ -1,11 +1,23 @@
 extends AudioStreamPlayer
 
+# Handles playing cycled footstep sounds
+# footstep is called by an animation Call Func Track
+
+# If you change anything here, you will likely also want to change Monster/FootstepsMonster
+# Unfortunately, they can't inherit from the same source because AudioStreamPlayer3D can't inherit from AudioStreamPlayer
+
 var index = 0 
 var step_array = ["1","2","3","4","5","6"]
 
+func _ready(): 
+	shuffle_array()
+
+func get_step_stream():
+	return load("res://Sound/Effects/Walking/walking_step" + step_array[index] + ".wav")
+
 # We always play each sound once in a cycle, but the order of them playing changes
 func footstep():
-	stream = load("res://Sound/Effects/Walking/walking_step" + step_array[index] + ".wav")
+	stream = get_step_stream()
 	play()
 	
 	index += 1
