@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/RileyMelody.wav-b71f240a19f27881c8a6662f1114dfdf.sample"
+path="res://.import/StudyMemory.wav-c2a1106ea6dfb6e0fddee684c7122695.sample"
 
 [deps]
 
-source_file="res://Sound/Music/RileyMelody.wav"
-dest_files=[ "res://.import/RileyMelody.wav-b71f240a19f27881c8a6662f1114dfdf.sample" ]
+source_file="res://Sound/Music/StudyMemory.wav"
+dest_files=[ "res://.import/StudyMemory.wav-c2a1106ea6dfb6e0fddee684c7122695.sample" ]
 
 [params]
 

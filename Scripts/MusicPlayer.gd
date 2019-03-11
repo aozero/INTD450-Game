@@ -1,6 +1,6 @@
 extends Node
 
-onready var MUSIC_TAPSHOE = load("res://Sound/Music/DadMelody.wav")
+onready var MUSIC_TAPSHOE = load("res://Sound/Music/StudyMemory.wav")
 
 onready var drone_player = $DronePlayer
 onready var melody_player = $MelodyPlayer

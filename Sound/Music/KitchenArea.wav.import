@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/DadMelody.wav-a86837e2261cb63371bf4a0a9a2df598.sample"
+path="res://.import/KitchenArea.wav-0d6a9e698772830dc23dbb6f8104d113.sample"
 
 [deps]
 
-source_file="res://Sound/Music/DadMelody.wav"
-dest_files=[ "res://.import/DadMelody.wav-a86837e2261cb63371bf4a0a9a2df598.sample" ]
+source_file="res://Sound/Music/KitchenArea.wav"
+dest_files=[ "res://.import/KitchenArea.wav-0d6a9e698772830dc23dbb6f8104d113.sample" ]
 
 [params]
 
