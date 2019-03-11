@@ -4,7 +4,7 @@
 
 [sub_resource type="BoxShape" id=1]
 
-extents = Vector3( 2.25, 1, 1.25 )
+extents = Vector3( 2.6, 1, 1.6 )
 
 [sub_resource type="CubeMesh" id=2]
 
@@ -145,7 +145,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.54656, 0, -1.40697 )
 
 [node name="CollisionShape" type="CollisionShape" parent="." index="1"]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 0, 0 )
 shape = SubResource( 1 )
 disabled = false
 _sections_unfolded = [ "Transform", "Visibility" ]
