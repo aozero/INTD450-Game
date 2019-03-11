@@ -27,8 +27,8 @@ texture = ExtResource( 3 )
 [node name="MusicPlayer" parent="." index="2"]
 
 stream = ExtResource( 4 )
-unit_db = -24.0
-unit_size = 0.5
+unit_db = -28.0
+unit_size = 1.0
 max_db = -24.0
 
 
