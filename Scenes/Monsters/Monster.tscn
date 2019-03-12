@@ -118,6 +118,34 @@ tracks/1/keys = {
 "update": 0,
 "values": [ Vector3( 0, 0, 0 ), Vector3( 0, 0, -0.125 ) ]
 }
+tracks/2/type = "method"
+tracks/2/path = NodePath("AudioWalking1")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "footstep"
+} ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath("AudioWalking2")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.4 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "footstep"
+} ]
+}
 
 [sub_resource type="Animation" id=7]
 
@@ -148,6 +176,34 @@ tracks/1/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Vector3( 0, 0, 0 ), Vector3( 0.25, 0, 0 ) ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath("AudioWalking1")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "footstep"
+} ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath("AudioWalking2")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.4 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "footstep"
+} ]
 }
 
 [sub_resource type="Animation" id=8]
@@ -237,8 +293,36 @@ tracks/1/keys = {
 "update": 0,
 "values": [ Vector3( 0, 0, 0 ), Vector3( 0.25, 0, 0 ) ]
 }
+tracks/2/type = "method"
+tracks/2/path = NodePath("AudioWalking1")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "footstep"
+} ]
+}
+tracks/3/type = "method"
+tracks/3/path = NodePath("AudioWalking2")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.4 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "footstep"
+} ]
+}
 
-[node name="Monster" type="KinematicBody"]
+[node name="Monster" type="KinematicBody" index="0"]
 
 input_ray_pickable = true
 input_capture_on_drag = false
@@ -263,6 +347,7 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="Sprite3D" type="Sprite3D" parent="CollisionShape" index="0"]
 
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 0, 0 )
 layers = 1
 material_override = ExtResource( 2 )
 cast_shadow = 1
@@ -287,7 +372,7 @@ alpha_cut = 0
 texture = ExtResource( 3 )
 vframes = 2
 hframes = 4
-frame = 5
+frame = 1
 region_enabled = false
 region_rect = Rect2( 0, 0, 0, 0 )
 _sections_unfolded = [ "Animation", "Geometry", "Region", "Transform", "Visibility" ]
