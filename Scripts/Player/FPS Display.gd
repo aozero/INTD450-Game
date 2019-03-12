@@ -11,7 +11,7 @@ func _ready():
 	text = ""
 	
 	# TURN OFF FPS DISPLAY FOR DEMO
-	#set_process(false)
+	set_process(false)
 
 func _process(delta):
 	if (time > 0):
