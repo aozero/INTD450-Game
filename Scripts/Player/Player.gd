@@ -24,6 +24,7 @@ onready var music_player = get_node("/root/MusicPlayer")
 onready var item_sprite = $"CanvasLayer/ColorRect/TextureRect/Item Sprite"
 
 onready var anim_player = $AnimationPlayer
+onready var anim_hand = $"CanvasLayer/Control/Hand Sprite/HandAnimator"
 onready var headbobber = $Headbobber
 onready var raycast = $RayCast
 onready var torch_collision_shape = $Torch/TorchArea/CollisionShape
@@ -124,7 +125,7 @@ func _physics_process(delta):
 	
 	# Check for torch toggling
 	# TODO: Minor, but this would be better in an event based input system rather than checking constantly
-	if Input.is_action_pressed("shoot") and !anim_player.is_playing():
+	if Input.is_action_pressed("shoot") and anim_hand.current_animation != "light":
 		toggle_torch()
 	
 	# Check if player is looking at anything interactable that is within range
@@ -149,11 +150,11 @@ func set_torch(on):
 		match_burning_audio.play()
 		audio_fader.play("fade in burning")
 		play_audio(SOUND_MATCH_ON)
-		anim_player.play("light")
+		anim_hand.play("light")
 	elif !on && torch.visible:
 		match_burning_audio.stop()
 		play_audio(SOUND_MATCH_OFF)
-		anim_player.play_backwards("light")
+		anim_hand.play_backwards("light")
 	
 	torch.visible = on
 	torch_collision_shape.disabled = !on
@@ -227,3 +228,11 @@ func _on_FirstPersonAudio_finished():
 func _on_Timer_timeout():
 	game_over = true
 	anim_player.play("Fade To Black")
+
+func _on_HandAnimator_animation_finished(anim_name):
+	if anim_name == "light":
+		if torch.visible:
+			anim_hand.play("idle_on")
+		else:
+			anim_hand.play("idle_off")
+	
