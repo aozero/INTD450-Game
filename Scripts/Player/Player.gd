@@ -13,7 +13,6 @@ const INTERACT_RANGE = 2 # Range player can interact with objects
 onready var SOUND_MATCH_ON = load("res://Sound/Effects/Match/match_on.wav")
 onready var SOUND_MATCH_OFF = load("res://Sound/Effects/Match/match_off.wav")
 onready var SOUND_MATCH_BURNING = load("res://Sound/Effects/Match/match_burning.wav")
-onready var SOUND_TAPSHOE = load("res://Sound/Effects/Memory/study_tapshoe.wav")
 
 onready var INTERACT_PROMPT = "Press " + InputMap.get_action_list("interact")[0].as_text() + " to interact"
 
@@ -211,15 +210,13 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 		in_memory = true
 		set_torch(false)
 		play_audio(curr_final_item.SOUND)
-	
-	if anim_name == "Fade From Memory":
-		music_player.stop_melody()
 
 # When audio player finishes playing audio
 func _on_FirstPersonAudio_finished():
 	if in_memory:
 		in_memory = false 
 		anim_player.play("Fade From Memory")
+		music_player.stop_melody()
 		
 		curr_final_item.after_memory()
 
