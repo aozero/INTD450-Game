@@ -607,7 +607,7 @@ _sections_unfolded = [ "BBCode", "custom_fonts" ]
 [node name="Dialogue Timer" type="Timer" parent="CanvasLayer/Dialogue Label" index="0"]
 
 process_mode = 1
-wait_time = 15.0
+wait_time = 8.0
 one_shot = false
 autostart = false
 
