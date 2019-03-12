@@ -149,16 +149,20 @@ func start_alerted():
 	curr_move_speed = ALERTED_SPEED
 	anim_player.playback_speed = 1
 	
-	audio_alerted.set_stream(SOUND_ALERTED)
-	audio_alerted.play()
+	play_alerted_audio(SOUND_ALERTED)
 
 func stop_alerted():
 	alerted = false
 	curr_move_speed = NORMAL_SPEED
 	anim_player.playback_speed = float(NORMAL_SPEED) / ALERTED_SPEED
 	
-	audio_alerted.set_stream(SOUND_LOST_PLAYER)
-	audio_alerted.play()
+	play_alerted_audio(SOUND_LOST_PLAYER)
+
+# Play stream on audio_alerted player
+func play_alerted_audio(stream):
+	if !audio_alerted.is_playing():
+		audio_alerted.set_stream(stream)
+		audio_alerted.play()
 
 # slightly fuzzy position check
 func is_at_pos(pos):
