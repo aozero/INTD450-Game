@@ -19,6 +19,7 @@ config/icon="res://icon.png"
 
 DialogueText="*res://Scripts/Items/DialogueText.gd"
 MusicPlayer="*res://Scenes/MusicPlayer.tscn"
+Globals="*res://Scripts/Globals.gd"
 
 [display]
 

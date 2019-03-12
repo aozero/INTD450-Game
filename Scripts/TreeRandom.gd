@@ -1,8 +1,4 @@
-extends StaticBody
+extends "res://Scripts/TreeForestWall.gd"
 
-func _ready():	
-	# Set sprite texture to a random tree in the sprite sheet
-	var sprite = $CollisionShape/Sprite3D
-	var rand_index = int(rand_range(0, sprite.hframes))
-	sprite.frame = rand_index
-	
+func set_sprite():
+	sprite = $CollisionShape/Sprite3D
