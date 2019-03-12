@@ -3,6 +3,7 @@ extends "res://Scripts/Items/Final Item.gd"
 func _ready():
 	MUSIC = load("res://Sound/Music/StudyMemory.wav")
 	SOUND = load("res://Sound/Effects/Memory/study_memory.wav")
+	TEXT = get_node("/root/DialogueText").STUDY_FINAL
 
 func after_memory():
 	# Unblock study path and turn on fireplace

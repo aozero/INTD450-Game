@@ -184,6 +184,8 @@ func start_final_memory(final_item):
 	
 	# Set up and play memory sequence
 	curr_final_item = final_item
+	dialogue_label.text = final_item.TEXT 
+	dialogue_label.visible_characters = -1
 	item_sprite.texture = final_item.sprite.texture
 	music_player.play_melody(final_item.MUSIC)
 	anim_player.play("Fade To Memory")
@@ -217,6 +219,7 @@ func _on_FirstPersonAudio_finished():
 		in_memory = false 
 		anim_player.play("Fade From Memory")
 		music_player.stop_melody()
+		dialogue_label.visible_characters = 0
 		
 		curr_final_item.after_memory()
 

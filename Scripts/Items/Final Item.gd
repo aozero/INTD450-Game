@@ -3,6 +3,7 @@ extends KinematicBody
  # Set by child scripts
 var MUSIC # Music to play during memory
 var SOUND # Core audio content of memory
+var TEXT  # Subtitles text
 
 onready var anim_player = $AnimationPlayer
 onready var music_player = $MusicPlayer
@@ -16,6 +17,8 @@ func interact(player):
 		player.start_final_memory(self)
 		interacted_with = true
 
+# Called after the memory finished
+# Override to do things like switch the scene
 func after_memory():
 	kill()
 
