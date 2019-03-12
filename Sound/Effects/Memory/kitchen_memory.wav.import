@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/kitchen_memory.wav-e4816f43a341d242814d3dd1c75e0e0a.sample"
+
+[deps]
+
+source_file="res://Sound/Effects/Memory/kitchen_memory.wav"
+dest_files=[ "res://.import/kitchen_memory.wav-e4816f43a341d242814d3dd1c75e0e0a.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
