@@ -22,6 +22,8 @@ onready var match_burning_audio = $MatchBurningAudio
 onready var audio_fader = $AudioFader
 onready var music_player = get_node("/root/MusicPlayer")
 
+onready var item_sprite = $"CanvasLayer/ColorRect/TextureRect/Item Sprite"
+
 onready var anim_player = $AnimationPlayer
 onready var headbobber = $Headbobber
 onready var raycast = $RayCast
@@ -35,8 +37,10 @@ onready var start_pos = translation
 
 var game_over = false
 var dying = false
-var in_memory = false
 var running = false
+
+var in_memory = false
+var curr_final_item = null
 
 # Return "Player" instead of "KinematicBody" 
 # This is so we can check if an object is the player
@@ -138,13 +142,6 @@ func _physics_process(delta):
 	else:
 		disable_prompt()
 
-func enable_interact_prompt():
-	prompt_label.text = INTERACT_PROMPT
-	prompt_label.visible_characters = -1
-
-func disable_prompt():
-	prompt_label.visible_characters = 0
-
 func toggle_torch():
 	set_torch(!torch.visible)
 
@@ -175,10 +172,22 @@ func play_audio(stream):
 	audio_player.set_stream(stream)
 	audio_player.play()
 
-func start_tapshoe_memory(music):
+func enable_interact_prompt():
+	prompt_label.text = INTERACT_PROMPT
+	prompt_label.visible_characters = -1
+
+func disable_prompt():
+	prompt_label.visible_characters = 0
+
+func start_final_memory(final_item):
+	# Don't want monsters to interrupt our reminiscing
 	get_tree().call_group("monsters", "kill")
-	music_player.play_melody(music)
-	anim_player.play("Fade To Tapshoe")
+	
+	# Set up and play memory sequence
+	curr_final_item = final_item
+	item_sprite.texture = final_item.sprite.texture
+	music_player.play_melody(final_item.MUSIC)
+	anim_player.play("Fade To Memory")
 
 func start_minor_memory(memory_text):
 	dialogue_label.text = memory_text 
@@ -198,27 +207,21 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 			# We died, restart
 			get_tree().reload_current_scene()
 	
-	if anim_name == "Fade To Tapshoe":
+	if anim_name == "Fade To Memory":
 		in_memory = true
 		set_torch(false)
-		play_audio(SOUND_TAPSHOE)
-		
-		var blockedPath = get_tree().get_root().get_node("World/Navigation/NavigationMeshInstance/End Area/BlockedPath")
-		if blockedPath != null:
-			blockedPath.hide()
-		var fireplace = get_tree().get_root().get_node("World/Navigation/NavigationMeshInstance/End Area/Fireplace")
-		if fireplace != null:
-			fireplace.turn_on()
-		
-	if anim_name == "Fade From Tapshoe":
+		play_audio(curr_final_item.SOUND)
+	
+	if anim_name == "Fade From Memory":
 		music_player.stop_melody()
-		$Timer.start()
 
 # When audio player finishes playing audio
 func _on_FirstPersonAudio_finished():
 	if in_memory:
 		in_memory = false 
-		anim_player.play("Fade From Tapshoe")
+		anim_player.play("Fade From Memory")
+		
+		curr_final_item.after_memory()
 
 # When timer finishes
 func _on_Timer_timeout():

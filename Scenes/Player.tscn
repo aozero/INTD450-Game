@@ -1,16 +1,17 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Scripts/Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Sound/Effects/Match/match_burning.wav" type="AudioStream" id=2]
 [ext_resource path="res://Scripts/Player/TorchArea.gd" type="Script" id=3]
-[ext_resource path="res://Scripts/Player/FPS Display.gd" type="Script" id=4]
-[ext_resource path="res://Sprites/first_person.png" type="Texture" id=5]
-[ext_resource path="res://Fonts/Prompt.ttf" type="DynamicFontData" id=6]
-[ext_resource path="res://Sprites/crosshair.png" type="Texture" id=7]
-[ext_resource path="res://Sprites/Items/study_tapshoe.png" type="Texture" id=8]
-[ext_resource path="res://Sound/Effects/Walking/walking_step1.wav" type="AudioStream" id=9]
-[ext_resource path="res://Scripts/Player/FootstepsPlayer.gd" type="Script" id=10]
-[ext_resource path="res://Scripts/Player/PlayerArea.gd" type="Script" id=11]
+[ext_resource path="res://Scripts/PlayerCanvasLayer.gd" type="Script" id=4]
+[ext_resource path="res://Scripts/Player/FPS Display.gd" type="Script" id=5]
+[ext_resource path="res://Sprites/first_person.png" type="Texture" id=6]
+[ext_resource path="res://Fonts/Prompt.ttf" type="DynamicFontData" id=7]
+[ext_resource path="res://Sprites/crosshair.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/Items/study_tapshoe.png" type="Texture" id=9]
+[ext_resource path="res://Sound/Effects/Walking/walking_step1.wav" type="AudioStream" id=10]
+[ext_resource path="res://Scripts/Player/FootstepsPlayer.gd" type="Script" id=11]
+[ext_resource path="res://Scripts/Player/PlayerArea.gd" type="Script" id=12]
 
 [sub_resource type="Animation" id=1]
 
@@ -165,7 +166,7 @@ _sections_unfolded = [ "Ambient Light", "Background", "Fog" ]
 size = 48
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 6 )
+font_data = ExtResource( 7 )
 _sections_unfolded = [ "Font", "Settings" ]
 
 [sub_resource type="DynamicFont" id=8]
@@ -173,11 +174,12 @@ _sections_unfolded = [ "Font", "Settings" ]
 size = 36
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 6 )
+font_data = ExtResource( 7 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
 [sub_resource type="Animation" id=9]
 
+resource_name = "Fade From Memory"
 length = 1.0
 loop = false
 step = 0.1
@@ -226,6 +228,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=11]
 
+resource_name = "Fade To Memory"
 length = 1.0
 loop = false
 step = 0.1
@@ -368,7 +371,7 @@ tracks/0/keys = {
 
 radius = 50.0
 
-[node name="Player" type="KinematicBody" index="0"]
+[node name="Player" type="KinematicBody"]
 
 input_ray_pickable = true
 input_capture_on_drag = false
@@ -504,6 +507,7 @@ offset = Vector2( 0, 0 )
 rotation = 0.0
 scale = Vector2( 1, 1 )
 transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+script = ExtResource( 4 )
 
 [node name="FPS Display" type="Label" parent="CanvasLayer" index="0"]
 
@@ -522,7 +526,7 @@ size_flags_vertical = 4
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-script = ExtResource( 4 )
+script = ExtResource( 5 )
 
 [node name="Control" type="Control" parent="CanvasLayer" index="1"]
 
@@ -542,7 +546,7 @@ _sections_unfolded = [ "Visibility" ]
 
 position = Vector2( 140, -350 )
 scale = Vector2( 1.5, 1.5 )
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 hframes = 2
 _sections_unfolded = [ "Animation", "Transform", "Visibility" ]
 
@@ -637,7 +641,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 7 )
+texture = ExtResource( 8 )
 stretch_mode = 4
 _sections_unfolded = [ "Anchor", "Margin" ]
 
@@ -645,7 +649,7 @@ _sections_unfolded = [ "Anchor", "Margin" ]
 
 modulate = Color( 1, 1, 1, 0 )
 scale = Vector2( 2, 2 )
-texture = ExtResource( 8 )
+texture = ExtResource( 9 )
 _sections_unfolded = [ "Region", "Transform", "Visibility" ]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="7"]
@@ -655,9 +659,9 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-"anims/Fade From Tapshoe" = SubResource( 9 )
+"anims/Fade From Memory" = SubResource( 9 )
 "anims/Fade To Black" = SubResource( 10 )
-"anims/Fade To Tapshoe" = SubResource( 11 )
+"anims/Fade To Memory" = SubResource( 11 )
 anims/idle = SubResource( 12 )
 anims/light = SubResource( 13 )
 blend_times = [  ]
@@ -676,13 +680,13 @@ blend_times = [  ]
 
 [node name="FootstepsPlayer" type="AudioStreamPlayer" parent="Headbobber" index="0"]
 
-stream = ExtResource( 9 )
+stream = ExtResource( 10 )
 volume_db = -25.0
 pitch_scale = 1.0
 autoplay = false
 mix_target = 0
 bus = "Master"
-script = ExtResource( 10 )
+script = ExtResource( 11 )
 
 [node name="RayCast" type="RayCast" parent="." index="9"]
 
@@ -720,7 +724,7 @@ reverb_bus_enable = false
 reverb_bus_name = "Master"
 reverb_bus_amount = 0.0
 reverb_bus_uniformity = 0.0
-script = ExtResource( 11 )
+script = ExtResource( 12 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Player Area" index="0"]
 
