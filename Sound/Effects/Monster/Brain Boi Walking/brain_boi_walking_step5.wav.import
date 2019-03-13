@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/brain_boi_walking_step5.wav-f1bf7497c214ba030cc728bb6cc21a75.sample"
+
+[deps]
+
+source_file="res://Sound/Effects/Monster/Brain Boi Walking/brain_boi_walking_step5.wav"
+dest_files=[ "res://.import/brain_boi_walking_step5.wav-f1bf7497c214ba030cc728bb6cc21a75.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=false
+edit/loop=false
+compress/mode=0

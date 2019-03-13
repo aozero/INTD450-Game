@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/match_off.wav-6829fd482870c7b58944237cddc6f5d6.sample"
+
+[deps]
+
+source_file="res://Sound/Effects/Match/match_off.wav"
+dest_files=[ "res://.import/match_off.wav-6829fd482870c7b58944237cddc6f5d6.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=false
+edit/loop=false
+compress/mode=0
