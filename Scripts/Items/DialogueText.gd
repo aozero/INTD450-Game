@@ -23,11 +23,11 @@ const KITCHEN_FINAL = "Too slow, Jamie. If you want me to drop the ladder, you g
 # Study
 ###############################
 # Ship in a Bottle
-const STUDY_1 = "I'm sorry, Daddy! It was an accident, I swear. I didn't think the ball would go that far?."
+const STUDY_1 = "I'm sorry, Daddy! It was an accident, I swear. I didn't think the ball would go that far."
 # Leather-bound Planner
 const STUDY_2 = "May 14th, 2009. Jamie (Caterpillar) and Riley's (Queen of Hearts) school play. Alice in Wonderland - school gym 4:30PM. [crossed out]. Red eye flight to Taiwan 5:40 AM. "
 # Tapshoe
-const STUDY_FINAL = "Jamie, get you sister to cool it would ya? I'm getting a headache."
+const STUDY_FINAL = "Jamie, get your sister to cool it would ya? I'm getting a headache."
 ###############################
 
 # Bedroom

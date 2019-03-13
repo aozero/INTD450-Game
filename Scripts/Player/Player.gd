@@ -131,11 +131,12 @@ func _physics_process(delta):
 	# Check if player is looking at anything interactable that is within range
 	var coll = raycast.get_collider()
 	if raycast.is_colliding() and coll != null and coll.has_method("interact"): 
-		if raycast.get_collision_point().distance_to(translation) < INTERACT_RANGE:
-			enable_interact_prompt()
-			
-			if Input.is_action_pressed("interact"):
-				coll.interact(self)
+		#  Can only interact if close and the match is on
+		if raycast.get_collision_point().distance_to(translation) < INTERACT_RANGE && torch.visible:
+				enable_interact_prompt()
+				
+				if Input.is_action_pressed("interact"):
+					coll.interact(self)
 		else:
 			disable_prompt()
 		
