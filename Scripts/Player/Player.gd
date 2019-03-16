@@ -17,6 +17,7 @@ onready var SOUND_MATCH_BURNING = load("res://Sound/Effects/Match/match_burning.
 onready var INTERACT_PROMPT = "Press " + InputMap.get_action_list("interact")[0].as_text() + " to interact"
 
 onready var audio_player = $FirstPersonAudio
+onready var dialogue_player = $DialogueAudio
 onready var match_burning_audio = $MatchBurningAudio
 onready var audio_fader = $AudioFader
 onready var music_player = get_node("/root/MusicPlayer")
@@ -193,13 +194,14 @@ func start_final_memory(final_item):
 	anim_player.play("Fade To Memory")
 
 """
-sound - the sound to play
-text - the subtitle text to display
-text_time - how long in seconds the text should stay up for
+Plays sound and displays text 
+dialogue.SOUND - the sound to play
+dialogue.TEXT - the subtitle text to display
+dialogue.TEXT_TIME - how long in seconds the text should stay up for
 """
-func start_minor_memory(dialogue):
-	audio_player.stream = dialogue.SOUND
-	audio_player.play()
+func play_dialogue(dialogue):
+	dialogue_player.stream = dialogue.SOUND
+	dialogue_player.play()
 	
 	dialogue_label.text = dialogue.TEXT 
 	dialogue_label.visible_characters = -1
@@ -225,8 +227,8 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 		set_torch(false)
 		play_audio(curr_final_item.DIALOGUE.SOUND)
 
-# When audio player finishes playing audio
-func _on_FirstPersonAudio_finished():
+# When dialogue player finishes playing audio
+func _on_DialogueAudio_finished():
 	if in_memory:
 		in_memory = false 
 		anim_player.play("Fade From Memory")
@@ -247,3 +249,5 @@ func _on_HandAnimator_animation_finished(anim_name):
 		else:
 			anim_hand.play("idle_off")
 	
+
+
