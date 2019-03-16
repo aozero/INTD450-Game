@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scenes/Worlds/World.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/BGForestMedium.tscn" type="PackedScene" id=2]
+
+[node name="World" index="0" instance=ExtResource( 1 )]
+
+[node name="Trees" type="Spatial" parent="." index="0"]
+
+[node name="BGForestMedium" parent="Trees" index="0" instance=ExtResource( 2 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -18.2534, 1.74406, -21.2971 )
+
+[node name="BGForestMedium2" parent="Trees" index="1" instance=ExtResource( 2 )]
+
+transform = Transform( 0.226541, -0.00440625, -0.973992, 0.0194465, 0.999811, 0, 0.973807, -0.0189407, 0.226584, -8.17854, 1.03827, -12.8571 )
+
+[node name="BGForestMedium3" parent="Trees" index="2" instance=ExtResource( 2 )]
+
+transform = Transform( 0.694722, -0.0135125, -0.719151, 0.0194465, 0.999811, 0, 0.719015, -0.013985, 0.694853, -1.99886, 0.134155, -1.59874 )
+
+[node name="BGForestMedium4" parent="Trees" index="3" instance=ExtResource( 2 )]
+
+transform = Transform( 0.446572, -0.00868589, -0.894706, 0.0194465, 0.999811, 0, 0.894536, -0.0173989, 0.446656, -21.9474, -0.0991592, 2.73775 )
+
+[node name="BGForestMedium5" parent="Trees" index="4" instance=ExtResource( 2 )]
+
+transform = Transform( 0.993533, -0.0193244, -0.11189, 0.0194465, 0.999811, 0, 0.111869, -0.00217586, 0.993721, -10.2092, -0.904106, 12.3471 )
+
+[node name="BGForestMedium6" parent="Trees" index="5" instance=ExtResource( 2 )]
+
+transform = Transform( -0.45566, 0.00886266, -0.89011, 0.0194465, 0.999811, 0, 0.889942, -0.0173095, -0.455746, 3.65449, -0.76413, 9.61933 )
+
+[node name="BGForestMedium7" parent="Trees" index="6" instance=ExtResource( 2 )]
+
+transform = Transform( 0.16674, -0.00324311, -0.985996, 0.0194465, 0.999811, 0, 0.985809, -0.0191741, 0.166771, -25.8851, 1.07911, -12.2079 )
+
+
