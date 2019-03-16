@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://Materials/Billboard.tres" type="Material" id=1]
+[ext_resource path="res://Materials/ForestTree.tres" type="Material" id=1]
 [ext_resource path="res://Sprites/Foliage/tree_sheet.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/TreeForestWall.gd" type="Script" id=3]
 
-[node name="TreeForestWall" type="Sprite3D"]
+[node name="TreeForestWall" type="Sprite3D" index="0"]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0 )
 layers = 1
