@@ -3,16 +3,17 @@ extends Node
 """
  Contains the sound, text, and how long to display the text for all the dialogue in the game.
 
- To make quotation marks in the actual text, use \" instead
-
  Each item has up to 3 parts:
 	SOUND: The location of the sound file that will play.
+		Copy one of the existing lines and modify it to point to the sound file you want to play.
+		Make sure to keep the load at the beginning, and wrap it all in (" and ")
 	TEXT: The text that will appear on the screen.  
 		Make sure that every text constant starts and ends with quotation marks.
 		To make quotation marks in the actual text, use \" instead
 	TEXT_TIME: How long in seconds the text should stay on the screen. Ignored by final items.
 	MUSIC: The location of the music file that will play. Ignored by minor items
 """
+
 var KITCHEN_1 = {}
 var KITCHEN_2 = {}
 var KITCHEN_FINAL = {}
