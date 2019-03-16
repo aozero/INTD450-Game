@@ -7,7 +7,6 @@ extends Node
 
  Each item has up to 3 parts:
 	SOUND: The location of the sound file that will play.
-		
 	TEXT: The text that will appear on the screen.  
 		Make sure that every text constant starts and ends with quotation marks.
 		To make quotation marks in the actual text, use \" instead
