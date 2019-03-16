@@ -1,6 +1,6 @@
 extends KinematicBody
 
-var DIALOGUE # Container with TEXT, SOUND, and LENGTH. Set by inherting classes
+var DIALOGUE # Container with TEXT, SOUND, and TEXT_TIME. Set by inherting classes
 
 func interact(player):
-	player.start_minor_memory(DIALOGUE.SOUND, DIALOGUE.TEXT, DIALOGUE.LENGTH)
+	player.start_minor_memory(DIALOGUE)

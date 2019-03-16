@@ -195,16 +195,16 @@ func start_final_memory(final_item):
 """
 sound - the sound to play
 text - the subtitle text to display
-length - how long in seconds the text should stay up for
+text_time - how long in seconds the text should stay up for
 """
-func start_minor_memory(mem_sound, mem_text, mem_length):
-	audio_player.stream = mem_sound
+func start_minor_memory(dialogue):
+	audio_player.stream = dialogue.SOUND
 	audio_player.play()
 	
-	dialogue_label.text = mem_text 
+	dialogue_label.text = dialogue.TEXT 
 	dialogue_label.visible_characters = -1
 	
-	dialogue_timer.wait_time = mem_length
+	dialogue_timer.wait_time = dialogue.TEXT_TIME
 	dialogue_timer.start()
 
 func _on_Dialogue_Timer_timeout():
