@@ -186,15 +186,25 @@ func start_final_memory(final_item):
 	
 	# Set up and play memory sequence
 	curr_final_item = final_item
-	dialogue_label.text = final_item.TEXT 
+	dialogue_label.text = final_item.DIALOGUE.TEXT 
 	dialogue_label.visible_characters = -1
 	item_sprite.texture = final_item.sprite.texture
-	music_player.play_melody(final_item.MUSIC)
+	music_player.play_melody(final_item.DIALOGUE.MUSIC)
 	anim_player.play("Fade To Memory")
 
-func start_minor_memory(memory_text):
-	dialogue_label.text = memory_text 
+"""
+sound - the sound to play
+text - the subtitle text to display
+length - how long in seconds the text should stay up for
+"""
+func start_minor_memory(mem_sound, mem_text, mem_length):
+	audio_player.stream = mem_sound
+	audio_player.play()
+	
+	dialogue_label.text = mem_text 
 	dialogue_label.visible_characters = -1
+	
+	dialogue_timer.wait_time = mem_length
 	dialogue_timer.start()
 
 func _on_Dialogue_Timer_timeout():
@@ -213,7 +223,7 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == "Fade To Memory":
 		in_memory = true
 		set_torch(false)
-		play_audio(curr_final_item.SOUND)
+		play_audio(curr_final_item.DIALOGUE.SOUND)
 
 # When audio player finishes playing audio
 func _on_FirstPersonAudio_finished():

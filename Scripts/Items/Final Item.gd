@@ -2,8 +2,7 @@ extends KinematicBody
 
  # Set by child scripts
 var MUSIC # Music to play during memory
-var SOUND # Core audio content of memory
-var TEXT  # Subtitles text
+var DIALOGUE # Container with TEXT, SOUND, and LENGTH. Set by inherting classes
 
 onready var anim_player = $AnimationPlayer
 onready var music_player = $MusicPlayer
