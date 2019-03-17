@@ -5,7 +5,7 @@
 [ext_resource path="res://Sprites/Items/kitchen_drawing.png" type="Texture" id=3]
 [ext_resource path="res://Sound/Music/KitchenArea.wav" type="AudioStream" id=4]
 
-[node name="ItemDrawing" instance=ExtResource( 1 )]
+[node name="ItemDrawing" index="0" instance=ExtResource( 1 )]
 
 script = ExtResource( 2 )
 
@@ -16,5 +16,6 @@ texture = ExtResource( 3 )
 [node name="MusicPlayer" parent="." index="2"]
 
 stream = ExtResource( 4 )
+unit_size = 1.0
 
 
