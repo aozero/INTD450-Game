@@ -487,8 +487,26 @@ anims/walk_2 = SubResource( 8 )
 anims/walk_3 = SubResource( 9 )
 blend_times = [  ]
 
-[node name="TopLooker" type="Spatial" parent="." index="7"]
+[node name="LostPlayerTimer" type="Timer" parent="." index="7"]
+
+process_mode = 1
+wait_time = 6.0
+one_shot = false
+autostart = false
+
+[node name="StandStillTimer" type="Timer" parent="." index="8"]
+
+process_mode = 1
+wait_time = 4.0
+one_shot = false
+autostart = false
+
+[node name="TopLooker" type="Spatial" parent="." index="9"]
 
 [node name="SpriteLooker" type="Spatial" parent="TopLooker" index="0"]
+
+[connection signal="timeout" from="LostPlayerTimer" to="." method="_on_LostPlayerTimer_timeout"]
+
+[connection signal="timeout" from="StandStillTimer" to="." method="_on_StandStillTimer_timeout"]
 
 

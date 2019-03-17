@@ -19,6 +19,8 @@ onready var SOUND_LOST_PLAYER = load("res://Sound/Effects/Monster/brain_boi_lost
 onready var detection_raycast = $RayCast
 onready var audio_breathing = $AudioBreathing
 onready var audio_alerted = $AudioAlerted
+onready var lost_player_timer = $LostPlayerTimer
+onready var stand_still_timer = $StandStillTimer
 
 # for pathfinding
 onready var navigation = get_tree().get_root().get_node("World/Navigation")
@@ -34,6 +36,24 @@ var draw_path = false
 
 var alerted = false
 var curr_move_speed = NORMAL_SPEED
+
+"""
+GENERAL OVERVIEW OF MONSTER BEHAVIOUR
+-------------------------------------
+At level start the monster will either stay where it is, or, 
+if it has Waypoints as children, it will move between its start position and those Waypoints in order at NORMAL_SPEED.
+
+It breathes constantly, signalling its position, and will detect the player at different ranges based on
+the players state. Eg. if the player is running with a lit match, it will detect the player at range DETECT_LIT_RUN_RANGE
+
+Upon detecting the player, it will play SOUND_ALERTED and attempt to path to her at ALERTED_SPEED. 
+If it can move into and collide with the player, it will call Player.kill(), restarting the level.
+
+If it can no longer detect the player, it will play SOUND_LOST_PLAYER, slow down to NORMAL_SPEED, and move
+towards the position it last detected the player at. Additionally, it will start lost_player_timer. 
+After some time, it will stand still and start stand_still_timer. Once that is up, it will path to the last
+position on its patrol, or return to its start position.
+"""
 
 # Return "Monster" instead of "KinematicBody" 
 # This is so we can check if an object is a monster
@@ -52,6 +72,8 @@ func _ready():
 # If we have waypoint objects as children, 
 # Store their positions in an array and delete them (we only need their original position)
 func process_child_waypoints():
+	patrol_waypoints.append(global_transform.origin)
+	
 	for c in get_children():
 		if c.get_class() == "Waypoint":
 			patrol_waypoints.append(c.pos)
@@ -125,7 +147,8 @@ func _physics_process(delta):
 		# Look where we're going
 		# We may have just finished a section of the path, so get the newest target_pos for looking
 		target_pos = get_curr_path_section_target_pos()
-		top_looker.look_at(target_pos, UP)
+		if !is_at_pos(target_pos):
+			top_looker.look_at(target_pos, UP)
 		
 		# If that finished the path
 		if path_ind >= path.size():
@@ -144,18 +167,26 @@ func stop_moving():
 	anim_player.play("idle_0")
 	update_sprite_direction()
 
+# Called when spotting the player
+# Speed up and play the alerted noise
 func start_alerted():
 	alerted = true
 	curr_move_speed = ALERTED_SPEED
 	anim_player.playback_speed = 1
 	
+	lost_player_timer.stop()
+	stand_still_timer.stop()
 	play_alerted_audio(SOUND_ALERTED)
 
+# Called when losing the player
+# Slow down, play the lost player noise, and start the lost_player timer,
+# where the monster will eventually give up
 func stop_alerted():
 	alerted = false
 	curr_move_speed = NORMAL_SPEED
 	anim_player.playback_speed = float(NORMAL_SPEED) / ALERTED_SPEED
 	
+	lost_player_timer.start()
 	play_alerted_audio(SOUND_LOST_PLAYER)
 
 # Play stream on audio_alerted player
@@ -212,3 +243,13 @@ func get_curr_path_section_target_pos():
 func kill():
 	remove_from_group("monsters")
 	queue_free()
+
+# After losing player for a while, stand still for a bit
+func _on_LostPlayerTimer_timeout():
+	stop_moving()
+	stand_still_timer.start()
+
+# After losing player, return to patrol/home
+func _on_StandStillTimer_timeout():
+	player_pos = null
+	path = []
