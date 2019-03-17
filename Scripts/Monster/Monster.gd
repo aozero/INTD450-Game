@@ -123,13 +123,17 @@ func _physics_process(delta):
 		stop_alerted()
 	
 	# If we have waypoints stored and haven't seen the player yet, start patrolling between the points in order
-	if !patrol_waypoints.empty() && player_pos == null && path.size() == 0:
-		patrol_ind += 1
-		if patrol_ind >= patrol_waypoints.size():
-			patrol_ind = 0
-		
-		path_to_point(patrol_waypoints[patrol_ind])
-		start_moving()
+	if player_pos == null && path.size() == 0:
+		if patrol_waypoints.size() > 1:
+			patrol_ind += 1
+			if patrol_ind >= patrol_waypoints.size():
+				patrol_ind = 0
+			
+			path_to_point(patrol_waypoints[patrol_ind])
+			start_moving()
+		elif !patrol_waypoints.empty() && !is_at_pos(patrol_waypoints[patrol_ind]):
+			path_to_point(patrol_waypoints[0])
+			start_moving()
 	
 	# If we haven't finished the path yet
 	if path_ind < path.size():
