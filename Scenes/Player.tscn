@@ -390,7 +390,7 @@ tracks/0/keys = {
 
 radius = 50.0
 
-[node name="Player" type="KinematicBody" index="0"]
+[node name="Player" type="KinematicBody"]
 
 input_ray_pickable = true
 input_capture_on_drag = false
@@ -415,7 +415,7 @@ playback_speed = 1.0
 "anims/fade in burning" = SubResource( 1 )
 blend_times = [  ]
 
-[node name="FirstPersonAudio" type="AudioStreamPlayer" parent="." index="1"]
+[node name="DialogueAudio" type="AudioStreamPlayer" parent="." index="1"]
 
 stream = null
 volume_db = -5.0
@@ -424,7 +424,16 @@ autoplay = false
 mix_target = 0
 bus = "Master"
 
-[node name="MatchBurningAudio" type="AudioStreamPlayer" parent="." index="2"]
+[node name="FirstPersonAudio" type="AudioStreamPlayer" parent="." index="2"]
+
+stream = null
+volume_db = -5.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="MatchBurningAudio" type="AudioStreamPlayer" parent="." index="3"]
 
 stream = ExtResource( 2 )
 volume_db = -80.0
@@ -433,14 +442,14 @@ autoplay = false
 mix_target = 0
 bus = "Master"
 
-[node name="CollisionShape" type="CollisionShape" parent="." index="3"]
+[node name="CollisionShape" type="CollisionShape" parent="." index="4"]
 
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-008, -1, 0, 1, -4.37114e-008, 0, 0, 0 )
 shape = SubResource( 2 )
 disabled = false
 _sections_unfolded = [ "Transform" ]
 
-[node name="Torch" type="OmniLight" parent="." index="4"]
+[node name="Torch" type="OmniLight" parent="." index="5"]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.00367594 )
 visible = false
@@ -503,7 +512,7 @@ playback_speed = 1.0
 anims/Fire = SubResource( 4 )
 blend_times = [  ]
 
-[node name="Camera" type="Camera" parent="." index="5"]
+[node name="Camera" type="Camera" parent="." index="6"]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0218131, 0 )
 keep_aspect = 1
@@ -520,7 +529,7 @@ near = 0.05
 far = 30.0
 _sections_unfolded = [ "Transform", "Visibility" ]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." index="6"]
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="7"]
 
 layer = 1
 offset = Vector2( 0, 0 )
@@ -656,7 +665,6 @@ _sections_unfolded = [ "Region", "Transform", "Visibility" ]
 
 [node name="Dialogue Label" type="Label" parent="CanvasLayer" index="4"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -688,7 +696,7 @@ wait_time = 8.0
 one_shot = false
 autostart = false
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="7"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="8"]
 
 root_node = NodePath("..")
 autoplay = ""
@@ -701,7 +709,7 @@ playback_speed = 1.0
 blend_times = [  ]
 _sections_unfolded = [ "Playback Options" ]
 
-[node name="Headbobber" type="AnimationPlayer" parent="." index="8"]
+[node name="Headbobber" type="AnimationPlayer" parent="." index="9"]
 
 root_node = NodePath("..")
 autoplay = ""
@@ -722,21 +730,21 @@ mix_target = 0
 bus = "Master"
 script = ExtResource( 11 )
 
-[node name="RayCast" type="RayCast" parent="." index="9"]
+[node name="RayCast" type="RayCast" parent="." index="10"]
 
 enabled = true
 exclude_parent = true
 cast_to = Vector3( 0, 0, -2000 )
 collision_mask = 32
 
-[node name="Timer" type="Timer" parent="." index="10"]
+[node name="Timer" type="Timer" parent="." index="11"]
 
 process_mode = 1
 wait_time = 5.0
 one_shot = false
 autostart = false
 
-[node name="Player Area" type="Area" parent="." index="11"]
+[node name="Player Area" type="Area" parent="." index="12"]
 
 input_ray_pickable = false
 input_capture_on_drag = false
@@ -765,7 +773,7 @@ script = ExtResource( 12 )
 shape = SubResource( 17 )
 disabled = false
 
-[connection signal="finished" from="FirstPersonAudio" to="." method="_on_FirstPersonAudio_finished"]
+[connection signal="finished" from="DialogueAudio" to="." method="_on_DialogueAudio_finished"]
 
 [connection signal="animation_finished" from="CanvasLayer/Control/Hand Sprite/HandAnimator" to="." method="_on_HandAnimator_animation_finished"]
 
