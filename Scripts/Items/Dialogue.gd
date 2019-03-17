@@ -62,7 +62,7 @@ func _ready():
 	# Drawing of Clubhouse
 	KITCHEN_FINAL.SOUND = load("res://Sound/Effects/Memory/Final Items/kitchen_memory.wav")
 	KITCHEN_FINAL.TEXT = "Too slow, Jamie. If you want me to drop the ladder, you gotta give me the password."
-	KITCHEN_FINAL.TEXT_TIME = load("res://Sound/Music/KitchenMemory.wav")
+	KITCHEN_FINAL.MUSIC = load("res://Sound/Music/KitchenMemory.wav")
 	###############################
 	
 	# Study
