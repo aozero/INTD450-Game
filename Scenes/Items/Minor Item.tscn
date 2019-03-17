@@ -30,5 +30,6 @@ stream = ExtResource( 4 )
 unit_db = -28.0
 unit_size = 1.0
 max_db = -24.0
+autoplay = false
 
 
