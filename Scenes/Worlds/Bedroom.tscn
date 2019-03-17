@@ -9,95 +9,95 @@
 
 [node name="BGForestMedium1" parent="Trees" index="0" instance=ExtResource( 2 )]
 
-transform = Transform( -0.973277, 0, 0.229633, 0, 1, 0, -0.229633, 0, -0.973277, 31.8135, 1.84548, -27.4625 )
+transform = Transform( -0.973277, 0, 0.229633, 0, 1, 0, -0.229633, 0, -0.973277, 31.8135, 0, -27.4625 )
 
 [node name="BGForestMedium2" parent="Trees" index="1" instance=ExtResource( 2 )]
 
-transform = Transform( 0.210017, 0, 0.977698, 0, 1, 0, -0.977698, 0, 0.210017, 40.457, 3.86217, -23.8243 )
+transform = Transform( 0.210017, 0, 0.977698, 0, 1, 0, -0.977698, 0, 0.210017, 40.457, 0, -23.8243 )
 
 [node name="BGForestMedium3" parent="Trees" index="2" instance=ExtResource( 2 )]
 
-transform = Transform( -0.195052, 0, 0.980793, 0, 1, 0, -0.980793, 0, -0.195052, 21.1536, 2.88238, -15.5918 )
+transform = Transform( -0.195052, 0, 0.980793, 0, 1, 0, -0.980793, 0, -0.195052, 21.1536, 0, -15.5918 )
 
 [node name="BGForestMedium4" parent="Trees" index="3" instance=ExtResource( 2 )]
 
-transform = Transform( 0.562323, 0, 0.826918, 0, 1, 0, -0.826918, 0, 0.562323, 36.583, 1.9887, -10.6268 )
+transform = Transform( 0.562323, 0, 0.826918, 0, 1, 0, -0.826918, 0, 0.562323, 36.583, 0, -10.6268 )
 
 [node name="BGForestMedium5" parent="Trees" index="4" instance=ExtResource( 2 )]
 
-transform = Transform( 0.318863, 0, 0.947801, 0, 1, 0, -0.947801, 0, 0.318863, 18.8575, 4.16721, -25.0708 )
+transform = Transform( 0.318863, 0, 0.947801, 0, 1, 0, -0.947801, 0, 0.318863, 18.8575, 0, -25.0708 )
 
 [node name="BGForestMedium6" parent="Trees" index="5" instance=ExtResource( 2 )]
 
-transform = Transform( 0.468607, 0, 0.883407, 0, 1, 0, -0.883407, 0, 0.468607, 16.8234, 1.01949, -2.71295 )
+transform = Transform( 0.468607, 0, 0.883407, 0, 1, 0, -0.883407, 0, 0.468607, 16.8234, 0, -2.71295 )
 
 [node name="BGForestMedium7" parent="Trees" index="6" instance=ExtResource( 2 )]
 
-transform = Transform( 0.750306, 0, -0.66109, 0, 1, 0, 0.66109, 0, 0.750306, 0.61748, 2.36215, -11.3309 )
+transform = Transform( 0.750306, 0, -0.66109, 0, 1, 0, 0.66109, 0, 0.750306, 0.61748, 0, -11.3309 )
 
 [node name="BGForestMedium8" parent="Trees" index="7" instance=ExtResource( 2 )]
 
-transform = Transform( 0.353016, 0, -0.935617, 0, 1, 0, 0.935617, 0, 0.353016, -0.740136, 0.601585, 1.18616 )
+transform = Transform( 0.353016, 0, -0.935617, 0, 1, 0, 0.935617, 0, 0.353016, -0.740136, 0, 1.18616 )
 
 [node name="BGForestMedium9" parent="Trees" index="8" instance=ExtResource( 2 )]
 
-transform = Transform( 0.667582, 0, 0.744536, 0, 1, 0, -0.744536, 0, 0.667582, -11.2876, 2.21102, -9.62181 )
+transform = Transform( 0.667582, 0, 0.744536, 0, 1, 0, -0.744536, 0, 0.667582, -11.2876, 0, -9.62181 )
 
 [node name="BGForestMedium10" parent="Trees" index="9" instance=ExtResource( 2 )]
 
-transform = Transform( 0.153479, 0, 0.988152, 0, 1, 0, -0.988152, 0, 0.153479, 45.236, 0.868347, -3.1736 )
+transform = Transform( 0.153479, 0, 0.988152, 0, 1, 0, -0.988152, 0, 0.153479, 45.236, 0, -3.1736 )
 
 [node name="BGForestMedium11" parent="Trees" index="10" instance=ExtResource( 2 )]
 
-transform = Transform( 0.431462, 0, -0.902131, 0, 1, 0, 0.902131, 0, 0.431462, 7.99352, 0.770523, -0.477993 )
+transform = Transform( 0.431462, 0, -0.902131, 0, 1, 0, 0.902131, 0, 0.431462, 7.99352, 0, -0.477993 )
 
 [node name="BGForestMedium12" parent="Trees" index="11" instance=ExtResource( 2 )]
 
-transform = Transform( 0.977981, 0, 0.208695, 0, 1, 0, -0.208695, 0, 0.977981, 36.0996, -0.074173, 3.98006 )
+transform = Transform( 0.977981, 0, 0.208695, 0, 1, 0, -0.208695, 0, 0.977981, 36.0996, 0, 3.98006 )
 
 [node name="BGForestMedium13" parent="Trees" index="12" instance=ExtResource( 2 )]
 
-transform = Transform( 0.583895, -0.0424685, 0.810718, 0.0560166, 0.998358, 0.0119536, -0.809895, 0.038434, 0.585315, 21.9655, -0.856667, 10.2714 )
+transform = Transform( 0.585357, 0, 0.810776, 0, 1, 0, -0.810776, 0, 0.585357, 21.9655, 0, 10.2714 )
 
 [node name="BGForestMedium14" parent="Trees" index="13" instance=ExtResource( 2 )]
 
-transform = Transform( 0.682689, -0.0397554, -0.729627, 0.0584918, 0.998288, 0.000334856, 0.728365, -0.0429058, 0.683845, -11.5643, -0.251625, 2.64496 )
+transform = Transform( 0.683845, 0, -0.729627, 0, 1, 0, 0.729628, 0, 0.683845, -11.5643, 0, 2.64496 )
 
 [node name="BGForestMedium15" parent="Trees" index="14" instance=ExtResource( 2 )]
 
-transform = Transform( 0.998211, -0.0584831, -0.0124565, 0.0584918, 0.998288, 0.000334856, 0.0124156, -0.00106286, 0.999922, -3.3495, 0.515373, 18.3612 )
+transform = Transform( 0.999923, 0, -0.0124565, 0, 1, 0, 0.0124565, 0, 0.999922, -3.3495, 0, 18.3612 )
 
 [node name="BGForestMedium16" parent="Trees" index="15" instance=ExtResource( 2 )]
 
-transform = Transform( 0.976375, -0.0572778, 0.208353, 0.0584918, 0.998288, 0.000334856, -0.208015, 0.01186, 0.978054, 38.5726, 1.08175, -4.32336 )
+transform = Transform( 0.978054, 0, 0.208353, 0, 1, 0, -0.208353, 0, 0.978054, 38.5726, 0, -4.32336 )
 
 [node name="BGForestMedium17" parent="Trees" index="16" instance=ExtResource( 2 )]
 
-transform = Transform( 0.978547, -0.0572687, -0.197906, 0.0584918, 0.998288, 0.000334856, 0.197548, -0.0119036, 0.980221, -14.7746, 2.11295, 7.69734 )
+transform = Transform( 0.980221, 0, -0.197906, 0, 1, 0, 0.197906, 0, 0.980221, -14.7746, 0, 7.69734 )
 
 [node name="BGForestMedium18" parent="Trees" index="17" instance=ExtResource( 2 )]
 
-transform = Transform( 0.976375, -0.0572778, 0.208353, 0.0584918, 0.998288, 0.000334856, -0.208015, 0.01186, 0.978054, -31.3792, 2.36206, 6.81698 )
+transform = Transform( 0.978054, 0, 0.208353, 0, 1, 0, -0.208353, 0, 0.978054, -31.3792, 0, 6.81698 )
 
 [node name="BGForestMedium19" parent="Trees" index="18" instance=ExtResource( 2 )]
 
-transform = Transform( 0.976375, -0.0572778, 0.208353, 0.0584918, 0.998288, 0.000334856, -0.208015, 0.01186, 0.978054, -32.6799, 1.11661, 15.6899 )
+transform = Transform( 0.978054, 0, 0.208353, 0, 1, 0, -0.208353, 0, 0.978054, -32.6799, 0, 15.6899 )
 
 [node name="BGForestMedium20" parent="Trees" index="19" instance=ExtResource( 2 )]
 
-transform = Transform( 0.976375, -0.0572778, 0.208353, 0.0584918, 0.998288, 0.000334856, -0.208015, 0.01186, 0.978054, 10.6905, 0.412292, 18.3341 )
+transform = Transform( 0.978054, 0, 0.208353, 0, 1, 0, -0.208353, 0, 0.978054, 10.6905, 0, 18.3341 )
 
 [node name="BGForestMedium21" parent="Trees" index="20" instance=ExtResource( 2 )]
 
-transform = Transform( -0.143667, 0.00808579, 0.989593, 0.0584918, 0.998288, 0.000334856, -0.987896, 0.0579312, -0.143894, -24.8054, -0.180847, 22.5413 )
+transform = Transform( -0.143894, 0, 0.989593, 0, 1, 0, -0.989593, 0, -0.143894, -24.8054, 0, 22.5413 )
 
 [node name="BGForestMedium22" parent="Trees" index="21" instance=ExtResource( 2 )]
 
-transform = Transform( 0.0465354, -0.00306167, 0.998912, 0.0584918, 0.998288, 0.000334856, -0.997203, 0.0584126, 0.0466348, -43.1803, 1.32838, 12.8628 )
+transform = Transform( 0.0466348, 0, 0.998912, 0, 1, 0, -0.998912, 0, 0.0466348, -43.1803, 0, 12.8628 )
 
 [node name="BGForestMedium23" parent="Trees" index="22" instance=ExtResource( 2 )]
 
-transform = Transform( 0.748578, -0.0440827, 0.661579, 0.0584918, 0.998288, 0.000334856, -0.660461, 0.0384463, 0.749875, -18.2935, -0.517197, 24.5682 )
+transform = Transform( 0.749875, 0, 0.661579, 0, 1, 0, -0.661579, 0, 0.749875, -18.2935, 0, 24.5682 )
 
 [node name="FloorPlane" parent="Navigation/NavigationMeshInstance" index="0"]
 
