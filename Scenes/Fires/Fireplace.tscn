@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://Scripts/Fireplace.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/Fires/Fireplace.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/campfire.png" type="Texture" id=2]
 [ext_resource path="res://Animations/Fire.tres" type="Animation" id=3]
 
@@ -147,7 +147,7 @@ subdivide_width = 0
 subdivide_height = 0
 subdivide_depth = 0
 
-[node name="Fireplace" type="StaticBody"]
+[node name="Fireplace" type="StaticBody" index="0"]
 
 input_ray_pickable = true
 input_capture_on_drag = false
@@ -158,6 +158,7 @@ bounce = 0.0
 constant_linear_velocity = Vector3( 0, 0, 0 )
 constant_angular_velocity = Vector3( 0, 0, 0 )
 script = ExtResource( 1 )
+on = false
 
 [node name="CollisionShape" type="CollisionShape" parent="." index="0"]
 
