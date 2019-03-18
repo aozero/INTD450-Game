@@ -123,6 +123,7 @@ func _physics_process(delta):
 	
 	# Actually move
 	move_and_slide(move_vec * move_speed)
+	translation.y = 0 # Stop player from climbing over some objects
 	
 	# Check for torch toggling
 	# TODO: Minor, but this would be better in an event based input system rather than checking constantly
