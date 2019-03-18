@@ -14,6 +14,11 @@ onready var SOUND_MATCH_ON = load("res://Sound/Effects/Match/match_on.wav")
 onready var SOUND_MATCH_OFF = load("res://Sound/Effects/Match/match_off.wav")
 onready var SOUND_MATCH_BURNING = load("res://Sound/Effects/Match/match_burning.wav")
 
+onready var DIALOGUE_MINOR_FONT_COLOR = Color(1, 1, 1)
+onready var DIALOGUE_MINOR_FONT_SHADOW = Color(0, 0, 0)
+onready var DIALOGUE_FINAL_FONT_COLOR = Color(0, 0, 0)
+onready var DIALOGUE_FINAL_FONT_SHADOW = Color(1, 1, 1)
+
 onready var INTERACT_PROMPT = "Press " + InputMap.get_action_list("interact")[0].as_text() + " to interact"
 
 onready var audio_player = $FirstPersonAudio
@@ -172,17 +177,43 @@ func enable_interact_prompt():
 func disable_prompt():
 	prompt_label.visible_characters = 0
 
+# Called when interacting with final item
+# Starts the process, fading into the memory
 func start_final_memory(final_item):
+	curr_final_item = final_item
+	
 	# Don't want monsters to interrupt our reminiscing
 	get_tree().call_group("monsters", "kill")
 	
 	# Set up and play memory sequence
-	curr_final_item = final_item
-	dialogue_label.text = final_item.DIALOGUE.TEXT 
-	dialogue_label.visible_characters = -1
-	item_sprite.texture = final_item.sprite.texture
-	music_player.play_melody(final_item.DIALOGUE.MUSIC)
+	item_sprite.texture = curr_final_item.sprite.texture
+	music_player.play_melody(curr_final_item.DIALOGUE.MUSIC)
 	anim_player.play("Fade To Memory")
+
+# We've faded into the memory and start actually playing the audio
+func in_final_memory():
+	in_memory = true
+	set_torch(false)
+	audio_player.stop()
+	
+	dialogue_label.add_color_override("font_color", DIALOGUE_FINAL_FONT_COLOR)
+	dialogue_label.add_color_override("font_color_shadow", DIALOGUE_FINAL_FONT_SHADOW)
+	dialogue_label.text = curr_final_item.DIALOGUE.TEXT 
+	dialogue_label.visible_characters = -1
+	dialogue_player.stream = curr_final_item.DIALOGUE.SOUND
+	dialogue_player.play()
+
+# The memory has finished
+func end_final_memory():
+	in_memory = false 
+	anim_player.play("Fade From Memory")
+	music_player.stop_melody()
+	
+	dialogue_label.visible_characters = 0
+	dialogue_label.add_color_override("font_color", DIALOGUE_MINOR_FONT_COLOR)
+	dialogue_label.add_color_override("font_color_shadow", DIALOGUE_MINOR_FONT_SHADOW)
+	
+	curr_final_item.after_memory()
 
 """
 Plays sound and displays text 
@@ -214,27 +245,19 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 			get_tree().reload_current_scene()
 	
 	if anim_name == "Fade To Memory":
-		in_memory = true
-		set_torch(false)
-		audio_player.stop()
-		dialogue_player.stream = curr_final_item.DIALOGUE.SOUND
-		dialogue_player.play()
+		in_final_memory()
 
 # When dialogue player finishes playing audio
 func _on_DialogueAudio_finished():
 	if in_memory:
-		in_memory = false 
-		anim_player.play("Fade From Memory")
-		music_player.stop_melody()
-		dialogue_label.visible_characters = 0
-		
-		curr_final_item.after_memory()
+		end_final_memory()
 
 # When timer finishes
 func _on_Timer_timeout():
 	game_over = true
 	anim_player.play("Fade To Black")
 
+# When finishing lighting or unlighting match, play the correct idle anim (match flicker or nothing)
 func _on_HandAnimator_animation_finished(anim_name):
 	if anim_name == "light":
 		if torch.visible:
