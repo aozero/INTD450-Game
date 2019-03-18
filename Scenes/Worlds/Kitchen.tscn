@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://Scenes/Worlds/World.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Materials/wormy_ground_diffuse.tga" type="Texture" id=2]
@@ -19,12 +19,11 @@
 [ext_resource path="res://Scenes/Items/Minor/Kitchen2.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Scenes/Items/Final/KitchenFinal.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Scenes/Monsters/Monster.tscn" type="PackedScene" id=19]
-[ext_resource path="res://Sound/Effects/Forest/forest_treecreaking.wav" type="AudioStream" id=20]
-[ext_resource path="res://Scripts/ForestNoise.gd" type="Script" id=21]
-[ext_resource path="res://Sound/Effects/Forest/forest_birdschipping_loop.wav" type="AudioStream" id=22]
-[ext_resource path="res://Scripts/Tutorials/Tutorial1.gd" type="Script" id=23]
-[ext_resource path="res://Scripts/Tutorials/Tutorial2.gd" type="Script" id=24]
-[ext_resource path="res://Scripts/Tutorials/Tutorial3.gd" type="Script" id=25]
+[ext_resource path="res://Scenes/ForestNoise.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Sound/Effects/Forest/forest_birdschipping_loop.wav" type="AudioStream" id=21]
+[ext_resource path="res://Scripts/Tutorials/Tutorial1.gd" type="Script" id=22]
+[ext_resource path="res://Scripts/Tutorials/Tutorial2.gd" type="Script" id=23]
+[ext_resource path="res://Scripts/Tutorials/Tutorial3.gd" type="Script" id=24]
 
 [sub_resource type="NavigationMesh" id=1]
 
@@ -120,7 +119,7 @@ extents = Vector3( 1, 1, 1 )
 
 extents = Vector3( 5, 1, 1 )
 
-[node name="World" instance=ExtResource( 1 )]
+[node name="World" index="0" instance=ExtResource( 1 )]
 
 [node name="NavigationMeshInstance" parent="Navigation" index="0"]
 
@@ -507,6 +506,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.4893, 0, 14.0292 )
 
 [node name="Dead End" type="Spatial" parent="Navigation/NavigationMeshInstance" index="7"]
 
+editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.078, 0, 5.82143 )
 
 [node name="Boundaries" type="Spatial" parent="Navigation/NavigationMeshInstance/Dead End" index="0"]
@@ -680,65 +680,12 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.9015, 0, -8.03827 )
 
 [node name="Forest Noises" type="Spatial" parent="." index="3"]
 
-[node name="Creaking" type="AudioStreamPlayer3D" parent="Forest Noises" index="0"]
+[node name="Creaking" parent="Forest Noises" index="0" instance=ExtResource( 20 )]
 
-editor/display_folded = true
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -32.724, 0, 12.9628 )
-stream = ExtResource( 20 )
-attenuation_model = 1
-unit_db = -15.0
-unit_size = 1.0
-max_db = -10.0
-pitch_scale = 1.0
-autoplay = true
-max_distance = 0.0
-out_of_range_mode = 0
-bus = "Master"
-area_mask = 1
-emission_angle_enabled = false
-emission_angle_degrees = 45.0
-emission_angle_filter_attenuation_db = -12.0
-attenuation_filter_cutoff_hz = 5000.0
-attenuation_filter_db = -24.0
-doppler_tracking = 0
-script = ExtResource( 21 )
+[node name="Chirping" parent="Forest Noises" index="1" instance=ExtResource( 20 )]
 
-[node name="Timer" type="Timer" parent="Forest Noises/Creaking" index="0"]
-
-process_mode = 1
-wait_time = 5.0
-one_shot = false
-autostart = false
-
-[node name="Chirping" type="AudioStreamPlayer3D" parent="Forest Noises" index="1"]
-
-editor/display_folded = true
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.919333, 0, -42.3704 )
-stream = ExtResource( 22 )
-attenuation_model = 0
-unit_db = -15.0
-unit_size = 0.1
-max_db = -10.0
-pitch_scale = 1.0
-autoplay = true
-max_distance = 0.0
-out_of_range_mode = 0
-bus = "Master"
-area_mask = 1
-emission_angle_enabled = false
-emission_angle_degrees = 45.0
-emission_angle_filter_attenuation_db = -12.0
-attenuation_filter_cutoff_hz = 5000.0
-attenuation_filter_db = -24.0
-doppler_tracking = 0
-script = ExtResource( 21 )
-
-[node name="Timer" type="Timer" parent="Forest Noises/Chirping" index="0"]
-
-process_mode = 1
-wait_time = 5.0
-one_shot = false
-autostart = false
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.32287, 0, -29.4076 )
+stream = ExtResource( 21 )
 
 [node name="Player" parent="." index="4"]
 
@@ -773,7 +720,7 @@ reverb_bus_enable = false
 reverb_bus_name = "Master"
 reverb_bus_amount = 0.0
 reverb_bus_uniformity = 0.0
-script = ExtResource( 23 )
+script = ExtResource( 22 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Tutorials/Tutorial 1" index="0"]
 
@@ -803,7 +750,7 @@ reverb_bus_enable = false
 reverb_bus_name = "Master"
 reverb_bus_amount = 0.0
 reverb_bus_uniformity = 0.0
-script = ExtResource( 24 )
+script = ExtResource( 23 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Tutorials/Tutorial 2" index="0"]
 
@@ -835,21 +782,13 @@ reverb_bus_enable = false
 reverb_bus_name = "Master"
 reverb_bus_amount = 0.0
 reverb_bus_uniformity = 0.0
-script = ExtResource( 25 )
+script = ExtResource( 24 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Tutorials/Tutorial 3" index="0"]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.0349 )
 shape = SubResource( 5 )
 disabled = false
-
-[connection signal="finished" from="Forest Noises/Creaking" to="Forest Noises/Creaking" method="_on_Noise_finished"]
-
-[connection signal="timeout" from="Forest Noises/Creaking/Timer" to="Forest Noises/Creaking" method="_on_Timer_timeout"]
-
-[connection signal="finished" from="Forest Noises/Chirping" to="Forest Noises/Chirping" method="_on_Noise_finished"]
-
-[connection signal="timeout" from="Forest Noises/Chirping/Timer" to="Forest Noises/Chirping" method="_on_Timer_timeout"]
 
 [connection signal="body_entered" from="Tutorials/Tutorial 1" to="Tutorials/Tutorial 1" method="_on_Tutorial_1_body_entered"]
 
