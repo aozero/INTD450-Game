@@ -25,3 +25,9 @@ func _on_Timer_timeout():
 
 func kill():
 	queue_free()
+
+# I can't disconnect the signal from the AnimationPlayer for some reason
+# https://github.com/godotengine/godot/issues/12373
+# So just catch it and ignore it
+func _on_AnimationPlayer_animation_finished(anim_name):
+	pass
