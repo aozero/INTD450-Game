@@ -226,6 +226,7 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 	if anim_name == "Fade To Memory":
 		in_memory = true
 		set_torch(false)
+		audio_player.stop()
 		dialogue_player.stream = curr_final_item.DIALOGUE.SOUND
 		dialogue_player.play()
 
