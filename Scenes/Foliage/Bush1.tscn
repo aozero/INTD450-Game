@@ -5,7 +5,7 @@
 
 [sub_resource type="BoxShape" id=1]
 
-extents = Vector3( 0.1, 0.3, 0.1 )
+extents = Vector3( 0.2, 0.3, 0.2 )
 
 [sub_resource type="CubeMesh" id=2]
 
@@ -15,7 +15,7 @@ subdivide_width = 0
 subdivide_height = 0
 subdivide_depth = 0
 
-[node name="Bush1" type="StaticBody"]
+[node name="Bush1" type="StaticBody" index="0"]
 
 input_ray_pickable = true
 input_capture_on_drag = false
