@@ -10,7 +10,7 @@
 
 [sub_resource type="SphereShape" id=1]
 
-radius = 1.0
+radius = 0.8
 
 [sub_resource type="Animation" id=2]
 
@@ -322,7 +322,7 @@ tracks/3/keys = {
 } ]
 }
 
-[node name="Monster" type="KinematicBody" index="0"]
+[node name="Monster" type="KinematicBody"]
 
 input_ray_pickable = true
 input_capture_on_drag = false
