@@ -9,7 +9,7 @@ extents = Vector3( 2.6, 1, 1.6 )
 [sub_resource type="CubeMesh" id=2]
 
 custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
-size = Vector3( 6, 2, 4 )
+size = Vector3( 5.2, 2, 3.2 )
 subdivide_width = 0
 subdivide_height = 0
 subdivide_depth = 0
@@ -80,6 +80,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Trees" type="Spatial" parent="." index="0"]
 
+editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0 )
 _sections_unfolded = [ "Transform" ]
 
