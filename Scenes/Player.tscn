@@ -35,7 +35,7 @@ tracks/0/keys = {
 [sub_resource type="CapsuleShape" id=2]
 
 radius = 0.8
-height = 0.01
+height = 0.8
 
 [sub_resource type="SphereShape" id=3]
 
