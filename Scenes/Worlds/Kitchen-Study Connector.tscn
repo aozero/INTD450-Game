@@ -1,0 +1,131 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Scenes/BGForestMedium.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/BGForestSmall.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Foliage/TreeRandom.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Foliage/Bush1.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/ForestWall.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Foliage/TreeDead1.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Foliage/TreeDead2.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Foliage/TreeLive1.tscn" type="PackedScene" id=8]
+
+[node name="Kitchen-Study Connector" type="Spatial" index="0"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 35.0176, 0, -2.81487 )
+
+[node name="KitchenEndArea" type="Spatial" parent="." index="0"]
+
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.211452, 0, 0.413291 )
+
+[node name="Boundaries" type="Spatial" parent="KitchenEndArea" index="0"]
+
+editor/display_folded = true
+
+[node name="BGForestMedium8" parent="KitchenEndArea/Boundaries" index="0" instance=ExtResource( 1 )]
+
+transform = Transform( 0.968288, 0, -0.249835, 0, 1, 0, 0.249835, 0, 0.968288, -8.03746, 0, -7.41375 )
+
+[node name="BGForestSmall" parent="KitchenEndArea/Boundaries" index="1" instance=ExtResource( 2 )]
+
+transform = Transform( 0.713407, 0, -0.70075, 0, 1, 0, 0.70075, 0, 0.713407, 2.7607, 0, -3.21289 )
+
+[node name="BGForestMedium11" parent="KitchenEndArea/Boundaries" index="2" instance=ExtResource( 1 )]
+
+transform = Transform( -0.903553, 0, 0.428477, 0, 1, 0, -0.428477, 0, -0.903553, -6.75009, 0, 3.64584 )
+
+[node name="Decoration" type="Spatial" parent="KitchenEndArea" index="1"]
+
+editor/display_folded = true
+
+[node name="TreeRandom" parent="KitchenEndArea/Decoration" index="0" instance=ExtResource( 3 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.86053, 0, -3.18486 )
+
+[node name="TreeRandom3" parent="KitchenEndArea/Decoration" index="1" instance=ExtResource( 3 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.867428, 0, -1.2629 )
+
+[node name="TreeRandom7" parent="KitchenEndArea/Decoration" index="2" instance=ExtResource( 3 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.13674, 0, 4.06582 )
+
+[node name="TreeRandom4" parent="KitchenEndArea/Decoration" index="3" instance=ExtResource( 3 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.08518, 0, -2.88403 )
+
+[node name="TreeRandom5" parent="KitchenEndArea/Decoration" index="4" instance=ExtResource( 3 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.4388, 0, -2.06762 )
+
+[node name="Bush1" parent="KitchenEndArea/Decoration" index="5" instance=ExtResource( 4 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -18.3887, 0, -6.94568 )
+
+[node name="StudyStartingArea" type="Spatial" parent="." index="1"]
+
+editor/display_folded = true
+transform = Transform( -0.230495, 0, -0.973074, 0, 1, 0, 0.973074, 0, -0.230495, 33.0129, 0, 15.86 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="ClearingTrees" type="Spatial" parent="StudyStartingArea" index="0"]
+
+[node name="BGForestSmall7" parent="StudyStartingArea/ClearingTrees" index="0" instance=ExtResource( 2 )]
+
+transform = Transform( 0.312827, 0, 0.949809, 0, 1, 0, -0.949809, 0, 0.312827, -12.1193, 0, 13.0648 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BGForestSmall3" parent="StudyStartingArea/ClearingTrees" index="1" instance=ExtResource( 2 )]
+
+transform = Transform( -0.546534, 0, 0.837436, 0, 1, 0, -0.837436, 0, -0.546534, -12.0134, 0, 19.2451 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BGForestSmall" parent="StudyStartingArea/ClearingTrees" index="2" instance=ExtResource( 2 )]
+
+transform = Transform( 0.0334768, 0, 0.999439, 0, 1, 0, -0.999439, 0, 0.0334768, -10.578, 0, 23.9865 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BGForestSmall6" parent="StudyStartingArea/ClearingTrees" index="3" instance=ExtResource( 2 )]
+
+transform = Transform( -0.163898, 0, 0.986477, 0, 1, 0, -0.986477, 0, -0.163898, -10.2805, -7.62939e-006, 29.5297 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BGForestSmall4" parent="StudyStartingArea/ClearingTrees" index="4" instance=ExtResource( 2 )]
+
+transform = Transform( -0.214095, 0, -0.976813, 0, 1, 0, 0.976813, 0, -0.214095, -0.017498, -7.62939e-006, 29.371 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BGForestSmall2" parent="StudyStartingArea/ClearingTrees" index="5" instance=ExtResource( 2 )]
+
+transform = Transform( 0.0334768, 0, 0.999439, 0, 1, 0, -0.999439, 0, 0.0334768, 0.519581, 0, 23.772 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BGForestMedium14" parent="StudyStartingArea/ClearingTrees" index="6" instance=ExtResource( 1 )]
+
+transform = Transform( 0.140358, -5.26254e-008, 0.990106, 1.71281e-008, 1, 5.07236e-008, -0.990106, 9.83913e-009, 0.140358, 1.93075, 0.0198364, 11.5364 )
+
+[node name="ForestWall4" parent="StudyStartingArea/ClearingTrees" index="7" instance=ExtResource( 5 )]
+
+transform = Transform( -0.691015, 0, -0.722841, 0, 1, 0, 0.722841, 0, -0.691015, -0.610718, 0, -4.64671 )
+
+[node name="Decoration" type="Spatial" parent="StudyStartingArea" index="1"]
+
+editor/display_folded = true
+
+[node name="TreeDead1" parent="StudyStartingArea/Decoration" index="0" instance=ExtResource( 6 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.06973, 0, 9.34723 )
+
+[node name="TreeDead2" parent="StudyStartingArea/Decoration" index="1" instance=ExtResource( 7 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.43155, -0.272537, 13.3674 )
+
+[node name="TreeLive1" parent="StudyStartingArea/Decoration" index="2" instance=ExtResource( 8 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.86568, 0, 5.85137 )
+
+[node name="TreeDead4" parent="StudyStartingArea/Decoration" index="3" instance=ExtResource( 6 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.28028, 0, 1.6729 )
+
+
