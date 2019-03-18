@@ -49,16 +49,12 @@ func get_class():
 	return "Player"
 	
 func _ready():
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	yield(get_tree(), "idle_frame")
 	
 	anim_player.play_backwards("Fade To Black")
 	set_torch(false)
 
-func _input(event):
-	if event.is_action_pressed("toggle_fullscreen"):
-		OS.window_fullscreen = !OS.window_fullscreen
-	
+func _input(event):	
 	if dying or in_memory: 
 		return
 	
@@ -70,12 +66,6 @@ func _input(event):
 		rotation_degrees.x -= MOUSE_SENS * event.relative.y
 		rotation_degrees.x = max(min(rotation_degrees.x, 85), -85)
 	
-
-func _process(delta):
-	if Input.is_action_pressed("exit"):
-		get_tree().quit()
-	if Input.is_action_pressed("restart"):
-		kill()
 
 func _physics_process(delta):
 	if dying or in_memory:
