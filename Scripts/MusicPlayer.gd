@@ -19,6 +19,7 @@ func _ready():
 	tween_in.start()
 
 func play_melody(melody):
+	melody_player.volume_db = melody_vol
 	melody_player.stream = melody
 	melody_player.play()
 
@@ -27,6 +28,7 @@ func stop_melody():
 	tween_out.start()
 
 func play_dying():
+	dying_player.volume_db = dying_vol
 	dying_player.play()
 
 func _on_TweenOut_tween_completed(object, key):
