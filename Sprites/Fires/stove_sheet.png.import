@@ -2,13 +2,13 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/campfire.png-1527d7ce4759eabe94f7d433ee127d94.s3tc.stex"
-path.etc2="res://.import/campfire.png-1527d7ce4759eabe94f7d433ee127d94.etc2.stex"
+path.s3tc="res://.import/stove_sheet.png-5b554db293339c7d70a685c4db7939b9.s3tc.stex"
+path.etc2="res://.import/stove_sheet.png-5b554db293339c7d70a685c4db7939b9.etc2.stex"
 
 [deps]
 
-source_file="res://Sprites/campfire.png"
-dest_files=[ "res://.import/campfire.png-1527d7ce4759eabe94f7d433ee127d94.s3tc.stex", "res://.import/campfire.png-1527d7ce4759eabe94f7d433ee127d94.etc2.stex" ]
+source_file="res://Sprites/Fires/stove_sheet.png"
+dest_files=[ "res://.import/stove_sheet.png-5b554db293339c7d70a685c4db7939b9.s3tc.stex", "res://.import/stove_sheet.png-5b554db293339c7d70a685c4db7939b9.etc2.stex" ]
 
 [params]
 
