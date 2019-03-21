@@ -2,17 +2,16 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/study_globe.png-f9cc2b0b19c3b42044bc29a66a1e9057.s3tc.stex"
-path.etc2="res://.import/study_globe.png-f9cc2b0b19c3b42044bc29a66a1e9057.etc2.stex"
+path="res://.import/study_globe.png-f9cc2b0b19c3b42044bc29a66a1e9057.stex"
 
 [deps]
 
 source_file="res://Sprites/House Objects/study_globe.png"
-dest_files=[ "res://.import/study_globe.png-f9cc2b0b19c3b42044bc29a66a1e9057.s3tc.stex", "res://.import/study_globe.png-f9cc2b0b19c3b42044bc29a66a1e9057.etc2.stex" ]
+dest_files=[ "res://.import/study_globe.png-f9cc2b0b19c3b42044bc29a66a1e9057.stex" ]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0

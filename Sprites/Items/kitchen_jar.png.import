@@ -2,23 +2,22 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/kitchen_jar.png-0fdb1e0f822a4f68a5a7b96159114a7b.s3tc.stex"
-path.etc2="res://.import/kitchen_jar.png-0fdb1e0f822a4f68a5a7b96159114a7b.etc2.stex"
+path="res://.import/kitchen_jar.png-0fdb1e0f822a4f68a5a7b96159114a7b.stex"
 
 [deps]
 
 source_file="res://Sprites/Items/kitchen_jar.png"
-dest_files=[ "res://.import/kitchen_jar.png-0fdb1e0f822a4f68a5a7b96159114a7b.s3tc.stex", "res://.import/kitchen_jar.png-0fdb1e0f822a4f68a5a7b96159114a7b.etc2.stex" ]
+dest_files=[ "res://.import/kitchen_jar.png-0fdb1e0f822a4f68a5a7b96159114a7b.stex" ]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
 flags/repeat=true
 flags/filter=true
-flags/mipmaps=true
+flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
 process/fix_alpha_border=true

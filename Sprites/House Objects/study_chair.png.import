@@ -2,17 +2,16 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/study_chair.png-ed8c3ced44ea3c1c45be4d77c013eabc.s3tc.stex"
-path.etc2="res://.import/study_chair.png-ed8c3ced44ea3c1c45be4d77c013eabc.etc2.stex"
+path="res://.import/study_chair.png-ed8c3ced44ea3c1c45be4d77c013eabc.stex"
 
 [deps]
 
 source_file="res://Sprites/House Objects/study_chair.png"
-dest_files=[ "res://.import/study_chair.png-ed8c3ced44ea3c1c45be4d77c013eabc.s3tc.stex", "res://.import/study_chair.png-ed8c3ced44ea3c1c45be4d77c013eabc.etc2.stex" ]
+dest_files=[ "res://.import/study_chair.png-ed8c3ced44ea3c1c45be4d77c013eabc.stex" ]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0

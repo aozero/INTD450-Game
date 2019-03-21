@@ -2,17 +2,16 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/kitchen_treehouse.png-319316445ac1ef78cd1a3181f8faafb3.s3tc.stex"
-path.etc2="res://.import/kitchen_treehouse.png-319316445ac1ef78cd1a3181f8faafb3.etc2.stex"
+path="res://.import/kitchen_treehouse.png-319316445ac1ef78cd1a3181f8faafb3.stex"
 
 [deps]
 
 source_file="res://Sprites/Items/kitchen_treehouse.png"
-dest_files=[ "res://.import/kitchen_treehouse.png-319316445ac1ef78cd1a3181f8faafb3.s3tc.stex", "res://.import/kitchen_treehouse.png-319316445ac1ef78cd1a3181f8faafb3.etc2.stex" ]
+dest_files=[ "res://.import/kitchen_treehouse.png-319316445ac1ef78cd1a3181f8faafb3.stex" ]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
