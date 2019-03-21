@@ -30,6 +30,7 @@ var path_ind = 0
 
 var patrol_waypoints = []
 var patrol_ind = 0
+onready var patrol_pause_timer = $PatrolPauseTimer
 # for pathfinding testing
 onready var draw = get_tree().get_root().get_node("World/Draw")
 var draw_path = false
@@ -123,17 +124,9 @@ func _physics_process(delta):
 		stop_alerted()
 	
 	# If we have waypoints stored and haven't seen the player yet, start patrolling between the points in order
-	if player_pos == null && path.size() == 0:
-		if patrol_waypoints.size() > 1:
-			patrol_ind += 1
-			if patrol_ind >= patrol_waypoints.size():
-				patrol_ind = 0
-			
-			path_to_point(patrol_waypoints[patrol_ind])
-			start_moving()
-		elif !patrol_waypoints.empty() && !is_at_pos(patrol_waypoints[patrol_ind]):
-			path_to_point(patrol_waypoints[0])
-			start_moving()
+	if player_pos == null && path.size() == 0 && patrol_pause_timer.is_stopped():
+		# Pause for a bit, then path to next waypoint
+		patrol_pause_timer.start()
 	
 	# If we haven't finished the path yet
 	if path_ind < path.size():
@@ -141,6 +134,7 @@ func _physics_process(delta):
 		
 		var move_vec = (target_pos - global_transform.origin)
 		if move_vec.length() < 0.1:
+			# Finished a section of the path
 			path_ind += 1
 		else:
 			move_vec = move_vec.normalized()
@@ -257,3 +251,15 @@ func _on_LostPlayerTimer_timeout():
 func _on_StandStillTimer_timeout():
 	player_pos = null
 	path = []
+
+func _on_PatrolPauseTimer_timeout():
+	if patrol_waypoints.size() > 1:
+		patrol_ind += 1
+		if patrol_ind >= patrol_waypoints.size():
+			patrol_ind = 0
+		
+		path_to_point(patrol_waypoints[patrol_ind])
+		start_moving()
+	elif !patrol_waypoints.empty() && !is_at_pos(patrol_waypoints[patrol_ind]):
+		path_to_point(patrol_waypoints[0])
+		start_moving()

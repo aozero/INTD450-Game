@@ -501,12 +501,21 @@ wait_time = 4.0
 one_shot = false
 autostart = false
 
-[node name="TopLooker" type="Spatial" parent="." index="9"]
+[node name="PatrolPauseTimer" type="Timer" parent="." index="9"]
+
+process_mode = 1
+wait_time = 2.0
+one_shot = true
+autostart = false
+
+[node name="TopLooker" type="Spatial" parent="." index="10"]
 
 [node name="SpriteLooker" type="Spatial" parent="TopLooker" index="0"]
 
 [connection signal="timeout" from="LostPlayerTimer" to="." method="_on_LostPlayerTimer_timeout"]
 
 [connection signal="timeout" from="StandStillTimer" to="." method="_on_StandStillTimer_timeout"]
+
+[connection signal="timeout" from="PatrolPauseTimer" to="." method="_on_PatrolPauseTimer_timeout"]
 
 
