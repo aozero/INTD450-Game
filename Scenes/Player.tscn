@@ -600,7 +600,6 @@ script = ExtResource( 7 )
 
 [node name="Hand" type="Control" parent="CanvasLayer" index="1"]
 
-editor/display_folded = true
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -642,9 +641,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 margin_left = -200.0
-margin_top = -600.0
+margin_top = -500.0
 margin_right = 200.0
-margin_bottom = -500.0
+margin_bottom = -400.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
