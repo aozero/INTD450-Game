@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://Scenes/Worlds/World.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Materials/wormy_ground_diffuse.tga" type="Texture" id=2]
@@ -21,11 +21,9 @@
 [ext_resource path="res://Scenes/Items/Minor/Kitchen2.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Scenes/Items/Final/KitchenFinal.tscn" type="PackedScene" id=20]
 [ext_resource path="res://Scenes/Monsters/Monster.tscn" type="PackedScene" id=21]
-[ext_resource path="res://Scenes/ForestNoise.tscn" type="PackedScene" id=22]
-[ext_resource path="res://Sound/Effects/Forest/forest_birdschipping_loop.wav" type="AudioStream" id=23]
-[ext_resource path="res://Scripts/Tutorials/Tutorial1.gd" type="Script" id=24]
-[ext_resource path="res://Scripts/Tutorials/Tutorial2.gd" type="Script" id=25]
-[ext_resource path="res://Scripts/Tutorials/Tutorial3.gd" type="Script" id=26]
+[ext_resource path="res://Scripts/Tutorials/Tutorial1.gd" type="Script" id=22]
+[ext_resource path="res://Scripts/Tutorials/Tutorial2.gd" type="Script" id=23]
+[ext_resource path="res://Scripts/Tutorials/Tutorial3.gd" type="Script" id=24]
 
 [sub_resource type="NavigationMesh" id=1]
 
@@ -632,22 +630,11 @@ editor/display_folded = true
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.9015, 0, -8.03827 )
 
-[node name="Forest Noises" type="Spatial" parent="." index="3"]
-
-editor/display_folded = true
-
-[node name="Creaking" parent="Forest Noises" index="0" instance=ExtResource( 22 )]
-
-[node name="Chirping" parent="Forest Noises" index="1" instance=ExtResource( 22 )]
-
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.32287, 0, -29.4076 )
-stream = ExtResource( 23 )
-
-[node name="Player" parent="." index="4"]
+[node name="Player" parent="." index="3"]
 
 transform = Transform( 0.987128, 0, -0.15993, 0, 1, 0, 0.15993, 0, 0.987128, -27.9101, -0.0859575, 30.6578 )
 
-[node name="Tutorials" type="Spatial" parent="." index="7"]
+[node name="Tutorials" type="Spatial" parent="." index="6"]
 
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -27.04, 0, 26.8883 )
@@ -676,7 +663,7 @@ reverb_bus_enable = false
 reverb_bus_name = "Master"
 reverb_bus_amount = 0.0
 reverb_bus_uniformity = 0.0
-script = ExtResource( 24 )
+script = ExtResource( 22 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Tutorials/Tutorial 1" index="0"]
 
@@ -706,7 +693,7 @@ reverb_bus_enable = false
 reverb_bus_name = "Master"
 reverb_bus_amount = 0.0
 reverb_bus_uniformity = 0.0
-script = ExtResource( 25 )
+script = ExtResource( 23 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Tutorials/Tutorial 2" index="0"]
 
@@ -738,7 +725,7 @@ reverb_bus_enable = false
 reverb_bus_name = "Master"
 reverb_bus_amount = 0.0
 reverb_bus_uniformity = 0.0
-script = ExtResource( 26 )
+script = ExtResource( 24 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Tutorials/Tutorial 3" index="0"]
 
