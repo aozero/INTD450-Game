@@ -322,7 +322,7 @@ tracks/3/keys = {
 } ]
 }
 
-[node name="Monster" type="KinematicBody" index="0"]
+[node name="Monster" type="KinematicBody"]
 
 input_ray_pickable = true
 input_capture_on_drag = false
@@ -487,28 +487,37 @@ anims/walk_2 = SubResource( 8 )
 anims/walk_3 = SubResource( 9 )
 blend_times = [  ]
 
-[node name="LostPlayerTimer" type="Timer" parent="." index="7"]
+[node name="MoveSpeedTween" type="Tween" parent="." index="7"]
+
+repeat = false
+playback_process_mode = 1
+playback_speed = 1.0
+playback/active = false
+playback/repeat = false
+playback/speed = 1.0
+
+[node name="LostPlayerTimer" type="Timer" parent="." index="8"]
 
 process_mode = 1
 wait_time = 6.0
 one_shot = true
 autostart = false
 
-[node name="StandStillTimer" type="Timer" parent="." index="8"]
+[node name="StandStillTimer" type="Timer" parent="." index="9"]
 
 process_mode = 1
 wait_time = 4.0
 one_shot = true
 autostart = false
 
-[node name="PatrolPauseTimer" type="Timer" parent="." index="9"]
+[node name="PatrolPauseTimer" type="Timer" parent="." index="10"]
 
 process_mode = 1
 wait_time = 2.0
 one_shot = true
 autostart = false
 
-[node name="TopLooker" type="Spatial" parent="." index="10"]
+[node name="TopLooker" type="Spatial" parent="." index="11"]
 
 [node name="SpriteLooker" type="Spatial" parent="TopLooker" index="0"]
 

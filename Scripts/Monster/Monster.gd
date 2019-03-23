@@ -3,8 +3,13 @@ extends "res://Scripts/Multidirectional.gd"
 # Script controlling the monsters
 ##################################
 # How fast the monster can move
-const NORMAL_SPEED = 1
 const ALERTED_SPEED = 2.5
+const NORMAL_SPEED = 1
+# How fast the monster animated (also affects frequency of walking sounds since they are hooked up to the anim)
+const ALERTED_ANIM_SPEED = 1
+onready var NORMAL_ANIM_SPEED = float(NORMAL_SPEED) / ALERTED_SPEED 
+# How long it takes in sec for the monster to go from ALERTED_SPEED to NORMAL_SPEED when losing player
+const SLOW_DOWN_DURATION = 2
 
 # How far the monster can see the player when player is dark or lit
 const DETECT_DARK_WALK_RANGE = 4
@@ -16,6 +21,7 @@ const DETECT_LIT_RUN_RANGE = 12
 onready var SOUND_ALERTED = load("res://Sound/Effects/Monster/brain_boi_alerted.wav")
 onready var SOUND_LOST_PLAYER = load("res://Sound/Effects/Monster/brain_boi_lost.wav")
 
+onready var move_speed_tween = $MoveSpeedTween
 onready var detection_raycast = $RayCast
 onready var audio_breathing = $AudioBreathing
 onready var audio_alerted = $AudioAlerted
@@ -169,6 +175,7 @@ func stop_moving():
 # Speed up and play the alerted noise
 func start_alerted():
 	alerted = true
+	move_speed_tween.stop_all()
 	curr_move_speed = ALERTED_SPEED
 	anim_player.playback_speed = 1
 	
@@ -182,8 +189,10 @@ func start_alerted():
 # where the monster will eventually give up
 func stop_alerted():
 	alerted = false
-	curr_move_speed = NORMAL_SPEED
-	anim_player.playback_speed = float(NORMAL_SPEED) / ALERTED_SPEED
+	# Slow down move speed and animation speed over a minute
+	move_speed_tween.interpolate_property(self, "curr_move_speed", ALERTED_SPEED, NORMAL_SPEED, SLOW_DOWN_DURATION, Tween.TRANS_LINEAR, Tween.EASE_IN, 0)
+	move_speed_tween.interpolate_property(anim_player, "playback_speed", ALERTED_ANIM_SPEED, NORMAL_ANIM_SPEED, SLOW_DOWN_DURATION, Tween.TRANS_LINEAR, Tween.EASE_IN, 0)
+	move_speed_tween.start()
 	
 	lost_player_timer.start()
 	play_alerted_audio(SOUND_LOST_PLAYER)
