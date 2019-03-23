@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://Scripts/Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Sound/Effects/Match/match_burning.wav" type="AudioStream" id=2]
@@ -13,9 +13,10 @@
 [ext_resource path="res://Sprites/crosshair.png" type="Texture" id=11]
 [ext_resource path="res://Scripts/Player/PauseController.gd" type="Script" id=12]
 [ext_resource path="res://Fonts/Prompt-Bold.ttf" type="DynamicFontData" id=13]
-[ext_resource path="res://Sound/Effects/Walking/walking_step1.wav" type="AudioStream" id=14]
-[ext_resource path="res://Scripts/Player/FootstepsPlayer.gd" type="Script" id=15]
-[ext_resource path="res://Scripts/Player/PlayerArea.gd" type="Script" id=16]
+[ext_resource path="res://Scripts/OptionsMenu.gd" type="Script" id=14]
+[ext_resource path="res://Sound/Effects/Walking/walking_step1.wav" type="AudioStream" id=15]
+[ext_resource path="res://Scripts/Player/FootstepsPlayer.gd" type="Script" id=16]
+[ext_resource path="res://Scripts/Player/PlayerArea.gd" type="Script" id=17]
 
 [sub_resource type="Animation" id=1]
 
@@ -356,7 +357,26 @@ use_filter = false
 font_data = ExtResource( 9 )
 _sections_unfolded = [ "Settings" ]
 
-[sub_resource type="Animation" id=17]
+[sub_resource type="DynamicFont" id=17]
+
+size = 28
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 9 )
+_sections_unfolded = [ "Settings" ]
+
+[sub_resource type="DynamicFont" id=21]
+
+size = 28
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 9 )
+
+[sub_resource type="Theme" id=22]
+
+default_font = SubResource( 21 )
+
+[sub_resource type="Animation" id=18]
 
 length = 0.6
 loop = true
@@ -388,7 +408,7 @@ tracks/1/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=18]
+[sub_resource type="Animation" id=19]
 
 length = 0.5
 loop = false
@@ -406,7 +426,7 @@ tracks/0/keys = {
 "values": [ Vector3( 0, 0, 0 ) ]
 }
 
-[sub_resource type="SphereShape" id=19]
+[sub_resource type="SphereShape" id=20]
 
 radius = 50.0
 
@@ -852,7 +872,6 @@ _sections_unfolded = [ "Rect" ]
 
 [node name="OptionsButton" type="Button" parent="PauseMenuLayer/PauseController/PauseMenuRect/VBoxContainer/OptionsContainer" index="0"]
 
-visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -991,6 +1010,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 color = Color( 0.109375, 0.109375, 0.109375, 1 )
+script = ExtResource( 14 )
 _sections_unfolded = [ "Margin", "Visibility" ]
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PauseMenuLayer/PauseController/OptionsMenuRect" index="0"]
@@ -1030,7 +1050,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="OptionsContainer" type="CenterContainer" parent="PauseMenuLayer/PauseController/OptionsMenuRect/VBoxContainer" index="1"]
+[node name="QualityContainer" type="Container" parent="PauseMenuLayer/PauseController/OptionsMenuRect/VBoxContainer" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -1046,8 +1066,78 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-use_top_left = false
-_sections_unfolded = [ "Rect" ]
+_sections_unfolded = [ "Margin", "Rect" ]
+
+[node name="HSplitContainer" type="HSplitContainer" parent="PauseMenuLayer/PauseController/OptionsMenuRect/VBoxContainer/QualityContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 20.0
+margin_top = 20.0
+margin_right = -20.0
+margin_bottom = -20.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+split_offset = 0
+collapsed = false
+dragger_visibility = 0
+_sections_unfolded = [ "Margin" ]
+
+[node name="QualityLabel" type="Label" parent="PauseMenuLayer/PauseController/OptionsMenuRect/VBoxContainer/QualityContainer/HSplitContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 8.0
+margin_right = 110.0
+margin_bottom = 42.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 17 )
+text = "Quality:"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Margin", "custom_fonts" ]
+
+[node name="QualityButton" type="OptionButton" parent="PauseMenuLayer/PauseController/OptionsMenuRect/VBoxContainer/QualityContainer/HSplitContainer" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 122.0
+margin_right = 360.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 120, 30 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+theme = SubResource( 22 )
+toggle_mode = false
+action_mode = 0
+enabled_focus_mode = 2
+shortcut = null
+group = null
+flat = false
+align = 0
+items = [  ]
+selected = -1
 
 [node name="ExitContainer" type="CenterContainer" parent="PauseMenuLayer/PauseController/OptionsMenuRect/VBoxContainer" index="2"]
 
@@ -1122,19 +1212,19 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/headbob = SubResource( 17 )
-anims/reset = SubResource( 18 )
+anims/headbob = SubResource( 18 )
+anims/reset = SubResource( 19 )
 blend_times = [  ]
 
 [node name="FootstepsPlayer" type="AudioStreamPlayer" parent="Headbobber" index="0"]
 
-stream = ExtResource( 14 )
+stream = ExtResource( 15 )
 volume_db = -25.0
 pitch_scale = 1.0
 autoplay = false
 mix_target = 0
 bus = "Master"
-script = ExtResource( 15 )
+script = ExtResource( 16 )
 
 [node name="RayCast" type="RayCast" parent="." index="10"]
 
@@ -1172,11 +1262,11 @@ reverb_bus_enable = false
 reverb_bus_name = "Master"
 reverb_bus_amount = 0.0
 reverb_bus_uniformity = 0.0
-script = ExtResource( 16 )
+script = ExtResource( 17 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Player Area" index="0"]
 
-shape = SubResource( 19 )
+shape = SubResource( 20 )
 disabled = false
 
 [connection signal="finished" from="ForestNoisesAudio" to="ForestNoisesAudio" method="_on_ForestNoisesAudio_finished"]
@@ -1196,6 +1286,10 @@ disabled = false
 [connection signal="button_up" from="PauseMenuLayer/PauseController/PauseMenuRect/VBoxContainer/ExitContainer/ExitButton" to="PauseMenuLayer/PauseController" method="_on_ExitButton_button_up"]
 
 [connection signal="button_up" from="PauseMenuLayer/PauseController/PauseMenuRect/VBoxContainer/ResumeContainer/ResumeButton" to="PauseMenuLayer/PauseController" method="_on_ResumeButton_button_up"]
+
+[connection signal="item_selected" from="PauseMenuLayer/PauseController/OptionsMenuRect/VBoxContainer/QualityContainer/HSplitContainer/QualityButton" to="PauseMenuLayer/PauseController/OptionsMenuRect" method="_on_QualityButton_item_selected"]
+
+[connection signal="button_up" from="PauseMenuLayer/PauseController/OptionsMenuRect/VBoxContainer/BackContainer/BackButton" to="PauseMenuLayer/PauseController/OptionsMenuRect" method="_on_BackButton_button_up"]
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 
