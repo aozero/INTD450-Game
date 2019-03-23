@@ -5,7 +5,7 @@
 [ext_resource path="res://Sound/Effects/Forest/forest_treecreaking.wav" type="AudioStream" id=3]
 [ext_resource path="res://Scripts/Player/ForestNoisesAudio.gd" type="Script" id=4]
 [ext_resource path="res://Scripts/Player/TorchArea.gd" type="Script" id=5]
-[ext_resource path="res://Scripts/PlayerCanvasLayer.gd" type="Script" id=6]
+[ext_resource path="res://Scripts/Player/PlayerCanvasLayer.gd" type="Script" id=6]
 [ext_resource path="res://Scripts/Player/FPS Display.gd" type="Script" id=7]
 [ext_resource path="res://Sprites/first_person.png" type="Texture" id=8]
 [ext_resource path="res://Fonts/Prompt.ttf" type="DynamicFontData" id=9]
@@ -17,6 +17,7 @@
 [ext_resource path="res://Sound/Effects/Walking/walking_step1.wav" type="AudioStream" id=15]
 [ext_resource path="res://Scripts/Player/FootstepsPlayer.gd" type="Script" id=16]
 [ext_resource path="res://Scripts/Player/PlayerArea.gd" type="Script" id=17]
+
 
 [sub_resource type="Animation" id=1]
 
