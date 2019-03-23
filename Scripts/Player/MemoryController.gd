@@ -7,7 +7,7 @@ onready var DIALOGUE_MINOR_FONT_SHADOW = Color(0, 0, 0)
 onready var DIALOGUE_FINAL_FONT_COLOR = Color(0, 0, 0)
 onready var DIALOGUE_FINAL_FONT_SHADOW = Color(1, 1, 1)
 
-onready var player = get_tree().get_root().get_node("World/Player")
+onready var player = get_owner()
 onready var screen_rect = $ScreenRect
 onready var screen_animator = $ScreenAnimator
 onready var item_sprite = $"ScreenRect/CenterDot/Item Sprite"
