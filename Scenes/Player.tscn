@@ -34,7 +34,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ -80.0, -10.0 ]
+"values": [ -75.0, -5.0 ]
 }
 
 [sub_resource type="CapsuleShape" id=2]
@@ -357,7 +357,7 @@ use_filter = false
 font_data = ExtResource( 9 )
 _sections_unfolded = [ "Settings" ]
 
-[sub_resource type="Animation" id=20]
+[sub_resource type="Animation" id=17]
 
 length = 0.6
 loop = true
@@ -389,7 +389,7 @@ tracks/1/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=21]
+[sub_resource type="Animation" id=18]
 
 length = 0.5
 loop = false
@@ -407,7 +407,7 @@ tracks/0/keys = {
 "values": [ Vector3( 0, 0, 0 ) ]
 }
 
-[sub_resource type="SphereShape" id=22]
+[sub_resource type="SphereShape" id=19]
 
 radius = 50.0
 
@@ -440,7 +440,7 @@ blend_times = [  ]
 [node name="FirstPersonAudio" type="AudioStreamPlayer" parent="." index="1"]
 
 stream = null
-volume_db = -5.0
+volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
 mix_target = 0
@@ -449,7 +449,7 @@ bus = "Master"
 [node name="MatchBurningAudio" type="AudioStreamPlayer" parent="." index="2"]
 
 stream = ExtResource( 2 )
-volume_db = -80.0
+volume_db = -5.0
 pitch_scale = 1.0
 autoplay = false
 mix_target = 0
@@ -460,7 +460,7 @@ bus = "Master"
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.979803, 0, 0 )
 stream = ExtResource( 3 )
 attenuation_model = 0
-unit_db = -30.0
+unit_db = -25.0
 unit_size = 1.0
 max_db = -24.0
 pitch_scale = 1.0
@@ -669,7 +669,7 @@ script = ExtResource( 10 )
 [node name="DialogueAudio" type="AudioStreamPlayer" parent="CanvasLayer/MemoryController" index="0"]
 
 stream = null
-volume_db = -5.0
+volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
 mix_target = 0
@@ -982,14 +982,14 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/headbob = SubResource( 20 )
-anims/reset = SubResource( 21 )
+anims/headbob = SubResource( 17 )
+anims/reset = SubResource( 18 )
 blend_times = [  ]
 
 [node name="FootstepsPlayer" type="AudioStreamPlayer" parent="Headbobber" index="0"]
 
 stream = ExtResource( 15 )
-volume_db = -25.0
+volume_db = -20.0
 pitch_scale = 1.0
 autoplay = false
 mix_target = 0
@@ -1036,7 +1036,7 @@ script = ExtResource( 17 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Player Area" index="0"]
 
-shape = SubResource( 22 )
+shape = SubResource( 19 )
 disabled = false
 
 [connection signal="finished" from="ForestNoisesAudio" to="ForestNoisesAudio" method="_on_ForestNoisesAudio_finished"]

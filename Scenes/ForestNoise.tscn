@@ -3,13 +3,12 @@
 [ext_resource path="res://Sound/Effects/Forest/forest_treecreaking.wav" type="AudioStream" id=1]
 [ext_resource path="res://Scripts/Player/ForestNoise.gd" type="Script" id=2]
 
-
 [node name="ForestNoise" type="AudioStreamPlayer3D" index="0"]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -32.724, 0, 12.9628 )
 stream = ExtResource( 1 )
 attenuation_model = 1
-unit_db = -15.0
+unit_db = -10.0
 unit_size = 1.0
 max_db = -10.0
 pitch_scale = 1.0

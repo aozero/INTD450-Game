@@ -36,7 +36,6 @@ pixel_size = 0.002
 [node name="MusicPlayer" parent="." index="2"]
 
 stream = ExtResource( 3 )
-max_db = -10.0
 autoplay = false
 
 [node name="Timer" type="Timer" parent="." index="3"]

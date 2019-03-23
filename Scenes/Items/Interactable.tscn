@@ -22,7 +22,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ -14.0, -40.0 ]
+"values": [ -9.0, -40.0 ]
 }
 
 [sub_resource type="ParticlesMaterial" id=3]
@@ -191,7 +191,7 @@ blend_times = [  ]
 
 stream = null
 attenuation_model = 0
-unit_db = -14.0
+unit_db = -9.0
 unit_size = 1.5
 max_db = -5.0
 pitch_scale = 1.0
