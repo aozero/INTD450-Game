@@ -322,7 +322,7 @@ tracks/3/keys = {
 } ]
 }
 
-[node name="Monster" type="KinematicBody"]
+[node name="Monster" type="KinematicBody" index="0"]
 
 input_ray_pickable = true
 input_capture_on_drag = false
@@ -491,14 +491,14 @@ blend_times = [  ]
 
 process_mode = 1
 wait_time = 6.0
-one_shot = false
+one_shot = true
 autostart = false
 
 [node name="StandStillTimer" type="Timer" parent="." index="8"]
 
 process_mode = 1
 wait_time = 4.0
-one_shot = false
+one_shot = true
 autostart = false
 
 [node name="PatrolPauseTimer" type="Timer" parent="." index="9"]
