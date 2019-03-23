@@ -5,7 +5,7 @@
 [ext_resource path="res://Scenes/Foliage/Bush1.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Foliage/TreeRandom.tscn" type="PackedScene" id=4]
 
-[node name="Study End Area" type="Spatial" index="0"]
+[node name="Study End Area" type="Spatial"]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.1253, 0, -20.1152 )
 

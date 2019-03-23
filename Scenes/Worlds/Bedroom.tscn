@@ -1,9 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scenes/Worlds/World.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Scenes/BGForestMedium.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/BGForestSmall.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/BGForestSmall.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/BGForestMedium.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Worlds/Study End Area.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/TreeStrip.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Fires/Fireplace.tscn" type="PackedScene" id=6]
 
 [sub_resource type="NavigationMesh" id=1]
 
@@ -43,121 +45,171 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.154072, -1.06384, 0.44301 )
 [node name="Path 1" type="Spatial" parent="Navigation/NavigationMeshInstance/Boundaries" index="0"]
 
 editor/display_folded = true
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20.6479, 0, 2.21849 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.8642, 0, -22.02 )
 
-[node name="BGForestMedium6" parent="Navigation/NavigationMeshInstance/Boundaries/Path 1" index="0" instance=ExtResource( 2 )]
+[node name="BGForestSmall" parent="Navigation/NavigationMeshInstance/Boundaries/Path 1" index="0" instance=ExtResource( 2 )]
 
-transform = Transform( 0.468607, 0, 0.883407, 0, 1, 0, -0.883407, 0, 0.468607, -3.82448, 0, -4.93144 )
+transform = Transform( 0.934293, 0, 0.356506, 0, 1, 0, -0.356506, 0, 0.934293, -1.02411, 0, -2.35608 )
 
-[node name="BGForestMedium13" parent="Navigation/NavigationMeshInstance/Boundaries/Path 1" index="1" instance=ExtResource( 2 )]
+[node name="BGForestSmall2" parent="Navigation/NavigationMeshInstance/Boundaries/Path 1" index="1" instance=ExtResource( 2 )]
+
+transform = Transform( 0.935062, 0, 0.354484, 0, 1, 0, -0.354484, 0, 0.935062, 4.29817, 0, -4.33939 )
+
+[node name="BGForestMedium6" parent="Navigation/NavigationMeshInstance/Boundaries/Path 1" index="2" instance=ExtResource( 3 )]
+
+transform = Transform( -0.999937, 0, 0.0112666, 0, 1, 0, -0.0112666, 0, -0.999937, 9.09751, 0, 4.58371 )
+
+[node name="Path 2" type="Spatial" parent="Navigation/NavigationMeshInstance/Boundaries" index="1"]
+
+transform = Transform( -0.458624, 0, 0.88863, 0, 1, 0, -0.88863, 0, -0.458624, 3.2197, 0, -22.5375 )
+
+[node name="BGForestMedium13" parent="Navigation/NavigationMeshInstance/Boundaries/Path 2" index="0" instance=ExtResource( 3 )]
 
 transform = Transform( 0.585357, 0, 0.810776, 0, 1, 0, -0.810776, 0, 0.585357, 1.31762, 0, 8.05291 )
 
-[node name="Bedroom Starting Area" type="Spatial" parent="Navigation/NavigationMeshInstance/Boundaries" index="1"]
+[node name="BGForestSmall" parent="Navigation/NavigationMeshInstance/Boundaries/Path 2" index="1" instance=ExtResource( 2 )]
 
-editor/display_folded = true
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 26.0259, 0, -22.3201 )
-
-[node name="BGForestSmall4" parent="Navigation/NavigationMeshInstance/Boundaries/Bedroom Starting Area" index="0" instance=ExtResource( 3 )]
-
-transform = Transform( 0.13246, 0, 0.991189, 0, 1, 0, -0.991189, 0, 0.13246, 7.37899, 0, 13.4871 )
-
-[node name="BGForestMedium" parent="Navigation/NavigationMeshInstance/Boundaries/Bedroom Starting Area" index="1" instance=ExtResource( 2 )]
-
-transform = Transform( -0.207121, 0, 0.978315, 0, 1, 0, -0.978315, 0, -0.207121, 5.97573, 0, 1.42655 )
-
-[node name="BGForestMedium3" parent="Navigation/NavigationMeshInstance/Boundaries/Bedroom Starting Area" index="2" instance=ExtResource( 2 )]
-
-transform = Transform( -0.195052, 0, 0.980793, 0, 1, 0, -0.980793, 0, -0.195052, -4.87225, 0, 6.72832 )
+transform = Transform( 0.836777, 0, 0.547545, 0, 1, 0, -0.547545, 0, 0.836777, -6.01799, 0, -3.14006 )
 
 [node name="Nook 1" type="Spatial" parent="Navigation/NavigationMeshInstance/Boundaries" index="2"]
 
 editor/display_folded = true
-transform = Transform( 0.153479, 0, 0.988152, 0, 1, 0, -0.988152, 0, 0.153479, 45.236, 0, -3.1736 )
+transform = Transform( -0.948491, 0, -0.316804, 0, 1, 0, 0.316804, 0, -0.948491, -16.0734, 0, -40.25 )
 
-[node name="BGForestMedium10" parent="Navigation/NavigationMeshInstance/Boundaries/Nook 1" index="0" instance=ExtResource( 2 )]
+[node name="BGForestMedium12" parent="Navigation/NavigationMeshInstance/Boundaries/Nook 1" index="0" instance=ExtResource( 3 )]
 
-[node name="BGForestMedium12" parent="Navigation/NavigationMeshInstance/Boundaries/Nook 1" index="1" instance=ExtResource( 2 )]
+transform = Transform( 0.356322, 0, -0.934363, 0, 1, 0, 0.934363, 0, 0.356322, -8.47115, 0, -7.93022 )
 
-transform = Transform( 0.356322, 0, -0.934363, 0, 1, 0, 0.934363, 0, 0.356322, -8.47115, 0, -7.93021 )
+[node name="BGForestSmall" parent="Navigation/NavigationMeshInstance/Boundaries/Nook 1" index="1" instance=ExtResource( 2 )]
 
-[node name="BGForestMedium16" parent="Navigation/NavigationMeshInstance/Boundaries/Nook 1" index="2" instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 1.49012e-007, 0, 1, 0, -1.49012e-007, 0, 1, -1.77705, 0, 0.821285 )
+
+[node name="BGForestMedium16" parent="Navigation/NavigationMeshInstance/Boundaries/Nook 1" index="2" instance=ExtResource( 3 )]
 
 transform = Transform( 0.355995, 0, -0.934488, 0, 1, 0, 0.934488, 0, 0.355995, 0.113446, 0, -6.76091 )
 
-[node name="Center Island" type="Spatial" parent="Navigation/NavigationMeshInstance/Boundaries" index="3"]
+[node name="Study End Area" parent="Navigation/NavigationMeshInstance/Boundaries" index="3" instance=ExtResource( 4 )]
 
 editor/display_folded = true
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7.15256e-007 )
+transform = Transform( -0.8147, 0, 0.579883, 0, 1, 0, -0.579883, 0, -0.8147, -31.6637, 0, -34.6368 )
+_sections_unfolded = [ "Transform" ]
 
-[node name="BGForestMedium11" parent="Navigation/NavigationMeshInstance/Boundaries/Center Island" index="0" instance=ExtResource( 2 )]
+[node name="TreeStrip" parent="Navigation/NavigationMeshInstance/Boundaries/Study End Area" index="2" instance=ExtResource( 5 )]
+
+transform = Transform( 0.96548, 0, 0.260476, 0, 1, 0, -0.260476, 0, 0.96548, -2.59016, 0, 0.431288 )
+
+[node name="TreeStrip3" parent="Navigation/NavigationMeshInstance/Boundaries/Study End Area" index="3" instance=ExtResource( 5 )]
+
+transform = Transform( 0.464748, 0, 0.885443, 0, 1, 0, -0.885443, 0, 0.464748, 0.961639, 0, -2.09677 )
+
+[node name="TreeStrip2" parent="Navigation/NavigationMeshInstance/Boundaries/Study End Area" index="4" instance=ExtResource( 5 )]
+
+transform = Transform( 0.0641432, 0, 0.997941, 0, 1, 0, -0.997941, 0, 0.0641432, 2.20784, 0, -6.68268 )
+
+[node name="Fireplace" parent="Navigation/NavigationMeshInstance/Boundaries/Study End Area" index="5" instance=ExtResource( 6 )]
+
+transform = Transform( 0.642159, 0, 0.766572, 0, 1, 0, -0.766572, 0, 0.642159, -1.89327, 0, -5.26746 )
+_sections_unfolded = [ "Transform" ]
+on = true
+
+[node name="Bedroom Starting Area" type="Spatial" parent="Navigation/NavigationMeshInstance/Boundaries" index="4"]
+
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -29.9104, 0, -22.3015 )
+
+[node name="BGForestSmall9" parent="Navigation/NavigationMeshInstance/Boundaries/Bedroom Starting Area" index="0" instance=ExtResource( 2 )]
+
+transform = Transform( -0.265462, 0, 0.964122, 0, 1, 0, -0.964122, 0, -0.265462, 3.50618, 0, -4.56846 )
+
+[node name="BGForestSmall4" parent="Navigation/NavigationMeshInstance/Boundaries/Bedroom Starting Area" index="1" instance=ExtResource( 2 )]
+
+transform = Transform( -0.96325, 0, -0.268606, 0, 1, 0, 0.268606, 0, -0.96325, 5.6467, 0, -0.260262 )
+
+[node name="BGForestSmall5" parent="Navigation/NavigationMeshInstance/Boundaries/Bedroom Starting Area" index="2" instance=ExtResource( 2 )]
+
+transform = Transform( -0.368836, 0, 0.929495, 0, 1, 0, -0.929495, 0, -0.368836, -5.23298, 0, 0.866402 )
+
+[node name="BGForestSmall6" parent="Navigation/NavigationMeshInstance/Boundaries/Bedroom Starting Area" index="3" instance=ExtResource( 2 )]
+
+transform = Transform( -0.802922, 0, 0.596085, 0, 1, 0, -0.596085, 0, -0.802922, -2.23606, 0, 5.53197 )
+
+[node name="BGForestSmall7" parent="Navigation/NavigationMeshInstance/Boundaries/Bedroom Starting Area" index="4" instance=ExtResource( 2 )]
+
+transform = Transform( -0.998944, 0, 0.0459501, 0, 1, 0, -0.0459501, 0, -0.998944, 3.49845, 0, 7.42582 )
+
+[node name="BGForestSmall8" parent="Navigation/NavigationMeshInstance/Boundaries/Bedroom Starting Area" index="5" instance=ExtResource( 2 )]
+
+transform = Transform( -0.900895, 0, -0.434036, 0, 1, 0, 0.434036, 0, -0.900895, 9.21453, 0, 6.08772 )
+
+[node name="Center Island" type="Spatial" parent="Navigation/NavigationMeshInstance/Boundaries" index="5"]
+
+editor/display_folded = true
+transform = Transform( -0.177108, 0, 0.984191, 0, 1, 0, -0.984191, 0, -0.177108, 7.11644, 0, -3.57515 )
+
+[node name="BGForestMedium11" parent="Navigation/NavigationMeshInstance/Boundaries/Center Island" index="0" instance=ExtResource( 3 )]
 
 transform = Transform( 0.431462, 0, -0.902131, 0, 1, 0, 0.902131, 0, 0.431462, 7.99352, 0, -0.477992 )
 
-[node name="BGForestMedium7" parent="Navigation/NavigationMeshInstance/Boundaries/Center Island" index="1" instance=ExtResource( 2 )]
+[node name="BGForestMedium7" parent="Navigation/NavigationMeshInstance/Boundaries/Center Island" index="1" instance=ExtResource( 3 )]
 
 transform = Transform( 0.750306, 0, -0.66109, 0, 1, 0, 0.66109, 0, 0.750306, 0.61748, 0, -11.3309 )
 
-[node name="BGForestMedium9" parent="Navigation/NavigationMeshInstance/Boundaries/Center Island" index="2" instance=ExtResource( 2 )]
+[node name="BGForestMedium9" parent="Navigation/NavigationMeshInstance/Boundaries/Center Island" index="2" instance=ExtResource( 3 )]
 
 transform = Transform( 0.667582, 0, 0.744536, 0, 1, 0, -0.744536, 0, 0.667582, -11.2876, 0, -9.62181 )
 
-[node name="BGForestMedium14" parent="Navigation/NavigationMeshInstance/Boundaries/Center Island" index="3" instance=ExtResource( 2 )]
+[node name="BGForestMedium14" parent="Navigation/NavigationMeshInstance/Boundaries/Center Island" index="3" instance=ExtResource( 3 )]
 
 transform = Transform( 0.683845, 0, -0.729627, 0, 1, 0, 0.729628, 0, 0.683845, -11.5643, 0, 2.64496 )
 
-[node name="BGForestMedium8" parent="Navigation/NavigationMeshInstance/Boundaries/Center Island" index="4" instance=ExtResource( 2 )]
+[node name="BGForestMedium8" parent="Navigation/NavigationMeshInstance/Boundaries/Center Island" index="4" instance=ExtResource( 3 )]
 
 transform = Transform( 0.353016, 0, -0.935617, 0, 1, 0, 0.935617, 0, 0.353016, -0.740136, 0, 1.18616 )
 
-[node name="Path 2" type="Spatial" parent="Navigation/NavigationMeshInstance/Boundaries" index="4"]
+[node name="Path 5" type="Spatial" parent="Navigation/NavigationMeshInstance/Boundaries" index="6"]
 
 editor/display_folded = true
-transform = Transform( 0.999923, 0, -0.0124565, 0, 1, 0, 0.0124565, 0, 0.999922, 3.10207, 0, 12.5038 )
+transform = Transform( -0.164835, 0, 0.986321, 0, 1, 0, -0.986322, 0, -0.164835, 18.8732, 0, -8.84271 )
 
-[node name="BGForestMedium15" parent="Navigation/NavigationMeshInstance/Boundaries/Path 2" index="0" instance=ExtResource( 2 )]
+[node name="BGForestMedium15" parent="Navigation/NavigationMeshInstance/Boundaries/Path 5" index="0" instance=ExtResource( 3 )]
 
 transform = Transform( 1, 0, -9.31323e-010, 0, 1, 0, 0, 0, 1, -6.3781, 0, 5.9373 )
 
-[node name="BGForestMedium20" parent="Navigation/NavigationMeshInstance/Boundaries/Path 2" index="1" instance=ExtResource( 2 )]
+[node name="BGForestMedium20" parent="Navigation/NavigationMeshInstance/Boundaries/Path 5" index="1" instance=ExtResource( 3 )]
 
 transform = Transform( 0.975382, 0, 0.22052, 0, 1, 0, -0.22052, 0, 0.975383, 7.66046, 0, 5.73532 )
 
-[node name="Bedroom End Area" type="Spatial" parent="Navigation/NavigationMeshInstance/Boundaries" index="5"]
+[node name="Bedroom End Area" type="Spatial" parent="Navigation/NavigationMeshInstance/Boundaries" index="7"]
 
 editor/display_folded = true
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -30.1056, 0, 10.2198 )
+transform = Transform( -0.177108, 0, 0.984191, 0, 1, 0, -0.984191, 0, -0.177108, 22.5066, 0, 24.2446 )
 
-[node name="BGForestMedium17" parent="Navigation/NavigationMeshInstance/Boundaries/Bedroom End Area" index="0" instance=ExtResource( 2 )]
+[node name="BGForestMedium17" parent="Navigation/NavigationMeshInstance/Boundaries/Bedroom End Area" index="0" instance=ExtResource( 3 )]
 
 transform = Transform( 0.980221, 0, -0.197906, 0, 1, 0, 0.197906, 0, 0.980221, 15.331, 0, -2.52244 )
 
-[node name="BGForestMedium18" parent="Navigation/NavigationMeshInstance/Boundaries/Bedroom End Area" index="1" instance=ExtResource( 2 )]
+[node name="BGForestMedium18" parent="Navigation/NavigationMeshInstance/Boundaries/Bedroom End Area" index="1" instance=ExtResource( 3 )]
 
 transform = Transform( 0.978054, 0, 0.208353, 0, 1, 0, -0.208353, 0, 0.978054, -1.27355, 0, -3.4028 )
 
-[node name="BGForestMedium22" parent="Navigation/NavigationMeshInstance/Boundaries/Bedroom End Area" index="2" instance=ExtResource( 2 )]
+[node name="BGForestMedium22" parent="Navigation/NavigationMeshInstance/Boundaries/Bedroom End Area" index="2" instance=ExtResource( 3 )]
 
 transform = Transform( 0.0466348, 0, 0.998912, 0, 1, 0, -0.998912, 0, 0.0466348, -13.0747, 0, 2.64302 )
 
-[node name="BGForestMedium19" parent="Navigation/NavigationMeshInstance/Boundaries/Bedroom End Area" index="3" instance=ExtResource( 2 )]
+[node name="BGForestMedium19" parent="Navigation/NavigationMeshInstance/Boundaries/Bedroom End Area" index="3" instance=ExtResource( 3 )]
 
 transform = Transform( 0.978054, 0, 0.208353, 0, 1, 0, -0.208353, 0, 0.978054, -2.57426, 0, 5.47012 )
 
-[node name="BGForestMedium21" parent="Navigation/NavigationMeshInstance/Boundaries/Bedroom End Area" index="4" instance=ExtResource( 2 )]
+[node name="BGForestMedium21" parent="Navigation/NavigationMeshInstance/Boundaries/Bedroom End Area" index="4" instance=ExtResource( 3 )]
 
 transform = Transform( -0.143894, 0, 0.989593, 0, 1, 0, -0.989593, 0, -0.143894, 5.30025, 0, 12.3215 )
 
-[node name="BGForestMedium23" parent="Navigation/NavigationMeshInstance/Boundaries/Bedroom End Area" index="5" instance=ExtResource( 2 )]
+[node name="BGForestMedium23" parent="Navigation/NavigationMeshInstance/Boundaries/Bedroom End Area" index="5" instance=ExtResource( 3 )]
 
 transform = Transform( 0.749875, 0, 0.661579, 0, 1, 0, -0.661579, 0, 0.749875, 11.8121, 0, 14.3484 )
 
-[node name="Study End Area" parent="Navigation/NavigationMeshInstance" index="2" instance=ExtResource( 4 )]
-
-transform = Transform( -0.8147, 0, 0.579883, 0, 1, 0, -0.579883, 0, -0.8147, 24.9045, 0, -34.6368 )
-
 [node name="Player" parent="." index="1"]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 27.7945, 0, -20.7904 )
+transform = Transform( -0.945943, 0, -0.324333, 0, 1, 0, 0.324333, 0, -0.945943, -34.2048, 0, -31.8115 )
 
 
