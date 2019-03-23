@@ -1,5 +1,6 @@
 extends Node
 
+const INTRO_DURATION = 24.0
 const FADE_DURATION = 2.0
 
 onready var tween_in = $TweenIn
@@ -12,10 +13,10 @@ onready var melody_vol = melody_player.volume_db
 onready var dying_player = $DyingPlayer
 onready var dying_vol = dying_player.volume_db
 
-func _ready():
+func start_drone_intro():
 	drone_player.volume_db = -80
 	drone_player.play()
-	tween_in.interpolate_property(drone_player, "volume_db", -80, drone_vol, FADE_DURATION, Tween.TRANS_SINE, Tween.EASE_IN, 0)
+	tween_in.interpolate_property(drone_player, "volume_db", -80, drone_vol + 5, INTRO_DURATION, Tween.TRANS_SINE, Tween.EASE_IN, 0)
 	tween_in.start()
 
 func play_melody(melody):
@@ -33,3 +34,7 @@ func play_dying():
 
 func _on_TweenOut_tween_completed(object, key):
 	object.stop()
+
+func _on_TweenIn_tween_completed(object, key):
+	tween_in.interpolate_property(drone_player, "volume_db", drone_player.volume_db, drone_vol, FADE_DURATION, Tween.TRANS_SINE, Tween.EASE_IN, 0)
+	tween_in.start()
