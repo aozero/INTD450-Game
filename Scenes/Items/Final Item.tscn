@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scenes/Items/Interactable.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/Items/Final Item.gd" type="Script" id=2]
@@ -7,13 +7,6 @@
 [sub_resource type="BoxShape" id=1]
 
 extents = Vector3( 0.3, 0.3, 0.3 )
-
-[sub_resource type="Animation" id=2]
-
-resource_name = "fade in music"
-length = 1.0
-loop = false
-step = 0.1
 
 [node name="Final Item" instance=ExtResource( 1 )]
 
@@ -28,10 +21,6 @@ shape = SubResource( 1 )
 [node name="Sprite3D" parent="CollisionShape" index="0"]
 
 pixel_size = 0.002
-
-[node name="AnimationPlayer" parent="." index="1"]
-
-"anims/fade in music" = SubResource( 2 )
 
 [node name="MusicPlayer" parent="." index="2"]
 
