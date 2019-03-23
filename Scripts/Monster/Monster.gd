@@ -174,6 +174,7 @@ func start_alerted():
 	
 	lost_player_timer.stop()
 	stand_still_timer.stop()
+	patrol_pause_timer.stop()
 	play_alerted_audio(SOUND_ALERTED)
 
 # Called when losing the player
