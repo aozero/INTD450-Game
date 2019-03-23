@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scripts/Fires/Stove.gd" type="Script" id=1]
-[ext_resource path="res://Materials/UnshadedBillboard.tres" type="Material" id=2]
+[ext_resource path="res://Materials/FireBillboard.tres" type="Material" id=2]
 [ext_resource path="res://Sprites/Fires/stove_sheet.png" type="Texture" id=3]
 [ext_resource path="res://Animations/Fire.tres" type="Animation" id=4]
 
@@ -126,7 +126,7 @@ subdivide_width = 0
 subdivide_height = 0
 subdivide_depth = 0
 
-[node name="Stove" type="StaticBody"]
+[node name="Stove" type="StaticBody" index="0"]
 
 input_ray_pickable = true
 input_capture_on_drag = false

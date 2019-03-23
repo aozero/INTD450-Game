@@ -4,7 +4,7 @@
 
 render_priority = 0
 flags_transparent = true
-flags_unshaded = true
+flags_unshaded = false
 flags_vertex_lighting = false
 flags_no_depth_test = false
 flags_use_point_size = false
@@ -37,7 +37,8 @@ anisotropy_enabled = false
 ao_enabled = false
 depth_enabled = false
 subsurf_scatter_enabled = false
-transmission_enabled = false
+transmission_enabled = true
+transmission = Color( 0.214844, 0.214844, 0.214844, 1 )
 refraction_enabled = false
 detail_enabled = false
 uv1_scale = Vector3( 1, 1, 1 )
@@ -50,5 +51,5 @@ uv2_triplanar = false
 uv2_triplanar_sharpness = 1.0
 proximity_fade_enable = false
 distance_fade_enable = false
-_sections_unfolded = [ "Flags" ]
+_sections_unfolded = [ "Transmission" ]
 

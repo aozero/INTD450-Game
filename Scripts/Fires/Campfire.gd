@@ -7,7 +7,3 @@ export var on = false
 
 func _ready():
 	light.visible = on
-	if on:
-		sprite.material_override = load("res://Materials/UnshadedBillboard.tres")
-	else:
-		sprite.material_override = load("res://Materials/Billboard.tres")
