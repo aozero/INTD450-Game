@@ -8,6 +8,7 @@ const START_MUSIC = 3  # which animation to start playing the music at
 var curr_anim = 1
 
 func _ready():
+	music_player.stop_drone()
 	animation_player.play("1")
 
 func _on_AnimationPlayer_animation_finished(anim_name):

@@ -13,6 +13,9 @@ onready var melody_vol = melody_player.volume_db
 onready var dying_player = $DyingPlayer
 onready var dying_vol = dying_player.volume_db
 
+func stop_drone():
+	drone_player.stop()
+
 func start_drone_intro():
 	drone_player.volume_db = -80
 	drone_player.play()

@@ -32,7 +32,7 @@ playback/speed = 1.0
 stream = ExtResource( 2 )
 volume_db = -30.0
 pitch_scale = 1.0
-autoplay = false
+autoplay = true
 mix_target = 0
 bus = "Master"
 
