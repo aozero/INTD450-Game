@@ -2,7 +2,7 @@ extends Node
 
 # Separate from player because player must stop working during pause but this must always be working            
 onready var pause_menu_rect = $PauseMenuRect
-onready var options_menu_rect = $OptionsMenuRect
+onready var options_menu = $OptionsMenu
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -30,4 +30,4 @@ func _on_ResumeButton_button_up():
 	set_paused(false)
 
 func _on_OptionsButton_button_up():
-	options_menu_rect.visible = true
+	options_menu.visible = true
