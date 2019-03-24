@@ -329,6 +329,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.1488, 0, 0.487323 )
 
 [node name="Top Path" type="Spatial" parent="Navigation/NavigationMeshInstance" index="6"]
 
+editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.222595, 0, -24.6842 )
 
 [node name="Boundaries" type="Spatial" parent="Navigation/NavigationMeshInstance/Top Path" index="0"]
@@ -370,6 +371,8 @@ transform = Transform( 0.80696, 0, -0.590605, 0, 1, 0, 0.590605, 0, 0.80696, 16.
 _sections_unfolded = [ "Transform" ]
 
 [node name="Decoration" type="Spatial" parent="Navigation/NavigationMeshInstance/Top Path" index="1"]
+
+editor/display_folded = true
 
 [node name="TreeRandom10" parent="Navigation/NavigationMeshInstance/Top Path/Decoration" index="0" instance=ExtResource( 7 )]
 
@@ -595,6 +598,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.22725, 0, -9.13398 )
 
 [node name="Kitchen-Study Connector" parent="Navigation/NavigationMeshInstance" index="8" instance=ExtResource( 18 )]
 
+editor/display_folded = true
 transform = Transform( 0.999484, 0, 0.0321338, 0, 1, 0, -0.0321338, 0, 0.999484, 35.8659, 0, -2.96551 )
 
 [node name="Stove" parent="Navigation/NavigationMeshInstance/Kitchen-Study Connector" index="2" instance=ExtResource( 19 )]
