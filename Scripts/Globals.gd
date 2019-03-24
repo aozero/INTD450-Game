@@ -7,15 +7,31 @@ extends Node
 # Prettiest is ForestTree alpha scissoring off
 const FOREST_QUALITY_TEXT = ["Fastest", "Prettiest"]
 var forest_material = load("res://Materials/ForestTree.tres")
-var curr_forest_quality = 0
+var forest_quality = 0 setget set_forest_quality, get_forest_quality
 
 func set_forest_quality(level):
-	if level == 0:
+	forest_quality = level
+	
+	if forest_quality == 0:
 		forest_material.params_use_alpha_scissor = true
-	elif level == 1:
+	elif forest_quality == 1:
 		forest_material.params_use_alpha_scissor = false
 
-	curr_forest_quality = level
+func get_forest_quality():
+	return forest_quality
+
+# Shadows
+onready var firelight = load("res://Scenes/Fires/FireLight.tscn").instance()
+var shadows = false setget set_shadows, get_shadows
+
+func set_shadows(value):
+	shadows = value
+	
+	get_tree().call_group("lights", "set_shadows", value)
+
+func get_shadows():
+	return shadows
+
 ########################################
 
 # Whether the player is currently experiencing a memory

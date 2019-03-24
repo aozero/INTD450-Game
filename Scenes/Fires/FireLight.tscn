@@ -1,4 +1,6 @@
-[gd_scene format=2]
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Scripts/Fires/FireLight.gd" type="Script" id=1]
 
 [node name="FireLight" type="OmniLight"]
 
@@ -20,6 +22,7 @@ omni_range = 15.0
 omni_attenuation = 3.24901
 omni_shadow_mode = 1
 omni_shadow_detail = 1
+script = ExtResource( 1 )
 _sections_unfolded = [ "Light", "Omni", "Shadow", "Transform", "Visibility" ]
 
 
