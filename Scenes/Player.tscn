@@ -20,9 +20,6 @@
 [ext_resource path="res://Scripts/Player/FootstepsPlayer.gd" type="Script" id=18]
 [ext_resource path="res://Scripts/Player/PlayerArea.gd" type="Script" id=19]
 
-
-
-
 [sub_resource type="Animation" id=1]
 
 resource_name = "fade in burning"
@@ -362,7 +359,7 @@ use_filter = false
 font_data = ExtResource( 10 )
 _sections_unfolded = [ "Settings" ]
 
-[sub_resource type="DynamicFont" id=20]
+[sub_resource type="DynamicFont" id=17]
 
 size = 32
 use_mipmaps = false
@@ -370,7 +367,7 @@ use_filter = false
 font_data = ExtResource( 10 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
-[sub_resource type="Animation" id=17]
+[sub_resource type="Animation" id=18]
 
 length = 0.6
 loop = true
@@ -402,7 +399,7 @@ tracks/1/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=18]
+[sub_resource type="Animation" id=19]
 
 length = 0.5
 loop = false
@@ -420,7 +417,7 @@ tracks/0/keys = {
 "values": [ Vector3( 0, 0, 0 ) ]
 }
 
-[sub_resource type="SphereShape" id=19]
+[sub_resource type="SphereShape" id=20]
 
 radius = 50.0
 
@@ -511,7 +508,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0, -0.1 )
 visible = false
 light_energy = 1.09
 light_indirect_energy = 1.0
-light_cull_mask = -1
+light_cull_mask = -524289
 omni_attenuation = 1.8025
 
 [node name="TorchArea" type="Area" parent="Torch" index="0"]
@@ -1110,7 +1107,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 20 )
+custom_fonts/font = SubResource( 17 )
 text = "Exit the game?"
 align = 1
 valign = 1
@@ -1258,8 +1255,8 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/headbob = SubResource( 17 )
-anims/reset = SubResource( 18 )
+anims/headbob = SubResource( 18 )
+anims/reset = SubResource( 19 )
 blend_times = [  ]
 
 [node name="FootstepsPlayer" type="AudioStreamPlayer" parent="Headbobber" index="0"]
@@ -1312,7 +1309,7 @@ script = ExtResource( 19 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Player Area" index="0"]
 
-shape = SubResource( 19 )
+shape = SubResource( 20 )
 disabled = false
 
 [connection signal="finished" from="ForestNoisesAudio" to="ForestNoisesAudio" method="_on_ForestNoisesAudio_finished"]
