@@ -4,7 +4,7 @@
 [ext_resource path="res://Fonts/Prompt-Bold.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Fonts/Prompt.ttf" type="DynamicFontData" id=3]
 
-[sub_resource type="DynamicFont" id=15]
+[sub_resource type="DynamicFont" id=1]
 
 size = 56
 use_mipmaps = false
@@ -12,7 +12,7 @@ use_filter = false
 font_data = ExtResource( 2 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
-[sub_resource type="DynamicFont" id=17]
+[sub_resource type="DynamicFont" id=2]
 
 size = 28
 use_mipmaps = false
@@ -20,18 +20,18 @@ use_filter = false
 font_data = ExtResource( 3 )
 _sections_unfolded = [ "Settings" ]
 
-[sub_resource type="DynamicFont" id=18]
+[sub_resource type="DynamicFont" id=3]
 
 size = 28
 use_mipmaps = false
 use_filter = false
 font_data = ExtResource( 3 )
 
-[sub_resource type="Theme" id=19]
+[sub_resource type="Theme" id=4]
 
-default_font = SubResource( 18 )
+default_font = SubResource( 3 )
 
-[sub_resource type="DynamicFont" id=16]
+[sub_resource type="DynamicFont" id=5]
 
 size = 48
 use_mipmaps = false
@@ -88,7 +88,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 15 )
+custom_fonts/font = SubResource( 1 )
 text = "Options"
 align = 1
 valign = 1
@@ -143,7 +143,7 @@ anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 8.0
-margin_right = 110.0
+margin_right = 199.0
 margin_bottom = 42.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -151,8 +151,8 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 17 )
-text = "Quality:"
+custom_fonts/font = SubResource( 2 )
+text = "Forest Quality:"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
@@ -164,7 +164,7 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 122.0
+margin_left = 211.0
 margin_right = 360.0
 margin_bottom = 50.0
 rect_min_size = Vector2( 120, 30 )
@@ -175,7 +175,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-theme = SubResource( 19 )
+theme = SubResource( 4 )
 toggle_mode = false
 action_mode = 0
 enabled_focus_mode = 2
@@ -242,7 +242,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 16 )
+custom_fonts/font = SubResource( 5 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null

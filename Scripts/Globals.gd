@@ -2,20 +2,20 @@ extends Node
 
 # OPTIONS
 ########################################
-# Levels of graphical quality.
+# Levels of forest quality.
 # Fastest is ForestTree alpha scissoring on
 # Prettiest is ForestTree alpha scissoring off
-const GRAPHICAL_QUALITY_TEXT = ["Fastest", "Prettiest"]
+const FOREST_QUALITY_TEXT = ["Fastest", "Prettiest"]
 var forest_material = load("res://Materials/ForestTree.tres")
-var curr_quality_level = 0
+var curr_forest_quality = 0
 
-func set_quality_level(level):
+func set_forest_quality(level):
 	if level == 0:
 		forest_material.params_use_alpha_scissor = true
 	elif level == 1:
 		forest_material.params_use_alpha_scissor = false
 
-	curr_quality_level = level
+	curr_forest_quality = level
 ########################################
 
 # Whether the player is currently experiencing a memory
