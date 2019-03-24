@@ -6,20 +6,22 @@
 
 [sub_resource type="BoxShape" id=1]
 
-extents = Vector3( 0.4, 0.4, 0.4 )
+extents = Vector3( 0.3, 0.3, 0.3 )
 
-[node name="ItemEasel" instance=ExtResource( 1 )]
+[node name="ItemEasel" index="0" instance=ExtResource( 1 )]
 
 script = ExtResource( 2 )
 
 [node name="CollisionShape" parent="." index="0"]
 
+transform = Transform( 1, 0, 0, 0, -4.37114e-008, -1, 0, 1, -4.37114e-008, 0, -0.55, 0 )
 shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="Sprite3D" parent="CollisionShape" index="0"]
 
 transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 0, 9.67718e-010, 0.0221388 )
-pixel_size = 0.0035
+pixel_size = 0.0025
 texture = ExtResource( 3 )
 
 
