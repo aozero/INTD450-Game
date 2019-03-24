@@ -4,6 +4,7 @@ extends Node
     
 onready var pause_menu_rect = $PauseMenuRect
 onready var options_menu = $OptionsMenu
+onready var exit_verify = $ExitVerfication
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -27,7 +28,7 @@ func set_paused(paused):
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _on_ExitButton_button_up():
-	get_tree().quit()
+	exit_verify.visible = true
 
 func _on_ResumeButton_button_up():
 	set_paused(false)
