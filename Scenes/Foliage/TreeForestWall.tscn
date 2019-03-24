@@ -4,15 +4,15 @@
 [ext_resource path="res://Sprites/Foliage/tree_sheet.png" type="Texture" id=2]
 [ext_resource path="res://Scripts/TreeForestWall.gd" type="Script" id=3]
 
-[sub_resource type="CubeMesh" id=1]
+[sub_resource type="CubeMesh" id=2]
 
 custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
-size = Vector3( 0.2, 3.8, 0.2 )
+size = Vector3( 0.2, 3, 0.2 )
 subdivide_width = 0
 subdivide_height = 0
 subdivide_depth = 0
 
-[node name="TreeForestWall" type="Sprite3D"]
+[node name="TreeForestWall" type="Sprite3D" index="0"]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, 0 )
 layers = 1
@@ -47,7 +47,7 @@ _sections_unfolded = [ "Animation", "Geometry", "Transform" ]
 
 [node name="MeshInstance" type="MeshInstance" parent="." index="0"]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.722357, 0 )
 layers = 0
 material_override = null
 cast_shadow = 1
@@ -57,7 +57,7 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = SubResource( 1 )
+mesh = SubResource( 2 )
 skeleton = NodePath("..")
 material/0 = null
 _sections_unfolded = [ "Transform" ]

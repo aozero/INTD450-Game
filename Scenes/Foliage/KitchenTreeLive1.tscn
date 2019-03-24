@@ -10,12 +10,12 @@ extents = Vector3( 0.05, 0.05, 2 )
 [sub_resource type="CubeMesh" id=2]
 
 custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
-size = Vector3( 0.1, 4, 0.1 )
+size = Vector3( 0.2, 3, 0.2 )
 subdivide_width = 0
 subdivide_height = 0
 subdivide_depth = 0
 
-[node name="KitchenTreeLive1" type="StaticBody"]
+[node name="KitchenTreeLive1" type="StaticBody" index="0"]
 
 input_ray_pickable = true
 input_capture_on_drag = false
@@ -69,8 +69,7 @@ _sections_unfolded = [ "Geometry", "Transform" ]
 [node name="MeshInstance" type="MeshInstance" parent="CollisionShape" index="1"]
 
 transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 0, 0, 0 )
-visible = false
-layers = 1
+layers = 0
 material_override = null
 cast_shadow = 1
 extra_cull_margin = 0.0
