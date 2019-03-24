@@ -12,13 +12,16 @@
 [ext_resource path="res://Fonts/Prompt.ttf" type="DynamicFontData" id=10]
 [ext_resource path="res://Scripts/Player/MemoryController.gd" type="Script" id=11]
 [ext_resource path="res://Sprites/crosshair.png" type="Texture" id=12]
-[ext_resource path="res://Scripts/Player/PauseController.gd" type="Script" id=13]
+[ext_resource path="res://Scripts/Menus/PauseController.gd" type="Script" id=13]
 [ext_resource path="res://Fonts/Prompt-Bold.ttf" type="DynamicFontData" id=14]
-[ext_resource path="res://Scripts/Player/ExitVerfication.gd" type="Script" id=15]
-[ext_resource path="res://Scenes/OptionsMenu.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Scripts/Menus/ExitVerfication.gd" type="Script" id=15]
+[ext_resource path="res://Scenes/Menus/OptionsMenu.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Sound/Effects/Walking/walking_step1.wav" type="AudioStream" id=17]
 [ext_resource path="res://Scripts/Player/FootstepsPlayer.gd" type="Script" id=18]
 [ext_resource path="res://Scripts/Player/PlayerArea.gd" type="Script" id=19]
+
+
+
 
 [sub_resource type="Animation" id=1]
 
