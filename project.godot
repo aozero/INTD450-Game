@@ -11,7 +11,7 @@ config_version=3
 [application]
 
 config/name="Firelight"
-run/main_scene="res://Scenes/Intro.tscn"
+run/main_scene="res://Scenes/Menus/MainMenu.tscn"
 boot_splash/image="res://Sprites/Logo_mayo.png"
 config/icon="res://icon.png"
 

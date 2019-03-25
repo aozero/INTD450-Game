@@ -1,0 +1,258 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Scripts/Menus/ExitVerfication.gd" type="Script" id=1]
+[ext_resource path="res://Fonts/Prompt.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+
+size = 32
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 2 )
+_sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=2]
+
+size = 48
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 2 )
+_sections_unfolded = [ "Settings" ]
+
+[node name="ExitVerfication" type="Control"]
+
+editor/display_folded = true
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -200.0
+margin_top = -200.0
+margin_right = 200.0
+margin_bottom = 280.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+script = ExtResource( 1 )
+_sections_unfolded = [ "Margin", "Mouse" ]
+
+[node name="ExitVerificationRect" type="ColorRect" parent="." index="0"]
+
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -190.0
+margin_top = -90.0
+margin_right = 190.0
+margin_bottom = 90.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 0, 0, 0, 1 )
+_sections_unfolded = [ "Margin", "Visibility" ]
+
+[node name="Background" type="ColorRect" parent="ExitVerificationRect" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = 5.0
+margin_right = -5.0
+margin_bottom = -5.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 0.109375, 0.109375, 0.109375, 1 )
+_sections_unfolded = [ "Margin", "Visibility" ]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ExitVerificationRect" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 1
+_sections_unfolded = [ "Margin" ]
+
+[node name="ExitLabel" type="Label" parent="ExitVerificationRect/VBoxContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 14.0
+margin_right = 360.0
+margin_bottom = 52.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 1 )
+text = "Exit the game?"
+align = 1
+valign = 1
+autowrap = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Margin", "custom_fonts" ]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ExitVerificationRect/VBoxContainer" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 56.0
+margin_right = 360.0
+margin_bottom = 146.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 1
+_sections_unfolded = [ "Margin" ]
+
+[node name="NoContainer" type="CenterContainer" parent="ExitVerificationRect/VBoxContainer/HBoxContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1.0
+margin_right = 151.0
+margin_bottom = 90.0
+rect_min_size = Vector2( 150, 90 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+use_top_left = false
+_sections_unfolded = [ "Rect" ]
+
+[node name="NoButton" type="Button" parent="ExitVerificationRect/VBoxContainer/HBoxContainer/NoContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 10.0
+margin_right = 150.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 150, 70 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 2 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "No"
+flat = false
+align = 1
+_sections_unfolded = [ "Margin", "Rect" ]
+
+[node name="Empty" type="CenterContainer" parent="ExitVerificationRect/VBoxContainer/HBoxContainer" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 155.0
+margin_right = 205.0
+margin_bottom = 90.0
+rect_min_size = Vector2( 50, 90 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+use_top_left = false
+_sections_unfolded = [ "Rect" ]
+
+[node name="YesContainer" type="CenterContainer" parent="ExitVerificationRect/VBoxContainer/HBoxContainer" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 209.0
+margin_right = 359.0
+margin_bottom = 90.0
+rect_min_size = Vector2( 150, 90 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+use_top_left = false
+_sections_unfolded = [ "Rect" ]
+
+[node name="YesButton" type="Button" parent="ExitVerificationRect/VBoxContainer/HBoxContainer/YesContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 10.0
+margin_right = 150.0
+margin_bottom = 80.0
+rect_min_size = Vector2( 150, 70 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 2 )
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Yes"
+flat = false
+align = 1
+_sections_unfolded = [ "Margin", "Rect" ]
+
+[connection signal="button_up" from="ExitVerificationRect/VBoxContainer/HBoxContainer/NoContainer/NoButton" to="." method="_on_NoButton_button_up"]
+
+[connection signal="button_up" from="ExitVerificationRect/VBoxContainer/HBoxContainer/YesContainer/YesButton" to="." method="_on_YesButton_button_up"]
+
+
