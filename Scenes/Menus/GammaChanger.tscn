@@ -7,16 +7,7 @@
 [ext_resource path="res://Sprites/Godot_icon.png" type="Texture" id=5]
 [ext_resource path="res://Fonts/Prompt.ttf" type="DynamicFontData" id=6]
 
-
 [sub_resource type="DynamicFont" id=1]
-
-size = 48
-use_mipmaps = false
-use_filter = false
-font_data = ExtResource( 6 )
-_sections_unfolded = [ "Settings" ]
-
-[sub_resource type="DynamicFont" id=3]
 
 size = 48
 use_mipmaps = false
@@ -32,7 +23,15 @@ use_filter = false
 font_data = ExtResource( 6 )
 _sections_unfolded = [ "Settings" ]
 
-[node name="GammaChanger" type="Spatial"]
+[sub_resource type="DynamicFont" id=3]
+
+size = 48
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 6 )
+_sections_unfolded = [ "Settings" ]
+
+[node name="GammaChanger" type="Spatial" index="0"]
 
 script = ExtResource( 1 )
 
@@ -152,8 +151,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 0.0
+margin_left = 20.0
 margin_top = 50.0
-margin_bottom = 14.0
+margin_right = -20.0
+margin_bottom = 107.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -161,9 +162,10 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = SubResource( 1 )
-text = "Adjust the slider until you can only see 2 objects."
+text = "Adjust the slider until you cannot see the left object, can barely see the middle object, and can see the right object without it being overly orange or bright."
 align = 1
 valign = 1
+autowrap = true
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
@@ -203,7 +205,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 text = "Contrast"
 percent_visible = 1.0
 lines_skipped = 0
@@ -275,7 +277,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 text = "Brightness"
 percent_visible = 1.0
 lines_skipped = 0
@@ -330,7 +332,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
