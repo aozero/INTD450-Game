@@ -32,19 +32,19 @@ func _ready():
 	# As soon as you start the game
 	TUTORIAL_1.SOUND = load("res://Sound/Effects/Memory/Minor Items/silence.wav")
 	TUTORIAL_1.TEXT = "Use WASD to move and mouse to look."
-	TUTORIAL_1.TEXT_TIME = 8
+	TUTORIAL_1.TEXT_TIME = 16
 	
 	# Right after moving past the campfire
 	var run_button = get_action_button_text("run")
 	TUTORIAL_2.SOUND = load("res://Sound/Effects/Memory/Minor Items/silence.wav")
 	TUTORIAL_2.TEXT = "Running (Hold " + run_button + ") in the forest makes a lot of noise. "
-	TUTORIAL_2.TEXT_TIME = 8
+	TUTORIAL_2.TEXT_TIME = 16
 	
 	# At the very edge of the campfire's light
 	var light_button = get_action_button_text("shoot")
 	TUTORIAL_3.SOUND = load("res://Sound/Effects/Memory/Minor Items/silence.wav")
 	TUTORIAL_3.TEXT = "Lighting a match (" + light_button + ") will make it easier to see... and be seen."
-	TUTORIAL_3.TEXT_TIME = 8
+	TUTORIAL_3.TEXT_TIME = 16
 	###############################
 	
 	# Kitchen
