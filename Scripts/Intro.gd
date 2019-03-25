@@ -13,6 +13,7 @@ func _ready():
 	
 func _input(event):
 	if event.is_action_pressed("pause"):
+		music_player.fade_in(music_player.drone_player)
 		start_game()
 
 func _on_AnimationPlayer_animation_finished(anim_name):
