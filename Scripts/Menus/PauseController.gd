@@ -9,10 +9,7 @@ onready var exit_verify = $ExitVerfication
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
-func _input(event):
-	if event.is_action_pressed("toggle_fullscreen"):
-		OS.window_fullscreen = !OS.window_fullscreen
-	
+func _input(event):	
 	if event.is_action_pressed("pause"):
 		set_paused(!get_tree().paused)
 
