@@ -15,7 +15,7 @@ func _input(event):
 		set_fullscreen(!OS.window_fullscreen)
 
 # BRIGHTNESS
-var brightness = 1 setget set_forest_quality, get_forest_quality
+var brightness = 1 setget set_brightness, get_brightness
 func set_brightness(value):
 	brightness = value
 	
@@ -23,6 +23,16 @@ func set_brightness(value):
 
 func get_brightness():
 	return brightness
+	
+# CONTRAST
+var contrast = 1 setget set_contrast, get_contrast
+func set_contrast(value):
+	contrast = value
+	
+	get_tree().call_group("cameras", "set_contrast", value)
+
+func get_contrast():
+	return contrast
 
 # FOREST QUALITY
 # Levels of forest quality.

@@ -12,6 +12,7 @@ func _ready():
 		quality_button.add_item(i)
 	
 	fullscreen_box.pressed = globals.get_fullscreen()
+	brightness_slider.value = globals.get_contrast()
 	brightness_slider.value = globals.get_brightness()
 	quality_button.select(globals.get_forest_quality())
 	shadow_box.pressed = globals.get_shadows()
@@ -23,8 +24,11 @@ func _on_FullscreenBox_button_up():
 	# is_pressed returns true when the check mark is not there
 	globals.set_fullscreen(!fullscreen_box.is_pressed())
 
-func _on_HSlider_value_changed(value):
-	globals.set_brightness(brightness_slider.value)
+func _on_ContrastSlider_value_changed(value):
+	globals.set_contrast(value)
+
+func _on_BrightnessSlider_value_changed(value):
+	globals.set_brightness(value)
 
 func _on_QualityButton_item_selected(ID):
 	globals.set_forest_quality(ID)
@@ -32,3 +36,7 @@ func _on_QualityButton_item_selected(ID):
 func _on_ShadowBox_button_up():
 	# is_pressed returns true when the check mark is not there
 	globals.set_shadows(!shadow_box.is_pressed())
+
+
+
+
