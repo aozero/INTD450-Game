@@ -10,6 +10,10 @@ var curr_anim = 1
 func _ready():
 	music_player.stop_drone()
 	animation_player.play("1")
+	
+func _input(event):
+	if event.is_action_pressed("pause"):
+		start_game()
 
 func _on_AnimationPlayer_animation_finished(anim_name):
 	if curr_anim < NUM_ANIMS:
@@ -18,4 +22,7 @@ func _on_AnimationPlayer_animation_finished(anim_name):
 		if curr_anim == START_MUSIC:
 			music_player.start_drone_intro()
 	else:
-		get_tree().change_scene("res://Scenes/Worlds/Kitchen.tscn")
+		start_game()
+
+func start_game():
+	get_tree().change_scene("res://Scenes/Worlds/Kitchen.tscn")
