@@ -22,7 +22,7 @@ use_filter = false
 font_data = ExtResource( 3 )
 _sections_unfolded = [ "Settings" ]
 
-[node name="PauseController" type="Node"]
+[node name="PauseController" type="Node" index="0"]
 
 pause_mode = 2
 script = ExtResource( 1 )
@@ -30,7 +30,6 @@ _sections_unfolded = [ "Pause" ]
 
 [node name="PauseMenuRect" type="ColorRect" parent="." index="0"]
 
-editor/display_folded = true
 visible = false
 anchor_left = 0.5
 anchor_top = 0.5
@@ -88,7 +87,6 @@ _sections_unfolded = [ "custom_fonts" ]
 
 [node name="OptionsContainer" type="CenterContainer" parent="PauseMenuRect/VBoxContainer" index="1"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -252,5 +250,11 @@ _sections_unfolded = [ "Margin", "Rect" ]
 [node name="OptionsMenu" parent="." index="2" instance=ExtResource( 5 )]
 
 _sections_unfolded = [ "Margin", "Rect", "Visibility" ]
+
+[connection signal="button_up" from="PauseMenuRect/VBoxContainer/OptionsContainer/OptionsButton" to="." method="_on_OptionsButton_button_up"]
+
+[connection signal="button_up" from="PauseMenuRect/VBoxContainer/ExitContainer/ExitButton" to="." method="_on_ExitButton_button_up"]
+
+[connection signal="button_up" from="PauseMenuRect/VBoxContainer/ResumeContainer/ResumeButton" to="." method="_on_ResumeButton_button_up"]
 
 
