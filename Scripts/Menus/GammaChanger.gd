@@ -10,7 +10,7 @@ func _ready():
 
 func _input(event):
 	if event.is_action_pressed("pause"):
-		go_back()
+		done()
 
 func _on_Brightness_value_changed(value):
 	globals.set_brightness(value)
@@ -19,7 +19,7 @@ func _on_ContrastSlider_value_changed(value):
 	globals.set_contrast(value)
 
 func _on_DoneButton_button_up():
-	go_back()
+	done()
 
-func go_back():
-	get_tree().change_scene("res://Scenes/Menus/MainMenu.tscn")
+func done():
+	get_tree().change_scene("res://Scenes/Intro.tscn")
