@@ -2,6 +2,7 @@ extends Node
 
 # OPTIONS
 ########################################
+# FULLSCREEN
 func set_fullscreen(value):
 	OS.window_fullscreen = value
 
@@ -13,6 +14,17 @@ func _input(event):
 	if event.is_action_pressed("toggle_fullscreen"):
 		set_fullscreen(!OS.window_fullscreen)
 
+# BRIGHTNESS
+var brightness = 1 setget set_forest_quality, get_forest_quality
+func set_brightness(value):
+	brightness = value
+	
+	get_tree().call_group("cameras", "set_brightness", value)
+
+func get_brightness():
+	return brightness
+
+# FOREST QUALITY
 # Levels of forest quality.
 # Fastest is ForestTree alpha scissoring on
 # Prettiest is ForestTree alpha scissoring off
@@ -31,7 +43,7 @@ func set_forest_quality(level):
 func get_forest_quality():
 	return forest_quality
 
-# Shadows
+# SHADOWS
 onready var firelight = load("res://Scenes/Fires/FireLight.tscn").instance()
 var shadows = false setget set_shadows, get_shadows
 

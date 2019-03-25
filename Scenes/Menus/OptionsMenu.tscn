@@ -50,7 +50,6 @@ _sections_unfolded = [ "Settings" ]
 
 [node name="OptionsMenu" type="ColorRect" index="0"]
 
-visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -185,7 +184,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="ForestQuality" type="Container" parent="VBoxContainer/Split/Left" index="1"]
+[node name="Brightness" type="Container" parent="VBoxContainer/Split/Left" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -194,6 +193,46 @@ anchor_bottom = 0.0
 margin_top = 64.0
 margin_right = 200.0
 margin_bottom = 124.0
+rect_min_size = Vector2( 0, 60 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Rect" ]
+
+[node name="BrightnessLabel" type="Label" parent="VBoxContainer/Split/Left/Brightness" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.5
+anchor_right = 0.0
+anchor_bottom = 0.5
+margin_top = -17.0
+margin_right = 199.0
+margin_bottom = 17.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 2 )
+text = "Brightness:"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="ForestQuality" type="Container" parent="VBoxContainer/Split/Left" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 128.0
+margin_right = 200.0
+margin_bottom = 188.0
 rect_min_size = Vector2( 0, 60 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -225,15 +264,15 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="Shadows" type="Container" parent="VBoxContainer/Split/Left" index="2"]
+[node name="Shadows" type="Container" parent="VBoxContainer/Split/Left" index="3"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 128.0
+margin_top = 192.0
 margin_right = 200.0
-margin_bottom = 188.0
+margin_bottom = 252.0
 rect_min_size = Vector2( 0, 60 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -346,9 +385,8 @@ clip_text = true
 align = 0
 _sections_unfolded = [ "Margin", "Rect", "custom_fonts" ]
 
-[node name="ForestQuality" type="Container" parent="VBoxContainer/Split/Right" index="1"]
+[node name="Brightness" type="Container" parent="VBoxContainer/Split/Right" index="1"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -356,6 +394,55 @@ anchor_bottom = 0.0
 margin_top = 64.0
 margin_right = 160.0
 margin_bottom = 124.0
+rect_min_size = Vector2( 0, 60 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Rect" ]
+
+[node name="BrightnessSlider" type="HSlider" parent="VBoxContainer/Split/Right/Brightness" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 15.0
+margin_right = -80.0
+margin_bottom = -29.0
+rect_scale = Vector2( 2, 2 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 0
+min_value = 0.0
+max_value = 2.0
+step = 0.1
+page = 0.0
+value = 0.0
+exp_edit = false
+rounded = false
+editable = true
+tick_count = 0
+ticks_on_borders = false
+focus_mode = 2
+_sections_unfolded = [ "Margin", "Rect" ]
+
+[node name="ForestQuality" type="Container" parent="VBoxContainer/Split/Right" index="2"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 128.0
+margin_right = 160.0
+margin_bottom = 188.0
 rect_min_size = Vector2( 0, 60 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -393,15 +480,15 @@ items = [  ]
 selected = -1
 _sections_unfolded = [ "Margin", "Rect", "Theme" ]
 
-[node name="Shadows" type="Container" parent="VBoxContainer/Split/Right" index="2"]
+[node name="Shadows" type="Container" parent="VBoxContainer/Split/Right" index="3"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 128.0
+margin_top = 192.0
 margin_right = 160.0
-margin_bottom = 188.0
+margin_bottom = 252.0
 rect_min_size = Vector2( 0, 60 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -486,6 +573,8 @@ align = 1
 _sections_unfolded = [ "Margin", "Rect" ]
 
 [connection signal="button_up" from="VBoxContainer/Split/Right/Fullscreen/FullscreenBox" to="." method="_on_FullscreenBox_button_up"]
+
+[connection signal="value_changed" from="VBoxContainer/Split/Right/Brightness/BrightnessSlider" to="." method="_on_HSlider_value_changed"]
 
 [connection signal="item_selected" from="VBoxContainer/Split/Right/ForestQuality/QualityButton" to="." method="_on_QualityButton_item_selected"]
 
