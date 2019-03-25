@@ -165,12 +165,12 @@ editor/display_folded = true
 
 [node name="BGForestSmall12" parent="Navigation/NavigationMeshInstance/Starting Clearing/Boundaries" index="0" instance=ExtResource( 8 )]
 
-transform = Transform( 0.641588, 0, 0.767047, 0, 1, 0, -0.767047, 0, 0.641588, 1.12395, 9.53674e-007, -10.2344 )
+transform = Transform( 0.641588, 0, 0.767047, 0, 1, 0, -0.767047, 0, 0.641588, 1.12395, 9.53674e-07, -10.2344 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="BGForestSmall7" parent="Navigation/NavigationMeshInstance/Starting Clearing/Boundaries" index="1" instance=ExtResource( 8 )]
 
-transform = Transform( 0.625225, 0, 0.780442, 0, 1, 0, -0.780442, 0, 0.625225, -2.86827, 9.53674e-007, -5.44436 )
+transform = Transform( 0.625225, 0, 0.780442, 0, 1, 0, -0.780442, 0, 0.625225, -2.86827, 9.53674e-07, -5.44436 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="BGForestSmall" parent="Navigation/NavigationMeshInstance/Starting Clearing/Boundaries" index="2" instance=ExtResource( 8 )]
@@ -180,17 +180,17 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="BGForestSmall10" parent="Navigation/NavigationMeshInstance/Starting Clearing/Boundaries" index="3" instance=ExtResource( 8 )]
 
-transform = Transform( -0.377503, 0, 0.926008, 0, 1, 0, -0.926008, 0, -0.377503, -7.56397, -7.62939e-006, 5.567 )
+transform = Transform( -0.377503, 0, 0.926008, 0, 1, 0, -0.926008, 0, -0.377503, -7.56397, -7.62939e-06, 5.567 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="BGForestSmall9" parent="Navigation/NavigationMeshInstance/Starting Clearing/Boundaries" index="4" instance=ExtResource( 8 )]
 
-transform = Transform( -0.976822, 0, 0.214052, 0, 1, 0, -0.214052, 0, -0.976822, -3.1424, -7.62939e-006, 8.44592 )
+transform = Transform( -0.976822, 0, 0.214052, 0, 1, 0, -0.214052, 0, -0.976822, -3.1424, -7.62939e-06, 8.44592 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="BGForestSmall8" parent="Navigation/NavigationMeshInstance/Starting Clearing/Boundaries" index="5" instance=ExtResource( 8 )]
 
-transform = Transform( -0.84021, 0, -0.542259, 0, 1, 0, 0.542259, 0, -0.84021, 2.65968, -7.62939e-006, 7.14327 )
+transform = Transform( -0.84021, 0, -0.542259, 0, 1, 0, 0.542259, 0, -0.84021, 2.65968, -7.62939e-06, 7.14327 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="BGForestSmall11" parent="Navigation/NavigationMeshInstance/Starting Clearing/Boundaries" index="6" instance=ExtResource( 8 )]
