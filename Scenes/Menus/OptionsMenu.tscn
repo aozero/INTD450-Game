@@ -22,23 +22,23 @@ _sections_unfolded = [ "Settings" ]
 
 [sub_resource type="DynamicFont" id=3]
 
+size = 14
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 3 )
+_sections_unfolded = [ "Settings" ]
+
+[sub_resource type="DynamicFont" id=4]
+
 size = 28
 use_mipmaps = false
 use_filter = false
 font_data = ExtResource( 3 )
 _sections_unfolded = [ "Settings" ]
 
-[sub_resource type="Theme" id=4]
+[sub_resource type="Theme" id=5]
 
-default_font = SubResource( 3 )
-
-[sub_resource type="DynamicFont" id=5]
-
-size = 14
-use_mipmaps = false
-use_filter = false
-font_data = ExtResource( 3 )
-_sections_unfolded = [ "Settings" ]
+default_font = SubResource( 4 )
 
 [sub_resource type="DynamicFont" id=6]
 
@@ -48,7 +48,7 @@ use_filter = false
 font_data = ExtResource( 3 )
 _sections_unfolded = [ "Settings" ]
 
-[node name="OptionsMenu" type="ColorRect"]
+[node name="OptionsMenu" type="ColorRect" index="0"]
 
 visible = false
 anchor_left = 0.5
@@ -130,7 +130,6 @@ _sections_unfolded = [ "Margin", "Rect" ]
 
 [node name="Left" type="VBoxContainer" parent="VBoxContainer/Split" index="0"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -147,7 +146,7 @@ size_flags_vertical = 1
 alignment = 0
 _sections_unfolded = [ "Margin", "Rect" ]
 
-[node name="ForestQuality" type="Container" parent="VBoxContainer/Split/Left" index="0"]
+[node name="Fullscreen" type="Container" parent="VBoxContainer/Split/Left" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -155,6 +154,46 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 200.0
 margin_bottom = 60.0
+rect_min_size = Vector2( 0, 60 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Rect" ]
+
+[node name="FullscreenLabel" type="Label" parent="VBoxContainer/Split/Left/Fullscreen" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.5
+anchor_right = 0.0
+anchor_bottom = 0.5
+margin_top = -17.0
+margin_right = 199.0
+margin_bottom = 17.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 2 )
+text = "Fullscreen:"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="ForestQuality" type="Container" parent="VBoxContainer/Split/Left" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 64.0
+margin_right = 200.0
+margin_bottom = 124.0
 rect_min_size = Vector2( 0, 60 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -186,15 +225,15 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="Shadows" type="Container" parent="VBoxContainer/Split/Left" index="1"]
+[node name="Shadows" type="Container" parent="VBoxContainer/Split/Left" index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 64.0
+margin_top = 128.0
 margin_right = 200.0
-margin_bottom = 124.0
+margin_bottom = 188.0
 rect_min_size = Vector2( 0, 60 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -263,7 +302,7 @@ size_flags_vertical = 1
 alignment = 0
 _sections_unfolded = [ "Margin" ]
 
-[node name="ForestQuality" type="Container" parent="VBoxContainer/Split/Right" index="0"]
+[node name="Fullscreen" type="Container" parent="VBoxContainer/Split/Right" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -271,6 +310,52 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_right = 160.0
 margin_bottom = 60.0
+rect_min_size = Vector2( 0, 60 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Rect" ]
+
+[node name="FullscreenBox" type="CheckBox" parent="VBoxContainer/Split/Right/Fullscreen" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -80.0
+margin_bottom = -30.0
+rect_min_size = Vector2( 12, 12 )
+rect_scale = Vector2( 2, 2 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 3 )
+toggle_mode = true
+enabled_focus_mode = 2
+shortcut = null
+group = null
+flat = false
+clip_text = true
+align = 0
+_sections_unfolded = [ "Margin", "Rect", "custom_fonts" ]
+
+[node name="ForestQuality" type="Container" parent="VBoxContainer/Split/Right" index="1"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 64.0
+margin_right = 160.0
+margin_bottom = 124.0
 rect_min_size = Vector2( 0, 60 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -296,7 +381,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-theme = SubResource( 4 )
+theme = SubResource( 5 )
 toggle_mode = false
 action_mode = 0
 enabled_focus_mode = 2
@@ -308,15 +393,15 @@ items = [  ]
 selected = -1
 _sections_unfolded = [ "Margin", "Rect", "Theme" ]
 
-[node name="Shadows" type="Container" parent="VBoxContainer/Split/Right" index="1"]
+[node name="Shadows" type="Container" parent="VBoxContainer/Split/Right" index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 64.0
+margin_top = 128.0
 margin_right = 160.0
-margin_bottom = 124.0
+margin_bottom = 188.0
 rect_min_size = Vector2( 0, 60 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -343,7 +428,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 5 )
+custom_fonts/font = SubResource( 3 )
 toggle_mode = true
 enabled_focus_mode = 2
 shortcut = null
@@ -400,9 +485,11 @@ flat = false
 align = 1
 _sections_unfolded = [ "Margin", "Rect" ]
 
+[connection signal="button_up" from="VBoxContainer/Split/Right/Fullscreen/FullscreenBox" to="." method="_on_FullscreenBox_button_up"]
+
 [connection signal="item_selected" from="VBoxContainer/Split/Right/ForestQuality/QualityButton" to="." method="_on_QualityButton_item_selected"]
 
-[connection signal="button_up" from="VBoxContainer/Split/Right/Shadows/ShadowBox" to="." method="_on_CheckBox_button_up"]
+[connection signal="button_up" from="VBoxContainer/Split/Right/Shadows/ShadowBox" to="." method="_on_ShadowBox_button_up"]
 
 [connection signal="button_up" from="VBoxContainer/BackContainer/BackButton" to="." method="_on_BackButton_button_up"]
 

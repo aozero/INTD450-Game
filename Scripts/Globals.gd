@@ -2,6 +2,17 @@ extends Node
 
 # OPTIONS
 ########################################
+func set_fullscreen(value):
+	OS.window_fullscreen = value
+
+func get_fullscreen():
+	return OS.window_fullscreen
+
+# Can always toggle fullscreen with hotkey, no matter what
+func _input(event):
+	if event.is_action_pressed("toggle_fullscreen"):
+		set_fullscreen(!OS.window_fullscreen)
+
 # Levels of forest quality.
 # Fastest is ForestTree alpha scissoring on
 # Prettiest is ForestTree alpha scissoring off
@@ -32,11 +43,6 @@ func set_shadows(value):
 func get_shadows():
 	return shadows
 ########################################
-
-# Can always toggle fullscreen, no matter what
-func _input(event):
-	if event.is_action_pressed("toggle_fullscreen"):
-		OS.window_fullscreen = !OS.window_fullscreen
 
 # Whether the player is currently experiencing a memory
 var in_memory = false
