@@ -14,11 +14,6 @@ onready var melody_vol = melody_player.volume_db
 onready var dying_player = $DyingPlayer
 onready var dying_vol = dying_player.volume_db
 
-func _ready():
-	# If not starting from the intro, we quickly fade in the drone with fade_in(drone_player)
-	# If we are starting from the intro, it will immediately call stop_drone and call start_drone_intro when its ready
-	fade_in(drone_player)
-
 func stop_drone():
 	drone_player.stop()
 
