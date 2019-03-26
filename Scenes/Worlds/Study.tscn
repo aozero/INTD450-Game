@@ -11,20 +11,22 @@
 [ext_resource path="res://Scenes/House Objects/StudyDesk.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/Worlds/Kitchen-Study Connector.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/Fires/Stove.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Scenes/TreeStrip.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/Foliage/TreeStrip.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Scenes/Foliage/TreeDead1.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Scenes/Foliage/TreeLive1.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Scenes/Foliage/Bush1.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Scenes/Foliage/TreeDead2.tscn" type="PackedScene" id=16]
 [ext_resource path="res://Scenes/Foliage/TreeRandom.tscn" type="PackedScene" id=17]
-[ext_resource path="res://Scenes/BGForestMedium.tscn" type="PackedScene" id=18]
-[ext_resource path="res://Scenes/BGForestSmall.tscn" type="PackedScene" id=19]
-[ext_resource path="res://Scenes/ForestWall.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Scenes/Foliage/BGForestMedium.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Scenes/Foliage/BGForestSmall.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Scenes/Foliage/ForestWall.tscn" type="PackedScene" id=20]
 [ext_resource path="res://Scenes/Worlds/Study-Bedroom Connector.tscn" type="PackedScene" id=21]
 [ext_resource path="res://Scenes/Fires/Fireplace.tscn" type="PackedScene" id=22]
 [ext_resource path="res://Scenes/Items/Final/StudyFinal.tscn" type="PackedScene" id=23]
 [ext_resource path="res://Scenes/Monsters/Monster.tscn" type="PackedScene" id=24]
 [ext_resource path="res://Scenes/Monsters/Waypoint.tscn" type="PackedScene" id=25]
+
+
 
 [sub_resource type="NavigationMesh" id=1]
 

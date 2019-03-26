@@ -7,10 +7,10 @@
 [ext_resource path="res://Scenes/House Objects/KitchenChina.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Fires/Campfire.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Foliage/TreeRandom.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Scenes/BGForestSmall.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Foliage/BGForestSmall.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/Foliage/TreeForestWall.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Scenes/BGForestMedium.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Scenes/ForestWall.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/Foliage/BGForestMedium.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/Foliage/ForestWall.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Scenes/Foliage/Bush1.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Scenes/Foliage/TreeDead1.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Scenes/Foliage/TreeLive1.tscn" type="PackedScene" id=14]
@@ -19,7 +19,7 @@
 [ext_resource path="res://Scenes/Foliage/KitchenTreeDead1.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Scenes/Worlds/Kitchen-Study Connector.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Scenes/Fires/Stove.tscn" type="PackedScene" id=19]
-[ext_resource path="res://Scenes/TreeStrip.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Scenes/Foliage/TreeStrip.tscn" type="PackedScene" id=20]
 [ext_resource path="res://Scenes/Items/Minor/Kitchen1.tscn" type="PackedScene" id=21]
 [ext_resource path="res://Scenes/Items/Minor/Kitchen2.tscn" type="PackedScene" id=22]
 [ext_resource path="res://Scenes/Items/Final/KitchenFinal.tscn" type="PackedScene" id=23]
@@ -27,6 +27,8 @@
 [ext_resource path="res://Scripts/Tutorials/Tutorial1.gd" type="Script" id=25]
 [ext_resource path="res://Scripts/Tutorials/Tutorial2.gd" type="Script" id=26]
 [ext_resource path="res://Scripts/Tutorials/Tutorial3.gd" type="Script" id=27]
+
+
 
 [sub_resource type="NavigationMesh" id=1]
 

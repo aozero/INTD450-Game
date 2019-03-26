@@ -5,12 +5,14 @@
 [ext_resource path="res://Materials/wormy_ground_normals.tga" type="Texture" id=3]
 [ext_resource path="res://Scenes/Worlds/Study-Bedroom Connector.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Fires/Fireplace.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/TreeStrip.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Scenes/BGForestSmall.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Scenes/BGForestMedium.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Foliage/TreeStrip.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Foliage/BGForestSmall.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Foliage/BGForestMedium.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/Items/Final/BedroomFinal.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/Items/Minor/Bedroom1.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/Items/Minor/Bedroom2.tscn" type="PackedScene" id=11]
+
+
 
 [sub_resource type="NavigationMesh" id=1]
 

@@ -1,10 +1,11 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Scenes/BGForestMedium.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Scenes/ForestWall.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Foliage/BGForestMedium.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Foliage/ForestWall.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Foliage/Bush1.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Foliage/TreeRandom.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scenes/BGForestSmall.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Foliage/BGForestSmall.tscn" type="PackedScene" id=5]
+
 
 [node name="Study-Bedroom Connector" type="Spatial" index="0"]
 
