@@ -299,7 +299,7 @@ tracks/0/keys = {
 
 radius = 50.0
 
-[node name="Player" type="KinematicBody" index="0"]
+[node name="Player" type="KinematicBody"]
 
 input_ray_pickable = true
 input_capture_on_drag = false
@@ -498,7 +498,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-_sections_unfolded = [ "Visibility" ]
+_sections_unfolded = [ "Grow Direction", "Rect", "Visibility" ]
 
 [node name="Hand Sprite" type="Sprite" parent="CanvasLayer/Hand" index="0"]
 
