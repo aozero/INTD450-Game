@@ -1,7 +1,11 @@
 extends ColorRect
 
+onready var sprite_anim = $CanvasLayer/SpriteContainer/Sprite/AnimationPlayer
 onready var options_menu = $OptionsMenu
 onready var exit_verification = $ExitVerfication
+
+func _ready():
+	sprite_anim.play("loop")
 
 func _on_StartButton_button_up():
 	get_tree().change_scene("res://Scenes/Menus/GammaChanger.tscn")
@@ -11,5 +15,3 @@ func _on_OptionsButton_button_up():
 
 func _on_ExitButton_button_up():
 	exit_verification.visible = true
-
-

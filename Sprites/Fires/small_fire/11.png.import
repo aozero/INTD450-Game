@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/small_fire_12.png-788b7f47a990047816d8165142bf3576.stex"
+path="res://.import/11.png-89f3970b74c5eab83c15a0de147f58c3.stex"
 
 [deps]
 
-source_file="res://Sprites/Fires/small_fire_12.png"
-dest_files=[ "res://.import/small_fire_12.png-788b7f47a990047816d8165142bf3576.stex" ]
+source_file="res://Sprites/Fires/small_fire/11.png"
+dest_files=[ "res://.import/11.png-89f3970b74c5eab83c15a0de147f58c3.stex" ]
 
 [params]
 
