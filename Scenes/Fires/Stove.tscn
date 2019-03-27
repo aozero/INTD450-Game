@@ -183,9 +183,14 @@ region_enabled = false
 region_rect = Rect2( 0, 0, 0, 0 )
 _sections_unfolded = [ "Animation", "Geometry", "Transform" ]
 
-[node name="FireParticles" type="Particles" parent="CollisionShape/Spatial/Sprite3D" index="0"]
+[node name="FireLight" parent="CollisionShape/Spatial/Sprite3D" index="0" instance=ExtResource( 4 )]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00301318, 0.282128, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0 )
+light_cull_mask = -1
+
+[node name="FireParticles" type="Particles" parent="CollisionShape/Spatial/Sprite3D/FireLight" index="0"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00301318, -0.317872, 0 )
 layers = 1
 material_override = null
 cast_shadow = 1
@@ -212,11 +217,6 @@ process_material = SubResource( 4 )
 draw_passes = 1
 draw_pass_1 = SubResource( 6 )
 _sections_unfolded = [ "Draw Passes", "Process Material", "Time" ]
-
-[node name="FireLight" parent="CollisionShape/Spatial/Sprite3D" index="1" instance=ExtResource( 4 )]
-
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0 )
-light_cull_mask = -1
 
 [node name="MeshInstance" type="MeshInstance" parent="CollisionShape" index="1"]
 
