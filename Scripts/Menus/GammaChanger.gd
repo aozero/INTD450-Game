@@ -22,4 +22,4 @@ func _on_DoneButton_button_up():
 	done()
 
 func done():
-	get_tree().change_scene("res://Scenes/Intro.tscn")
+	get_tree().change_scene("res://Scenes/Menus/MainMenu.tscn")
