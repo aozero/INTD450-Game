@@ -5,7 +5,7 @@
 [ext_resource path="res://Sound/Music/StudyMemory.wav" type="AudioStream" id=3]
 [ext_resource path="res://Sound/Effects/dying_sound_1.wav" type="AudioStream" id=4]
 
-[node name="Node" type="Node"]
+[node name="Node" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
@@ -43,7 +43,7 @@ volume_db = -30.0
 pitch_scale = 1.0
 autoplay = false
 mix_target = 0
-bus = "Master"
+bus = "Music"
 
 [node name="MelodyPlayer" type="AudioStreamPlayer" parent="." index="4"]
 
@@ -52,7 +52,7 @@ volume_db = -30.0
 pitch_scale = 1.0
 autoplay = false
 mix_target = 0
-bus = "Master"
+bus = "Music"
 
 [node name="DyingPlayer" type="AudioStreamPlayer" parent="." index="5"]
 
@@ -61,7 +61,7 @@ volume_db = -15.0
 pitch_scale = 1.0
 autoplay = false
 mix_target = 0
-bus = "Master"
+bus = "Effects"
 
 [connection signal="tween_completed" from="TweenDroneIntro" to="." method="_on_TweenDroneIntro_tween_completed"]
 

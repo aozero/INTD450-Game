@@ -8,7 +8,7 @@
 
 radius = 1.0
 
-[sub_resource type="ParticlesMaterial" id=3]
+[sub_resource type="ParticlesMaterial" id=2]
 
 render_priority = 0
 trail_divisor = 1
@@ -45,7 +45,7 @@ anim_offset = 0.0
 anim_offset_random = 0.0
 anim_loop = false
 
-[sub_resource type="SpatialMaterial" id=4]
+[sub_resource type="SpatialMaterial" id=3]
 
 render_priority = 0
 flags_transparent = false
@@ -97,16 +97,16 @@ proximity_fade_enable = false
 distance_fade_enable = false
 _sections_unfolded = [ "Flags" ]
 
-[sub_resource type="CubeMesh" id=5]
+[sub_resource type="CubeMesh" id=4]
 
-material = SubResource( 4 )
+material = SubResource( 3 )
 custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
 size = Vector3( 0.005, 0.005, 0.005 )
 subdivide_width = 0
 subdivide_height = 0
 subdivide_depth = 0
 
-[node name="Interactable" type="KinematicBody"]
+[node name="Interactable" type="KinematicBody" index="0"]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.71626, 0 )
 input_ray_pickable = true
@@ -181,7 +181,7 @@ pitch_scale = 1.0
 autoplay = true
 max_distance = 0.0
 out_of_range_mode = 0
-bus = "Master"
+bus = "Effects"
 area_mask = 1
 emission_angle_enabled = false
 emission_angle_degrees = 45.0
@@ -215,9 +215,9 @@ fract_delta = true
 visibility_aabb = AABB( -4, -4, -4, 8, 8, 8 )
 local_coords = true
 draw_order = 0
-process_material = SubResource( 3 )
+process_material = SubResource( 2 )
 draw_passes = 1
-draw_pass_1 = SubResource( 5 )
+draw_pass_1 = SubResource( 4 )
 _sections_unfolded = [ "Draw Passes", "LOD", "Process Material", "Time", "Transform" ]
 
 [connection signal="tween_completed" from="TweenOut" to="." method="_on_TweenOut_tween_completed"]

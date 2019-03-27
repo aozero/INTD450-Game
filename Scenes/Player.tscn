@@ -332,7 +332,7 @@ volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false
 mix_target = 0
-bus = "Master"
+bus = "Effects"
 
 [node name="MatchBurningAudio" type="AudioStreamPlayer" parent="." index="2"]
 
@@ -341,7 +341,7 @@ volume_db = -5.0
 pitch_scale = 1.0
 autoplay = false
 mix_target = 0
-bus = "Master"
+bus = "Effects"
 
 [node name="ForestNoisesAudio" type="AudioStreamPlayer3D" parent="." index="3"]
 
@@ -355,7 +355,7 @@ pitch_scale = 1.0
 autoplay = false
 max_distance = 0.0
 out_of_range_mode = 0
-bus = "Master"
+bus = "Effects"
 area_mask = 1
 emission_angle_enabled = false
 emission_angle_degrees = 45.0
@@ -559,8 +559,8 @@ stream = null
 volume_db = -10.0
 pitch_scale = 1.0
 autoplay = false
-mix_target = 1
-bus = "Master"
+mix_target = 0
+bus = "Voice"
 
 [node name="FinalMemoryTimer" type="Timer" parent="CanvasLayer/MemoryController/DialogueAudio" index="0"]
 
@@ -685,7 +685,7 @@ volume_db = -20.0
 pitch_scale = 1.0
 autoplay = false
 mix_target = 0
-bus = "Master"
+bus = "Effects"
 script = ExtResource( 16 )
 
 [node name="RayCast" type="RayCast" parent="." index="11"]
