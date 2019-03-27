@@ -628,18 +628,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 21.2091, 0, -43.2697 )
 [node name="ItemDrawing" parent="Items" index="2" instance=ExtResource( 23 )]
 
 transform = Transform( 0.985156, 0, -0.171662, 0, 1, 0, 0.171662, 0, 0.985156, 74.484, 0, -12.3415 )
-input_ray_pickable = true
-input_capture_on_drag = false
-collision_layer = 32
-collision_mask = 0
-axis_lock_linear_x = false
-axis_lock_linear_y = false
-axis_lock_linear_z = false
-axis_lock_angular_x = false
-axis_lock_angular_y = false
-axis_lock_angular_z = false
-collision/safe_margin = 0.001
-_sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="Monsters" type="Spatial" parent="." index="2"]
 
