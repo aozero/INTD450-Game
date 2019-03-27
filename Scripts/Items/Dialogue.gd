@@ -93,7 +93,7 @@ func _ready():
 	# Small Painting Easel
 	BEDROOM_2.SOUND = load("res://Sound/Effects/Memory/Minor Items/bedroom_easel_memory.wav")
 	BEDROOM_2.TEXT = "Lauren: Sweetie, I love all your art but if you don't clean this room, I'm taking all your paint and crayons away for a week."
-	BEDROOM_2.TEXT_TIME = 8
+	BEDROOM_2.TEXT_TIME = 9
 	
 	# Flamingo
 	BEDROOM_FINAL.SOUND = load("res://Sound/Effects/Memory/Final Items/bedroom_memory.wav")
