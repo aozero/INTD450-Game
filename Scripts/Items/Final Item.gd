@@ -4,10 +4,12 @@ export var burning = false
 
  # Set by child scripts
 var DIALOGUE # Container with TEXT, SOUND, and MUSIC. Set by inherting classes
+var BURN_ANIM_NAME = "burn"
 
 onready var sprite = $CollisionShape/Sprite3D
 onready var interactable_particles = $Particles
-onready var burn_anim = $BurnAnim
+onready var burn_anim_player = $BurnAnimPlayer
+
 
 var interacted_with = false
 
@@ -16,8 +18,9 @@ func _ready():
 		interacted_with = true
 		interactable_particles.visible = false
 		sprite.material_override = load("res://Materials/FireBillboard.tres").duplicate()
-		translation.y = 0.3
-		burn_anim.play("burn")
+		sprite.material_override.vertex_color_use_as_albedo = true
+		translation.y = 0.4
+		burn_anim_player.play(BURN_ANIM_NAME)
 
 func interact(player):
 	if !interacted_with:
