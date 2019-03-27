@@ -250,6 +250,18 @@ transform = Transform( 0.749875, 0, 0.661579, 0, 1, 0, -0.661579, 0, 0.749875, 1
 [node name="ItemFlamingo" parent="Items" index="0" instance=ExtResource( 9 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22.204, 0, 21.4874 )
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 32
+collision_mask = 0
+axis_lock_linear_x = false
+axis_lock_linear_y = false
+axis_lock_linear_z = false
+axis_lock_angular_x = false
+axis_lock_angular_y = false
+axis_lock_angular_z = false
+collision/safe_margin = 0.001
+_sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="ItemSkate" parent="Items" index="1" instance=ExtResource( 10 )]
 
