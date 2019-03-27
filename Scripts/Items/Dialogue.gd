@@ -50,12 +50,12 @@ func _ready():
 	# Kitchen
 	###############################
 	# Cookie Jar
-	KITCHEN_1.SOUND = load("res://Sound/Effects/Memory/Minor Items/silence.wav")
+	KITCHEN_1.SOUND = load("res://Sound/Effects/Memory/Minor Items/kitchen_cookiejar_memory.wav")
 	KITCHEN_1.TEXT = "Riley: Oatmeal raisin! I thought they were chocolate chip? This is a jar of LIES!"
 	KITCHEN_1.TEXT_TIME = 8
 	
 	# Coffee Mug
-	KITCHEN_2.SOUND = load("res://Sound/Effects/Memory/Minor Items/silence.wav")
+	KITCHEN_2.SOUND = load("res://Sound/Effects/Memory/Minor Items/kitchen_coffeemug_memory.wav")
 	KITCHEN_2.TEXT = "Lauren: Oh NOW you don’t like your sandwich? Come on, you would have never known it was vegan cheese if I hadn't told you. The store said it tasted exactly the same."
 	KITCHEN_2.TEXT_TIME = 8
 	
@@ -68,7 +68,7 @@ func _ready():
 	# Study
 	###############################
 	# Ship in a Bottle
-	STUDY_1.SOUND = load("res://Sound/Effects/Memory/Minor Items/silence.wav")
+	STUDY_1.SOUND = load("res://Sound/Effects/Memory/Minor Items/study_shipinabottle_memory")
 	STUDY_1.TEXT = "Riley: I'm sorry, Daddy! It was an accident, I swear. I didn't think the ball would go that far."
 	STUDY_1.TEXT_TIME = 8
 	
@@ -86,12 +86,12 @@ func _ready():
 	# Bedroom
 	###############################
 	# Ice Skate
-	BEDROOM_1.SOUND = load("res://Sound/Effects/Memory/Minor Items/silence.wav")
+	BEDROOM_1.SOUND = load("res://Sound/Effects/Memory/Minor Items/bedroom_iceskate_memory.wav")
 	BEDROOM_1.TEXT = "Riley: I th-thought... th-the ice w-was th-thick en-enough t-to skate on."
 	BEDROOM_1.TEXT_TIME = 8
 	
 	# Small Painting Easel
-	BEDROOM_2.SOUND = load("res://Sound/Effects/Memory/Minor Items/silence.wav")
+	BEDROOM_2.SOUND = load("res://Sound/Effects/Memory/Minor Items/bedroom_easel_memory.wav")
 	BEDROOM_2.TEXT = "Lauren: Sweetie, I love all your art but if you don't clean this room, I'm taking all your paint and crayons away for a week."
 	BEDROOM_2.TEXT_TIME = 8
 	
