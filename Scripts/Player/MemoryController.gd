@@ -14,6 +14,7 @@ onready var item_sprite = $"ScreenRect/CenterDot/Item Sprite"
 onready var dialogue_audio = $DialogueAudio
 onready var dialogue_label = $"Dialogue Label"
 onready var dialogue_timer = $"Dialogue Label/Dialogue Timer"
+onready var final_memory_timer = $DialogueAudio/FinalMemoryTimer
 onready var music_player = get_node("/root/MusicPlayer")
 onready var globals = get_node("/root/Globals")
 
@@ -95,6 +96,10 @@ func return_from_death():
 # When dialogue player finishes playing audio
 func _on_DialogueAudio_finished():
 	if globals.in_memory:
+		final_memory_timer.start()
+
+func _on_FinalMemoryTimer_timeout():
+	if globals.in_memory:
 		end_final_memory()
 
 # When screen animator finishes any animation
@@ -109,3 +114,6 @@ func _on_ScreenAnimator_animation_finished(anim_name):
 	
 	if anim_name == "Fade To Memory":
 		in_final_memory()
+
+
+
