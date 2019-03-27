@@ -106,9 +106,9 @@ func get_action_button_text(action):
 	var first = InputMap.get_action_list(action)[0]
 	if first.is_class("InputEventMouseButton"):
 		if first.button_index == BUTTON_LEFT:
-			return "LMB"
+			return "Left Click"
 		elif first.button_index == BUTTON_LEFT:
-			return "RMB"
+			return "Right Click"
 		elif first.button_index == BUTTON_MIDDLE:
 			return "MMB"
 		else:
