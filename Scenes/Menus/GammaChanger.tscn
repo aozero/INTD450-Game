@@ -162,7 +162,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = SubResource( 1 )
-text = "Adjust the slider until you cannot see the left object, can barely see the middle object, and can see the right object without it being overly orange or bright."
+text = "Adjust the sliders until you cannot see the left object, can barely see the middle object, and can see the right object without it being overly orange or bright."
 align = 1
 valign = 1
 autowrap = true
@@ -173,14 +173,15 @@ _sections_unfolded = [ "Margin", "custom_fonts" ]
 
 [node name="ContrastContainer" type="Container" parent="CanvasLayer" index="1"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 150.0
-margin_top = 750.0
+margin_top = 900.0
 margin_right = 1600.0
-margin_bottom = 859.0
+margin_bottom = 1009.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -245,14 +246,15 @@ _sections_unfolded = [ "Margin", "Rect" ]
 
 [node name="BrightnessContainer" type="Container" parent="CanvasLayer" index="2"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 150.0
-margin_top = 900.0
+margin_top = 750.0
 margin_right = 1600.0
-margin_bottom = 1009.0
+margin_bottom = 859.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
