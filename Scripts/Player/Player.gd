@@ -69,6 +69,16 @@ func _input(event):
 		# Vertical camera
 		rotation_degrees.x -= MOUSE_SENS * event.relative.y
 		rotation_degrees.x = max(min(rotation_degrees.x, 85), -85)
+		
+	# DEBUG: Teleport to level
+	if event.is_action_pressed("teleport_kitchen"):
+		get_tree().change_scene("res://Scenes/Worlds/Kitchen.tscn")
+	if event.is_action_pressed("teleport_study"):
+		get_tree().change_scene("res://Scenes/Worlds/Study.tscn")
+	if event.is_action_pressed("teleport_bedroom"):
+		get_tree().change_scene("res://Scenes/Worlds/Bedroom.tscn")
+	if event.is_action_pressed("teleport_finale"):
+		get_tree().change_scene("res://Scenes/Worlds/Finale.tscn")
 	
 
 func _physics_process(delta):
