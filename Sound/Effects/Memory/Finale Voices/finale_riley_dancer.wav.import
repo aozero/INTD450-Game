@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/finale_riley_dancer.wav-b5d0b18b0f9aace61e51546eebc9e654.sample"
+
+[deps]
+
+source_file="res://Sound/Effects/Memory/Finale Voices/finale_riley_dancer.wav"
+dest_files=[ "res://.import/finale_riley_dancer.wav-b5d0b18b0f9aace61e51546eebc9e654.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
