@@ -55,6 +55,7 @@ func start_final_memory(final_item):
 
 # We've faded into the memory and start actually playing the audio
 func in_final_memory():
+	dialogue_timer.stop()
 	globals.in_memory = true
 	player.set_torch(false)
 	player.audio_player.stop()

@@ -75,7 +75,7 @@ func _ready():
 	# Leather-bound Planner
 	STUDY_2.SOUND = load("res://Sound/Effects/Memory/Minor Items/silence.wav")
 	STUDY_2.TEXT = "David: May 14th, 2009. Jamie (Caterpillar) and Riley's (Queen of Hearts) school play. Alice in Wonderland - school gym 4:30PM. [crossed out]. Red eye flight to Taiwan 5:40 AM. "
-	STUDY_2.TEXT_TIME = 8
+	STUDY_2.TEXT_TIME = 12
 	
 	# Tapshoe
 	STUDY_FINAL.SOUND = load("res://Sound/Effects/Memory/Final Items/study_memory.wav")
