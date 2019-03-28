@@ -79,6 +79,8 @@ func _input(event):
 		get_tree().change_scene("res://Scenes/Worlds/Bedroom.tscn")
 	if event.is_action_pressed("teleport_finale"):
 		get_tree().change_scene("res://Scenes/Worlds/Finale.tscn")
+	if event.is_action_pressed("teleport_credits"):
+		get_tree().change_scene("res://Scenes/Credits.tscn")
 	
 
 func _physics_process(delta):
