@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/finale_ellis_im_going_to.wav-ce6e4ea72bb50059a5c52340a38a0c80.sample"
+
+[deps]
+
+source_file="res://Sound/Effects/Memory/Finale Voices/finale_ellis_im_going_to.wav"
+dest_files=[ "res://.import/finale_ellis_im_going_to.wav-ce6e4ea72bb50059a5c52340a38a0c80.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
