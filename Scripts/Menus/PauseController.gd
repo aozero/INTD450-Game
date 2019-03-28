@@ -5,6 +5,7 @@ extends Node
 onready var pause_menu_rect = $PauseMenuRect
 onready var options_menu = $OptionsMenu
 onready var exit_verify = $ExitVerfication
+onready var click_audio = $ClickAudio
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -25,10 +26,13 @@ func set_paused(paused):
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _on_ExitButton_button_up():
+	click_audio.play()
 	exit_verify.visible = true
 
 func _on_ResumeButton_button_up():
+	click_audio.play()
 	set_paused(false)
 
 func _on_OptionsButton_button_up():
+	click_audio.play()
 	options_menu.visible = true

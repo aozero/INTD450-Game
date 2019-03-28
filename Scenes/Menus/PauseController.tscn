@@ -1,17 +1,18 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scripts/Menus/PauseController.gd" type="Script" id=1]
-[ext_resource path="res://Fonts/Prompt-Bold.ttf" type="DynamicFontData" id=2]
-[ext_resource path="res://Fonts/Prompt.ttf" type="DynamicFontData" id=3]
-[ext_resource path="res://Scenes/Menus/ExitVerfication.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Scenes/Menus/OptionsMenu.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Menus/ClickAudio.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Fonts/Prompt-Bold.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Fonts/Prompt.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Scenes/Menus/ExitVerfication.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Menus/OptionsMenu.tscn" type="PackedScene" id=6]
 
 [sub_resource type="DynamicFont" id=1]
 
 size = 56
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 2 )
+font_data = ExtResource( 3 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
 [sub_resource type="DynamicFont" id=2]
@@ -19,16 +20,18 @@ _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 size = 48
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 3 )
+font_data = ExtResource( 4 )
 _sections_unfolded = [ "Settings" ]
 
-[node name="PauseController" type="Node"]
+[node name="PauseController" type="Node" index="0"]
 
 pause_mode = 2
 script = ExtResource( 1 )
 _sections_unfolded = [ "Pause" ]
 
-[node name="PauseMenuRect" type="ColorRect" parent="." index="0"]
+[node name="ClickAudio" parent="." index="0" instance=ExtResource( 2 )]
+
+[node name="PauseMenuRect" type="ColorRect" parent="." index="1"]
 
 visible = false
 anchor_left = 0.5
@@ -245,9 +248,9 @@ flat = false
 align = 1
 _sections_unfolded = [ "Margin", "Rect" ]
 
-[node name="ExitVerfication" parent="." index="1" instance=ExtResource( 4 )]
+[node name="ExitVerfication" parent="." index="2" instance=ExtResource( 5 )]
 
-[node name="OptionsMenu" parent="." index="2" instance=ExtResource( 5 )]
+[node name="OptionsMenu" parent="." index="3" instance=ExtResource( 6 )]
 
 _sections_unfolded = [ "Margin", "Rect", "Visibility" ]
 
