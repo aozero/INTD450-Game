@@ -170,7 +170,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.83261, 0, 6.88669 )
 
 [node name="The Door" type="StaticBody" parent="." index="15" instance=ExtResource( 15 )]
 
-transform = Transform( -0.763268, 0, -0.646082, 0, 1, 0, 0.646082, 0, -0.763268, -2.20014, -0.1, 6.2414 )
+transform = Transform( 0.777477, 0, 0.628911, 0, 1, 0, -0.628911, 0, 0.777477, -15.6831, -0.1, -8.04814 )
 input_ray_pickable = true
 input_capture_on_drag = false
 collision_layer = 33
