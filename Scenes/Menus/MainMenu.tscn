@@ -85,7 +85,7 @@ bus = "Effects"
 [node name="MainMenuMusic" type="AudioStreamPlayer" parent="." index="1"]
 
 stream = ExtResource( 3 )
-volume_db = -5.0
+volume_db = -30.0
 pitch_scale = 1.0
 autoplay = true
 mix_target = 0
