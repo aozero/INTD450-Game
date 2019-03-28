@@ -172,7 +172,7 @@ transform = Transform( 0.356322, 0, -0.934363, 0, 1, 0, 0.934363, 0, 0.356322, -
 
 [node name="BGForestSmall" parent="Navigation/NavigationMeshInstance/Boundaries/Nook 1" index="1" instance=ExtResource( 7 )]
 
-transform = Transform( 1, 0, 1.49012e-007, 0, 1, 0, -1.49012e-007, 0, 1, -1.77705, 0, 0.821285 )
+transform = Transform( 1, 0, 1.49012e-07, 0, 1, 0, -1.49012e-07, 0, 1, -1.77705, 0, 0.821285 )
 
 [node name="BGForestMedium16" parent="Navigation/NavigationMeshInstance/Boundaries/Nook 1" index="2" instance=ExtResource( 8 )]
 
@@ -210,7 +210,7 @@ transform = Transform( -0.164835, 0, 0.986321, 0, 1, 0, -0.986322, 0, -0.164835,
 
 [node name="BGForestMedium15" parent="Navigation/NavigationMeshInstance/Boundaries/Path 5" index="0" instance=ExtResource( 8 )]
 
-transform = Transform( 1, 0, -9.31323e-010, 0, 1, 0, 0, 0, 1, -6.3781, 0, 5.9373 )
+transform = Transform( 1, 0, -9.31323e-10, 0, 1, 0, 0, 0, 1, -6.3781, 0, 5.9373 )
 
 [node name="BGForestMedium20" parent="Navigation/NavigationMeshInstance/Boundaries/Path 5" index="1" instance=ExtResource( 8 )]
 
@@ -250,17 +250,6 @@ transform = Transform( 0.749875, 0, 0.661579, 0, 1, 0, -0.661579, 0, 0.749875, 1
 [node name="ItemFlamingo" parent="Items" index="0" instance=ExtResource( 9 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22.204, 0, 21.4874 )
-input_ray_pickable = true
-input_capture_on_drag = false
-collision_layer = 32
-collision_mask = 0
-axis_lock_linear_x = false
-axis_lock_linear_y = false
-axis_lock_linear_z = false
-axis_lock_angular_x = false
-axis_lock_angular_y = false
-axis_lock_angular_z = false
-collision/safe_margin = 0.001
 _sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="ItemSkate" parent="Items" index="1" instance=ExtResource( 10 )]

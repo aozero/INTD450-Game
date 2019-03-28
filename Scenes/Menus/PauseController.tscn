@@ -22,7 +22,7 @@ use_filter = false
 font_data = ExtResource( 3 )
 _sections_unfolded = [ "Settings" ]
 
-[node name="PauseController" type="Node" index="0"]
+[node name="PauseController" type="Node"]
 
 pause_mode = 2
 script = ExtResource( 1 )
