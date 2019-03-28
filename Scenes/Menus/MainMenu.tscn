@@ -1,19 +1,20 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scripts/Menus/MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://Sound/Effects/Match/match_burning.wav" type="AudioStream" id=2]
-[ext_resource path="res://Fonts/Prompt-BoldItalic.ttf" type="DynamicFontData" id=3]
-[ext_resource path="res://Sprites/Fires/small_fire_sheet.png" type="Texture" id=4]
-[ext_resource path="res://Fonts/Prompt.ttf" type="DynamicFontData" id=5]
-[ext_resource path="res://Scenes/Menus/OptionsMenu.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Scenes/Menus/ExitVerfication.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Sound/Music/Title.wav" type="AudioStream" id=3]
+[ext_resource path="res://Fonts/Prompt-BoldItalic.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Sprites/Fires/small_fire_sheet.png" type="Texture" id=5]
+[ext_resource path="res://Fonts/Prompt.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://Scenes/Menus/OptionsMenu.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Menus/ExitVerfication.tscn" type="PackedScene" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 
 size = 120
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 3 )
+font_data = ExtResource( 4 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
 [sub_resource type="Animation" id=2]
@@ -52,7 +53,7 @@ tracks/1/keys = {
 size = 48
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 5 )
+font_data = ExtResource( 6 )
 _sections_unfolded = [ "Settings" ]
 
 [node name="MainMenu" type="ColorRect" index="0"]
@@ -81,7 +82,16 @@ autoplay = true
 mix_target = 0
 bus = "Effects"
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." index="1"]
+[node name="MainMenuMusic" type="AudioStreamPlayer" parent="." index="1"]
+
+stream = ExtResource( 3 )
+volume_db = -5.0
+pitch_scale = 1.0
+autoplay = true
+mix_target = 0
+bus = "Music"
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="2"]
 
 layer = 0
 offset = Vector2( 0, 0 )
@@ -133,7 +143,7 @@ _sections_unfolded = [ "Margin", "Rect" ]
 [node name="Sprite" type="Sprite" parent="CanvasLayer/SpriteContainer" index="0"]
 
 scale = Vector2( 4, 4 )
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 vframes = 3
 hframes = 5
 frame = 9
@@ -149,7 +159,7 @@ playback_speed = 1.0
 anims/loop = SubResource( 2 )
 blend_times = [  ]
 
-[node name="CanvasLayer2" type="CanvasLayer" parent="." index="2"]
+[node name="CanvasLayer2" type="CanvasLayer" parent="." index="3"]
 
 layer = 1
 offset = Vector2( 0, 0 )
@@ -381,17 +391,17 @@ flat = false
 align = 1
 _sections_unfolded = [ "Margin", "Rect" ]
 
-[node name="OptionsMenu" parent="CanvasLayer2" index="1" instance=ExtResource( 6 )]
+[node name="OptionsMenu" parent="CanvasLayer2" index="1" instance=ExtResource( 7 )]
 
 margin_top = -202.0
 margin_bottom = 308.0
 
-[node name="ExitVerfication" parent="CanvasLayer2" index="2" instance=ExtResource( 7 )]
+[node name="ExitVerfication" parent="CanvasLayer2" index="2" instance=ExtResource( 8 )]
 
 margin_top = -202.0
 margin_bottom = 278.0
 
-[node name="Timer" type="Timer" parent="." index="3"]
+[node name="Timer" type="Timer" parent="." index="4"]
 
 process_mode = 1
 wait_time = 0.5
