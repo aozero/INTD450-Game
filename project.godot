@@ -17,8 +17,8 @@ config/icon="res://icon.png"
 
 [autoload]
 
+Globals="*res://Scenes/Globals.tscn"
 MusicPlayer="*res://Scenes/MusicPlayer.tscn"
-Globals="*res://Scripts/Globals.gd"
 Dialogue="*res://Scripts/Items/Dialogue.gd"
 
 [display]
