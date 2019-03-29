@@ -56,7 +56,7 @@ func _ready():
 	
 	# Coffee Mug
 	KITCHEN_2.SOUND = load("res://Sound/Effects/Memory/Minor Items/kitchen_coffeemug_memory.wav")
-	KITCHEN_2.TEXT = "Lauren: Oh NOW you don’t like your sandwich? Come on, you would have never known it was vegan cheese if I hadn't told you. The store said it tasted exactly the same."
+	KITCHEN_2.TEXT = "Mom: Oh NOW you don’t like your sandwich? Come on, you would have never known it was vegan cheese if I hadn't told you. The store said it tasted exactly the same."
 	KITCHEN_2.TEXT_TIME = 10
 	
 	# Drawing of Clubhouse
@@ -74,12 +74,12 @@ func _ready():
 	
 	# Leather-bound Planner
 	STUDY_2.SOUND = load("res://Sound/Effects/Memory/Minor Items/silence.wav")
-	STUDY_2.TEXT = "David: May 14th, 2009. Jamie (Caterpillar) and Riley's (Queen of Hearts) school play. Alice in Wonderland - school gym 4:30PM. [crossed out]. Red eye flight to Taiwan 5:40 AM. "
+	STUDY_2.TEXT = "Dad: May 14th, 2009. Jamie (Caterpillar) and Riley's (Queen of Hearts) school play. Alice in Wonderland - school gym 4:30PM. [crossed out]. Red eye flight to Taiwan 5:40 AM. "
 	STUDY_2.TEXT_TIME = 12
 	
 	# Tapshoe
 	STUDY_FINAL.SOUND = load("res://Sound/Effects/Memory/Final Items/study_memory.wav")
-	STUDY_FINAL.TEXT  = "David: Jamie, get your sister to cool it would ya? I'm getting a headache."
+	STUDY_FINAL.TEXT  = "Dad: Jamie, get your sister to cool it would ya? I'm getting a headache."
 	STUDY_FINAL.MUSIC = load("res://Sound/Music/StudyMemory.wav")
 	###############################
 	
@@ -92,7 +92,7 @@ func _ready():
 	
 	# Small Painting Easel
 	BEDROOM_2.SOUND = load("res://Sound/Effects/Memory/Minor Items/bedroom_easel_memory.wav")
-	BEDROOM_2.TEXT = "Lauren: Sweetie, I love all of your art but if you don't clean this room, I'm taking all your paint and crayons away for a week."
+	BEDROOM_2.TEXT = "Mom: Sweetie, I love all of your art but if you don't clean this room, I'm taking all your paint and crayons away for a week."
 	BEDROOM_2.TEXT_TIME = 9
 	
 	# Flamingo
