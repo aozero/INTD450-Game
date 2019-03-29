@@ -15,10 +15,10 @@ predelay_msec = 150.0
 predelay_feedback = 0.4
 room_size = 0.4
 damping = 0.5
-spread = 1.0
+spread = 0.5
 hipass = 0.0
 dry = 1.0
-wet = 0.5
+wet = 0.25
 
 [resource]
 
