@@ -19,6 +19,7 @@ func set_paused(paused):
 	
 	pause_menu_rect.visible = paused
 	options_menu.visible = false
+	exit_verify.visible = false
 	
 	if paused:
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
