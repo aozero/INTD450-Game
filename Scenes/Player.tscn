@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://Scripts/Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Sound/Effects/Match/match_burning.wav" type="AudioStream" id=2]
@@ -13,10 +13,11 @@
 [ext_resource path="res://Sprites/first_person.png" type="Texture" id=11]
 [ext_resource path="res://Scripts/Player/MemoryController.gd" type="Script" id=12]
 [ext_resource path="res://Sprites/crosshair.png" type="Texture" id=13]
-[ext_resource path="res://Scenes/Menus/PauseController.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Sound/Effects/Walking/walking_step1.wav" type="AudioStream" id=15]
-[ext_resource path="res://Scripts/Player/FootstepsPlayer.gd" type="Script" id=16]
-[ext_resource path="res://Scripts/Player/PlayerArea.gd" type="Script" id=17]
+[ext_resource path="res://Scripts/Player/StaminaController.gd" type="Script" id=14]
+[ext_resource path="res://Scenes/Menus/PauseController.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Sound/Effects/Walking/walking_step1.wav" type="AudioStream" id=16]
+[ext_resource path="res://Scripts/Player/FootstepsPlayer.gd" type="Script" id=17]
+[ext_resource path="res://Scripts/Player/PlayerArea.gd" type="Script" id=18]
 
 [sub_resource type="Animation" id=1]
 
@@ -510,6 +511,7 @@ _sections_unfolded = [ "custom_fonts" ]
 
 [node name="Hand" type="Control" parent="CanvasLayer" index="1"]
 
+editor/display_folded = true
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
@@ -573,6 +575,7 @@ _sections_unfolded = [ "Grow Direction", "Margin" ]
 
 [node name="MemoryController" type="Node" parent="CanvasLayer" index="3"]
 
+editor/display_folded = true
 script = ExtResource( 12 )
 
 [node name="DialogueAudio" type="AudioStreamPlayer" parent="CanvasLayer/MemoryController" index="0"]
@@ -679,6 +682,53 @@ wait_time = 8.0
 one_shot = false
 autostart = false
 
+[node name="StaminaController" type="ColorRect" parent="CanvasLayer" index="4"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 600.0
+margin_top = -200.0
+margin_right = -600.0
+margin_bottom = -152.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 0.235294, 0.235294, 0.235294, 1 )
+script = ExtResource( 14 )
+_sections_unfolded = [ "Grow Direction", "Margin", "Visibility" ]
+
+[node name="StaminaBar" type="ColorRect" parent="CanvasLayer/StaminaController" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 0.477297, 0.800781, 0.121994, 1 )
+_sections_unfolded = [ "Margin", "Rect" ]
+
+[node name="DisappearTimer" type="Timer" parent="CanvasLayer/StaminaController" index="1"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = true
+autostart = false
+
 [node name="PauseMenuLayer" type="CanvasLayer" parent="." index="10"]
 
 layer = 2
@@ -687,7 +737,7 @@ rotation = 0.0
 scale = Vector2( 1, 1 )
 transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 
-[node name="PauseController" parent="PauseMenuLayer" index="0" instance=ExtResource( 14 )]
+[node name="PauseController" parent="PauseMenuLayer" index="0" instance=ExtResource( 15 )]
 
 [node name="Headbobber" type="AnimationPlayer" parent="." index="11"]
 
@@ -702,13 +752,13 @@ blend_times = [  ]
 
 [node name="FootstepsPlayer" type="AudioStreamPlayer" parent="Headbobber" index="0"]
 
-stream = ExtResource( 15 )
+stream = ExtResource( 16 )
 volume_db = -20.0
 pitch_scale = 1.0
 autoplay = false
 mix_target = 0
 bus = "Effects"
-script = ExtResource( 16 )
+script = ExtResource( 17 )
 
 [node name="RayCast" type="RayCast" parent="." index="12"]
 
@@ -746,7 +796,7 @@ reverb_bus_enable = false
 reverb_bus_name = "Master"
 reverb_bus_amount = 0.0
 reverb_bus_uniformity = 0.0
-script = ExtResource( 17 )
+script = ExtResource( 18 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Player Area" index="0"]
 
@@ -766,6 +816,8 @@ disabled = false
 [connection signal="animation_finished" from="CanvasLayer/MemoryController/ScreenAnimator" to="CanvasLayer/MemoryController" method="_on_ScreenAnimator_animation_finished"]
 
 [connection signal="timeout" from="CanvasLayer/MemoryController/Dialogue Label/Dialogue Timer" to="CanvasLayer/MemoryController" method="_on_Dialogue_Timer_timeout"]
+
+[connection signal="timeout" from="CanvasLayer/StaminaController/DisappearTimer" to="CanvasLayer/StaminaController" method="_on_DisappearTimer_timeout"]
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 

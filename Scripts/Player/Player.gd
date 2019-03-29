@@ -22,6 +22,7 @@ onready var audio_fader = $AudioFader
 onready var music_player = get_node("/root/MusicPlayer")
 
 onready var memory_controller = $CanvasLayer/MemoryController
+onready var stamina_controller = $CanvasLayer/StaminaController
 onready var globals = get_node("/root/Globals")
 
 # Sprite to display in the center of the screen as it fades out from the memory
@@ -103,8 +104,13 @@ func _physics_process(delta):
 	move_vec = move_vec.normalized()
 	move_vec = move_vec.rotated(Vector3(0, 1, 0), rotation.y)
 	
-	# Handling movement speed and headbob speed
 	running = false
+	if Input.is_action_pressed("run") && stamina_controller.stamina > 0:
+		running = true
+	
+	stamina_controller.update_stamina(running)
+	
+	# Handling movement speed and headbob speed
 	var move_speed = SNEAK_SPEED
 	headbobber.playback_speed = 1
 	# If we are actually moving:
@@ -112,8 +118,7 @@ func _physics_process(delta):
 		if not headbobber.is_playing():
 			headbobber.play("headbob")
 		
-		if Input.is_action_pressed("run"):
-			running = true
+		if running:
 			move_speed = RUN_SPEED
 			headbobber.playback_speed = 2
 		
@@ -125,7 +130,7 @@ func _physics_process(delta):
 		if headbobber.is_playing():
 			headbobber.stop()
 			# Plays an animation that goes back to default position
-			headbobber.play("reset")  
+			headbobber.play("reset")
 	
 	# Actually move
 	move_and_slide(move_vec * move_speed)
