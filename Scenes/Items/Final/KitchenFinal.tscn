@@ -64,7 +64,7 @@ texture = ExtResource( 3 )
 
 [node name="BurnParticles" parent="CollisionShape/Sprite3D" index="0"]
 
-amount = 80
+amount = 100
 process_material = SubResource( 3 )
 
 [node name="MusicPlayer" parent="." index="2"]
