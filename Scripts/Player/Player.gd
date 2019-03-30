@@ -42,6 +42,7 @@ onready var start_pos = translation
 
 var game_over = false
 var dying = false
+var moving = false
 var running = false
 
 # Return "Player" instead of "KinematicBody" 
@@ -82,7 +83,6 @@ func _input(event):
 		get_tree().change_scene("res://Scenes/Worlds/Finale.tscn")
 	if event.is_action_pressed("teleport_credits"):
 		get_tree().change_scene("res://Scenes/Credits.tscn")
-	
 
 func _physics_process(delta):
 	if dying or globals.in_memory:
@@ -104,17 +104,13 @@ func _physics_process(delta):
 	move_vec = move_vec.normalized()
 	move_vec = move_vec.rotated(Vector3(0, 1, 0), rotation.y)
 	
-	running = false
-	if Input.is_action_pressed("run") && stamina_controller.stamina > 0:
-		running = true
-	
-	stamina_controller.update_stamina(running)
-	
 	# Handling movement speed and headbob speed
+	moving = move_vec.x != 0 or move_vec.z != 0
+	running = moving && Input.is_action_pressed("run") && stamina_controller.can_run()
 	var move_speed = SNEAK_SPEED
 	headbobber.playback_speed = 1
 	# If we are actually moving:
-	if move_vec.x != 0 or move_vec.z != 0:
+	if moving:
 		if not headbobber.is_playing():
 			headbobber.play("headbob")
 		
@@ -131,6 +127,8 @@ func _physics_process(delta):
 			headbobber.stop()
 			# Plays an animation that goes back to default position
 			headbobber.play("reset")
+	
+	stamina_controller.update_stamina(moving, running)
 	
 	# Actually move
 	move_and_slide(move_vec * move_speed)
