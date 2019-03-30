@@ -7,12 +7,11 @@ extends ColorRect
 	before they can sprint again.
 """
 
-
-const MAX_STAMINA = 1000
-const EXHAUSTION_MIN = 200
-const STAMINA_STILL = 2
-const STAMINA_WALKING = 1
-const STAMINA_RUNNING = -5
+const MAX_STAMINA = 1200
+const EXHAUSTION_MIN = 400
+const STAMINA_STILL = 4
+const STAMINA_WALKING = 2
+const STAMINA_RUNNING = -6
 var stamina = MAX_STAMINA
 onready var stamina_bar = $StaminaBar
 onready var disappear_timer = $DisappearTimer

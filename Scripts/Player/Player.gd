@@ -3,7 +3,7 @@ extends KinematicBody
 # Script controlling the camera, player animations, input, and movement
 ##################################
 
-const RUN_SPEED = 4      
+const RUN_SPEED = 3.5      
 const SNEAK_SPEED = 2
 const BACKWARDS_SLOWDOWN = 0.5
 const MOUSE_SENS = 0.2

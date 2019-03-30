@@ -3,7 +3,7 @@ extends "res://Scripts/Multidirectional.gd"
 # Script controlling the monsters
 ##################################
 # How fast the monster can move
-const ALERTED_SPEED = 2.5
+const ALERTED_SPEED = 3
 const NORMAL_SPEED = 1
 # How fast the monster animated (also affects frequency of walking sounds since they are hooked up to the anim)
 const ALERTED_ANIM_SPEED = 1
