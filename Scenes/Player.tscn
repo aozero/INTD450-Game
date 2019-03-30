@@ -300,7 +300,7 @@ tracks/0/keys = {
 
 radius = 50.0
 
-[node name="Player" type="KinematicBody"]
+[node name="Player" type="KinematicBody" index="0"]
 
 input_ray_pickable = true
 input_capture_on_drag = false
@@ -530,7 +530,7 @@ scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 11 )
 vframes = 4
 hframes = 4
-frame = 1
+frame = 15
 _sections_unfolded = [ "Animation", "Transform", "Visibility" ]
 
 [node name="HandAnimator" type="AnimationPlayer" parent="CanvasLayer/Hand/Hand Sprite" index="0"]
@@ -574,15 +574,15 @@ _sections_unfolded = [ "Grow Direction", "Margin" ]
 
 [node name="StaminaController" type="ColorRect" parent="CanvasLayer" index="3"]
 
-editor/display_folded = true
+visible = false
 anchor_left = 0.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 50.0
-margin_top = -100.0
-margin_right = -1600.0
-margin_bottom = -52.0
+margin_left = 800.0
+margin_top = -180.0
+margin_right = -850.0
+margin_bottom = -132.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -591,7 +591,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 color = Color( 0.235294, 0.235294, 0.235294, 1 )
 script = ExtResource( 12 )
-_sections_unfolded = [ "Grow Direction", "Margin", "Rect", "Visibility" ]
+_sections_unfolded = [ "Grow Direction", "Rect", "Visibility" ]
 
 [node name="StaminaBar" type="ColorRect" parent="CanvasLayer/StaminaController" index="0"]
 
