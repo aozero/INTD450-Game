@@ -9,18 +9,21 @@ var BURN_ANIM_NAME = "burn"
 onready var sprite = $CollisionShape/Sprite3D
 onready var interactable_particles = $Particles
 onready var burn_anim_player = $BurnAnimPlayer
-
+onready var globals = get_node("/root/Globals")
 
 var interacted_with = false
 
 func _ready():
 	if burning:
-		interacted_with = true
-		interactable_particles.visible = false
-		sprite.material_override = load("res://Materials/FireBillboard.tres").duplicate()
-		sprite.material_override.vertex_color_use_as_albedo = true
-		translation.y = 0.4
-		burn_anim_player.play(BURN_ANIM_NAME)
+		if globals.in_memory:
+			interacted_with = true
+			interactable_particles.visible = false
+			sprite.material_override = load("res://Materials/FireBillboard.tres").duplicate()
+			sprite.material_override.vertex_color_use_as_albedo = true
+			translation.y = 0.4
+			burn_anim_player.play(BURN_ANIM_NAME)
+		else:
+			visible = false
 
 func interact(player):
 	if !interacted_with:
