@@ -60,10 +60,14 @@ script = ExtResource( 2 )
 
 [node name="Sprite3D" parent="CollisionShape" index="0"]
 
+offset = Vector2( 0, 0 )
+modulate = Color( 1, 1, 1, 1 )
 texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 428, 314 )
 
 [node name="BurnParticles" parent="CollisionShape/Sprite3D" index="0"]
 
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.35 )
 amount = 100
 process_material = SubResource( 3 )
 
