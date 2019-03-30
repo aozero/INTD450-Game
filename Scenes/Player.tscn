@@ -431,8 +431,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0, -0.1 )
 visible = false
 light_energy = 1.09
 light_indirect_energy = 1.0
-light_cull_mask = -524289
-omni_attenuation = 1.8025
+light_cull_mask = -540673
 
 [node name="TorchArea" type="Area" parent="Torch" index="0"]
 
