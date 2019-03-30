@@ -18,6 +18,8 @@ const DETECT_DARK_RUN_RANGE = 7
 const DETECT_LIT_RUN_RANGE = 11
 ##################################
 
+const BREATH_PITCH_NORMAL = 1
+const BREATH_PITCH_ALERTED = 1.1
 onready var SOUND_ALERTED = load("res://Sound/Effects/Monster/brain_boi_alerted.wav")
 onready var SOUND_LOST_PLAYER = load("res://Sound/Effects/Monster/brain_boi_lost.wav")
 
@@ -55,6 +57,7 @@ the players state. Eg. if the player is running with a lit match, it will detect
 
 Upon detecting the player, it will play SOUND_ALERTED and attempt to path to her at ALERTED_SPEED. 
 If it can move into and collide with the player, it will call Player.kill(), restarting the level.
+When alerted, it will also breath faster.
 
 If it can no longer detect the player, it will play SOUND_LOST_PLAYER, slow down to NORMAL_SPEED, and move
 towards the position it last detected the player at. Additionally, it will start lost_player_timer. 
@@ -183,6 +186,7 @@ func start_alerted():
 	stand_still_timer.stop()
 	patrol_pause_timer.stop()
 	play_alerted_audio(SOUND_ALERTED)
+	audio_breathing.pitch_scale = BREATH_PITCH_ALERTED
 
 # Called when losing the player
 # Slow down, play the lost player noise, and start the lost_player timer,
@@ -196,6 +200,7 @@ func stop_alerted():
 	
 	lost_player_timer.start()
 	play_alerted_audio(SOUND_LOST_PLAYER)
+	audio_breathing.pitch_scale = BREATH_PITCH_NORMAL
 
 # Play stream on audio_alerted player
 func play_alerted_audio(stream):
