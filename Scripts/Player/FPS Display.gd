@@ -10,8 +10,11 @@ var fps = 0
 func _ready():
 	text = ""
 	
-	# TURN OFF FPS DISPLAY FOR DEMO
-	set_process(false)
+	visible = false
+
+func _input(event):
+	if event.is_action_pressed("toggle_fps"):
+		visible = !visible
 
 func _process(delta):
 	if (time > 0):

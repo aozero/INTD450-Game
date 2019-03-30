@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/finale_lauren_call_me.wav-757d2d8bc72400348119db3288f11e0b.sample"
+
+[deps]
+
+source_file="res://Sound/Effects/Memory/Finale Voices/finale_lauren_call_me.wav"
+dest_files=[ "res://.import/finale_lauren_call_me.wav-757d2d8bc72400348119db3288f11e0b.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

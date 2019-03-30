@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/finale_riley_monkeys.wav-a1e4335956896268f943cbf956f238cd.sample"
+
+[deps]
+
+source_file="res://Sound/Effects/Memory/Finale Voices/finale_riley_monkeys.wav"
+dest_files=[ "res://.import/finale_riley_monkeys.wav-a1e4335956896268f943cbf956f238cd.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

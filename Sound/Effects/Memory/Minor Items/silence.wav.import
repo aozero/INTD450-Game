@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/silence.wav-3d6921ab9709f3c578c59035e89784e5.sample"
+
+[deps]
+
+source_file="res://Sound/Effects/Memory/Minor Items/silence.wav"
+dest_files=[ "res://.import/silence.wav-3d6921ab9709f3c578c59035e89784e5.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=false
+edit/loop=false
+compress/mode=0

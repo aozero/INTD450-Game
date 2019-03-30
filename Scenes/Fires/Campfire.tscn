@@ -1,16 +1,67 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=14 format=2]
 
-[ext_resource path="res://Sprites/campfire.png" type="Texture" id=1]
-[ext_resource path="res://Animations/Fire.tres" type="Animation" id=2]
+[ext_resource path="res://Scripts/Fires/Campfire.gd" type="Script" id=1]
+[ext_resource path="res://Materials/FireBillboard.tres" type="Material" id=2]
+[ext_resource path="res://Sprites/Fires/campfire.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/Fires/FireLight.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Animations/Fire.tres" type="Animation" id=5]
 
 [sub_resource type="BoxShape" id=1]
 
 extents = Vector3( 0.1, 0.5, 0.1 )
 
-[sub_resource type="SpatialMaterial" id=2]
+[sub_resource type="Gradient" id=2]
+
+offsets = PoolRealArray( 0, 0.792899 )
+colors = PoolColorArray( 1, 0.679688, 0, 1, 0, 0, 0, 0 )
+
+[sub_resource type="GradientTexture" id=3]
+
+flags = 4
+gradient = SubResource( 2 )
+width = 2048
+
+[sub_resource type="ParticlesMaterial" id=4]
 
 render_priority = 0
-flags_transparent = true
+trail_divisor = 1
+emission_shape = 2
+emission_box_extents = Vector3( 0.25, 0.25, 0.25 )
+flag_align_y = false
+flag_rotate_y = false
+flag_disable_z = false
+spread = 45.0
+flatness = 0.0
+gravity = Vector3( 0, 9.8, 0 )
+initial_velocity = 1.0
+initial_velocity_random = 0.0
+angular_velocity = 0.0
+angular_velocity_random = 0.0
+linear_accel = 0.0
+linear_accel_random = 0.0
+radial_accel = 0.0
+radial_accel_random = 0.0
+tangential_accel = 0.0
+tangential_accel_random = 0.0
+damping = 0.0
+damping_random = 0.0
+angle = 0.0
+angle_random = 0.0
+scale = 1.0
+scale_random = 0.0
+color_ramp = SubResource( 3 )
+hue_variation = 0.0
+hue_variation_random = 0.0
+anim_speed = 0.0
+anim_speed_random = 0.0
+anim_offset = 0.0
+anim_offset_random = 0.0
+anim_loop = false
+
+[sub_resource type="SpatialMaterial" id=5]
+
+render_priority = 0
+flags_transparent = false
 flags_unshaded = true
 flags_vertex_lighting = false
 flags_no_depth_test = false
@@ -18,7 +69,7 @@ flags_use_point_size = false
 flags_world_triplanar = false
 flags_fixed_size = false
 flags_albedo_tex_force_srgb = false
-vertex_color_use_as_albedo = false
+vertex_color_use_as_albedo = true
 vertex_color_is_srgb = false
 params_diffuse_mode = 0
 params_specular_mode = 0
@@ -59,26 +110,16 @@ proximity_fade_enable = false
 distance_fade_enable = false
 _sections_unfolded = [ "Flags", "Parameters" ]
 
-[sub_resource type="CubeMesh" id=3]
+[sub_resource type="CubeMesh" id=6]
 
+material = SubResource( 5 )
 custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
-size = Vector3( 1, 1, 1 )
+size = Vector3( 0.01, 0.01, 5e-005 )
 subdivide_width = 0
 subdivide_height = 0
 subdivide_depth = 0
 
-[sub_resource type="Gradient" id=7]
-
-offsets = PoolRealArray( 0, 0.792899 )
-colors = PoolColorArray( 1, 0.679688, 0, 1, 0, 0, 0, 0 )
-
-[sub_resource type="GradientTexture" id=8]
-
-flags = 4
-gradient = SubResource( 7 )
-width = 2048
-
-[sub_resource type="ParticlesMaterial" id=4]
+[sub_resource type="ParticlesMaterial" id=7]
 
 render_priority = 0
 trail_divisor = 1
@@ -90,8 +131,8 @@ flag_disable_z = false
 spread = 45.0
 flatness = 0.0
 gravity = Vector3( 0, 9.8, 0 )
-initial_velocity = 1.0
-initial_velocity_random = 0.0
+initial_velocity = 0.4
+initial_velocity_random = 0.15
 angular_velocity = 0.0
 angular_velocity_random = 0.0
 linear_accel = 0.0
@@ -106,7 +147,7 @@ angle = 0.0
 angle_random = 0.0
 scale = 1.0
 scale_random = 0.0
-color_ramp = SubResource( 8 )
+color = Color( 0.203125, 0.203125, 0.203125, 1 )
 hue_variation = 0.0
 hue_variation_random = 0.0
 anim_speed = 0.0
@@ -114,69 +155,17 @@ anim_speed_random = 0.0
 anim_offset = 0.0
 anim_offset_random = 0.0
 anim_loop = false
-_sections_unfolded = [ "Color", "Hue Variation", "Spread" ]
+_sections_unfolded = [ "Color", "Initial Velocity" ]
 
-[sub_resource type="SpatialMaterial" id=5]
+[sub_resource type="CubeMesh" id=8]
 
-render_priority = 0
-flags_transparent = false
-flags_unshaded = true
-flags_vertex_lighting = false
-flags_no_depth_test = false
-flags_use_point_size = false
-flags_world_triplanar = false
-flags_fixed_size = false
-flags_albedo_tex_force_srgb = false
-vertex_color_use_as_albedo = true
-vertex_color_is_srgb = false
-params_diffuse_mode = 0
-params_specular_mode = 0
-params_blend_mode = 0
-params_cull_mode = 0
-params_depth_draw_mode = 0
-params_line_width = 1.0
-params_point_size = 1.0
-params_billboard_mode = 0
-params_grow = false
-params_use_alpha_scissor = false
-albedo_color = Color( 1, 1, 1, 1 )
-metallic = 0.0
-metallic_specular = 0.5
-metallic_texture_channel = 0
-roughness = 0.0
-roughness_texture_channel = 0
-emission_enabled = false
-normal_enabled = false
-rim_enabled = false
-clearcoat_enabled = false
-anisotropy_enabled = false
-ao_enabled = false
-depth_enabled = false
-subsurf_scatter_enabled = false
-transmission_enabled = false
-refraction_enabled = false
-detail_enabled = false
-uv1_scale = Vector3( 1, 1, 1 )
-uv1_offset = Vector3( 0, 0, 0 )
-uv1_triplanar = false
-uv1_triplanar_sharpness = 1.0
-uv2_scale = Vector3( 1, 1, 1 )
-uv2_offset = Vector3( 0, 0, 0 )
-uv2_triplanar = false
-uv2_triplanar_sharpness = 1.0
-proximity_fade_enable = false
-distance_fade_enable = false
-
-[sub_resource type="CubeMesh" id=6]
-
-material = SubResource( 5 )
 custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
-size = Vector3( 0.01, 0.01, 5e-005 )
+size = Vector3( 1, 1, 1 )
 subdivide_width = 0
 subdivide_height = 0
 subdivide_depth = 0
 
-[node name="Campfire" type="StaticBody" index="0"]
+[node name="Campfire" type="StaticBody"]
 
 input_ray_pickable = true
 input_capture_on_drag = false
@@ -186,7 +175,9 @@ friction = 1.0
 bounce = 0.0
 constant_linear_velocity = Vector3( 0, 0, 0 )
 constant_angular_velocity = Vector3( 0, 0, 0 )
+script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Transform" ]
+on = false
 
 [node name="CollisionShape" type="CollisionShape" parent="." index="0"]
 
@@ -200,8 +191,8 @@ _sections_unfolded = [ "Transform" ]
 [node name="Sprite3D" type="Sprite3D" parent="CollisionShape/Spatial" index="0"]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0 )
-layers = 1
-material_override = SubResource( 2 )
+layers = 524288
+material_override = ExtResource( 2 )
 cast_shadow = 1
 extra_cull_margin = 0.0
 use_in_baked_light = false
@@ -221,7 +212,7 @@ transparent = true
 shaded = false
 double_sided = true
 alpha_cut = 0
-texture = ExtResource( 1 )
+texture = ExtResource( 3 )
 vframes = 1
 hframes = 1
 frame = 0
@@ -229,62 +220,12 @@ region_enabled = false
 region_rect = Rect2( 0, 0, 0, 0 )
 _sections_unfolded = [ "Geometry", "Transform" ]
 
-[node name="Light" type="OmniLight" parent="CollisionShape/Spatial/Sprite3D" index="0"]
+[node name="FireParticles" type="Particles" parent="CollisionShape/Spatial/Sprite3D" index="0"]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0 )
-layers = 1
-light_color = Color( 0.992157, 0.603922, 0.32549, 1 )
-light_energy = 8.0
-light_indirect_energy = 5.0
-light_negative = false
-light_specular = 0.5
-light_bake_mode = 1
-light_cull_mask = -1
-shadow_enabled = false
-shadow_color = Color( 0, 0, 0, 1 )
-shadow_bias = 0.15
-shadow_contact = 0.0
-shadow_reverse_cull_face = false
-editor_only = false
-omni_range = 15.0
-omni_attenuation = 3.60501
-omni_shadow_mode = 1
-omni_shadow_detail = 1
-_sections_unfolded = [ "Light", "Omni", "Shadow", "Transform" ]
-
-[node name="MeshInstance" type="MeshInstance" parent="CollisionShape" index="1"]
-
-visible = false
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10151, -0.037167, 0 )
 layers = 1
 material_override = null
-cast_shadow = 1
-extra_cull_margin = 0.0
-use_in_baked_light = false
-lod_min_distance = 0.0
-lod_min_hysteresis = 0.0
-lod_max_distance = 0.0
-lod_max_hysteresis = 0.0
-mesh = SubResource( 3 )
-skeleton = NodePath("..")
-material/0 = null
-_sections_unfolded = [ "Transform", "Visibility" ]
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1"]
-
-root_node = NodePath("..")
-autoplay = "Fire"
-playback_process_mode = 1
-playback_default_blend_time = 0.0
-playback_speed = 1.0
-anims/Fire = ExtResource( 2 )
-blend_times = [  ]
-
-[node name="FireParticles" type="Particles" parent="." index="2"]
-
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10151, -0.137167, 0 )
-layers = 1
-material_override = null
-cast_shadow = 1
+cast_shadow = 0
 extra_cull_margin = 0.0
 use_in_baked_light = false
 lod_min_distance = 0.0
@@ -292,7 +233,7 @@ lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
 emitting = true
-amount = 5
+amount = 3
 lifetime = 1.0
 one_shot = false
 preprocess = 0.5
@@ -308,5 +249,64 @@ process_material = SubResource( 4 )
 draw_passes = 1
 draw_pass_1 = SubResource( 6 )
 _sections_unfolded = [ "Draw Passes", "Process Material", "Time" ]
+
+[node name="SmokeParticles" type="Particles" parent="CollisionShape/Spatial/Sprite3D" index="1"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.10151, -0.037167, 0 )
+layers = 1
+material_override = null
+cast_shadow = 0
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+emitting = true
+amount = 3
+lifetime = 1.0
+one_shot = false
+preprocess = 0.5
+speed_scale = 0.2
+explosiveness = 0.0
+randomness = 1.0
+fixed_fps = 0
+fract_delta = true
+visibility_aabb = AABB( -4, -4, -4, 8, 8, 8 )
+local_coords = true
+draw_order = 0
+process_material = SubResource( 7 )
+draw_passes = 1
+draw_pass_1 = SubResource( 6 )
+_sections_unfolded = [ "Draw Passes", "Drawing", "Process Material", "Time" ]
+
+[node name="FireLight" parent="CollisionShape/Spatial/Sprite3D" index="2" instance=ExtResource( 4 )]
+
+[node name="MeshInstance" type="MeshInstance" parent="CollisionShape" index="1"]
+
+visible = false
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 8 )
+skeleton = NodePath("..")
+material/0 = null
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1"]
+
+root_node = NodePath("..")
+autoplay = "Fire"
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/Fire = ExtResource( 5 )
+blend_times = [  ]
 
 

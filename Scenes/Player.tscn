@@ -1,17 +1,23 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://Scripts/Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Sound/Effects/Match/match_burning.wav" type="AudioStream" id=2]
-[ext_resource path="res://Scripts/Player/TorchArea.gd" type="Script" id=3]
-[ext_resource path="res://Scripts/PlayerCanvasLayer.gd" type="Script" id=4]
-[ext_resource path="res://Scripts/Player/FPS Display.gd" type="Script" id=5]
-[ext_resource path="res://Sprites/first_person.png" type="Texture" id=6]
-[ext_resource path="res://Fonts/Prompt.ttf" type="DynamicFontData" id=7]
-[ext_resource path="res://Sprites/crosshair.png" type="Texture" id=8]
-[ext_resource path="res://Sprites/Items/study_tapshoe.png" type="Texture" id=9]
-[ext_resource path="res://Sound/Effects/Walking/walking_step1.wav" type="AudioStream" id=10]
-[ext_resource path="res://Scripts/Player/FootstepsPlayer.gd" type="Script" id=11]
-[ext_resource path="res://Scripts/Player/PlayerArea.gd" type="Script" id=12]
+[ext_resource path="res://Sound/Effects/Forest/forest_treecreaking.wav" type="AudioStream" id=3]
+[ext_resource path="res://Scripts/Player/ForestNoisesAudio.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/Fires/FireLight.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scripts/Player/TorchArea.gd" type="Script" id=6]
+[ext_resource path="res://Scenes/Camera.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scripts/Player/PlayerCanvasLayer.gd" type="Script" id=8]
+[ext_resource path="res://Fonts/Prompt.ttf" type="DynamicFontData" id=9]
+[ext_resource path="res://Scripts/Player/FPS Display.gd" type="Script" id=10]
+[ext_resource path="res://Sprites/first_person.png" type="Texture" id=11]
+[ext_resource path="res://Scripts/Player/StaminaController.gd" type="Script" id=12]
+[ext_resource path="res://Scripts/Player/MemoryController.gd" type="Script" id=13]
+[ext_resource path="res://Sprites/crosshair.png" type="Texture" id=14]
+[ext_resource path="res://Scenes/Menus/PauseController.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Sound/Effects/Walking/walking_step1.wav" type="AudioStream" id=16]
+[ext_resource path="res://Scripts/Player/FootstepsPlayer.gd" type="Script" id=17]
+[ext_resource path="res://Scripts/Player/PlayerArea.gd" type="Script" id=18]
 
 [sub_resource type="Animation" id=1]
 
@@ -29,13 +35,13 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
-"values": [ -80.0, -10.0 ]
+"values": [ -75.0, -5.0 ]
 }
 
 [sub_resource type="CapsuleShape" id=2]
 
 radius = 0.8
-height = 0.01
+height = 0.8
 
 [sub_resource type="SphereShape" id=3]
 
@@ -60,110 +66,16 @@ tracks/0/keys = {
 "values": [ 1.15, 1.05, 1.1, 1.05, 1.15, 1.1, 1.05, 1.1, 1.15, 1.1, 1.05, 1.05, 1.15 ]
 }
 
-[sub_resource type="ProceduralSky" id=5]
+[sub_resource type="DynamicFont" id=5]
 
-radiance_size = 4
-sky_top_color = Color( 0.129412, 0.160784, 0.360784, 1 )
-sky_horizon_color = Color( 0.266667, 0.207843, 0.356863, 1 )
-sky_curve = 0.25
-sky_energy = 1.0
-ground_bottom_color = Color( 0.101961, 0.145098, 0.188235, 1 )
-ground_horizon_color = Color( 0.129412, 0.160784, 0.360784, 1 )
-ground_curve = 0.0123114
-ground_energy = 1.0
-sun_color = Color( 1, 1, 1, 1 )
-sun_latitude = -35.0
-sun_longitude = 0.0
-sun_angle_min = 1.0
-sun_angle_max = 100.0
-sun_curve = 0.05
-sun_energy = 0.5
-texture_size = 2
-_sections_unfolded = [ "Ground", "Sky", "Sun" ]
+size = 16
+use_mipmaps = true
+use_filter = true
+font_data = ExtResource( 9 )
+_sections_unfolded = [ "Settings" ]
 
-[sub_resource type="Environment" id=6]
+[sub_resource type="Animation" id=6]
 
-background_mode = 2
-background_sky = SubResource( 5 )
-background_sky_custom_fov = 0.0
-background_color = Color( 0.214844, 0.214844, 0.214844, 1 )
-background_energy = 0.05
-background_canvas_max_layer = 0
-ambient_light_color = Color( 0, 0, 0, 1 )
-ambient_light_energy = 0.0
-ambient_light_sky_contribution = 0.0
-fog_enabled = true
-fog_color = Color( 0, 0, 0, 1 )
-fog_sun_color = Color( 1, 0.9, 0.7, 1 )
-fog_sun_amount = 0.0
-fog_depth_enabled = true
-fog_depth_begin = 10.0
-fog_depth_curve = 1.0
-fog_transmit_enabled = false
-fog_transmit_curve = 1.0
-fog_height_enabled = false
-fog_height_min = 0.0
-fog_height_max = 100.0
-fog_height_curve = 1.0
-tonemap_mode = 0
-tonemap_exposure = 1.0
-tonemap_white = 1.0
-auto_exposure_enabled = false
-auto_exposure_scale = 0.4
-auto_exposure_min_luma = 0.05
-auto_exposure_max_luma = 8.0
-auto_exposure_speed = 0.5
-ss_reflections_enabled = false
-ss_reflections_max_steps = 64
-ss_reflections_fade_in = 0.15
-ss_reflections_fade_out = 2.0
-ss_reflections_depth_tolerance = 0.2
-ss_reflections_roughness = true
-ssao_enabled = false
-ssao_radius = 1.0
-ssao_intensity = 1.0
-ssao_radius2 = 0.0
-ssao_intensity2 = 1.0
-ssao_bias = 0.01
-ssao_light_affect = 0.0
-ssao_color = Color( 0, 0, 0, 1 )
-ssao_quality = 0
-ssao_blur = 3
-ssao_edge_sharpness = 4.0
-dof_blur_far_enabled = false
-dof_blur_far_distance = 10.0
-dof_blur_far_transition = 5.0
-dof_blur_far_amount = 0.1
-dof_blur_far_quality = 1
-dof_blur_near_enabled = false
-dof_blur_near_distance = 2.0
-dof_blur_near_transition = 1.0
-dof_blur_near_amount = 0.1
-dof_blur_near_quality = 1
-glow_enabled = true
-glow_levels/1 = false
-glow_levels/2 = false
-glow_levels/3 = true
-glow_levels/4 = false
-glow_levels/5 = true
-glow_levels/6 = false
-glow_levels/7 = false
-glow_intensity = 0.8
-glow_strength = 1.0
-glow_bloom = 0.0
-glow_blend_mode = 2
-glow_hdr_threshold = 1.0
-glow_hdr_scale = 2.0
-glow_bicubic_upscale = false
-adjustment_enabled = false
-adjustment_brightness = 1.0
-adjustment_contrast = 1.0
-adjustment_saturation = 1.0
-_sections_unfolded = [ "Ambient Light", "Background", "Fog" ]
-
-[sub_resource type="Animation" id=7]
-
-resource_name = "idle_off"
 length = 1.0
 loop = false
 step = 0.1
@@ -180,9 +92,8 @@ tracks/0/keys = {
 "values": [ 15, 15 ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=7]
 
-resource_name = "idle_on"
 length = 1.44
 loop = true
 step = 0.12
@@ -199,14 +110,13 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=8]
 
-resource_name = "light"
 length = 0.7
 loop = false
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath(":frame")
+tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -218,7 +128,7 @@ tracks/0/keys = {
 "values": [ 15, 1 ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath(":position")
+tracks/1/path = NodePath(".:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -230,7 +140,7 @@ tracks/1/keys = {
 "values": [ Vector2( 140, -180 ), Vector2( 140, -350 ) ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath(":rotation_degrees")
+tracks/2/path = NodePath(".:rotation_degrees")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -242,59 +152,51 @@ tracks/2/keys = {
 "values": [ -45.0, 0.0 ]
 }
 
-[sub_resource type="DynamicFont" id=10]
+[sub_resource type="DynamicFont" id=9]
 
 size = 48
 use_mipmaps = false
 use_filter = false
-font_data = ExtResource( 7 )
+font_data = ExtResource( 9 )
 _sections_unfolded = [ "Font", "Settings" ]
 
-[sub_resource type="DynamicFont" id=11]
+[sub_resource type="Animation" id=10]
 
-size = 36
-use_mipmaps = false
-use_filter = false
-font_data = ExtResource( 7 )
-_sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
-
-[sub_resource type="Animation" id=12]
-
-length = 1.0
+length = 1.5
 loop = false
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("CanvasLayer/ColorRect:color")
+tracks/0/path = NodePath("ScreenRect:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 1 ),
+"times": PoolRealArray( 0, 1.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Color( 0.894531, 0.894531, 0.894531, 1 ), Color( 0.894531, 0.894531, 0.894531, 0 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("CanvasLayer/ColorRect/TextureRect/Item Sprite:modulate")
+tracks/1/path = NodePath("ScreenRect/CenterDot/Item Sprite:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 1 ),
+"times": PoolRealArray( 0, 1.5 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 
-[sub_resource type="Animation" id=13]
+[sub_resource type="Animation" id=11]
 
 length = 1.0
 loop = false
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("CanvasLayer/ColorRect:color")
+tracks/0/path = NodePath("ScreenRect:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -306,13 +208,13 @@ tracks/0/keys = {
 "values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
 }
 
-[sub_resource type="Animation" id=14]
+[sub_resource type="Animation" id=12]
 
 length = 1.0
 loop = false
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("CanvasLayer/ColorRect:color")
+tracks/0/path = NodePath("ScreenRect:color")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -324,7 +226,7 @@ tracks/0/keys = {
 "values": [ Color( 0.894531, 0.894531, 0.894531, 0 ), Color( 0.894531, 0.894531, 0.894531, 1 ) ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath("CanvasLayer/ColorRect/TextureRect/Item Sprite:modulate")
+tracks/1/path = NodePath("ScreenRect/CenterDot/Item Sprite:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
@@ -336,7 +238,15 @@ tracks/1/keys = {
 "values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=15]
+[sub_resource type="DynamicFont" id=13]
+
+size = 36
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 9 )
+_sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
+
+[sub_resource type="Animation" id=14]
 
 length = 0.6
 loop = true
@@ -368,7 +278,7 @@ tracks/1/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=16]
+[sub_resource type="Animation" id=15]
 
 length = 0.5
 loop = false
@@ -386,11 +296,11 @@ tracks/0/keys = {
 "values": [ Vector3( 0, 0, 0 ) ]
 }
 
-[sub_resource type="SphereShape" id=17]
+[sub_resource type="SphereShape" id=16]
 
 radius = 50.0
 
-[node name="Player" type="KinematicBody" index="0"]
+[node name="Player" type="KinematicBody"]
 
 input_ray_pickable = true
 input_capture_on_drag = false
@@ -404,8 +314,53 @@ axis_lock_angular_y = false
 axis_lock_angular_z = false
 collision/safe_margin = 0.001
 script = ExtResource( 1 )
+last_final_item_sprite = null
 
-[node name="AudioFader" type="AnimationPlayer" parent="." index="0"]
+[node name="Selflight" type="OmniLight" parent="." index="0"]
+
+layers = 1
+light_color = Color( 0.113725, 0.113725, 0.113725, 1 )
+light_energy = 0.8
+light_indirect_energy = 0.0
+light_negative = false
+light_specular = 0.5
+light_bake_mode = 1
+light_cull_mask = -16417
+shadow_enabled = true
+shadow_color = Color( 0.484375, 0.484375, 0.484375, 1 )
+shadow_bias = 0.25
+shadow_contact = 0.0
+shadow_reverse_cull_face = false
+editor_only = false
+omni_range = 7.0
+omni_attenuation = 3.24901
+omni_shadow_mode = 1
+omni_shadow_detail = 1
+_sections_unfolded = [ "Light", "Omni", "Transform", "Visibility" ]
+
+[node name="GroundLight" type="OmniLight" parent="Selflight" index="0"]
+
+layers = 1
+light_color = Color( 0.113725, 0.113725, 0.113725, 1 )
+light_energy = 1.0
+light_indirect_energy = 0.0
+light_negative = false
+light_specular = 0.5
+light_bake_mode = 1
+light_cull_mask = -1032192
+shadow_enabled = false
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_bias = 0.15
+shadow_contact = 0.0
+shadow_reverse_cull_face = false
+editor_only = false
+omni_range = 7.0
+omni_attenuation = 1.0
+omni_shadow_mode = 1
+omni_shadow_detail = 1
+_sections_unfolded = [ "Light", "Omni" ]
+
+[node name="AudioFader" type="AnimationPlayer" parent="." index="1"]
 
 root_node = NodePath("..")
 autoplay = ""
@@ -415,54 +370,68 @@ playback_speed = 1.0
 "anims/fade in burning" = SubResource( 1 )
 blend_times = [  ]
 
-[node name="FirstPersonAudio" type="AudioStreamPlayer" parent="." index="1"]
+[node name="FirstPersonAudio" type="AudioStreamPlayer" parent="." index="2"]
 
 stream = null
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Effects"
+
+[node name="MatchBurningAudio" type="AudioStreamPlayer" parent="." index="3"]
+
+stream = ExtResource( 2 )
 volume_db = -5.0
 pitch_scale = 1.0
 autoplay = false
 mix_target = 0
-bus = "Master"
+bus = "Effects"
 
-[node name="MatchBurningAudio" type="AudioStreamPlayer" parent="." index="2"]
+[node name="ForestNoisesAudio" type="AudioStreamPlayer3D" parent="." index="4"]
 
-stream = ExtResource( 2 )
-volume_db = -80.0
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.979803, 0, 0 )
+stream = ExtResource( 3 )
+attenuation_model = 0
+unit_db = -25.0
+unit_size = 1.0
+max_db = -24.0
 pitch_scale = 1.0
 autoplay = false
-mix_target = 0
-bus = "Master"
+max_distance = 0.0
+out_of_range_mode = 0
+bus = "Effects"
+area_mask = 1
+emission_angle_enabled = false
+emission_angle_degrees = 45.0
+emission_angle_filter_attenuation_db = -12.0
+attenuation_filter_cutoff_hz = 5000.0
+attenuation_filter_db = -24.0
+doppler_tracking = 0
+script = ExtResource( 4 )
+_sections_unfolded = [ "Transform" ]
 
-[node name="CollisionShape" type="CollisionShape" parent="." index="3"]
+[node name="Timer" type="Timer" parent="ForestNoisesAudio" index="0"]
 
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0 )
+process_mode = 1
+wait_time = 15.0
+one_shot = true
+autostart = false
+
+[node name="CollisionShape" type="CollisionShape" parent="." index="5"]
+
+transform = Transform( 1, 0, 0, 0, -4.37114e-008, -1, 0, 1, -4.37114e-008, 0, 0, 0 )
 shape = SubResource( 2 )
 disabled = false
 _sections_unfolded = [ "Transform" ]
 
-[node name="Torch" type="OmniLight" parent="." index="4"]
+[node name="Torch" parent="." index="6" instance=ExtResource( 5 )]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.00367594 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0, -0.1 )
 visible = false
-layers = 1
-light_color = Color( 0.863281, 0.575802, 0.269775, 1 )
-light_energy = 1.09319
+light_energy = 1.09
 light_indirect_energy = 1.0
-light_negative = false
-light_specular = 0.5
-light_bake_mode = 1
-light_cull_mask = -1
-shadow_enabled = false
-shadow_color = Color( 0, 0, 0, 1 )
-shadow_bias = 0.15
-shadow_contact = 0.0
-shadow_reverse_cull_face = false
-editor_only = false
-omni_range = 15.0
-omni_attenuation = 1.8025
-omni_shadow_mode = 1
-omni_shadow_detail = 1
-_sections_unfolded = [ "Editor", "Light", "Omni", "Shadow", "Visibility" ]
+light_cull_mask = -540673
 
 [node name="TorchArea" type="Area" parent="Torch" index="0"]
 
@@ -486,7 +455,7 @@ reverb_bus_enable = false
 reverb_bus_name = "Master"
 reverb_bus_amount = 0.0
 reverb_bus_uniformity = 0.0
-script = ExtResource( 3 )
+script = ExtResource( 6 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Torch/TorchArea" index="0"]
 
@@ -503,31 +472,42 @@ playback_speed = 1.0
 anims/Fire = SubResource( 4 )
 blend_times = [  ]
 
-[node name="Camera" type="Camera" parent="." index="5"]
+[node name="TorchOld" type="OmniLight" parent="." index="7"]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0218131, 0 )
-keep_aspect = 1
-cull_mask = 1048575
-environment = SubResource( 6 )
-h_offset = 0.0
-v_offset = 0.0
-doppler_tracking = 0
-projection = 0
-current = true
-fov = 60.0
-size = 1.0
-near = 0.05
-far = 30.0
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.00367594 )
+visible = false
+layers = 1
+light_color = Color( 0.863281, 0.575802, 0.269775, 1 )
+light_energy = 1.09319
+light_indirect_energy = 1.0
+light_negative = false
+light_specular = 0.5
+light_bake_mode = 1
+light_cull_mask = -1
+shadow_enabled = false
+shadow_color = Color( 0, 0, 0, 1 )
+shadow_bias = 0.15
+shadow_contact = 0.0
+shadow_reverse_cull_face = false
+editor_only = false
+omni_range = 15.0
+omni_attenuation = 1.8025
+omni_shadow_mode = 1
+omni_shadow_detail = 1
+_sections_unfolded = [ "Editor", "Light", "Omni", "Shadow", "Visibility" ]
+
+[node name="Camera" parent="." index="8" instance=ExtResource( 7 )]
+
 _sections_unfolded = [ "Transform", "Visibility" ]
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." index="6"]
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="9"]
 
 layer = 1
 offset = Vector2( 0, 0 )
 rotation = 0.0
 scale = Vector2( 1, 1 )
 transform = Transform2D( 1, 0, 0, 1, 0, 0 )
-script = ExtResource( 4 )
+script = ExtResource( 8 )
 
 [node name="FPS Display" type="Label" parent="CanvasLayer" index="0"]
 
@@ -543,12 +523,14 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
+custom_fonts/font = SubResource( 5 )
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
-script = ExtResource( 5 )
+script = ExtResource( 10 )
+_sections_unfolded = [ "custom_fonts" ]
 
-[node name="Control" type="Control" parent="CanvasLayer" index="1"]
+[node name="Hand" type="Control" parent="CanvasLayer" index="1"]
 
 anchor_left = 0.5
 anchor_top = 1.0
@@ -560,28 +542,28 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-_sections_unfolded = [ "Visibility" ]
+_sections_unfolded = [ "Grow Direction", "Rect", "Visibility" ]
 
-[node name="Hand Sprite" type="Sprite" parent="CanvasLayer/Control" index="0"]
+[node name="Hand Sprite" type="Sprite" parent="CanvasLayer/Hand" index="0"]
 
 position = Vector2( 140, -350 )
 scale = Vector2( 1.5, 1.5 )
-texture = ExtResource( 6 )
+texture = ExtResource( 11 )
 vframes = 4
 hframes = 4
 frame = 15
 _sections_unfolded = [ "Animation", "Transform", "Visibility" ]
 
-[node name="HandAnimator" type="AnimationPlayer" parent="CanvasLayer/Control/Hand Sprite" index="0"]
+[node name="HandAnimator" type="AnimationPlayer" parent="CanvasLayer/Hand/Hand Sprite" index="0"]
 
 root_node = NodePath("..")
 autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/idle_off = SubResource( 7 )
-anims/idle_on = SubResource( 8 )
-anims/light = SubResource( 9 )
+anims/idle_off = SubResource( 6 )
+anims/idle_on = SubResource( 7 )
+anims/light = SubResource( 8 )
 blend_times = [  ]
 
 [node name="Prompt Label" type="Label" parent="CanvasLayer" index="2"]
@@ -591,16 +573,16 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 margin_left = -200.0
-margin_top = -600.0
+margin_top = -500.0
 margin_right = 200.0
-margin_bottom = -500.0
+margin_bottom = -400.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 10 )
+custom_fonts/font = SubResource( 9 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "Press E to interact"
@@ -611,23 +593,104 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Grow Direction", "Margin" ]
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer" index="3"]
+[node name="StaminaController" type="ColorRect" parent="CanvasLayer" index="3"]
 
-editor/display_folded = true
+visible = false
 anchor_left = 0.0
-anchor_top = 0.0
+anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = 800.0
+margin_top = -180.0
+margin_right = -850.0
+margin_bottom = -132.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-color = Color( 0.894531, 0.894531, 0.894531, 0 )
+color = Color( 0.235294, 0.235294, 0.235294, 0.588235 )
+script = ExtResource( 12 )
+_sections_unfolded = [ "Grow Direction", "Rect", "Visibility" ]
+
+[node name="StaminaBar" type="ColorRect" parent="CanvasLayer/StaminaController" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = -10.0
+margin_bottom = -10.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 0.477297, 0.800781, 0.121994, 0.588235 )
+_sections_unfolded = [ "Margin", "Rect" ]
+
+[node name="DisappearTimer" type="Timer" parent="CanvasLayer/StaminaController" index="1"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = true
+autostart = false
+
+[node name="MemoryController" type="Node" parent="CanvasLayer" index="4"]
+
+script = ExtResource( 13 )
+
+[node name="DialogueAudio" type="AudioStreamPlayer" parent="CanvasLayer/MemoryController" index="0"]
+
+stream = null
+volume_db = -10.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Voice"
+
+[node name="FinalMemoryTimer" type="Timer" parent="CanvasLayer/MemoryController/DialogueAudio" index="0"]
+
+process_mode = 1
+wait_time = 1.5
+one_shot = true
+autostart = false
+
+[node name="ScreenAnimator" type="AnimationPlayer" parent="CanvasLayer/MemoryController" index="1"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+"anims/Fade From Memory" = SubResource( 10 )
+"anims/Fade To Black" = SubResource( 11 )
+"anims/Fade To Memory" = SubResource( 12 )
+blend_times = [  ]
+_sections_unfolded = [ "Playback Options" ]
+
+[node name="ScreenRect" type="ColorRect" parent="CanvasLayer/MemoryController" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1.0
+margin_right = 1.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 0.894531, 0.894531, 0.894531, 1 )
 _sections_unfolded = [ "Anchor", "Focus", "Grow Direction", "Margin", "Rect", "Visibility" ]
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/ColorRect" index="0"]
+[node name="CenterDot" type="TextureRect" parent="CanvasLayer/MemoryController/ScreenRect" index="0"]
 
 anchor_left = 0.5
 anchor_top = 0.5
@@ -643,20 +706,17 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 8 )
+texture = ExtResource( 14 )
 stretch_mode = 4
 _sections_unfolded = [ "Anchor", "Margin" ]
 
-[node name="Item Sprite" type="Sprite" parent="CanvasLayer/ColorRect/TextureRect" index="0"]
+[node name="Item Sprite" type="Sprite" parent="CanvasLayer/MemoryController/ScreenRect/CenterDot" index="0"]
 
-modulate = Color( 1, 1, 1, 0 )
 scale = Vector2( 2, 2 )
-texture = ExtResource( 9 )
 _sections_unfolded = [ "Region", "Transform", "Visibility" ]
 
-[node name="Dialogue Label" type="Label" parent="CanvasLayer" index="4"]
+[node name="Dialogue Label" type="Label" parent="CanvasLayer/MemoryController" index="3"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -670,7 +730,7 @@ mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-custom_fonts/font = SubResource( 11 )
+custom_fonts/font = SubResource( 13 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 align = 1
@@ -681,62 +741,59 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "BBCode", "custom_colors", "custom_fonts" ]
 
-[node name="Dialogue Timer" type="Timer" parent="CanvasLayer/Dialogue Label" index="0"]
+[node name="Dialogue Timer" type="Timer" parent="CanvasLayer/MemoryController/Dialogue Label" index="0"]
 
 process_mode = 1
 wait_time = 8.0
 one_shot = false
 autostart = false
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="7"]
+[node name="PauseMenuLayer" type="CanvasLayer" parent="." index="10"]
+
+layer = 2
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+
+[node name="PauseController" parent="PauseMenuLayer" index="0" instance=ExtResource( 15 )]
+
+[node name="Headbobber" type="AnimationPlayer" parent="." index="11"]
 
 root_node = NodePath("..")
 autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-"anims/Fade From Memory" = SubResource( 12 )
-"anims/Fade To Black" = SubResource( 13 )
-"anims/Fade To Memory" = SubResource( 14 )
-blend_times = [  ]
-_sections_unfolded = [ "Playback Options" ]
-
-[node name="Headbobber" type="AnimationPlayer" parent="." index="8"]
-
-root_node = NodePath("..")
-autoplay = ""
-playback_process_mode = 1
-playback_default_blend_time = 0.0
-playback_speed = 1.0
-anims/headbob = SubResource( 15 )
-anims/reset = SubResource( 16 )
+anims/headbob = SubResource( 14 )
+anims/reset = SubResource( 15 )
 blend_times = [  ]
 
 [node name="FootstepsPlayer" type="AudioStreamPlayer" parent="Headbobber" index="0"]
 
-stream = ExtResource( 10 )
-volume_db = -25.0
+stream = ExtResource( 16 )
+volume_db = -20.0
 pitch_scale = 1.0
 autoplay = false
 mix_target = 0
-bus = "Master"
-script = ExtResource( 11 )
+bus = "Effects"
+script = ExtResource( 17 )
 
-[node name="RayCast" type="RayCast" parent="." index="9"]
+[node name="RayCast" type="RayCast" parent="." index="12"]
 
 enabled = true
 exclude_parent = true
 cast_to = Vector3( 0, 0, -2000 )
 collision_mask = 32
 
-[node name="Timer" type="Timer" parent="." index="10"]
+[node name="Timer" type="Timer" parent="." index="13"]
 
 process_mode = 1
 wait_time = 5.0
 one_shot = false
 autostart = false
 
-[node name="Player Area" type="Area" parent="." index="11"]
+[node name="Player Area" type="Area" parent="." index="14"]
 
 input_ray_pickable = false
 input_capture_on_drag = false
@@ -758,20 +815,28 @@ reverb_bus_enable = false
 reverb_bus_name = "Master"
 reverb_bus_amount = 0.0
 reverb_bus_uniformity = 0.0
-script = ExtResource( 12 )
+script = ExtResource( 18 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Player Area" index="0"]
 
-shape = SubResource( 17 )
+shape = SubResource( 16 )
 disabled = false
 
-[connection signal="finished" from="FirstPersonAudio" to="." method="_on_FirstPersonAudio_finished"]
+[connection signal="finished" from="ForestNoisesAudio" to="ForestNoisesAudio" method="_on_ForestNoisesAudio_finished"]
 
-[connection signal="animation_finished" from="CanvasLayer/Control/Hand Sprite/HandAnimator" to="." method="_on_HandAnimator_animation_finished"]
+[connection signal="timeout" from="ForestNoisesAudio/Timer" to="ForestNoisesAudio" method="_on_Timer_timeout"]
 
-[connection signal="timeout" from="CanvasLayer/Dialogue Label/Dialogue Timer" to="." method="_on_Dialogue_Timer_timeout"]
+[connection signal="animation_finished" from="CanvasLayer/Hand/Hand Sprite/HandAnimator" to="." method="_on_HandAnimator_animation_finished"]
 
-[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
+[connection signal="timeout" from="CanvasLayer/StaminaController/DisappearTimer" to="CanvasLayer/StaminaController" method="_on_DisappearTimer_timeout"]
+
+[connection signal="finished" from="CanvasLayer/MemoryController/DialogueAudio" to="CanvasLayer/MemoryController" method="_on_DialogueAudio_finished"]
+
+[connection signal="timeout" from="CanvasLayer/MemoryController/DialogueAudio/FinalMemoryTimer" to="CanvasLayer/MemoryController" method="_on_FinalMemoryTimer_timeout"]
+
+[connection signal="animation_finished" from="CanvasLayer/MemoryController/ScreenAnimator" to="CanvasLayer/MemoryController" method="_on_ScreenAnimator_animation_finished"]
+
+[connection signal="timeout" from="CanvasLayer/MemoryController/Dialogue Label/Dialogue Timer" to="CanvasLayer/MemoryController" method="_on_Dialogue_Timer_timeout"]
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 

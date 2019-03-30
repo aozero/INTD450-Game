@@ -10,6 +10,8 @@ script = ExtResource( 2 )
 
 [node name="Sprite3D" parent="CollisionShape" index="0"]
 
+transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 0, 1.48303e-010, 0.00339276 )
+pixel_size = 0.001
 texture = ExtResource( 3 )
 
 

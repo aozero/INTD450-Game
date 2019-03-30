@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/finale_lauren_dinners_ready.wav-c0dfb7390d3baa8a5d2b48e3aa286cce.sample"
+
+[deps]
+
+source_file="res://Sound/Effects/Memory/Finale Voices/finale_lauren_dinners_ready.wav"
+dest_files=[ "res://.import/finale_lauren_dinners_ready.wav-c0dfb7390d3baa8a5d2b48e3aa286cce.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

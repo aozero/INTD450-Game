@@ -1,6 +1,7 @@
-extends KinematicBody
+extends "res://Scripts/Items/Interactable.gd"
 
-var memory_text = ""
+var DIALOGUE # Container with TEXT, SOUND, and TEXT_TIME. Set by inherting classes
 
 func interact(player):
-	player.start_minor_memory(memory_text)
+	if !player.memory_controller.dialogue_audio.is_playing():
+		player.play_dialogue(DIALOGUE)

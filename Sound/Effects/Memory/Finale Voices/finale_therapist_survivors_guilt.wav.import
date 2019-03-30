@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/finale_therapist_survivors_guilt.wav-58d468f53d1a5152e92c5ed96ad81464.sample"
+
+[deps]
+
+source_file="res://Sound/Effects/Memory/Finale Voices/finale_therapist_survivors_guilt.wav"
+dest_files=[ "res://.import/finale_therapist_survivors_guilt.wav-58d468f53d1a5152e92c5ed96ad81464.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

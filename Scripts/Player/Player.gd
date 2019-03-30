@@ -3,11 +3,11 @@ extends KinematicBody
 # Script controlling the camera, player animations, input, and movement
 ##################################
 
-const RUN_SPEED = 4      
+const RUN_SPEED = 3.5      
 const SNEAK_SPEED = 2
 const BACKWARDS_SLOWDOWN = 0.5
 const MOUSE_SENS = 0.2
-const INTERACT_RANGE = 2 # Range player can interact with objects
+const INTERACT_RANGE = 1 # Range player can interact with objects
 ##################################
 
 onready var SOUND_MATCH_ON = load("res://Sound/Effects/Match/match_on.wav")
@@ -21,44 +21,47 @@ onready var match_burning_audio = $MatchBurningAudio
 onready var audio_fader = $AudioFader
 onready var music_player = get_node("/root/MusicPlayer")
 
-onready var item_sprite = $"CanvasLayer/ColorRect/TextureRect/Item Sprite"
+onready var memory_controller = $CanvasLayer/MemoryController
+onready var stamina_controller = $CanvasLayer/StaminaController
+onready var globals = get_node("/root/Globals")
 
-onready var anim_player = $AnimationPlayer
-onready var anim_hand = $"CanvasLayer/Control/Hand Sprite/HandAnimator"
+# Sprite to display in the center of the screen as it fades out from the memory
+export(Texture) var last_final_item_sprite setget set_last_final_item_sprite
+func set_last_final_item_sprite(tex):
+	last_final_item_sprite = tex
+
+onready var anim_hand = $"CanvasLayer/Hand/Hand Sprite/HandAnimator"
 onready var headbobber = $Headbobber
 onready var raycast = $RayCast
 onready var torch_collision_shape = $Torch/TorchArea/CollisionShape
 onready var prompt_label = $"CanvasLayer/Prompt Label"
-onready var dialogue_label = $"CanvasLayer/Dialogue Label"
-onready var dialogue_timer = $"CanvasLayer/Dialogue Label/Dialogue Timer"
+
 onready var torch = $Torch
 
 onready var start_pos = translation
 
 var game_over = false
 var dying = false
+var moving = false
 var running = false
-
-var in_memory = false
-var curr_final_item = null
 
 # Return "Player" instead of "KinematicBody" 
 # This is so we can check if an object is the player
 func get_class():
 	return "Player"
-	
-func _ready():
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	yield(get_tree(), "idle_frame")
-	
-	anim_player.play_backwards("Fade To Black")
-	set_torch(false)
 
-func _input(event):
-	if event.is_action_pressed("toggle_fullscreen"):
-		OS.window_fullscreen = !OS.window_fullscreen
+func _ready():
+	if globals.in_memory:
+		memory_controller.return_from_memory()
+	else:
+		memory_controller.return_from_death()
 	
-	if dying or in_memory: 
+	set_torch(false)
+	
+	yield(get_tree(), "idle_frame")
+
+func _input(event):	
+	if dying or globals.in_memory: 
 		return
 	
 	if event is InputEventMouseMotion:
@@ -68,16 +71,21 @@ func _input(event):
 		# Vertical camera
 		rotation_degrees.x -= MOUSE_SENS * event.relative.y
 		rotation_degrees.x = max(min(rotation_degrees.x, 85), -85)
-	
-
-func _process(delta):
-	if Input.is_action_pressed("exit"):
-		get_tree().quit()
-	if Input.is_action_pressed("restart"):
-		kill()
+		
+	# DEBUG: Teleport to level
+	if event.is_action_pressed("teleport_kitchen"):
+		get_tree().change_scene("res://Scenes/Worlds/Kitchen.tscn")
+	if event.is_action_pressed("teleport_study"):
+		get_tree().change_scene("res://Scenes/Worlds/Study.tscn")
+	if event.is_action_pressed("teleport_bedroom"):
+		get_tree().change_scene("res://Scenes/Worlds/Bedroom.tscn")
+	if event.is_action_pressed("teleport_finale"):
+		get_tree().change_scene("res://Scenes/Worlds/Finale.tscn")
+	if event.is_action_pressed("teleport_credits"):
+		get_tree().change_scene("res://Scenes/Credits.tscn")
 
 func _physics_process(delta):
-	if dying or in_memory:
+	if dying or globals.in_memory:
 		return
 	
 	# Move more slowly backwards
@@ -97,16 +105,16 @@ func _physics_process(delta):
 	move_vec = move_vec.rotated(Vector3(0, 1, 0), rotation.y)
 	
 	# Handling movement speed and headbob speed
-	running = false
+	moving = move_vec.x != 0 or move_vec.z != 0
+	running = moving && Input.is_action_pressed("run") && stamina_controller.can_run()
 	var move_speed = SNEAK_SPEED
 	headbobber.playback_speed = 1
 	# If we are actually moving:
-	if move_vec.x != 0 or move_vec.z != 0:
+	if moving:
 		if not headbobber.is_playing():
 			headbobber.play("headbob")
 		
-		if Input.is_action_pressed("run"):
-			running = true
+		if running:
 			move_speed = RUN_SPEED
 			headbobber.playback_speed = 2
 		
@@ -118,10 +126,13 @@ func _physics_process(delta):
 		if headbobber.is_playing():
 			headbobber.stop()
 			# Plays an animation that goes back to default position
-			headbobber.play("reset")  
+			headbobber.play("reset")
+	
+	stamina_controller.update_stamina(moving, running)
 	
 	# Actually move
 	move_and_slide(move_vec * move_speed)
+	translation.y = 0 # Stop player from climbing over some objects
 	
 	# Check for torch toggling
 	# TODO: Minor, but this would be better in an event based input system rather than checking constantly
@@ -167,7 +178,7 @@ func kill():
 	if not dying:
 		dying = true
 		music_player.play_dying()
-		anim_player.play("Fade To Black")
+		memory_controller.screen_animator.play("Fade To Black")
 
 func play_audio(stream):
 	audio_player.set_stream(stream)
@@ -180,56 +191,21 @@ func enable_interact_prompt():
 func disable_prompt():
 	prompt_label.visible_characters = 0
 
+# Called when interacting with final item
+# Starts the process, fading into the memory
 func start_final_memory(final_item):
-	# Don't want monsters to interrupt our reminiscing
-	get_tree().call_group("monsters", "kill")
-	
-	# Set up and play memory sequence
-	curr_final_item = final_item
-	dialogue_label.text = final_item.TEXT 
-	dialogue_label.visible_characters = -1
-	item_sprite.texture = final_item.sprite.texture
-	music_player.play_melody(final_item.MUSIC)
-	anim_player.play("Fade To Memory")
+	memory_controller.start_final_memory(final_item)
 
-func start_minor_memory(memory_text):
-	dialogue_label.text = memory_text 
-	dialogue_label.visible_characters = -1
-	dialogue_timer.start()
-
-func _on_Dialogue_Timer_timeout():
-	dialogue_label.visible_characters = 0
-
-# When animation player finishes any animation
-func _on_AnimationPlayer_animation_finished(anim_name):
-	if anim_name == "Fade To Black":
-		if game_over == true:
-			# Finished the game
-			get_tree().quit()
-		elif dying == true:
-			# We died, restart
-			get_tree().reload_current_scene()
-	
-	if anim_name == "Fade To Memory":
-		in_memory = true
-		set_torch(false)
-		play_audio(curr_final_item.SOUND)
-
-# When audio player finishes playing audio
-func _on_FirstPersonAudio_finished():
-	if in_memory:
-		in_memory = false 
-		anim_player.play("Fade From Memory")
-		music_player.stop_melody()
-		dialogue_label.visible_characters = 0
-		
-		curr_final_item.after_memory()
+# Plays sound and displays text 
+func play_dialogue(dialogue):
+	memory_controller.play_dialogue(dialogue)
 
 # When timer finishes
 func _on_Timer_timeout():
 	game_over = true
-	anim_player.play("Fade To Black")
+	memory_controller.screen_animator.play("Fade To Black")
 
+# When finishing lighting or unlighting match, play the correct idle anim (match flicker or nothing)
 func _on_HandAnimator_animation_finished(anim_name):
 	if anim_name == "light":
 		if torch.visible:
@@ -237,3 +213,5 @@ func _on_HandAnimator_animation_finished(anim_name):
 		else:
 			anim_hand.play("idle_off")
 	
+
+

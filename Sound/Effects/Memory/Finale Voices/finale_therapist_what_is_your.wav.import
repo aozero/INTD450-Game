@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/finale_therapist_what_is_your.wav-f34ee411e8d94d68e40ad2eb831231e3.sample"
+
+[deps]
+
+source_file="res://Sound/Effects/Memory/Finale Voices/finale_therapist_what_is_your.wav"
+dest_files=[ "res://.import/finale_therapist_what_is_your.wav-f34ee411e8d94d68e40ad2eb831231e3.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
