@@ -273,7 +273,7 @@ use_filter = true
 font_data = ExtResource( 4 )
 _sections_unfolded = [ "Settings" ]
 
-[node name="BackgroundRect" type="ColorRect"]
+[node name="BackgroundRect" type="ColorRect" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -512,7 +512,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = SubResource( 9 )
-text = "With Grandfather gone, everything is mine, but it’ll never feel that way "
+text = "With Grandpa gone, everything is mine, but it’ll never feel that way "
 autowrap = true
 percent_visible = 1.0
 lines_skipped = 0
