@@ -161,6 +161,17 @@ on = true
 [node name="ItemDrawing" parent="Navigation/NavigationMeshInstance/Kitchen-Study Connector/Stove" index="2" instance=ExtResource( 12 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.97527, 0, -0.538973 )
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 32
+collision_mask = 0
+axis_lock_linear_x = false
+axis_lock_linear_y = false
+axis_lock_linear_z = false
+axis_lock_angular_x = false
+axis_lock_angular_y = false
+axis_lock_angular_z = false
+collision/safe_margin = 0.001
 _sections_unfolded = [ "Collision", "Transform" ]
 burning = true
 
@@ -170,6 +181,7 @@ transform = Transform( -0.318889, 0, -0.947792, 0, 1, 0, 0.947792, 0, -0.318889,
 
 [node name="Foliage Decoration" type="Spatial" parent="Navigation/NavigationMeshInstance" index="8"]
 
+editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.50793, 0, -8.54125 )
 
 [node name="Nooks" type="Spatial" parent="Navigation/NavigationMeshInstance/Foliage Decoration" index="0"]
@@ -494,18 +506,28 @@ transform = Transform( -0.632099, 0, -0.774888, 0, 1, 0, 0.774888, 0, -0.632099,
 
 [node name="Study-Bedroom Connector" parent="Navigation/NavigationMeshInstance" index="12" instance=ExtResource( 22 )]
 
-editor/display_folded = true
 transform = Transform( 0.999993, 0, 0.00390911, 0, 1, 0, -0.00390911, 0, 0.999993, -21.8133, 0, -24.9861 )
 
 [node name="Fireplace" parent="Navigation/NavigationMeshInstance/Study-Bedroom Connector" index="2" instance=ExtResource( 23 )]
 
-editor/display_folded = true
 transform = Transform( 0.645151, 0, 0.764056, 0, 1, 0, -0.764056, 0, 0.645151, 2.79628, 0, -0.385605 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="ItemTapshoe" parent="Navigation/NavigationMeshInstance/Study-Bedroom Connector/Fireplace" index="2" instance=ExtResource( 24 )]
 
-transform = Transform( 0.642158, 0, -0.766571, 0, 1, 0, 0.766571, 0, 0.642158, -0.256848, 0, 2.04288 )
+transform = Transform( 0.642158, 0, -0.766571, 0, 1, 0, 0.766571, 0, 0.642158, -0.010027, 0, 1.76035 )
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 32
+collision_mask = 0
+axis_lock_linear_x = false
+axis_lock_linear_y = false
+axis_lock_linear_z = false
+axis_lock_angular_x = false
+axis_lock_angular_y = false
+axis_lock_angular_z = false
+collision/safe_margin = 0.001
+_sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="TreeStrip" parent="Navigation/NavigationMeshInstance/Study-Bedroom Connector" index="3" instance=ExtResource( 13 )]
 

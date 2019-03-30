@@ -191,7 +191,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0.3, 0.4, 2.5 ),
+"times": PoolRealArray( 0.3, 0.4, 2.3 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
 "values": [ false, true, false ]
@@ -239,7 +239,7 @@ tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0.3, 0.9, 1.5, 2.1 ),
+"times": PoolRealArray( 0.3, 0.8, 1, 2 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 1, 1, 1 ), Color( 0.886719, 0.24939, 0, 1 ), Color( 1, 0, 0, 1 ), Color( 0, 0, 0, 1 ) ]
@@ -348,13 +348,16 @@ shape = SubResource( 1 )
 
 [node name="Sprite3D" parent="CollisionShape" index="0"]
 
+offset = Vector2( -187, 0 )
+modulate = Color( 0, 0, 0, 1 )
 pixel_size = 0.002
-region_rect = Rect2( 0, 0, 187, 178 )
+region_enabled = true
+region_rect = Rect2( -187, 0, 187, 178 )
 _sections_unfolded = [ "Animation", "Flags", "Geometry", "LOD", "Region", "Transform", "Visibility" ]
 
 [node name="BurnParticles" type="Particles" parent="CollisionShape/Sprite3D" index="0"]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.166993 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.166993 )
 layers = 1
 material_override = null
 cast_shadow = 1
