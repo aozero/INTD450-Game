@@ -9,6 +9,7 @@ var BURN_ANIM_NAME = "burn"
 onready var sprite = $CollisionShape/Sprite3D
 onready var interactable_particles = $Particles
 onready var burn_anim_player = $BurnAnimPlayer
+onready var burn_audio = $BurningAudio
 onready var globals = get_node("/root/Globals")
 
 var interacted_with = false
@@ -22,6 +23,7 @@ func _ready():
 			sprite.material_override.vertex_color_use_as_albedo = true
 			translation.y = 0.4
 			burn_anim_player.play(BURN_ANIM_NAME)
+			burn_audio.play()
 		else:
 			visible = false
 
@@ -37,7 +39,8 @@ func after_memory():
 	kill()
 
 func _on_Timer_timeout():
-	music_player.play()
+	if not burning:
+		music_player.play()
 
 func kill():
 	queue_free()
