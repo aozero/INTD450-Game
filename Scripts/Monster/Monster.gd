@@ -12,10 +12,10 @@ onready var NORMAL_ANIM_SPEED = float(NORMAL_SPEED) / ALERTED_SPEED
 const SLOW_DOWN_DURATION = 2
 
 # How far the monster can see the player when player is dark or lit
-const DETECT_DARK_WALK_RANGE = 4
-const DETECT_LIT_WALK_RANGE = 8
-const DETECT_DARK_RUN_RANGE = 8
-const DETECT_LIT_RUN_RANGE = 12
+const DETECT_DARK_WALK_RANGE = 3
+const DETECT_LIT_WALK_RANGE = 7
+const DETECT_DARK_RUN_RANGE = 7
+const DETECT_LIT_RUN_RANGE = 11
 ##################################
 
 onready var SOUND_ALERTED = load("res://Sound/Effects/Monster/brain_boi_alerted.wav")
