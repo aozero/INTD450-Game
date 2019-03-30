@@ -1,7 +1,10 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Scenes/Foliage/BGForestSmall.tscn" type="PackedScene" id=1]
 
+[sub_resource type="BoxShape" id=1]
+
+extents = Vector3( 0.5, 1, 1.6 )
 
 [node name="BGForestMedium" type="Spatial" index="0"]
 
@@ -11,12 +14,50 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 _sections_unfolded = [ "Transform" ]
 
-[node name="BGForestSmall2" parent="." index="1" instance=ExtResource( 1 )]
+[node name="GapFiller" type="StaticBody" parent="." index="1"]
+
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.93914, 0, 0 )
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 1
+friction = 1.0
+bounce = 0.0
+constant_linear_velocity = Vector3( 0, 0, 0 )
+constant_angular_velocity = Vector3( 0, 0, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="GapFiller" index="0"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0614958, 0, 0 )
+shape = SubResource( 1 )
+disabled = false
+
+[node name="BGForestSmall2" parent="." index="2" instance=ExtResource( 1 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.01221, 0, 0 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="BGForestSmall3" parent="." index="2" instance=ExtResource( 1 )]
+[node name="GapFiller2" type="StaticBody" parent="." index="3"]
+
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.08501, 0, 0 )
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 1
+friction = 1.0
+bounce = 0.0
+constant_linear_velocity = Vector3( 0, 0, 0 )
+constant_angular_velocity = Vector3( 0, 0, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="GapFiller2" index="0"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0614958, 0, 0 )
+shape = SubResource( 1 )
+disabled = false
+
+[node name="BGForestSmall3" parent="." index="4" instance=ExtResource( 1 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.0405, 0, 0 )
 _sections_unfolded = [ "Transform" ]
