@@ -77,12 +77,9 @@ transform = Transform( 1, 0, 2.98023e-008, 0, 1, 0, -2.98023e-008, 0, 1, 8.988, 
 
 [node name="Bedroom Starting Area" type="Spatial" parent="." index="1"]
 
-editor/display_folded = true
 transform = Transform( -0.8147, 0, -0.579883, 0, 1, 0, 0.579883, 0, -0.8147, -3.87168, 0, -4.12418 )
 
 [node name="Boundaries" type="Spatial" parent="Bedroom Starting Area" index="0"]
-
-editor/display_folded = true
 
 [node name="BGForestSmall9" parent="Bedroom Starting Area/Boundaries" index="0" instance=ExtResource( 5 )]
 
@@ -106,7 +103,7 @@ transform = Transform( -0.998944, 0, 0.0459501, 0, 1, 0, -0.0459501, 0, -0.99894
 
 [node name="BGForestSmall8" parent="Bedroom Starting Area/Boundaries" index="5" instance=ExtResource( 5 )]
 
-transform = Transform( -0.900895, 0, -0.434036, 0, 1, 0, 0.434036, 0, -0.900895, 9.21453, 0, 6.08772 )
+transform = Transform( -0.999519, 0, -0.0310039, 0, 1, 0, 0.0310039, 0, -0.999519, 9.21453, 0, 7.27423 )
 
 [node name="Decoration" type="Spatial" parent="Bedroom Starting Area" index="1"]
 
