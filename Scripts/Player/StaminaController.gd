@@ -7,8 +7,8 @@ extends ColorRect
 	before they can sprint again.
 """
 
-const MAX_STAMINA = 1200
-const EXHAUSTION_MIN = 400
+const MAX_STAMINA = 2400
+const EXHAUSTION_MIN = 600
 const STAMINA_STILL = 4
 const STAMINA_WALKING = 2
 const STAMINA_RUNNING = -6
