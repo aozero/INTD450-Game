@@ -162,14 +162,23 @@ func set_torch(on):
 		match_burning_audio.play()
 		audio_fader.play("fade in burning")
 		play_audio(SOUND_MATCH_ON)
-		anim_hand.play("light")
+		anim_hand.play("light_on")
 	elif !on && torch.visible:
 		match_burning_audio.stop()
 		play_audio(SOUND_MATCH_OFF)
-		anim_hand.play_backwards("light")
-	
-	torch.visible = on
-	torch_collision_shape.disabled = !on
+		anim_hand.play_backwards("light_off")
+
+# When finishing lighting or unlighting match, 
+# play the correct idle anim (match flicker or nothing) and change light
+func _on_HandAnimator_animation_finished(anim_name):
+	if anim_name == "light_on":
+		torch.visible = true
+		torch_collision_shape.disabled = false
+		anim_hand.play("idle_on")
+	elif anim_name == "light_off":
+		torch.visible = false
+		torch_collision_shape.disabled = true
+		anim_hand.play("idle_off")
 
 func get_torch_visible():
 	return torch.visible
@@ -204,14 +213,3 @@ func play_dialogue(dialogue):
 func _on_Timer_timeout():
 	game_over = true
 	memory_controller.screen_animator.play("Fade To Black")
-
-# When finishing lighting or unlighting match, play the correct idle anim (match flicker or nothing)
-func _on_HandAnimator_animation_finished(anim_name):
-	if anim_name == "light":
-		if torch.visible:
-			anim_hand.play("idle_on")
-		else:
-			anim_hand.play("idle_off")
-	
-
-
