@@ -6,7 +6,7 @@ extends KinematicBody
 const RUN_SPEED = 3.5      
 const SNEAK_SPEED = 2
 const BACKWARDS_SLOWDOWN = 0.5
-const MOUSE_SENS = 0.2
+const MOUSE_SENS = 0.1
 const INTERACT_RANGE = 1 # Range player can interact with objects
 ##################################
 
