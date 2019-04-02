@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Scenes/Worlds/World.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/ForestNoise.tscn" type="PackedScene" id=2]
@@ -15,7 +15,9 @@
 [ext_resource path="res://Sound/Effects/Memory/Finale Voices/finale_ellis_she_feels_guilty.wav" type="AudioStream" id=13]
 [ext_resource path="res://Scenes/Foliage/BGForestMedium.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Scenes/Foliage/BGForestSmall.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Scenes/Door.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Scripts/Fires/FireTrigger.gd" type="Script" id=16]
+[ext_resource path="res://Scenes/Fires/FireStrip.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Scenes/Door.tscn" type="PackedScene" id=18]
 
 [sub_resource type="NavigationMesh" id=1]
 
@@ -39,6 +41,10 @@ filter/low_hanging_obstacles = false
 filter/ledge_spans = false
 filter/filter_walkable_low_height_spans = false
 _sections_unfolded = [ "agent" ]
+
+[sub_resource type="BoxShape" id=2]
+
+extents = Vector3( 2, 1, 1 )
 
 [node name="World" index="0" instance=ExtResource( 1 )]
 
@@ -160,12 +166,193 @@ transform = Transform( 0.711511, 0, 0.702675, 0, 1, 0, -0.702675, 0, 0.711511, -
 
 transform = Transform( -0.455746, 0, -0.89011, 0, 1, 0, 0.89011, 0, -0.455746, 2.91021, 0, 10.7937 )
 
+[node name="Fires" type="Spatial" parent="Navigation/NavigationMeshInstance" index="2"]
+
+script = ExtResource( 16 )
+
+[node name="FireStrip" parent="Navigation/NavigationMeshInstance/Fires" index="0" instance=ExtResource( 17 )]
+
+transform = Transform( 0.756325, 0, 0.654196, 0, 1, 0, -0.654196, 0, 0.756325, -19.0371, 0, -12.3129 )
+
+[node name="FireTrigger" type="Area" parent="Navigation/NavigationMeshInstance/Fires" index="1"]
+
+editor/display_folded = true
+transform = Transform( 0.997582, 0, 0.0695051, 0, 1, 0, -0.0695051, 0, 0.997582, -4.73564, 0, 3.53886 )
+input_ray_pickable = false
+input_capture_on_drag = false
+space_override = 0
+gravity_point = false
+gravity_distance_scale = 0.0
+gravity_vec = Vector3( 0, -1, 0 )
+gravity = 9.8
+linear_damp = 0.1
+angular_damp = 1.0
+priority = 0.0
+monitoring = true
+monitorable = true
+collision_layer = 1
+collision_mask = 1
+audio_bus_override = false
+audio_bus_name = "Master"
+reverb_bus_enable = false
+reverb_bus_name = "Master"
+reverb_bus_amount = 0.0
+reverb_bus_uniformity = 0.0
+
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Fires/FireTrigger" index="0"]
+
+transform = Transform( 0.776779, 0, 0.629773, 0, 1, 0, -0.629773, 0, 0.776779, 0, 0, 0 )
+shape = SubResource( 2 )
+disabled = false
+
+[node name="FireStrip8" parent="Navigation/NavigationMeshInstance/Fires/FireTrigger" index="1" instance=ExtResource( 17 )]
+
+transform = Transform( 0.604171, 0, -0.796855, 0, 1, 0, 0.796854, 0, 0.604172, -3.99762, 0, 0.919086 )
+visible = false
+
+[node name="FireStrip9" parent="Navigation/NavigationMeshInstance/Fires/FireTrigger" index="2" instance=ExtResource( 17 )]
+
+transform = Transform( 0.604171, 0, -0.796854, 0, 1, 0, 0.796854, 0, 0.604171, 1.24701, 0, -3.4984 )
+visible = false
+
+[node name="FireTrigger2" type="Area" parent="Navigation/NavigationMeshInstance/Fires" index="2"]
+
+editor/display_folded = true
+transform = Transform( 0.997582, 0, 0.0695051, 0, 1, 0, -0.0695051, 0, 0.997582, -8.2141, 0, -0.605472 )
+input_ray_pickable = false
+input_capture_on_drag = false
+space_override = 0
+gravity_point = false
+gravity_distance_scale = 0.0
+gravity_vec = Vector3( 0, -1, 0 )
+gravity = 9.8
+linear_damp = 0.1
+angular_damp = 1.0
+priority = 0.0
+monitoring = true
+monitorable = true
+collision_layer = 1
+collision_mask = 1
+audio_bus_override = false
+audio_bus_name = "Master"
+reverb_bus_enable = false
+reverb_bus_name = "Master"
+reverb_bus_amount = 0.0
+reverb_bus_uniformity = 0.0
+
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Fires/FireTrigger2" index="0"]
+
+transform = Transform( 0.776779, 0, 0.629773, 0, 1, 0, -0.629773, 0, 0.776779, 0, 0, 0 )
+shape = SubResource( 2 )
+disabled = false
+
+[node name="FireStrip8" parent="Navigation/NavigationMeshInstance/Fires/FireTrigger2" index="1" instance=ExtResource( 17 )]
+
+transform = Transform( 0.604171, 0, -0.796855, 0, 1, 0, 0.796854, 0, 0.604172, -3.99762, 0, 0.919086 )
+visible = false
+
+[node name="FireStrip9" parent="Navigation/NavigationMeshInstance/Fires/FireTrigger2" index="2" instance=ExtResource( 17 )]
+
+transform = Transform( 0.604171, 0, -0.796854, 0, 1, 0, 0.796854, 0, 0.604171, 1.24701, 0, -3.4984 )
+visible = false
+
+[node name="FireTrigger3" type="Area" parent="Navigation/NavigationMeshInstance/Fires" index="3"]
+
+editor/display_folded = true
+transform = Transform( 0.997582, 0, 0.0695051, 0, 1, 0, -0.0695051, 0, 0.997582, -11.5908, 0, -4.57611 )
+input_ray_pickable = false
+input_capture_on_drag = false
+space_override = 0
+gravity_point = false
+gravity_distance_scale = 0.0
+gravity_vec = Vector3( 0, -1, 0 )
+gravity = 9.8
+linear_damp = 0.1
+angular_damp = 1.0
+priority = 0.0
+monitoring = true
+monitorable = true
+collision_layer = 1
+collision_mask = 1
+audio_bus_override = false
+audio_bus_name = "Master"
+reverb_bus_enable = false
+reverb_bus_name = "Master"
+reverb_bus_amount = 0.0
+reverb_bus_uniformity = 0.0
+
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Fires/FireTrigger3" index="0"]
+
+transform = Transform( 0.776779, 0, 0.629773, 0, 1, 0, -0.629773, 0, 0.776779, 0, 0, 0 )
+shape = SubResource( 2 )
+disabled = false
+
+[node name="FireStrip8" parent="Navigation/NavigationMeshInstance/Fires/FireTrigger3" index="1" instance=ExtResource( 17 )]
+
+transform = Transform( 0.604171, 0, -0.796855, 0, 1, 0, 0.796854, 0, 0.604172, -3.99762, 0, 0.919086 )
+visible = false
+
+[node name="FireStrip9" parent="Navigation/NavigationMeshInstance/Fires/FireTrigger3" index="2" instance=ExtResource( 17 )]
+
+transform = Transform( 0.604171, 0, -0.796854, 0, 1, 0, 0.796854, 0, 0.604171, 1.24701, 0, -3.4984 )
+visible = false
+
+[node name="FireTrigger4" type="Area" parent="Navigation/NavigationMeshInstance/Fires" index="4"]
+
+editor/display_folded = true
+transform = Transform( 0.997462, 0, 0.0712005, 0, 1, 0, -0.0712005, 0, 0.997462, -15.5099, 0, -8.96564 )
+input_ray_pickable = false
+input_capture_on_drag = false
+space_override = 0
+gravity_point = false
+gravity_distance_scale = 0.0
+gravity_vec = Vector3( 0, -1, 0 )
+gravity = 9.8
+linear_damp = 0.1
+angular_damp = 1.0
+priority = 0.0
+monitoring = true
+monitorable = true
+collision_layer = 1
+collision_mask = 1
+audio_bus_override = false
+audio_bus_name = "Master"
+reverb_bus_enable = false
+reverb_bus_name = "Master"
+reverb_bus_amount = 0.0
+reverb_bus_uniformity = 0.0
+
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Fires/FireTrigger4" index="0"]
+
+transform = Transform( 0.776779, 0, 0.629773, 0, 1, 0, -0.629773, 0, 0.776779, 0, 0, 0 )
+shape = SubResource( 2 )
+disabled = false
+
+[node name="FireStrip8" parent="Navigation/NavigationMeshInstance/Fires/FireTrigger4" index="1" instance=ExtResource( 17 )]
+
+transform = Transform( 0.604171, 0, -0.796855, 0, 1, 0, 0.796854, 0, 0.604172, -3.99762, 0, 0.919086 )
+visible = false
+
+[node name="FireStrip9" parent="Navigation/NavigationMeshInstance/Fires/FireTrigger4" index="2" instance=ExtResource( 17 )]
+
+transform = Transform( 0.604171, 0, -0.796854, 0, 1, 0, 0.796854, 0, 0.604171, 1.24701, 0, -3.4984 )
+visible = false
+
 [node name="Player" parent="." index="12"]
 
-transform = Transform( 0.701325, 0, 0.712841, 0, 1, 0, -0.712841, 0, 0.701325, -1.83261, 0, 6.88669 )
+transform = Transform( 0.724116, 0, 0.689677, 0, 1, 0, -0.689677, 0, 0.724116, -1.83261, 0, 6.88669 )
+in_finale = true
 
-[node name="The Door" parent="." index="15" instance=ExtResource( 16 )]
+[node name="The Door" parent="." index="15" instance=ExtResource( 18 )]
 
-transform = Transform( 0.777477, 0, 0.628911, 0, 1, 0, -0.628911, 0, 0.777477, -15.6831, -0.1, -8.04814 )
+transform = Transform( 0.753107, 0, 0.657897, 0, 1, 0, -0.657897, 0, 0.753107, -16.966, 0, -9.23353 )
+
+[connection signal="body_entered" from="Navigation/NavigationMeshInstance/Fires/FireTrigger" to="Navigation/NavigationMeshInstance/Fires" method="_on_FireTrigger_body_entered"]
+
+[connection signal="body_entered" from="Navigation/NavigationMeshInstance/Fires/FireTrigger2" to="Navigation/NavigationMeshInstance/Fires" method="_on_FireTrigger2_body_entered"]
+
+[connection signal="body_entered" from="Navigation/NavigationMeshInstance/Fires/FireTrigger3" to="Navigation/NavigationMeshInstance/Fires" method="_on_FireTrigger3_body_entered"]
+
+[connection signal="body_entered" from="Navigation/NavigationMeshInstance/Fires/FireTrigger4" to="Navigation/NavigationMeshInstance/Fires" method="_on_FireTrigger4_body_entered"]
 
 
