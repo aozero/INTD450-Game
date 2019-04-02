@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://Scenes/Fires/StripSmallFire.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Scenes/Fires/FireLight.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scripts/Fires/FireStrip.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Fires/StripSmallFire.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Fires/FireWallSound.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Fires/FireLight.tscn" type="PackedScene" id=4]
 
 [sub_resource type="BoxShape" id=1]
 
@@ -77,56 +79,46 @@ friction = 1.0
 bounce = 0.0
 constant_linear_velocity = Vector3( 0, 0, 0 )
 constant_angular_velocity = Vector3( 0, 0, 0 )
-_sections_unfolded = [ "Transform" ]
+script = ExtResource( 1 )
+_sections_unfolded = [ "Pause", "Transform" ]
 
 [node name="Trees" type="Spatial" parent="." index="0"]
 
+editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.2, -0.104329 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="SmallFire" parent="Trees" index="0" instance=ExtResource( 1 )]
+[node name="SmallFire" parent="Trees" index="0" instance=ExtResource( 2 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.19372, -1, 0.1148 )
 
-[node name="SmallFire8" parent="Trees" index="1" instance=ExtResource( 1 )]
+[node name="SmallFire8" parent="Trees" index="1" instance=ExtResource( 2 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.61702, -1, -0.172001 )
 
-[node name="SmallFire4" parent="Trees" index="2" instance=ExtResource( 1 )]
+[node name="SmallFire4" parent="Trees" index="2" instance=ExtResource( 2 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.07584, -1, 0.0102541 )
 
-[node name="SmallFire7" parent="Trees" index="3" instance=ExtResource( 1 )]
+[node name="SmallFire7" parent="Trees" index="3" instance=ExtResource( 2 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.474493, -1, -0.200198 )
 
-[node name="SmallFire2" parent="Trees" index="4" instance=ExtResource( 1 )]
+[node name="SmallFire2" parent="Trees" index="4" instance=ExtResource( 2 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.138366, -1, 0.13138 )
 
-[node name="SmallFire6" parent="Trees" index="5" instance=ExtResource( 1 )]
+[node name="SmallFire6" parent="Trees" index="5" instance=ExtResource( 2 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.890688, -1, -0.189168 )
 
-[node name="SmallFire3" parent="Trees" index="6" instance=ExtResource( 1 )]
+[node name="SmallFire3" parent="Trees" index="6" instance=ExtResource( 2 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.57186, -1, 0.132682 )
 
-[node name="SmallFire5" parent="Trees" index="7" instance=ExtResource( 1 )]
+[node name="SmallFire5" parent="Trees" index="7" instance=ExtResource( 2 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.45514, -1, 0 )
-
-[node name="FireLight" parent="Trees" index="8" instance=ExtResource( 2 )]
-
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0, 0 )
-light_energy = 2.0
-light_cull_mask = -540673
-
-[node name="FireLight2" parent="Trees" index="9" instance=ExtResource( 2 )]
-
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0, 0 )
-light_energy = 2.0
-light_cull_mask = -540673
 
 [node name="CollisionShape" type="CollisionShape" parent="." index="1"]
 
@@ -150,5 +142,28 @@ mesh = SubResource( 2 )
 skeleton = NodePath("..")
 material/0 = SubResource( 3 )
 _sections_unfolded = [ "Visibility", "material" ]
+
+[node name="FireWallSound" parent="." index="3" instance=ExtResource( 3 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.5, 0 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="FireWallSound2" parent="." index="4" instance=ExtResource( 3 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.5, 0 )
+
+[node name="FireLight" parent="." index="5" instance=ExtResource( 4 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5, 0.5, 0 )
+light_energy = 2.0
+light_cull_mask = -540673
+
+[node name="FireLight2" parent="." index="6" instance=ExtResource( 4 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5, 0.5, 0 )
+light_energy = 2.0
+light_cull_mask = -540673
+
+[connection signal="visibility_changed" from="." to="." method="_on_FireStrip_visibility_changed"]
 
 
