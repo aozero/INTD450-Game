@@ -87,7 +87,7 @@ func _ready():
 	###############################
 	# Ice Skate
 	BEDROOM_1.SOUND = load("res://Sound/Effects/Memory/Minor Items/bedroom_iceskate_memory.wav")
-	BEDROOM_1.TEXT = "Riley: I th-thought... th-the ice w-was th-thick en-enough t-to skate on."
+	BEDROOM_1.TEXT = "Riley: Jamie, watch me! Look at me, I'm a dancer!"
 	BEDROOM_1.TEXT_TIME = 8
 	
 	# Small Painting Easel
