@@ -282,6 +282,8 @@ _sections_unfolded = [ "Draw Passes", "Drawing", "Process Material", "Time" ]
 
 [node name="FireLight" parent="CollisionShape/Spatial/Sprite3D" index="2" instance=ExtResource( 4 )]
 
+light_cull_mask = -16385
+
 [node name="MeshInstance" type="MeshInstance" parent="CollisionShape" index="1"]
 
 visible = false

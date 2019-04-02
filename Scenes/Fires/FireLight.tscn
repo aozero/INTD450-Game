@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Scripts/Fires/FireLight.gd" type="Script" id=1]
 
-[node name="FireLight" type="OmniLight" index="0"]
+[node name="FireLight" type="OmniLight"]
 
 layers = 1
 light_color = Color( 0.992188, 0.810028, 0.878338, 1 )

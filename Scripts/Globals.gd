@@ -73,3 +73,7 @@ var in_memory = false
 var tree_frame_array = [1, 0, 0, 3, 1, 2, 2, 0, 1, 2, 3, 0, 1, 2] # Distribution of trees that gets cycled through
 var tree_ind = 0              # Current position in tree_frame_array
 var tree_nums = [0, 0, 0, 0]  # Counts for each kind of tree
+
+# Variables that are global between each SmallFire
+var fire_start_array = [0, 0.72, 0.36, 1.08, 0.12, 0.48, 1.44, 0.24, 1.2, 0.6, 1.32, 0.74, 0.96]
+var fire_ind = 0       

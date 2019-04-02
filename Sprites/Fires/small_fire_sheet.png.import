@@ -2,17 +2,16 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/small_fire_sheet.png-eaa0db1d6da490a0e7973028258b8c3a.s3tc.stex"
-path.etc2="res://.import/small_fire_sheet.png-eaa0db1d6da490a0e7973028258b8c3a.etc2.stex"
+path="res://.import/small_fire_sheet.png-eaa0db1d6da490a0e7973028258b8c3a.stex"
 
 [deps]
 
 source_file="res://Sprites/Fires/small_fire_sheet.png"
-dest_files=[ "res://.import/small_fire_sheet.png-eaa0db1d6da490a0e7973028258b8c3a.s3tc.stex", "res://.import/small_fire_sheet.png-eaa0db1d6da490a0e7973028258b8c3a.etc2.stex" ]
+dest_files=[ "res://.import/small_fire_sheet.png-eaa0db1d6da490a0e7973028258b8c3a.stex" ]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
