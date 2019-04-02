@@ -137,11 +137,13 @@ attenuation_model = 0
 bus = "Voice"
 time_between_sounds = 2
 
-[node name="Finale Riley Voice 3" parent="." index="11" instance=ExtResource( 2 )]
+[node name="Finale Riley Help" parent="." index="11" instance=ExtResource( 2 )]
 
-transform = Transform( 0.996046, 0, 0.088843, 0, 1, 0, -0.088843, 0, 0.996046, -16.9536, 0, -9.20916 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.8459, 0, -10.3371 )
 stream = ExtResource( 14 )
 attenuation_model = 0
+unit_db = -5.0
+unit_size = 2.0
 bus = "Voice"
 time_between_sounds = 2
 
