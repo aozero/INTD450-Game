@@ -80,10 +80,7 @@ func end_final_memory():
 	curr_final_item.after_memory()
 
 # We are returning from a memory
-func return_from_memory():
-	if player.last_final_item_sprite != null:
-		item_sprite.texture = player.last_final_item_sprite
-	
+func return_from_memory():	
 	screen_rect.color = SCREEN_MEMORY_COLOR
 	screen_animator.play("Fade From Memory")
 	

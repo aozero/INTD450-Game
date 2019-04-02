@@ -25,11 +25,6 @@ onready var memory_controller = $CanvasLayer/MemoryController
 onready var stamina_controller = $CanvasLayer/StaminaController
 onready var globals = get_node("/root/Globals")
 
-# Sprite to display in the center of the screen as it fades out from the memory
-export(Texture) var last_final_item_sprite setget set_last_final_item_sprite
-func set_last_final_item_sprite(tex):
-	last_final_item_sprite = tex
-
 onready var anim_hand = $"CanvasLayer/Hand/Hand Sprite/HandAnimator"
 onready var headbobber = $Headbobber
 onready var raycast = $RayCast
@@ -39,6 +34,8 @@ onready var prompt_label = $"CanvasLayer/Prompt Label"
 onready var torch = $Torch
 
 onready var start_pos = translation
+
+export var in_finale = false
 
 var game_over = false
 var dying = false
@@ -136,14 +133,14 @@ func _physics_process(delta):
 	
 	# Check for torch toggling
 	# TODO: Minor, but this would be better in an event based input system rather than checking constantly
-	if Input.is_action_pressed("shoot") and anim_hand.current_animation != "light":
+	if !in_finale and Input.is_action_pressed("shoot") and anim_hand.current_animation != "light":
 		toggle_torch()
 	
 	# Check if player is looking at anything interactable that is within range
 	var coll = raycast.get_collider()
 	if raycast.is_colliding() and coll != null and coll.has_method("interact"): 
 		#  Can only interact if close and the match is on
-		if raycast.get_collision_point().distance_to(translation) < INTERACT_RANGE && torch.visible:
+		if raycast.get_collision_point().distance_to(translation) < INTERACT_RANGE and (in_finale or torch.visible):
 				enable_interact_prompt()
 				
 				if Input.is_action_pressed("interact"):
