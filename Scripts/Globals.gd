@@ -2,6 +2,19 @@ extends Node
 
 # OPTIONS
 ########################################
+# AUDIO
+# SUBTITLES
+const NONE = 0
+const ENGLISH = 1
+var subtitles = NONE setget set_subtitles, get_subtitles
+
+func set_subtitles(value):
+	subtitles = value
+
+func get_subtitles():
+	return subtitles
+
+# DISPLAY
 # FULLSCREEN
 func set_fullscreen(value):
 	OS.window_fullscreen = value

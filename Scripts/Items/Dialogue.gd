@@ -33,18 +33,21 @@ func _ready():
 	TUTORIAL_1.SOUND = load("res://Sound/Effects/Memory/Minor Items/silence.wav")
 	TUTORIAL_1.TEXT = "Use WASD to move and mouse to look."
 	TUTORIAL_1.TEXT_TIME = 16
+	TUTORIAL_1.ALWAYS_SHOW_TEXT = true
 	
 	# Right after moving past the campfire
 	var run_button = get_action_button_text("run")
 	TUTORIAL_2.SOUND = load("res://Sound/Effects/Memory/Minor Items/silence.wav")
 	TUTORIAL_2.TEXT = "Running (Hold " + run_button + ") in the forest makes a lot of noise. "
 	TUTORIAL_2.TEXT_TIME = 16
+	TUTORIAL_2.ALWAYS_SHOW_TEXT = true
 	
 	# At the very edge of the campfire's light
 	var light_button = get_action_button_text("shoot")
 	TUTORIAL_3.SOUND = load("res://Sound/Effects/Memory/Minor Items/silence.wav")
 	TUTORIAL_3.TEXT = "Lighting a match (" + light_button + ") will make it easier to see... and be seen."
 	TUTORIAL_3.TEXT_TIME = 16
+	TUTORIAL_3.ALWAYS_SHOW_TEXT = true
 	###############################
 	
 	# Kitchen
@@ -53,15 +56,18 @@ func _ready():
 	KITCHEN_1.SOUND = load("res://Sound/Effects/Memory/Minor Items/kitchen_cookiejar_memory.wav")
 	KITCHEN_1.TEXT = "Riley: Oatmeal raisin! I thought they were chocolate chip? This is jar is full of LIES!"
 	KITCHEN_1.TEXT_TIME = 8
+	KITCHEN_1.ALWAYS_SHOW_TEXT = false
 	
 	# Coffee Mug
 	KITCHEN_2.SOUND = load("res://Sound/Effects/Memory/Minor Items/kitchen_coffeemug_memory.wav")
 	KITCHEN_2.TEXT = "Mom: Oh NOW you don’t like your sandwich? Come on, you would have never known it was vegan cheese if I hadn't told you. The store said it tasted exactly the same."
 	KITCHEN_2.TEXT_TIME = 10
+	KITCHEN_2.ALWAYS_SHOW_TEXT = false
 	
 	# Drawing of Clubhouse
 	KITCHEN_FINAL.SOUND = load("res://Sound/Effects/Memory/Final Items/kitchen_memory.wav")
 	KITCHEN_FINAL.TEXT = "Riley: Too slow, Jamie. If you want me to drop the ladder, you gotta give me the password."
+	KITCHEN_FINAL.ALWAYS_SHOW_TEXT = false
 	KITCHEN_FINAL.MUSIC = load("res://Sound/Music/KitchenMemory.wav")
 	###############################
 	
@@ -71,15 +77,18 @@ func _ready():
 	STUDY_1.SOUND = load("res://Sound/Effects/Memory/Minor Items/study_shipinabottle_memory.wav")
 	STUDY_1.TEXT = "Riley: I'm sorry, Daddy! It was an accident, I swear. I didn't think the ball would go that far."
 	STUDY_1.TEXT_TIME = 8
+	STUDY_1.ALWAYS_SHOW_TEXT = false
 	
 	# Leather-bound Planner
 	STUDY_2.SOUND = load("res://Sound/Effects/Memory/Minor Items/silence.wav")
 	STUDY_2.TEXT = "Dad: May 14th, 2009. Jamie (Caterpillar) and Riley's (Queen of Hearts) school play. Alice in Wonderland - school gym 4:30PM. [crossed out]. Red eye flight to Taiwan 5:40 AM. "
 	STUDY_2.TEXT_TIME = 12
+	STUDY_2.ALWAYS_SHOW_TEXT = true
 	
 	# Tapshoe
 	STUDY_FINAL.SOUND = load("res://Sound/Effects/Memory/Final Items/study_memory.wav")
 	STUDY_FINAL.TEXT  = "Dad: Jamie, get your sister to cool it would ya? I'm getting a headache."
+	STUDY_FINAL.ALWAYS_SHOW_TEXT = false
 	STUDY_FINAL.MUSIC = load("res://Sound/Music/StudyMemory.wav")
 	###############################
 	
@@ -89,15 +98,18 @@ func _ready():
 	BEDROOM_1.SOUND = load("res://Sound/Effects/Memory/Minor Items/bedroom_iceskate_memory.wav")
 	BEDROOM_1.TEXT = "Riley: Jamie, watch me! Look at me, I'm a dancer!"
 	BEDROOM_1.TEXT_TIME = 8
+	BEDROOM_1.ALWAYS_SHOW_TEXT = false
 	
 	# Small Painting Easel
 	BEDROOM_2.SOUND = load("res://Sound/Effects/Memory/Minor Items/bedroom_easel_memory.wav")
 	BEDROOM_2.TEXT = "Mom: Sweetie, I love all of your art but if you don't clean this room, I'm taking all your paint and crayons away for a week."
 	BEDROOM_2.TEXT_TIME = 9
+	BEDROOM_2.ALWAYS_SHOW_TEXT = false
 	
 	# Flamingo
 	BEDROOM_FINAL.SOUND = load("res://Sound/Effects/Memory/Final Items/bedroom_memory.wav")
 	BEDROOM_FINAL.TEXT = "Riley: Jamie? I can't see you. Ouch! Oh my gosh, it's burning! Jamie, where are you? H-help!" 
+	BEDROOM_FINAL.ALWAYS_SHOW_TEXT = false
 	BEDROOM_FINAL.MUSIC = load("res://Sound/Music/BedroomMemory.wav")
 	###############################
 

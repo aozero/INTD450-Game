@@ -11,6 +11,7 @@ onready var master_slider = $VBoxContainer/Tabs/Audio/Right/Master/MasterSlider
 onready var music_slider = $VBoxContainer/Tabs/Audio/Right/Music/MusicSlider
 onready var effects_slider = $VBoxContainer/Tabs/Audio/Right/Effects/EffectsSlider
 onready var voice_slider = $VBoxContainer/Tabs/Audio/Right/Voice/VoiceSlider
+onready var subtitles_button = $VBoxContainer/Tabs/Audio/Right/Subtitles/SubtitlesButton
 
 onready var back_button = $VBoxContainer/BackContainer/BackButton
 onready var click_audio = $ClickAudio
@@ -34,6 +35,7 @@ func _on_OptionsMenu_visibility_changed():
 	music_slider.value = get_volume("Music")
 	effects_slider.value = get_volume("Effects")
 	voice_slider.value = get_volume("Voice")
+	subtitles_button.select(globals.get_subtitles())
 
 func _on_Tabs_tab_changed(tab):
 	click_audio.play()
@@ -94,4 +96,4 @@ func _on_VoiceSlider_value_changed(value):
 
 func _on_SubtitlesButton_item_selected(ID):
 	click_audio.play()
-	#globals.set_subtitles(ID)
+	globals.set_subtitles(ID)

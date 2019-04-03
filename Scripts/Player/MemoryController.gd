@@ -20,6 +20,14 @@ onready var globals = get_node("/root/Globals")
 
 var curr_final_item = null
 
+# Displays text at bottom of screen if there should be subtitles
+func show_subtitles(dialogue):
+	if dialogue.ALWAYS_SHOW_TEXT or globals.subtitles == globals.ENGLISH:
+		dialogue_label.text = dialogue.TEXT
+		dialogue_label.visible_characters = -1
+	else:
+		dialogue_label.visible_characters = 0
+
 """
 Plays sound and displays text 
 dialogue.SOUND - the sound to play
@@ -30,8 +38,7 @@ func play_dialogue(dialogue):
 	dialogue_audio.stream = dialogue.SOUND
 	dialogue_audio.play()
 	
-	dialogue_label.text = dialogue.TEXT 
-	dialogue_label.visible_characters = -1
+	show_subtitles(dialogue)
 	
 	dialogue_timer.wait_time = dialogue.TEXT_TIME
 	dialogue_timer.start()
@@ -62,8 +69,7 @@ func in_final_memory():
 	
 	dialogue_label.add_color_override("font_color", DIALOGUE_FINAL_FONT_COLOR)
 	dialogue_label.add_color_override("font_color_shadow", DIALOGUE_FINAL_FONT_SHADOW)
-	dialogue_label.text = curr_final_item.DIALOGUE.TEXT 
-	dialogue_label.visible_characters = -1
+	show_subtitles(curr_final_item.DIALOGUE)
 	dialogue_audio.stream = curr_final_item.DIALOGUE.SOUND
 	dialogue_audio.play()
 
