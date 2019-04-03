@@ -2,6 +2,15 @@ extends Node
 
 # OPTIONS
 ########################################
+# GENERAL
+var mouse_sens = 0.08 setget set_mouse_sens, get_mouse_sens
+
+func set_mouse_sens(value):
+	mouse_sens = value
+
+func get_mouse_sens():
+	return mouse_sens
+
 # AUDIO
 # SUBTITLES
 const NONE = 0

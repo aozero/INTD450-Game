@@ -6,7 +6,6 @@ extends KinematicBody
 const RUN_SPEED = 3.5      
 const SNEAK_SPEED = 2
 const BACKWARDS_SLOWDOWN = 0.5
-const MOUSE_SENS = 0.1
 const INTERACT_RANGE = 1 # Range player can interact with objects
 ##################################
 
@@ -54,7 +53,7 @@ func _ready():
 		memory_controller.return_from_death()
 	
 	set_torch(false)
-	
+		
 	yield(get_tree(), "idle_frame")
 
 func _input(event):	
@@ -62,11 +61,12 @@ func _input(event):
 		return
 	
 	if event is InputEventMouseMotion:
+		var mouse_sens = globals.get_mouse_sens()
 		# Horizontal camera
-		rotation_degrees.y -= MOUSE_SENS * event.relative.x
+		rotation_degrees.y -= mouse_sens * event.relative.x
 		
 		# Vertical camera
-		rotation_degrees.x -= MOUSE_SENS * event.relative.y
+		rotation_degrees.x -= mouse_sens * event.relative.y
 		rotation_degrees.x = max(min(rotation_degrees.x, 85), -85)
 		
 	# DEBUG: Teleport to level

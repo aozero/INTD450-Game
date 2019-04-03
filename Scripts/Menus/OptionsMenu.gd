@@ -1,7 +1,10 @@
 extends ColorRect
 
+# GENERAL
+onready var mouse_sens_slider = $VBoxContainer/Tabs/General/Right/Sensitivity/SensitivitySlider
+onready var fullscreen_box = $VBoxContainer/Tabs/General/Right/Fullscreen/FullscreenBox
+
 # DISPLAY
-onready var fullscreen_box = $VBoxContainer/Tabs/Display/Right/Fullscreen/FullscreenBox
 onready var brightness_slider = $VBoxContainer/Tabs/Display/Right/Brightness/BrightnessSlider
 onready var quality_button = $VBoxContainer/Tabs/Display/Right/ForestQuality/QualityButton
 onready var shadow_box = $VBoxContainer/Tabs/Display/Right/Shadows/ShadowBox
@@ -25,7 +28,9 @@ func _ready():
 		quality_button.add_item(i)
 
 func _on_OptionsMenu_visibility_changed():
+	mouse_sens_slider.value = globals.get_mouse_sens()
 	fullscreen_box.pressed = globals.get_fullscreen()
+	
 	brightness_slider.value = globals.get_contrast()
 	brightness_slider.value = globals.get_brightness()
 	quality_button.select(globals.get_forest_quality())
@@ -43,6 +48,10 @@ func _on_Tabs_tab_changed(tab):
 func _on_BackButton_button_up():
 	click_audio.play()
 	visible = false
+
+func _on_SensitivitySlider_value_changed(value):
+	click_audio.play()
+	globals.set_mouse_sens(value)
 
 func _on_FullscreenBox_button_up():
 	click_audio.play()
@@ -101,3 +110,4 @@ func _on_VoiceSlider_value_changed(value):
 func _on_SubtitlesButton_item_selected(ID):
 	click_audio.play()
 	globals.set_subtitles(ID)
+
