@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scripts/Menus/OptionsMenu.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Menus/ClickAudio.tscn" type="PackedScene" id=2]
@@ -12,6 +12,14 @@ use_mipmaps = false
 use_filter = false
 font_data = ExtResource( 3 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
+
+[sub_resource type="DynamicFont" id=7]
+
+size = 24
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 3 )
+_sections_unfolded = [ "Font", "Settings" ]
 
 [sub_resource type="DynamicFont" id=2]
 
@@ -49,17 +57,16 @@ use_filter = false
 font_data = ExtResource( 4 )
 _sections_unfolded = [ "Settings" ]
 
-[node name="OptionsMenu" type="ColorRect"]
+[node name="OptionsMenu" type="ColorRect" index="0"]
 
-visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -200.0
-margin_top = -200.0
+margin_top = -255.0
 margin_right = 200.0
-margin_bottom = 310.0
+margin_bottom = 325.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 0
@@ -68,7 +75,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 color = Color( 0.156863, 0.156863, 0.156863, 1 )
 script = ExtResource( 1 )
-_sections_unfolded = [ "Visibility" ]
+_sections_unfolded = [ "Rect", "Visibility" ]
 
 [node name="ClickAudio" parent="." index="0" instance=ExtResource( 2 )]
 
@@ -95,7 +102,7 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 380.0
+margin_right = 388.0
 margin_bottom = 86.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -112,15 +119,36 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="Split" type="HBoxContainer" parent="VBoxContainer" index="1"]
+[node name="Tabs" type="TabContainer" parent="VBoxContainer" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 90.0
-margin_right = 380.0
-margin_bottom = 406.0
+margin_right = 388.0
+margin_bottom = 466.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 7 )
+tab_align = 0
+tabs_visible = true
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Display" type="HBoxContainer" parent="VBoxContainer/Tabs" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 4.0
+margin_top = 56.0
+margin_right = -4.0
+margin_bottom = -4.0
 rect_min_size = Vector2( 380, 285 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -131,7 +159,7 @@ size_flags_vertical = 1
 alignment = 0
 _sections_unfolded = [ "Margin", "Rect" ]
 
-[node name="Left" type="VBoxContainer" parent="VBoxContainer/Split" index="0"]
+[node name="Left" type="VBoxContainer" parent="VBoxContainer/Tabs/Display" index="0"]
 
 editor/display_folded = true
 anchor_left = 0.0
@@ -150,7 +178,7 @@ size_flags_vertical = 1
 alignment = 0
 _sections_unfolded = [ "Margin", "Rect" ]
 
-[node name="Fullscreen" type="Container" parent="VBoxContainer/Split/Left" index="0"]
+[node name="Fullscreen" type="Container" parent="VBoxContainer/Tabs/Display/Left" index="0"]
 
 editor/display_folded = true
 anchor_left = 0.0
@@ -168,7 +196,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 _sections_unfolded = [ "Rect" ]
 
-[node name="FullscreenLabel" type="Label" parent="VBoxContainer/Split/Left/Fullscreen" index="0"]
+[node name="FullscreenLabel" type="Label" parent="VBoxContainer/Tabs/Display/Left/Fullscreen" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.5
@@ -190,7 +218,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="Brightness" type="Container" parent="VBoxContainer/Split/Left" index="1"]
+[node name="Brightness" type="Container" parent="VBoxContainer/Tabs/Display/Left" index="1"]
 
 editor/display_folded = true
 anchor_left = 0.0
@@ -209,7 +237,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 _sections_unfolded = [ "Rect" ]
 
-[node name="BrightnessLabel" type="Label" parent="VBoxContainer/Split/Left/Brightness" index="0"]
+[node name="BrightnessLabel" type="Label" parent="VBoxContainer/Tabs/Display/Left/Brightness" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.5
@@ -231,7 +259,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="Contrast" type="Container" parent="VBoxContainer/Split/Left" index="2"]
+[node name="Contrast" type="Container" parent="VBoxContainer/Tabs/Display/Left" index="2"]
 
 editor/display_folded = true
 anchor_left = 0.0
@@ -250,7 +278,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 _sections_unfolded = [ "Rect" ]
 
-[node name="ContrastLabel" type="Label" parent="VBoxContainer/Split/Left/Contrast" index="0"]
+[node name="ContrastLabel" type="Label" parent="VBoxContainer/Tabs/Display/Left/Contrast" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.5
@@ -272,7 +300,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="ForestQuality" type="Container" parent="VBoxContainer/Split/Left" index="3"]
+[node name="ForestQuality" type="Container" parent="VBoxContainer/Tabs/Display/Left" index="3"]
 
 editor/display_folded = true
 anchor_left = 0.0
@@ -291,7 +319,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 _sections_unfolded = [ "Rect" ]
 
-[node name="QualityLabel" type="Label" parent="VBoxContainer/Split/Left/ForestQuality" index="0"]
+[node name="QualityLabel" type="Label" parent="VBoxContainer/Tabs/Display/Left/ForestQuality" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.5
@@ -313,7 +341,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="Shadows" type="Container" parent="VBoxContainer/Split/Left" index="4"]
+[node name="Shadows" type="Container" parent="VBoxContainer/Tabs/Display/Left" index="4"]
 
 editor/display_folded = true
 anchor_left = 0.0
@@ -332,7 +360,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 _sections_unfolded = [ "Rect" ]
 
-[node name="ShadowLabel" type="Label" parent="VBoxContainer/Split/Left/Shadows" index="0"]
+[node name="ShadowLabel" type="Label" parent="VBoxContainer/Tabs/Display/Left/Shadows" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.5
@@ -354,7 +382,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="Center" type="Container" parent="VBoxContainer/Split" index="1"]
+[node name="Center" type="Container" parent="VBoxContainer/Tabs/Display" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -372,7 +400,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 _sections_unfolded = [ "Rect" ]
 
-[node name="Right" type="VBoxContainer" parent="VBoxContainer/Split" index="2"]
+[node name="Right" type="VBoxContainer" parent="VBoxContainer/Tabs/Display" index="2"]
 
 editor/display_folded = true
 anchor_left = 0.0
@@ -392,7 +420,7 @@ size_flags_vertical = 1
 alignment = 0
 _sections_unfolded = [ "Margin" ]
 
-[node name="Fullscreen" type="Container" parent="VBoxContainer/Split/Right" index="0"]
+[node name="Fullscreen" type="Container" parent="VBoxContainer/Tabs/Display/Right" index="0"]
 
 editor/display_folded = true
 anchor_left = 0.0
@@ -410,7 +438,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 _sections_unfolded = [ "Rect" ]
 
-[node name="FullscreenBox" type="CheckBox" parent="VBoxContainer/Split/Right/Fullscreen" index="0"]
+[node name="FullscreenBox" type="CheckBox" parent="VBoxContainer/Tabs/Display/Right/Fullscreen" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -436,7 +464,7 @@ flat = false
 clip_text = true
 align = 0
 
-[node name="Brightness" type="Container" parent="VBoxContainer/Split/Right" index="1"]
+[node name="Brightness" type="Container" parent="VBoxContainer/Tabs/Display/Right" index="1"]
 
 editor/display_folded = true
 anchor_left = 0.0
@@ -455,7 +483,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 _sections_unfolded = [ "Rect" ]
 
-[node name="BrightnessSlider" type="HSlider" parent="VBoxContainer/Split/Right/Brightness" index="0"]
+[node name="BrightnessSlider" type="HSlider" parent="VBoxContainer/Tabs/Display/Right/Brightness" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -485,7 +513,7 @@ ticks_on_borders = false
 focus_mode = 2
 _sections_unfolded = [ "Margin", "Rect" ]
 
-[node name="Contrast" type="Container" parent="VBoxContainer/Split/Right" index="2"]
+[node name="Contrast" type="Container" parent="VBoxContainer/Tabs/Display/Right" index="2"]
 
 editor/display_folded = true
 anchor_left = 0.0
@@ -504,7 +532,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 _sections_unfolded = [ "Rect" ]
 
-[node name="ContrastSlider" type="HSlider" parent="VBoxContainer/Split/Right/Contrast" index="0"]
+[node name="ContrastSlider" type="HSlider" parent="VBoxContainer/Tabs/Display/Right/Contrast" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -534,7 +562,7 @@ ticks_on_borders = false
 focus_mode = 2
 _sections_unfolded = [ "Margin", "Rect" ]
 
-[node name="ForestQuality" type="Container" parent="VBoxContainer/Split/Right" index="3"]
+[node name="ForestQuality" type="Container" parent="VBoxContainer/Tabs/Display/Right" index="3"]
 
 editor/display_folded = true
 anchor_left = 0.0
@@ -553,7 +581,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 _sections_unfolded = [ "Rect" ]
 
-[node name="QualityButton" type="OptionButton" parent="VBoxContainer/Split/Right/ForestQuality" index="0"]
+[node name="QualityButton" type="OptionButton" parent="VBoxContainer/Tabs/Display/Right/ForestQuality" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -581,7 +609,7 @@ items = [  ]
 selected = -1
 _sections_unfolded = [ "Margin", "Rect", "Theme" ]
 
-[node name="Shadows" type="Container" parent="VBoxContainer/Split/Right" index="4"]
+[node name="Shadows" type="Container" parent="VBoxContainer/Tabs/Display/Right" index="4"]
 
 editor/display_folded = true
 anchor_left = 0.0
@@ -600,7 +628,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 _sections_unfolded = [ "Rect" ]
 
-[node name="ShadowBox" type="CheckBox" parent="VBoxContainer/Split/Right/Shadows" index="0"]
+[node name="ShadowBox" type="CheckBox" parent="VBoxContainer/Tabs/Display/Right/Shadows" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -627,15 +655,568 @@ clip_text = true
 align = 0
 _sections_unfolded = [ "Margin", "Rect", "custom_fonts" ]
 
-[node name="BackContainer" type="CenterContainer" parent="VBoxContainer" index="2"]
+[node name="Audio" type="HBoxContainer" parent="VBoxContainer/Tabs" index="1"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 292.0
+margin_top = 381.0
+margin_right = 284.0
+margin_bottom = 321.0
+rect_min_size = Vector2( 380, 285 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+_sections_unfolded = [ "Margin", "Rect" ]
+
+[node name="Left" type="VBoxContainer" parent="VBoxContainer/Tabs/Audio" index="0"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 200.0
+margin_bottom = 632.0
+rect_min_size = Vector2( 200, 0 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+_sections_unfolded = [ "Margin", "Rect" ]
+
+[node name="Master" type="Container" parent="VBoxContainer/Tabs/Audio/Left" index="0"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 200.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 0, 60 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Rect" ]
+
+[node name="MasterLabel" type="Label" parent="VBoxContainer/Tabs/Audio/Left/Master" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.5
+anchor_right = 0.0
+anchor_bottom = 0.5
+margin_top = -17.0
+margin_right = 199.0
+margin_bottom = 17.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 2 )
+text = "Master Volume:"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Music" type="Container" parent="VBoxContainer/Tabs/Audio/Left" index="1"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 64.0
+margin_right = 200.0
+margin_bottom = 124.0
+rect_min_size = Vector2( 0, 60 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Rect" ]
+
+[node name="MusicLabel" type="Label" parent="VBoxContainer/Tabs/Audio/Left/Music" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.5
+anchor_right = 0.0
+anchor_bottom = 0.5
+margin_top = -17.0
+margin_right = 199.0
+margin_bottom = 17.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 2 )
+text = "Music Volume:"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Effects" type="Container" parent="VBoxContainer/Tabs/Audio/Left" index="2"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 128.0
+margin_right = 200.0
+margin_bottom = 188.0
+rect_min_size = Vector2( 0, 60 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Rect" ]
+
+[node name="ContrastLabel" type="Label" parent="VBoxContainer/Tabs/Audio/Left/Effects" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.5
+anchor_right = 0.0
+anchor_bottom = 0.5
+margin_top = -17.0
+margin_right = 199.0
+margin_bottom = 17.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 2 )
+text = "Effects Volume:"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Voice" type="Container" parent="VBoxContainer/Tabs/Audio/Left" index="3"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 192.0
+margin_right = 200.0
+margin_bottom = 252.0
+rect_min_size = Vector2( 0, 60 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Rect" ]
+
+[node name="VoiceLabel" type="Label" parent="VBoxContainer/Tabs/Audio/Left/Voice" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.5
+anchor_right = 0.0
+anchor_bottom = 0.5
+margin_top = -17.0
+margin_right = 199.0
+margin_bottom = 17.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 2 )
+text = "Voice Volume:"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Subtitles" type="Container" parent="VBoxContainer/Tabs/Audio/Left" index="4"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 410.0
-margin_right = 380.0
-margin_bottom = 500.0
+margin_top = 256.0
+margin_right = 200.0
+margin_bottom = 316.0
+rect_min_size = Vector2( 0, 60 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Rect" ]
+
+[node name="SubtitlesLabel" type="Label" parent="VBoxContainer/Tabs/Audio/Left/Subtitles" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.5
+anchor_right = 0.0
+anchor_bottom = 0.5
+margin_top = -17.0
+margin_right = 199.0
+margin_bottom = 17.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 2 )
+text = "Subtitles:"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Center" type="Container" parent="VBoxContainer/Tabs/Audio" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 204.0
+margin_right = 214.0
+margin_bottom = 632.0
+rect_min_size = Vector2( 10, 0 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Rect" ]
+
+[node name="Right" type="VBoxContainer" parent="VBoxContainer/Tabs/Audio" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 218.0
+margin_right = 378.0
+margin_bottom = 632.0
+rect_min_size = Vector2( 160, 0 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+_sections_unfolded = [ "Margin" ]
+
+[node name="Master" type="Container" parent="VBoxContainer/Tabs/Audio/Right" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 160.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 0, 60 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Rect" ]
+
+[node name="MasterSlider" type="HSlider" parent="VBoxContainer/Tabs/Audio/Right/Master" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 15.0
+margin_right = -80.0
+margin_bottom = -29.0
+rect_scale = Vector2( 2, 2 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 0
+min_value = -80.0
+max_value = 0.0
+step = 1.0
+page = 0.0
+value = 0.0
+exp_edit = false
+rounded = false
+editable = true
+tick_count = 3
+ticks_on_borders = false
+focus_mode = 2
+_sections_unfolded = [ "Margin", "Rect" ]
+
+[node name="Music" type="Container" parent="VBoxContainer/Tabs/Audio/Right" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 64.0
+margin_right = 160.0
+margin_bottom = 124.0
+rect_min_size = Vector2( 0, 60 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Rect" ]
+
+[node name="MusicSlider" type="HSlider" parent="VBoxContainer/Tabs/Audio/Right/Music" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 15.0
+margin_right = -80.0
+margin_bottom = -29.0
+rect_scale = Vector2( 2, 2 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 0
+min_value = -80.0
+max_value = 0.0
+step = 1.0
+page = 0.0
+value = 0.0
+exp_edit = false
+rounded = false
+editable = true
+tick_count = 3
+ticks_on_borders = false
+focus_mode = 2
+_sections_unfolded = [ "Margin", "Rect" ]
+
+[node name="Effects" type="Container" parent="VBoxContainer/Tabs/Audio/Right" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 128.0
+margin_right = 160.0
+margin_bottom = 188.0
+rect_min_size = Vector2( 0, 60 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Rect" ]
+
+[node name="EffectsSlider" type="HSlider" parent="VBoxContainer/Tabs/Audio/Right/Effects" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 15.0
+margin_right = -80.0
+margin_bottom = -29.0
+rect_scale = Vector2( 2, 2 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 0
+min_value = -80.0
+max_value = 0.0
+step = 1.0
+page = 0.0
+value = 0.0
+exp_edit = false
+rounded = false
+editable = true
+tick_count = 3
+ticks_on_borders = false
+focus_mode = 2
+_sections_unfolded = [ "Margin", "Rect" ]
+
+[node name="Voice" type="Container" parent="VBoxContainer/Tabs/Audio/Right" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 192.0
+margin_right = 160.0
+margin_bottom = 252.0
+rect_min_size = Vector2( 0, 60 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Rect" ]
+
+[node name="VoiceSlider" type="HSlider" parent="VBoxContainer/Tabs/Audio/Right/Voice" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 15.0
+margin_right = -80.0
+margin_bottom = -29.0
+rect_scale = Vector2( 2, 2 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 0
+min_value = -80.0
+max_value = 0.0
+step = 1.0
+page = 0.0
+value = 0.0
+exp_edit = false
+rounded = false
+editable = true
+tick_count = 3
+ticks_on_borders = false
+focus_mode = 2
+_sections_unfolded = [ "Margin", "Rect" ]
+
+[node name="Subtitles" type="Container" parent="VBoxContainer/Tabs/Audio/Right" index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 256.0
+margin_right = 160.0
+margin_bottom = 316.0
+rect_min_size = Vector2( 0, 60 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Rect" ]
+
+[node name="QualityButton" type="OptionButton" parent="VBoxContainer/Tabs/Audio/Right/Subtitles" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 10.0
+margin_bottom = -10.0
+rect_min_size = Vector2( 120, 30 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+theme = SubResource( 5 )
+toggle_mode = false
+action_mode = 0
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Item 0"
+flat = false
+align = 0
+items = [ "None", null, false, 0, null, "English", null, false, 1, null ]
+selected = 0
+_sections_unfolded = [ "Margin", "Rect", "Theme" ]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 470.0
+margin_right = 388.0
+margin_bottom = 470.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 1
+_sections_unfolded = [ "Rect" ]
+
+[node name="Container" type="Container" parent="VBoxContainer/HBoxContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 154.0
+margin_right = 234.0
+rect_min_size = Vector2( 80, 0 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Rect" ]
+
+[node name="BackContainer" type="CenterContainer" parent="VBoxContainer" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 474.0
+margin_right = 388.0
+margin_bottom = 564.0
 rect_min_size = Vector2( 300, 90 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -652,9 +1233,9 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 40.0
+margin_left = 44.0
 margin_top = 10.0
-margin_right = 340.0
+margin_right = 344.0
 margin_bottom = 80.0
 rect_min_size = Vector2( 300, 70 )
 rect_pivot_offset = Vector2( 0, 0 )
@@ -674,17 +1255,23 @@ flat = false
 align = 1
 _sections_unfolded = [ "Margin", "Rect" ]
 
-[connection signal="button_up" from="VBoxContainer/Split/Right/Fullscreen/FullscreenBox" to="." method="_on_FullscreenBox_button_up"]
+[connection signal="visibility_changed" from="." to="." method="_on_OptionsMenu_visibility_changed"]
 
-[connection signal="value_changed" from="VBoxContainer/Split/Right/Brightness/BrightnessSlider" to="." method="_on_BrightnessSlider_value_changed"]
+[connection signal="button_up" from="VBoxContainer/Tabs/Display/Right/Fullscreen/FullscreenBox" to="." method="_on_FullscreenBox_button_up"]
 
-[connection signal="value_changed" from="VBoxContainer/Split/Right/Contrast/ContrastSlider" to="." method="_on_ContrastSlider_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/Tabs/Display/Right/Brightness/BrightnessSlider" to="." method="_on_BrightnessSlider_value_changed"]
 
-[connection signal="button_up" from="VBoxContainer/Split/Right/ForestQuality/QualityButton" to="." method="_on_QualityButton_button_up"]
+[connection signal="value_changed" from="VBoxContainer/Tabs/Display/Right/Contrast/ContrastSlider" to="." method="_on_ContrastSlider_value_changed"]
 
-[connection signal="item_selected" from="VBoxContainer/Split/Right/ForestQuality/QualityButton" to="." method="_on_QualityButton_item_selected"]
+[connection signal="button_up" from="VBoxContainer/Tabs/Display/Right/ForestQuality/QualityButton" to="." method="_on_QualityButton_button_up"]
 
-[connection signal="button_up" from="VBoxContainer/Split/Right/Shadows/ShadowBox" to="." method="_on_ShadowBox_button_up"]
+[connection signal="item_selected" from="VBoxContainer/Tabs/Display/Right/ForestQuality/QualityButton" to="." method="_on_QualityButton_item_selected"]
+
+[connection signal="button_up" from="VBoxContainer/Tabs/Display/Right/Shadows/ShadowBox" to="." method="_on_ShadowBox_button_up"]
+
+[connection signal="button_up" from="VBoxContainer/Tabs/Audio/Right/Subtitles/QualityButton" to="." method="_on_QualityButton_button_up"]
+
+[connection signal="item_selected" from="VBoxContainer/Tabs/Audio/Right/Subtitles/QualityButton" to="." method="_on_QualityButton_item_selected"]
 
 [connection signal="button_up" from="VBoxContainer/BackContainer/BackButton" to="." method="_on_BackButton_button_up"]
 

@@ -1,9 +1,9 @@
 extends ColorRect
 
-onready var fullscreen_box = $VBoxContainer/Split/Right/Fullscreen/FullscreenBox
-onready var brightness_slider = $VBoxContainer/Split/Right/Brightness/BrightnessSlider
-onready var quality_button = $VBoxContainer/Split/Right/ForestQuality/QualityButton
-onready var shadow_box = $VBoxContainer/Split/Right/Shadows/ShadowBox
+onready var fullscreen_box = $VBoxContainer/Tabs/Display/Right/Fullscreen/FullscreenBox
+onready var brightness_slider = $VBoxContainer/Tabs/Display/Right/Brightness/BrightnessSlider
+onready var quality_button = $VBoxContainer/Tabs/Display/Right/ForestQuality/QualityButton
+onready var shadow_box = $VBoxContainer/Tabs/Display/Right/Shadows/ShadowBox
 onready var back_button = $VBoxContainer/BackContainer/BackButton
 onready var click_audio = $ClickAudio
 onready var globals = get_node("/root/Globals")
@@ -11,7 +11,8 @@ onready var globals = get_node("/root/Globals")
 func _ready():
 	for i in globals.FOREST_QUALITY_TEXT:
 		quality_button.add_item(i)
-	
+
+func _on_OptionsMenu_visibility_changed():
 	fullscreen_box.pressed = globals.get_fullscreen()
 	brightness_slider.value = globals.get_contrast()
 	brightness_slider.value = globals.get_brightness()
@@ -46,10 +47,3 @@ func _on_ShadowBox_button_up():
 	click_audio.play()
 	# is_pressed returns true when the check mark is not there
 	globals.set_shadows(!shadow_box.is_pressed())
-
-
-
-
-
-
-
