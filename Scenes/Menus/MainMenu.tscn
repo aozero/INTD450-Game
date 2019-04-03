@@ -407,7 +407,7 @@ _sections_unfolded = [ "Margin", "Rect" ]
 [node name="OptionsMenu" parent="CanvasLayer2" index="1" instance=ExtResource( 9 )]
 
 margin_top = -202.0
-margin_bottom = 308.0
+margin_bottom = 378.0
 
 [node name="ExitVerfication" parent="CanvasLayer2" index="2" instance=ExtResource( 10 )]
 

@@ -59,6 +59,7 @@ _sections_unfolded = [ "Settings" ]
 
 [node name="OptionsMenu" type="ColorRect" index="0"]
 
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -1268,6 +1269,14 @@ _sections_unfolded = [ "Margin", "Rect" ]
 [connection signal="item_selected" from="VBoxContainer/Tabs/Display/Right/ForestQuality/QualityButton" to="." method="_on_QualityButton_item_selected"]
 
 [connection signal="button_up" from="VBoxContainer/Tabs/Display/Right/Shadows/ShadowBox" to="." method="_on_ShadowBox_button_up"]
+
+[connection signal="value_changed" from="VBoxContainer/Tabs/Audio/Right/Master/MasterSlider" to="." method="_on_MasterSlider_value_changed"]
+
+[connection signal="value_changed" from="VBoxContainer/Tabs/Audio/Right/Music/MusicSlider" to="." method="_on_MusicSlider_value_changed"]
+
+[connection signal="value_changed" from="VBoxContainer/Tabs/Audio/Right/Effects/EffectsSlider" to="." method="_on_EffectsSlider_value_changed"]
+
+[connection signal="value_changed" from="VBoxContainer/Tabs/Audio/Right/Voice/VoiceSlider" to="." method="_on_VoiceSlider_value_changed"]
 
 [connection signal="button_up" from="VBoxContainer/Tabs/Audio/Right/Subtitles/QualityButton" to="." method="_on_QualityButton_button_up"]
 
