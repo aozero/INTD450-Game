@@ -71,10 +71,14 @@ func _on_ShadowBox_button_up():
 
 # Bus is a string with the name of the bus
 func get_volume(bus):
-	return AudioServer.get_bus_volume_db(AudioServer.get_bus_index(bus))
+	# convert from db to linear slider value
+	var result = db2linear(AudioServer.get_bus_volume_db(AudioServer.get_bus_index(bus)))
+	return result
 
 # Bus is a string with the name of the bus
 func set_volume(bus, value):
+	# convert from linear slider value to db
+	value = linear2db(value)
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index(bus), value)
 
 func _on_MasterSlider_value_changed(value):
