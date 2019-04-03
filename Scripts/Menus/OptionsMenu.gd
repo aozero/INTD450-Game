@@ -14,6 +14,9 @@ onready var voice_slider = $VBoxContainer/Tabs/Audio/Right/Voice/VoiceSlider
 
 onready var back_button = $VBoxContainer/BackContainer/BackButton
 onready var click_audio = $ClickAudio
+onready var click_audio_music = $ClickAudioMusic
+onready var click_audio_effects = $ClickAudioEffects
+onready var click_audio_voice = $ClickAudioVoice
 onready var globals = get_node("/root/Globals")
 
 func _ready():
@@ -31,6 +34,9 @@ func _on_OptionsMenu_visibility_changed():
 	music_slider.value = get_volume("Music")
 	effects_slider.value = get_volume("Effects")
 	voice_slider.value = get_volume("Voice")
+
+func _on_Tabs_tab_changed(tab):
+	click_audio.play()
 
 func _on_BackButton_button_up():
 	click_audio.play()
@@ -71,12 +77,21 @@ func set_volume(bus, value):
 
 func _on_MasterSlider_value_changed(value):
 	set_volume("Master", value)
+	click_audio.play()
 
 func _on_MusicSlider_value_changed(value):
 	set_volume("Music", value)
+	click_audio_music.play()
 
 func _on_EffectsSlider_value_changed(value):
 	set_volume("Effects", value)
+	click_audio_effects.play()
 
 func _on_VoiceSlider_value_changed(value):
 	set_volume("Voice", value)
+	set_volume("Voice No Reverb", value)
+	click_audio_voice.play()
+
+func _on_SubtitlesButton_item_selected(ID):
+	click_audio.play()
+	#globals.set_subtitles(ID)

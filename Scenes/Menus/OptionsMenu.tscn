@@ -80,7 +80,19 @@ _sections_unfolded = [ "Rect", "Visibility" ]
 
 [node name="ClickAudio" parent="." index="0" instance=ExtResource( 2 )]
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." index="1"]
+[node name="ClickAudioMusic" parent="." index="1" instance=ExtResource( 2 )]
+
+bus = "Music"
+
+[node name="ClickAudioEffects" parent="." index="2" instance=ExtResource( 2 )]
+
+bus = "Effects"
+
+[node name="ClickAudioVoice" parent="." index="3" instance=ExtResource( 2 )]
+
+bus = "Voice No Reverb"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." index="4"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -1145,7 +1157,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 _sections_unfolded = [ "Rect" ]
 
-[node name="QualityButton" type="OptionButton" parent="VBoxContainer/Tabs/Audio/Right/Subtitles" index="0"]
+[node name="SubtitlesButton" type="OptionButton" parent="VBoxContainer/Tabs/Audio/Right/Subtitles" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -1258,6 +1270,8 @@ _sections_unfolded = [ "Margin", "Rect" ]
 
 [connection signal="visibility_changed" from="." to="." method="_on_OptionsMenu_visibility_changed"]
 
+[connection signal="tab_changed" from="VBoxContainer/Tabs" to="." method="_on_Tabs_tab_changed"]
+
 [connection signal="button_up" from="VBoxContainer/Tabs/Display/Right/Fullscreen/FullscreenBox" to="." method="_on_FullscreenBox_button_up"]
 
 [connection signal="value_changed" from="VBoxContainer/Tabs/Display/Right/Brightness/BrightnessSlider" to="." method="_on_BrightnessSlider_value_changed"]
@@ -1278,9 +1292,9 @@ _sections_unfolded = [ "Margin", "Rect" ]
 
 [connection signal="value_changed" from="VBoxContainer/Tabs/Audio/Right/Voice/VoiceSlider" to="." method="_on_VoiceSlider_value_changed"]
 
-[connection signal="button_up" from="VBoxContainer/Tabs/Audio/Right/Subtitles/QualityButton" to="." method="_on_QualityButton_button_up"]
+[connection signal="button_up" from="VBoxContainer/Tabs/Audio/Right/Subtitles/SubtitlesButton" to="." method="_on_QualityButton_button_up"]
 
-[connection signal="item_selected" from="VBoxContainer/Tabs/Audio/Right/Subtitles/QualityButton" to="." method="_on_QualityButton_item_selected"]
+[connection signal="item_selected" from="VBoxContainer/Tabs/Audio/Right/Subtitles/SubtitlesButton" to="." method="_on_SubtitlesButton_item_selected"]
 
 [connection signal="button_up" from="VBoxContainer/BackContainer/BackButton" to="." method="_on_BackButton_button_up"]
 
