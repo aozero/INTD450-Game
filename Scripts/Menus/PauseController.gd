@@ -14,6 +14,11 @@ func _input(event):
 	if event.is_action_pressed("pause"):
 		set_paused(!get_tree().paused)
 
+# If player alt-tabs or we otherwise lose focus, pause the game
+func _notification(what):
+	if what == MainLoop.NOTIFICATION_WM_FOCUS_OUT:
+		set_paused(true)
+
 func set_paused(paused):
 	get_tree().paused = paused
 	
