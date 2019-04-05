@@ -10,7 +10,7 @@ config_version=3
 
 [application]
 
-config/name="Firelight"
+config/name="Where The Flame Took You"
 run/main_scene="res://Scenes/Menus/DarkAdvisory.tscn"
 boot_splash/image="res://Sprites/Logo_mayo.png"
 config/icon="res://icon.png"
