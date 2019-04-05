@@ -57,7 +57,7 @@ use_filter = false
 font_data = ExtResource( 4 )
 _sections_unfolded = [ "Settings" ]
 
-[node name="OptionsMenu" type="ColorRect" index="0"]
+[node name="OptionsMenu" type="ColorRect"]
 
 visible = false
 anchor_left = 0.5
@@ -400,7 +400,6 @@ _sections_unfolded = [ "Margin", "Rect" ]
 
 [node name="Display" type="HBoxContainer" parent="VBoxContainer/Tabs" index="1"]
 
-editor/display_folded = true
 visible = false
 anchor_left = 0.0
 anchor_top = 0.0
@@ -422,7 +421,6 @@ _sections_unfolded = [ "Margin", "Rect" ]
 
 [node name="Left" type="VBoxContainer" parent="VBoxContainer/Tabs/Display" index="0"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -521,48 +519,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="ForestQuality" type="Container" parent="VBoxContainer/Tabs/Display/Left" index="2"]
-
-editor/display_folded = true
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 192.0
-margin_right = 200.0
-margin_bottom = 252.0
-rect_min_size = Vector2( 0, 60 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-_sections_unfolded = [ "Rect" ]
-
-[node name="QualityLabel" type="Label" parent="VBoxContainer/Tabs/Display/Left/ForestQuality" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.5
-anchor_right = 0.0
-anchor_bottom = 0.5
-margin_top = -17.0
-margin_right = 199.0
-margin_bottom = 17.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_fonts/font = SubResource( 3 )
-text = "Forest Quality:"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "custom_fonts" ]
-
-[node name="Shadows" type="Container" parent="VBoxContainer/Tabs/Display/Left" index="3"]
+[node name="Shadows" type="Container" parent="VBoxContainer/Tabs/Display/Left" index="2"]
 
 editor/display_folded = true
 anchor_left = 0.0
@@ -603,6 +560,86 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_fonts" ]
 
+[node name="ForestQuality" type="Container" parent="VBoxContainer/Tabs/Display/Left" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 192.0
+margin_right = 200.0
+margin_bottom = 252.0
+rect_min_size = Vector2( 0, 60 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Rect" ]
+
+[node name="QualityLabel" type="Label" parent="VBoxContainer/Tabs/Display/Left/ForestQuality" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.5
+anchor_right = 0.0
+anchor_bottom = 0.5
+margin_top = -17.0
+margin_right = 199.0
+margin_bottom = 17.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 3 )
+text = "Tree Quality:"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="ForestQuantity" type="Container" parent="VBoxContainer/Tabs/Display/Left" index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 192.0
+margin_right = 200.0
+margin_bottom = 252.0
+rect_min_size = Vector2( 0, 60 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Rect" ]
+
+[node name="QuantityLabel" type="Label" parent="VBoxContainer/Tabs/Display/Left/ForestQuantity" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.5
+anchor_right = 0.0
+anchor_bottom = 0.5
+margin_top = -17.0
+margin_right = 199.0
+margin_bottom = 17.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 3 )
+text = "Tree Amount:"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
 [node name="Center" type="Container" parent="VBoxContainer/Tabs/Display" index="1"]
 
 anchor_left = 0.0
@@ -623,7 +660,6 @@ _sections_unfolded = [ "Rect" ]
 
 [node name="Right" type="VBoxContainer" parent="VBoxContainer/Tabs/Display" index="2"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -739,54 +775,7 @@ ticks_on_borders = false
 focus_mode = 2
 _sections_unfolded = [ "Margin", "Rect" ]
 
-[node name="ForestQuality" type="Container" parent="VBoxContainer/Tabs/Display/Right" index="2"]
-
-editor/display_folded = true
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 192.0
-margin_right = 160.0
-margin_bottom = 252.0
-rect_min_size = Vector2( 0, 60 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-_sections_unfolded = [ "Rect" ]
-
-[node name="QualityButton" type="OptionButton" parent="VBoxContainer/Tabs/Display/Right/ForestQuality" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = 10.0
-margin_bottom = -10.0
-rect_min_size = Vector2( 120, 30 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-theme = SubResource( 6 )
-toggle_mode = false
-action_mode = 0
-enabled_focus_mode = 2
-shortcut = null
-group = null
-flat = false
-align = 0
-items = [  ]
-selected = -1
-_sections_unfolded = [ "Margin", "Rect", "Theme" ]
-
-[node name="Shadows" type="Container" parent="VBoxContainer/Tabs/Display/Right" index="3"]
+[node name="Shadows" type="Container" parent="VBoxContainer/Tabs/Display/Right" index="2"]
 
 editor/display_folded = true
 anchor_left = 0.0
@@ -831,6 +820,100 @@ flat = false
 clip_text = true
 align = 0
 _sections_unfolded = [ "Margin", "Rect", "custom_fonts" ]
+
+[node name="ForestQuality" type="Container" parent="VBoxContainer/Tabs/Display/Right" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 192.0
+margin_right = 160.0
+margin_bottom = 252.0
+rect_min_size = Vector2( 0, 60 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Rect" ]
+
+[node name="QualityButton" type="OptionButton" parent="VBoxContainer/Tabs/Display/Right/ForestQuality" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 10.0
+margin_bottom = -10.0
+rect_min_size = Vector2( 120, 30 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+theme = SubResource( 6 )
+toggle_mode = false
+action_mode = 0
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Item 0"
+flat = false
+align = 0
+items = [ "Fastest", null, false, -1, null, "Prettiest", null, false, -1, null ]
+selected = 0
+_sections_unfolded = [ "Margin", "Rect", "Theme" ]
+
+[node name="ForestQuantity" type="Container" parent="VBoxContainer/Tabs/Display/Right" index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 192.0
+margin_right = 160.0
+margin_bottom = 252.0
+rect_min_size = Vector2( 0, 60 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Rect" ]
+
+[node name="QuantityButton" type="OptionButton" parent="VBoxContainer/Tabs/Display/Right/ForestQuantity" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 10.0
+margin_bottom = -10.0
+rect_min_size = Vector2( 120, 30 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+theme = SubResource( 6 )
+toggle_mode = false
+action_mode = 0
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Item 0"
+flat = false
+align = 0
+items = [ "Less", null, false, -1, null, "More", null, false, -1, null ]
+selected = 0
+_sections_unfolded = [ "Margin", "Rect", "Theme" ]
 
 [node name="Audio" type="HBoxContainer" parent="VBoxContainer/Tabs" index="2"]
 
@@ -1445,11 +1528,15 @@ _sections_unfolded = [ "Margin", "Rect" ]
 
 [connection signal="value_changed" from="VBoxContainer/Tabs/Display/Right/Contrast/ContrastSlider" to="." method="_on_ContrastSlider_value_changed"]
 
+[connection signal="button_up" from="VBoxContainer/Tabs/Display/Right/Shadows/ShadowBox" to="." method="_on_ShadowBox_button_up"]
+
 [connection signal="button_up" from="VBoxContainer/Tabs/Display/Right/ForestQuality/QualityButton" to="." method="_on_QualityButton_button_up"]
 
 [connection signal="item_selected" from="VBoxContainer/Tabs/Display/Right/ForestQuality/QualityButton" to="." method="_on_QualityButton_item_selected"]
 
-[connection signal="button_up" from="VBoxContainer/Tabs/Display/Right/Shadows/ShadowBox" to="." method="_on_ShadowBox_button_up"]
+[connection signal="button_up" from="VBoxContainer/Tabs/Display/Right/ForestQuantity/QuantityButton" to="." method="_on_QualityButton_button_up"]
+
+[connection signal="item_selected" from="VBoxContainer/Tabs/Display/Right/ForestQuantity/QuantityButton" to="." method="_on_QuantityButton_item_selected"]
 
 [connection signal="value_changed" from="VBoxContainer/Tabs/Audio/Right/Master/MasterSlider" to="." method="_on_MasterSlider_value_changed"]
 

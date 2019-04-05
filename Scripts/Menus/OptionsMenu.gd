@@ -6,8 +6,10 @@ onready var fullscreen_box = $VBoxContainer/Tabs/General/Right/Fullscreen/Fullsc
 
 # DISPLAY
 onready var brightness_slider = $VBoxContainer/Tabs/Display/Right/Brightness/BrightnessSlider
-onready var quality_button = $VBoxContainer/Tabs/Display/Right/ForestQuality/QualityButton
+onready var contrast_slider = $VBoxContainer/Tabs/Display/Right/Contrast/ContrastSlider
 onready var shadow_box = $VBoxContainer/Tabs/Display/Right/Shadows/ShadowBox
+onready var quality_button = $VBoxContainer/Tabs/Display/Right/ForestQuality/QualityButton
+onready var quantity_button = $VBoxContainer/Tabs/Display/Right/ForestQuantity/QuantityButton
 
 # AUDIO
 onready var master_slider = $VBoxContainer/Tabs/Audio/Right/Master/MasterSlider
@@ -23,18 +25,15 @@ onready var click_audio_effects = $ClickAudioEffects
 onready var click_audio_voice = $ClickAudioVoice
 onready var globals = get_node("/root/Globals")
 
-func _ready():
-	for i in globals.FOREST_QUALITY_TEXT:
-		quality_button.add_item(i)
-
 func _on_OptionsMenu_visibility_changed():
 	mouse_sens_slider.value = globals.get_mouse_sens()
 	fullscreen_box.pressed = globals.get_fullscreen()
 	
-	brightness_slider.value = globals.get_contrast()
 	brightness_slider.value = globals.get_brightness()
-	quality_button.select(globals.get_forest_quality())
+	contrast_slider.value = globals.get_contrast()
 	shadow_box.pressed = globals.get_shadows()
+	quality_button.select(globals.get_forest_quality())
+	quantity_button.select(globals.get_forest_quantity())
 	
 	master_slider.value = get_volume("Master")
 	music_slider.value = get_volume("Music")
@@ -73,6 +72,10 @@ func _on_QualityButton_item_selected(ID):
 	click_audio.play()
 	globals.set_forest_quality(ID)
 
+func _on_QuantityButton_item_selected(ID):
+	click_audio.play()
+	globals.set_forest_quantity(ID)
+
 func _on_ShadowBox_button_up():
 	click_audio.play()
 	# is_pressed returns true when the check mark is not there
@@ -110,4 +113,3 @@ func _on_VoiceSlider_value_changed(value):
 func _on_SubtitlesButton_item_selected(ID):
 	click_audio.play()
 	globals.set_subtitles(ID)
-

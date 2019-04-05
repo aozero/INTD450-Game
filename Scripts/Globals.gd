@@ -57,10 +57,9 @@ func get_contrast():
 	return contrast
 
 # FOREST QUALITY
-# Levels of forest quality.
+# Levels of forest quality:
 # Fastest is ForestTree alpha scissoring on
 # Prettiest is ForestTree alpha scissoring off
-const FOREST_QUALITY_TEXT = ["Fastest", "Prettiest"]
 var forest_material = load("res://Materials/ForestTree.tres")
 var forest_quality = 0 setget set_forest_quality, get_forest_quality
 
@@ -74,6 +73,20 @@ func set_forest_quality(level):
 
 func get_forest_quality():
 	return forest_quality
+
+# FOREST QUANTITY
+# Levels of forest quantity:
+# Less has second layer of forest invisible
+# More has second layer of forest visible
+var forest_quantity = 0 setget set_forest_quantity, get_forest_quantity
+
+func set_forest_quantity(level):
+	forest_quantity = level
+	
+	get_tree().call_group("extra forest", "set_visible", level)
+
+func get_forest_quantity():
+	return forest_quantity
 
 # SHADOWS
 onready var firelight = load("res://Scenes/Fires/FireLight.tscn").instance()
