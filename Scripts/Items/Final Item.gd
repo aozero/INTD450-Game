@@ -27,6 +27,12 @@ func _ready():
 		else:
 			visible = false
 
+func can_interact(torch_visible):
+	if burning:
+		return false
+	else:
+		return torch_visible
+
 func interact(player):
 	if !interacted_with:
 		fade_out_music()

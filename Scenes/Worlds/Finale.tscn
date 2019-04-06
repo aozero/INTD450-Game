@@ -350,17 +350,17 @@ visible = false
 transform = Transform( 0.604171, 0, -0.796854, 0, 1, 0, 0.796854, 0, 0.604171, 1.24701, 0, -3.4984 )
 visible = false
 
-[node name="Player" parent="." index="13"]
+[node name="ItemFlamingo" parent="." index="13" instance=ExtResource( 19 )]
+
+transform = Transform( -0.689677, 0, 0.724116, 0, 1, 0, -0.724116, 0, -0.689677, -2.17645, 0, 6.53915 )
+burning = true
+
+[node name="Player" parent="." index="14"]
 
 transform = Transform( 0.724116, 0, 0.689677, 0, 1, 0, -0.689677, 0, 0.724116, -1.83261, 0, 6.88669 )
 in_finale = true
 
-[node name="ItemFlamingo" parent="Player" index="15" instance=ExtResource( 19 )]
-
-transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, -0.00928342, 0, -0.488798 )
-burning = true
-
-[node name="The Door" parent="." index="16" instance=ExtResource( 20 )]
+[node name="The Door" parent="." index="17" instance=ExtResource( 20 )]
 
 transform = Transform( 0.753107, 0, 0.657897, 0, 1, 0, -0.657897, 0, 0.753107, -16.966, 0, -9.23353 )
 

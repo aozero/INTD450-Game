@@ -14,3 +14,6 @@ func fade_out_music():
 func _on_TweenOut_tween_completed(object, key):
 	music_player.stop()
 	music_player.unit_db = music_vol
+
+func can_interact(torch_visible):
+	return torch_visible

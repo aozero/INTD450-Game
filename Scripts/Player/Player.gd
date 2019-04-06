@@ -140,14 +140,16 @@ func _physics_process(delta):
 	var coll = raycast.get_collider()
 	if raycast.is_colliding() and coll != null and coll.has_method("interact"): 
 		#  Can only interact if close and the match is on
-		if raycast.get_collision_point().distance_to(translation) < INTERACT_RANGE and (in_finale or torch.visible):
-				enable_interact_prompt()
-				
-				if Input.is_action_pressed("interact"):
-					coll.interact(self)
+		if raycast.get_collision_point().distance_to(translation) < INTERACT_RANGE:
+				if !coll.has_method("can_interact") or coll.can_interact(torch.visible):
+					enable_interact_prompt()
+					
+					if Input.is_action_pressed("interact"):
+						coll.interact(self)
+				else:
+					disable_prompt()
 		else:
 			disable_prompt()
-		
 	else:
 		disable_prompt()
 
