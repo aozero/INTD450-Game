@@ -86,7 +86,7 @@ blend_times = [  ]
 
 stream = ExtResource( 3 )
 volume_db = -30.0
-pitch_scale = 1.0
+pitch_scale = 0.9
 autoplay = false
 mix_target = 0
 bus = "Voice"
