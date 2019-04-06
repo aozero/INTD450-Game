@@ -34,7 +34,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 13, 110 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, -2500 ) ]
+"values": [ Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, -3200 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("VBoxContainer:visible")
@@ -43,10 +43,10 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 0, 5 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0, 5, 110 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ false, true ]
+"values": [ false, true, false ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("Label:visible")
@@ -194,12 +194,14 @@ use_top_left = false
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." index="5"]
 
+editor/display_folded = true
+visible = false
 anchor_left = 0.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_top = -540.0
-margin_bottom = 4029.0
+margin_top = -3740.0
+margin_bottom = 829.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -1750,7 +1752,6 @@ _sections_unfolded = [ "Rect" ]
 
 [node name="Label" type="Label" parent="." index="6"]
 
-visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
