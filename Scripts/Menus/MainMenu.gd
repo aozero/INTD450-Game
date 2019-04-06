@@ -25,7 +25,7 @@ func _on_StartButton_button_up():
 	timer.start()
 
 func _on_Timer_timeout():
-	get_tree().change_scene("res://Scenes/Intro.tscn")
+	get_tree().change_scene("res://Scenes/Menus/Intro.tscn")
 
 func _on_BrightnessButton_button_up():
 	click_audio.play()
