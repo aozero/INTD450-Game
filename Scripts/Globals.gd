@@ -13,15 +13,7 @@ func get_mouse_sens():
 
 # AUDIO
 # SUBTITLES
-const NONE = 0
-const ENGLISH = 1
-var subtitles = NONE setget set_subtitles, get_subtitles
-
-func set_subtitles(value):
-	subtitles = value
-
-func get_subtitles():
-	return subtitles
+# Subtitles are handled in Dialogue.gd. Makes it easier to manage elsewhere. 
 
 # DISPLAY
 # FULLSCREEN

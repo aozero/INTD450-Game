@@ -23,7 +23,12 @@ onready var click_audio = $ClickAudio
 onready var click_audio_music = $ClickAudioMusic
 onready var click_audio_effects = $ClickAudioEffects
 onready var click_audio_voice = $ClickAudioVoice
+onready var dialogue = get_node("/root/Dialogue")
 onready var globals = get_node("/root/Globals")
+
+func _ready():
+	for i in dialogue.SUBTITLES_SUPPORTED:
+		subtitles_button.add_item(i)
 
 func _on_OptionsMenu_visibility_changed():
 	mouse_sens_slider.value = globals.get_mouse_sens()
@@ -39,7 +44,7 @@ func _on_OptionsMenu_visibility_changed():
 	music_slider.value = get_volume("Music")
 	effects_slider.value = get_volume("Effects")
 	voice_slider.value = get_volume("Voice")
-	subtitles_button.select(globals.get_subtitles())
+	subtitles_button.select(dialogue.get_subtitles_language())
 
 func _on_Tabs_tab_changed(tab):
 	click_audio.play()
@@ -112,4 +117,4 @@ func _on_VoiceSlider_value_changed(value):
 
 func _on_SubtitlesButton_item_selected(ID):
 	click_audio.play()
-	globals.set_subtitles(ID)
+	dialogue.set_subtitles_language(ID)

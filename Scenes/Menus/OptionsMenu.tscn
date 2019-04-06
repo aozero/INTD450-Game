@@ -154,6 +154,7 @@ _sections_unfolded = [ "custom_fonts" ]
 
 [node name="General" type="HBoxContainer" parent="VBoxContainer/Tabs" index="0"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
@@ -174,6 +175,7 @@ _sections_unfolded = [ "Margin", "Rect" ]
 
 [node name="Left" type="VBoxContainer" parent="VBoxContainer/Tabs/General" index="0"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -232,6 +234,7 @@ _sections_unfolded = [ "custom_fonts" ]
 
 [node name="Sensitivity" type="Container" parent="VBoxContainer/Tabs/General/Left" index="1"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -290,6 +293,7 @@ _sections_unfolded = [ "Rect" ]
 
 [node name="Right" type="VBoxContainer" parent="VBoxContainer/Tabs/General" index="2"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -400,6 +404,7 @@ _sections_unfolded = [ "Margin", "Rect" ]
 
 [node name="Display" type="HBoxContainer" parent="VBoxContainer/Tabs" index="1"]
 
+editor/display_folded = true
 visible = false
 anchor_left = 0.0
 anchor_top = 0.0
@@ -421,6 +426,7 @@ _sections_unfolded = [ "Margin", "Rect" ]
 
 [node name="Left" type="VBoxContainer" parent="VBoxContainer/Tabs/Display" index="0"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -660,6 +666,7 @@ _sections_unfolded = [ "Rect" ]
 
 [node name="Right" type="VBoxContainer" parent="VBoxContainer/Tabs/Display" index="2"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -861,7 +868,7 @@ action_mode = 0
 enabled_focus_mode = 2
 shortcut = null
 group = null
-text = "Item 0"
+text = "Fastest"
 flat = false
 align = 0
 items = [ "Fastest", null, false, -1, null, "Prettiest", null, false, -1, null ]
@@ -908,7 +915,7 @@ action_mode = 0
 enabled_focus_mode = 2
 shortcut = null
 group = null
-text = "Item 0"
+text = "Less"
 flat = false
 align = 0
 items = [ "Less", null, false, -1, null, "More", null, false, -1, null ]
@@ -938,7 +945,6 @@ _sections_unfolded = [ "Margin", "Rect" ]
 
 [node name="Left" type="VBoxContainer" parent="VBoxContainer/Tabs/Audio" index="0"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -1120,6 +1126,7 @@ _sections_unfolded = [ "custom_fonts" ]
 
 [node name="Subtitles" type="Container" parent="VBoxContainer/Tabs/Audio/Left" index="4"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -1178,7 +1185,6 @@ _sections_unfolded = [ "Rect" ]
 
 [node name="Right" type="VBoxContainer" parent="VBoxContainer/Tabs/Audio" index="2"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -1430,7 +1436,7 @@ group = null
 text = "None"
 flat = false
 align = 0
-items = [ "None", null, false, 0, null, "English", null, false, 1, null ]
+items = [  ]
 selected = 0
 _sections_unfolded = [ "Margin", "Rect", "Theme" ]
 

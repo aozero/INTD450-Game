@@ -16,31 +16,29 @@ onready var dialogue_label = $"Dialogue Label"
 onready var dialogue_timer = $"Dialogue Label/Dialogue Timer"
 onready var final_memory_timer = $DialogueAudio/FinalMemoryTimer
 onready var music_player = get_node("/root/MusicPlayer")
+onready var dialogue = get_node("/root/Dialogue")
 onready var globals = get_node("/root/Globals")
 
 var curr_final_item = null
 
 # Displays text at bottom of screen if there should be subtitles
-func show_subtitles(dialogue):
-	if dialogue.ALWAYS_SHOW_TEXT or globals.subtitles == globals.ENGLISH:
-		dialogue_label.text = dialogue.TEXT
-		dialogue_label.visible_characters = -1
-	else:
-		dialogue_label.visible_characters = 0
+func show_subtitles(item_dialogue):
+	dialogue_label.text = dialogue.get_subtitles(item_dialogue)
+	dialogue_label.visible_characters = -1
 
 """
 Plays sound and displays text 
-dialogue.SOUND - the sound to play
-dialogue.TEXT - the subtitle text to display
-dialogue.TEXT_TIME - how long in seconds the text should stay up for
+item_dialogue.SOUND - the sound to play
+item_dialogue.TEXT - the subtitle text to display
+item_dialogue.TEXT_TIME - how long in seconds the text should stay up for
 """
-func play_dialogue(dialogue):
-	dialogue_audio.stream = dialogue.SOUND
+func play_dialogue(item_dialogue):
+	dialogue_audio.stream = item_dialogue.SOUND
 	dialogue_audio.play()
 	
-	show_subtitles(dialogue)
+	show_subtitles(item_dialogue)
 	
-	dialogue_timer.wait_time = dialogue.TEXT_TIME
+	dialogue_timer.wait_time = item_dialogue.TEXT_TIME
 	dialogue_timer.start()
 
 # Dialogue has been up long enough, get rid of it

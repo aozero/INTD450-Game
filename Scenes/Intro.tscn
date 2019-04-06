@@ -13,7 +13,7 @@ length = 5.0
 loop = false
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("Left/1:visible")
+tracks/0/path = NodePath("Left/Line1:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -56,7 +56,7 @@ length = 4.0
 loop = false
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("Right/2:visible")
+tracks/0/path = NodePath("Right/Line2:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -87,7 +87,7 @@ length = 6.0
 loop = false
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("Left/3:visible")
+tracks/0/path = NodePath("Left/Line3:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -130,7 +130,7 @@ length = 1.0
 loop = false
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("Right/4:visible")
+tracks/0/path = NodePath("Right/Line4:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -161,7 +161,7 @@ length = 7.0
 loop = false
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("Right/5:visible")
+tracks/0/path = NodePath("Right/Line5:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -204,7 +204,7 @@ length = 3.0
 loop = false
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("Left/6:visible")
+tracks/0/path = NodePath("Left/Line6:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -259,7 +259,7 @@ length = 2.0
 loop = false
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("Right/7:visible")
+tracks/0/path = NodePath("Right/Line7:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -314,7 +314,7 @@ length = 5.0
 loop = false
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("Right/8:visible")
+tracks/0/path = NodePath("Right/Line8:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -358,7 +358,7 @@ use_filter = true
 font_data = ExtResource( 5 )
 _sections_unfolded = [ "Settings" ]
 
-[node name="BackgroundRect" type="ColorRect" index="0"]
+[node name="BackgroundRect" type="ColorRect"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -449,7 +449,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 
-[node name="1" type="Label" parent="Left" index="0"]
+[node name="Line1" type="Label" parent="Left" index="0"]
 
 visible = false
 anchor_left = 0.0
@@ -471,7 +471,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect", "Visibility" ]
 
-[node name="3" type="Label" parent="Left" index="1"]
+[node name="Line3" type="Label" parent="Left" index="1"]
 
 visible = false
 anchor_left = 0.0
@@ -495,7 +495,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Margin", "Rect", "Visibility", "custom_fonts" ]
 
-[node name="6" type="Label" parent="Left" index="2"]
+[node name="Line6" type="Label" parent="Left" index="2"]
 
 visible = false
 anchor_left = 0.0
@@ -537,7 +537,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 _sections_unfolded = [ "Margin" ]
 
-[node name="2" type="Label" parent="Right" index="0"]
+[node name="Line2" type="Label" parent="Right" index="0"]
 
 visible = false
 anchor_left = 0.0
@@ -563,7 +563,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Visibility" ]
 
-[node name="4" type="Label" parent="Right" index="1"]
+[node name="Line4" type="Label" parent="Right" index="1"]
 
 visible = false
 anchor_left = 0.0
@@ -588,7 +588,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Visibility" ]
 
-[node name="5" type="Label" parent="Right" index="2"]
+[node name="Line5" type="Label" parent="Right" index="2"]
 
 visible = false
 anchor_left = 0.0
@@ -613,7 +613,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Margin", "Visibility", "custom_fonts" ]
 
-[node name="7" type="Label" parent="Right" index="3"]
+[node name="Line7" type="Label" parent="Right" index="3"]
 
 visible = false
 anchor_left = 0.0
@@ -638,7 +638,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Margin" ]
 
-[node name="8" type="Label" parent="Right" index="4"]
+[node name="Line8" type="Label" parent="Right" index="4"]
 
 visible = false
 anchor_left = 0.0
