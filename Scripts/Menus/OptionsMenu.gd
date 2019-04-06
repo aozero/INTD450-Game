@@ -16,7 +16,7 @@ onready var master_slider = $VBoxContainer/Tabs/Audio/Right/Master/MasterSlider
 onready var music_slider = $VBoxContainer/Tabs/Audio/Right/Music/MusicSlider
 onready var effects_slider = $VBoxContainer/Tabs/Audio/Right/Effects/EffectsSlider
 onready var voice_slider = $VBoxContainer/Tabs/Audio/Right/Voice/VoiceSlider
-onready var subtitles_button = $VBoxContainer/Tabs/Audio/Right/Subtitles/SubtitlesButton
+onready var subtitles_button = $VBoxContainer/Tabs/General/Right/Subtitles/SubtitlesButton
 
 onready var back_button = $VBoxContainer/BackContainer/BackButton
 onready var click_audio = $ClickAudio
