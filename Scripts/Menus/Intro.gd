@@ -30,6 +30,8 @@ const START_MUSIC = 3  # which animation to start playing the music at
 var curr_anim = 1
 
 func _ready():
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	
 	music_player.stop_drone()
 	animation_player.play("1")
 	
