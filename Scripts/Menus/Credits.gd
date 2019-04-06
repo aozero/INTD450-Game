@@ -1,9 +1,11 @@
 extends ColorRect
 
 onready var main_anim = $MainAnimator
+onready var title_anim = $VBoxContainer/Title/TitleAnimator
 
 func _ready():
 	main_anim.play("start")
+	title_anim.play("loop")
 
 func quit_game():
 	get_tree().quit()
