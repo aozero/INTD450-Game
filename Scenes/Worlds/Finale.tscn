@@ -186,7 +186,11 @@ script = ExtResource( 17 )
 
 transform = Transform( 0.756325, 0, 0.654196, 0, 1, 0, -0.654196, 0, 0.756325, -19.0371, 0, -12.3129 )
 
-[node name="FireTrigger" type="Area" parent="Navigation/NavigationMeshInstance/Fires" index="1"]
+[node name="FireStrip2" parent="Navigation/NavigationMeshInstance/Fires" index="1" instance=ExtResource( 18 )]
+
+transform = Transform( 0.756325, 0, 0.654196, 0, 1, 0, -0.654196, 0, 0.756325, 1.29371, 0, 9.64328 )
+
+[node name="FireTrigger" type="Area" parent="Navigation/NavigationMeshInstance/Fires" index="2"]
 
 editor/display_folded = true
 transform = Transform( 0.997582, 0, 0.0695051, 0, 1, 0, -0.0695051, 0, 0.997582, -4.73564, 0, 3.53886 )
@@ -227,7 +231,7 @@ visible = false
 transform = Transform( 0.604171, 0, -0.796854, 0, 1, 0, 0.796854, 0, 0.604171, 1.24701, 0, -3.4984 )
 visible = false
 
-[node name="FireTrigger2" type="Area" parent="Navigation/NavigationMeshInstance/Fires" index="2"]
+[node name="FireTrigger2" type="Area" parent="Navigation/NavigationMeshInstance/Fires" index="3"]
 
 editor/display_folded = true
 transform = Transform( 0.997582, 0, 0.0695051, 0, 1, 0, -0.0695051, 0, 0.997582, -8.2141, 0, -0.605472 )
@@ -268,7 +272,7 @@ visible = false
 transform = Transform( 0.604171, 0, -0.796854, 0, 1, 0, 0.796854, 0, 0.604171, 1.24701, 0, -3.4984 )
 visible = false
 
-[node name="FireTrigger3" type="Area" parent="Navigation/NavigationMeshInstance/Fires" index="3"]
+[node name="FireTrigger3" type="Area" parent="Navigation/NavigationMeshInstance/Fires" index="4"]
 
 editor/display_folded = true
 transform = Transform( 0.997582, 0, 0.0695051, 0, 1, 0, -0.0695051, 0, 0.997582, -11.5908, 0, -4.57611 )
@@ -309,7 +313,7 @@ visible = false
 transform = Transform( 0.604171, 0, -0.796854, 0, 1, 0, 0.796854, 0, 0.604171, 1.24701, 0, -3.4984 )
 visible = false
 
-[node name="FireTrigger4" type="Area" parent="Navigation/NavigationMeshInstance/Fires" index="4"]
+[node name="FireTrigger4" type="Area" parent="Navigation/NavigationMeshInstance/Fires" index="5"]
 
 editor/display_folded = true
 transform = Transform( 0.997462, 0, 0.0712005, 0, 1, 0, -0.0712005, 0, 0.997462, -15.5099, 0, -8.96564 )
