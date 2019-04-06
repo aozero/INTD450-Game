@@ -140,8 +140,9 @@ func _ready():
 	
 	# Leather-bound Planner
 	STUDY_2.SOUND = load("res://Sound/Effects/Memory/Minor Items/silence.wav")
-	STUDY_2["None"] = "Dad: May 14th, 2009. Jamie (Caterpillar) and Riley's (Queen of Hearts) school play. Alice in Wonderland - school gym 4:30PM. [crossed out]. Red eye flight to Taiwan 5:40 AM."
-	STUDY_2["Español"] = "Papá: 14 de mayo, 2009. Jaime (Oruga) y Riley (La Reina de Corazones) obra escolar. Alicia en el país de las Maravillas – gimnasio de escuela, 16:30. Vuelo nocturno a Taiwán, 5:40."
+	STUDY_2["None"] = "Dad's Planner\nPress 'E' to close"
+	STUDY_2["English"] = "Dad: May 14th, 2009. Jamie (Caterpillar) and Riley's (Queen of Hearts) school play. Alice in Wonderland - school gym 4:30PM. [crossed out]. Red eye flight to Taiwan 5:40 AM.\nPress 'E' to close"
+	STUDY_2["Español"] = "Papá: 14 de mayo, 2009. Jaime (Oruga) y Riley (La Reina de Corazones) obra escolar. Alicia en el país de las Maravillas – gimnasio de escuela, 16:30. Vuelo nocturno a Taiwán, 5:40.\nPulsa la 'E' para cerrar"
 	STUDY_2.TEXT_TIME = 12
 	
 	# Tapshoe

@@ -13,13 +13,21 @@ func _ready():
 func _input(event):	
 	if event.is_action_pressed("pause"):
 		set_paused(!get_tree().paused)
+	elif event.is_action_pressed("interact"):
+		# checks if player should stop looking at an item
+		var player = get_tree().get_root().get_node("World/Player")
+		player.memory_controller.stop_looking_at_item()
 
 # If player alt-tabs or we otherwise lose focus, pause the game
 func _notification(what):
 	if what == MainLoop.NOTIFICATION_WM_FOCUS_OUT:
-		set_paused(true)
+		set_paused(true)	
 
 func set_paused(paused):
+	# checks if player should stop looking at an item
+	var player = get_tree().get_root().get_node("World/Player")
+	player.memory_controller.stop_looking_at_item()
+	
 	get_tree().paused = paused
 	
 	pause_menu_rect.visible = paused

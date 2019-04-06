@@ -20,6 +20,7 @@ onready var dialogue = get_node("/root/Dialogue")
 onready var globals = get_node("/root/Globals")
 
 var curr_final_item = null
+var looking_at_item = false
 
 # Displays text at bottom of screen if there should be subtitles
 func show_subtitles(item_dialogue):
@@ -44,6 +45,20 @@ func play_dialogue(item_dialogue):
 # Dialogue has been up long enough, get rid of it
 func _on_Dialogue_Timer_timeout():
 	dialogue_label.visible_characters = 0
+
+# Make item appear in the center of the screen and pause the game
+func look_at_item(texture):
+	looking_at_item = true
+	item_sprite.texture = texture
+	get_tree().paused = true
+
+# Return to normal game after looking at item
+# Called from PauseController because it is the master of unpausing
+func stop_looking_at_item():
+	if player.memory_controller.looking_at_item:
+		looking_at_item = false
+		item_sprite.texture = null
+		get_tree().paused = false
 
 # Called when interacting with final item
 # Starts the process, fading into the memory

@@ -143,7 +143,7 @@ func _physics_process(delta):
 				if !coll.has_method("can_interact") or coll.can_interact(torch.visible):
 					enable_interact_prompt()
 					
-					if Input.is_action_pressed("interact"):
+					if Input.is_action_just_pressed("interact"):
 						coll.interact(self)
 				else:
 					disable_prompt()
