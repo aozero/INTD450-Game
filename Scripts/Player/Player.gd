@@ -13,8 +13,6 @@ onready var SOUND_MATCH_ON = load("res://Sound/Effects/Match/match_on.wav")
 onready var SOUND_MATCH_OFF = load("res://Sound/Effects/Match/match_off.wav")
 onready var SOUND_MATCH_BURNING = load("res://Sound/Effects/Match/match_burning.wav")
 
-onready var INTERACT_PROMPT = "Press " + InputMap.get_action_list("interact")[0].as_text() + " to interact"
-
 onready var audio_player = $FirstPersonAudio
 onready var match_burning_audio = $MatchBurningAudio
 onready var audio_fader = $AudioFader
@@ -23,6 +21,7 @@ onready var music_player = get_node("/root/MusicPlayer")
 onready var memory_controller = $CanvasLayer/MemoryController
 onready var stamina_controller = $CanvasLayer/StaminaController
 onready var globals = get_node("/root/Globals")
+onready var dialogue = get_node("/root/Dialogue")
 
 onready var anim_hand = $"CanvasLayer/Hand/Hand Sprite/HandAnimator"
 onready var headbobber = $Headbobber
@@ -193,7 +192,7 @@ func play_audio(stream):
 	audio_player.play()
 
 func enable_interact_prompt():
-	prompt_label.text = INTERACT_PROMPT
+	prompt_label.text = dialogue.get_subtitles(dialogue.INTERACT_PROMPT)
 	prompt_label.visible_characters = -1
 
 func disable_prompt():

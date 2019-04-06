@@ -32,6 +32,7 @@ func set_subtitles_language(value):
 func get_subtitles_language():
 	return subtitles_language
 
+var INTERACT_PROMPT = {}
 var INTRO_1 = {}
 var INTRO_2 = {}
 var INTRO_3 = {}
@@ -54,6 +55,9 @@ var BEDROOM_2 = {}
 var BEDROOM_FINAL = {}
 
 func _ready():
+	INTERACT_PROMPT["None"] = "Press 'E' to interact"
+	INTERACT_PROMPT["Español"] = "Pulsa la 'E' para interactuar"
+	
 	# Intro messages
 	###############################
 	INTRO_1["None"] = "Hey Jamie are you sure about this?"
