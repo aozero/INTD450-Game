@@ -1,6 +1,6 @@
 [gd_scene load_steps=15 format=2]
 
-[ext_resource path="res://Scripts/Intro.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/Menus/Intro.gd" type="Script" id=1]
 [ext_resource path="res://Sound/Effects/Intro/text_recieved.wav" type="AudioStream" id=2]
 [ext_resource path="res://Sound/Effects/Intro/text_sent.wav" type="AudioStream" id=3]
 [ext_resource path="res://Sound/Effects/Intro/computer_typing.wav" type="AudioStream" id=4]
