@@ -618,7 +618,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -30.186, 0, 13.8609 )
 
 [node name="ItemJar" parent="Items" index="0" instance=ExtResource( 21 )]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 21.2091, 0, -43.2697 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 47.5137, 0, -11.3234 )
 
 [node name="ItemMug" parent="Items" index="1" instance=ExtResource( 22 )]
 
