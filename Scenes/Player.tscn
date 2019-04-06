@@ -343,7 +343,7 @@ tracks/0/keys = {
 
 radius = 50.0
 
-[node name="Player" type="KinematicBody" index="0"]
+[node name="Player" type="KinematicBody"]
 
 input_ray_pickable = true
 input_capture_on_drag = false
@@ -692,7 +692,7 @@ script = ExtResource( 13 )
 [node name="DialogueAudio" type="AudioStreamPlayer" parent="CanvasLayer/MemoryController" index="0"]
 
 stream = null
-volume_db = -10.0
+volume_db = -15.0
 pitch_scale = 1.0
 autoplay = false
 mix_target = 0
