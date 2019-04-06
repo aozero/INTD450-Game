@@ -343,7 +343,7 @@ tracks/0/keys = {
 
 radius = 50.0
 
-[node name="Player" type="KinematicBody"]
+[node name="Player" type="KinematicBody" index="0"]
 
 input_ray_pickable = true
 input_capture_on_drag = false
@@ -617,9 +617,9 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -200.0
+margin_left = -960.0
 margin_top = -500.0
-margin_right = 200.0
+margin_right = 960.0
 margin_bottom = -400.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -636,7 +636,7 @@ valign = 1
 percent_visible = 0.0
 lines_skipped = 0
 max_lines_visible = -1
-_sections_unfolded = [ "Grow Direction", "Margin" ]
+_sections_unfolded = [ "Grow Direction", "Margin", "Rect" ]
 
 [node name="StaminaController" type="ColorRect" parent="CanvasLayer" index="3"]
 
