@@ -39,7 +39,6 @@ func _ready():
 	line_5.rect_position.y = line_4.rect_position.y + line_4.rect_size.y + LINE_SPACING
 	line_6.rect_position.y = line_5.rect_position.y + line_5.rect_size.y + LINE_SPACING
 	line_7.rect_position.y = line_6.rect_position.y + line_6.rect_size.y + LINE_SPACING
-	print(line_7.rect_size.y)
 	line_8.rect_position.y = line_7.rect_position.y + line_7.rect_size.y + LINE_SPACING
 
 func _input(event):
