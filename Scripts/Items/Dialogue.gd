@@ -23,7 +23,7 @@ To add a new language, for each TEXT, also add a new part to that item, such as
 TUTORIAL_1.None = "Use WASD to move and mouse to look."
 TUTORIAL_1.Spanish = "Usé el traductor de google para esto."
 """
-var SUBTITLES_SUPPORTED = ["None", "English"]
+var SUBTITLES_SUPPORTED = ["None", "English", "Español"]
 var subtitles_language = 0 setget set_subtitles_language, get_subtitles_language
 
 func set_subtitles_language(value):
@@ -56,22 +56,22 @@ var BEDROOM_FINAL = {}
 func _ready():
 	# Intro messages
 	###############################
-	INTRO_1.None = "Hey Jamie are you sure about this?"
-	
-	INTRO_2.None = "No, but I think I need to go back. \n I knew I would have to one day."
-	
-	INTRO_3.None = "Yeah maybe it was inevitable but you just seemed like really skittish, like more than usual"
-	
-	INTRO_4.None = "I guess it’s just weird to grasp."
-	
-	INTRO_5.None = "With Grandpa gone, everything is mine, but it’ll never feel that way"
-	
-	INTRO_6.None = "Are you scared? Do you want me to go with you?"
-	
-	INTRO_7.None = "No, I’ll be alright. It’s like they all said."
-	
-	INTRO_8.None = "My fears are just in my head."
-	
+	INTRO_1["None"] = "Hey Jamie are you sure about this?"
+	INTRO_1["Español"] = "¡Oye! Jaime ¿estás segura de esto?"
+	INTRO_2["None"] = "No, but I think I need to go back. \n I knew I would have to one day."
+	INTRO_2["Español"] = "No pero yo pienso que necesito volver. \n Yo sabía que tendría que hacerlo algún día."
+	INTRO_3["None"] = "Yeah maybe it was inevitable but you just seemed like really skittish, like more than usual"
+	INTRO_3["Español"] = "Sí, posiblemente fue inevitable \n pero parecías muy nerviosa, \n más que normal."
+	INTRO_4["None"] = "I guess it’s just weird to grasp."
+	INTRO_4["Español"] = "Supongo que es raro de entender."
+	INTRO_5["None"] = "With Grandpa gone, everything is mine, but it’ll never feel that way"
+	INTRO_5["Español"] = "Con mi abuelo ido, todos son mío pero nunca se sentirá así."
+	INTRO_6["None"] = "Are you scared? Do you want me to go with you?"
+	INTRO_6["Español"] = "¿Tienes miedo? ¿Quieres que vaya contigo?"
+	INTRO_7["None"] = "No, I’ll be alright. It’s like they all said."
+	INTRO_7["Español"] = "No, estará bien. Es como todos dijeron."
+	INTRO_8["None"] = "My fears are just in my head."
+	INTRO_8["Español"] = "Mis temores están solo en mi cabeza."
 	# Tutorial Messages
 	###############################
 	# As soon as you start the game
