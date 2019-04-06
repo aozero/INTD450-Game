@@ -91,23 +91,17 @@ func _ready():
 	# Right after moving past the campfire
 	var run_button = get_action_button_text("run")
 	TUTORIAL_2.SOUND = load("res://Sound/Effects/Memory/Minor Items/silence.wav")
-<<<<<<< HEAD
 	TUTORIAL_2["None"] = "Running (Hold " + run_button + ") in the forest makes a lot of noise. "
 	TUTORIAL_2["Español"] = "Correr en el bosque (Manteniendo la tecla Shift) hace mucho ruido."
-=======
 	TUTORIAL_2.None = "Running (Hold Shift) in the forest makes a lot of noise. "
->>>>>>> fbb47253262c48d093b40cf9b38be7113e7e064c
 	TUTORIAL_2.TEXT_TIME = 16
 	
 	# At the very edge of the campfire's light
 	var light_button = get_action_button_text("shoot")
 	TUTORIAL_3.SOUND = load("res://Sound/Effects/Memory/Minor Items/silence.wav")
-<<<<<<< HEAD
 	TUTORIAL_3["None"] = "Lighting a match (" + light_button + ") will make it easier to see... and be seen."
 	TUTORIAL_3["Español"] = "Encender un fósforo (tecla izquierda del ratón) hará que sea más fácil de ver… y ser visto."
-=======
-	TUTORIAL_3.None = "Lighting a match (Left Click) will make it easier to see... and be seen."
->>>>>>> fbb47253262c48d093b40cf9b38be7113e7e064c
+
 	TUTORIAL_3.TEXT_TIME = 16
 	###############################
 	
