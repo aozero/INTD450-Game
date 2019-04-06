@@ -157,19 +157,22 @@ func _ready():
 	# Ice Skate
 	BEDROOM_1.SOUND = load("res://Sound/Effects/Memory/Minor Items/bedroom_iceskate_memory.wav")
 	BEDROOM_1.None = ""
-	BEDROOM_1.English = "Riley: Jamie, watch me! Look at me, I'm a dancer!"
+	BEDROOM_1["English"] = "Riley: I th-thought… th-the ice w-was th-thick en-nough t-to skate on."
+	BEDROOM_1["Español"] = "Riley: P-pensé qu-que el hielo era lo suf-ficientemente espeso p-para p-patinar."
 	BEDROOM_1.TEXT_TIME = 8
 	
 	# Small Painting Easel
 	BEDROOM_2.SOUND = load("res://Sound/Effects/Memory/Minor Items/bedroom_easel_memory.wav")
 	BEDROOM_2.None = ""
-	BEDROOM_2.English = "Mom: Sweetie, I love all of your art but if you don't clean this room, I'm taking all your paint and crayons away for a week."
+	BEDROOM_2["English"] = "Mom: Sweetie, I love all of your art but if you don't clean this room, I'm taking all your paint and crayons away for a week."
+	BEDROOM_2["Español"] = "Mamá: Cariña, me encanta todo tu arte, pero si no limpias esta habitación, te quitaré toda la pintura y los crayones durante una semana."
 	BEDROOM_2.TEXT_TIME = 9
 	
 	# Flamingo
 	BEDROOM_FINAL.SOUND = load("res://Sound/Effects/Memory/Final Items/bedroom_memory.wav")
 	BEDROOM_FINAL.None = ""
-	BEDROOM_FINAL.English = "Riley: Jamie? I can't see you. Ouch! Oh my gosh, it's burning! Jamie, where are you? H-help!" 
+	BEDROOM_FINAL["English"] = "Riley: Jamie? I can't see you. Ouch! Oh my gosh, it's burning! Jamie, where are you? H-help!" 
+	BEDROOM_FINAL["Español"] = "Riley: ¡Jaime! No puedo verte. ¡Ay!¡Dios mio! Está quemando. Jaime, ¿dondé estás? ¡Ayduame!"
 	BEDROOM_FINAL.MUSIC = load("res://Sound/Music/BedroomMemory.wav")
 	###############################
 
