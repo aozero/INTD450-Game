@@ -110,19 +110,22 @@ func _ready():
 	# Cookie Jar
 	KITCHEN_1.SOUND = load("res://Sound/Effects/Memory/Minor Items/kitchen_cookiejar_memory.wav")
 	KITCHEN_1.None = ""
-	KITCHEN_1.English = "Riley: Oatmeal raisin! I thought they were chocolate chip? This is jar is full of LIES!"
+	KITCHEN_1["English"] = "Riley: Oatmeal raisin! I thought they were chocolate chip? This is jar is full of LIES!"
+	KITCHEN_1["Español"] = "Riley: ¿Avena y pasas? ¡Pensé que eran pepitas de chocolate! ¡Este es un tarro de mentiras!"
 	KITCHEN_1.TEXT_TIME = 8
 	
 	# Coffee Mug
 	KITCHEN_2.SOUND = load("res://Sound/Effects/Memory/Minor Items/kitchen_coffeemug_memory.wav")
 	KITCHEN_2.None = ""
-	KITCHEN_2.English = "Mom: Oh NOW you don’t like your sandwich? Come on, you would have never known it was vegan cheese if I hadn't told you. The store said it tasted exactly the same."
+	KITCHEN_2["English"] = "Mom: Oh NOW you don’t like your sandwich? Come on, you would have never known it was vegan cheese if I hadn't told you. The store said it tasted exactly the same."
+	KITCHEN_2["Español"] = "Mamá: Ah, ¿ahora no quieres tu sándwich? Nunca lo hubieras sabido fui queso vegano si no te hubiera dicho. La cajera dijo que el sabor fue el mismo."
 	KITCHEN_2.TEXT_TIME = 10
 	
 	# Drawing of Clubhouse
 	KITCHEN_FINAL.SOUND = load("res://Sound/Effects/Memory/Final Items/kitchen_memory.wav")
 	KITCHEN_FINAL.None = ""
-	KITCHEN_FINAL.English = "Riley: Too slow, Jamie. If you want me to drop the ladder, you gotta give me the password."
+	KITCHEN_FINAL["English"] = "Riley: Too slow, Jamie. If you want me to drop the ladder, you gotta give me the password."
+	KITCHEN_FINAL["Español"] = "Riley: Demasiado lento, Jaime. Si tú me quieres soltar la escalera, tienes que dame la contraseña."
 	KITCHEN_FINAL.MUSIC = load("res://Sound/Music/KitchenMemory.wav")
 	###############################
 	
