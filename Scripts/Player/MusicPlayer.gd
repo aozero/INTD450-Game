@@ -35,6 +35,10 @@ func fade_in(player):
 	tween_in.interpolate_property(player, "volume_db", player.volume_db, player_vol, FADE_DURATION, Tween.TRANS_SINE, Tween.EASE_IN, 0)
 	tween_in.start()
 
+func fade_out(player):
+	tween_out.interpolate_property(player, "volume_db", player.volume_db, player.volume_db - 40, FADE_DURATION, Tween.TRANS_SINE, Tween.EASE_IN, 0)
+	tween_out.start()
+
 func stop_melody():
 	tween_out.interpolate_property(melody_player, "volume_db", melody_vol, -80, FADE_DURATION, Tween.TRANS_SINE, Tween.EASE_IN, 0)
 	tween_out.start()
