@@ -57,9 +57,8 @@ use_filter = false
 font_data = ExtResource( 4 )
 _sections_unfolded = [ "Settings" ]
 
-[node name="OptionsMenu" type="ColorRect"]
+[node name="OptionsMenu" type="ColorRect" index="0"]
 
-visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -404,7 +403,6 @@ _sections_unfolded = [ "Margin", "Rect" ]
 
 [node name="Display" type="HBoxContainer" parent="VBoxContainer/Tabs" index="1"]
 
-editor/display_folded = true
 visible = false
 anchor_left = 0.0
 anchor_top = 0.0
@@ -426,7 +424,6 @@ _sections_unfolded = [ "Margin", "Rect" ]
 
 [node name="Left" type="VBoxContainer" parent="VBoxContainer/Tabs/Display" index="0"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -600,7 +597,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = SubResource( 3 )
-text = "Tree Quality:"
+text = "Graphics Quality:"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
@@ -640,7 +637,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = SubResource( 3 )
-text = "Tree Amount:"
+text = "Number of Trees:"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
@@ -666,7 +663,6 @@ _sections_unfolded = [ "Rect" ]
 
 [node name="Right" type="VBoxContainer" parent="VBoxContainer/Tabs/Display" index="2"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -871,7 +867,7 @@ group = null
 text = "Fastest"
 flat = false
 align = 0
-items = [ "Fastest", null, false, -1, null, "Prettiest", null, false, -1, null ]
+items = [ "Low", null, false, -1, null, "High", null, false, -1, null ]
 selected = 0
 _sections_unfolded = [ "Margin", "Rect", "Theme" ]
 
@@ -918,7 +914,7 @@ group = null
 text = "Less"
 flat = false
 align = 0
-items = [ "Less", null, false, -1, null, "More", null, false, -1, null ]
+items = [ "Low", null, false, -1, null, "High", null, false, -1, null ]
 selected = 0
 _sections_unfolded = [ "Margin", "Rect", "Theme" ]
 
@@ -1433,11 +1429,10 @@ action_mode = 0
 enabled_focus_mode = 2
 shortcut = null
 group = null
-text = "None"
 flat = false
 align = 0
 items = [  ]
-selected = 0
+selected = -1
 _sections_unfolded = [ "Margin", "Rect", "Theme" ]
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" index="2"]
