@@ -13,7 +13,7 @@ length = 5.0
 loop = false
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("Left/Line1:visible")
+tracks/0/path = NodePath("Left/resizer1/Line1:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -56,7 +56,7 @@ length = 4.0
 loop = false
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("Right/Line2:visible")
+tracks/0/path = NodePath("Right/resizer2/Line2:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -87,7 +87,7 @@ length = 6.0
 loop = false
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("Left/Line3:visible")
+tracks/0/path = NodePath("Left/resizer3/Line3:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -130,7 +130,7 @@ length = 1.0
 loop = false
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("Right/Line4:visible")
+tracks/0/path = NodePath("Right/resizer4/Line4:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -161,7 +161,7 @@ length = 7.0
 loop = false
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("Right/Line5:visible")
+tracks/0/path = NodePath("Right/resizer5/Line5:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -204,7 +204,7 @@ length = 3.0
 loop = false
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("Left/Line6:visible")
+tracks/0/path = NodePath("Left/resizer6/Line6:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -259,7 +259,7 @@ length = 2.0
 loop = false
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("Right/Line7:visible")
+tracks/0/path = NodePath("Right/resizer7/Line7:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -314,7 +314,7 @@ length = 5.0
 loop = false
 step = 0.1
 tracks/0/type = "value"
-tracks/0/path = NodePath("Right/Line8:visible")
+tracks/0/path = NodePath("Right/resizer8/Line8:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -358,7 +358,7 @@ use_filter = true
 font_data = ExtResource( 5 )
 _sections_unfolded = [ "Settings" ]
 
-[node name="BackgroundRect" type="ColorRect"]
+[node name="BackgroundRect" type="ColorRect" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -448,8 +448,26 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
+_sections_unfolded = [ "Anchor", "Margin" ]
 
-[node name="Line1" type="Label" parent="Left" index="0"]
+[node name="resizer1" type="VBoxContainer" parent="Left" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 40.0
+margin_bottom = 40.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+_sections_unfolded = [ "Anchor", "Margin", "Rect" ]
+
+[node name="Line1" type="Label" parent="Left/resizer1" index="0"]
 
 visible = false
 anchor_left = 0.0
@@ -473,16 +491,32 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect", "Visibility" ]
 
-[node name="Line3" type="Label" parent="Left" index="1"]
+[node name="resizer3" type="VBoxContainer" parent="Left" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 194.0
+margin_right = 40.0
+margin_bottom = 234.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+
+[node name="Line3" type="Label" parent="Left/resizer3" index="0"]
 
 visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 194.0
 margin_right = 790.0
-margin_bottom = 371.0
+margin_bottom = 177.0
 rect_min_size = Vector2( 790, 0 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -498,16 +532,32 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect", "Visibility", "custom_fonts" ]
 
-[node name="Line6" type="Label" parent="Left" index="2"]
+[node name="resizer6" type="VBoxContainer" parent="Left" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 650.0
+margin_right = 40.0
+margin_bottom = 690.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+
+[node name="Line6" type="Label" parent="Left/resizer6" index="0"]
 
 visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 650.0
 margin_right = 790.0
-margin_bottom = 767.0
+margin_bottom = 117.0
 rect_min_size = Vector2( 790, 0 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -540,17 +590,33 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 _sections_unfolded = [ "Margin" ]
 
-[node name="Line2" type="Label" parent="Right" index="0"]
+[node name="resizer2" type="VBoxContainer" parent="Right" index="0"]
 
-visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 65.0
 margin_top = 65.0
-margin_right = 855.0
-margin_bottom = 186.0
+margin_right = 105.0
+margin_bottom = 105.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+
+[node name="Line2" type="Label" parent="Right/resizer2" index="0"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 790.0
+margin_bottom = 117.0
 grow_horizontal = 0
 rect_min_size = Vector2( 790, 0 )
 rect_pivot_offset = Vector2( 0, 0 )
@@ -568,17 +634,33 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Grow Direction", "Rect", "Visibility" ]
 
-[node name="Line4" type="Label" parent="Right" index="1"]
+[node name="resizer4" type="VBoxContainer" parent="Right" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 65.0
+margin_top = 371.0
+margin_right = 105.0
+margin_bottom = 411.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+
+[node name="Line4" type="Label" parent="Right/resizer4" index="0"]
 
 visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 172.0
-margin_top = 371.0
-margin_right = 855.0
-margin_bottom = 433.0
+margin_right = 790.0
+margin_bottom = 57.0
 grow_horizontal = 0
 rect_min_size = Vector2( 790, 0 )
 rect_pivot_offset = Vector2( 0, 0 )
@@ -595,17 +677,33 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Grow Direction", "Rect", "Visibility" ]
 
-[node name="Line5" type="Label" parent="Right" index="2"]
+[node name="resizer5" type="VBoxContainer" parent="Right" index="2"]
 
-visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 65.0
 margin_top = 460.0
-margin_right = 855.0
-margin_bottom = 612.0
+margin_right = 105.0
+margin_bottom = 500.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+
+[node name="Line5" type="Label" parent="Right/resizer5" index="0"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 790.0
+margin_bottom = 117.0
 grow_horizontal = 0
 rect_min_size = Vector2( 790, 0 )
 rect_pivot_offset = Vector2( 0, 0 )
@@ -622,16 +720,32 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect", "Visibility", "custom_fonts" ]
 
-[node name="Line7" type="Label" parent="Right" index="3"]
+[node name="resizer7" type="VBoxContainer" parent="Right" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 780.0
+margin_right = 40.0
+margin_bottom = 820.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+
+[node name="Line7" type="Label" parent="Right/resizer7" index="0"]
 
 visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 780.0
 margin_right = 860.0
-margin_bottom = 837.0
+margin_bottom = 57.0
 rect_min_size = Vector2( 860, 0 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -647,18 +761,34 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect" ]
 
-[node name="Line8" type="Label" parent="Right" index="4"]
+[node name="resizer8" type="VBoxContainer" parent="Right" index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 850.0
+margin_right = 40.0
+margin_bottom = 890.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+
+[node name="Line8" type="Label" parent="Right/resizer8" index="0"]
 
 visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -10.0
-margin_top = 850.0
-margin_right = 850.0
-margin_bottom = 967.0
+margin_right = 860.0
+margin_bottom = 57.0
 grow_horizontal = 0
+rect_min_size = Vector2( 860, 0 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2

@@ -2,14 +2,23 @@ extends ColorRect
 
 const LINE_SPACING = 15
 
-onready var line_1 = $Left/Line1
-onready var line_2 = $Right/Line2
-onready var line_3 = $Left/Line3
-onready var line_4 = $Right/Line4
-onready var line_5 = $Right/Line5
-onready var line_6 = $Left/Line6
-onready var line_7 = $Right/Line7
-onready var line_8 = $Right/Line8
+onready var resizer_1 = $Left/resizer1
+onready var resizer_2 = $Right/resizer2
+onready var resizer_3 = $Left/resizer3
+onready var resizer_4 = $Right/resizer4
+onready var resizer_5 = $Right/resizer5
+onready var resizer_6 = $Left/resizer6
+onready var resizer_7 = $Right/resizer7
+onready var resizer_8 = $Right/resizer8
+
+onready var line_1 = $Left/resizer1/Line1
+onready var line_2 = $Right/resizer2/Line2
+onready var line_3 = $Left/resizer3/Line3
+onready var line_4 = $Right/resizer4/Line4
+onready var line_5 = $Right/resizer5/Line5
+onready var line_6 = $Left/resizer6/Line6
+onready var line_7 = $Right/resizer7/Line7
+onready var line_8 = $Right/resizer8/Line8
 
 onready var animation_player = $AnimationPlayer
 onready var music_player = get_node("/root/MusicPlayer")
@@ -32,14 +41,17 @@ func _ready():
 	line_6.text = dialogue.get_subtitles(dialogue.INTRO_6)
 	line_7.text = dialogue.get_subtitles(dialogue.INTRO_7)
 	line_8.text = dialogue.get_subtitles(dialogue.INTRO_8)
-	
-	line_2.rect_position.y = line_1.rect_position.y + line_1.rect_size.y + LINE_SPACING
-	line_3.rect_position.y = line_2.rect_position.y + line_2.rect_size.y + LINE_SPACING
-	line_4.rect_position.y = line_3.rect_position.y + line_3.rect_size.y + LINE_SPACING
-	line_5.rect_position.y = line_4.rect_position.y + line_4.rect_size.y + LINE_SPACING
-	line_6.rect_position.y = line_5.rect_position.y + line_5.rect_size.y + LINE_SPACING
-	line_7.rect_position.y = line_6.rect_position.y + line_6.rect_size.y + LINE_SPACING
-	line_8.rect_position.y = line_7.rect_position.y + line_7.rect_size.y + LINE_SPACING
+
+func _process(delta):
+	# Labels don't resize until it starts really running (so here, in _process)
+	# Also the sizing of things changes when made visible/not visible so we just just constantly
+	resizer_2.rect_position.y = resizer_1.rect_position.y + resizer_1.rect_size.y + LINE_SPACING
+	resizer_3.rect_position.y = resizer_2.rect_position.y + resizer_2.rect_size.y + LINE_SPACING
+	resizer_4.rect_position.y = resizer_3.rect_position.y + resizer_3.rect_size.y + LINE_SPACING
+	resizer_5.rect_position.y = resizer_4.rect_position.y + resizer_4.rect_size.y + LINE_SPACING
+	resizer_6.rect_position.y = resizer_5.rect_position.y + resizer_5.rect_size.y + LINE_SPACING
+	resizer_7.rect_position.y = resizer_6.rect_position.y + resizer_6.rect_size.y + LINE_SPACING
+	resizer_8.rect_position.y = resizer_7.rect_position.y + resizer_7.rect_size.y + LINE_SPACING
 
 func _input(event):
 	if event.is_action_pressed("pause"):
