@@ -1,5 +1,7 @@
 extends ColorRect
 
+const LINE_SPACING = 15
+
 onready var line_1 = $Left/Line1
 onready var line_2 = $Right/Line2
 onready var line_3 = $Left/Line3
@@ -30,6 +32,15 @@ func _ready():
 	line_6.text = dialogue.get_subtitles(dialogue.INTRO_6)
 	line_7.text = dialogue.get_subtitles(dialogue.INTRO_7)
 	line_8.text = dialogue.get_subtitles(dialogue.INTRO_8)
+	
+	line_2.rect_position.y = line_1.rect_position.y + line_1.rect_size.y + LINE_SPACING
+	line_3.rect_position.y = line_2.rect_position.y + line_2.rect_size.y + LINE_SPACING
+	line_4.rect_position.y = line_3.rect_position.y + line_3.rect_size.y + LINE_SPACING
+	line_5.rect_position.y = line_4.rect_position.y + line_4.rect_size.y + LINE_SPACING
+	line_6.rect_position.y = line_5.rect_position.y + line_5.rect_size.y + LINE_SPACING
+	line_7.rect_position.y = line_6.rect_position.y + line_6.rect_size.y + LINE_SPACING
+	print(line_7.rect_size.y)
+	line_8.rect_position.y = line_7.rect_position.y + line_7.rect_size.y + LINE_SPACING
 
 func _input(event):
 	if event.is_action_pressed("pause"):
