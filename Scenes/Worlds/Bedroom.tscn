@@ -113,7 +113,7 @@ size = Vector2( 120, 60 )
 subdivide_width = 0
 subdivide_depth = 0
 
-[node name="World" index="0" instance=ExtResource( 1 )]
+[node name="World" instance=ExtResource( 1 )]
 
 [node name="NavigationMeshInstance" parent="Navigation" index="0"]
 
@@ -126,12 +126,10 @@ mesh = SubResource( 3 )
 
 [node name="Study-Bedroom Connector" parent="Navigation/NavigationMeshInstance" index="1" instance=ExtResource( 4 )]
 
-editor/display_folded = true
 transform = Transform( -0.8147, 0, 0.579883, 0, 1, 0, -0.579883, 0, -0.8147, -30.6731, 0, -7.26252 )
 
 [node name="Fireplace" parent="Navigation/NavigationMeshInstance/Study-Bedroom Connector" index="2" instance=ExtResource( 5 )]
 
-editor/display_folded = true
 transform = Transform( 0.642159, 0, 0.766572, 0, 1, 0, -0.766572, 0, 0.642159, 2.81646, 0, -0.358789 )
 _sections_unfolded = [ "Transform" ]
 on = true
@@ -139,7 +137,6 @@ on = true
 [node name="ItemTapshoe" parent="Navigation/NavigationMeshInstance/Study-Bedroom Connector/Fireplace" index="2" instance=ExtResource( 6 )]
 
 transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, -0.0100269, 0, 1.76035 )
-_sections_unfolded = [ "Collision", "Transform" ]
 burning = true
 
 [node name="FireStrip" parent="Navigation/NavigationMeshInstance/Study-Bedroom Connector" index="3" instance=ExtResource( 7 )]
@@ -475,13 +472,11 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.193449, 0, 2.25568 )
 
 [node name="Items" type="Spatial" parent="." index="1"]
 
-editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.7578, 0, 2.16255 )
 
 [node name="ItemFlamingo" parent="Items" index="0" instance=ExtResource( 22 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 31.4007, 0, -3.93862 )
-_sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="ItemSkate" parent="Items" index="1" instance=ExtResource( 23 )]
 
