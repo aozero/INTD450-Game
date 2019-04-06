@@ -112,6 +112,7 @@ func _on_EffectsSlider_value_changed(value):
 
 func _on_VoiceSlider_value_changed(value):
 	set_volume("Voice", value)
+	set_volume("Voice Super Echo", value)
 	set_volume("Voice No Reverb", value)
 	click_audio_voice.play()
 
