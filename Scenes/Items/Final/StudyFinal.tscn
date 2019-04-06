@@ -6,6 +6,7 @@
 [node name="ItemTapshoe" instance=ExtResource( 1 )]
 
 script = ExtResource( 2 )
+_sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="Sprite3D" parent="CollisionShape" index="0"]
 

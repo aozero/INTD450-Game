@@ -1,24 +1,113 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Scenes/Items/Final Item.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/Items/Final/BedroomFinal.gd" type="Script" id=2]
 [ext_resource path="res://Sprites/Items/bedroom_flamingo.png" type="Texture" id=3]
 
+[sub_resource type="Animation" id=1]
+
+resource_name = "burn bedroom"
+length = 2.5
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("CollisionShape/Sprite3D/BurnParticles:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.3, 0.4, 2.3 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ false, true, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CollisionShape/Sprite3D:region_rect")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.3, 2.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Rect2( 0, 0, 299, 395 ), Rect2( -299, 0, 299, 395 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CollisionShape/Sprite3D:offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.3, 2.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( -299, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("CollisionShape/Sprite3D/BurnParticles:translation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.3, 2.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0.122861 ), Vector3( 0, 0, -0.122861 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("CollisionShape/Sprite3D:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.3, 0.8, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0.886719, 0.24939, 0, 1 ), Color( 1, 0, 0, 1 ), Color( 0, 0, 0, 1 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("CollisionShape/Sprite3D:region_enabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0.3 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
 [node name="ItemFlamingo" instance=ExtResource( 1 )]
 
 script = ExtResource( 2 )
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="CollisionShape" parent="." index="1"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.4, 0 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="Sprite3D" parent="CollisionShape" index="0"]
 
-offset = Vector2( 0, 0 )
-modulate = Color( 1, 1, 1, 1 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+offset = Vector2( -44.85, 0 )
+modulate = Color( 0.932031, 0.549634, 0.4, 1 )
 pixel_size = 0.001
 texture = ExtResource( 3 )
-region_enabled = false
-region_rect = Rect2( 0, 0, 187, 178 )
+region_rect = Rect2( -44.85, 0, 299, 395 )
 
 [node name="BurnParticles" parent="CollisionShape/Sprite3D" index="0"]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.166993 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0860027 )
+
+[node name="BurnAnimPlayer" parent="." index="6"]
+
+"anims/burn bedroom" = SubResource( 1 )
 
 

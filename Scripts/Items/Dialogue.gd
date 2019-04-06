@@ -58,20 +58,28 @@ func _ready():
 	###############################
 	INTRO_1["None"] = "Hey Jamie are you sure about this?"
 	INTRO_1["Español"] = "¡Oye! Jaime ¿estás segura de esto?"
+	
 	INTRO_2["None"] = "No, but I think I need to go back. \n I knew I would have to one day."
 	INTRO_2["Español"] = "No pero yo pienso que necesito volver. \n Yo sabía que tendría que hacerlo algún día."
+	
 	INTRO_3["None"] = "Yeah maybe it was inevitable but you just seemed like really skittish, like more than usual"
 	INTRO_3["Español"] = "Sí, posiblemente fue inevitable \n pero parecías muy nerviosa, \n más que normal."
+	
 	INTRO_4["None"] = "I guess it’s just weird to grasp."
 	INTRO_4["Español"] = "Supongo que es raro de entender."
+	
 	INTRO_5["None"] = "With Grandpa gone, everything is mine, but it’ll never feel that way"
 	INTRO_5["Español"] = "Con mi abuelo ido, todos son mío pero nunca se sentirá así."
+	
 	INTRO_6["None"] = "Are you scared? Do you want me to go with you?"
 	INTRO_6["Español"] = "¿Tienes miedo? ¿Quieres que vaya contigo?"
+	
 	INTRO_7["None"] = "No, I’ll be alright. It’s like they all said."
 	INTRO_7["Español"] = "No, estará bien. Es como todos dijeron."
+	
 	INTRO_8["None"] = "My fears are just in my head."
 	INTRO_8["Español"] = "Mis temores están solo en mi cabeza."
+	
 	# Tutorial Messages
 	###############################
 	# As soon as you start the game
@@ -83,15 +91,23 @@ func _ready():
 	# Right after moving past the campfire
 	var run_button = get_action_button_text("run")
 	TUTORIAL_2.SOUND = load("res://Sound/Effects/Memory/Minor Items/silence.wav")
+<<<<<<< HEAD
 	TUTORIAL_2["None"] = "Running (Hold " + run_button + ") in the forest makes a lot of noise. "
 	TUTORIAL_2["Español"] = "Correr en el bosque (Manteniendo la tecla Shift) hace mucho ruido."
+=======
+	TUTORIAL_2.None = "Running (Hold Shift) in the forest makes a lot of noise. "
+>>>>>>> fbb47253262c48d093b40cf9b38be7113e7e064c
 	TUTORIAL_2.TEXT_TIME = 16
 	
 	# At the very edge of the campfire's light
 	var light_button = get_action_button_text("shoot")
 	TUTORIAL_3.SOUND = load("res://Sound/Effects/Memory/Minor Items/silence.wav")
+<<<<<<< HEAD
 	TUTORIAL_3["None"] = "Lighting a match (" + light_button + ") will make it easier to see... and be seen."
 	TUTORIAL_3["Español"] = "Encender un fósforo (tecla izquierda del ratón) hará que sea más fácil de ver… y ser visto."
+=======
+	TUTORIAL_3.None = "Lighting a match (Left Click) will make it easier to see... and be seen."
+>>>>>>> fbb47253262c48d093b40cf9b38be7113e7e064c
 	TUTORIAL_3.TEXT_TIME = 16
 	###############################
 	
