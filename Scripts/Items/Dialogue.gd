@@ -134,18 +134,21 @@ func _ready():
 	# Ship in a Bottle
 	STUDY_1.SOUND = load("res://Sound/Effects/Memory/Minor Items/study_shipinabottle_memory.wav")
 	STUDY_1.None = ""
-	STUDY_1.English = "Riley: I'm sorry, Daddy! It was an accident, I swear. I didn't think the ball would go that far."
+	STUDY_1["English"] = "Riley: I'm sorry, Daddy! It was an accident, I swear. I didn't think the ball would go that far."
+	STUDY_1["Español"] = "Riley: ¡Lo siento, Papá! ¡Fue un accidente, prometo! No pensé que la pelota llegaría tan lejos."
 	STUDY_1.TEXT_TIME = 8
 	
 	# Leather-bound Planner
 	STUDY_2.SOUND = load("res://Sound/Effects/Memory/Minor Items/silence.wav")
-	STUDY_2.None = "Dad: May 14th, 2009. Jamie (Caterpillar) and Riley's (Queen of Hearts) school play. Alice in Wonderland - school gym 4:30PM. [crossed out]. Red eye flight to Taiwan 5:40 AM. "
+	STUDY_2.None = "Dad: May 14th, 2009. Jamie (Caterpillar) and Riley's (Queen of Hearts) school play. Alice in Wonderland - school gym 4:30PM. [crossed out]. Red eye flight to Taiwan 5:40 AM."
+	STUDY_2["Español"] = "Papá: 14 de mayo, 2009. Jaime (Oruga) y Riley (La Reina de Corazones) obra escolar. Alicia en el país de las Maravillas – gimnasio de escuela, 16:30. Vuelo nocturno a Taiwán, 5:40."
 	STUDY_2.TEXT_TIME = 12
 	
 	# Tapshoe
 	STUDY_FINAL.SOUND = load("res://Sound/Effects/Memory/Final Items/study_memory.wav")
 	STUDY_FINAL.None = ""
-	STUDY_FINAL.English  = "Dad: Jamie, get your sister to cool it would ya? I'm getting a headache."
+	STUDY_FINAL["English"] = "Dad: Jamie, get your sister to cool it would ya? I'm getting a headache."
+	STUDY_FINAL["Español"] = "Papá: Jaime, haz que tu hermana lo detenga por favor. Me duele la cabeza."
 	STUDY_FINAL.MUSIC = load("res://Sound/Music/StudyMemory.wav")
 	###############################
 	
