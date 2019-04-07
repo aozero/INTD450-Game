@@ -52,7 +52,8 @@ func _ready():
 		memory_controller.return_from_death()
 	
 	set_torch(false)
-		
+	anim_hand.play("idle_off")
+	
 	yield(get_tree(), "idle_frame")
 
 func _input(event):	
@@ -164,19 +165,22 @@ func set_torch(on):
 	elif !on && torch.visible:
 		match_burning_audio.stop()
 		play_audio(SOUND_MATCH_OFF)
-		anim_hand.play_backwards("light_off")
+		anim_hand.play("light_off")
 
 # When finishing lighting or unlighting match, 
 # play the correct idle anim (match flicker or nothing) and change light
 func _on_HandAnimator_animation_finished(anim_name):
 	if anim_name == "light_on":
-		torch.visible = true
-		torch_collision_shape.disabled = false
 		anim_hand.play("idle_on")
 	elif anim_name == "light_off":
 		torch.visible = false
 		torch_collision_shape.disabled = true
 		anim_hand.play("idle_off")
+
+# Called by the animation at the exact moment when the match is lit
+func anim_match_lit():
+	torch.visible = true
+	torch_collision_shape.disabled = false
 
 func get_torch_visible():
 	return torch.visible
