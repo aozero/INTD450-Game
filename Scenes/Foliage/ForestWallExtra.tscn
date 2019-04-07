@@ -11,8 +11,4 @@ script = ExtResource( 2 )
 
 editor/display_folded = true
 
-[node name="MeshInstance" parent="." index="2"]
-
-visible = true
-
 
