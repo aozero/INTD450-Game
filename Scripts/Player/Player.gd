@@ -6,15 +6,12 @@ extends KinematicBody
 const RUN_SPEED = 3.5      
 const SNEAK_SPEED = 2
 const BACKWARDS_SLOWDOWN = 0.5
-const MOUSE_SENS = 0.1
 const INTERACT_RANGE = 1 # Range player can interact with objects
 ##################################
 
 onready var SOUND_MATCH_ON = load("res://Sound/Effects/Match/match_on.wav")
 onready var SOUND_MATCH_OFF = load("res://Sound/Effects/Match/match_off.wav")
 onready var SOUND_MATCH_BURNING = load("res://Sound/Effects/Match/match_burning.wav")
-
-onready var INTERACT_PROMPT = "Press " + InputMap.get_action_list("interact")[0].as_text() + " to interact"
 
 onready var audio_player = $FirstPersonAudio
 onready var match_burning_audio = $MatchBurningAudio
@@ -24,11 +21,7 @@ onready var music_player = get_node("/root/MusicPlayer")
 onready var memory_controller = $CanvasLayer/MemoryController
 onready var stamina_controller = $CanvasLayer/StaminaController
 onready var globals = get_node("/root/Globals")
-
-# Sprite to display in the center of the screen as it fades out from the memory
-export(Texture) var last_final_item_sprite setget set_last_final_item_sprite
-func set_last_final_item_sprite(tex):
-	last_final_item_sprite = tex
+onready var dialogue = get_node("/root/Dialogue")
 
 onready var anim_hand = $"CanvasLayer/Hand/Hand Sprite/HandAnimator"
 onready var headbobber = $Headbobber
@@ -39,6 +32,8 @@ onready var prompt_label = $"CanvasLayer/Prompt Label"
 onready var torch = $Torch
 
 onready var start_pos = translation
+
+export var in_finale = false
 
 var game_over = false
 var dying = false
@@ -57,7 +52,7 @@ func _ready():
 		memory_controller.return_from_death()
 	
 	set_torch(false)
-	
+		
 	yield(get_tree(), "idle_frame")
 
 func _input(event):	
@@ -65,11 +60,12 @@ func _input(event):
 		return
 	
 	if event is InputEventMouseMotion:
+		var mouse_sens = globals.get_mouse_sens()
 		# Horizontal camera
-		rotation_degrees.y -= MOUSE_SENS * event.relative.x
+		rotation_degrees.y -= mouse_sens * event.relative.x
 		
 		# Vertical camera
-		rotation_degrees.x -= MOUSE_SENS * event.relative.y
+		rotation_degrees.x -= mouse_sens * event.relative.y
 		rotation_degrees.x = max(min(rotation_degrees.x, 85), -85)
 		
 	# DEBUG: Teleport to level
@@ -136,21 +132,23 @@ func _physics_process(delta):
 	
 	# Check for torch toggling
 	# TODO: Minor, but this would be better in an event based input system rather than checking constantly
-	if Input.is_action_pressed("shoot") and anim_hand.current_animation != "light":
+	if !in_finale and Input.is_action_pressed("shoot") and anim_hand.current_animation != "light":
 		toggle_torch()
 	
 	# Check if player is looking at anything interactable that is within range
 	var coll = raycast.get_collider()
 	if raycast.is_colliding() and coll != null and coll.has_method("interact"): 
 		#  Can only interact if close and the match is on
-		if raycast.get_collision_point().distance_to(translation) < INTERACT_RANGE && torch.visible:
-				enable_interact_prompt()
-				
-				if Input.is_action_pressed("interact"):
-					coll.interact(self)
+		if raycast.get_collision_point().distance_to(translation) < INTERACT_RANGE:
+				if !coll.has_method("can_interact") or coll.can_interact(torch.visible):
+					enable_interact_prompt()
+					
+					if Input.is_action_just_pressed("interact"):
+						coll.interact(self)
+				else:
+					disable_prompt()
 		else:
 			disable_prompt()
-		
 	else:
 		disable_prompt()
 
@@ -194,7 +192,7 @@ func play_audio(stream):
 	audio_player.play()
 
 func enable_interact_prompt():
-	prompt_label.text = INTERACT_PROMPT
+	prompt_label.text = dialogue.get_subtitles(dialogue.INTERACT_PROMPT)
 	prompt_label.visible_characters = -1
 
 func disable_prompt():

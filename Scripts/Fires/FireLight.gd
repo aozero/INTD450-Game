@@ -14,3 +14,4 @@ func _ready():
 
 func set_shadows(value):
 	shadow_enabled = value
+	ground_light.shadow_enabled = value

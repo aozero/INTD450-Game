@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Scripts/Door.gd" type="Script" id=1]
 
-[sub_resource type="SpatialMaterial" id=2]
+[sub_resource type="SpatialMaterial" id=1]
 
 render_priority = 0
 flags_transparent = false
@@ -54,9 +54,9 @@ proximity_fade_enable = false
 distance_fade_enable = false
 _sections_unfolded = [ "Albedo", "Flags" ]
 
-[sub_resource type="CubeMesh" id=1]
+[sub_resource type="CubeMesh" id=2]
 
-material = SubResource( 2 )
+material = SubResource( 1 )
 custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
 size = Vector3( 1, 1.8, 0.1 )
 subdivide_width = 0
@@ -125,7 +125,7 @@ radial_segments = 64
 rings = 32
 is_hemisphere = false
 
-[sub_resource type="SpatialMaterial" id=6]
+[sub_resource type="SpatialMaterial" id=5]
 
 render_priority = 0
 flags_transparent = false
@@ -177,16 +177,16 @@ proximity_fade_enable = false
 distance_fade_enable = false
 _sections_unfolded = [ "Albedo", "Flags" ]
 
-[sub_resource type="CubeMesh" id=7]
+[sub_resource type="CubeMesh" id=6]
 
-material = SubResource( 6 )
+material = SubResource( 5 )
 custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
 size = Vector3( 0.9, 1.8, 0.005 )
 subdivide_width = 0
 subdivide_height = 0
 subdivide_depth = 0
 
-[sub_resource type="BoxShape" id=5]
+[sub_resource type="BoxShape" id=7]
 
 extents = Vector3( 0.6, 1, 0.25 )
 
@@ -232,10 +232,11 @@ bounce = 0.0
 constant_linear_velocity = Vector3( 0, 0, 0 )
 constant_angular_velocity = Vector3( 0, 0, 0 )
 script = ExtResource( 1 )
-_sections_unfolded = [ "Collision" ]
+_sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="Door" type="Spatial" parent="." index="0"]
 
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="MeshInstance" type="MeshInstance" parent="Door" index="0"]
@@ -249,7 +250,7 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = SubResource( 1 )
+mesh = SubResource( 2 )
 skeleton = NodePath("..")
 material/0 = null
 
@@ -271,6 +272,7 @@ material/0 = null
 
 [node name="MeshInstance3" type="MeshInstance" parent="." index="1"]
 
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0 )
 layers = 1
 material_override = null
 cast_shadow = 1
@@ -280,14 +282,14 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = SubResource( 7 )
+mesh = SubResource( 6 )
 skeleton = NodePath("..")
 material/0 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="." index="2"]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.234894 )
-shape = SubResource( 5 )
+shape = SubResource( 7 )
 disabled = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="3"]

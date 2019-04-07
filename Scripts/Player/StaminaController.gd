@@ -15,8 +15,6 @@ const STAMINA_RUNNING = -6
 var stamina = MAX_STAMINA
 onready var stamina_bar = $StaminaBar
 onready var disappear_timer = $DisappearTimer
-onready var STAMINA_BAR_X_SIZE = stamina_bar.rect_size.x
-onready var STAMINA_BAR_RIGHT_MARG = stamina_bar.margin_right
 onready var NORMAL_COLOR = stamina_bar.color
 const EXHAUSTED_COLOR = Color(0.5, 0, 0)
 
@@ -51,7 +49,7 @@ func update_stamina(moving, running):
 		# Increase player stamina
 		increase_stamina(STAMINA_STILL)
 	
-	stamina_bar.margin_right = STAMINA_BAR_RIGHT_MARG - STAMINA_BAR_X_SIZE * (1 - float(stamina) / MAX_STAMINA)
+	stamina_bar.rect_size.x = (rect_size.x - 20) * (float(stamina) / MAX_STAMINA)
 
 func increase_stamina(amount):
 	if stamina < MAX_STAMINA:

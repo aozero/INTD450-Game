@@ -2,6 +2,20 @@ extends Node
 
 # OPTIONS
 ########################################
+# GENERAL
+var mouse_sens = 0.08 setget set_mouse_sens, get_mouse_sens
+
+func set_mouse_sens(value):
+	mouse_sens = value
+
+func get_mouse_sens():
+	return mouse_sens
+
+# AUDIO
+# SUBTITLES
+# Subtitles are handled in Dialogue.gd. Makes it easier to manage elsewhere. 
+
+# DISPLAY
 # FULLSCREEN
 func set_fullscreen(value):
 	OS.window_fullscreen = value
@@ -35,10 +49,9 @@ func get_contrast():
 	return contrast
 
 # FOREST QUALITY
-# Levels of forest quality.
+# Levels of forest quality:
 # Fastest is ForestTree alpha scissoring on
 # Prettiest is ForestTree alpha scissoring off
-const FOREST_QUALITY_TEXT = ["Fastest", "Prettiest"]
 var forest_material = load("res://Materials/ForestTree.tres")
 var forest_quality = 0 setget set_forest_quality, get_forest_quality
 
@@ -52,6 +65,20 @@ func set_forest_quality(level):
 
 func get_forest_quality():
 	return forest_quality
+
+# FOREST QUANTITY
+# Levels of forest quantity:
+# Less has second layer of forest invisible
+# More has second layer of forest visible
+var forest_quantity = 0 setget set_forest_quantity, get_forest_quantity
+
+func set_forest_quantity(level):
+	forest_quantity = level
+	
+	get_tree().call_group("extra forest", "set_visible", level)
+
+func get_forest_quantity():
+	return forest_quantity
 
 # SHADOWS
 onready var firelight = load("res://Scenes/Fires/FireLight.tscn").instance()
@@ -73,3 +100,7 @@ var in_memory = false
 var tree_frame_array = [1, 0, 0, 3, 1, 2, 2, 0, 1, 2, 3, 0, 1, 2] # Distribution of trees that gets cycled through
 var tree_ind = 0              # Current position in tree_frame_array
 var tree_nums = [0, 0, 0, 0]  # Counts for each kind of tree
+
+# Variables that are global between each SmallFire
+var fire_start_array = [0, 0.72, 0.36, 1.08, 0.12, 0.48, 1.44, 0.24, 1.2, 0.6, 1.32, 0.74, 0.96]
+var fire_ind = 0       

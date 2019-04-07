@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://Scenes/Worlds/World.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Materials/wormy_ground_diffuse.tga" type="Texture" id=2]
@@ -6,24 +6,26 @@
 [ext_resource path="res://Scenes/Worlds/Study-Bedroom Connector.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Fires/Fireplace.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Items/Final/StudyFinal.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Scenes/Foliage/TreeStrip.tscn" type="PackedScene" id=7]
-[ext_resource path="res://Scenes/Foliage/BGForestSmall.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Scenes/Foliage/TreeRandom.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Scenes/Foliage/BGForestMedium.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Scenes/Foliage/ForestWall.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Scenes/House Objects/BedroomQuilt.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Scenes/Foliage/Bush1.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Scenes/House Objects/BedroomDrawer.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Scenes/House Objects/BedroomBike.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Scenes/Foliage/TreeDeadCurvy.tscn" type="PackedScene" id=16]
-[ext_resource path="res://Scenes/Foliage/TreeDead1.tscn" type="PackedScene" id=17]
-[ext_resource path="res://Scenes/Foliage/TreeDead2.tscn" type="PackedScene" id=18]
-[ext_resource path="res://Scenes/Foliage/BushSmall.tscn" type="PackedScene" id=19]
-[ext_resource path="res://Scenes/Items/Final/BedroomFinal.tscn" type="PackedScene" id=20]
-[ext_resource path="res://Scenes/Items/Minor/Bedroom1.tscn" type="PackedScene" id=21]
-[ext_resource path="res://Scenes/Items/Minor/Bedroom2.tscn" type="PackedScene" id=22]
-[ext_resource path="res://Scenes/Monsters/Monster.tscn" type="PackedScene" id=23]
-[ext_resource path="res://Scenes/Monsters/Waypoint.tscn" type="PackedScene" id=24]
+[ext_resource path="res://Scenes/Fires/FireStrip.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/House Objects/BedroomSidetable.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Foliage/BGForestSmall.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Foliage/TreeRandom.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/Foliage/BGForestMedium.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/Foliage/ForestWall.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/Foliage/TreeStrip.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/House Objects/BedroomQuilt.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Scenes/Foliage/Bush1.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Scenes/House Objects/BedroomDrawer.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Scenes/House Objects/BedroomBike.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Scenes/Foliage/TreeDeadCurvy.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Scenes/Foliage/TreeDead1.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Scenes/Foliage/TreeDead2.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Scenes/Foliage/BushSmall.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Scenes/Items/Final/BedroomFinal.tscn" type="PackedScene" id=22]
+[ext_resource path="res://Scenes/Items/Minor/Bedroom1.tscn" type="PackedScene" id=23]
+[ext_resource path="res://Scenes/Items/Minor/Bedroom2.tscn" type="PackedScene" id=24]
+[ext_resource path="res://Scenes/Monsters/Monster.tscn" type="PackedScene" id=25]
+[ext_resource path="res://Scenes/Monsters/Waypoint.tscn" type="PackedScene" id=26]
 
 [sub_resource type="NavigationMesh" id=1]
 
@@ -111,7 +113,7 @@ size = Vector2( 120, 60 )
 subdivide_width = 0
 subdivide_depth = 0
 
-[node name="World" instance=ExtResource( 1 )]
+[node name="World" index="0" instance=ExtResource( 1 )]
 
 [node name="NavigationMeshInstance" parent="Navigation" index="0"]
 
@@ -124,12 +126,10 @@ mesh = SubResource( 3 )
 
 [node name="Study-Bedroom Connector" parent="Navigation/NavigationMeshInstance" index="1" instance=ExtResource( 4 )]
 
-editor/display_folded = true
 transform = Transform( -0.8147, 0, 0.579883, 0, 1, 0, -0.579883, 0, -0.8147, -30.6731, 0, -7.26252 )
 
 [node name="Fireplace" parent="Navigation/NavigationMeshInstance/Study-Bedroom Connector" index="2" instance=ExtResource( 5 )]
 
-editor/display_folded = true
 transform = Transform( 0.642159, 0, 0.766572, 0, 1, 0, -0.766572, 0, 0.642159, 2.81646, 0, -0.358789 )
 _sections_unfolded = [ "Transform" ]
 on = true
@@ -137,67 +137,69 @@ on = true
 [node name="ItemTapshoe" parent="Navigation/NavigationMeshInstance/Study-Bedroom Connector/Fireplace" index="2" instance=ExtResource( 6 )]
 
 transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, -0.0100269, 0, 1.76035 )
-_sections_unfolded = [ "Collision", "Transform" ]
 burning = true
 
-[node name="TreeStrip" parent="Navigation/NavigationMeshInstance/Study-Bedroom Connector" index="3" instance=ExtResource( 7 )]
+[node name="FireStrip" parent="Navigation/NavigationMeshInstance/Study-Bedroom Connector" index="3" instance=ExtResource( 7 )]
 
 transform = Transform( 0.829989, 0, 0.557779, 0, 1, 0, -0.557779, 0, 0.829989, 3.65453, 0, 8.22336 )
 
-[node name="TreeStrip3" parent="Navigation/NavigationMeshInstance/Study-Bedroom Connector" index="4" instance=ExtResource( 7 )]
+[node name="FireStrip2" parent="Navigation/NavigationMeshInstance/Study-Bedroom Connector" index="4" instance=ExtResource( 7 )]
 
 transform = Transform( 0.589752, 0, 0.807584, 0, 1, 0, -0.807584, 0, 0.589752, 7.58833, 0, 4.51078 )
 
-[node name="TreeStrip2" parent="Navigation/NavigationMeshInstance/Study-Bedroom Connector" index="5" instance=ExtResource( 7 )]
+[node name="FireStrip3" parent="Navigation/NavigationMeshInstance/Study-Bedroom Connector" index="5" instance=ExtResource( 7 )]
 
-transform = Transform( 0.235415, 0, 0.971895, 0, 1, 0, -0.971895, 0, 0.235415, 10.2747, 0, -0.159578 )
+transform = Transform( 0.235415, 0, 0.971895, 0, 1, 0, -0.971895, 0, 0.235415, 10.2747, 0, -0.159579 )
 
 [node name="Path 1" type="Spatial" parent="Navigation/NavigationMeshInstance" index="2"]
 
-editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.6065, 0, 0.85603 )
 
-[node name="Bounds" type="Spatial" parent="Navigation/NavigationMeshInstance/Path 1" index="0"]
+[node name="BedroomSidetable" parent="Navigation/NavigationMeshInstance/Path 1" index="0" instance=ExtResource( 8 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.422155, 0, 0.695393 )
+
+[node name="Bounds" type="Spatial" parent="Navigation/NavigationMeshInstance/Path 1" index="1"]
 
 editor/display_folded = true
 
-[node name="BGForestSmall5" parent="Navigation/NavigationMeshInstance/Path 1/Bounds" index="0" instance=ExtResource( 8 )]
+[node name="BGForestSmall5" parent="Navigation/NavigationMeshInstance/Path 1/Bounds" index="0" instance=ExtResource( 9 )]
 
 transform = Transform( -0.922061, 0, 0.387045, 0, 1, 0, -0.387045, 0, -0.922061, -2.87234, 0, 5.94735 )
 
-[node name="BGForestSmall4" parent="Navigation/NavigationMeshInstance/Path 1/Bounds" index="1" instance=ExtResource( 8 )]
+[node name="BGForestSmall4" parent="Navigation/NavigationMeshInstance/Path 1/Bounds" index="1" instance=ExtResource( 9 )]
 
 transform = Transform( -0.902001, 0, 0.431736, 0, 1, 0, -0.431736, 0, -0.902001, 2.37225, 0, 8.46281 )
 
-[node name="BGForestSmall6" parent="Navigation/NavigationMeshInstance/Path 1/Bounds" index="2" instance=ExtResource( 8 )]
+[node name="BGForestSmall6" parent="Navigation/NavigationMeshInstance/Path 1/Bounds" index="2" instance=ExtResource( 9 )]
 
 transform = Transform( -0.963889, 0, 0.266305, 0, 1, 0, -0.266305, 0, -0.963889, 8.03395, 0, 10.5044 )
 
-[node name="BGForestSmall2" parent="Navigation/NavigationMeshInstance/Path 1/Bounds" index="3" instance=ExtResource( 8 )]
+[node name="BGForestSmall2" parent="Navigation/NavigationMeshInstance/Path 1/Bounds" index="3" instance=ExtResource( 9 )]
 
 transform = Transform( 0.935062, 0, 0.354484, 0, 1, 0, -0.354484, 0, 0.935062, -5.84018, 0, -5.04442 )
 
-[node name="Decoration" type="Spatial" parent="Navigation/NavigationMeshInstance/Path 1" index="1"]
+[node name="Decoration" type="Spatial" parent="Navigation/NavigationMeshInstance/Path 1" index="2"]
 
 editor/display_folded = true
 
-[node name="TreeRandom" parent="Navigation/NavigationMeshInstance/Path 1/Decoration" index="0" instance=ExtResource( 9 )]
+[node name="TreeRandom" parent="Navigation/NavigationMeshInstance/Path 1/Decoration" index="0" instance=ExtResource( 10 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.26558, 0, 0 )
 
-[node name="TreeRandom2" parent="Navigation/NavigationMeshInstance/Path 1/Decoration" index="1" instance=ExtResource( 9 )]
+[node name="TreeRandom2" parent="Navigation/NavigationMeshInstance/Path 1/Decoration" index="1" instance=ExtResource( 10 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.92786, 0, -2.39122 )
 
-[node name="TreeRandom3" parent="Navigation/NavigationMeshInstance/Path 1/Decoration" index="2" instance=ExtResource( 9 )]
+[node name="TreeRandom3" parent="Navigation/NavigationMeshInstance/Path 1/Decoration" index="2" instance=ExtResource( 10 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.833251, 0, 1.35944 )
 
-[node name="TreeRandom4" parent="Navigation/NavigationMeshInstance/Path 1/Decoration" index="3" instance=ExtResource( 9 )]
+[node name="TreeRandom4" parent="Navigation/NavigationMeshInstance/Path 1/Decoration" index="3" instance=ExtResource( 10 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.85065, 0, 3.90671 )
 
-[node name="TreeRandom6" parent="Navigation/NavigationMeshInstance/Path 1/Decoration" index="4" instance=ExtResource( 9 )]
+[node name="TreeRandom6" parent="Navigation/NavigationMeshInstance/Path 1/Decoration" index="4" instance=ExtResource( 10 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.981, 0, 8.50701 )
 
@@ -206,15 +208,15 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.981, 0, 8.50701 )
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.12442, 0, -3.3735 )
 
-[node name="BGForestMedium13" parent="Navigation/NavigationMeshInstance/Path Bad" index="0" instance=ExtResource( 10 )]
+[node name="BGForestMedium13" parent="Navigation/NavigationMeshInstance/Path Bad" index="0" instance=ExtResource( 11 )]
 
-transform = Transform( -0.999993, 0, -0.00365741, 0, 1, 0, 0.00365741, 0, -0.999993, -0.176484, 0, -2.08784 )
+transform = Transform( 0.998561, 0, 0.053618, 0, 1, 0, -0.053618, 0, 0.998561, -0.567237, 0, -2.08784 )
 
-[node name="ForestWall" parent="Navigation/NavigationMeshInstance/Path Bad" index="1" instance=ExtResource( 11 )]
+[node name="ForestWall" parent="Navigation/NavigationMeshInstance/Path Bad" index="1" instance=ExtResource( 12 )]
 
 transform = Transform( 0.995052, 0, -0.0993535, 0, 1, 0, 0.0993535, 0, 0.995052, 0.891969, 0, 4.89865 )
 
-[node name="ForestWall2" parent="Navigation/NavigationMeshInstance/Path Bad" index="2" instance=ExtResource( 11 )]
+[node name="ForestWall2" parent="Navigation/NavigationMeshInstance/Path Bad" index="2" instance=ExtResource( 12 )]
 
 transform = Transform( 0.990509, 0, -0.137449, 0, 1, 0, 0.137449, 0, 0.990509, 6.11889, 0, 5.4887 )
 
@@ -227,27 +229,27 @@ transform = Transform( -0.458624, 0, 0.88863, 0, 1, 0, -0.88863, 0, -0.458624, 2
 editor/display_folded = true
 transform = Transform( 0.102746, 0, -0.994708, 0, 1, 0, 0.994708, 0, 0.102746, 2.69939, 0, -8.04009 )
 
-[node name="BGForestSmall3" parent="Navigation/NavigationMeshInstance/Tricky Bit/Island1" index="0" instance=ExtResource( 8 )]
-
-transform = Transform( 0.80962, 0, -0.586955, 0, 1, 0, 0.586955, 0, 0.80962, 1.04669, 0, 1.61644 )
-
-[node name="BGForestSmall7" parent="Navigation/NavigationMeshInstance/Tricky Bit/Island1" index="1" instance=ExtResource( 8 )]
+[node name="ForestWall3" parent="Navigation/NavigationMeshInstance/Tricky Bit/Island1" index="0" instance=ExtResource( 12 )]
 
 transform = Transform( -0.553855, 0, -0.832613, 0, 1, 0, 0.832613, 0, -0.553855, -2.22014, 0, -1.72458 )
 
-[node name="TreeStrip" parent="Navigation/NavigationMeshInstance/Tricky Bit/Island1" index="2" instance=ExtResource( 7 )]
+[node name="ForestWall4" parent="Navigation/NavigationMeshInstance/Tricky Bit/Island1" index="1" instance=ExtResource( 12 )]
+
+transform = Transform( 0.80962, 0, -0.586955, 0, 1, 0, 0.586955, 0, 0.80962, 1.04669, 0, 1.61644 )
+
+[node name="TreeStrip" parent="Navigation/NavigationMeshInstance/Tricky Bit/Island1" index="2" instance=ExtResource( 13 )]
 
 transform = Transform( 0.816538, 0, -0.577294, 0, 1, 0, 0.577294, 0, 0.816538, 2.29624, 0, -0.390699 )
 
-[node name="TreeStrip2" parent="Navigation/NavigationMeshInstance/Tricky Bit/Island1" index="3" instance=ExtResource( 7 )]
+[node name="TreeStrip2" parent="Navigation/NavigationMeshInstance/Tricky Bit/Island1" index="3" instance=ExtResource( 13 )]
 
 transform = Transform( 0.816538, 0, -0.577294, 0, 1, 0, 0.577294, 0, 0.816538, 2.78153, 0, -1.1324 )
 
-[node name="Qulit" parent="Navigation/NavigationMeshInstance/Tricky Bit/Island1" index="4" instance=ExtResource( 12 )]
+[node name="Qulit" parent="Navigation/NavigationMeshInstance/Tricky Bit/Island1" index="4" instance=ExtResource( 14 )]
 
 transform = Transform( 0.836806, 0, -0.5475, 0, 1, 0, 0.5475, 0, 0.836806, -4.93339, -1.50217, -2.83682 )
 
-[node name="TreeRandom" parent="Navigation/NavigationMeshInstance/Tricky Bit/Island1" index="5" instance=ExtResource( 9 )]
+[node name="TreeRandom" parent="Navigation/NavigationMeshInstance/Tricky Bit/Island1" index="5" instance=ExtResource( 10 )]
 
 transform = Transform( 0.102746, 0, 0.994707, 0, 1, 0, -0.994707, 0, 0.102746, -3.93362, 0, -4.89673 )
 
@@ -256,19 +258,19 @@ transform = Transform( 0.102746, 0, 0.994707, 0, 1, 0, -0.994707, 0, 0.102746, -
 editor/display_folded = true
 transform = Transform( 0.992903, 0, -0.118927, 0, 1, 0, 0.118927, 0, 0.992903, 8.023, 0, 6.09567 )
 
-[node name="BGForestSmall3" parent="Navigation/NavigationMeshInstance/Tricky Bit/Island2" index="0" instance=ExtResource( 8 )]
+[node name="ForestWall5" parent="Navigation/NavigationMeshInstance/Tricky Bit/Island2" index="0" instance=ExtResource( 12 )]
 
 transform = Transform( 0.364708, 0, 0.931122, 0, 1, 0, -0.931122, 0, 0.364708, 3.46825, 0, 1.5883 )
 
-[node name="BGForestSmall7" parent="Navigation/NavigationMeshInstance/Tricky Bit/Island2" index="1" instance=ExtResource( 8 )]
+[node name="ForestWall4" parent="Navigation/NavigationMeshInstance/Tricky Bit/Island2" index="1" instance=ExtResource( 12 )]
 
-transform = Transform( 0.364708, 0, 0.931122, 0, 1, 0, -0.931122, 0, 0.364708, 0.496167, 0, 0.0544033 )
+transform = Transform( 0.364708, 0, 0.931122, 0, 1, 0, -0.931122, 0, 0.364708, 0.496167, 0, 0.0544014 )
 
-[node name="BGForestSmall8" parent="Navigation/NavigationMeshInstance/Tricky Bit/Island2" index="2" instance=ExtResource( 8 )]
+[node name="ForestWall3" parent="Navigation/NavigationMeshInstance/Tricky Bit/Island2" index="2" instance=ExtResource( 12 )]
 
 transform = Transform( 0.364708, 0, 0.931122, 0, 1, 0, -0.931122, 0, 0.364708, -2.53105, 0, -1.50795 )
 
-[node name="Bush1" parent="Navigation/NavigationMeshInstance/Tricky Bit/Island2" index="3" instance=ExtResource( 13 )]
+[node name="Bush1" parent="Navigation/NavigationMeshInstance/Tricky Bit/Island2" index="3" instance=ExtResource( 15 )]
 
 transform = Transform( 0.992903, 0, 0.118927, 0, 1, 0, -0.118927, 0, 0.992903, -4.98275, 0, -2.61707 )
 
@@ -277,27 +279,27 @@ transform = Transform( 0.992903, 0, 0.118927, 0, 1, 0, -0.118927, 0, 0.992903, -
 editor/display_folded = true
 transform = Transform( 1, 0, -5.96046e-008, 0, 1, 0, 5.96046e-008, 0, 1, -7.32523, 0, -7.96849 )
 
-[node name="BGForestSmall4" parent="Navigation/NavigationMeshInstance/Tricky Bit/BeforeSafe" index="0" instance=ExtResource( 8 )]
+[node name="BGForestSmall4" parent="Navigation/NavigationMeshInstance/Tricky Bit/BeforeSafe" index="0" instance=ExtResource( 9 )]
 
 transform = Transform( 0.847196, 0, 0.531281, 0, 1, 0, -0.531281, 0, 0.847196, 16.6406, 0, -13.0968 )
 
-[node name="BGForestSmall5" parent="Navigation/NavigationMeshInstance/Tricky Bit/BeforeSafe" index="1" instance=ExtResource( 8 )]
+[node name="BGForestSmall5" parent="Navigation/NavigationMeshInstance/Tricky Bit/BeforeSafe" index="1" instance=ExtResource( 9 )]
 
 transform = Transform( 0.949211, 0, 0.314641, 0, 1, 0, -0.314641, 0, 0.949211, 11.7228, 0, -10.6443 )
 
-[node name="BGForestSmall6" parent="Navigation/NavigationMeshInstance/Tricky Bit/BeforeSafe" index="2" instance=ExtResource( 8 )]
+[node name="BGForestSmall6" parent="Navigation/NavigationMeshInstance/Tricky Bit/BeforeSafe" index="2" instance=ExtResource( 9 )]
 
 transform = Transform( 0.843797, 0, 0.536662, 0, 1, 0, -0.536662, 0, 0.843797, 6.26305, 0, -8.3671 )
 
-[node name="BGForestSmall" parent="Navigation/NavigationMeshInstance/Tricky Bit/BeforeSafe" index="3" instance=ExtResource( 8 )]
+[node name="BGForestSmall" parent="Navigation/NavigationMeshInstance/Tricky Bit/BeforeSafe" index="3" instance=ExtResource( 9 )]
 
 transform = Transform( 0.581918, 0, 0.813248, 0, 1, 0, -0.813248, 0, 0.581918, 1.95353, 0, -4.14097 )
 
-[node name="BGForestSmall2" parent="Navigation/NavigationMeshInstance/Tricky Bit/BeforeSafe" index="4" instance=ExtResource( 8 )]
+[node name="BGForestSmall2" parent="Navigation/NavigationMeshInstance/Tricky Bit/BeforeSafe" index="4" instance=ExtResource( 9 )]
 
 transform = Transform( 0.472977, 0, 0.881075, 0, 1, 0, -0.881075, 0, 0.472977, -1.18549, 0, 0.736078 )
 
-[node name="TreeRandom" parent="Navigation/NavigationMeshInstance/Tricky Bit/BeforeSafe" index="5" instance=ExtResource( 9 )]
+[node name="TreeRandom" parent="Navigation/NavigationMeshInstance/Tricky Bit/BeforeSafe" index="5" instance=ExtResource( 10 )]
 
 transform = Transform( 1, 0, -1.49012e-007, 0, 1, 0, 1.49012e-007, 0, 1, 3.26023, 0, -0.431845 )
 
@@ -306,31 +308,31 @@ transform = Transform( 1, 0, -1.49012e-007, 0, 1, 0, 1.49012e-007, 0, 1, 3.26023
 editor/display_folded = true
 transform = Transform( 1, 0, -5.96046e-008, 0, 1, 0, 5.96046e-008, 0, 1, -10.999, 0, 2.40197 )
 
-[node name="BGForestSmall3" parent="Navigation/NavigationMeshInstance/Tricky Bit/Safe Zone" index="0" instance=ExtResource( 8 )]
+[node name="BGForestSmall3" parent="Navigation/NavigationMeshInstance/Tricky Bit/Safe Zone" index="0" instance=ExtResource( 9 )]
 
-transform = Transform( 0.841266, 0, -0.540622, 0, 1, 0, 0.540622, 0, 0.841266, -2.38909, 0, 3.61975 )
+transform = Transform( -0.776443, 0, 0.630188, 0, 1, 0, -0.630188, 0, -0.776443, -2.38909, 0, 3.61975 )
 
-[node name="BGForestSmall7" parent="Navigation/NavigationMeshInstance/Tricky Bit/Safe Zone" index="1" instance=ExtResource( 8 )]
+[node name="BGForestSmall7" parent="Navigation/NavigationMeshInstance/Tricky Bit/Safe Zone" index="1" instance=ExtResource( 9 )]
 
 transform = Transform( 0.704175, 0, 0.710026, 0, 1, 0, -0.710026, 0, 0.704175, -2.76339, 0, -2.27175 )
 
-[node name="TreeRandom" parent="Navigation/NavigationMeshInstance/Tricky Bit/Safe Zone" index="2" instance=ExtResource( 9 )]
+[node name="TreeRandom" parent="Navigation/NavigationMeshInstance/Tricky Bit/Safe Zone" index="2" instance=ExtResource( 10 )]
 
 transform = Transform( 1, 0, -2.98023e-008, 0, 1, 0, 2.98023e-008, 0, 1, 0.0379753, 0, -0.788536 )
 
-[node name="TreeRandom2" parent="Navigation/NavigationMeshInstance/Tricky Bit/Safe Zone" index="3" instance=ExtResource( 9 )]
+[node name="TreeRandom2" parent="Navigation/NavigationMeshInstance/Tricky Bit/Safe Zone" index="3" instance=ExtResource( 10 )]
 
 transform = Transform( 1, 0, -1.49012e-007, 0, 1, 0, 1.49012e-007, 0, 1, 0.125031, 0, 2.19227 )
 
-[node name="Bush1" parent="Navigation/NavigationMeshInstance/Tricky Bit/Safe Zone" index="4" instance=ExtResource( 13 )]
+[node name="Bush1" parent="Navigation/NavigationMeshInstance/Tricky Bit/Safe Zone" index="4" instance=ExtResource( 15 )]
 
 transform = Transform( 1, 0, -1.49012e-007, 0, 1, 0, 1.49012e-007, 0, 1, -2.06744, 0, 0.797638 )
 
-[node name="ForestWall2" parent="Navigation/NavigationMeshInstance/Tricky Bit/Safe Zone" index="5" instance=ExtResource( 11 )]
+[node name="ForestWall2" parent="Navigation/NavigationMeshInstance/Tricky Bit/Safe Zone" index="5" instance=ExtResource( 12 )]
 
 transform = Transform( 0.511725, 0, -0.859149, 0, 1, 0, 0.859149, 0, 0.511725, 1.77602, 0, -4.07873 )
 
-[node name="Drawer" parent="Navigation/NavigationMeshInstance/Tricky Bit/Safe Zone" index="6" instance=ExtResource( 14 )]
+[node name="Drawer" parent="Navigation/NavigationMeshInstance/Tricky Bit/Safe Zone" index="6" instance=ExtResource( 16 )]
 
 transform = Transform( -0.458624, 0, -0.88863, 0, 1, 0, 0.88863, 0, -0.458624, 4.2801, 0.0110091, 0.910177 )
 
@@ -339,27 +341,27 @@ transform = Transform( -0.458624, 0, -0.88863, 0, 1, 0, 0.88863, 0, -0.458624, 4
 editor/display_folded = true
 transform = Transform( 1, 0, -5.96046e-008, 0, 1, 0, 5.96046e-008, 0, 1, 3.72069, 0, 12.788 )
 
-[node name="BGForestMedium3" parent="Navigation/NavigationMeshInstance/Tricky Bit/AfterSafe" index="0" instance=ExtResource( 10 )]
+[node name="BGForestMedium3" parent="Navigation/NavigationMeshInstance/Tricky Bit/AfterSafe" index="0" instance=ExtResource( 11 )]
 
 transform = Transform( -0.84493, 0, 0.534877, 0, 1, 0, -0.534877, 0, -0.84493, -6.18155, 0, -3.11687 )
 
-[node name="BGForestSmall" parent="Navigation/NavigationMeshInstance/Tricky Bit/AfterSafe" index="1" instance=ExtResource( 8 )]
+[node name="BGForestSmall" parent="Navigation/NavigationMeshInstance/Tricky Bit/AfterSafe" index="1" instance=ExtResource( 9 )]
 
-transform = Transform( 0.937767, 0, -0.347266, 0, 1, 0, 0.347266, 0, 0.937767, 4.12769, 0, 2.82254 )
+transform = Transform( -0.924228, 0, 0.381841, 0, 1, 0, -0.381841, 0, -0.924228, 4.12769, 0, 2.82254 )
 
-[node name="BGForestSmall2" parent="Navigation/NavigationMeshInstance/Tricky Bit/AfterSafe" index="2" instance=ExtResource( 8 )]
+[node name="BGForestSmall2" parent="Navigation/NavigationMeshInstance/Tricky Bit/AfterSafe" index="2" instance=ExtResource( 9 )]
 
 transform = Transform( -0.446068, 0, -0.895, 0, 1, 0, 0.895, 0, -0.446068, 8.30968, 0, 5.25163 )
 
-[node name="BGForestMedium4" parent="Navigation/NavigationMeshInstance/Tricky Bit/AfterSafe" index="3" instance=ExtResource( 10 )]
+[node name="BGForestMedium4" parent="Navigation/NavigationMeshInstance/Tricky Bit/AfterSafe" index="3" instance=ExtResource( 11 )]
 
 transform = Transform( -0.269324, 0, -0.96305, 0, 1, 0, 0.96305, 0, -0.269324, 14.596, 0, -3.27306 )
 
-[node name="Bike" parent="Navigation/NavigationMeshInstance/Tricky Bit/AfterSafe" index="4" instance=ExtResource( 15 )]
+[node name="Bike" parent="Navigation/NavigationMeshInstance/Tricky Bit/AfterSafe" index="4" instance=ExtResource( 17 )]
 
 transform = Transform( 0.992903, 0, -0.118927, 0, 1, 0, 0.118927, 0, 0.992903, 9.39929, 0, 1.20533 )
 
-[node name="TreeRandom" parent="Navigation/NavigationMeshInstance/Tricky Bit/AfterSafe" index="5" instance=ExtResource( 9 )]
+[node name="TreeRandom" parent="Navigation/NavigationMeshInstance/Tricky Bit/AfterSafe" index="5" instance=ExtResource( 10 )]
 
 transform = Transform( 1, 0, -1.78814e-007, 0, 1, 0, 1.78814e-007, 0, 1, -0.125202, 0, -2.8197 )
 
@@ -367,51 +369,52 @@ transform = Transform( 1, 0, -1.78814e-007, 0, 1, 0, 1.78814e-007, 0, 1, -0.1252
 
 editor/display_folded = true
 
-[node name="TreeRandom2" parent="Navigation/NavigationMeshInstance/Tricky Bit/Misc Decorations" index="0" instance=ExtResource( 9 )]
+[node name="TreeRandom2" parent="Navigation/NavigationMeshInstance/Tricky Bit/Misc Decorations" index="0" instance=ExtResource( 10 )]
 
 transform = Transform( 1, 0, -5.96046e-008, 0, 1, 0, 5.96046e-008, 0, 1, 11.0143, 0, -14.3436 )
 
-[node name="TreeDeadCurvy" parent="Navigation/NavigationMeshInstance/Tricky Bit/Misc Decorations" index="1" instance=ExtResource( 16 )]
+[node name="TreeDeadCurvy" parent="Navigation/NavigationMeshInstance/Tricky Bit/Misc Decorations" index="1" instance=ExtResource( 18 )]
 
 transform = Transform( 1, 0, -5.96046e-008, 0, 1, 0, 5.96046e-008, 0, 1, 1.15229, 0, 0.594699 )
 
-[node name="TreeRandom" parent="Navigation/NavigationMeshInstance/Tricky Bit/Misc Decorations" index="2" instance=ExtResource( 9 )]
+[node name="TreeRandom" parent="Navigation/NavigationMeshInstance/Tricky Bit/Misc Decorations" index="2" instance=ExtResource( 10 )]
 
 transform = Transform( 1, 0, -5.96046e-008, 0, 1, 0, 5.96046e-008, 0, 1, -3.1475, 0, 1.12948 )
 
-[node name="TreeRandom3" parent="Navigation/NavigationMeshInstance/Tricky Bit/Misc Decorations" index="3" instance=ExtResource( 9 )]
+[node name="TreeRandom3" parent="Navigation/NavigationMeshInstance/Tricky Bit/Misc Decorations" index="3" instance=ExtResource( 10 )]
 
 transform = Transform( 1, 0, -5.96046e-008, 0, 1, 0, 5.96046e-008, 0, 1, -0.335342, 0, 4.66678 )
 
-[node name="TreeRandom4" parent="Navigation/NavigationMeshInstance/Tricky Bit/Misc Decorations" index="4" instance=ExtResource( 9 )]
+[node name="TreeRandom4" parent="Navigation/NavigationMeshInstance/Tricky Bit/Misc Decorations" index="4" instance=ExtResource( 10 )]
 
 transform = Transform( 1, 0, -5.96046e-008, 0, 1, 0, 5.96046e-008, 0, 1, -0.841946, 0, -3.11347 )
 
-[node name="TreeDead1" parent="Navigation/NavigationMeshInstance/Tricky Bit/Misc Decorations" index="5" instance=ExtResource( 17 )]
+[node name="TreeDead1" parent="Navigation/NavigationMeshInstance/Tricky Bit/Misc Decorations" index="5" instance=ExtResource( 19 )]
 
 transform = Transform( 1, 0, -5.96046e-008, 0, 1, 0, 5.96046e-008, 0, 1, 8.92442, 0, -4.04984 )
 
 [node name="End" type="Spatial" parent="Navigation/NavigationMeshInstance" index="5"]
 
+editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.3205, 0, 0.1728 )
 
-[node name="BGForestSmall" parent="Navigation/NavigationMeshInstance/End" index="0" instance=ExtResource( 8 )]
+[node name="BGForestSmall" parent="Navigation/NavigationMeshInstance/End" index="0" instance=ExtResource( 9 )]
 
 transform = Transform( 0.999771, 0, -0.0214341, 0, 1, 0, 0.0214341, 0, 0.999771, -4.42121, 0, -5.59664 )
 
-[node name="BGForestSmall2" parent="Navigation/NavigationMeshInstance/End" index="1" instance=ExtResource( 8 )]
+[node name="BGForestSmall2" parent="Navigation/NavigationMeshInstance/End" index="1" instance=ExtResource( 9 )]
 
 transform = Transform( 0.988261, 0, 0.152777, 0, 1, 0, -0.152777, 0, 0.988261, 1.81911, 0, -6.02919 )
 
-[node name="TreeStrip2" parent="Navigation/NavigationMeshInstance/End" index="2" instance=ExtResource( 7 )]
+[node name="TreeStrip2" parent="Navigation/NavigationMeshInstance/End" index="2" instance=ExtResource( 13 )]
 
 transform = Transform( 0.998079, 0, -0.0619507, 0, 1, 0, 0.0619507, 0, 0.998079, -0.846819, 0, 4.86341 )
 
-[node name="TreeStrip3" parent="Navigation/NavigationMeshInstance/End" index="3" instance=ExtResource( 7 )]
+[node name="TreeStrip3" parent="Navigation/NavigationMeshInstance/End" index="3" instance=ExtResource( 13 )]
 
 transform = Transform( 0.893908, 0, 0.448251, 0, 1, 0, -0.448251, 0, 0.893908, 4.34739, 0, 3.73254 )
 
-[node name="TreeStrip4" parent="Navigation/NavigationMeshInstance/End" index="4" instance=ExtResource( 7 )]
+[node name="TreeStrip4" parent="Navigation/NavigationMeshInstance/End" index="4" instance=ExtResource( 13 )]
 
 transform = Transform( 0.277361, 0, 0.960766, 0, 1, 0, -0.960766, 0, 0.277361, 7.51017, 0, -0.189278 )
 
@@ -420,73 +423,71 @@ transform = Transform( 0.277361, 0, 0.960766, 0, 1, 0, -0.960766, 0, 0.277361, 7
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.74342, 0, 3.77293 )
 
-[node name="TreeRandom" parent="Navigation/NavigationMeshInstance/End/Tree cluster" index="0" instance=ExtResource( 9 )]
+[node name="TreeRandom" parent="Navigation/NavigationMeshInstance/End/Tree cluster" index="0" instance=ExtResource( 10 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.58273, 0, 0.805387 )
 
-[node name="TreeDead1" parent="Navigation/NavigationMeshInstance/End/Tree cluster" index="1" instance=ExtResource( 17 )]
+[node name="TreeDead1" parent="Navigation/NavigationMeshInstance/End/Tree cluster" index="1" instance=ExtResource( 19 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2981, 0, 0.0221043 )
 
-[node name="TreeDead4" parent="Navigation/NavigationMeshInstance/End/Tree cluster" index="2" instance=ExtResource( 17 )]
+[node name="TreeDead4" parent="Navigation/NavigationMeshInstance/End/Tree cluster" index="2" instance=ExtResource( 19 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.138024, 0, -0.66101 )
 
-[node name="TreeDead3" parent="Navigation/NavigationMeshInstance/End/Tree cluster" index="3" instance=ExtResource( 18 )]
+[node name="TreeDead3" parent="Navigation/NavigationMeshInstance/End/Tree cluster" index="3" instance=ExtResource( 20 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.632392, 0, -0.892082 )
 
-[node name="BushSmall" parent="Navigation/NavigationMeshInstance/End/Tree cluster" index="4" instance=ExtResource( 19 )]
+[node name="BushSmall" parent="Navigation/NavigationMeshInstance/End/Tree cluster" index="4" instance=ExtResource( 21 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.30404, 0, 0.670227 )
 
-[node name="TreeDeadCurvy" parent="Navigation/NavigationMeshInstance/End/Tree cluster" index="5" instance=ExtResource( 16 )]
+[node name="TreeDeadCurvy" parent="Navigation/NavigationMeshInstance/End/Tree cluster" index="5" instance=ExtResource( 18 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.52493, 0, -0.415343 )
 
-[node name="TreeDead2" parent="Navigation/NavigationMeshInstance/End/Tree cluster" index="6" instance=ExtResource( 18 )]
+[node name="TreeDead2" parent="Navigation/NavigationMeshInstance/End/Tree cluster" index="6" instance=ExtResource( 20 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.741224, 0, -0.250025 )
 
-[node name="TreeRandom5" parent="Navigation/NavigationMeshInstance/End/Tree cluster" index="7" instance=ExtResource( 9 )]
+[node name="TreeRandom5" parent="Navigation/NavigationMeshInstance/End/Tree cluster" index="7" instance=ExtResource( 10 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.741224, 0, -1.46991 )
 
-[node name="TreeRandom4" parent="Navigation/NavigationMeshInstance/End/Tree cluster" index="8" instance=ExtResource( 9 )]
+[node name="TreeRandom4" parent="Navigation/NavigationMeshInstance/End/Tree cluster" index="8" instance=ExtResource( 10 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.68857, 0, -0.0540681 )
 
-[node name="TreeRandom3" parent="Navigation/NavigationMeshInstance/End/Tree cluster" index="9" instance=ExtResource( 9 )]
+[node name="TreeRandom3" parent="Navigation/NavigationMeshInstance/End/Tree cluster" index="9" instance=ExtResource( 10 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.544333, 0, -2.87948 )
 
-[node name="TreeRandom" parent="Navigation/NavigationMeshInstance/End" index="6" instance=ExtResource( 9 )]
+[node name="TreeRandom" parent="Navigation/NavigationMeshInstance/End" index="6" instance=ExtResource( 10 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.00156, 0, -2.48238 )
 
-[node name="TreeRandom2" parent="Navigation/NavigationMeshInstance/End" index="7" instance=ExtResource( 9 )]
+[node name="TreeRandom2" parent="Navigation/NavigationMeshInstance/End" index="7" instance=ExtResource( 10 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.73432, 0, -1.36186 )
 
-[node name="TreeRandom3" parent="Navigation/NavigationMeshInstance/End" index="8" instance=ExtResource( 9 )]
+[node name="TreeRandom3" parent="Navigation/NavigationMeshInstance/End" index="8" instance=ExtResource( 10 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.193449, 0, 2.25568 )
 
 [node name="Items" type="Spatial" parent="." index="1"]
 
-editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.7578, 0, 2.16255 )
 
-[node name="ItemFlamingo" parent="Items" index="0" instance=ExtResource( 20 )]
+[node name="ItemFlamingo" parent="Items" index="0" instance=ExtResource( 22 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 31.4007, 0, -3.93862 )
-_sections_unfolded = [ "Collision", "Transform" ]
 
-[node name="ItemSkate" parent="Items" index="1" instance=ExtResource( 21 )]
+[node name="ItemSkate" parent="Items" index="1" instance=ExtResource( 23 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24.9014, 0, 4.11566 )
 
-[node name="ItemEasel" parent="Items" index="2" instance=ExtResource( 22 )]
+[node name="ItemEasel" parent="Items" index="2" instance=ExtResource( 24 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 53.6941, 0, 19.4526 )
 
@@ -494,39 +495,35 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 53.6941, 0, 19.4526 )
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.1027, 0, -3.37346 )
 
-[node name="Monster" parent="Monsters" index="0" instance=ExtResource( 23 )]
+[node name="Monster" parent="Monsters" index="0" instance=ExtResource( 25 )]
 
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.0645, 0, 1.53041 )
 
-[node name="Waypoint" parent="Monsters/Monster" index="12" instance=ExtResource( 24 )]
+[node name="Waypoint" parent="Monsters/Monster" index="12" instance=ExtResource( 26 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.91869, 0, 0 )
 
-[node name="Monster2" parent="Monsters" index="1" instance=ExtResource( 23 )]
+[node name="Monster2" parent="Monsters" index="1" instance=ExtResource( 25 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 26.3068, 0, 11.4629 )
 
-[node name="Waypoint" parent="Monsters/Monster2" index="12" instance=ExtResource( 24 )]
+[node name="Waypoint" parent="Monsters/Monster2" index="12" instance=ExtResource( 26 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.42645, 0, 1.01601 )
 
-[node name="Monster3" parent="Monsters" index="2" instance=ExtResource( 23 )]
+[node name="Monster3" parent="Monsters" index="2" instance=ExtResource( 25 )]
 
-editor/display_folded = true
-transform = Transform( 1, 0, 3.27826e-007, 0, 1, 0, -3.27826e-007, 0, 1, 32.8191, 0, 9.34323 )
+transform = Transform( 1, 0, 3.27826e-007, 0, 1, 0, -3.27826e-007, 0, 1, 41.5599, 0, 10.9195 )
 
-[node name="Waypoint2" parent="Monsters/Monster3" index="12" instance=ExtResource( 24 )]
+[node name="Waypoint3" parent="Monsters/Monster3" index="12" instance=ExtResource( 26 )]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.74084, 0, 1.57624 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.880299, 0, -12.6915 )
 
-[node name="Waypoint3" parent="Monsters/Monster3" index="13" instance=ExtResource( 24 )]
+[node name="Waypoint2" parent="Monsters/Monster3" index="13" instance=ExtResource( 26 )]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.62114, 0, -11.1153 )
-
-[node name="Waypoint4" parent="Monsters/Monster3" index="14" instance=ExtResource( 24 )]
-
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.909805, 0, -4.87134 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.74084, 0, -1.57624 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="Player" parent="." index="3"]
 

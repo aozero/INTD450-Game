@@ -5,7 +5,7 @@
 [node name="FireLight" type="OmniLight" index="0"]
 
 layers = 1
-light_color = Color( 0.992188, 0.810028, 0.878338, 1 )
+light_color = Color( 0.992188, 0.856991, 0.810028, 1 )
 light_energy = 4.0
 light_indirect_energy = 5.0
 light_negative = false

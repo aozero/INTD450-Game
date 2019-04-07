@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Scenes/Worlds/World.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/ForestNoise.tscn" type="PackedScene" id=2]
@@ -13,14 +13,18 @@
 [ext_resource path="res://Sound/Effects/Memory/Finale Voices/finale_david_ill_see_you.wav" type="AudioStream" id=11]
 [ext_resource path="res://Sound/Effects/Memory/Finale Voices/finale_david_i_love_you.wav" type="AudioStream" id=12]
 [ext_resource path="res://Sound/Effects/Memory/Finale Voices/finale_ellis_she_feels_guilty.wav" type="AudioStream" id=13]
-[ext_resource path="res://Scenes/Foliage/BGForestMedium.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Scenes/Foliage/BGForestSmall.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Scenes/Door.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Sound/Effects/Memory/Finale Voices/finale_riley_help.wav" type="AudioStream" id=14]
+[ext_resource path="res://Scenes/Foliage/BGForestMedium.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Scenes/Foliage/BGForestSmall.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Scripts/Fires/FireTrigger.gd" type="Script" id=17]
+[ext_resource path="res://Scenes/Fires/FireStrip.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Scenes/Items/Final/BedroomFinal.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Scenes/Door.tscn" type="PackedScene" id=20]
 
 [sub_resource type="NavigationMesh" id=1]
 
-vertices = PoolVector3Array( -38, -0.622357, -39.1, -49.1, -0.622357, -39.1, -49.1, -0.622357, -29.5, -29.6, -0.622357, -21.4, -26.9, -0.622357, -22, -26.9, -0.622357, -39.1, -30.2, -0.622357, -19.9, -29.6, -0.622357, -21.4, -26.9, -0.622357, -39.1, -38, -0.622357, -39.1, -49.1, -0.622357, -29.5, -49.1, -0.622357, -19.6, -24.2, -0.622357, -18.1, -23, -0.622357, -18.1, -21.8, -0.622357, -19.9, -24.5, -0.622357, -21.1, -26.9, -0.622357, -39.1, -26.9, -0.622357, -22, -25.4, -0.622357, -22, -25.4, -0.622357, -22, -24.5, -0.622357, -21.1, -21.8, -0.622357, -19.9, -19.4, -0.622357, -21.4, -19.4, -0.622357, -39.1, -26.9, -0.622357, -39.1, -18.8, -0.622357, -21.4, -16.1, -0.622357, -18.1, -11.6, -0.622357, -18.1, -11.6, -0.622357, -39.1, -19.4, -0.622357, -39.1, -19.4, -0.622357, -39.1, -19.4, -0.622357, -21.4, -18.8, -0.622357, -21.4, 5.2, -0.622357, 6.2, 4.3, -0.622357, 7.4, 6.1, -0.622357, 8, 5.2, -0.622357, 5, 5.2, -0.622357, 6.2, 6.1, -0.622357, 8, 5.2, -0.622357, 5, 6.1, -0.622357, 8, 6.7, -0.622357, 9.2, 49, -0.622357, 2.9, 49, -0.622357, -3.1, -8.6, -0.622357, -13.3, -10.7, -0.622357, -12.1, -7.4, -0.622357, -8.8, -8.6, -0.622357, -13.3, -7.4, -0.622357, -8.8, -6.8, -0.622357, -7, -0.799999, -0.622357, -1, -8.6, -0.622357, -17.5, 49, -0.622357, -27.1, 26.2, -0.622357, -39.1, 18.7, -0.622357, -39.1, 49, -0.622357, -15.1, 49, -0.622357, -27.1, 49, -0.622357, -39.1, 41.2, -0.622357, -39.1, 18.7, -0.622357, -39.1, 10.9, -0.622357, -39.1, -8.6, -0.622357, -17.5, 5.2, -0.622357, 5, 49, -0.622357, -3.1, 49, -0.622357, -15.1, 49, -0.622357, -27.1, 41.2, -0.622357, -39.1, 33.7, -0.622357, -39.1, -11.6, -0.622357, -39.1, -11.6, -0.622357, -18.1, -9.2, -0.622357, -18.1, -4.1, -0.622357, -39.1, 10.9, -0.622357, -39.1, 3.4, -0.622357, -39.1, -8.6, -0.622357, -17.5, -4.1, -0.622357, -39.1, -9.2, -0.622357, -18.1, -8.6, -0.622357, -17.5, 3.4, -0.622357, -39.1, 6.7, -0.622357, 9.2, 49, -0.622357, 9.2, 49, -0.622357, 2.9, 49, -0.622357, -27.1, 33.7, -0.622357, -39.1, 26.2, -0.622357, -39.1, -8.6, -0.622357, -17.5, -0.799999, -0.622357, -1, 5.2, -0.622357, 5, -29.6, -0.622357, -15.1, -29.3, -0.622357, -16.9, -29.9, -0.622357, -17.2, -49.1, -0.622357, -19.6, -49.1, -0.622357, -13, -29, -0.622357, -13, -28.7, -0.622357, -13.6, -29.6, -0.622357, -15.1, -49.1, -0.622357, -13, -29.9, -0.622357, -17.2, -30.2, -0.622357, -19.9, -49.1, -0.622357, -19.6, -49.1, -0.622357, -5.5, -27.8, -0.622357, -5.8, -29, -0.622357, -13, -49.1, -0.622357, -13, 0.100002, -0.622357, 9.5, 0.700001, -0.622357, 9.2, 0.100002, -0.622357, 7.4, -0.799999, -0.622357, 7.4, -5.6, -0.622357, 2.3, -5.9, -0.622357, 1.1, -9.8, -0.622357, -1.9, -11.3, -0.622357, -2.2, -5.6, -0.622357, 3.5, -9.8, -0.622357, -1.9, -9.8, -0.622357, -2.8, -11.3, -0.622357, -3.7, -11.3, -0.622357, -2.2, -13.4, -0.622357, -3.4, -12.2, -0.622357, -2.2, -11.3, -0.622357, -2.2, -11.3, -0.622357, -3.7, -11.9, -0.622357, -5.8, -13.4, -0.622357, -6.4, -5.6, -0.622357, 3.5, -0.799999, -0.622357, 7.4, -1.4, -0.622357, 5.9, -5.6, -0.622357, 2.3, -17.9, -0.622357, -12.4, -21.2, -0.622357, -12.7, -17.3, -0.622357, -8.2, -17.3, -0.622357, -10.9, -5.6, -0.622357, 3.5, 0.100002, -0.622357, 9.5, -0.799999, -0.622357, 7.4, -15.8, -0.622357, -10, -17.3, -0.622357, -10.9, -17.3, -0.622357, -8.2, -13.4, -0.622357, -3.4, -13.4, -0.622357, -6.4, -20.3, -0.622357, -3.7, -21.8, -0.622357, -4.6, -22.4, -0.622357, -2.8, -20.3, -0.622357, -2.8, -26.9, -0.622357, -2.5, -49.1, -0.622357, 5.6, -49.1, -0.622357, 16.7, -25.7, -0.622357, 39.2, -14, -0.622357, 39.2, -5.3, -0.622357, 12.2, -5.3, -0.622357, 12.2, -5.6, -0.622357, 11, -7.4, -0.622357, 10.1, -2.9, -0.622357, 14.6, -4.1, -0.622357, 12.8, -5.3, -0.622357, 12.2, -14, -0.622357, 39.2, -2.3, -0.622357, 39.2, -13.7, -0.622357, 3.8, -14.6, -0.622357, 2.3, -16.4, -0.622357, 1.7, -18.2, -0.622357, -1.3, -20.3, -0.622357, -2.8, -22.4, -0.622357, -2.8, -16.4, -0.622357, 1.7, -49.1, -0.622357, 16.7, -49.1, -0.622357, 27.8, -37.4, -0.622357, 39.2, -25.7, -0.622357, 39.2, -7.4, -0.622357, 10.1, -12.5, -0.622357, 4.4, -13.7, -0.622357, 3.8, -13.7, -0.622357, 3.8, -16.4, -0.622357, 1.7, -22.4, -0.622357, -2.8, -26.9, -0.622357, -2.5, -7.4, -0.622357, 10.1, -5.3, -0.622357, 12.2, -7.4, -0.622357, 10.1, -26.9, -0.622357, -2.5, -49.1, -0.622357, 27.8, -49.1, -0.622357, 39.2, -37.4, -0.622357, 39.2, -27.5, -0.622357, -3.1, -27.8, -0.622357, -5.8, -49.1, -0.622357, -5.5, -26.9, -0.622357, -2.5, -27.5, -0.622357, -3.1, -49.1, -0.622357, -5.5, -49.1, -0.622357, 5.6, -2.3, -0.622357, 39.2, -2.3, -0.622357, 14.6, -2.9, -0.622357, 14.6, 37.3, -0.622357, 39.2, 49, -0.622357, 39.2, 49, -0.622357, 31.7, 37.3, -0.622357, 39.2, 49, -0.622357, 31.7, 49, -0.622357, 24.2, 4.3, -0.622357, 14.3, 3.1, -0.622357, 14.9, 3.1, -0.622357, 39.2, 14.5, -0.622357, 39.2, 37.3, -0.622357, 39.2, 49, -0.622357, 24.2, 49, -0.622357, 16.7, 37.3, -0.622357, 39.2, 49, -0.622357, 16.7, 49, -0.622357, 9.2, 6.7, -0.622357, 9.2, 25.9, -0.622357, 39.2, 6.7, -0.622357, 9.2, 4.3, -0.622357, 14.3, 14.5, -0.622357, 39.2, 25.9, -0.622357, 39.2, 3.1, -0.622357, 14.9, 0.100002, -0.622357, 13.4, -1.4, -0.622357, 14.6, 3.1, -0.622357, 14.9, -1.4, -0.622357, 14.6, -2.3, -0.622357, 14.6, -2.3, -0.622357, 39.2, 3.1, -0.622357, 39.2 )
-polygons = [ PoolIntArray( 2, 0, 1 ), PoolIntArray( 5, 3, 4 ), PoolIntArray( 11, 6, 10 ), PoolIntArray( 6, 7, 10 ), PoolIntArray( 7, 9, 10 ), PoolIntArray( 7, 8, 9 ), PoolIntArray( 15, 12, 14 ), PoolIntArray( 12, 13, 14 ), PoolIntArray( 18, 16, 17 ), PoolIntArray( 24, 19, 23 ), PoolIntArray( 19, 20, 23 ), PoolIntArray( 20, 21, 23 ), PoolIntArray( 21, 22, 23 ), PoolIntArray( 29, 25, 28 ), PoolIntArray( 25, 26, 28 ), PoolIntArray( 26, 27, 28 ), PoolIntArray( 32, 30, 31 ), PoolIntArray( 35, 33, 34 ), PoolIntArray( 38, 36, 37 ), PoolIntArray( 43, 39, 42 ), PoolIntArray( 39, 40, 42 ), PoolIntArray( 40, 41, 42 ), PoolIntArray( 46, 44, 45 ), PoolIntArray( 51, 47, 50 ), PoolIntArray( 47, 48, 50 ), PoolIntArray( 48, 49, 50 ), PoolIntArray( 55, 52, 54 ), PoolIntArray( 52, 53, 54 ), PoolIntArray( 58, 56, 57 ), PoolIntArray( 64, 59, 63 ), PoolIntArray( 59, 60, 63 ), PoolIntArray( 60, 61, 63 ), PoolIntArray( 61, 62, 63 ), PoolIntArray( 67, 65, 66 ), PoolIntArray( 71, 68, 70 ), PoolIntArray( 68, 69, 70 ), PoolIntArray( 74, 72, 73 ), PoolIntArray( 78, 75, 77 ), PoolIntArray( 75, 76, 77 ), PoolIntArray( 81, 79, 80 ), PoolIntArray( 84, 82, 83 ), PoolIntArray( 87, 85, 86 ), PoolIntArray( 92, 88, 91 ), PoolIntArray( 88, 90, 91 ), PoolIntArray( 88, 89, 90 ), PoolIntArray( 96, 93, 95 ), PoolIntArray( 93, 94, 95 ), PoolIntArray( 99, 97, 98 ), PoolIntArray( 103, 100, 102 ), PoolIntArray( 100, 101, 102 ), PoolIntArray( 107, 104, 106 ), PoolIntArray( 104, 105, 106 ), PoolIntArray( 112, 108, 111 ), PoolIntArray( 108, 110, 111 ), PoolIntArray( 108, 109, 110 ), PoolIntArray( 116, 113, 115 ), PoolIntArray( 113, 114, 115 ), PoolIntArray( 122, 117, 121 ), PoolIntArray( 117, 120, 121 ), PoolIntArray( 117, 118, 120 ), PoolIntArray( 118, 119, 120 ), PoolIntArray( 126, 123, 125 ), PoolIntArray( 123, 124, 125 ), PoolIntArray( 130, 127, 129 ), PoolIntArray( 127, 128, 129 ), PoolIntArray( 133, 131, 132 ), PoolIntArray( 138, 134, 137 ), PoolIntArray( 134, 136, 137 ), PoolIntArray( 134, 135, 136 ), PoolIntArray( 142, 139, 141 ), PoolIntArray( 139, 140, 141 ), PoolIntArray( 148, 143, 147 ), PoolIntArray( 143, 146, 147 ), PoolIntArray( 143, 145, 146 ), PoolIntArray( 143, 144, 145 ), PoolIntArray( 151, 149, 150 ), PoolIntArray( 156, 152, 155 ), PoolIntArray( 152, 153, 155 ), PoolIntArray( 153, 154, 155 ), PoolIntArray( 159, 157, 158 ), PoolIntArray( 163, 160, 162 ), PoolIntArray( 160, 161, 162 ), PoolIntArray( 167, 164, 166 ), PoolIntArray( 164, 165, 166 ), PoolIntArray( 170, 168, 169 ), PoolIntArray( 175, 171, 174 ), PoolIntArray( 171, 172, 174 ), PoolIntArray( 172, 173, 174 ), PoolIntArray( 178, 176, 177 ), PoolIntArray( 181, 179, 180 ), PoolIntArray( 184, 182, 183 ), PoolIntArray( 188, 185, 187 ), PoolIntArray( 185, 186, 187 ), PoolIntArray( 191, 189, 190 ), PoolIntArray( 194, 192, 193 ), PoolIntArray( 197, 195, 196 ), PoolIntArray( 201, 198, 200 ), PoolIntArray( 198, 199, 200 ), PoolIntArray( 204, 202, 203 ), PoolIntArray( 209, 205, 208 ), PoolIntArray( 205, 206, 208 ), PoolIntArray( 206, 207, 208 ), PoolIntArray( 213, 210, 212 ), PoolIntArray( 210, 211, 212 ), PoolIntArray( 216, 214, 215 ), PoolIntArray( 221, 217, 220 ), PoolIntArray( 217, 218, 220 ), PoolIntArray( 218, 219, 220 ) ]
+vertices = PoolVector3Array( -21.2, -0.622357, -19.9, -20.3, -0.622357, -20.8, -20.9, -0.622357, -22.6, -24.2, -0.622357, -18.4, -23, -0.622357, -18.4, -20.9, -0.622357, -22.6, -18.8, -0.622357, -24.7, -25.4, -0.622357, -39.1, -33.2, -0.622357, -39.1, -41.3, -0.622357, -39.1, -49.1, -0.622357, -27.1, -49.1, -0.622357, -21.1, -27.8, -0.622357, -14.8, -24.2, -0.622357, -18.4, -20.9, -0.622357, -22.6, -41.3, -0.622357, -39.1, -49.1, -0.622357, -39.1, -49.1, -0.622357, -27.1, -18.8, -0.622357, -24.7, -17.3, -0.622357, -25.3, -17.3, -0.622357, -39.1, -25.4, -0.622357, -39.1, -49.1, -0.622357, -21.1, -49.1, -0.622357, -14.8, -27.8, -0.622357, -14.8, -20.9, -0.622357, -22.6, -33.2, -0.622357, -39.1, -41.3, -0.622357, -39.1, -5, -0.622357, -12.1, -5, -0.622357, -10.9, 1, -0.622357, -4.9, 49, -0.622357, -29.2, 49, -0.622357, -39.1, 40.6, -0.622357, -39.1, -15.2, -0.622357, -23.8, -8.9, -0.622357, -16, -6.5, -0.622357, -13.9, 7.3, -0.622357, -39.1, -0.799999, -0.622357, -39.1, -17.3, -0.622357, -39.1, -17.3, -0.622357, -25.3, -15.2, -0.622357, -23.8, -9.2, -0.622357, -39.1, 15.7, -0.622357, -39.1, 7.3, -0.622357, -39.1, -6.5, -0.622357, -13.9, -5, -0.622357, -12.1, 1, -0.622357, -4.9, 7, -0.622357, 1.4, 49, -0.622357, -29.2, 40.6, -0.622357, -39.1, 32.2, -0.622357, -39.1, -6.5, -0.622357, -13.9, -5, -0.622357, -12.1, 7, -0.622357, 1.4, -0.799999, -0.622357, -39.1, -9.2, -0.622357, -39.1, -15.2, -0.622357, -23.8, 7, -0.622357, 1.4, 49, -0.622357, 1.4, 49, -0.622357, -8.8, 49, -0.622357, -19, 49, -0.622357, -29.2, 32.2, -0.622357, -39.1, 23.8, -0.622357, -39.1, 49, -0.622357, -19, 23.8, -0.622357, -39.1, 15.7, -0.622357, -39.1, -6.5, -0.622357, -13.9, 7, -0.622357, 1.4, 49, -0.622357, -8.8, -26.9, -0.622357, -10, -27.2, -0.622357, -12.1, -28.4, -0.622357, -13, -49.1, -0.622357, -14.8, -49.1, -0.622357, -7.3, -29, -0.622357, -8.2, -28.4, -0.622357, -13, -27.8, -0.622357, -14.8, -49.1, -0.622357, -14.8, -49.1, -0.622357, -7.3, -29, -0.622357, -7.3, -29, -0.622357, -8.2, -0.199997, -0.622357, 8.6, 0.100002, -0.622357, 9.8, 0.700001, -0.622357, 8.9, -0.199997, -0.622357, 8.6, 0.700001, -0.622357, 8.9, 0.100002, -0.622357, 7.4, -0.799999, -0.622357, 7.4, -1.7, -0.622357, 8, -11.3, -0.622357, -3.7, -11.6, -0.622357, -2.2, -10.7, -0.622357, -2.2, -11.9, -0.622357, -5.8, -13.4, -0.622357, -6.4, -14.6, -0.622357, -5.8, -11.6, -0.622357, -2.2, -11.3, -0.622357, -3.7, -1.7, -0.622357, 7.1, -1.7, -0.622357, 8, -0.799999, -0.622357, 7.4, -1.7, -0.622357, 7.1, -0.799999, -0.622357, 7.4, -1.4, -0.622357, 5.9, -5.6, -0.622357, 2.3, -5.9, -0.622357, 3.5, -17.3, -0.622357, -10.9, -17.3, -0.622357, -11.5, -18.5, -0.622357, -10.3, -17.3, -0.622357, -10.9, -18.5, -0.622357, -10.3, -18.2, -0.622357, -9.1, -16.7, -0.622357, -8.2, -14, -0.622357, -7.9, -9.8, -0.622357, -1.9, -9.8, -0.622357, -2.8, -11.3, -0.622357, -3.7, -10.7, -0.622357, -2.2, -10.7, -0.622357, -2.2, -10.1, -0.622357, -1, -8.6, -0.622357, -0.0999985, -9.8, -0.622357, -1.9, -5.9, -0.622357, 1.1, -9.8, -0.622357, -1.9, -8.6, -0.622357, -0.0999985, -5.9, -0.622357, 3.5, -5.6, -0.622357, 2.3, -14, -0.622357, -7.9, -16.7, -0.622357, -8.2, -16.1, -0.622357, -6.7, -14.6, -0.622357, -5.8, -13.4, -0.622357, -6.4, -4.7, -0.622357, 18.5, -5.6, -0.622357, 17, -12.2, -0.622357, 10.7, -20.9, -0.622357, 2, -20.9, -0.622357, 1.4, -29, -0.622357, -6.7, -49.1, -0.622357, 4.1, -49.1, -0.622357, 15.8, -12.2, -0.622357, 10.7, -12.2, -0.622357, 10.1, -20.9, -0.622357, 2, -49.1, -0.622357, 27.5, -49.1, -0.622357, 39.2, -38, -0.622357, 39.2, -29, -0.622357, -6.7, -29, -0.622357, -7.3, -49.1, -0.622357, -7.3, -49.1, -0.622357, 4.1, -4.1, -0.622357, 39.2, -4.1, -0.622357, 18.5, -4.7, -0.622357, 18.5, -15.5, -0.622357, 39.2, -49.1, -0.622357, 27.5, -38, -0.622357, 39.2, -26.6, -0.622357, 39.2, -4.7, -0.622357, 18.5, -12.2, -0.622357, 10.7, -20.9, -0.622357, 2, -26.6, -0.622357, 39.2, -15.5, -0.622357, 39.2, -4.7, -0.622357, 18.5, -20.9, -0.622357, 2, -49.1, -0.622357, 15.8, -49.1, -0.622357, 27.5, 5.2, -0.622357, 6.2, 4.3, -0.622357, 7.1, 5.8, -0.622357, 8.6, 6.7, -0.622357, 8, 7, -0.622357, 1.4, 7, -0.622357, 2.3, 8.8, -0.622357, 8.3, 10.9, -0.622357, 11, 49, -0.622357, 11, 49, -0.622357, 1.4, 4.6, -0.622357, 4.4, 5.2, -0.622357, 6.2, 6.7, -0.622357, 8, 8.8, -0.622357, 8.3, 7, -0.622357, 2.3, 38.2, -0.622357, 39.2, 49, -0.622357, 39.2, 49, -0.622357, 32, 38.2, -0.622357, 39.2, 49, -0.622357, 32, 49, -0.622357, 25.1, 38.2, -0.622357, 39.2, 49, -0.622357, 25.1, 49, -0.622357, 17.9, 27.7, -0.622357, 39.2, 8.8, -0.622357, 14.6, 6.7, -0.622357, 16.1, 6.7, -0.622357, 39.2, 8.8, -0.622357, 14.6, 6.7, -0.622357, 39.2, 17.2, -0.622357, 39.2, 10.9, -0.622357, 11.9, 10.9, -0.622357, 11, 10.9, -0.622357, 11.9, 17.2, -0.622357, 39.2, 27.7, -0.622357, 39.2, 49, -0.622357, 17.9, 49, -0.622357, 11, -0.499996, -0.622357, 13.1, -1.1, -0.622357, 13.7, -0.499996, -0.622357, 15.8, 1.9, -0.622357, 14.9, -3.2, -0.622357, 18.5, -4.1, -0.622357, 18.5, -4.1, -0.622357, 39.2, 5.8, -0.622357, 16.1, 4, -0.622357, 14.3, 1.9, -0.622357, 14.9, -0.499996, -0.622357, 15.8, -3.2, -0.622357, 18.5, 6.7, -0.622357, 16.1, 5.8, -0.622357, 16.1, -3.2, -0.622357, 18.5, -4.1, -0.622357, 39.2, 6.7, -0.622357, 39.2 )
+polygons = [ PoolIntArray( 4, 0, 3 ), PoolIntArray( 0, 1, 3 ), PoolIntArray( 1, 2, 3 ), PoolIntArray( 8, 5, 7 ), PoolIntArray( 5, 6, 7 ), PoolIntArray( 11, 9, 10 ), PoolIntArray( 14, 12, 13 ), PoolIntArray( 17, 15, 16 ), PoolIntArray( 21, 18, 20 ), PoolIntArray( 18, 19, 20 ), PoolIntArray( 27, 22, 26 ), PoolIntArray( 22, 23, 26 ), PoolIntArray( 23, 24, 26 ), PoolIntArray( 24, 25, 26 ), PoolIntArray( 30, 28, 29 ), PoolIntArray( 33, 31, 32 ), PoolIntArray( 38, 34, 37 ), PoolIntArray( 34, 35, 37 ), PoolIntArray( 35, 36, 37 ), PoolIntArray( 42, 39, 41 ), PoolIntArray( 39, 40, 41 ), PoolIntArray( 45, 43, 44 ), PoolIntArray( 48, 46, 47 ), PoolIntArray( 51, 49, 50 ), PoolIntArray( 54, 52, 53 ), PoolIntArray( 57, 55, 56 ), PoolIntArray( 60, 58, 59 ), PoolIntArray( 64, 61, 63 ), PoolIntArray( 61, 62, 63 ), PoolIntArray( 70, 65, 69 ), PoolIntArray( 65, 66, 69 ), PoolIntArray( 66, 67, 69 ), PoolIntArray( 67, 68, 69 ), PoolIntArray( 76, 71, 75 ), PoolIntArray( 71, 72, 75 ), PoolIntArray( 72, 73, 75 ), PoolIntArray( 73, 74, 75 ), PoolIntArray( 79, 77, 78 ), PoolIntArray( 82, 80, 81 ), PoolIntArray( 85, 83, 84 ), PoolIntArray( 90, 86, 89 ), PoolIntArray( 86, 88, 89 ), PoolIntArray( 86, 87, 88 ), PoolIntArray( 93, 91, 92 ), PoolIntArray( 98, 94, 97 ), PoolIntArray( 94, 95, 97 ), PoolIntArray( 95, 96, 97 ), PoolIntArray( 101, 99, 100 ), PoolIntArray( 106, 102, 105 ), PoolIntArray( 102, 104, 105 ), PoolIntArray( 102, 103, 104 ), PoolIntArray( 109, 107, 108 ), PoolIntArray( 114, 110, 113 ), PoolIntArray( 110, 112, 113 ), PoolIntArray( 110, 111, 112 ), PoolIntArray( 118, 115, 117 ), PoolIntArray( 115, 116, 117 ), PoolIntArray( 122, 119, 121 ), PoolIntArray( 119, 120, 121 ), PoolIntArray( 127, 123, 126 ), PoolIntArray( 123, 125, 126 ), PoolIntArray( 123, 124, 125 ), PoolIntArray( 132, 128, 131 ), PoolIntArray( 128, 130, 131 ), PoolIntArray( 128, 129, 130 ), PoolIntArray( 135, 133, 134 ), PoolIntArray( 140, 136, 139 ), PoolIntArray( 136, 137, 139 ), PoolIntArray( 137, 138, 139 ), PoolIntArray( 143, 141, 142 ), PoolIntArray( 146, 144, 145 ), PoolIntArray( 150, 147, 149 ), PoolIntArray( 147, 148, 149 ), PoolIntArray( 154, 151, 153 ), PoolIntArray( 151, 152, 153 ), PoolIntArray( 157, 155, 156 ), PoolIntArray( 160, 158, 159 ), PoolIntArray( 166, 161, 165 ), PoolIntArray( 161, 162, 165 ), PoolIntArray( 162, 163, 165 ), PoolIntArray( 163, 164, 165 ), PoolIntArray( 170, 167, 169 ), PoolIntArray( 167, 168, 169 ), PoolIntArray( 176, 171, 175 ), PoolIntArray( 171, 172, 175 ), PoolIntArray( 172, 173, 175 ), PoolIntArray( 173, 174, 175 ), PoolIntArray( 181, 177, 180 ), PoolIntArray( 177, 178, 180 ), PoolIntArray( 178, 179, 180 ), PoolIntArray( 184, 182, 183 ), PoolIntArray( 187, 185, 186 ), PoolIntArray( 191, 188, 190 ), PoolIntArray( 188, 189, 190 ), PoolIntArray( 194, 192, 193 ), PoolIntArray( 198, 195, 197 ), PoolIntArray( 195, 196, 197 ), PoolIntArray( 204, 199, 203 ), PoolIntArray( 199, 200, 203 ), PoolIntArray( 200, 202, 203 ), PoolIntArray( 200, 201, 202 ), PoolIntArray( 208, 205, 207 ), PoolIntArray( 205, 206, 207 ), PoolIntArray( 211, 209, 210 ), PoolIntArray( 216, 212, 215 ), PoolIntArray( 212, 214, 215 ), PoolIntArray( 212, 213, 214 ), PoolIntArray( 221, 217, 220 ), PoolIntArray( 217, 218, 220 ), PoolIntArray( 218, 219, 220 ) ]
 sample_partition_type/sample_partition_type = 0
 cell/size = 0.3
 cell/height = 0.2
@@ -39,6 +43,10 @@ filter/low_hanging_obstacles = false
 filter/ledge_spans = false
 filter/filter_walkable_low_height_spans = false
 _sections_unfolded = [ "agent" ]
+
+[sub_resource type="BoxShape" id=2]
+
+extents = Vector3( 2, 1, 1 )
 
 [node name="World" index="0" instance=ExtResource( 1 )]
 
@@ -130,42 +138,242 @@ attenuation_model = 0
 bus = "Voice"
 time_between_sounds = 2
 
+[node name="Finale Riley Help" parent="." index="11" instance=ExtResource( 2 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.8459, 0, -10.3371 )
+stream = ExtResource( 14 )
+attenuation_model = 0
+unit_db = -5.0
+unit_size = 2.0
+bus = "Voice"
+time_between_sounds = 2
+
 [node name="NavigationMeshInstance" parent="Navigation" index="0"]
 
 navmesh = SubResource( 1 )
 
 [node name="Trees" type="Spatial" parent="Navigation/NavigationMeshInstance" index="1"]
 
-[node name="BGForestMedium2" parent="Navigation/NavigationMeshInstance/Trees" index="0" instance=ExtResource( 14 )]
+[node name="BGForestMedium2" parent="Navigation/NavigationMeshInstance/Trees" index="0" instance=ExtResource( 15 )]
 
 transform = Transform( 0.661094, 0, -0.750303, 0, 1, 0, 0.750302, 0, 0.661094, -14.8149, 0, -12.8571 )
 
-[node name="BGForestMedium3" parent="Navigation/NavigationMeshInstance/Trees" index="1" instance=ExtResource( 14 )]
+[node name="BGForestMedium3" parent="Navigation/NavigationMeshInstance/Trees" index="1" instance=ExtResource( 15 )]
 
 transform = Transform( 0.694853, 0, -0.719151, 0, 1, 0, 0.719151, 0, 0.694853, -3.01117, 0, 0.534167 )
 
-[node name="BGForestMedium4" parent="Navigation/NavigationMeshInstance/Trees" index="2" instance=ExtResource( 14 )]
+[node name="BGForestMedium4" parent="Navigation/NavigationMeshInstance/Trees" index="2" instance=ExtResource( 15 )]
 
-transform = Transform( 0.658095, 0, -0.752935, 0, 1, 0, 0.752934, 0, 0.658096, -19.1621, 0, -6.21882 )
+transform = Transform( -0.688698, 0, 0.725048, 0, 1, 0, -0.725047, 0, -0.688699, -19.1621, 0, -6.21882 )
 
-[node name="BGForestMedium5" parent="Navigation/NavigationMeshInstance/Trees" index="3" instance=ExtResource( 14 )]
+[node name="BGForestMedium5" parent="Navigation/NavigationMeshInstance/Trees" index="3" instance=ExtResource( 15 )]
 
-transform = Transform( 0.706194, 0, -0.708019, 0, 1, 0, 0.708019, 0, 0.706194, -6.94889, 0, 6.16033 )
+transform = Transform( -0.691375, 0, 0.722496, 0, 1, 0, -0.722496, 0, -0.691375, -6.94889, 0, 6.16033 )
 
-[node name="BGForestSmall" parent="Navigation/NavigationMeshInstance/Trees" index="4" instance=ExtResource( 15 )]
+[node name="BGForestSmall" parent="Navigation/NavigationMeshInstance/Trees" index="4" instance=ExtResource( 16 )]
 
 transform = Transform( 0.711511, 0, 0.702675, 0, 1, 0, -0.702675, 0, 0.711511, -20.3672, 0, -12.5559 )
 
-[node name="BGForestSmall4" parent="Navigation/NavigationMeshInstance/Trees" index="5" instance=ExtResource( 15 )]
+[node name="BGForestSmall4" parent="Navigation/NavigationMeshInstance/Trees" index="5" instance=ExtResource( 16 )]
 
-transform = Transform( -0.455746, 0, -0.89011, 0, 1, 0, 0.89011, 0, -0.455746, 2.91021, 0, 10.7937 )
+transform = Transform( -0.638932, 0, -0.769263, 0, 1, 0, 0.769263, 0, -0.638932, 2.91021, 0, 10.7937 )
 
-[node name="Player" parent="." index="12"]
+[node name="Fires" type="Spatial" parent="Navigation/NavigationMeshInstance" index="2"]
 
-transform = Transform( 0.701325, 0, 0.712841, 0, 1, 0, -0.712841, 0, 0.701325, -1.83261, 0, 6.88669 )
+script = ExtResource( 17 )
 
-[node name="The Door" parent="." index="15" instance=ExtResource( 16 )]
+[node name="FireStrip" parent="Navigation/NavigationMeshInstance/Fires" index="0" instance=ExtResource( 18 )]
 
-transform = Transform( 0.777477, 0, 0.628911, 0, 1, 0, -0.628911, 0, 0.777477, -15.6831, -0.1, -8.04814 )
+transform = Transform( 0.756325, 0, 0.654196, 0, 1, 0, -0.654196, 0, 0.756325, -19.0371, 0, -12.3129 )
+
+[node name="FireStrip2" parent="Navigation/NavigationMeshInstance/Fires" index="1" instance=ExtResource( 18 )]
+
+transform = Transform( 0.756325, 0, 0.654196, 0, 1, 0, -0.654196, 0, 0.756325, 1.29371, 0, 9.64328 )
+
+[node name="FireTrigger" type="Area" parent="Navigation/NavigationMeshInstance/Fires" index="2"]
+
+editor/display_folded = true
+transform = Transform( 0.997582, 0, 0.0695051, 0, 1, 0, -0.0695051, 0, 0.997582, -4.73564, 0, 3.53886 )
+input_ray_pickable = false
+input_capture_on_drag = false
+space_override = 0
+gravity_point = false
+gravity_distance_scale = 0.0
+gravity_vec = Vector3( 0, -1, 0 )
+gravity = 9.8
+linear_damp = 0.1
+angular_damp = 1.0
+priority = 0.0
+monitoring = true
+monitorable = true
+collision_layer = 1
+collision_mask = 1
+audio_bus_override = false
+audio_bus_name = "Master"
+reverb_bus_enable = false
+reverb_bus_name = "Master"
+reverb_bus_amount = 0.0
+reverb_bus_uniformity = 0.0
+
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Fires/FireTrigger" index="0"]
+
+transform = Transform( 0.776779, 0, 0.629773, 0, 1, 0, -0.629773, 0, 0.776779, 0, 0, 0 )
+shape = SubResource( 2 )
+disabled = false
+
+[node name="FireStrip8" parent="Navigation/NavigationMeshInstance/Fires/FireTrigger" index="1" instance=ExtResource( 18 )]
+
+transform = Transform( 0.604171, 0, -0.796855, 0, 1, 0, 0.796854, 0, 0.604172, -3.99762, 0, 0.919086 )
+visible = false
+
+[node name="FireStrip9" parent="Navigation/NavigationMeshInstance/Fires/FireTrigger" index="2" instance=ExtResource( 18 )]
+
+transform = Transform( 0.604171, 0, -0.796854, 0, 1, 0, 0.796854, 0, 0.604171, 1.24701, 0, -3.4984 )
+visible = false
+
+[node name="FireTrigger2" type="Area" parent="Navigation/NavigationMeshInstance/Fires" index="3"]
+
+editor/display_folded = true
+transform = Transform( 0.997582, 0, 0.0695051, 0, 1, 0, -0.0695051, 0, 0.997582, -8.2141, 0, -0.605472 )
+input_ray_pickable = false
+input_capture_on_drag = false
+space_override = 0
+gravity_point = false
+gravity_distance_scale = 0.0
+gravity_vec = Vector3( 0, -1, 0 )
+gravity = 9.8
+linear_damp = 0.1
+angular_damp = 1.0
+priority = 0.0
+monitoring = true
+monitorable = true
+collision_layer = 1
+collision_mask = 1
+audio_bus_override = false
+audio_bus_name = "Master"
+reverb_bus_enable = false
+reverb_bus_name = "Master"
+reverb_bus_amount = 0.0
+reverb_bus_uniformity = 0.0
+
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Fires/FireTrigger2" index="0"]
+
+transform = Transform( 0.776779, 0, 0.629773, 0, 1, 0, -0.629773, 0, 0.776779, 0, 0, 0 )
+shape = SubResource( 2 )
+disabled = false
+
+[node name="FireStrip8" parent="Navigation/NavigationMeshInstance/Fires/FireTrigger2" index="1" instance=ExtResource( 18 )]
+
+transform = Transform( 0.604171, 0, -0.796855, 0, 1, 0, 0.796854, 0, 0.604172, -3.99762, 0, 0.919086 )
+visible = false
+
+[node name="FireStrip9" parent="Navigation/NavigationMeshInstance/Fires/FireTrigger2" index="2" instance=ExtResource( 18 )]
+
+transform = Transform( 0.604171, 0, -0.796854, 0, 1, 0, 0.796854, 0, 0.604171, 1.24701, 0, -3.4984 )
+visible = false
+
+[node name="FireTrigger3" type="Area" parent="Navigation/NavigationMeshInstance/Fires" index="4"]
+
+editor/display_folded = true
+transform = Transform( 0.997582, 0, 0.0695051, 0, 1, 0, -0.0695051, 0, 0.997582, -11.5908, 0, -4.57611 )
+input_ray_pickable = false
+input_capture_on_drag = false
+space_override = 0
+gravity_point = false
+gravity_distance_scale = 0.0
+gravity_vec = Vector3( 0, -1, 0 )
+gravity = 9.8
+linear_damp = 0.1
+angular_damp = 1.0
+priority = 0.0
+monitoring = true
+monitorable = true
+collision_layer = 1
+collision_mask = 1
+audio_bus_override = false
+audio_bus_name = "Master"
+reverb_bus_enable = false
+reverb_bus_name = "Master"
+reverb_bus_amount = 0.0
+reverb_bus_uniformity = 0.0
+
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Fires/FireTrigger3" index="0"]
+
+transform = Transform( 0.776779, 0, 0.629773, 0, 1, 0, -0.629773, 0, 0.776779, 0, 0, 0 )
+shape = SubResource( 2 )
+disabled = false
+
+[node name="FireStrip8" parent="Navigation/NavigationMeshInstance/Fires/FireTrigger3" index="1" instance=ExtResource( 18 )]
+
+transform = Transform( 0.604171, 0, -0.796855, 0, 1, 0, 0.796854, 0, 0.604172, -3.99762, 0, 0.919086 )
+visible = false
+
+[node name="FireStrip9" parent="Navigation/NavigationMeshInstance/Fires/FireTrigger3" index="2" instance=ExtResource( 18 )]
+
+transform = Transform( 0.604171, 0, -0.796854, 0, 1, 0, 0.796854, 0, 0.604171, 1.24701, 0, -3.4984 )
+visible = false
+
+[node name="FireTrigger4" type="Area" parent="Navigation/NavigationMeshInstance/Fires" index="5"]
+
+editor/display_folded = true
+transform = Transform( 0.997462, 0, 0.0712005, 0, 1, 0, -0.0712005, 0, 0.997462, -15.5099, 0, -8.96564 )
+input_ray_pickable = false
+input_capture_on_drag = false
+space_override = 0
+gravity_point = false
+gravity_distance_scale = 0.0
+gravity_vec = Vector3( 0, -1, 0 )
+gravity = 9.8
+linear_damp = 0.1
+angular_damp = 1.0
+priority = 0.0
+monitoring = true
+monitorable = true
+collision_layer = 1
+collision_mask = 1
+audio_bus_override = false
+audio_bus_name = "Master"
+reverb_bus_enable = false
+reverb_bus_name = "Master"
+reverb_bus_amount = 0.0
+reverb_bus_uniformity = 0.0
+
+[node name="CollisionShape" type="CollisionShape" parent="Navigation/NavigationMeshInstance/Fires/FireTrigger4" index="0"]
+
+transform = Transform( 0.776779, 0, 0.629773, 0, 1, 0, -0.629773, 0, 0.776779, 0, 0, 0 )
+shape = SubResource( 2 )
+disabled = false
+
+[node name="FireStrip8" parent="Navigation/NavigationMeshInstance/Fires/FireTrigger4" index="1" instance=ExtResource( 18 )]
+
+transform = Transform( 0.604171, 0, -0.796855, 0, 1, 0, 0.796854, 0, 0.604172, -3.99762, 0, 0.919086 )
+visible = false
+
+[node name="FireStrip9" parent="Navigation/NavigationMeshInstance/Fires/FireTrigger4" index="2" instance=ExtResource( 18 )]
+
+transform = Transform( 0.604171, 0, -0.796854, 0, 1, 0, 0.796854, 0, 0.604171, 1.24701, 0, -3.4984 )
+visible = false
+
+[node name="ItemFlamingo" parent="." index="13" instance=ExtResource( 19 )]
+
+transform = Transform( -0.689677, 0, 0.724116, 0, 1, 0, -0.724116, 0, -0.689677, -2.17645, 0, 6.53915 )
+burning = true
+
+[node name="Player" parent="." index="14"]
+
+transform = Transform( 0.724116, 0, 0.689677, 0, 1, 0, -0.689677, 0, 0.724116, -1.83261, 0, 6.88669 )
+in_finale = true
+
+[node name="The Door" parent="." index="17" instance=ExtResource( 20 )]
+
+transform = Transform( 0.753107, 0, 0.657897, 0, 1, 0, -0.657897, 0, 0.753107, -16.966, 0, -9.23353 )
+
+[connection signal="body_entered" from="Navigation/NavigationMeshInstance/Fires/FireTrigger" to="Navigation/NavigationMeshInstance/Fires" method="_on_FireTrigger_body_entered"]
+
+[connection signal="body_entered" from="Navigation/NavigationMeshInstance/Fires/FireTrigger2" to="Navigation/NavigationMeshInstance/Fires" method="_on_FireTrigger2_body_entered"]
+
+[connection signal="body_entered" from="Navigation/NavigationMeshInstance/Fires/FireTrigger3" to="Navigation/NavigationMeshInstance/Fires" method="_on_FireTrigger3_body_entered"]
+
+[connection signal="body_entered" from="Navigation/NavigationMeshInstance/Fires/FireTrigger4" to="Navigation/NavigationMeshInstance/Fires" method="_on_FireTrigger4_body_entered"]
 
 

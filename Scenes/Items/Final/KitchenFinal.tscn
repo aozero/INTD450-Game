@@ -71,7 +71,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.35 )
 amount = 100
 process_material = SubResource( 3 )
 
-[node name="MusicPlayer" parent="." index="2"]
+[node name="MusicPlayer" parent="." index="3"]
 
 stream = ExtResource( 4 )
 unit_size = 1.0
