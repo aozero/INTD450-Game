@@ -344,7 +344,7 @@ tracks/0/keys = {
 
 radius = 50.0
 
-[node name="Player" type="KinematicBody"]
+[node name="Player" type="KinematicBody" index="0"]
 
 input_ray_pickable = true
 input_capture_on_drag = false
@@ -719,7 +719,6 @@ _sections_unfolded = [ "Playback Options" ]
 
 [node name="ScreenRect" type="ColorRect" parent="CanvasLayer/MemoryController" index="2"]
 
-visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 1.0
