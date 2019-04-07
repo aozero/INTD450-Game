@@ -28,7 +28,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 2 ]
+"values": [ 0 ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -66,7 +66,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 0 ]
+"values": [ 6 ]
 }
 
 [sub_resource type="Animation" id=5]
@@ -85,7 +85,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
-"values": [ 1 ]
+"values": [ 9 ]
 }
 
 [sub_resource type="Animation" id=6]
@@ -101,30 +101,18 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 2 ]
+"values": [ 1, 2, 1, 2 ]
 }
-tracks/1/type = "value"
-tracks/1/path = NodePath("CollisionShape/Sprite3D:translation")
+tracks/1/type = "method"
+tracks/1/path = NodePath("AudioWalking1")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.4 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 0, -0.125 ) ]
-}
-tracks/2/type = "method"
-tracks/2/path = NodePath("AudioWalking1")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
@@ -132,13 +120,13 @@ tracks/2/keys = {
 "method": "footstep"
 } ]
 }
-tracks/3/type = "method"
-tracks/3/path = NodePath("AudioWalking2")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
+tracks/2/type = "method"
+tracks/2/path = NodePath("AudioWalking2")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
 "times": PoolRealArray( 0.4 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
@@ -160,30 +148,18 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 3 ]
+"values": [ 4, 5, 4, 5 ]
 }
-tracks/1/type = "value"
-tracks/1/path = NodePath("CollisionShape/Sprite3D:translation")
+tracks/1/type = "method"
+tracks/1/path = NodePath("AudioWalking1")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.4 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector3( 0, 0, 0 ), Vector3( 0.25, 0, 0 ) ]
-}
-tracks/2/type = "method"
-tracks/2/path = NodePath("AudioWalking1")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
@@ -191,13 +167,13 @@ tracks/2/keys = {
 "method": "footstep"
 } ]
 }
-tracks/3/type = "method"
-tracks/3/path = NodePath("AudioWalking2")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
+tracks/2/type = "method"
+tracks/2/path = NodePath("AudioWalking2")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
 "times": PoolRealArray( 0.4 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
@@ -221,27 +197,15 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 4, 5, 4, 5 ]
+"values": [ 7, 8, 7, 8 ]
 }
-tracks/1/type = "value"
-tracks/1/path = NodePath("CollisionShape/Sprite3D:translation")
+tracks/1/type = "method"
+tracks/1/path = NodePath("AudioWalking1")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.8 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 0, 0 ) ]
-}
-tracks/2/type = "method"
-tracks/2/path = NodePath("AudioWalking1")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
@@ -249,13 +213,13 @@ tracks/2/keys = {
 "method": "footstep"
 } ]
 }
-tracks/3/type = "method"
-tracks/3/path = NodePath("AudioWalking2")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
+tracks/2/type = "method"
+tracks/2/path = NodePath("AudioWalking2")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
 "times": PoolRealArray( 0.4 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
@@ -276,30 +240,18 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.2, 0.4, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 1 ]
+"values": [ 10, 11, 10, 11 ]
 }
-tracks/1/type = "value"
-tracks/1/path = NodePath("CollisionShape/Sprite3D:translation")
+tracks/1/type = "method"
+tracks/1/path = NodePath("AudioWalking1")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.4 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector3( 0, 0, 0 ), Vector3( 0.25, 0, 0 ) ]
-}
-tracks/2/type = "method"
-tracks/2/path = NodePath("AudioWalking1")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
@@ -307,13 +259,13 @@ tracks/2/keys = {
 "method": "footstep"
 } ]
 }
-tracks/3/type = "method"
-tracks/3/path = NodePath("AudioWalking2")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/keys = {
+tracks/2/type = "method"
+tracks/2/path = NodePath("AudioWalking2")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
 "times": PoolRealArray( 0.4 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
@@ -347,7 +299,6 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="Sprite3D" type="Sprite3D" parent="CollisionShape" index="0"]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.25, 0, 0 )
 layers = 1
 material_override = ExtResource( 2 )
 cast_shadow = 1
@@ -370,8 +321,8 @@ shaded = false
 double_sided = true
 alpha_cut = 0
 texture = ExtResource( 3 )
-vframes = 2
-hframes = 4
+vframes = 4
+hframes = 3
 frame = 1
 region_enabled = false
 region_rect = Rect2( 0, 0, 0, 0 )

@@ -2,20 +2,21 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/brainboi.png-10dcde9d0f4f767bb8a97871c22bdf8f.stex"
+path.s3tc="res://.import/brainboi.png-10dcde9d0f4f767bb8a97871c22bdf8f.s3tc.stex"
+path.etc2="res://.import/brainboi.png-10dcde9d0f4f767bb8a97871c22bdf8f.etc2.stex"
 
 [deps]
 
 source_file="res://Sprites/Monsters/brainboi.png"
-dest_files=[ "res://.import/brainboi.png-10dcde9d0f4f767bb8a97871c22bdf8f.stex" ]
+dest_files=[ "res://.import/brainboi.png-10dcde9d0f4f767bb8a97871c22bdf8f.s3tc.stex", "res://.import/brainboi.png-10dcde9d0f4f767bb8a97871c22bdf8f.etc2.stex" ]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/normal_map=0
-flags/repeat=0
+flags/repeat=true
 flags/filter=true
 flags/mipmaps=true
 flags/anisotropic=false
