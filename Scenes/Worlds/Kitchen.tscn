@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://Scenes/Worlds/World.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Materials/wormy_ground_diffuse.tga" type="Texture" id=2]
@@ -8,24 +8,25 @@
 [ext_resource path="res://Scenes/Fires/Campfire.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Foliage/TreeRandom.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/Foliage/BGForestSmall.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Scenes/Foliage/TreeForestWall.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Scenes/Foliage/BGForestMedium.tscn" type="PackedScene" id=10]
-[ext_resource path="res://Scenes/Foliage/ForestWall.tscn" type="PackedScene" id=11]
-[ext_resource path="res://Scenes/Foliage/Bush1.tscn" type="PackedScene" id=12]
-[ext_resource path="res://Scenes/Foliage/TreeDead1.tscn" type="PackedScene" id=13]
-[ext_resource path="res://Scenes/Foliage/TreeLive1.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Scenes/Foliage/KitchenTreeDead1.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Scenes/Foliage/KitchenTreeLive1.tscn" type="PackedScene" id=16]
-[ext_resource path="res://Scenes/Worlds/Kitchen-Study Connector.tscn" type="PackedScene" id=17]
-[ext_resource path="res://Scenes/Fires/Stove.tscn" type="PackedScene" id=18]
-[ext_resource path="res://Scenes/Foliage/TreeStrip.tscn" type="PackedScene" id=19]
-[ext_resource path="res://Scenes/Items/Minor/Kitchen1.tscn" type="PackedScene" id=20]
-[ext_resource path="res://Scenes/Items/Minor/Kitchen2.tscn" type="PackedScene" id=21]
-[ext_resource path="res://Scenes/Items/Final/KitchenFinal.tscn" type="PackedScene" id=22]
-[ext_resource path="res://Scenes/Monsters/Monster.tscn" type="PackedScene" id=23]
-[ext_resource path="res://Scripts/Tutorials/Tutorial1.gd" type="Script" id=24]
-[ext_resource path="res://Scripts/Tutorials/Tutorial2.gd" type="Script" id=25]
-[ext_resource path="res://Scripts/Tutorials/Tutorial3.gd" type="Script" id=26]
+[ext_resource path="res://Scenes/Foliage/ForestWall.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/Foliage/ForestWallExtra.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Scenes/Foliage/TreeForestWall.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Scenes/Foliage/BGForestMedium.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Scenes/Foliage/Bush1.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Scenes/Foliage/TreeDead1.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Scenes/Foliage/TreeLive1.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Scenes/Foliage/KitchenTreeDead1.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Scenes/Foliage/KitchenTreeLive1.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Scenes/Worlds/Kitchen-Study Connector.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Scenes/Fires/Stove.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Scenes/Foliage/TreeStrip.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Scenes/Items/Minor/Kitchen1.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Scenes/Items/Minor/Kitchen2.tscn" type="PackedScene" id=22]
+[ext_resource path="res://Scenes/Items/Final/KitchenFinal.tscn" type="PackedScene" id=23]
+[ext_resource path="res://Scenes/Monsters/Monster.tscn" type="PackedScene" id=24]
+[ext_resource path="res://Scripts/Tutorials/Tutorial1.gd" type="Script" id=25]
+[ext_resource path="res://Scripts/Tutorials/Tutorial2.gd" type="Script" id=26]
+[ext_resource path="res://Scripts/Tutorials/Tutorial3.gd" type="Script" id=27]
 
 [sub_resource type="NavigationMesh" id=1]
 
@@ -142,7 +143,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.05284, 0, -7.81057 )
 
 [node name="Starting Clearing" type="Spatial" parent="Navigation/NavigationMeshInstance" index="3"]
 
-editor/display_folded = true
 transform = Transform( 0.777432, 0, 0.628967, 0, 1, 0, -0.628967, 0, 0.777432, -27.6812, 0, 25.0744 )
 
 [node name="Placeholder for Stove" parent="Navigation/NavigationMeshInstance/Starting Clearing" index="0" instance=ExtResource( 6 )]
@@ -160,8 +160,6 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.38945, 0, -7.8894 )
 
 [node name="Boundaries" type="Spatial" parent="Navigation/NavigationMeshInstance/Starting Clearing" index="3"]
 
-editor/display_folded = true
-
 [node name="BGForestSmall12" parent="Navigation/NavigationMeshInstance/Starting Clearing/Boundaries" index="0" instance=ExtResource( 8 )]
 
 transform = Transform( 0.641588, 0, 0.767047, 0, 1, 0, -0.767047, 0, 0.641588, 1.12395, 9.53674e-007, -10.2344 )
@@ -177,15 +175,31 @@ _sections_unfolded = [ "Transform" ]
 transform = Transform( 0.52808, 0, 0.849193, 0, 1, 0, -0.849193, 0, 0.52808, -6.49018, 0, -0.31805 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="BGForestSmall10" parent="Navigation/NavigationMeshInstance/Starting Clearing/Boundaries" index="3" instance=ExtResource( 8 )]
+[node name="ForestWall3" parent="Navigation/NavigationMeshInstance/Starting Clearing/Boundaries" index="3" instance=ExtResource( 9 )]
 
+editor/display_folded = true
 transform = Transform( -0.377503, 0, 0.926008, 0, 1, 0, -0.926008, 0, -0.377503, -7.56397, -7.62939e-006, 5.567 )
-_sections_unfolded = [ "Transform" ]
 
-[node name="BGForestSmall9" parent="Navigation/NavigationMeshInstance/Starting Clearing/Boundaries" index="4" instance=ExtResource( 8 )]
+[node name="ForestWallExtra4" parent="Navigation/NavigationMeshInstance/Starting Clearing/Boundaries/ForestWall3" index="3" instance=ExtResource( 10 )]
 
+transform = Transform( 0.968248, 0, -0.249995, 0, 1, 0, 0.249995, 0, 0.968248, 3.11471, 7.62939e-006, -3.83857 )
+
+[node name="ForestWallExtra3" parent="Navigation/NavigationMeshInstance/Starting Clearing/Boundaries/ForestWall3" index="4" instance=ExtResource( 10 )]
+
+transform = Transform( 0.951457, 0, 0.307784, 0, 1, 0, -0.307784, 0, 0.951457, -2.46035, 7.62939e-006, -3.78809 )
+
+[node name="ForestWall2" parent="Navigation/NavigationMeshInstance/Starting Clearing/Boundaries" index="4" instance=ExtResource( 9 )]
+
+editor/display_folded = true
 transform = Transform( -0.976822, 0, 0.214052, 0, 1, 0, -0.214052, 0, -0.976822, -3.1424, -7.62939e-006, 8.44592 )
-_sections_unfolded = [ "Transform" ]
+
+[node name="ForestWallExtra2" parent="Navigation/NavigationMeshInstance/Starting Clearing/Boundaries/ForestWall2" index="3" instance=ExtResource( 10 )]
+
+transform = Transform( 0.996185, 0, -0.0872678, 0, 1, 0, 0.0872678, 0, 0.996185, 1.08866, 7.62939e-006, -4.59623 )
+
+[node name="ForestWallExtra" parent="Navigation/NavigationMeshInstance/Starting Clearing/Boundaries/ForestWall2" index="4" instance=ExtResource( 10 )]
+
+transform = Transform( 0.809474, 0, 0.587156, 0, 1, 0, -0.587156, 0, 0.809474, -4.78294, 7.62939e-006, -3.11153 )
 
 [node name="BGForestSmall8" parent="Navigation/NavigationMeshInstance/Starting Clearing/Boundaries" index="5" instance=ExtResource( 8 )]
 
@@ -200,17 +214,16 @@ transform = Transform( -0.656598, 0, -0.754239, 0, 1, 0, 0.754238, 0, -0.656599,
 
 transform = Transform( -0.55486, 0, -0.831942, 0, 1, 0, 0.831941, 0, -0.554861, 10.5647, 0, -1.30628 )
 
-[node name="TreeForestWall" parent="Navigation/NavigationMeshInstance/Starting Clearing/Boundaries" index="8" instance=ExtResource( 9 )]
+[node name="TreeForestWall" parent="Navigation/NavigationMeshInstance/Starting Clearing/Boundaries" index="8" instance=ExtResource( 11 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.368237, 1.2, 10.2413 )
 
-[node name="TreeForestWall2" parent="Navigation/NavigationMeshInstance/Starting Clearing/Boundaries" index="9" instance=ExtResource( 9 )]
+[node name="TreeForestWall2" parent="Navigation/NavigationMeshInstance/Starting Clearing/Boundaries" index="9" instance=ExtResource( 11 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -9.42353, 1.2, 2.31947 )
 
 [node name="Starting Path" type="Spatial" parent="Navigation/NavigationMeshInstance" index="4"]
 
-editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14.8122, 0, -3.69781 )
 
 [node name="Boundaries" type="Spatial" parent="Navigation/NavigationMeshInstance/Starting Path" index="0"]
@@ -222,7 +235,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20.808, 0, 23.2305 )
 
 transform = Transform( 0.972426, 0, 0.233214, 0, 1, 0, -0.233214, 0, 0.972426, 18.239, 0, -32.4796 )
 
-[node name="BGForestMedium16" parent="Navigation/NavigationMeshInstance/Starting Path/Boundaries" index="1" instance=ExtResource( 10 )]
+[node name="BGForestMedium16" parent="Navigation/NavigationMeshInstance/Starting Path/Boundaries" index="1" instance=ExtResource( 12 )]
 
 transform = Transform( 0.53901, 0, 0.842299, 0, 1, 0, -0.842298, 0, 0.539011, 10.7089, 0, -25.9126 )
 
@@ -236,11 +249,11 @@ _sections_unfolded = [ "Transform" ]
 transform = Transform( 0.161345, 0, 0.986897, 0, 1, 0, -0.986897, 0, 0.161345, 2.81335, 0, -9.44947 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="ForestWall3" parent="Navigation/NavigationMeshInstance/Starting Path/Boundaries" index="4" instance=ExtResource( 11 )]
+[node name="ForestWall3" parent="Navigation/NavigationMeshInstance/Starting Path/Boundaries" index="4" instance=ExtResource( 9 )]
 
 transform = Transform( -0.154975, 0, -0.987919, 0, 1, 0, 0.987918, 0, -0.154975, 15.4629, 0, -7.78114 )
 
-[node name="BGForestMedium4" parent="Navigation/NavigationMeshInstance/Starting Path/Boundaries" index="5" instance=ExtResource( 10 )]
+[node name="BGForestMedium4" parent="Navigation/NavigationMeshInstance/Starting Path/Boundaries" index="5" instance=ExtResource( 12 )]
 
 transform = Transform( -0.905572, 0, -0.424193, 0, 1, 0, 0.424193, 0, -0.905572, 23.1625, 0, -13.8312 )
 
@@ -257,7 +270,7 @@ transform = Transform( -0.987371, 0, -0.15842, 0, 1, 0, 0.15842, 0, -0.987371, 3
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20.808, 0, 23.2305 )
 
-[node name="Bush1" parent="Navigation/NavigationMeshInstance/Starting Path/Decoration" index="0" instance=ExtResource( 12 )]
+[node name="Bush1" parent="Navigation/NavigationMeshInstance/Starting Path/Decoration" index="0" instance=ExtResource( 13 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.6115, 0, -19.5026 )
 
@@ -281,7 +294,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.71282, 0, -11.9785 )
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.25347, 0, -15.3889 )
 
-[node name="TreeDead2" parent="Navigation/NavigationMeshInstance/Starting Path/Decoration" index="6" instance=ExtResource( 13 )]
+[node name="TreeDead2" parent="Navigation/NavigationMeshInstance/Starting Path/Decoration" index="6" instance=ExtResource( 14 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24.6391, 0, -23.6453 )
 
@@ -289,17 +302,16 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 24.6391, 0, -23.6453 )
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 25.745, 0, -25.9863 )
 
-[node name="TreeLive2" parent="Navigation/NavigationMeshInstance/Starting Path/Decoration" index="8" instance=ExtResource( 14 )]
+[node name="TreeLive2" parent="Navigation/NavigationMeshInstance/Starting Path/Decoration" index="8" instance=ExtResource( 15 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 21.5662, 0, -19.7411 )
 
-[node name="TreeDead1" parent="Navigation/NavigationMeshInstance/Starting Path/Decoration" index="9" instance=ExtResource( 13 )]
+[node name="TreeDead1" parent="Navigation/NavigationMeshInstance/Starting Path/Decoration" index="9" instance=ExtResource( 14 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.5043, 0, -18.1698 )
 
 [node name="Center Path" type="Spatial" parent="Navigation/NavigationMeshInstance" index="5"]
 
-editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.21825, 0, -5.71804 )
 
 [node name="Decoration" type="Spatial" parent="Navigation/NavigationMeshInstance/Center Path" index="0"]
@@ -310,7 +322,7 @@ editor/display_folded = true
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14.1354, 0, -2.55989 )
 
-[node name="KitchenTreeDead1" parent="Navigation/NavigationMeshInstance/Center Path/Decoration" index="1" instance=ExtResource( 15 )]
+[node name="KitchenTreeDead1" parent="Navigation/NavigationMeshInstance/Center Path/Decoration" index="1" instance=ExtResource( 16 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.29429, 0, 1.13884 )
 
@@ -318,7 +330,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.29429, 0, 1.13884 )
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.657875, 0, -2.47506 )
 
-[node name="KitchenTreeLive2" parent="Navigation/NavigationMeshInstance/Center Path/Decoration" index="3" instance=ExtResource( 16 )]
+[node name="KitchenTreeLive2" parent="Navigation/NavigationMeshInstance/Center Path/Decoration" index="3" instance=ExtResource( 17 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.07379, 0, -2.32374 )
 
@@ -347,16 +359,17 @@ transform = Transform( 0.922921, 0, 0.384991, 0, 1, 0, -0.384991, 0, 0.922921, 4
 transform = Transform( 0.80696, 0, -0.590605, 0, 1, 0, 0.590605, 0, 0.80696, 10.5603, 0, -7.40396 )
 _sections_unfolded = [ "Transform" ]
 
+[node name="ForestWallExtra2" parent="Navigation/NavigationMeshInstance/Center Path/BGForestSmall1" index="2" instance=ExtResource( 10 )]
+
+transform = Transform( 0.613336, 0, 0.789823, 0, 1, 0, -0.789823, 0, 0.613336, -6.09351, 0, -1.85004 )
+
 [node name="Dead End 1" type="Spatial" parent="Navigation/NavigationMeshInstance" index="6"]
 
-editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.222595, 0, -24.6842 )
 
 [node name="Boundaries" type="Spatial" parent="Navigation/NavigationMeshInstance/Dead End 1" index="0"]
 
-editor/display_folded = true
-
-[node name="ForestWall2" parent="Navigation/NavigationMeshInstance/Dead End 1/Boundaries" index="0" instance=ExtResource( 11 )]
+[node name="ForestWall2" parent="Navigation/NavigationMeshInstance/Dead End 1/Boundaries" index="0" instance=ExtResource( 9 )]
 
 transform = Transform( 0.714876, 0, -0.699251, 0, 1, 0, 0.699251, 0, 0.714876, -11.1272, 0, 12.9957 )
 
@@ -373,11 +386,15 @@ transform = Transform( 0.727304, 0, 0.686316, 0, 1, 0, -0.686316, 0, 0.727304, -
 transform = Transform( 0.981812, 0, 0.189855, 0, 1, 0, -0.189855, 0, 0.981812, -2.38001, 0, 2.73687 )
 _sections_unfolded = [ "Transform" ]
 
+[node name="ForestWallExtra2" parent="Navigation/NavigationMeshInstance/Dead End 1/Boundaries/BGForestSmall3" index="2" instance=ExtResource( 10 )]
+
+transform = Transform( 0.67657, 0, -0.736381, 0, 1, 0, 0.736381, 0, 0.67657, 3.74814, 0, -2.7446 )
+
 [node name="BGForestSmall2" parent="Navigation/NavigationMeshInstance/Dead End 1/Boundaries" index="4" instance=ExtResource( 8 )]
 
 transform = Transform( 0.185951, 0, -0.982559, 0, 1, 0, 0.982559, 0, 0.185951, -1.71513, 0, 7.1707 )
 
-[node name="ForestWall9" parent="Navigation/NavigationMeshInstance/Dead End 1/Boundaries" index="5" instance=ExtResource( 11 )]
+[node name="ForestWall9" parent="Navigation/NavigationMeshInstance/Dead End 1/Boundaries" index="5" instance=ExtResource( 9 )]
 
 transform = Transform( 0.329945, 0, -0.944, 0, 1, 0, 0.944, 0, 0.329945, -0.176252, 0, 12.9015 )
 
@@ -401,29 +418,27 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.57294, 0, 7.33662 )
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.24121, 0, 10.5234 )
 
-[node name="Bush1" parent="Navigation/NavigationMeshInstance/Dead End 1/Decoration" index="3" instance=ExtResource( 12 )]
+[node name="Bush1" parent="Navigation/NavigationMeshInstance/Dead End 1/Decoration" index="3" instance=ExtResource( 13 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.03266, 0, 2.02999 )
 
 [node name="Dead End 2" type="Spatial" parent="Navigation/NavigationMeshInstance" index="7"]
 
-editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.078, 0, 5.82143 )
 
 [node name="Boundaries" type="Spatial" parent="Navigation/NavigationMeshInstance/Dead End 2" index="0"]
 
-editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.4522, 0, -0.631926 )
 
 [node name="BGForestSmall6" parent="Navigation/NavigationMeshInstance/Dead End 2/Boundaries" index="0" instance=ExtResource( 8 )]
 
 transform = Transform( -0.985537, 0, 0.169453, 0, 1, 0, -0.169453, 0, -0.985537, -8.43748, 0, -6.73358 )
 
-[node name="ForestWall3" parent="Navigation/NavigationMeshInstance/Dead End 2/Boundaries" index="1" instance=ExtResource( 11 )]
+[node name="ForestWall3" parent="Navigation/NavigationMeshInstance/Dead End 2/Boundaries" index="1" instance=ExtResource( 9 )]
 
 transform = Transform( 0.046173, 0, 0.998933, 0, 1, 0, -0.998933, 0, 0.046173, -3.58354, 0, -5.27312 )
 
-[node name="ForestWall2" parent="Navigation/NavigationMeshInstance/Dead End 2/Boundaries" index="2" instance=ExtResource( 11 )]
+[node name="ForestWall2" parent="Navigation/NavigationMeshInstance/Dead End 2/Boundaries" index="2" instance=ExtResource( 9 )]
 
 transform = Transform( -0.531153, 0, -0.847275, 0, 1, 0, 0.847275, 0, -0.531153, -7.09776, 0, -2.70675 )
 
@@ -431,9 +446,17 @@ transform = Transform( -0.531153, 0, -0.847275, 0, 1, 0, 0.847275, 0, -0.531153,
 
 transform = Transform( -0.488466, 0, 0.872583, 0, 1, 0, -0.872583, 0, -0.488466, -7.01138, 0, 3.72993 )
 
+[node name="ForestWallExtra2" parent="Navigation/NavigationMeshInstance/Dead End 2/Boundaries/BGForestSmall5" index="2" instance=ExtResource( 10 )]
+
+transform = Transform( 0.860557, 0, -0.509353, 0, 1, 0, 0.509353, 0, 0.860557, 4.05619, 0, -2.71293 )
+
 [node name="BGForestSmall8" parent="Navigation/NavigationMeshInstance/Dead End 2/Boundaries" index="4" instance=ExtResource( 8 )]
 
 transform = Transform( -0.717661, 0, 0.696392, 0, 1, 0, -0.696392, 0, -0.717661, -3.15747, 0, 8.78143 )
+
+[node name="ForestWallExtra2" parent="Navigation/NavigationMeshInstance/Dead End 2/Boundaries/BGForestSmall8" index="2" instance=ExtResource( 10 )]
+
+transform = Transform( 0.267348, 0, 0.9636, 0, 1, 0, -0.9636, 0, 0.267348, -6.34016, 0, -0.0980167 )
 
 [node name="BGForestSmall7" parent="Navigation/NavigationMeshInstance/Dead End 2/Boundaries" index="5" instance=ExtResource( 8 )]
 
@@ -443,7 +466,7 @@ transform = Transform( -0.69545, 0, -0.718574, 0, 1, 0, 0.718574, 0, -0.69545, 2
 
 transform = Transform( -0.613507, 0, -0.789689, 0, 1, 0, 0.789689, 0, -0.613507, 6.44427, 0, 3.57034 )
 
-[node name="ForestWall4" parent="Navigation/NavigationMeshInstance/Dead End 2/Boundaries" index="7" instance=ExtResource( 11 )]
+[node name="ForestWall4" parent="Navigation/NavigationMeshInstance/Dead End 2/Boundaries" index="7" instance=ExtResource( 9 )]
 
 transform = Transform( 0.0366111, 0, -0.999329, 0, 1, 0, 0.999329, 0, 0.0366111, 7.97169, 0, -1.12142 )
 
@@ -451,15 +474,15 @@ transform = Transform( 0.0366111, 0, -0.999329, 0, 1, 0, 0.999329, 0, 0.0366111,
 
 editor/display_folded = true
 
-[node name="Bush1" parent="Navigation/NavigationMeshInstance/Dead End 2/Decoration" index="0" instance=ExtResource( 12 )]
+[node name="Bush1" parent="Navigation/NavigationMeshInstance/Dead End 2/Decoration" index="0" instance=ExtResource( 13 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.56386, 0, 4.40629 )
 
-[node name="Bush2" parent="Navigation/NavigationMeshInstance/Dead End 2/Decoration" index="1" instance=ExtResource( 12 )]
+[node name="Bush2" parent="Navigation/NavigationMeshInstance/Dead End 2/Decoration" index="1" instance=ExtResource( 13 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.44673, 0, -0.260403 )
 
-[node name="Bush3" parent="Navigation/NavigationMeshInstance/Dead End 2/Decoration" index="2" instance=ExtResource( 12 )]
+[node name="Bush3" parent="Navigation/NavigationMeshInstance/Dead End 2/Decoration" index="2" instance=ExtResource( 13 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.36647, 0, -1.01938 )
 
@@ -479,7 +502,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.92455, 0, -0.700754 )
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.71226, 0, 2.42572 )
 
-[node name="KitchenTreeDead1" parent="Navigation/NavigationMeshInstance/Dead End 2/Decoration" index="7" instance=ExtResource( 15 )]
+[node name="KitchenTreeDead1" parent="Navigation/NavigationMeshInstance/Dead End 2/Decoration" index="7" instance=ExtResource( 16 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.6953, 0, -2.75914 )
 
@@ -491,19 +514,19 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.23392, 0, 0.406081 )
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 8.22725, 0, -9.13398 )
 
-[node name="Kitchen-Study Connector" parent="Navigation/NavigationMeshInstance" index="8" instance=ExtResource( 17 )]
+[node name="Kitchen-Study Connector" parent="Navigation/NavigationMeshInstance" index="8" instance=ExtResource( 18 )]
 
 transform = Transform( 0.999484, 0, 0.0321338, 0, 1, 0, -0.0321338, 0, 0.999484, 35.8659, 0, -2.96551 )
 
-[node name="Stove" parent="Navigation/NavigationMeshInstance/Kitchen-Study Connector" index="2" instance=ExtResource( 18 )]
+[node name="Stove" parent="Navigation/NavigationMeshInstance/Kitchen-Study Connector" index="2" instance=ExtResource( 19 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.2589, 0, 5.29252 )
 
-[node name="TreeStrip" parent="Navigation/NavigationMeshInstance/Kitchen-Study Connector" index="3" instance=ExtResource( 19 )]
+[node name="TreeStrip" parent="Navigation/NavigationMeshInstance/Kitchen-Study Connector" index="3" instance=ExtResource( 20 )]
 
 transform = Transform( -0.375785, 0, -0.926707, 0, 1, 0, 0.926707, 0, -0.375785, 16.3421, 0, 9.87947 )
 
-[node name="TreeStrip2" parent="Navigation/NavigationMeshInstance/Kitchen-Study Connector" index="4" instance=ExtResource( 19 )]
+[node name="TreeStrip2" parent="Navigation/NavigationMeshInstance/Kitchen-Study Connector" index="4" instance=ExtResource( 20 )]
 
 transform = Transform( -0.0383461, 0, -0.999265, 0, 1, 0, 0.999265, 0, -0.0383461, 17.5782, 0, 4.45672 )
 
@@ -511,15 +534,15 @@ transform = Transform( -0.0383461, 0, -0.999265, 0, 1, 0, 0.999265, 0, -0.038346
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -30.186, 0, 13.8609 )
 
-[node name="ItemJar" parent="Items" index="0" instance=ExtResource( 20 )]
+[node name="ItemJar" parent="Items" index="0" instance=ExtResource( 21 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 47.5137, 0, -11.3234 )
 
-[node name="ItemMug" parent="Items" index="1" instance=ExtResource( 21 )]
+[node name="ItemMug" parent="Items" index="1" instance=ExtResource( 22 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.62014, 0, -6.89268 )
 
-[node name="ItemDrawing" parent="Items" index="2" instance=ExtResource( 22 )]
+[node name="ItemDrawing" parent="Items" index="2" instance=ExtResource( 23 )]
 
 transform = Transform( 0.985156, 0, -0.171662, 0, 1, 0, 0.171662, 0, 0.985156, 74.484, 0, -12.3415 )
 
@@ -527,7 +550,7 @@ transform = Transform( 0.985156, 0, -0.171662, 0, 1, 0, 0.171662, 0, 0.985156, 7
 
 editor/display_folded = true
 
-[node name="Monster" parent="Monsters" index="0" instance=ExtResource( 23 )]
+[node name="Monster" parent="Monsters" index="0" instance=ExtResource( 24 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.9015, 0, -8.03827 )
 
@@ -564,7 +587,7 @@ reverb_bus_enable = false
 reverb_bus_name = "Master"
 reverb_bus_amount = 0.0
 reverb_bus_uniformity = 0.0
-script = ExtResource( 24 )
+script = ExtResource( 25 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Tutorials/Tutorial 1" index="0"]
 
@@ -594,7 +617,7 @@ reverb_bus_enable = false
 reverb_bus_name = "Master"
 reverb_bus_amount = 0.0
 reverb_bus_uniformity = 0.0
-script = ExtResource( 25 )
+script = ExtResource( 26 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Tutorials/Tutorial 2" index="0"]
 
@@ -626,7 +649,7 @@ reverb_bus_enable = false
 reverb_bus_name = "Master"
 reverb_bus_amount = 0.0
 reverb_bus_uniformity = 0.0
-script = ExtResource( 26 )
+script = ExtResource( 27 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Tutorials/Tutorial 3" index="0"]
 
