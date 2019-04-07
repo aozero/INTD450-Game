@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Scenes/Foliage/BGForestMedium.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Foliage/ForestWall.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Foliage/BGForestSmall.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Foliage/Bush1.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Foliage/TreeRandom.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Foliage/ForestWallExtra.tscn" type="PackedScene" id=6]
 
 [node name="Study-Bedroom Connector" type="Spatial" index="0"]
 
@@ -89,13 +90,25 @@ transform = Transform( 0.0236644, 0, -0.999721, 0, 1, 0, 0.999721, 0, 0.0236644,
 
 transform = Transform( -0.96325, 0, -0.268606, 0, 1, 0, 0.268606, 0, -0.96325, 5.6467, 0, -0.260262 )
 
-[node name="BGForestSmall5" parent="Bedroom Starting Area/Boundaries" index="2" instance=ExtResource( 3 )]
+[node name="ForestWall2" parent="Bedroom Starting Area/Boundaries" index="2" instance=ExtResource( 2 )]
 
-transform = Transform( -0.368836, 0, 0.929495, 0, 1, 0, -0.929495, 0, -0.368836, -5.23298, 0, 0.866402 )
+transform = Transform( -0.617627, 0, 0.786472, 0, 1, 0, -0.786472, 0, -0.617627, -5.67053, 0, 1.21417 )
 
-[node name="BGForestSmall6" parent="Bedroom Starting Area/Boundaries" index="3" instance=ExtResource( 3 )]
+[node name="ForestWallExtra" parent="Bedroom Starting Area/Boundaries/ForestWall2" index="3" instance=ExtResource( 6 )]
+
+transform = Transform( 1, 0, -2.98023e-008, 0, 1, 0, 2.98023e-008, 0, 1, -0.972797, 0, -3.68463 )
+
+[node name="ForestWall4" parent="Bedroom Starting Area/Boundaries" index="3" instance=ExtResource( 2 )]
 
 transform = Transform( -0.802922, 0, 0.596085, 0, 1, 0, -0.596085, 0, -0.802922, -2.23606, 0, 5.53197 )
+
+[node name="ForestWallExtra" parent="Bedroom Starting Area/Boundaries/ForestWall4" index="3" instance=ExtResource( 6 )]
+
+transform = Transform( 0.981516, 0, -0.191373, 0, 1, 0, 0.191373, 0, 0.981516, 0.254753, 0, -3.84143 )
+
+[node name="ForestWallExtra2" parent="Bedroom Starting Area/Boundaries/ForestWall4" index="4" instance=ExtResource( 6 )]
+
+transform = Transform( 0.903944, 0, 0.427649, 0, 1, 0, -0.427649, 0, 0.903944, -4.48411, 0, -3.40436 )
 
 [node name="BGForestSmall7" parent="Bedroom Starting Area/Boundaries" index="4" instance=ExtResource( 3 )]
 
