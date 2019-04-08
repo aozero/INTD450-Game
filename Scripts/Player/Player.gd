@@ -163,17 +163,22 @@ func set_torch(on):
 		match_burning_audio.play()
 		audio_fader.play("fade in burning")
 		play_audio(SOUND_MATCH_ON)
+		
+		anim_hand.playback_speed = 1.0
 		anim_hand.play("light_on")
 	elif !on && torch.visible:
 		changing_match_state = true
 		match_burning_audio.stop()
 		play_audio(SOUND_MATCH_OFF)
+		
+		anim_hand.playback_speed = 1.25
 		anim_hand.play("light_off")
 
 # When finishing lighting or unlighting match, 
 # play the correct idle anim (match flicker or nothing) and change light
 func _on_HandAnimator_animation_finished(anim_name):
 	if anim_name == "light_on":
+		anim_hand.playback_speed = 1.0
 		anim_hand.play("idle_on")
 		changing_match_state = false
 	elif anim_name == "light_off":
