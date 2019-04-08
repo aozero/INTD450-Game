@@ -99,18 +99,21 @@ func _ready():
 	TUTORIAL_1.SOUND = load("res://Sound/Effects/Memory/Minor Items/silence.wav")
 	TUTORIAL_1["None"] = "Use WASD to move and mouse to look."
 	TUTORIAL_1["Español"] = "Usa WASD a mover y usa el ratón a mirar."
+	TUTORIAL_1["Français"] = "Utiliser WASD pour bouger et regarder."
 	TUTORIAL_1.TEXT_TIME = 16
 	
 	# Right after moving past the campfire
 	TUTORIAL_2.SOUND = load("res://Sound/Effects/Memory/Minor Items/silence.wav")
 	TUTORIAL_2["None"] = "Running (Hold Shift) in the forest makes a lot of noise. "
 	TUTORIAL_2["Español"] = "Correr en el bosque (Manteniendo la tecla Shift) hace mucho ruido."
+	TUTORIAL_2["Français"] = "Courir (Tenir la touche Shift) dans la forêt fait beaucoup de bruit."
 	TUTORIAL_2.TEXT_TIME = 16
 	
 	# At the very edge of the campfire's light
 	TUTORIAL_3.SOUND = load("res://Sound/Effects/Memory/Minor Items/silence.wav")
 	TUTORIAL_3["None"] = "Lighting a match (Left Click) will make it easier to see... and be seen."
 	TUTORIAL_3["Español"] = "Encender un fósforo (tecla izquierda del ratón) hará que sea más fácil de ver… y ser visto."
+	TUTORIAL_3["Français"] = "Allumer une allumette (cliquez le bouton gauche de la souris) vous permettra de mieux voir... et être vu"
 	TUTORIAL_3.TEXT_TIME = 16
 	###############################
 	
