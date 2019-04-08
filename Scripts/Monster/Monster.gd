@@ -27,8 +27,12 @@ onready var move_speed_tween = $MoveSpeedTween
 onready var detection_raycast = $RayCast
 onready var audio_breathing = $AudioBreathing
 onready var audio_alerted = $AudioAlerted
+onready var audio_walking1 = $AudioWalking1
+onready var audio_walking2 = $AudioWalking2
 onready var lost_player_timer = $LostPlayerTimer
 onready var stand_still_timer = $StandStillTimer
+
+export var quiet_boi = false
 
 # for pathfinding
 onready var navigation = get_tree().get_root().get_node("World/Navigation")
@@ -37,6 +41,7 @@ var path = []
 var path_ind = 0
 
 var patrol_waypoints = []
+var patrol_wait_times = []
 var patrol_ind = 0
 onready var patrol_pause_timer = $PatrolPauseTimer
 # for pathfinding testing
@@ -76,17 +81,25 @@ func _ready():
 	
 	process_child_waypoints()
 	
-	# Start breathing at some random interval so monster's aren't all breathing in sync
-	audio_breathing.play(rand_range(0, 5))
+	if quiet_boi:
+		audio_breathing.max_db = -80
+		audio_alerted.max_db = -80
+		audio_walking1.max_db = -80
+		audio_walking2.max_db = -80
+	else:
+		# Start breathing at some random interval so monster's aren't all breathing in sync
+		audio_breathing.play(rand_range(0, 5))
 
 # If we have waypoint objects as children, 
 # Store their positions in an array and delete them (we only need their original position)
 func process_child_waypoints():
 	patrol_waypoints.append(global_transform.origin)
+	patrol_wait_times.append(patrol_pause_timer.wait_time)
 	
 	for c in get_children():
 		if c.get_class() == "Waypoint":
 			patrol_waypoints.append(c.pos)
+			patrol_wait_times.append(c.wait_time)
 			c.queue_free()
 	
 	if !patrol_waypoints.empty():
@@ -135,7 +148,11 @@ func _physics_process(delta):
 	# If we have waypoints stored and haven't seen the player yet, start patrolling between the points in order
 	if player_pos == null && path.size() == 0 && patrol_pause_timer.is_stopped():
 		# Pause for a bit, then path to next waypoint
-		patrol_pause_timer.start()
+		if patrol_wait_times[patrol_ind] != null and patrol_wait_times[patrol_ind] > 0:
+			patrol_pause_timer.wait_time = patrol_wait_times[patrol_ind]
+			patrol_pause_timer.start()
+		else:
+			_on_PatrolPauseTimer_timeout()
 	
 	# If we haven't finished the path yet
 	if path_ind < path.size():

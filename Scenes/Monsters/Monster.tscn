@@ -274,7 +274,7 @@ tracks/2/keys = {
 } ]
 }
 
-[node name="Monster" type="KinematicBody" index="0"]
+[node name="Monster" type="KinematicBody"]
 
 input_ray_pickable = true
 input_capture_on_drag = false
@@ -289,6 +289,7 @@ axis_lock_angular_z = false
 collision/safe_margin = 0.001
 script = ExtResource( 1 )
 _sections_unfolded = [ "Collision", "Transform" ]
+quiet_boi = false
 
 [node name="CollisionShape" type="CollisionShape" parent="." index="0"]
 
