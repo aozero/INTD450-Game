@@ -23,7 +23,7 @@ To add a new language, for each TEXT, also add a new part to that item, such as
 TUTORIAL_1.None = "Use WASD to move and mouse to look."
 TUTORIAL_1.Spanish = "Usé el traductor de google para esto."
 """
-var SUBTITLES_SUPPORTED = ["None", "English", "Español", "Français"]
+var SUBTITLES_SUPPORTED = ["None", "English", "Français", "Español"]
 var subtitles_language = 0 setget set_subtitles_language, get_subtitles_language
 
 func set_subtitles_language(value):
@@ -67,11 +67,11 @@ func _ready():
 	
 	INTRO_2["None"] = "No, but I think I need to go back. \nI knew I would have to one day."
 	INTRO_2["Español"] = "No pero yo pienso que necesito volver. \nYo sabía que tendría que hacerlo algún día."
-	INTRO_2["Français"] = "Non, mais je pense que je dois y retourner. \nJe savais que je devrais le faire un jour."
+	INTRO_2["Français"] = "Non, mais je pense que je dois y retourner. Je savais que je devrais le faire un jour."
 	
 	INTRO_3["None"] = "Yeah maybe it was inevitable but you just seemed like really skittish, like more than usual"
 	INTRO_3["Español"] = "Sí, posiblemente fue inevitable \npero parecías muy nerviosa, \nmás que normal."
-	INTRO_3["Français"] = "Oui, peut-être que c’était inévitable, \nmais tu semblais vraiment plus nerveux, \ncomme plus que d’habitude."
+	INTRO_3["Français"] = "Oui, peut-être que c’était inévitable, mais tu semblais vraiment plus nerveux, comme plus que d’habitude."
 	
 	INTRO_4["None"] = "I guess it’s just weird to grasp."
 	INTRO_4["Español"] = "Supongo que es raro de entender."
