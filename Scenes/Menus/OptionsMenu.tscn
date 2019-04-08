@@ -57,7 +57,7 @@ use_filter = false
 font_data = ExtResource( 4 )
 _sections_unfolded = [ "Settings" ]
 
-[node name="OptionsMenu" type="ColorRect" index="0"]
+[node name="OptionsMenu" type="ColorRect"]
 
 visible = false
 anchor_left = 0.5
@@ -230,48 +230,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="Subtitles" type="Container" parent="VBoxContainer/Tabs/General/Left" index="1"]
-
-editor/display_folded = true
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 64.0
-margin_right = 250.0
-margin_bottom = 124.0
-rect_min_size = Vector2( 0, 60 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-_sections_unfolded = [ "Rect" ]
-
-[node name="SubtitlesLabel" type="Label" parent="VBoxContainer/Tabs/General/Left/Subtitles" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.5
-anchor_right = 0.0
-anchor_bottom = 0.5
-margin_top = -17.0
-margin_right = 199.0
-margin_bottom = 17.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_fonts/font = SubResource( 3 )
-text = "Subtitles:"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "custom_fonts" ]
-
-[node name="Sensitivity" type="Container" parent="VBoxContainer/Tabs/General/Left" index="2"]
+[node name="Sensitivity" type="Container" parent="VBoxContainer/Tabs/General/Left" index="1"]
 
 editor/display_folded = true
 anchor_left = 0.0
@@ -307,6 +266,47 @@ size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = SubResource( 3 )
 text = "Mouse Sensitivity:"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Subtitles" type="Container" parent="VBoxContainer/Tabs/General/Left" index="2"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 64.0
+margin_right = 250.0
+margin_bottom = 124.0
+rect_min_size = Vector2( 0, 60 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Rect" ]
+
+[node name="SubtitlesLabel" type="Label" parent="VBoxContainer/Tabs/General/Left/Subtitles" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.5
+anchor_right = 0.0
+anchor_bottom = 0.5
+margin_top = -17.0
+margin_right = 199.0
+margin_bottom = 17.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 3 )
+text = "Subtitles:"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
@@ -393,54 +393,7 @@ flat = false
 clip_text = true
 align = 0
 
-[node name="Subtitles" type="Container" parent="VBoxContainer/Tabs/General/Right" index="1"]
-
-editor/display_folded = true
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 64.0
-margin_right = 160.0
-margin_bottom = 124.0
-rect_min_size = Vector2( 0, 60 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-_sections_unfolded = [ "Rect" ]
-
-[node name="SubtitlesButton" type="OptionButton" parent="VBoxContainer/Tabs/General/Right/Subtitles" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = 10.0
-margin_bottom = -10.0
-rect_min_size = Vector2( 120, 30 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-theme = SubResource( 6 )
-toggle_mode = false
-action_mode = 0
-enabled_focus_mode = 2
-shortcut = null
-group = null
-flat = false
-align = 0
-items = [  ]
-selected = -1
-_sections_unfolded = [ "Margin", "Rect", "Theme" ]
-
-[node name="Sensitivity" type="Container" parent="VBoxContainer/Tabs/General/Right" index="2"]
+[node name="Sensitivity" type="Container" parent="VBoxContainer/Tabs/General/Right" index="1"]
 
 editor/display_folded = true
 anchor_left = 0.0
@@ -488,6 +441,53 @@ tick_count = 3
 ticks_on_borders = false
 focus_mode = 2
 _sections_unfolded = [ "Margin", "Rect" ]
+
+[node name="Subtitles" type="Container" parent="VBoxContainer/Tabs/General/Right" index="2"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 64.0
+margin_right = 160.0
+margin_bottom = 124.0
+rect_min_size = Vector2( 0, 60 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Rect" ]
+
+[node name="SubtitlesButton" type="OptionButton" parent="VBoxContainer/Tabs/General/Right/Subtitles" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = 10.0
+margin_bottom = -10.0
+rect_min_size = Vector2( 120, 30 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+theme = SubResource( 6 )
+toggle_mode = false
+action_mode = 0
+enabled_focus_mode = 2
+shortcut = null
+group = null
+flat = false
+align = 0
+items = [  ]
+selected = -1
+_sections_unfolded = [ "Margin", "Rect", "Theme" ]
 
 [node name="Display" type="HBoxContainer" parent="VBoxContainer/Tabs" index="1"]
 
@@ -857,7 +857,7 @@ action_mode = 0
 enabled_focus_mode = 2
 shortcut = null
 group = null
-text = "Fastest"
+text = "Low"
 flat = false
 align = 0
 items = [ "Low", null, false, -1, null, "High", null, false, -1, null ]
@@ -905,7 +905,7 @@ action_mode = 0
 enabled_focus_mode = 2
 shortcut = null
 group = null
-text = "Less"
+text = "Low"
 flat = false
 align = 0
 items = [ "Low", null, false, -1, null, "High", null, false, -1, null ]
@@ -1535,11 +1535,11 @@ _sections_unfolded = [ "Margin", "Rect" ]
 
 [connection signal="button_up" from="VBoxContainer/Tabs/General/Right/Fullscreen/FullscreenBox" to="." method="_on_FullscreenBox_button_up"]
 
+[connection signal="value_changed" from="VBoxContainer/Tabs/General/Right/Sensitivity/SensitivitySlider" to="." method="_on_SensitivitySlider_value_changed"]
+
 [connection signal="button_up" from="VBoxContainer/Tabs/General/Right/Subtitles/SubtitlesButton" to="." method="_on_QualityButton_button_up"]
 
 [connection signal="item_selected" from="VBoxContainer/Tabs/General/Right/Subtitles/SubtitlesButton" to="." method="_on_SubtitlesButton_item_selected"]
-
-[connection signal="value_changed" from="VBoxContainer/Tabs/General/Right/Sensitivity/SensitivitySlider" to="." method="_on_SensitivitySlider_value_changed"]
 
 [connection signal="button_up" from="VBoxContainer/Tabs/Display/Right/Shadows/ShadowBox" to="." method="_on_ShadowBox_button_up"]
 
