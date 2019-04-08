@@ -137,7 +137,7 @@ func _physics_process(delta):
 				start_moving()
 			else:
 				# Only set path again if the player's position has significantly changed
-				if player_pos == null || player_pos.distance_to(player.translation) > 1:
+				if player_pos == null || player_pos.distance_to(player.global_transform.origin) > 1:
 					path_to_player() 
 	
 	if !alerted && see_player:
@@ -227,7 +227,7 @@ func play_alerted_audio(stream):
 
 # slightly fuzzy position check
 func is_at_pos(pos):
-	return !(translation.x - pos.x > 0.1 || translation.y - pos.y > 0.1 || translation.z - pos.z > 0.1)
+	return !(abs(global_transform.origin.x - pos.x) > 0.1 || abs(global_transform.origin.y - pos.y) > 0.1 || abs(global_transform.origin.z - pos.z) > 0.1)
 
 # Set a path to the player
 func path_to_player():
