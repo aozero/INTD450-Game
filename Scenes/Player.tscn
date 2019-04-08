@@ -344,7 +344,7 @@ tracks/0/keys = {
 
 radius = 50.0
 
-[node name="Player" type="KinematicBody" index="0"]
+[node name="Player" type="KinematicBody"]
 
 input_ray_pickable = true
 input_capture_on_drag = false
@@ -697,7 +697,7 @@ autoplay = false
 mix_target = 0
 bus = "Voice"
 
-[node name="FinalMemoryTimer" type="Timer" parent="CanvasLayer/MemoryController/DialogueAudio" index="0"]
+[node name="MemoryTimer" type="Timer" parent="CanvasLayer/MemoryController/DialogueAudio" index="0"]
 
 process_mode = 1
 wait_time = 1.5
@@ -874,9 +874,7 @@ disabled = false
 
 [connection signal="timeout" from="CanvasLayer/StaminaController/DisappearTimer" to="CanvasLayer/StaminaController" method="_on_DisappearTimer_timeout"]
 
-[connection signal="finished" from="CanvasLayer/MemoryController/DialogueAudio" to="CanvasLayer/MemoryController" method="_on_DialogueAudio_finished"]
-
-[connection signal="timeout" from="CanvasLayer/MemoryController/DialogueAudio/FinalMemoryTimer" to="CanvasLayer/MemoryController" method="_on_FinalMemoryTimer_timeout"]
+[connection signal="timeout" from="CanvasLayer/MemoryController/DialogueAudio/MemoryTimer" to="CanvasLayer/MemoryController" method="_on_MemoryTimer_timeout"]
 
 [connection signal="animation_finished" from="CanvasLayer/MemoryController/ScreenAnimator" to="CanvasLayer/MemoryController" method="_on_ScreenAnimator_animation_finished"]
 

@@ -212,9 +212,13 @@ func disable_prompt():
 func start_final_memory(final_item):
 	memory_controller.start_final_memory(final_item)
 
-# Plays sound and displays text 
-func play_dialogue(dialogue):
-	memory_controller.play_dialogue(dialogue)
+# If not playing another memory, plays sound and displays text 
+func start_minor_memory(item_dialogue):
+	memory_controller.start_minor_memory(item_dialogue)
+
+# Always plays sound and displays text 
+func play_dialogue(item_dialogue):
+	memory_controller.play_dialogue(item_dialogue)
 
 # When timer finishes
 func _on_Timer_timeout():
