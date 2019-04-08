@@ -5,12 +5,13 @@
 [ext_resource path="res://Scenes/Foliage/ForestWallExtra.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/Foliage/BGForestSmall.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Scenes/Foliage/TreeRandom.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Scenes/Foliage/KitchenTreeDead2.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Foliage/Kitchen/KitchenTreeDead2.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Foliage/Bush1.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Scenes/Foliage/TreeDead1.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Scenes/Foliage/TreeDead2.tscn" type="PackedScene" id=9]
 [ext_resource path="res://Scenes/Foliage/TreeLive1.tscn" type="PackedScene" id=10]
 [ext_resource path="res://Scenes/Foliage/TreeDeadCurvy.tscn" type="PackedScene" id=11]
+
 
 [node name="Kitchen-Study Connector" type="Spatial" index="0"]
 

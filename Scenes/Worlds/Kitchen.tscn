@@ -15,8 +15,8 @@
 [ext_resource path="res://Scenes/Foliage/Bush1.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Scenes/Foliage/TreeDead1.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Scenes/Foliage/TreeLive1.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Scenes/Foliage/KitchenTreeDead1.tscn" type="PackedScene" id=16]
-[ext_resource path="res://Scenes/Foliage/KitchenTreeLive1.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Scenes/Foliage/Kitchen/KitchenTreeDead1.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Scenes/Foliage/Kitchen/KitchenTreeLive1.tscn" type="PackedScene" id=17]
 [ext_resource path="res://Scenes/Worlds/Kitchen-Study Connector.tscn" type="PackedScene" id=18]
 [ext_resource path="res://Scenes/Fires/Stove.tscn" type="PackedScene" id=19]
 [ext_resource path="res://Scenes/Foliage/TreeStrip.tscn" type="PackedScene" id=20]
@@ -27,6 +27,7 @@
 [ext_resource path="res://Scripts/Tutorials/Tutorial1.gd" type="Script" id=25]
 [ext_resource path="res://Scripts/Tutorials/Tutorial2.gd" type="Script" id=26]
 [ext_resource path="res://Scripts/Tutorials/Tutorial3.gd" type="Script" id=27]
+
 
 [sub_resource type="NavigationMesh" id=1]
 
