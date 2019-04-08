@@ -178,6 +178,7 @@ func _ready():
 	BEDROOM_1["None"] = ""
 	BEDROOM_1["English"] = "Riley: Jaime, watch me! Look at me! I'm a dancer."
 	BEDROOM_1["Español"] = "Riley: Jaime ¡mírame! ¡Mírame, Jaime! Soy una bailarina."
+	BEDROOM_1["Français"] = "Riley: Jamie, regarde moi. Regarde moi Jamie. Je suis un danseur!"
 	BEDROOM_1.TEXT_TIME = 8
 	
 	# Small Painting Easel
@@ -185,6 +186,7 @@ func _ready():
 	BEDROOM_2["None"] = ""
 	BEDROOM_2["English"] = "Mom: Sweetie, I love all of your art but if you don't clean this room, I'm taking all your paint and crayons away for a week."
 	BEDROOM_2["Español"] = "Mamá: Cariña, me encanta todo tu arte, pero si no limpias esta habitación, te quitaré toda la pintura y los crayones durante una semana."
+	BEDROOM_2["Français"] = "Maman: Ma chérie, j’aime tout tes ouevres d’art, mais si tu ne nettoies pas cette chambre, je vais prendre toute tes peintures et tes crayons de cire pour une semaine."
 	BEDROOM_2.TEXT_TIME = 9
 	
 	# Flamingo
@@ -192,6 +194,7 @@ func _ready():
 	BEDROOM_FINAL["None"] = ""
 	BEDROOM_FINAL["English"] = "Riley: Jamie? I can't see you. Ouch! Oh my gosh, it's burning! Jamie, where are you? H-help!" 
 	BEDROOM_FINAL["Español"] = "Riley: ¡Jaime! No puedo verte. ¡Ay!¡Dios mio! Está quemando. Jaime, ¿dondé estás? ¡Ayudame!"
+	BEDROOM_FINAL["Français"] = "Riley: Jamie! Je ne peux pas te voir. Aie! Oh mon Dieu, ça brule! Jamie, où est-tu? Au secours!"
 	BEDROOM_FINAL.MUSIC = load("res://Sound/Music/BedroomMemory.wav")
 	###############################
 
