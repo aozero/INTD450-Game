@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Scenes/Worlds/World.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/ForestNoise.tscn" type="PackedScene" id=2]
@@ -15,11 +15,14 @@
 [ext_resource path="res://Sound/Effects/Memory/Finale Voices/finale_ellis_she_feels_guilty.wav" type="AudioStream" id=13]
 [ext_resource path="res://Sound/Effects/Memory/Finale Voices/finale_riley_help.wav" type="AudioStream" id=14]
 [ext_resource path="res://Scenes/Foliage/BGForestMedium.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Scenes/Foliage/BGForestSmall.tscn" type="PackedScene" id=16]
-[ext_resource path="res://Scripts/Fires/FireTrigger.gd" type="Script" id=17]
-[ext_resource path="res://Scenes/Fires/FireStrip.tscn" type="PackedScene" id=18]
-[ext_resource path="res://Scenes/Items/Final/BedroomFinal.tscn" type="PackedScene" id=19]
-[ext_resource path="res://Scenes/Door.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Scenes/Foliage/ForestWallExtra.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Scenes/Foliage/BGForestSmall.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Scenes/Foliage/ForestWall.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Scenes/Worlds/Bedroom-Finale Connector.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Scripts/Fires/FireTrigger.gd" type="Script" id=20]
+[ext_resource path="res://Scenes/Fires/FireStrip.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Scenes/Items/Final/BedroomFinal.tscn" type="PackedScene" id=22]
+[ext_resource path="res://Scenes/Door.tscn" type="PackedScene" id=23]
 
 [sub_resource type="NavigationMesh" id=1]
 
@@ -164,31 +167,70 @@ transform = Transform( 0.694853, 0, -0.719151, 0, 1, 0, 0.719151, 0, 0.694853, -
 
 [node name="BGForestMedium4" parent="Navigation/NavigationMeshInstance/Trees" index="2" instance=ExtResource( 15 )]
 
+editor/display_folded = true
 transform = Transform( -0.688698, 0, 0.725048, 0, 1, 0, -0.725047, 0, -0.688699, -19.1621, 0, -6.21882 )
 
-[node name="BGForestMedium5" parent="Navigation/NavigationMeshInstance/Trees" index="3" instance=ExtResource( 15 )]
+[node name="ForestWallExtra" parent="Navigation/NavigationMeshInstance/Trees/BGForestMedium4" index="5" instance=ExtResource( 16 )]
+
+transform = Transform( 0.469905, 0, -0.882718, 0, 1, 0, 0.882716, 0, 0.469905, 10.2827, 0, -2.12685 )
+
+[node name="BGForestSmall4" parent="Navigation/NavigationMeshInstance/Trees" index="3" instance=ExtResource( 17 )]
+
+transform = Transform( -0.691375, 0, 0.722496, 0, 1, 0, -0.722496, 0, -0.691375, -11.1357, 0, 1.80805 )
+
+[node name="BGForestSmall5" parent="Navigation/NavigationMeshInstance/Trees" index="4" instance=ExtResource( 17 )]
 
 transform = Transform( -0.691375, 0, 0.722496, 0, 1, 0, -0.722496, 0, -0.691375, -6.94889, 0, 6.16033 )
 
-[node name="BGForestSmall" parent="Navigation/NavigationMeshInstance/Trees" index="4" instance=ExtResource( 16 )]
+[node name="ForestWall" parent="Navigation/NavigationMeshInstance/Trees" index="5" instance=ExtResource( 18 )]
 
+transform = Transform( -0.691375, 0, 0.722496, 0, 1, 0, -0.722496, 0, -0.691375, -2.8187, 0, 10.4885 )
+
+[node name="ForestWall2" parent="Navigation/NavigationMeshInstance/Trees" index="6" instance=ExtResource( 18 )]
+
+editor/display_folded = true
 transform = Transform( 0.711511, 0, 0.702675, 0, 1, 0, -0.702675, 0, 0.711511, -20.3672, 0, -12.5559 )
 
-[node name="BGForestSmall4" parent="Navigation/NavigationMeshInstance/Trees" index="5" instance=ExtResource( 16 )]
+[node name="ForestWallExtra" parent="Navigation/NavigationMeshInstance/Trees/ForestWall2" index="3" instance=ExtResource( 16 )]
 
-transform = Transform( -0.638932, 0, -0.769263, 0, 1, 0, 0.769263, 0, -0.638932, 2.91021, 0, 10.7937 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.48275, 0, -3.88155 )
+
+[node name="Bedroom End" parent="Navigation/NavigationMeshInstance/Trees" index="7" instance=ExtResource( 19 )]
+
+transform = Transform( 0.643523, 0, 0.765427, 0, 1, 0, -0.765427, 0, 0.643523, 6.2666, 0, 10.4742 )
+
+[node name="ForestWall" parent="Navigation/NavigationMeshInstance/Trees/Bedroom End" index="7" instance=ExtResource( 18 )]
+
+editor/display_folded = true
+transform = Transform( -0.0528747, 0, -0.998601, 0, 1, 0, 0.998601, 0, -0.0528747, 5.65816, 0, -2.85405 )
+
+[node name="ForestWallExtra" parent="Navigation/NavigationMeshInstance/Trees/Bedroom End/ForestWall" index="3" instance=ExtResource( 16 )]
+
+transform = Transform( 1, 0, -2.98023e-008, 0, 1, 0, 2.98023e-008, 0, 1, -0.533146, 0, -4.12507 )
+
+[node name="ForestWall2" parent="Navigation/NavigationMeshInstance/Trees/Bedroom End" index="8" instance=ExtResource( 18 )]
+
+transform = Transform( 1, 0, 2.98023e-008, 0, 1, 0, -2.98023e-008, 0, 1, -10.2104, 0, 1.85395 )
+
+[node name="ForestWall3" parent="Navigation/NavigationMeshInstance/Trees/Bedroom End" index="9" instance=ExtResource( 18 )]
+
+transform = Transform( 1, 0, 2.98023e-008, 0, 1, 0, -2.98023e-008, 0, 1, -15.7704, 0, 1.7046 )
+
+[node name="ForestWall4" parent="Navigation/NavigationMeshInstance/Trees/Bedroom End" index="10" instance=ExtResource( 18 )]
+
+transform = Transform( 1, 0, 2.98023e-008, 0, 1, 0, -2.98023e-008, 0, 1, -21.4922, 0, 1.38618 )
 
 [node name="Fires" type="Spatial" parent="Navigation/NavigationMeshInstance" index="2"]
 
-script = ExtResource( 17 )
+script = ExtResource( 20 )
 
-[node name="FireStrip" parent="Navigation/NavigationMeshInstance/Fires" index="0" instance=ExtResource( 18 )]
+[node name="FireStrip" parent="Navigation/NavigationMeshInstance/Fires" index="0" instance=ExtResource( 21 )]
 
 transform = Transform( 0.756325, 0, 0.654196, 0, 1, 0, -0.654196, 0, 0.756325, -19.0371, 0, -12.3129 )
 
-[node name="FireStrip2" parent="Navigation/NavigationMeshInstance/Fires" index="1" instance=ExtResource( 18 )]
+[node name="FireStrip2" parent="Navigation/NavigationMeshInstance/Fires" index="1" instance=ExtResource( 21 )]
 
-transform = Transform( 0.756325, 0, 0.654196, 0, 1, 0, -0.654196, 0, 0.756325, 1.29371, 0, 9.64328 )
+transform = Transform( 0.582811, 0, 0.812608, 0, 1, 0, -0.812608, 0, 0.582811, 0.915211, 0, 9.24323 )
 
 [node name="FireTrigger" type="Area" parent="Navigation/NavigationMeshInstance/Fires" index="2"]
 
@@ -221,12 +263,12 @@ transform = Transform( 0.776779, 0, 0.629773, 0, 1, 0, -0.629773, 0, 0.776779, 0
 shape = SubResource( 2 )
 disabled = false
 
-[node name="FireStrip8" parent="Navigation/NavigationMeshInstance/Fires/FireTrigger" index="1" instance=ExtResource( 18 )]
+[node name="FireStrip8" parent="Navigation/NavigationMeshInstance/Fires/FireTrigger" index="1" instance=ExtResource( 21 )]
 
 transform = Transform( 0.604171, 0, -0.796855, 0, 1, 0, 0.796854, 0, 0.604172, -3.99762, 0, 0.919086 )
 visible = false
 
-[node name="FireStrip9" parent="Navigation/NavigationMeshInstance/Fires/FireTrigger" index="2" instance=ExtResource( 18 )]
+[node name="FireStrip9" parent="Navigation/NavigationMeshInstance/Fires/FireTrigger" index="2" instance=ExtResource( 21 )]
 
 transform = Transform( 0.604171, 0, -0.796854, 0, 1, 0, 0.796854, 0, 0.604171, 1.24701, 0, -3.4984 )
 visible = false
@@ -262,12 +304,12 @@ transform = Transform( 0.776779, 0, 0.629773, 0, 1, 0, -0.629773, 0, 0.776779, 0
 shape = SubResource( 2 )
 disabled = false
 
-[node name="FireStrip8" parent="Navigation/NavigationMeshInstance/Fires/FireTrigger2" index="1" instance=ExtResource( 18 )]
+[node name="FireStrip8" parent="Navigation/NavigationMeshInstance/Fires/FireTrigger2" index="1" instance=ExtResource( 21 )]
 
 transform = Transform( 0.604171, 0, -0.796855, 0, 1, 0, 0.796854, 0, 0.604172, -3.99762, 0, 0.919086 )
 visible = false
 
-[node name="FireStrip9" parent="Navigation/NavigationMeshInstance/Fires/FireTrigger2" index="2" instance=ExtResource( 18 )]
+[node name="FireStrip9" parent="Navigation/NavigationMeshInstance/Fires/FireTrigger2" index="2" instance=ExtResource( 21 )]
 
 transform = Transform( 0.604171, 0, -0.796854, 0, 1, 0, 0.796854, 0, 0.604171, 1.24701, 0, -3.4984 )
 visible = false
@@ -303,12 +345,12 @@ transform = Transform( 0.776779, 0, 0.629773, 0, 1, 0, -0.629773, 0, 0.776779, 0
 shape = SubResource( 2 )
 disabled = false
 
-[node name="FireStrip8" parent="Navigation/NavigationMeshInstance/Fires/FireTrigger3" index="1" instance=ExtResource( 18 )]
+[node name="FireStrip8" parent="Navigation/NavigationMeshInstance/Fires/FireTrigger3" index="1" instance=ExtResource( 21 )]
 
 transform = Transform( 0.604171, 0, -0.796855, 0, 1, 0, 0.796854, 0, 0.604172, -3.99762, 0, 0.919086 )
 visible = false
 
-[node name="FireStrip9" parent="Navigation/NavigationMeshInstance/Fires/FireTrigger3" index="2" instance=ExtResource( 18 )]
+[node name="FireStrip9" parent="Navigation/NavigationMeshInstance/Fires/FireTrigger3" index="2" instance=ExtResource( 21 )]
 
 transform = Transform( 0.604171, 0, -0.796854, 0, 1, 0, 0.796854, 0, 0.604171, 1.24701, 0, -3.4984 )
 visible = false
@@ -344,17 +386,17 @@ transform = Transform( 0.776779, 0, 0.629773, 0, 1, 0, -0.629773, 0, 0.776779, 0
 shape = SubResource( 2 )
 disabled = false
 
-[node name="FireStrip8" parent="Navigation/NavigationMeshInstance/Fires/FireTrigger4" index="1" instance=ExtResource( 18 )]
+[node name="FireStrip8" parent="Navigation/NavigationMeshInstance/Fires/FireTrigger4" index="1" instance=ExtResource( 21 )]
 
 transform = Transform( 0.604171, 0, -0.796855, 0, 1, 0, 0.796854, 0, 0.604172, -3.99762, 0, 0.919086 )
 visible = false
 
-[node name="FireStrip9" parent="Navigation/NavigationMeshInstance/Fires/FireTrigger4" index="2" instance=ExtResource( 18 )]
+[node name="FireStrip9" parent="Navigation/NavigationMeshInstance/Fires/FireTrigger4" index="2" instance=ExtResource( 21 )]
 
 transform = Transform( 0.604171, 0, -0.796854, 0, 1, 0, 0.796854, 0, 0.604171, 1.24701, 0, -3.4984 )
 visible = false
 
-[node name="ItemFlamingo" parent="." index="13" instance=ExtResource( 19 )]
+[node name="ItemFlamingo" parent="." index="13" instance=ExtResource( 22 )]
 
 transform = Transform( -0.689677, 0, 0.724116, 0, 1, 0, -0.724116, 0, -0.689677, -2.17645, 0, 6.53915 )
 burning = true
@@ -364,7 +406,7 @@ burning = true
 transform = Transform( 0.724116, 0, 0.689677, 0, 1, 0, -0.689677, 0, 0.724116, -1.83261, 0, 6.88669 )
 in_finale = true
 
-[node name="The Door" parent="." index="17" instance=ExtResource( 20 )]
+[node name="The Door" parent="." index="17" instance=ExtResource( 23 )]
 
 transform = Transform( 0.753107, 0, 0.657897, 0, 1, 0, -0.657897, 0, 0.753107, -16.966, 0, -9.23353 )
 
