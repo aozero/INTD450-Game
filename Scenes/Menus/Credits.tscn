@@ -2003,8 +2003,6 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Visibility", "custom_fonts" ]
 
-[connection signal="finished" from="MusicPlayer" to="." method="_on_MusicPlayer_finished"]
-
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 
 [connection signal="animation_finished" from="MainAnimator" to="." method="_on_MainAnimator_animation_finished"]
