@@ -151,6 +151,7 @@ func _ready():
 	STUDY_1["None"] = ""
 	STUDY_1["English"] = "Riley: I'm sorry, Daddy! It was an accident, I swear. I didn't think the ball would go that far."
 	STUDY_1["Español"] = "Riley: ¡Lo siento, Papá! ¡Fue un accidente, prometo! No pensé que la pelota llegaría tan lejos."
+	STUDY_1["Français"] = "Riley: Je suis désolé, papa! C’était un accident, je jure. Je ne pensais pas que la balle irait aussi loin."
 	STUDY_1.TEXT_TIME = 8
 	
 	# Leather-bound Planner
@@ -158,6 +159,7 @@ func _ready():
 	STUDY_2["None"] = "Dad's Planner\nPress 'E' to close"
 	STUDY_2["English"] = "Dad: May 14th, 2009. Jamie (Caterpillar) and Riley's (Queen of Hearts) school play. Alice in Wonderland - school gym 4:30PM. [crossed out]. Red eye flight to Taiwan 5:40 AM.\nPress 'E' to close"
 	STUDY_2["Español"] = "Papá: 14 de mayo, 2009. Jaime (Oruga) y Riley (La Reina de Corazones) obra escolar. Alicia en el país de las Maravillas – gimnasio de escuela, 16:30. Vuelo nocturno a Taiwán, 5:40.\nPulsa la 'E' para cerrar"
+	STUDY_2["Français"] = "Papa: Le 14 mai, 2009. Jamie (la chenille) et Riley ( la Reine des ceurs) la pièce présentée à l’école. Alice au pays des Merveilles - Gymnase de l’école à 14h30. Vol de nuit à Taïwan, 5h40. \nCliquer sur 'E' pour fermer"
 	STUDY_2.TEXT_TIME = 12
 	
 	# Tapshoe
@@ -165,6 +167,7 @@ func _ready():
 	STUDY_FINAL["None"] = ""
 	STUDY_FINAL["English"] = "Dad: Jamie, get your sister to cool it would ya? I'm getting a headache."
 	STUDY_FINAL["Español"] = "Papá: Jaime, haz que tu hermana lo detenga por favor. Me duele la cabeza."
+	STUDY_FINAL["Français"] = "Papa: Jamie, fais arrêter ta soeur. J’ai mal à la tête."
 	STUDY_FINAL.MUSIC = load("res://Sound/Music/StudyMemory.wav")
 	###############################
 	
