@@ -118,7 +118,9 @@ subdivide_depth = 0
 
 [node name="NavigationMeshInstance" parent="Navigation" index="0"]
 
+transform = Transform( -0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, -0.5, 0, 0, 0 )
 navmesh = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
 
 [node name="FloorPlane" parent="Navigation/NavigationMeshInstance" index="0"]
 
@@ -127,6 +129,7 @@ mesh = SubResource( 3 )
 
 [node name="Study-Bedroom Connector" parent="Navigation/NavigationMeshInstance" index="1" instance=ExtResource( 4 )]
 
+editor/display_folded = true
 transform = Transform( -0.8147, 0, 0.579883, 0, 1, 0, -0.579883, 0, -0.8147, -30.6731, 0, -7.26252 )
 
 [node name="Fireplace" parent="Navigation/NavigationMeshInstance/Study-Bedroom Connector" index="2" instance=ExtResource( 5 )]
@@ -154,6 +157,7 @@ transform = Transform( 0.235415, 0, 0.971895, 0, 1, 0, -0.971895, 0, 0.235415, 1
 
 [node name="Path 1" type="Spatial" parent="Navigation/NavigationMeshInstance" index="2"]
 
+editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.6065, 0, 0.85603 )
 
 [node name="BedroomSidetable" parent="Navigation/NavigationMeshInstance/Path 1" index="0" instance=ExtResource( 8 )]
@@ -208,6 +212,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.981, 0, 8.50701 )
 
 [node name="Path Bad" type="Spatial" parent="Navigation/NavigationMeshInstance" index="3"]
 
+editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.12442, 0, -3.3735 )
 
 [node name="BGForestMedium13" parent="Navigation/NavigationMeshInstance/Path Bad" index="0" instance=ExtResource( 13 )]
@@ -224,6 +229,7 @@ transform = Transform( 0.990509, 0, -0.137449, 0, 1, 0, 0.137449, 0, 0.990509, 6
 
 [node name="Tricky Bit" type="Spatial" parent="Navigation/NavigationMeshInstance" index="4"]
 
+editor/display_folded = true
 transform = Transform( -0.458624, 0, 0.88863, 0, 1, 0, -0.88863, 0, -0.458624, 23.7354, 0, 12.1292 )
 
 [node name="Island1" type="Spatial" parent="Navigation/NavigationMeshInstance/Tricky Bit" index="0"]
@@ -504,7 +510,8 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.193449, 0, 2.25568 )
 
 [node name="Items" type="Spatial" parent="." index="1"]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.7578, 0, 2.16255 )
+editor/display_folded = true
+transform = Transform( -0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, -0.5, 12.7517, 0, 17.7615 )
 
 [node name="ItemFlamingo" parent="Items" index="0" instance=ExtResource( 23 )]
 
@@ -520,7 +527,8 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 53.6941, 0, 19.4526 )
 
 [node name="Monsters" type="Spatial" parent="." index="2"]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.1027, 0, -3.37346 )
+editor/display_folded = true
+transform = Transform( -0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, -0.5, 3.62985, 0, 13.034 )
 
 [node name="Monster" parent="Monsters" index="0" instance=ExtResource( 26 )]
 
@@ -554,6 +562,6 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Player" parent="." index="3"]
 
-transform = Transform( -0.962155, 0, -0.272503, 0, 1, 0, 0.272503, 0, -0.962155, -33.8911, 0, -11.249 )
+transform = Transform( 0.717072, 0, -0.696999, 0, 1, 0, 0.696999, 0, 0.717072, 7.20363, 0, 34.9751 )
 
 
