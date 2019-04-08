@@ -139,6 +139,18 @@ tracks/1/keys = {
 "update": 0,
 "values": [ Vector2( 0, -350 ), Vector2( 0, -50 ), Vector2( 0, -50 ), Vector2( 0, -350 ) ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:modulate")
+tracks/2/interp = 0
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.12, 0.24, 0.36, 0.48, 0.6, 0.72, 0.84 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 0.898693, 0.898693, 0.898693, 1 ), Color( 0.797386, 0.797386, 0.797386, 1 ), Color( 0.696078, 0.696078, 0.696078, 1 ), Color( 0.594771, 0.594771, 0.594771, 1 ), Color( 0.493464, 0.493464, 0.493464, 1 ), Color( 0.392157, 0.392157, 0.392157, 1 ) ]
+}
 
 [sub_resource type="Animation" id=9]
 
@@ -589,12 +601,13 @@ _sections_unfolded = [ "Grow Direction", "Rect", "Visibility" ]
 
 [node name="Hand Sprite" type="Sprite" parent="CanvasLayer/Hand" index="0"]
 
+modulate = Color( 0.392157, 0.392157, 0.392157, 1 )
 position = Vector2( 0, -350 )
 scale = Vector2( 1.5, 1.5 )
 texture = ExtResource( 10 )
 vframes = 8
 hframes = 4
-frame = 11
+frame = 31
 _sections_unfolded = [ "Animation", "Region", "Transform", "Visibility" ]
 
 [node name="HandAnimator" type="AnimationPlayer" parent="CanvasLayer/Hand/Hand Sprite" index="0"]
