@@ -124,6 +124,7 @@ func _ready():
 	KITCHEN_1["None"] = ""
 	KITCHEN_1["English"] = "Riley: Oatmeal raisin! I thought they were chocolate chip? This jar is full of LIES!"
 	KITCHEN_1["Español"] = "Riley: ¿Avena y pasas? ¡Pensé que eran pepitas de chocolate! ¡Este es un tarro de mentiras!"
+	KITCHEN_1["Français"] = "Riley: Gruau et raisins secs! Je pensais qu’ils étaient aux brisures de chocolat? C’est un pot de mensonges."
 	KITCHEN_1.TEXT_TIME = 8
 	
 	# Coffee Mug
@@ -131,6 +132,7 @@ func _ready():
 	KITCHEN_2["None"] = ""
 	KITCHEN_2["English"] = "Mom: Oh NOW you don’t like your sandwich? Come on, you would have never known it was vegan cheese if I hadn't told you. The store said it tasted exactly the same."
 	KITCHEN_2["Español"] = "Mamá: Ah, ¿ahora no quieres tu sándwich? Nunca lo hubieras sabido fui queso vegano si no te hubiera dicho. La cajera dijo que el sabor fue el mismo."
+	KITCHEN_2["Français"] = "Maman: oh MAINTENANT tu n’aimes pas ton sandwich? Tu n’aurais jamais su que c’était du fromage végétalien si je ne te l’avais pas dit. Le magasin a dit qu’il avait exactement le même goût."
 	KITCHEN_2.TEXT_TIME = 10
 	
 	# Drawing of Clubhouse
@@ -138,6 +140,7 @@ func _ready():
 	KITCHEN_FINAL["None"] = ""
 	KITCHEN_FINAL["English"] = "Riley: Too slow, Jamie. If you want me to drop the ladder, you gotta give me the password."
 	KITCHEN_FINAL["Español"] = "Riley: Demasiado lento, Jaime. Si tú me quieres soltar la escalera, tienes que dame la contraseña."
+	KITCHEN_FINAL["Français"] = "Riley: Trop lent, Jamie. Si tu veux laisse tomber l’échelle, tu dois me donner le mot de passe."
 	KITCHEN_FINAL.MUSIC = load("res://Sound/Music/KitchenMemory.wav")
 	###############################
 	
