@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=29 format=2]
 
 [ext_resource path="res://Scenes/Worlds/World.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/ForestNoise.tscn" type="PackedScene" id=2]
@@ -23,8 +23,9 @@
 [ext_resource path="res://Scenes/Fires/FireStrip.tscn" type="PackedScene" id=21]
 [ext_resource path="res://Scenes/Monsters/Monster.tscn" type="PackedScene" id=22]
 [ext_resource path="res://Scenes/Monsters/Waypoint.tscn" type="PackedScene" id=23]
-[ext_resource path="res://Scenes/Items/Final/BedroomFinal.tscn" type="PackedScene" id=24]
-[ext_resource path="res://Scenes/Door.tscn" type="PackedScene" id=25]
+[ext_resource path="res://Scenes/Monsters/NoodleBoi.tscn" type="PackedScene" id=24]
+[ext_resource path="res://Scenes/Items/Final/BedroomFinal.tscn" type="PackedScene" id=25]
+[ext_resource path="res://Scenes/Door.tscn" type="PackedScene" id=26]
 
 [sub_resource type="NavigationMesh" id=1]
 
@@ -403,6 +404,7 @@ visible = false
 
 [node name="Monster" parent="." index="13" instance=ExtResource( 22 )]
 
+editor/display_folded = true
 transform = Transform( 0.643523, 0, 0.765427, 0, 1, 0, -0.765427, 0, 0.643523, -3.94732, 0, 19.3175 )
 quiet_boi = true
 
@@ -413,11 +415,12 @@ wait_time = 0
 
 [node name="Waypoint2" parent="Monster" index="13" instance=ExtResource( 23 )]
 
-transform = Transform( -0.901808, 0, 0.432136, 0, 1, 0, -0.432136, 0, -0.901808, 10.8876, 0, -0.921566 )
+transform = Transform( -0.901808, 0, 0.432136, 0, 1, 0, -0.432136, 0, -0.901808, 10.9167, 0, -1.17243 )
 wait_time = 5000
 
 [node name="Monster3" parent="." index="14" instance=ExtResource( 22 )]
 
+editor/display_folded = true
 transform = Transform( 0.643523, 0, 0.765427, 0, 1, 0, -0.765427, 0, 0.643523, -5.92701, 0, 22.1558 )
 quiet_boi = true
 
@@ -438,6 +441,7 @@ wait_time = 5000
 
 [node name="Monster2" parent="." index="15" instance=ExtResource( 22 )]
 
+editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 12.1472, 0, -0.895632 )
 quiet_boi = true
 
@@ -448,20 +452,24 @@ wait_time = 5
 
 [node name="Waypoint" parent="Monster2" index="13" instance=ExtResource( 23 )]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.4756, 0, 10.2905 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.92116, 0, 10.2905 )
 wait_time = 5000
 
-[node name="ItemFlamingo" parent="." index="16" instance=ExtResource( 24 )]
+[node name="NoodleBoi" parent="." index="16" instance=ExtResource( 24 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.5028, 0.35, -17.7039 )
+
+[node name="ItemFlamingo" parent="." index="17" instance=ExtResource( 25 )]
 
 transform = Transform( -0.689677, 0, 0.724116, 0, 1, 0, -0.724116, 0, -0.689677, -2.17645, 0, 6.53915 )
 burning = true
 
-[node name="Player" parent="." index="17"]
+[node name="Player" parent="." index="18"]
 
 transform = Transform( 0.724116, 0, 0.689677, 0, 1, 0, -0.689677, 0, 0.724116, -1.83261, 0, 6.88669 )
 in_finale = true
 
-[node name="The Door" parent="." index="20" instance=ExtResource( 25 )]
+[node name="The Door" parent="." index="21" instance=ExtResource( 26 )]
 
 transform = Transform( 0.753107, 0, 0.657897, 0, 1, 0, -0.657897, 0, 0.753107, -16.966, 0, -9.23353 )
 

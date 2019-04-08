@@ -5,8 +5,9 @@
 [ext_resource path="res://Scripts/Monster/NoodleBoi.gd" type="Script" id=3]
 [ext_resource path="res://Sound/Effects/Monster/noodle_boi_noise.wav" type="AudioStream" id=4]
 
-[node name="NoodleBoi" type="Sprite3D" index="0"]
+[node name="NoodleBoi" type="Sprite3D"]
 
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35, 0 )
 layers = 1
 material_override = ExtResource( 1 )
 cast_shadow = 1
@@ -35,7 +36,7 @@ frame = 0
 region_enabled = false
 region_rect = Rect2( 0, 0, 0, 0 )
 script = ExtResource( 3 )
-_sections_unfolded = [ "Geometry" ]
+_sections_unfolded = [ "Geometry", "Transform" ]
 
 [node name="Audio" type="AudioStreamPlayer3D" parent="." index="0"]
 
