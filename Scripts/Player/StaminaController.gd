@@ -1,4 +1,4 @@
-extends ColorRect
+extends Node
 
 """
 	Stamina allows the player to sprint
@@ -9,12 +9,15 @@ extends ColorRect
 
 const MAX_STAMINA = 2400
 const EXHAUSTION_MIN = 600
+const SHADER_MAX = 1200
 const STAMINA_STILL = 4
 const STAMINA_WALKING = 2
 const STAMINA_RUNNING = -6
 var stamina = MAX_STAMINA
-onready var stamina_bar = $StaminaBar
-onready var disappear_timer = $DisappearTimer
+onready var stamina_container = $StaminaContainer
+onready var stamina_bar = $StaminaContainer/StaminaBar
+onready var disappear_timer = $StaminaContainer/DisappearTimer
+onready var exhaustion_shader = $ExhaustionShader
 onready var NORMAL_COLOR = stamina_bar.color
 const EXHAUSTED_COLOR = Color(0.5, 0, 0)
 
@@ -41,7 +44,7 @@ func update_stamina(moving, running):
 		stamina += STAMINA_RUNNING
 		if stamina <= 0:
 			set_exhausted(true)
-		visible = true
+		stamina_container.visible = true
 	elif moving:
 		# Increase player stamina slightly
 		increase_stamina(STAMINA_WALKING)
@@ -49,7 +52,14 @@ func update_stamina(moving, running):
 		# Increase player stamina
 		increase_stamina(STAMINA_STILL)
 	
-	stamina_bar.rect_size.x = (rect_size.x - 20) * (float(stamina) / MAX_STAMINA)
+	# Stamina bar changes to reflect stamina
+	stamina_bar.rect_size.x = (stamina_container.rect_size.x - 20) * (float(stamina) / MAX_STAMINA)
+	
+	# Exhaustion shader appears when below SHADER_MAX
+	if stamina < SHADER_MAX:
+		exhaustion_shader.modulate.a = float(SHADER_MAX - stamina) / SHADER_MAX
+	else:
+		exhaustion_shader.modulate.a = 0
 
 func increase_stamina(amount):
 	if stamina < MAX_STAMINA:
@@ -58,8 +68,8 @@ func increase_stamina(amount):
 		if stamina > EXHAUSTION_MIN:
 			set_exhausted(false)
 		
-	elif visible && disappear_timer.is_stopped():
+	elif stamina_container.visible && disappear_timer.is_stopped():
 		disappear_timer.start()
 
 func _on_DisappearTimer_timeout():
-	visible = false
+	stamina_container.visible = false

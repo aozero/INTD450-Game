@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=39 format=2]
 
 [ext_resource path="res://Scripts/Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Sound/Effects/Match/match_burning.wav" type="AudioStream" id=2]
@@ -11,12 +11,14 @@
 [ext_resource path="res://Scripts/Player/FPS Display.gd" type="Script" id=9]
 [ext_resource path="res://Sprites/handanimation.png" type="Texture" id=10]
 [ext_resource path="res://Scripts/Player/StaminaController.gd" type="Script" id=11]
-[ext_resource path="res://Scripts/Player/MemoryController.gd" type="Script" id=12]
-[ext_resource path="res://Sprites/crosshair.png" type="Texture" id=13]
-[ext_resource path="res://Scenes/Menus/PauseController.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Sound/Effects/Walking/walking_step1.wav" type="AudioStream" id=15]
-[ext_resource path="res://Scripts/Player/FootstepsPlayer.gd" type="Script" id=16]
-[ext_resource path="res://Scripts/Player/PlayerArea.gd" type="Script" id=17]
+[ext_resource path="res://Sprites/vignette.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/white.png" type="Texture" id=13]
+[ext_resource path="res://Scripts/Player/MemoryController.gd" type="Script" id=14]
+[ext_resource path="res://Sprites/crosshair.png" type="Texture" id=15]
+[ext_resource path="res://Scenes/Menus/PauseController.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Sound/Effects/Walking/walking_step1.wav" type="AudioStream" id=17]
+[ext_resource path="res://Scripts/Player/FootstepsPlayer.gd" type="Script" id=18]
+[ext_resource path="res://Scripts/Player/PlayerArea.gd" type="Script" id=19]
 
 [sub_resource type="Animation" id=1]
 
@@ -228,6 +230,26 @@ use_filter = false
 font_data = ExtResource( 8 )
 _sections_unfolded = [ "Font", "Settings" ]
 
+[sub_resource type="Shader" id=20]
+
+code = "shader_type canvas_item;
+
+uniform sampler2D vignette;
+
+void fragment() {
+	vec3 vignette_color = texture(vignette,UV).rgb;
+	//screen texture stores gaussian blurred copies on mipmaps
+	COLOR.rgb = textureLod(SCREEN_TEXTURE,SCREEN_UV,(1.0-vignette_color.r)*4.0).rgb;
+	COLOR.rgb*= texture(vignette,UV).rgb;
+}"
+
+[sub_resource type="ShaderMaterial" id=21]
+
+render_priority = 0
+shader = SubResource( 20 )
+shader_param/vignette = ExtResource( 12 )
+_sections_unfolded = [ "shader_param" ]
+
 [sub_resource type="Animation" id=11]
 
 length = 1.5
@@ -314,7 +336,7 @@ use_filter = false
 font_data = ExtResource( 8 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
-[sub_resource type="Animation" id=15]
+[sub_resource type="Animation" id=22]
 
 length = 0.6
 loop = true
@@ -346,7 +368,7 @@ tracks/1/keys = {
 } ]
 }
 
-[sub_resource type="Animation" id=16]
+[sub_resource type="Animation" id=18]
 
 length = 0.5
 loop = false
@@ -364,11 +386,11 @@ tracks/0/keys = {
 "values": [ Vector3( 0, 0, 0 ) ]
 }
 
-[sub_resource type="SphereShape" id=17]
+[sub_resource type="SphereShape" id=19]
 
 radius = 50.0
 
-[node name="Player" type="KinematicBody" index="0"]
+[node name="Player" type="KinematicBody"]
 
 input_ray_pickable = true
 input_capture_on_drag = false
@@ -662,7 +684,30 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Grow Direction", "Margin", "Rect" ]
 
-[node name="StaminaController" type="ColorRect" parent="CanvasLayer" index="3"]
+[node name="StaminaController" type="Node" parent="CanvasLayer" index="3"]
+
+script = ExtResource( 11 )
+
+[node name="ExhaustionShader" type="TextureRect" parent="CanvasLayer/StaminaController" index="0"]
+
+modulate = Color( 1, 1, 1, 0 )
+material = SubResource( 21 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 13 )
+expand = true
+stretch_mode = 0
+_sections_unfolded = [ "Material", "Visibility" ]
+
+[node name="StaminaContainer" type="ColorRect" parent="CanvasLayer/StaminaController" index="1"]
 
 visible = false
 anchor_left = 0.0
@@ -680,10 +725,9 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 color = Color( 0.235294, 0.235294, 0.235294, 0.588235 )
-script = ExtResource( 11 )
 _sections_unfolded = [ "Grow Direction", "Rect", "Visibility" ]
 
-[node name="StaminaBar" type="ColorRect" parent="CanvasLayer/StaminaController" index="0"]
+[node name="StaminaBar" type="ColorRect" parent="CanvasLayer/StaminaController/StaminaContainer" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -702,7 +746,7 @@ size_flags_vertical = 1
 color = Color( 0.477297, 0.800781, 0.121994, 0.588235 )
 _sections_unfolded = [ "Margin", "Rect" ]
 
-[node name="DisappearTimer" type="Timer" parent="CanvasLayer/StaminaController" index="1"]
+[node name="DisappearTimer" type="Timer" parent="CanvasLayer/StaminaController/StaminaContainer" index="1"]
 
 process_mode = 1
 wait_time = 1.0
@@ -711,7 +755,7 @@ autostart = false
 
 [node name="MemoryController" type="Node" parent="CanvasLayer" index="4"]
 
-script = ExtResource( 12 )
+script = ExtResource( 14 )
 
 [node name="DialogueAudio" type="AudioStreamPlayer" parent="CanvasLayer/MemoryController" index="0"]
 
@@ -775,7 +819,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 13 )
+texture = ExtResource( 15 )
 stretch_mode = 4
 _sections_unfolded = [ "Anchor", "Margin" ]
 
@@ -825,7 +869,7 @@ rotation = 0.0
 scale = Vector2( 1, 1 )
 transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 
-[node name="PauseController" parent="PauseMenuLayer" index="0" instance=ExtResource( 14 )]
+[node name="PauseController" parent="PauseMenuLayer" index="0" instance=ExtResource( 16 )]
 
 [node name="Headbobber" type="AnimationPlayer" parent="." index="11"]
 
@@ -834,19 +878,19 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/headbob = SubResource( 15 )
-anims/reset = SubResource( 16 )
+anims/headbob = SubResource( 22 )
+anims/reset = SubResource( 18 )
 blend_times = [  ]
 
 [node name="FootstepsPlayer" type="AudioStreamPlayer" parent="Headbobber" index="0"]
 
-stream = ExtResource( 15 )
+stream = ExtResource( 17 )
 volume_db = -20.0
 pitch_scale = 1.0
 autoplay = false
 mix_target = 0
 bus = "Effects"
-script = ExtResource( 16 )
+script = ExtResource( 18 )
 
 [node name="RayCast" type="RayCast" parent="." index="12"]
 
@@ -884,11 +928,11 @@ reverb_bus_enable = false
 reverb_bus_name = "Master"
 reverb_bus_amount = 0.0
 reverb_bus_uniformity = 0.0
-script = ExtResource( 17 )
+script = ExtResource( 19 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Player Area" index="0"]
 
-shape = SubResource( 17 )
+shape = SubResource( 19 )
 disabled = false
 
 [connection signal="finished" from="ForestNoisesAudio" to="ForestNoisesAudio" method="_on_ForestNoisesAudio_finished"]
@@ -897,7 +941,7 @@ disabled = false
 
 [connection signal="animation_finished" from="CanvasLayer/Hand/Hand Sprite/HandAnimator" to="." method="_on_HandAnimator_animation_finished"]
 
-[connection signal="timeout" from="CanvasLayer/StaminaController/DisappearTimer" to="CanvasLayer/StaminaController" method="_on_DisappearTimer_timeout"]
+[connection signal="timeout" from="CanvasLayer/StaminaController/StaminaContainer/DisappearTimer" to="CanvasLayer/StaminaController" method="_on_DisappearTimer_timeout"]
 
 [connection signal="timeout" from="CanvasLayer/MemoryController/DialogueAudio/MemoryTimer" to="CanvasLayer/MemoryController" method="_on_MemoryTimer_timeout"]
 
