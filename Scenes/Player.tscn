@@ -142,7 +142,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id=9]
 
-length = 1.2
+length = 1.14
 loop = false
 step = 0.06
 tracks/0/type = "value"
@@ -152,7 +152,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.12, 0.24, 0.36, 0.6, 0.66, 0.72, 0.78, 0.84, 0.96, 1.08 ),
+"times": PoolRealArray( 0, 0.12, 0.24, 0.36, 0.6, 0.66, 0.72, 0.78, 0.84, 0.9, 1.02 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 0, 1, 2, 3, 5, 6, 7, 8, 9, 10, 11 ]
@@ -344,7 +344,7 @@ tracks/0/keys = {
 
 radius = 50.0
 
-[node name="Player" type="KinematicBody"]
+[node name="Player" type="KinematicBody" index="0"]
 
 input_ray_pickable = true
 input_capture_on_drag = false
