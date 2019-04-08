@@ -23,7 +23,6 @@ func set_in_player_area(value):
 	set_physics_process(value)
 
 func _process(delta):
-	#var direction = round(rotation_degrees
 	sprite_looker.look_at(Vector3(player.global_transform.origin.x, sprite_looker.global_transform.origin.y, player.global_transform.origin.z), UP)
 	sprite_looker.rotation_degrees.y += 180
 
