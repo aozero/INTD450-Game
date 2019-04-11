@@ -509,7 +509,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.9093, 0.35, -18.218 )
 
 [node name="Area" type="Area" parent="NoodleBoi" index="1"]
 
-transform = Transform( -0.207131, 0, 0.978313, 0, 1, 0, -0.978313, 0, -0.207131, -1.14358, 0, -3.0944 )
+transform = Transform( -0.207131, 0, 0.978313, 0, 1, 0, -0.978313, 0, -0.207131, -1.14358, 0, -3.8392 )
 input_ray_pickable = false
 input_capture_on_drag = false
 space_override = 0
@@ -539,12 +539,17 @@ shape = SubResource( 4 )
 disabled = false
 _sections_unfolded = [ "Transform" ]
 
-[node name="Waypoint" parent="NoodleBoi" index="2" instance=ExtResource( 28 )]
+[node name="Waypoint3" parent="NoodleBoi" index="2" instance=ExtResource( 28 )]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.17495, 0, -16.7414 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.471911, 0, -5.29614 )
 wait_time = 2
 
-[node name="Waypoint2" parent="NoodleBoi" index="3" instance=ExtResource( 28 )]
+[node name="Waypoint" parent="NoodleBoi" index="3" instance=ExtResource( 28 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.89263, 0, -16.7414 )
+wait_time = 2
+
+[node name="Waypoint2" parent="NoodleBoi" index="4" instance=ExtResource( 28 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28.2308, 0, -47.4704 )
 wait_time = 2
