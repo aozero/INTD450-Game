@@ -555,15 +555,16 @@ transform = Transform( -0.635123, 0, -0.772411, 0, 1, 0, 0.772411, 0, -0.635123,
 
 [node name="NoodleBoi" parent="." index="1" instance=ExtResource( 28 )]
 
-editor/display_folded = true
 transform = Transform( -0.666042, 0, 0.745915, 0, 1, 0, -0.745915, 0, -0.666042, 1.61661, 0.333179, 45.4403 )
 script = ExtResource( 29 )
 
 [node name="Area" parent="NoodleBoi" index="0" instance=ExtResource( 30 )]
 
+transform = Transform( -0.207131, 0, 0.978313, 0, 1, 0, -0.978313, 0, -0.207131, 3.91493, 0, 4.0639 )
+
 [node name="Waypoint" parent="NoodleBoi" index="1" instance=ExtResource( 31 )]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.65921, 0, 17.4275 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.67625, 0, 17.463 )
 wait_time = 2
 
 [node name="Waypoint2" parent="NoodleBoi" index="2" instance=ExtResource( 31 )]
