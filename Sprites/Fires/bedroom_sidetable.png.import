@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/bedroom_sidetable.png-0851cee10df8ab2dc611695bfff126ce.stex"
+path="res://.import/bedroom_sidetable.png-b9f55a92568745fd8eb9891f2a9a676e.stex"
 
 [deps]
 
-source_file="res://Sprites/House Objects/bedroom_sidetable.png"
-dest_files=[ "res://.import/bedroom_sidetable.png-0851cee10df8ab2dc611695bfff126ce.stex" ]
+source_file="res://Sprites/Fires/bedroom_sidetable.png"
+dest_files=[ "res://.import/bedroom_sidetable.png-b9f55a92568745fd8eb9891f2a9a676e.stex" ]
 
 [params]
 
