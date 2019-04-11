@@ -575,7 +575,12 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Waypoint" parent="NoodleBoi" index="2" instance=ExtResource( 27 )]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 37.5571, 0, -13.564 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.24492, 0, -2.05144 )
+wait_time = 2
+
+[node name="Waypoint2" parent="NoodleBoi" index="3" instance=ExtResource( 27 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 64.3043, 0, 0.393901 )
 wait_time = 2
 
 [node name="Player" parent="." index="4"]
