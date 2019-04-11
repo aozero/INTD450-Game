@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://Scenes/Worlds/World.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Items/Minor/Study1.tscn" type="PackedScene" id=2]
@@ -28,9 +28,10 @@
 [ext_resource path="res://Scenes/Items/Final/StudyFinal.tscn" type="PackedScene" id=26]
 [ext_resource path="res://Scenes/Foliage/TreeStrip.tscn" type="PackedScene" id=27]
 [ext_resource path="res://Scenes/Monsters/NoodleBoi.tscn" type="PackedScene" id=28]
-[ext_resource path="res://Scenes/Monsters/NoodleBoiArea.tscn" type="PackedScene" id=29]
-[ext_resource path="res://Scenes/Monsters/Waypoint.tscn" type="PackedScene" id=30]
-[ext_resource path="res://Scenes/Monsters/Monster.tscn" type="PackedScene" id=31]
+[ext_resource path="res://Scripts/Monster/NoodleBoi1.gd" type="Script" id=29]
+[ext_resource path="res://Scenes/Monsters/NoodleBoiArea.tscn" type="PackedScene" id=30]
+[ext_resource path="res://Scenes/Monsters/Waypoint.tscn" type="PackedScene" id=31]
+[ext_resource path="res://Scenes/Monsters/Monster.tscn" type="PackedScene" id=32]
 
 [sub_resource type="NavigationMesh" id=1]
 
@@ -117,7 +118,7 @@ size = Vector2( 100, 100 )
 subdivide_width = 0
 subdivide_depth = 0
 
-[node name="World" instance=ExtResource( 1 )]
+[node name="World" index="0" instance=ExtResource( 1 )]
 
 [node name="NavigationMeshInstance" parent="Navigation" index="0"]
 
@@ -554,45 +555,46 @@ transform = Transform( -0.635123, 0, -0.772411, 0, 1, 0, 0.772411, 0, -0.635123,
 
 [node name="NoodleBoi" parent="." index="1" instance=ExtResource( 28 )]
 
+editor/display_folded = true
 transform = Transform( -0.666042, 0, 0.745915, 0, 1, 0, -0.745915, 0, -0.666042, 1.61661, 0.333179, 45.4403 )
+script = ExtResource( 29 )
 
-[node name="Area" parent="NoodleBoi" index="0" instance=ExtResource( 29 )]
+[node name="Area" parent="NoodleBoi" index="0" instance=ExtResource( 30 )]
 
-[node name="Waypoint" parent="NoodleBoi" index="1" instance=ExtResource( 30 )]
+[node name="Waypoint" parent="NoodleBoi" index="1" instance=ExtResource( 31 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 4.65921, 0, 17.4275 )
 wait_time = 2
 
-[node name="Waypoint2" parent="NoodleBoi" index="2" instance=ExtResource( 30 )]
+[node name="Waypoint2" parent="NoodleBoi" index="2" instance=ExtResource( 31 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20.5941, 0, 23.4006 )
 wait_time = 2
 
 [node name="Monsters" type="Spatial" parent="." index="2"]
 
-editor/display_folded = true
 _sections_unfolded = [ "Transform", "Visibility" ]
 
-[node name="Monster2" parent="Monsters" index="0" instance=ExtResource( 31 )]
+[node name="Monster2" parent="Monsters" index="0" instance=ExtResource( 32 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 23.2319, 0, 5.36036 )
 
-[node name="Monster" parent="Monsters" index="1" instance=ExtResource( 31 )]
+[node name="Monster" parent="Monsters" index="1" instance=ExtResource( 32 )]
 
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.86786, 0, 14.6071 )
 
-[node name="Waypoint" parent="Monsters/Monster" index="10" instance=ExtResource( 30 )]
+[node name="Waypoint" parent="Monsters/Monster" index="10" instance=ExtResource( 31 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.67428, 0, 5.64567 )
 wait_time = 2
 
-[node name="Waypoint2" parent="Monsters/Monster" index="11" instance=ExtResource( 30 )]
+[node name="Waypoint2" parent="Monsters/Monster" index="11" instance=ExtResource( 31 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.12601 )
 wait_time = 2
 
-[node name="Waypoint3" parent="Monsters/Monster" index="12" instance=ExtResource( 30 )]
+[node name="Waypoint3" parent="Monsters/Monster" index="12" instance=ExtResource( 31 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.78438, 0, -3.85556 )
 wait_time = 2

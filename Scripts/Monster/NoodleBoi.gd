@@ -1,6 +1,7 @@
 extends Sprite3D
 
 # boi stands still until activated, then runs between waypoints and disappears
+# Noodle boi only appears one time on each level, even if the play dies and comes back
 
 const MOVE_SPEED = 5
 
@@ -9,9 +10,14 @@ onready var audio = $Audio
 var waypoints = []
 var way_ind = 0
 
-var active = false
+var activated = false
 
 func _ready():
+	# Noodle boi only appears one time on each level, even if the play dies and comes back
+	# activated is set in each child noodle bois script
+	if activated:
+		visible = false
+	
 	set_process(false)
 	process_child_waypoints()
 
@@ -25,8 +31,15 @@ func process_child_waypoints():
 			c.queue_free()
 
 func activate():
-	#audio.play()
-	set_process(true)
+	if !activated:
+		audio.play()
+		set_process(true)
+		set_global_activation()
+
+# Noodle boi only appears one time on each level, even if the play dies and comes back
+# In child scripts, set the the correct variable in global to tell noodle boi to not appear again in that level
+func set_global_activation():
+	pass
 
 func _process(delta):
 	if way_ind < waypoints.size():
@@ -38,4 +51,3 @@ func _process(delta):
 			move_vec = move_vec.normalized()
 			move_vec *= MOVE_SPEED * delta
 			global_transform.origin += move_vec
-	
