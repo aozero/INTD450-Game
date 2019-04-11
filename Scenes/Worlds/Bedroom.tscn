@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://Scenes/Worlds/World.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Materials/wormy_ground_diffuse.tga" type="Texture" id=2]
@@ -28,6 +28,8 @@
 [ext_resource path="res://Scenes/Items/Minor/Bedroom2.tscn" type="PackedScene" id=26]
 [ext_resource path="res://Scenes/Monsters/Monster.tscn" type="PackedScene" id=27]
 [ext_resource path="res://Scenes/Monsters/Waypoint.tscn" type="PackedScene" id=28]
+[ext_resource path="res://Scenes/Monsters/NoodleBoi.tscn" type="PackedScene" id=29]
+[ext_resource path="res://Scripts/Monster/NoodleBoiArea.gd" type="Script" id=30]
 
 [sub_resource type="NavigationMesh" id=1]
 
@@ -114,6 +116,10 @@ custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
 size = Vector2( 120, 60 )
 subdivide_width = 0
 subdivide_depth = 0
+
+[sub_resource type="BoxShape" id=4]
+
+extents = Vector3( 10, 1, 9 )
 
 [node name="World" index="0" instance=ExtResource( 1 )]
 
@@ -213,6 +219,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.981, 0, 8.50701 )
 
 [node name="Path Bad" type="Spatial" parent="Navigation/NavigationMeshInstance" index="3"]
 
+editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -6.12442, 0, -3.3735 )
 
 [node name="ForestWall" parent="Navigation/NavigationMeshInstance/Path Bad" index="0" instance=ExtResource( 10 )]
@@ -225,6 +232,7 @@ transform = Transform( 0.990509, 0, -0.137449, 0, 1, 0, 0.137449, 0, 0.990509, 6
 
 [node name="Tricky Bit" type="Spatial" parent="Navigation/NavigationMeshInstance" index="4"]
 
+editor/display_folded = true
 transform = Transform( -0.458624, 0, 0.88863, 0, 1, 0, -0.88863, 0, -0.458624, 23.7354, 0, 12.1292 )
 
 [node name="Island1" type="Spatial" parent="Navigation/NavigationMeshInstance/Tricky Bit" index="0"]
@@ -429,6 +437,8 @@ transform = Transform( 1, 0, -5.96046e-008, 0, 1, 0, 5.96046e-008, 0, 1, 8.92442
 
 [node name="Bedroom End" parent="Navigation/NavigationMeshInstance" index="5" instance=ExtResource( 23 )]
 
+editor/display_folded = true
+
 [node name="BGForestSmall" parent="Navigation/NavigationMeshInstance/Bedroom End" index="8" instance=ExtResource( 9 )]
 
 transform = Transform( 0.999771, 0, -0.021434, 0, 1, 0, 0.021434, 0, 0.999771, -4.42121, 0, -5.59664 )
@@ -456,6 +466,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 53.6941, 0, 19.4526 )
 
 [node name="Monsters" type="Spatial" parent="." index="2"]
 
+editor/display_folded = true
 transform = Transform( -0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, -0.5, 3.62985, 0, 13.034 )
 
 [node name="Monster" parent="Monsters" index="0" instance=ExtResource( 27 )]
@@ -492,8 +503,56 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.74084, 0, -1.57624 )
 _sections_unfolded = [ "Transform" ]
 wait_time = 0
 
-[node name="Player" parent="." index="3"]
+[node name="NoodleBoi" parent="." index="3" instance=ExtResource( 29 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 14.9093, 0.35, -18.218 )
+
+[node name="Area" type="Area" parent="NoodleBoi" index="1"]
+
+transform = Transform( -0.207131, 0, 0.978313, 0, 1, 0, -0.978313, 0, -0.207131, -1.14358, 0, -3.0944 )
+input_ray_pickable = false
+input_capture_on_drag = false
+space_override = 0
+gravity_point = false
+gravity_distance_scale = 0.0
+gravity_vec = Vector3( 0, -1, 0 )
+gravity = 9.8
+linear_damp = 0.1
+angular_damp = 1.0
+priority = 0.0
+monitoring = true
+monitorable = true
+collision_layer = 1
+collision_mask = 1
+audio_bus_override = false
+audio_bus_name = "Master"
+reverb_bus_enable = false
+reverb_bus_name = "Master"
+reverb_bus_amount = 0.0
+reverb_bus_uniformity = 0.0
+script = ExtResource( 30 )
+
+[node name="CollisionShape" type="CollisionShape" parent="NoodleBoi/Area" index="0"]
+
+transform = Transform( 0.910292, 0, -0.413967, 0, 1, 0, 0.413967, 0, 0.910292, -0.802511, 0, -0.499704 )
+shape = SubResource( 4 )
+disabled = false
+_sections_unfolded = [ "Transform" ]
+
+[node name="Waypoint" parent="NoodleBoi" index="2" instance=ExtResource( 28 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.17495, 0, -16.7414 )
+wait_time = 2
+
+[node name="Waypoint2" parent="NoodleBoi" index="3" instance=ExtResource( 28 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28.2308, 0, -47.4704 )
+wait_time = 2
+
+[node name="Player" parent="." index="4"]
 
 transform = Transform( 0.717072, 0, -0.696999, 0, 1, 0, 0.696999, 0, 0.717072, 7.20363, 0, 34.9751 )
+
+[connection signal="body_entered" from="NoodleBoi/Area" to="NoodleBoi/Area" method="_on_Area_body_entered"]
 
 
