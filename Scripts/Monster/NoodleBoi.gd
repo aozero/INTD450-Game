@@ -32,7 +32,7 @@ func process_child_waypoints():
 
 func activate():
 	if !activated:
-		audio.play()
+		#audio.play()
 		set_process(true)
 		set_global_activation()
 
