@@ -525,7 +525,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = SubResource( 9 )
-text = "Yeah maybe it was inevitable but you just seemed like really skittish, like more than usual"
+text = "Yeah maybe it was inevitable but you just seemed really skittish at the funeral, like more than usual"
 autowrap = true
 percent_visible = 1.0
 lines_skipped = 0
@@ -626,7 +626,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = SubResource( 9 )
-text = "No, but I think I need to go back. 
+text = "No, but I need to go back. 
 I knew I would have to one day."
 autowrap = true
 percent_visible = 1.0
