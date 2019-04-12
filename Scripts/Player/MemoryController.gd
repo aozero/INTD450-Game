@@ -63,6 +63,7 @@ func look_at_item(texture, item_dialogue):
 		looking_at_item = true
 		item_sprite.texture = texture
 		item_sprite.modulate.a = 1
+		item_sprite.visible = true
 		start_minor_memory(item_dialogue)
 		get_tree().paused = true
 
