@@ -22,7 +22,6 @@ func _on_FireTrigger2_body_entered(body):
 	if body.get_class() == "Player":
 		for n in ft2.get_children():
 			n.visible = true
-		ft2.visible = true
 	music_player.change_volume(music_player.drone_player, DRONE_VOL_2, VOL_CHANGE_TIME)
 
 func _on_FireTrigger3_body_entered(body):

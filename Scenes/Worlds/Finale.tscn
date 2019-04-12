@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://Scenes/Worlds/World.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Foliage/BGForestMedium.tscn" type="PackedScene" id=2]
@@ -8,24 +8,25 @@
 [ext_resource path="res://Scenes/Worlds/Bedroom-Finale Connector.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scripts/Fires/FireTrigger.gd" type="Script" id=7]
 [ext_resource path="res://Scenes/Fires/FireStrip.tscn" type="PackedScene" id=8]
-[ext_resource path="res://Scenes/ForestNoise.tscn" type="PackedScene" id=9]
-[ext_resource path="res://Sound/Effects/Memory/Finale Voices/finale_riley_monkeys.wav" type="AudioStream" id=10]
-[ext_resource path="res://Sound/Effects/Memory/Finale Voices/finale_david_your_mother_and_i.wav" type="AudioStream" id=11]
-[ext_resource path="res://Sound/Effects/Memory/Finale Voices/finale_therapist_going_back.wav" type="AudioStream" id=12]
-[ext_resource path="res://Sound/Effects/Memory/Finale Voices/finale_lauren_dinners_ready.wav" type="AudioStream" id=13]
-[ext_resource path="res://Sound/Effects/Memory/Finale Voices/finale_david_ill_see_you.wav" type="AudioStream" id=14]
-[ext_resource path="res://Sound/Effects/Memory/Finale Voices/finale_ellis_im_going_to.wav" type="AudioStream" id=15]
-[ext_resource path="res://Sound/Effects/Memory/Finale Voices/finale_riley_dancer.wav" type="AudioStream" id=16]
-[ext_resource path="res://Sound/Effects/Memory/Finale Voices/finale_therapist_survivors_guilt.wav" type="AudioStream" id=17]
-[ext_resource path="res://Sound/Effects/Memory/Finale Voices/finale_ellis_she_feels_guilty.wav" type="AudioStream" id=18]
-[ext_resource path="res://Sound/Effects/Memory/Finale Voices/finale_lauren_call_me.wav" type="AudioStream" id=19]
-[ext_resource path="res://Sound/Effects/Memory/Finale Voices/finale_david_i_love_you.wav" type="AudioStream" id=20]
-[ext_resource path="res://Sound/Effects/Memory/Finale Voices/finale_riley_help.wav" type="AudioStream" id=21]
-[ext_resource path="res://Scenes/Door.tscn" type="PackedScene" id=22]
-[ext_resource path="res://Scenes/Monsters/Monster.tscn" type="PackedScene" id=23]
-[ext_resource path="res://Scenes/Monsters/Waypoint.tscn" type="PackedScene" id=24]
-[ext_resource path="res://Scenes/Monsters/NoodleBoi.tscn" type="PackedScene" id=25]
-[ext_resource path="res://Scenes/Items/Final/BedroomFinal.tscn" type="PackedScene" id=26]
+[ext_resource path="res://Scenes/Fires/FinaleFireStrip.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/ForestNoise.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Sound/Effects/Memory/Finale Voices/finale_riley_monkeys.wav" type="AudioStream" id=11]
+[ext_resource path="res://Sound/Effects/Memory/Finale Voices/finale_david_your_mother_and_i.wav" type="AudioStream" id=12]
+[ext_resource path="res://Sound/Effects/Memory/Finale Voices/finale_therapist_going_back.wav" type="AudioStream" id=13]
+[ext_resource path="res://Sound/Effects/Memory/Finale Voices/finale_lauren_dinners_ready.wav" type="AudioStream" id=14]
+[ext_resource path="res://Sound/Effects/Memory/Finale Voices/finale_david_ill_see_you.wav" type="AudioStream" id=15]
+[ext_resource path="res://Sound/Effects/Memory/Finale Voices/finale_ellis_im_going_to.wav" type="AudioStream" id=16]
+[ext_resource path="res://Sound/Effects/Memory/Finale Voices/finale_riley_dancer.wav" type="AudioStream" id=17]
+[ext_resource path="res://Sound/Effects/Memory/Finale Voices/finale_therapist_survivors_guilt.wav" type="AudioStream" id=18]
+[ext_resource path="res://Sound/Effects/Memory/Finale Voices/finale_ellis_she_feels_guilty.wav" type="AudioStream" id=19]
+[ext_resource path="res://Sound/Effects/Memory/Finale Voices/finale_lauren_call_me.wav" type="AudioStream" id=20]
+[ext_resource path="res://Sound/Effects/Memory/Finale Voices/finale_david_i_love_you.wav" type="AudioStream" id=21]
+[ext_resource path="res://Sound/Effects/Memory/Finale Voices/finale_riley_help.wav" type="AudioStream" id=22]
+[ext_resource path="res://Scenes/Door.tscn" type="PackedScene" id=23]
+[ext_resource path="res://Scenes/Monsters/Monster.tscn" type="PackedScene" id=24]
+[ext_resource path="res://Scenes/Monsters/Waypoint.tscn" type="PackedScene" id=25]
+[ext_resource path="res://Scenes/Monsters/NoodleBoi.tscn" type="PackedScene" id=26]
+[ext_resource path="res://Scenes/Items/Final/BedroomFinal.tscn" type="PackedScene" id=27]
 
 [sub_resource type="NavigationMesh" id=1]
 
@@ -64,7 +65,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="FloorPlane" parent="Navigation/NavigationMeshInstance" index="0"]
 
-transform = Transform( 1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 0, -1, 0 )
+transform = Transform( 1, 0, 2.98023e-008, 0, 1, 0, -2.98023e-008, 0, 1, 0, -1, 0 )
 
 [node name="Trees" type="Spatial" parent="Navigation/NavigationMeshInstance" index="1"]
 
@@ -118,23 +119,22 @@ transform = Transform( -0.0528747, 0, -0.998601, 0, 1, 0, 0.998601, 0, -0.052874
 
 [node name="ForestWallExtra" parent="Navigation/NavigationMeshInstance/Trees/Bedroom End/ForestWall" index="3" instance=ExtResource( 3 )]
 
-transform = Transform( 1, 0, -2.98023e-08, 0, 1, 0, 2.98023e-08, 0, 1, -0.533146, 0, -4.12507 )
+transform = Transform( 1, 0, -2.98023e-008, 0, 1, 0, 2.98023e-008, 0, 1, -0.533146, 0, -4.12507 )
 
 [node name="ForestWall2" parent="Navigation/NavigationMeshInstance/Trees/Bedroom End" index="8" instance=ExtResource( 5 )]
 
-transform = Transform( 1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, -10.2104, 0, 1.85395 )
+transform = Transform( 1, 0, 2.98023e-008, 0, 1, 0, -2.98023e-008, 0, 1, -10.2104, 0, 1.85395 )
 
 [node name="ForestWall3" parent="Navigation/NavigationMeshInstance/Trees/Bedroom End" index="9" instance=ExtResource( 5 )]
 
-transform = Transform( 1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, -15.7704, 0, 1.7046 )
+transform = Transform( 1, 0, 2.98023e-008, 0, 1, 0, -2.98023e-008, 0, 1, -15.7704, 0, 1.7046 )
 
 [node name="ForestWall4" parent="Navigation/NavigationMeshInstance/Trees/Bedroom End" index="10" instance=ExtResource( 5 )]
 
-transform = Transform( 1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, -21.4922, 0, 1.38618 )
+transform = Transform( 1, 0, 2.98023e-008, 0, 1, 0, -2.98023e-008, 0, 1, -21.4922, 0, 1.38618 )
 
 [node name="Fires" type="Spatial" parent="Navigation/NavigationMeshInstance" index="2"]
 
-editor/display_folded = true
 script = ExtResource( 7 )
 
 [node name="FireStrip" parent="Navigation/NavigationMeshInstance/Fires" index="0" instance=ExtResource( 8 )]
@@ -147,7 +147,6 @@ transform = Transform( 0.582811, 0, 0.812608, 0, 1, 0, -0.812608, 0, 0.582811, 0
 
 [node name="FireTrigger" type="Area" parent="Navigation/NavigationMeshInstance/Fires" index="2"]
 
-editor/display_folded = true
 transform = Transform( 0.997582, 0, 0.0695051, 0, 1, 0, -0.0695051, 0, 0.997582, -4.73564, 0, 3.53886 )
 input_ray_pickable = false
 input_capture_on_drag = false
@@ -176,19 +175,18 @@ transform = Transform( 0.776779, 0, 0.629773, 0, 1, 0, -0.629773, 0, 0.776779, 0
 shape = SubResource( 2 )
 disabled = false
 
-[node name="FireStrip8" parent="Navigation/NavigationMeshInstance/Fires/FireTrigger" index="1" instance=ExtResource( 8 )]
-
-transform = Transform( 0.604171, 0, -0.796855, 0, 1, 0, 0.796854, 0, 0.604172, -3.99762, 0, 0.919086 )
-visible = false
-
-[node name="FireStrip9" parent="Navigation/NavigationMeshInstance/Fires/FireTrigger" index="2" instance=ExtResource( 8 )]
+[node name="FireStrip" parent="Navigation/NavigationMeshInstance/Fires/FireTrigger" index="1" instance=ExtResource( 9 )]
 
 transform = Transform( 0.604171, 0, -0.796854, 0, 1, 0, 0.796854, 0, 0.604171, 1.24701, 0, -3.4984 )
 visible = false
 
+[node name="FireStrip2" parent="Navigation/NavigationMeshInstance/Fires/FireTrigger" index="2" instance=ExtResource( 9 )]
+
+transform = Transform( 0.604171, 0, -0.796855, 0, 1, 0, 0.796854, 0, 0.604172, -3.99762, 0, 0.919086 )
+visible = false
+
 [node name="FireTrigger2" type="Area" parent="Navigation/NavigationMeshInstance/Fires" index="3"]
 
-editor/display_folded = true
 transform = Transform( 0.997582, 0, 0.0695051, 0, 1, 0, -0.0695051, 0, 0.997582, -8.2141, 0, -0.605472 )
 input_ray_pickable = false
 input_capture_on_drag = false
@@ -217,19 +215,18 @@ transform = Transform( 0.776779, 0, 0.629773, 0, 1, 0, -0.629773, 0, 0.776779, 0
 shape = SubResource( 2 )
 disabled = false
 
-[node name="FireStrip8" parent="Navigation/NavigationMeshInstance/Fires/FireTrigger2" index="1" instance=ExtResource( 8 )]
+[node name="FireStrip" parent="Navigation/NavigationMeshInstance/Fires/FireTrigger2" index="1" instance=ExtResource( 9 )]
 
 transform = Transform( 0.604171, 0, -0.796855, 0, 1, 0, 0.796854, 0, 0.604172, -3.99762, 0, 0.919086 )
 visible = false
 
-[node name="FireStrip9" parent="Navigation/NavigationMeshInstance/Fires/FireTrigger2" index="2" instance=ExtResource( 8 )]
+[node name="FireStrip2" parent="Navigation/NavigationMeshInstance/Fires/FireTrigger2" index="2" instance=ExtResource( 9 )]
 
 transform = Transform( 0.604171, 0, -0.796854, 0, 1, 0, 0.796854, 0, 0.604171, 1.24701, 0, -3.4984 )
 visible = false
 
 [node name="FireTrigger3" type="Area" parent="Navigation/NavigationMeshInstance/Fires" index="4"]
 
-editor/display_folded = true
 transform = Transform( 0.997582, 0, 0.0695051, 0, 1, 0, -0.0695051, 0, 0.997582, -11.5908, 0, -4.57611 )
 input_ray_pickable = false
 input_capture_on_drag = false
@@ -258,19 +255,18 @@ transform = Transform( 0.776779, 0, 0.629773, 0, 1, 0, -0.629773, 0, 0.776779, 0
 shape = SubResource( 2 )
 disabled = false
 
-[node name="FireStrip8" parent="Navigation/NavigationMeshInstance/Fires/FireTrigger3" index="1" instance=ExtResource( 8 )]
+[node name="FireStrip" parent="Navigation/NavigationMeshInstance/Fires/FireTrigger3" index="1" instance=ExtResource( 9 )]
 
 transform = Transform( 0.604171, 0, -0.796855, 0, 1, 0, 0.796854, 0, 0.604172, -3.99762, 0, 0.919086 )
 visible = false
 
-[node name="FireStrip9" parent="Navigation/NavigationMeshInstance/Fires/FireTrigger3" index="2" instance=ExtResource( 8 )]
+[node name="FireStrip2" parent="Navigation/NavigationMeshInstance/Fires/FireTrigger3" index="2" instance=ExtResource( 9 )]
 
 transform = Transform( 0.604171, 0, -0.796854, 0, 1, 0, 0.796854, 0, 0.604171, 1.24701, 0, -3.4984 )
 visible = false
 
 [node name="FireTrigger4" type="Area" parent="Navigation/NavigationMeshInstance/Fires" index="5"]
 
-editor/display_folded = true
 transform = Transform( 0.997462, 0, 0.0712005, 0, 1, 0, -0.0712005, 0, 0.997462, -15.5099, 0, -8.96564 )
 input_ray_pickable = false
 input_capture_on_drag = false
@@ -311,168 +307,169 @@ visible = false
 
 [node name="Voices" type="Spatial" parent="Navigation/NavigationMeshInstance" index="3"]
 
+editor/display_folded = true
 transform = Transform( 0.997462, 0, 0.0712005, 0, 1, 0, -0.0712005, 0, 0.997462, -15.5099, 0, -8.96564 )
 
-[node name="Finale Riley Voice 1" parent="Navigation/NavigationMeshInstance/Voices" index="0" instance=ExtResource( 9 )]
+[node name="Finale Riley Voice 1" parent="Navigation/NavigationMeshInstance/Voices" index="0" instance=ExtResource( 10 )]
 
 transform = Transform( 0.997462, 0, -0.0712006, 0, 1, 0, 0.0712006, 0, 0.997462, 12.0485, 0, 16.7595 )
-stream = ExtResource( 10 )
-attenuation_model = 0
-bus = "Voice"
-time_between_sounds = 2
-
-[node name="Finale David Voice 1" parent="Navigation/NavigationMeshInstance/Voices" index="1" instance=ExtResource( 9 )]
-
-transform = Transform( 0.997462, 0, -0.0712006, 0, 1, 0, 0.0712006, 0, 0.997462, 12.3082, 0, 15.1422 )
 stream = ExtResource( 11 )
 attenuation_model = 0
 bus = "Voice"
 time_between_sounds = 2
 
-[node name="Finale Therapist Voice 2" parent="Navigation/NavigationMeshInstance/Voices" index="2" instance=ExtResource( 9 )]
+[node name="Finale David Voice 1" parent="Navigation/NavigationMeshInstance/Voices" index="1" instance=ExtResource( 10 )]
 
-transform = Transform( 0.997462, 0, -0.0712006, 0, 1, 0, 0.0712006, 0, 0.997462, 9.10953, 0, 13.4861 )
+transform = Transform( 0.997462, 0, -0.0712006, 0, 1, 0, 0.0712006, 0, 0.997462, 12.3082, 0, 15.1422 )
 stream = ExtResource( 12 )
-attenuation_model = 0
-bus = "Voice"
-time_between_sounds = 4
-
-[node name="Finale Lauren Voice 1" parent="Navigation/NavigationMeshInstance/Voices" index="3" instance=ExtResource( 9 )]
-
-transform = Transform( 0.997462, 0, -0.0712006, 0, 1, 0, 0.0712006, 0, 0.997462, 9.17737, 0, 11.1839 )
-stream = ExtResource( 13 )
 attenuation_model = 0
 bus = "Voice"
 time_between_sounds = 2
 
-[node name="Finale David Voice 2" parent="Navigation/NavigationMeshInstance/Voices" index="4" instance=ExtResource( 9 )]
+[node name="Finale Therapist Voice 2" parent="Navigation/NavigationMeshInstance/Voices" index="2" instance=ExtResource( 10 )]
 
-transform = Transform( 0.997462, 0, -0.0712006, 0, 1, 0, 0.0712006, 0, 0.997462, 6.74323, 0, 11.3933 )
+transform = Transform( 0.997462, 0, -0.0712006, 0, 1, 0, 0.0712006, 0, 0.997462, 9.10953, 0, 13.4861 )
+stream = ExtResource( 13 )
+attenuation_model = 0
+bus = "Voice"
+time_between_sounds = 4
+
+[node name="Finale Lauren Voice 1" parent="Navigation/NavigationMeshInstance/Voices" index="3" instance=ExtResource( 10 )]
+
+transform = Transform( 0.997462, 0, -0.0712006, 0, 1, 0, 0.0712006, 0, 0.997462, 9.17737, 0, 11.1839 )
 stream = ExtResource( 14 )
 attenuation_model = 0
 bus = "Voice"
 time_between_sounds = 2
 
-[node name="Finale Ellis Voice 1" parent="Navigation/NavigationMeshInstance/Voices" index="5" instance=ExtResource( 9 )]
+[node name="Finale David Voice 2" parent="Navigation/NavigationMeshInstance/Voices" index="4" instance=ExtResource( 10 )]
 
-transform = Transform( 0.997462, 0, -0.0712006, 0, 1, 0, 0.0712006, 0, 0.997462, 6.57688, 0, 9.05657 )
+transform = Transform( 0.997462, 0, -0.0712006, 0, 1, 0, 0.0712006, 0, 0.997462, 6.74323, 0, 11.3933 )
 stream = ExtResource( 15 )
 attenuation_model = 0
 bus = "Voice"
 time_between_sounds = 2
 
-[node name="Finale Riley Voice 2" parent="Navigation/NavigationMeshInstance/Voices" index="6" instance=ExtResource( 9 )]
+[node name="Finale Ellis Voice 1" parent="Navigation/NavigationMeshInstance/Voices" index="5" instance=ExtResource( 10 )]
 
-transform = Transform( 0.997462, 0, -0.0712006, 0, 1, 0, 0.0712006, 0, 0.997462, 3.07251, 0, 6.7425 )
+transform = Transform( 0.997462, 0, -0.0712006, 0, 1, 0, 0.0712006, 0, 0.997462, 6.57688, 0, 9.05657 )
 stream = ExtResource( 16 )
 attenuation_model = 0
 bus = "Voice"
 time_between_sounds = 2
 
-[node name="Finale Therapist Voice 1" parent="Navigation/NavigationMeshInstance/Voices" index="7" instance=ExtResource( 9 )]
+[node name="Finale Riley Voice 2" parent="Navigation/NavigationMeshInstance/Voices" index="6" instance=ExtResource( 10 )]
 
-transform = Transform( 0.997462, 0, -0.0712006, 0, 1, 0, 0.0712006, 0, 0.997462, 3.33102, 0, 4.09621 )
+transform = Transform( 0.997462, 0, -0.0712006, 0, 1, 0, 0.0712006, 0, 0.997462, 3.07251, 0, 6.7425 )
 stream = ExtResource( 17 )
 attenuation_model = 0
 bus = "Voice"
 time_between_sounds = 2
 
-[node name="Finale Ellis Voice 2" parent="Navigation/NavigationMeshInstance/Voices" index="8" instance=ExtResource( 9 )]
+[node name="Finale Therapist Voice 1" parent="Navigation/NavigationMeshInstance/Voices" index="7" instance=ExtResource( 10 )]
 
-transform = Transform( 0.999844, 0, 0.0176984, 0, 1, 0, -0.0176984, 0, 0.999844, 1.06459, 0, 3.06465 )
+transform = Transform( 0.997462, 0, -0.0712006, 0, 1, 0, 0.0712006, 0, 0.997462, 3.33102, 0, 4.09621 )
 stream = ExtResource( 18 )
 attenuation_model = 0
 bus = "Voice"
 time_between_sounds = 2
 
-[node name="Finale Lauren Voice 2" parent="Navigation/NavigationMeshInstance/Voices" index="9" instance=ExtResource( 9 )]
+[node name="Finale Ellis Voice 2" parent="Navigation/NavigationMeshInstance/Voices" index="8" instance=ExtResource( 10 )]
 
-transform = Transform( 0.997462, 0, -0.0712006, 0, 1, 0, 0.0712006, 0, 0.997462, 1.62653, 1.14877, 1.61846 )
+transform = Transform( 0.999844, 0, 0.0176984, 0, 1, 0, -0.0176984, 0, 0.999844, 1.06459, 0, 3.06465 )
 stream = ExtResource( 19 )
 attenuation_model = 0
 bus = "Voice"
 time_between_sounds = 2
 
-[node name="Finale David Voice 3" parent="Navigation/NavigationMeshInstance/Voices" index="10" instance=ExtResource( 9 )]
+[node name="Finale Lauren Voice 2" parent="Navigation/NavigationMeshInstance/Voices" index="9" instance=ExtResource( 10 )]
 
-transform = Transform( 0.997462, 0, -0.0712006, 0, 1, 0, 0.0712006, 0, 0.997462, -1.25296, 0, 2.30231 )
+transform = Transform( 0.997462, 0, -0.0712006, 0, 1, 0, 0.0712006, 0, 0.997462, 1.62653, 1.14877, 1.61846 )
 stream = ExtResource( 20 )
 attenuation_model = 0
 bus = "Voice"
 time_between_sounds = 2
 
-[node name="Finale Riley Help" parent="Navigation/NavigationMeshInstance/Voices" index="11" instance=ExtResource( 9 )]
+[node name="Finale David Voice 3" parent="Navigation/NavigationMeshInstance/Voices" index="10" instance=ExtResource( 10 )]
+
+transform = Transform( 0.997462, 0, -0.0712006, 0, 1, 0, 0.0712006, 0, 0.997462, -1.25296, 0, 2.30231 )
+stream = ExtResource( 21 )
+attenuation_model = 0
+bus = "Voice"
+time_between_sounds = 2
+
+[node name="Finale Riley Help" parent="Navigation/NavigationMeshInstance/Voices" index="11" instance=ExtResource( 10 )]
 
 transform = Transform( 0.997462, 0, -0.0712006, 0, 1, 0, 0.0712006, 0, 0.997462, -2.23242, 0, -1.5343 )
-stream = ExtResource( 21 )
+stream = ExtResource( 22 )
 attenuation_model = 0
 unit_db = -5.0
 unit_size = 2.0
 bus = "Voice"
 time_between_sounds = 2
 
-[node name="The Door" parent="Navigation/NavigationMeshInstance" index="4" instance=ExtResource( 22 )]
+[node name="The Door" parent="Navigation/NavigationMeshInstance" index="4" instance=ExtResource( 23 )]
 
 transform = Transform( 0.753107, 0, 0.657897, 0, 1, 0, -0.657897, 0, 0.753107, -16.966, 0, -9.23353 )
 
-[node name="Monster" parent="." index="1" instance=ExtResource( 23 )]
+[node name="Monster" parent="." index="1" instance=ExtResource( 24 )]
 
 editor/display_folded = true
 transform = Transform( -0.865545, 0, 0.500831, 0, 1, 0, -0.500831, 0, -0.865545, 19.7095, 0, 0.532902 )
 quiet_boi = true
 
-[node name="Waypoint" parent="Monster" index="12" instance=ExtResource( 24 )]
+[node name="Waypoint" parent="Monster" index="12" instance=ExtResource( 25 )]
 
 transform = Transform( -0.901808, 0, 0.432136, 0, 1, 0, -0.432136, 0, -0.901808, 10.7131, 0, -0.174182 )
 wait_time = 0
 
-[node name="Waypoint2" parent="Monster" index="13" instance=ExtResource( 24 )]
+[node name="Waypoint2" parent="Monster" index="13" instance=ExtResource( 25 )]
 
 transform = Transform( -0.901808, 0, 0.432136, 0, 1, 0, -0.432136, 0, -0.901808, 10.9167, 0, -1.17243 )
 wait_time = 5000
 
-[node name="Monster3" parent="." index="2" instance=ExtResource( 23 )]
+[node name="Monster3" parent="." index="2" instance=ExtResource( 24 )]
 
 editor/display_folded = true
 transform = Transform( -0.865545, 0, 0.500831, 0, 1, 0, -0.500831, 0, -0.865545, 22.8484, 0, 1.98965 )
 quiet_boi = true
 
-[node name="Waypoint3" parent="Monster3" index="0" instance=ExtResource( 24 )]
+[node name="Waypoint3" parent="Monster3" index="0" instance=ExtResource( 25 )]
 
-transform = Transform( 1, 0, 2.98023e-08, 0, 1, 0, -2.98023e-08, 0, 1, 0.454018, 0, 0.11747 )
+transform = Transform( 1, 0, 2.98023e-008, 0, 1, 0, -2.98023e-008, 0, 1, 0.454018, 0, 0.11747 )
 wait_time = 15
 
-[node name="Waypoint" parent="Monster3" index="13" instance=ExtResource( 24 )]
+[node name="Waypoint" parent="Monster3" index="13" instance=ExtResource( 25 )]
 
 transform = Transform( -0.901808, 0, 0.432136, 0, 1, 0, -0.432136, 0, -0.901808, 11.9171, 0, 1.30855 )
 wait_time = 0
 
-[node name="Waypoint2" parent="Monster3" index="14" instance=ExtResource( 24 )]
+[node name="Waypoint2" parent="Monster3" index="14" instance=ExtResource( 25 )]
 
 transform = Transform( -0.901808, 0, 0.432136, 0, 1, 0, -0.432136, 0, -0.901808, 12.4986, 0, 0.695363 )
 wait_time = 5000
 
-[node name="Monster2" parent="." index="3" instance=ExtResource( 23 )]
+[node name="Monster2" parent="." index="3" instance=ExtResource( 24 )]
 
 editor/display_folded = true
 transform = Transform( -0.173648, 0, 0.984808, 0, 1, 0, -0.984808, 0, -0.173648, -2.99136, 0, -11.8071 )
 quiet_boi = true
 
-[node name="Waypoint2" parent="Monster2" index="12" instance=ExtResource( 24 )]
+[node name="Waypoint2" parent="Monster2" index="12" instance=ExtResource( 25 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.229242, 0, 0.443035 )
 wait_time = 5
 
-[node name="Waypoint" parent="Monster2" index="13" instance=ExtResource( 24 )]
+[node name="Waypoint" parent="Monster2" index="13" instance=ExtResource( 25 )]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.92116, 0, 10.2905 )
 wait_time = 5000
 
-[node name="NoodleBoi" parent="." index="4" instance=ExtResource( 25 )]
+[node name="NoodleBoi" parent="." index="4" instance=ExtResource( 26 )]
 
 transform = Transform( -0.173648, 0, 0.984808, 0, 1, 0, -0.984808, 0, -0.173648, -14.0483, 0.35, 22.2808 )
 
-[node name="ItemFlamingo" parent="." index="5" instance=ExtResource( 26 )]
+[node name="ItemFlamingo" parent="." index="5" instance=ExtResource( 27 )]
 
 transform = Transform( -0.593354, 0, -0.804941, 0, 1, 0, 0.804941, 0, -0.593354, 6.81774, 0, 1.00787 )
 burning = true
