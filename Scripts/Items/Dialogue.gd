@@ -62,7 +62,7 @@ func _ready():
 	# Intro messages
 	###############################
 	INTRO_1["None"] = "Hey Jamie are you sure about this?"
-	INTRO_1["Español"] = "¡Oye! Jaime ¿estás segura de esto?"
+	INTRO_1["Español"] = "¡Oye! Jamie ¿estás segura de esto?"
 	INTRO_1["Français"] = " Eh! Jamie es-tu sûr de ça?"
 	
 	INTRO_2["None"] = "No, but I think I need to go back. \nI knew I would have to one day."
@@ -139,7 +139,7 @@ func _ready():
 	KITCHEN_FINAL.SOUND = load("res://Sound/Effects/Memory/Final Items/kitchen_memory.wav")
 	KITCHEN_FINAL["None"] = ""
 	KITCHEN_FINAL["English"] = "Riley: Too slow, Jamie. If you want me to drop the ladder, you gotta give me the password."
-	KITCHEN_FINAL["Español"] = "Riley: Demasiado lento, Jaime. Si tú me quieres soltar la escalera, tienes que dame la contraseña."
+	KITCHEN_FINAL["Español"] = "Riley: Demasiado lento, Jamie. Si tú me quieres soltar la escalera, tienes que dame la contraseña."
 	KITCHEN_FINAL["Français"] = "Riley: Trop lent, Jamie. Si tu veux laisse tomber l’échelle, tu dois me donner le mot de passe."
 	KITCHEN_FINAL.MUSIC = load("res://Sound/Music/KitchenMemory.wav")
 	###############################
@@ -158,7 +158,7 @@ func _ready():
 	STUDY_2.SOUND = load("res://Sound/Effects/Memory/Minor Items/silence.wav")
 	STUDY_2["None"] = "Dad's Planner\nPress 'E' to close"
 	STUDY_2["English"] = "Dad: May 14th, 2009. Jamie (Caterpillar) and Riley's (Queen of Hearts) school play. Alice in Wonderland - school gym 4:30PM. [crossed out]. Red eye flight to Taiwan 5:40 AM.\nPress 'E' to close"
-	STUDY_2["Español"] = "Papá: 14 de mayo, 2009. Jaime (Oruga) y Riley (La Reina de Corazones) obra escolar. Alicia en el país de las Maravillas – gimnasio de escuela, 16:30. Vuelo nocturno a Taiwán, 5:40.\nPulsa la 'E' para cerrar"
+	STUDY_2["Español"] = "Papá: 14 de mayo, 2009. Jamie (Oruga) y Riley (La Reina de Corazones) obra escolar. Alicia en el país de las Maravillas – gimnasio de escuela, 16:30. Vuelo nocturno a Taiwán, 5:40.\nPulsa la 'E' para cerrar"
 	STUDY_2["Français"] = "Papa: Le 14 mai, 2009. Jamie (la chenille) et Riley ( la Reine des ceurs) la pièce présentée à l’école. Alice au pays des Merveilles - Gymnase de l’école à 14h30. Vol de nuit à Taïwan, 5h40. \nCliquer sur 'E' pour fermer"
 	STUDY_2.TEXT_TIME = 12
 	
@@ -166,7 +166,7 @@ func _ready():
 	STUDY_FINAL.SOUND = load("res://Sound/Effects/Memory/Final Items/study_memory.wav")
 	STUDY_FINAL["None"] = ""
 	STUDY_FINAL["English"] = "Dad: Jamie, get your sister to cool it would ya? I'm getting a headache."
-	STUDY_FINAL["Español"] = "Papá: Jaime, haz que tu hermana lo detenga por favor. Me duele la cabeza."
+	STUDY_FINAL["Español"] = "Papá: Jamie, haz que tu hermana lo detenga por favor. Me duele la cabeza."
 	STUDY_FINAL["Français"] = "Papa: Jamie, fais arrêter ta soeur. J’ai mal à la tête."
 	STUDY_FINAL.MUSIC = load("res://Sound/Music/StudyMemory.wav")
 	###############################
@@ -177,7 +177,7 @@ func _ready():
 	BEDROOM_1.SOUND = load("res://Sound/Effects/Memory/Minor Items/bedroom_iceskate_memory.wav")
 	BEDROOM_1["None"] = ""
 	BEDROOM_1["English"] = "Riley: Jamie, watch me! Look at me! I'm a dancer."
-	BEDROOM_1["Español"] = "Riley: Jaime ¡mírame! ¡Mírame, Jaime! Soy una bailarina."
+	BEDROOM_1["Español"] = "Riley: Jamie ¡mírame! ¡Mírame, Jamie! Soy una bailarina."
 	BEDROOM_1["Français"] = "Riley: Jamie, regarde moi. Regarde moi Jamie. Je suis un danseur!"
 	BEDROOM_1.TEXT_TIME = 8
 	
@@ -193,7 +193,7 @@ func _ready():
 	BEDROOM_FINAL.SOUND = load("res://Sound/Effects/Memory/Final Items/bedroom_memory.wav")
 	BEDROOM_FINAL["None"] = ""
 	BEDROOM_FINAL["English"] = "Riley: Jamie? I can't see you. Ouch! Oh my gosh, it's burning! Jamie, where are you? H-help!" 
-	BEDROOM_FINAL["Español"] = "Riley: ¡Jaime! No puedo verte. ¡Ay!¡Dios mio! Está quemando. Jaime, ¿dondé estás? ¡Ayudame!"
+	BEDROOM_FINAL["Español"] = "Riley: ¡Jamie! No puedo verte. ¡Ay!¡Dios mio! Está quemando. Jamie, ¿dondé estás? ¡Ayudame!"
 	BEDROOM_FINAL["Français"] = "Riley: Jamie! Je ne peux pas te voir. Aie! Oh mon Dieu, ça brule! Jamie, où est-tu? Au secours!"
 	BEDROOM_FINAL.MUSIC = load("res://Sound/Music/BedroomMemory.wav")
 	###############################
