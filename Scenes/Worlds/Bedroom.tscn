@@ -477,17 +477,18 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.20688, 0, -12.0794 )
 
 [node name="Waypoint" parent="Monsters/Monster" index="12" instance=ExtResource( 28 )]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.91869, 0, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.13643, 0, 5.01933 )
 wait_time = 2
 
 [node name="Monster2" parent="Monsters" index="1" instance=ExtResource( 27 )]
 
 editor/display_folded = true
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -3.22624, 0, -28.5138 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.44732, 0, -27.1945 )
 
 [node name="Waypoint" parent="Monsters/Monster2" index="12" instance=ExtResource( 28 )]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.42645, 0, 1.01601 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.79287, 0, -6.45961 )
+_sections_unfolded = [ "Transform" ]
 wait_time = 2
 
 [node name="Monster3" parent="Monsters" index="2" instance=ExtResource( 27 )]
@@ -495,15 +496,14 @@ wait_time = 2
 editor/display_folded = true
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.3234, 0, -41.4517 )
 
-[node name="Waypoint3" parent="Monsters/Monster3" index="12" instance=ExtResource( 28 )]
+[node name="Waypoint3" parent="Monsters/Monster3" index="0" instance=ExtResource( 28 )]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.880299, 0, -12.6915 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.2295, 0, 5.97894 )
 wait_time = 0
 
 [node name="Waypoint2" parent="Monsters/Monster3" index="13" instance=ExtResource( 28 )]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.74084, 0, -1.57624 )
-_sections_unfolded = [ "Transform" ]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 3.29521, 0, 8.24793 )
 wait_time = 0
 
 [node name="NoodleBoi" parent="." index="3" instance=ExtResource( 29 )]
