@@ -110,7 +110,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.122861 )
 [node name="MusicPlayer" parent="." index="3"]
 
 stream = ExtResource( 4 )
-autoplay = true
+unit_db = -7.0
 
 [node name="BurnAnimPlayer" parent="." index="6"]
 
