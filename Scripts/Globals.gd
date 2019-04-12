@@ -1,5 +1,8 @@
 extends Node
 
+func _ready():
+	set_fullscreen(true)
+
 # OPTIONS
 ########################################
 # GENERAL
