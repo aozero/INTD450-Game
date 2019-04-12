@@ -601,6 +601,7 @@ transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 
 [node name="FPS Display" type="Label" parent="CanvasLayer" index="0"]
 
+pause_mode = 2
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -618,7 +619,7 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 script = ExtResource( 9 )
-_sections_unfolded = [ "custom_fonts" ]
+_sections_unfolded = [ "Pause", "custom_fonts" ]
 
 [node name="Hand" type="Control" parent="CanvasLayer" index="1"]
 
