@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://Scripts/Player/Player.gd" type="Script" id=1]
 [ext_resource path="res://Sound/Effects/Match/match_burning.wav" type="AudioStream" id=2]
@@ -13,12 +13,13 @@
 [ext_resource path="res://Scripts/Player/StaminaController.gd" type="Script" id=11]
 [ext_resource path="res://Sprites/vignette.png" type="Texture" id=12]
 [ext_resource path="res://Sprites/white.png" type="Texture" id=13]
-[ext_resource path="res://Scripts/Player/MemoryController.gd" type="Script" id=14]
-[ext_resource path="res://Sprites/crosshair.png" type="Texture" id=15]
-[ext_resource path="res://Scenes/Menus/PauseController.tscn" type="PackedScene" id=16]
-[ext_resource path="res://Sound/Effects/Walking/walking_step1.wav" type="AudioStream" id=17]
-[ext_resource path="res://Scripts/Player/FootstepsPlayer.gd" type="Script" id=18]
-[ext_resource path="res://Scripts/Player/PlayerArea.gd" type="Script" id=19]
+[ext_resource path="res://Sound/Effects/jamie_running_loop.wav" type="AudioStream" id=14]
+[ext_resource path="res://Scripts/Player/MemoryController.gd" type="Script" id=15]
+[ext_resource path="res://Sprites/crosshair.png" type="Texture" id=16]
+[ext_resource path="res://Scenes/Menus/PauseController.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Sound/Effects/Walking/walking_step1.wav" type="AudioStream" id=18]
+[ext_resource path="res://Scripts/Player/FootstepsPlayer.gd" type="Script" id=19]
+[ext_resource path="res://Scripts/Player/PlayerArea.gd" type="Script" id=20]
 
 [sub_resource type="Animation" id=1]
 
@@ -706,7 +707,16 @@ expand = true
 stretch_mode = 0
 _sections_unfolded = [ "Material", "Visibility" ]
 
-[node name="StaminaContainer" type="ColorRect" parent="CanvasLayer/StaminaController" index="1"]
+[node name="ExhaustionAudio" type="AudioStreamPlayer" parent="CanvasLayer/StaminaController" index="1"]
+
+stream = ExtResource( 14 )
+volume_db = -80.0
+pitch_scale = 1.0
+autoplay = true
+mix_target = 0
+bus = "Master"
+
+[node name="StaminaContainer" type="ColorRect" parent="CanvasLayer/StaminaController" index="2"]
 
 visible = false
 anchor_left = 0.0
@@ -754,7 +764,7 @@ autostart = false
 
 [node name="MemoryController" type="Node" parent="CanvasLayer" index="4"]
 
-script = ExtResource( 14 )
+script = ExtResource( 15 )
 
 [node name="DialogueAudio" type="AudioStreamPlayer" parent="CanvasLayer/MemoryController" index="0"]
 
@@ -818,7 +828,7 @@ mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-texture = ExtResource( 15 )
+texture = ExtResource( 16 )
 stretch_mode = 4
 _sections_unfolded = [ "Anchor", "Margin" ]
 
@@ -868,7 +878,7 @@ rotation = 0.0
 scale = Vector2( 1, 1 )
 transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 
-[node name="PauseController" parent="PauseMenuLayer" index="0" instance=ExtResource( 16 )]
+[node name="PauseController" parent="PauseMenuLayer" index="0" instance=ExtResource( 17 )]
 
 [node name="Headbobber" type="AnimationPlayer" parent="." index="11"]
 
@@ -883,13 +893,13 @@ blend_times = [  ]
 
 [node name="FootstepsPlayer" type="AudioStreamPlayer" parent="Headbobber" index="0"]
 
-stream = ExtResource( 17 )
+stream = ExtResource( 18 )
 volume_db = -20.0
 pitch_scale = 1.0
 autoplay = false
 mix_target = 0
 bus = "Effects"
-script = ExtResource( 18 )
+script = ExtResource( 19 )
 
 [node name="RayCast" type="RayCast" parent="." index="12"]
 
@@ -927,7 +937,7 @@ reverb_bus_enable = false
 reverb_bus_name = "Master"
 reverb_bus_amount = 0.0
 reverb_bus_uniformity = 0.0
-script = ExtResource( 19 )
+script = ExtResource( 20 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Player Area" index="0"]
 
@@ -939,6 +949,8 @@ disabled = false
 [connection signal="timeout" from="ForestNoisesAudio/Timer" to="ForestNoisesAudio" method="_on_Timer_timeout"]
 
 [connection signal="animation_finished" from="CanvasLayer/Hand/Hand Sprite/HandAnimator" to="." method="_on_HandAnimator_animation_finished"]
+
+[connection signal="finished" from="CanvasLayer/StaminaController/ExhaustionAudio" to="CanvasLayer/StaminaController/ExhaustionAudio" method="_on_ExhaustionAudio_finished"]
 
 [connection signal="timeout" from="CanvasLayer/StaminaController/StaminaContainer/DisappearTimer" to="CanvasLayer/StaminaController" method="_on_DisappearTimer_timeout"]
 
