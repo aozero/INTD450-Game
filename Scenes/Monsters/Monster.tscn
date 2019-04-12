@@ -1,7 +1,7 @@
 [gd_scene load_steps=17 format=2]
 
 [ext_resource path="res://Scripts/Monster/Monster.gd" type="Script" id=1]
-[ext_resource path="res://Materials/Billboard.tres" type="Material" id=2]
+[ext_resource path="res://Materials/DarkerBillboard.tres" type="Material" id=2]
 [ext_resource path="res://Sprites/Monsters/brainboi.png" type="Texture" id=3]
 [ext_resource path="res://Sound/Effects/Monster/brain_boi_breathing.wav" type="AudioStream" id=4]
 [ext_resource path="res://Sound/Effects/Monster/Brain Boi Walking/brain_boi_walking_step1.wav" type="AudioStream" id=5]
@@ -327,7 +327,7 @@ hframes = 3
 frame = 1
 region_enabled = false
 region_rect = Rect2( 0, 0, 0, 0 )
-_sections_unfolded = [ "Animation", "Geometry", "Region", "Transform", "Visibility" ]
+_sections_unfolded = [ "Animation", "Geometry", "Region" ]
 
 [node name="RayCast" type="RayCast" parent="." index="1"]
 
