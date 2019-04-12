@@ -1,10 +1,13 @@
 [gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://OptionsMenu.tres" type="Theme" id=1]
+[ext_resource path="res://Scenes/Menus/ToolTipsTheme.tres" type="Theme" id=1]
 [ext_resource path="res://Scripts/Menus/OptionsMenu.gd" type="Script" id=2]
 [ext_resource path="res://Scenes/Menus/ClickAudio.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Fonts/Prompt-Bold.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://Fonts/Prompt.ttf" type="DynamicFontData" id=5]
+
+
+
 
 [sub_resource type="DynamicFont" id=1]
 
@@ -58,7 +61,7 @@ use_filter = false
 font_data = ExtResource( 5 )
 _sections_unfolded = [ "Settings" ]
 
-[node name="OptionsMenu" type="ColorRect" index="0"]
+[node name="OptionsMenu" type="ColorRect"]
 
 visible = false
 anchor_left = 0.5
