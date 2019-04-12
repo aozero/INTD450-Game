@@ -15,6 +15,11 @@ onready var click_audio = $ClickAudio
 func _ready():
 	sprite_anim.play("loop")
 
+func _input(event):
+	if event.is_action_pressed("pause"):
+		options_menu.visible = false
+		exit_verification.visible = false
+
 func _on_StartButton_button_up():
 	color = Color(0, 0, 0)
 	canvaslayer_1.layer = -1
