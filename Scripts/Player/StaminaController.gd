@@ -13,6 +13,7 @@ const STAMINA_STILL = 4
 const STAMINA_WALKING = 2
 const STAMINA_RUNNING = -6
 const SHADER_MAX = 1200
+const EXHAUSTION_AUDIO_MAX = 1500
 const EXHAUSTION_MAX_VOLUME = -20
 var stamina = MAX_STAMINA
 onready var stamina_container = $StaminaContainer
@@ -59,15 +60,19 @@ func update_stamina(moving, running):
 	
 	# Exhaustion shader appears when below SHADER_MAX
 	if stamina < SHADER_MAX:
-		var percent = float(SHADER_MAX - stamina) / SHADER_MAX
-		exhaustion_shader.modulate.a = percent
-		
-		if percent == 0:
+		exhaustion_shader.modulate.a = float(SHADER_MAX - stamina) / SHADER_MAX
+	else:
+		exhaustion_shader.modulate.a = 0
+	
+	if stamina < EXHAUSTION_AUDIO_MAX:
+		var percent = float(EXHAUSTION_AUDIO_MAX - stamina) / EXHAUSTION_AUDIO_MAX
+		percent += (float(EXHAUSTION_MAX_VOLUME) / -80)    # Volume min should be -80 
+
+		if percent >= 1:
 			exhaustion_audio.volume_db = EXHAUSTION_MAX_VOLUME
 		else:
 			exhaustion_audio.volume_db = EXHAUSTION_MAX_VOLUME / percent
 	else:
-		exhaustion_shader.modulate.a = 0
 		exhaustion_audio.volume_db = -80
 
 func increase_stamina(amount):
