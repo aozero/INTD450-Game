@@ -361,15 +361,11 @@ transform = Transform( 1, 0, -2.98023e-008, 0, 1, 0, 2.98023e-008, 0, 1, 0.03797
 
 transform = Transform( 1, 0, -1.49012e-007, 0, 1, 0, 1.49012e-007, 0, 1, 0.125031, 0, 2.19227 )
 
-[node name="Bush1" parent="Navigation/NavigationMeshInstance/Tricky Bit/Safe Zone" index="4" instance=ExtResource( 15 )]
-
-transform = Transform( 1, 0, -1.49012e-007, 0, 1, 0, 1.49012e-007, 0, 1, -2.06744, 0, 0.797638 )
-
-[node name="ForestWall2" parent="Navigation/NavigationMeshInstance/Tricky Bit/Safe Zone" index="5" instance=ExtResource( 10 )]
+[node name="ForestWall2" parent="Navigation/NavigationMeshInstance/Tricky Bit/Safe Zone" index="4" instance=ExtResource( 10 )]
 
 transform = Transform( 0.511725, 0, -0.859149, 0, 1, 0, 0.859149, 0, 0.511725, 1.77602, 0, -4.07873 )
 
-[node name="Drawer" parent="Navigation/NavigationMeshInstance/Tricky Bit/Safe Zone" index="6" instance=ExtResource( 16 )]
+[node name="Drawer" parent="Navigation/NavigationMeshInstance/Tricky Bit/Safe Zone" index="5" instance=ExtResource( 16 )]
 
 transform = Transform( -0.458624, 0, -0.88863, 0, 1, 0, 0.88863, 0, -0.458624, 4.2801, 0, 0.910177 )
 
