@@ -3,6 +3,21 @@ extends Node
 func _ready():
 	set_fullscreen(true)
 
+func return_to_main_menu():
+	in_memory = false
+	noodle_boi_activated = [false, false, false]
+	tree_ind = 0              
+	tree_nums = [0, 0, 0, 0]
+	fire_ind = 0
+	
+	var music_player = get_node("/root/MusicPlayer")
+	music_player.stop_drone()
+	music_player.stop_melody()
+	
+	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	get_tree().paused = false
+	get_tree().change_scene("res://Scenes/Menus/MainMenu.tscn")
+
 # OPTIONS
 ########################################
 # GENERAL
