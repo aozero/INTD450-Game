@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Materials/Billboard.tres" type="Material" id=1]
+[ext_resource path="res://Materials/DarkerBillboard.tres" type="Material" id=1]
 [ext_resource path="res://Sprites/House Objects/study_bookshelf.png" type="Texture" id=2]
 
 [sub_resource type="BoxShape" id=1]
