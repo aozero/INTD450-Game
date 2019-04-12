@@ -176,7 +176,7 @@ func _ready():
 	# Ice Skate
 	BEDROOM_1.SOUND = load("res://Sound/Effects/Memory/Minor Items/bedroom_iceskate_memory.wav")
 	BEDROOM_1["None"] = ""
-	BEDROOM_1["English"] = "Riley: Jaime, watch me! Look at me! I'm a dancer."
+	BEDROOM_1["English"] = "Riley: Jamie, watch me! Look at me! I'm a dancer."
 	BEDROOM_1["Español"] = "Riley: Jaime ¡mírame! ¡Mírame, Jaime! Soy una bailarina."
 	BEDROOM_1["Français"] = "Riley: Jamie, regarde moi. Regarde moi Jamie. Je suis un danseur!"
 	BEDROOM_1.TEXT_TIME = 8
