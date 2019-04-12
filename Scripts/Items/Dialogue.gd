@@ -23,7 +23,7 @@ To add a new language, for each TEXT, also add a new part to that item, such as
 TUTORIAL_1.None = "Use WASD to move and mouse to look."
 TUTORIAL_1.Spanish = "Usé el traductor de google para esto."
 """
-var SUBTITLES_SUPPORTED = ["None", "English", "Español"]
+var SUBTITLES_SUPPORTED = ["None", "English", "Français", "Español"]
 var subtitles_language = 0 setget set_subtitles_language, get_subtitles_language
 
 func set_subtitles_language(value):
@@ -57,32 +57,41 @@ var BEDROOM_FINAL = {}
 func _ready():
 	INTERACT_PROMPT["None"] = "Press 'E' to interact"
 	INTERACT_PROMPT["Español"] = "Pulsa la 'E' para interactuar"
+	INTERACT_PROMPT["Français"] = "Cliquer sur ’E’ pour interagir."
 	
 	# Intro messages
 	###############################
 	INTRO_1["None"] = "Hey Jamie are you sure about this?"
-	INTRO_1["Español"] = "¡Oye! Jaime ¿estás segura de esto?"
+	INTRO_1["Español"] = "¡Oye! Jamie ¿estás segura de esto?"
+	INTRO_1["Français"] = " Eh! Jamie es-tu sûr de ça?"
 	
 	INTRO_2["None"] = "No, but I think I need to go back. \nI knew I would have to one day."
 	INTRO_2["Español"] = "No pero yo pienso que necesito volver. \nYo sabía que tendría que hacerlo algún día."
+	INTRO_2["Français"] = "Non, mais je pense que je dois y retourner. Je savais que je devrais le faire un jour."
 	
-	INTRO_3["None"] = "Yeah maybe it was inevitable but you just seemed like really skittish, like more than usual"
-	INTRO_3["Español"] = "Sí, posiblemente fue inevitable \npero parecías muy nerviosa, \nmás que normal."
+	INTRO_3["None"] = "Yeah maybe it was inevitable but you just seemed like really skittish at the funeral, like more than usual"
+	INTRO_3["Español"] = "Sí, posiblemente fue inevitable \npero parecías muy nerviosa en la funeral, \nmás que normal."
+	INTRO_3["Français"] = "Oui, peut-être que c’était inévitable, mais tu semblais vraiment plus nerveux aux funérailles, comme plus que d’habitude."
 	
 	INTRO_4["None"] = "I guess it’s just weird to grasp."
 	INTRO_4["Español"] = "Supongo que es raro de entender."
+	INTRO_4["Français"] = "Je suppose que c’est juste étrange à saisir."
 	
 	INTRO_5["None"] = "With Grandpa gone, everything is mine, but it’ll never feel that way"
 	INTRO_5["Español"] = "Con mi abuelo ido, todos son mío pero nunca se sentirá así."
+	INTRO_5["Français"] = "Avec Grandpapa parti, tout est à moi, mais ça ne se sent jamais."
 	
 	INTRO_6["None"] = "Are you scared? Do you want me to go with you?"
 	INTRO_6["Español"] = "¿Tienes miedo? ¿Quieres que vaya contigo?"
+	INTRO_6["Français"] = "Es-tu effrayé? Veux-tu que je vienne avec toi?"
 	
 	INTRO_7["None"] = "No, I’ll be alright. It’s like they all said."
 	INTRO_7["Español"] = "No, estará bien. Es como todos dijeron."
+	INTRO_7["Français"] = "Non, ça va aller. C’est comme ils ont tous dit."
 	
 	INTRO_8["None"] = "My fears are just in my head."
 	INTRO_8["Español"] = "Mis temores están solo en mi cabeza."
+	INTRO_8["Français"] = "Mes peurs sont juste dans ma tête."
 	
 	# Tutorial Messages
 	###############################
@@ -90,18 +99,21 @@ func _ready():
 	TUTORIAL_1.SOUND = load("res://Sound/Effects/Memory/Minor Items/silence.wav")
 	TUTORIAL_1["None"] = "Use WASD to move and mouse to look."
 	TUTORIAL_1["Español"] = "Usa WASD a mover y usa el ratón a mirar."
+	TUTORIAL_1["Français"] = "Utiliser WASD pour bouger et regarder."
 	TUTORIAL_1.TEXT_TIME = 16
 	
 	# Right after moving past the campfire
 	TUTORIAL_2.SOUND = load("res://Sound/Effects/Memory/Minor Items/silence.wav")
 	TUTORIAL_2["None"] = "Running (Hold Shift) in the forest makes a lot of noise. "
 	TUTORIAL_2["Español"] = "Correr en el bosque (Manteniendo la tecla Shift) hace mucho ruido."
+	TUTORIAL_2["Français"] = "Courir (Tenir la touche Shift) dans la forêt fait beaucoup de bruit."
 	TUTORIAL_2.TEXT_TIME = 16
 	
 	# At the very edge of the campfire's light
 	TUTORIAL_3.SOUND = load("res://Sound/Effects/Memory/Minor Items/silence.wav")
 	TUTORIAL_3["None"] = "Lighting a match (Left Click) will make it easier to see... and be seen."
 	TUTORIAL_3["Español"] = "Encender un fósforo (tecla izquierda del ratón) hará que sea más fácil de ver… y ser visto."
+	TUTORIAL_3["Français"] = "Allumer une allumette (cliquez le bouton gauche de la souris) vous permettra de mieux voir... et être vu"
 	TUTORIAL_3.TEXT_TIME = 16
 	###############################
 	
@@ -112,6 +124,7 @@ func _ready():
 	KITCHEN_1["None"] = ""
 	KITCHEN_1["English"] = "Riley: Oatmeal raisin! I thought they were chocolate chip? This jar is full of LIES!"
 	KITCHEN_1["Español"] = "Riley: ¿Avena y pasas? ¡Pensé que eran pepitas de chocolate! ¡Este es un tarro de mentiras!"
+	KITCHEN_1["Français"] = "Riley: Gruau et raisins secs! Je pensais qu’ils étaient aux brisures de chocolat? C’est un pot de mensonges."
 	KITCHEN_1.TEXT_TIME = 8
 	
 	# Coffee Mug
@@ -119,13 +132,15 @@ func _ready():
 	KITCHEN_2["None"] = ""
 	KITCHEN_2["English"] = "Mom: Oh NOW you don’t like your sandwich? Come on, you would have never known it was vegan cheese if I hadn't told you. The store said it tasted exactly the same."
 	KITCHEN_2["Español"] = "Mamá: Ah, ¿ahora no quieres tu sándwich? Nunca lo hubieras sabido fui queso vegano si no te hubiera dicho. La cajera dijo que el sabor fue el mismo."
+	KITCHEN_2["Français"] = "Maman: oh MAINTENANT tu n’aimes pas ton sandwich? Tu n’aurais jamais su que c’était du fromage végétalien si je ne te l’avais pas dit. Le magasin a dit qu’il avait exactement le même goût."
 	KITCHEN_2.TEXT_TIME = 10
 	
 	# Drawing of Clubhouse
 	KITCHEN_FINAL.SOUND = load("res://Sound/Effects/Memory/Final Items/kitchen_memory.wav")
 	KITCHEN_FINAL["None"] = ""
 	KITCHEN_FINAL["English"] = "Riley: Too slow, Jamie. If you want me to drop the ladder, you gotta give me the password."
-	KITCHEN_FINAL["Español"] = "Riley: Demasiado lento, Jaime. Si tú me quieres soltar la escalera, tienes que dame la contraseña."
+	KITCHEN_FINAL["Español"] = "Riley: Demasiado lento, Jamie. Si tú me quieres soltar la escalera, tienes que dame la contraseña."
+	KITCHEN_FINAL["Français"] = "Riley: Trop lent, Jamie. Si tu veux laisse tomber l’échelle, tu dois me donner le mot de passe."
 	KITCHEN_FINAL.MUSIC = load("res://Sound/Music/KitchenMemory.wav")
 	###############################
 	
@@ -136,20 +151,23 @@ func _ready():
 	STUDY_1["None"] = ""
 	STUDY_1["English"] = "Riley: I'm sorry, Daddy! It was an accident, I swear. I didn't think the ball would go that far."
 	STUDY_1["Español"] = "Riley: ¡Lo siento, Papá! ¡Fue un accidente, prometo! No pensé que la pelota llegaría tan lejos."
+	STUDY_1["Français"] = "Riley: Je suis désolé, papa! C’était un accident, je jure. Je ne pensais pas que la balle irait aussi loin."
 	STUDY_1.TEXT_TIME = 8
 	
 	# Leather-bound Planner
 	STUDY_2.SOUND = load("res://Sound/Effects/Memory/Minor Items/silence.wav")
 	STUDY_2["None"] = "Dad's Planner\nPress 'E' to close"
-	STUDY_2["English"] = "Dad: May 14th, 2009. Jamie (Caterpillar) and Riley's (Queen of Hearts) school play. Alice in Wonderland - school gym 4:30PM. [crossed out]. Red eye flight to Taiwan 5:40 AM.\nPress 'E' to close"
-	STUDY_2["Español"] = "Papá: 14 de mayo, 2009. Jaime (Oruga) y Riley (La Reina de Corazones) obra escolar. Alicia en el país de las Maravillas – gimnasio de escuela, 16:30. Vuelo nocturno a Taiwán, 5:40.\nPulsa la 'E' para cerrar"
+	STUDY_2["English"] = "Dad: May 14th, 2009. Jamie (Caterpillar) and Riley's (Queen of Hearts) school play. Alice in Wonderland - school gym 4:30PM [crossed out]. Red eye flight to Taiwan 5:40 AM.\nPress 'E' to close"
+	STUDY_2["Español"] = "Papá: 14 de mayo, 2009. Jamie (Oruga) y Riley (La Reina de Corazones) obra escolar. Alicia en el país de las Maravillas – gimnasio de escuela, 16:30. Vuelo nocturno a Taiwán, 5:40.\nPulsa la 'E' para cerrar"
+	STUDY_2["Français"] = "Papa: Le 14 mai, 2009. Jamie (la chenille) et Riley ( la Reine des ceurs) la pièce présentée à l’école. Alice au pays des Merveilles - Gymnase de l’école à 14h30. Vol de nuit à Taïwan, 5h40. \nCliquer sur 'E' pour fermer"
 	STUDY_2.TEXT_TIME = 12
 	
 	# Tapshoe
 	STUDY_FINAL.SOUND = load("res://Sound/Effects/Memory/Final Items/study_memory.wav")
 	STUDY_FINAL["None"] = ""
 	STUDY_FINAL["English"] = "Dad: Jamie, get your sister to cool it would ya? I'm getting a headache."
-	STUDY_FINAL["Español"] = "Papá: Jaime, haz que tu hermana lo detenga por favor. Me duele la cabeza."
+	STUDY_FINAL["Español"] = "Papá: Jamie, haz que tu hermana lo detenga por favor. Me duele la cabeza."
+	STUDY_FINAL["Français"] = "Papa: Jamie, fais arrêter ta soeur. J’ai mal à la tête."
 	STUDY_FINAL.MUSIC = load("res://Sound/Music/StudyMemory.wav")
 	###############################
 	
@@ -158,8 +176,9 @@ func _ready():
 	# Ice Skate
 	BEDROOM_1.SOUND = load("res://Sound/Effects/Memory/Minor Items/bedroom_iceskate_memory.wav")
 	BEDROOM_1["None"] = ""
-	BEDROOM_1["English"] = "Riley: Jaime, watch me! Look at me. I'm a dancer."
-	BEDROOM_1["Español"] = "Riley: Jaime ¡mírame! ¡Mírame, Jaime! Soy una bailarina."
+	BEDROOM_1["English"] = "Riley: Jamie, watch me! Look at me! I'm a dancer."
+	BEDROOM_1["Español"] = "Riley: Jamie ¡mírame! ¡Mírame, Jamie! Soy una bailarina."
+	BEDROOM_1["Français"] = "Riley: Jamie, regarde moi. Regarde moi Jamie. Je suis un danseur!"
 	BEDROOM_1.TEXT_TIME = 8
 	
 	# Small Painting Easel
@@ -167,13 +186,15 @@ func _ready():
 	BEDROOM_2["None"] = ""
 	BEDROOM_2["English"] = "Mom: Sweetie, I love all of your art but if you don't clean this room, I'm taking all your paint and crayons away for a week."
 	BEDROOM_2["Español"] = "Mamá: Cariña, me encanta todo tu arte, pero si no limpias esta habitación, te quitaré toda la pintura y los crayones durante una semana."
+	BEDROOM_2["Français"] = "Maman: Ma chérie, j’aime tout tes ouevres d’art, mais si tu ne nettoies pas cette chambre, je vais prendre toute tes peintures et tes crayons de cire pour une semaine."
 	BEDROOM_2.TEXT_TIME = 9
 	
 	# Flamingo
 	BEDROOM_FINAL.SOUND = load("res://Sound/Effects/Memory/Final Items/bedroom_memory.wav")
 	BEDROOM_FINAL["None"] = ""
 	BEDROOM_FINAL["English"] = "Riley: Jamie? I can't see you. Ouch! Oh my gosh, it's burning! Jamie, where are you? H-help!" 
-	BEDROOM_FINAL["Español"] = "Riley: ¡Jaime! No puedo verte. ¡Ay!¡Dios mio! Está quemando. Jaime, ¿dondé estás? ¡Ayudame!"
+	BEDROOM_FINAL["Español"] = "Riley: ¡Jamie! No puedo verte. ¡Ay!¡Dios mio! Está quemando. Jamie, ¿dondé estás? ¡Ayudame!"
+	BEDROOM_FINAL["Français"] = "Riley: Jamie! Je ne peux pas te voir. Aie! Oh mon Dieu, ça brule! Jamie, où est-tu? Au secours!"
 	BEDROOM_FINAL.MUSIC = load("res://Sound/Music/BedroomMemory.wav")
 	###############################
 

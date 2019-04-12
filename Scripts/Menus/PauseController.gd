@@ -4,6 +4,7 @@ extends Node
     
 onready var pause_menu_rect = $PauseMenuRect
 onready var options_menu = $OptionsMenu
+onready var main_menu_verify = $MainMenuVerfication
 onready var exit_verify = $ExitVerfication
 onready var click_audio = $ClickAudio
 
@@ -33,11 +34,16 @@ func set_paused(paused):
 	pause_menu_rect.visible = paused
 	options_menu.visible = false
 	exit_verify.visible = false
+	main_menu_verify.visible = false
 	
 	if paused:
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 	else:
 		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+
+func _on_MainMenuButton_button_up():
+	click_audio.play()
+	main_menu_verify.visible = true
 
 func _on_ExitButton_button_up():
 	click_audio.play()

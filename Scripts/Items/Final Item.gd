@@ -45,7 +45,7 @@ func after_memory():
 	kill()
 
 func _on_Timer_timeout():
-	if not burning:
+	if not burning and not globals.in_memory:
 		music_player.play()
 
 func kill():

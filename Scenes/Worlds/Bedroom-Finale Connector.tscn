@@ -1,0 +1,89 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Scenes/Foliage/TreeStrip.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Scenes/Foliage/TreeRandom.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Foliage/TreeDead1.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Foliage/TreeDead2.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Foliage/BushSmall.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Foliage/TreeDeadCurvy.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scenes/Foliage/Bedroom/BedroomTreeDead1.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Scenes/Foliage/BGForestMedium.tscn" type="PackedScene" id=8]
+
+[node name="Bedroom End" type="Spatial"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 10.3205, 0, 0.1728 )
+
+[node name="TreeStrip2" parent="." index="0" instance=ExtResource( 1 )]
+
+transform = Transform( 0.998079, 0, -0.0619507, 0, 1, 0, 0.0619507, 0, 0.998079, -0.846819, 0, 4.86341 )
+
+[node name="TreeStrip3" parent="." index="1" instance=ExtResource( 1 )]
+
+transform = Transform( 0.893908, 0, 0.448251, 0, 1, 0, -0.448251, 0, 0.893908, 4.34739, 0, 3.73254 )
+
+[node name="TreeStrip4" parent="." index="2" instance=ExtResource( 1 )]
+
+transform = Transform( 0.277361, 0, 0.960766, 0, 1, 0, -0.960766, 0, 0.277361, 7.51017, 0, -0.189278 )
+
+[node name="Tree cluster" type="Spatial" parent="." index="3"]
+
+editor/display_folded = true
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.74342, 0, 3.77293 )
+
+[node name="TreeRandom" parent="Tree cluster" index="0" instance=ExtResource( 2 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.58273, 0, 0.805387 )
+
+[node name="TreeDead1" parent="Tree cluster" index="1" instance=ExtResource( 3 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2981, 0, 0.0221043 )
+
+[node name="TreeDead4" parent="Tree cluster" index="2" instance=ExtResource( 3 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.138024, 0, -0.66101 )
+
+[node name="TreeDead3" parent="Tree cluster" index="3" instance=ExtResource( 4 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.632392, 0, -0.892082 )
+
+[node name="BushSmall" parent="Tree cluster" index="4" instance=ExtResource( 5 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.30404, 0, 0.670227 )
+
+[node name="TreeDeadCurvy" parent="Tree cluster" index="5" instance=ExtResource( 6 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.52493, 0, -0.415343 )
+
+[node name="TreeDead2" parent="Tree cluster" index="6" instance=ExtResource( 4 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.741224, 0, -0.250025 )
+
+[node name="TreeRandom5" parent="Tree cluster" index="7" instance=ExtResource( 2 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.741224, 0, -1.46991 )
+
+[node name="TreeRandom4" parent="Tree cluster" index="8" instance=ExtResource( 2 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.68857, 0, -0.0540681 )
+
+[node name="TreeRandom3" parent="Tree cluster" index="9" instance=ExtResource( 2 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.544333, 0, -2.87948 )
+
+[node name="BedroomTreeDead1" parent="." index="4" instance=ExtResource( 7 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.974136, 0, -2.8142 )
+
+[node name="TreeRandom2" parent="." index="5" instance=ExtResource( 2 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.73432, 0, -1.36186 )
+
+[node name="TreeRandom3" parent="." index="6" instance=ExtResource( 2 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.193449, 0, 2.25568 )
+
+[node name="BGForestMedium" parent="." index="7" instance=ExtResource( 8 )]
+
+transform = Transform( 0.998561, 0, 0.053618, 0, 1, 0, -0.053618, 0, 0.998561, -17.0122, 0, -5.63414 )
+
+

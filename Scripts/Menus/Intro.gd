@@ -1,6 +1,7 @@
 extends ColorRect
 
-const LINE_SPACING = 15
+const LINE_SPACING = 20
+const LINE_SPACING_FRENCH = 5
 
 onready var resizer_1 = $Left/resizer1
 onready var resizer_2 = $Right/resizer2
@@ -29,6 +30,8 @@ const NUM_ANIMS = 8 # total number of animations to play
 const START_MUSIC = 3  # which animation to start playing the music at
 var curr_anim = 1
 
+var line_spacing = LINE_SPACING
+
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	
@@ -43,17 +46,20 @@ func _ready():
 	line_6.text = dialogue.get_subtitles(dialogue.INTRO_6)
 	line_7.text = dialogue.get_subtitles(dialogue.INTRO_7)
 	line_8.text = dialogue.get_subtitles(dialogue.INTRO_8)
+	
+	if dialogue.SUBTITLES_SUPPORTED[dialogue.subtitles_language] == "Français":
+		line_spacing = LINE_SPACING_FRENCH
 
-func _process(delta):
+func _process(delta):	
 	# Labels don't resize until it starts really running (so here, in _process)
 	# Also the sizing of things changes when made visible/not visible so we just just constantly
-	resizer_2.rect_position.y = resizer_1.rect_position.y + resizer_1.rect_size.y + LINE_SPACING
-	resizer_3.rect_position.y = resizer_2.rect_position.y + resizer_2.rect_size.y + LINE_SPACING
-	resizer_4.rect_position.y = resizer_3.rect_position.y + resizer_3.rect_size.y + LINE_SPACING
-	resizer_5.rect_position.y = resizer_4.rect_position.y + resizer_4.rect_size.y + LINE_SPACING
-	resizer_6.rect_position.y = resizer_5.rect_position.y + resizer_5.rect_size.y + LINE_SPACING
-	resizer_7.rect_position.y = resizer_6.rect_position.y + resizer_6.rect_size.y + LINE_SPACING
-	resizer_8.rect_position.y = resizer_7.rect_position.y + resizer_7.rect_size.y + LINE_SPACING
+	resizer_2.rect_position.y = resizer_1.rect_position.y + resizer_1.rect_size.y + line_spacing
+	resizer_3.rect_position.y = resizer_2.rect_position.y + resizer_2.rect_size.y + line_spacing
+	resizer_4.rect_position.y = resizer_3.rect_position.y + resizer_3.rect_size.y + line_spacing
+	resizer_5.rect_position.y = resizer_4.rect_position.y + resizer_4.rect_size.y + line_spacing
+	resizer_6.rect_position.y = resizer_5.rect_position.y + resizer_5.rect_size.y + line_spacing
+	resizer_7.rect_position.y = resizer_6.rect_position.y + resizer_6.rect_size.y + line_spacing
+	resizer_8.rect_position.y = resizer_7.rect_position.y + resizer_7.rect_size.y + line_spacing
 
 func _input(event):
 	if event.is_action_pressed("pause"):

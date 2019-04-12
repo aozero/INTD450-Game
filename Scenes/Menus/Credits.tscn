@@ -9,7 +9,7 @@
 [sub_resource type="Animation" id=1]
 
 resource_name = "start"
-length = 122.0
+length = 128.0
 loop = false
 step = 0.1
 tracks/0/type = "value"
@@ -34,7 +34,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 13, 110 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, -3200 ) ]
+"values": [ Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, -3900 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("VBoxContainer:visible")
@@ -59,18 +59,6 @@ tracks/3/keys = {
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ false, true ]
-}
-tracks/4/type = "value"
-tracks/4/path = NodePath("MusicPlayer:volume_db")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/keys = {
-"times": PoolRealArray( 0, 120, 121 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ 0.0, 0.0, -40.0 ]
 }
 
 [sub_resource type="DynamicFont" id=2]
@@ -194,14 +182,13 @@ use_top_left = false
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." index="5"]
 
-editor/display_folded = true
 visible = false
 anchor_left = 0.0
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-margin_top = -3740.0
-margin_bottom = 829.0
+margin_top = -540.0
+margin_bottom = 4271.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -408,9 +395,8 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect", "custom_fonts" ]
 
-[node name="Alex" type="HBoxContainer" parent="VBoxContainer/Ubiquitous Mayonnaise" index="2"]
+[node name="Alexander" type="HBoxContainer" parent="VBoxContainer/Ubiquitous Mayonnaise" index="2"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -428,7 +414,7 @@ size_flags_vertical = 1
 alignment = 1
 _sections_unfolded = [ "Rect" ]
 
-[node name="Title" type="Label" parent="VBoxContainer/Ubiquitous Mayonnaise/Alex" index="0"]
+[node name="Title" type="Label" parent="VBoxContainer/Ubiquitous Mayonnaise/Alexander" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -452,7 +438,7 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect", "custom_fonts" ]
 
-[node name="Control6" type="Control" parent="VBoxContainer/Ubiquitous Mayonnaise/Alex" index="1"]
+[node name="Control6" type="Control" parent="VBoxContainer/Ubiquitous Mayonnaise/Alexander" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -470,7 +456,7 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 _sections_unfolded = [ "Rect" ]
 
-[node name="Name" type="Label" parent="VBoxContainer/Ubiquitous Mayonnaise/Alex" index="2"]
+[node name="Name" type="Label" parent="VBoxContainer/Ubiquitous Mayonnaise/Alexander" index="2"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -487,7 +473,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = SubResource( 5 )
-text = "Alex Ozero"
+text = "Alexander Ozero"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
@@ -1335,15 +1321,243 @@ size_flags_horizontal = 1
 size_flags_vertical = 1
 _sections_unfolded = [ "Rect" ]
 
-[node name="Thanks" type="VBoxContainer" parent="VBoxContainer" index="7"]
+[node name="Translators" type="VBoxContainer" parent="VBoxContainer" index="7"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
 margin_top = 2660.0
 margin_right = 1920.0
-margin_bottom = 3125.0
+margin_bottom = 2912.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+_sections_unfolded = [ "Margin", "Rect" ]
+
+[node name="Title" type="Label" parent="VBoxContainer/Translators" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 1920.0
+margin_bottom = 110.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 4 )
+text = "Translators:"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "custom_fonts" ]
+
+[node name="Alexis" type="HBoxContainer" parent="VBoxContainer/Translators" index="1"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 114.0
+margin_right = 1920.0
+margin_bottom = 181.0
+rect_min_size = Vector2( 1200, 0 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 1
+_sections_unfolded = [ "Margin", "Rect" ]
+
+[node name="Title" type="Label" parent="VBoxContainer/Translators/Alexis" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 356.0
+margin_right = 856.0
+margin_bottom = 67.0
+rect_min_size = Vector2( 500, 0 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 5 )
+text = "Español"
+align = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_fonts" ]
+
+[node name="Control" type="Control" parent="VBoxContainer/Translators/Alexis" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 860.0
+margin_right = 1060.0
+margin_bottom = 67.0
+rect_min_size = Vector2( 200, 0 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Rect" ]
+
+[node name="Name" type="Label" parent="VBoxContainer/Translators/Alexis" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1064.0
+margin_right = 1564.0
+margin_bottom = 67.0
+rect_min_size = Vector2( 500, 0 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 5 )
+text = "Alexis Graham"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_fonts" ]
+
+[node name="Laurie" type="HBoxContainer" parent="VBoxContainer/Translators" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 185.0
+margin_right = 1920.0
+margin_bottom = 252.0
+rect_min_size = Vector2( 1200, 0 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 1
+_sections_unfolded = [ "Margin", "Rect" ]
+
+[node name="Title" type="Label" parent="VBoxContainer/Translators/Laurie" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 348.0
+margin_right = 848.0
+margin_bottom = 67.0
+rect_min_size = Vector2( 500, 0 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 5 )
+text = "Français"
+align = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_fonts" ]
+
+[node name="Control" type="Control" parent="VBoxContainer/Translators/Laurie" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 852.0
+margin_right = 1052.0
+margin_bottom = 67.0
+rect_min_size = Vector2( 200, 0 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Rect" ]
+
+[node name="Name" type="Label" parent="VBoxContainer/Translators/Laurie" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1056.0
+margin_right = 1571.0
+margin_bottom = 67.0
+rect_min_size = Vector2( 500, 0 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 5 )
+text = "OG Laurie Standing"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_fonts" ]
+
+[node name="Space6" type="Control" parent="VBoxContainer" index="8"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 2916.0
+margin_right = 1920.0
+margin_bottom = 3116.0
+rect_min_size = Vector2( 0, 200 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Rect" ]
+
+[node name="Thanks" type="VBoxContainer" parent="VBoxContainer" index="9"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 3120.0
+margin_right = 1920.0
+margin_bottom = 3727.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -1375,8 +1589,9 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_fonts" ]
 
-[node name="Sean" type="HBoxContainer" parent="VBoxContainer/Thanks" index="1"]
+[node name="John" type="HBoxContainer" parent="VBoxContainer/Thanks" index="1"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -1384,6 +1599,91 @@ anchor_bottom = 0.0
 margin_top = 114.0
 margin_right = 1920.0
 margin_bottom = 181.0
+rect_min_size = Vector2( 1200, 0 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 1
+_sections_unfolded = [ "Margin", "Rect" ]
+
+[node name="Title" type="Label" parent="VBoxContainer/Thanks/John" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 356.0
+margin_right = 856.0
+margin_bottom = 67.0
+rect_min_size = Vector2( 500, 0 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 5 )
+text = "Spiritual Leader"
+align = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_fonts" ]
+
+[node name="Control" type="Control" parent="VBoxContainer/Thanks/John" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 860.0
+margin_right = 1060.0
+margin_bottom = 67.0
+rect_min_size = Vector2( 200, 0 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Rect" ]
+
+[node name="Name" type="Label" parent="VBoxContainer/Thanks/John" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1064.0
+margin_right = 1564.0
+margin_bottom = 67.0
+rect_min_size = Vector2( 500, 0 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 5 )
+text = "John Madden"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_fonts" ]
+
+[node name="Sean" type="HBoxContainer" parent="VBoxContainer/Thanks" index="2"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 185.0
+margin_right = 1920.0
+margin_bottom = 252.0
 rect_min_size = Vector2( 1200, 0 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -1459,16 +1759,16 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect", "custom_fonts" ]
 
-[node name="Jeff" type="HBoxContainer" parent="VBoxContainer/Thanks" index="2"]
+[node name="Jeff" type="HBoxContainer" parent="VBoxContainer/Thanks" index="3"]
 
 editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 185.0
+margin_top = 256.0
 margin_right = 1920.0
-margin_bottom = 252.0
+margin_bottom = 323.0
 rect_min_size = Vector2( 1200, 0 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -1544,16 +1844,16 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect", "custom_fonts" ]
 
-[node name="Shelby" type="HBoxContainer" parent="VBoxContainer/Thanks" index="3"]
+[node name="Shelby" type="HBoxContainer" parent="VBoxContainer/Thanks" index="4"]
 
 editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 256.0
+margin_top = 327.0
 margin_right = 1920.0
-margin_bottom = 323.0
+margin_bottom = 394.0
 rect_min_size = Vector2( 1200, 0 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -1628,24 +1928,6 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect", "custom_fonts" ]
-
-[node name="Blank2" type="Control" parent="VBoxContainer/Thanks" index="4"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_top = 327.0
-margin_right = 1920.0
-margin_bottom = 394.0
-rect_min_size = Vector2( 200, 67 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-_sections_unfolded = [ "Rect" ]
 
 [node name="Dragonforce" type="HBoxContainer" parent="VBoxContainer/Thanks" index="5"]
 
@@ -1732,15 +2014,76 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect", "custom_fonts" ]
 
-[node name="Space4" type="Control" parent="VBoxContainer" index="8"]
+[node name="Blank2" type="Control" parent="VBoxContainer/Thanks" index="6"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_top = 3129.0
+margin_top = 469.0
 margin_right = 1920.0
-margin_bottom = 4209.0
+margin_bottom = 536.0
+rect_min_size = Vector2( 200, 67 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Rect" ]
+
+[node name="The Class" type="HBoxContainer" parent="VBoxContainer/Thanks" index="7"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 540.0
+margin_right = 1920.0
+margin_bottom = 607.0
+rect_min_size = Vector2( 1200, 0 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 1
+_sections_unfolded = [ "Margin", "Rect" ]
+
+[node name="Title" type="Label" parent="VBoxContainer/Thanks/The Class" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 462.0
+margin_right = 1457.0
+margin_bottom = 67.0
+rect_min_size = Vector2( 500, 0 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 5 )
+text = "Thanks to the INT D 450 class of 2019"
+align = 2
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_fonts" ]
+
+[node name="Space4" type="Control" parent="VBoxContainer" index="10"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 3731.0
+margin_right = 1920.0
+margin_bottom = 4811.0
 rect_min_size = Vector2( 0, 1080 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -1752,6 +2095,7 @@ _sections_unfolded = [ "Rect" ]
 
 [node name="Label" type="Label" parent="." index="6"]
 
+visible = false
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -1774,8 +2118,6 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Visibility", "custom_fonts" ]
-
-[connection signal="finished" from="MusicPlayer" to="." method="_on_MusicPlayer_finished"]
 
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 

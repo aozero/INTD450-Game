@@ -1,30 +1,37 @@
-[gd_scene load_steps=23 format=2]
+[gd_scene load_steps=30 format=2]
 
 [ext_resource path="res://Scenes/Worlds/World.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Scenes/ForestNoise.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Sound/Effects/Memory/Finale Voices/finale_ellis_im_going_to.wav" type="AudioStream" id=3]
-[ext_resource path="res://Sound/Effects/Memory/Finale Voices/finale_therapist_survivors_guilt.wav" type="AudioStream" id=4]
-[ext_resource path="res://Sound/Effects/Memory/Finale Voices/finale_lauren_dinners_ready.wav" type="AudioStream" id=5]
-[ext_resource path="res://Sound/Effects/Memory/Finale Voices/finale_riley_monkeys.wav" type="AudioStream" id=6]
-[ext_resource path="res://Sound/Effects/Memory/Finale Voices/finale_therapist_going_back.wav" type="AudioStream" id=7]
-[ext_resource path="res://Sound/Effects/Memory/Finale Voices/finale_riley_dancer.wav" type="AudioStream" id=8]
-[ext_resource path="res://Sound/Effects/Memory/Finale Voices/finale_lauren_call_me.wav" type="AudioStream" id=9]
-[ext_resource path="res://Sound/Effects/Memory/Finale Voices/finale_david_your_mother_and_i.wav" type="AudioStream" id=10]
-[ext_resource path="res://Sound/Effects/Memory/Finale Voices/finale_david_ill_see_you.wav" type="AudioStream" id=11]
-[ext_resource path="res://Sound/Effects/Memory/Finale Voices/finale_david_i_love_you.wav" type="AudioStream" id=12]
-[ext_resource path="res://Sound/Effects/Memory/Finale Voices/finale_ellis_she_feels_guilty.wav" type="AudioStream" id=13]
-[ext_resource path="res://Sound/Effects/Memory/Finale Voices/finale_riley_help.wav" type="AudioStream" id=14]
-[ext_resource path="res://Scenes/Foliage/BGForestMedium.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Scenes/Foliage/BGForestSmall.tscn" type="PackedScene" id=16]
-[ext_resource path="res://Scripts/Fires/FireTrigger.gd" type="Script" id=17]
-[ext_resource path="res://Scenes/Fires/FireStrip.tscn" type="PackedScene" id=18]
-[ext_resource path="res://Scenes/Items/Final/BedroomFinal.tscn" type="PackedScene" id=19]
-[ext_resource path="res://Scenes/Door.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Scenes/Foliage/BGForestMedium.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/Foliage/ForestWallExtra.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/Foliage/BGForestSmall.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Foliage/ForestWall.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Worlds/Bedroom-Finale Connector.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scripts/Fires/FireTrigger.gd" type="Script" id=7]
+[ext_resource path="res://Scenes/Fires/FireStrip.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/Fires/FinaleFireStrip.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Scenes/ForestNoise.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Sound/Effects/Memory/Finale Voices/finale_riley_monkeys.wav" type="AudioStream" id=11]
+[ext_resource path="res://Sound/Effects/Memory/Finale Voices/finale_david_your_mother_and_i.wav" type="AudioStream" id=12]
+[ext_resource path="res://Sound/Effects/Memory/Finale Voices/finale_therapist_going_back.wav" type="AudioStream" id=13]
+[ext_resource path="res://Sound/Effects/Memory/Finale Voices/finale_lauren_dinners_ready.wav" type="AudioStream" id=14]
+[ext_resource path="res://Sound/Effects/Memory/Finale Voices/finale_david_ill_see_you.wav" type="AudioStream" id=15]
+[ext_resource path="res://Sound/Effects/Memory/Finale Voices/finale_ellis_im_going_to.wav" type="AudioStream" id=16]
+[ext_resource path="res://Sound/Effects/Memory/Finale Voices/finale_riley_dancer.wav" type="AudioStream" id=17]
+[ext_resource path="res://Sound/Effects/Memory/Finale Voices/finale_therapist_survivors_guilt.wav" type="AudioStream" id=18]
+[ext_resource path="res://Sound/Effects/Memory/Finale Voices/finale_ellis_she_feels_guilty.wav" type="AudioStream" id=19]
+[ext_resource path="res://Sound/Effects/Memory/Finale Voices/finale_lauren_call_me.wav" type="AudioStream" id=20]
+[ext_resource path="res://Sound/Effects/Memory/Finale Voices/finale_david_i_love_you.wav" type="AudioStream" id=21]
+[ext_resource path="res://Sound/Effects/Memory/Finale Voices/finale_riley_help.wav" type="AudioStream" id=22]
+[ext_resource path="res://Scenes/Door.tscn" type="PackedScene" id=23]
+[ext_resource path="res://Scenes/Monsters/Monster.tscn" type="PackedScene" id=24]
+[ext_resource path="res://Scenes/Monsters/Waypoint.tscn" type="PackedScene" id=25]
+[ext_resource path="res://Scenes/Monsters/NoodleBoi.tscn" type="PackedScene" id=26]
+[ext_resource path="res://Scenes/Items/Final/BedroomFinal.tscn" type="PackedScene" id=27]
 
 [sub_resource type="NavigationMesh" id=1]
 
-vertices = PoolVector3Array( -21.2, -0.622357, -19.9, -20.3, -0.622357, -20.8, -20.9, -0.622357, -22.6, -24.2, -0.622357, -18.4, -23, -0.622357, -18.4, -20.9, -0.622357, -22.6, -18.8, -0.622357, -24.7, -25.4, -0.622357, -39.1, -33.2, -0.622357, -39.1, -41.3, -0.622357, -39.1, -49.1, -0.622357, -27.1, -49.1, -0.622357, -21.1, -27.8, -0.622357, -14.8, -24.2, -0.622357, -18.4, -20.9, -0.622357, -22.6, -41.3, -0.622357, -39.1, -49.1, -0.622357, -39.1, -49.1, -0.622357, -27.1, -18.8, -0.622357, -24.7, -17.3, -0.622357, -25.3, -17.3, -0.622357, -39.1, -25.4, -0.622357, -39.1, -49.1, -0.622357, -21.1, -49.1, -0.622357, -14.8, -27.8, -0.622357, -14.8, -20.9, -0.622357, -22.6, -33.2, -0.622357, -39.1, -41.3, -0.622357, -39.1, -5, -0.622357, -12.1, -5, -0.622357, -10.9, 1, -0.622357, -4.9, 49, -0.622357, -29.2, 49, -0.622357, -39.1, 40.6, -0.622357, -39.1, -15.2, -0.622357, -23.8, -8.9, -0.622357, -16, -6.5, -0.622357, -13.9, 7.3, -0.622357, -39.1, -0.799999, -0.622357, -39.1, -17.3, -0.622357, -39.1, -17.3, -0.622357, -25.3, -15.2, -0.622357, -23.8, -9.2, -0.622357, -39.1, 15.7, -0.622357, -39.1, 7.3, -0.622357, -39.1, -6.5, -0.622357, -13.9, -5, -0.622357, -12.1, 1, -0.622357, -4.9, 7, -0.622357, 1.4, 49, -0.622357, -29.2, 40.6, -0.622357, -39.1, 32.2, -0.622357, -39.1, -6.5, -0.622357, -13.9, -5, -0.622357, -12.1, 7, -0.622357, 1.4, -0.799999, -0.622357, -39.1, -9.2, -0.622357, -39.1, -15.2, -0.622357, -23.8, 7, -0.622357, 1.4, 49, -0.622357, 1.4, 49, -0.622357, -8.8, 49, -0.622357, -19, 49, -0.622357, -29.2, 32.2, -0.622357, -39.1, 23.8, -0.622357, -39.1, 49, -0.622357, -19, 23.8, -0.622357, -39.1, 15.7, -0.622357, -39.1, -6.5, -0.622357, -13.9, 7, -0.622357, 1.4, 49, -0.622357, -8.8, -26.9, -0.622357, -10, -27.2, -0.622357, -12.1, -28.4, -0.622357, -13, -49.1, -0.622357, -14.8, -49.1, -0.622357, -7.3, -29, -0.622357, -8.2, -28.4, -0.622357, -13, -27.8, -0.622357, -14.8, -49.1, -0.622357, -14.8, -49.1, -0.622357, -7.3, -29, -0.622357, -7.3, -29, -0.622357, -8.2, -0.199997, -0.622357, 8.6, 0.100002, -0.622357, 9.8, 0.700001, -0.622357, 8.9, -0.199997, -0.622357, 8.6, 0.700001, -0.622357, 8.9, 0.100002, -0.622357, 7.4, -0.799999, -0.622357, 7.4, -1.7, -0.622357, 8, -11.3, -0.622357, -3.7, -11.6, -0.622357, -2.2, -10.7, -0.622357, -2.2, -11.9, -0.622357, -5.8, -13.4, -0.622357, -6.4, -14.6, -0.622357, -5.8, -11.6, -0.622357, -2.2, -11.3, -0.622357, -3.7, -1.7, -0.622357, 7.1, -1.7, -0.622357, 8, -0.799999, -0.622357, 7.4, -1.7, -0.622357, 7.1, -0.799999, -0.622357, 7.4, -1.4, -0.622357, 5.9, -5.6, -0.622357, 2.3, -5.9, -0.622357, 3.5, -17.3, -0.622357, -10.9, -17.3, -0.622357, -11.5, -18.5, -0.622357, -10.3, -17.3, -0.622357, -10.9, -18.5, -0.622357, -10.3, -18.2, -0.622357, -9.1, -16.7, -0.622357, -8.2, -14, -0.622357, -7.9, -9.8, -0.622357, -1.9, -9.8, -0.622357, -2.8, -11.3, -0.622357, -3.7, -10.7, -0.622357, -2.2, -10.7, -0.622357, -2.2, -10.1, -0.622357, -1, -8.6, -0.622357, -0.0999985, -9.8, -0.622357, -1.9, -5.9, -0.622357, 1.1, -9.8, -0.622357, -1.9, -8.6, -0.622357, -0.0999985, -5.9, -0.622357, 3.5, -5.6, -0.622357, 2.3, -14, -0.622357, -7.9, -16.7, -0.622357, -8.2, -16.1, -0.622357, -6.7, -14.6, -0.622357, -5.8, -13.4, -0.622357, -6.4, -4.7, -0.622357, 18.5, -5.6, -0.622357, 17, -12.2, -0.622357, 10.7, -20.9, -0.622357, 2, -20.9, -0.622357, 1.4, -29, -0.622357, -6.7, -49.1, -0.622357, 4.1, -49.1, -0.622357, 15.8, -12.2, -0.622357, 10.7, -12.2, -0.622357, 10.1, -20.9, -0.622357, 2, -49.1, -0.622357, 27.5, -49.1, -0.622357, 39.2, -38, -0.622357, 39.2, -29, -0.622357, -6.7, -29, -0.622357, -7.3, -49.1, -0.622357, -7.3, -49.1, -0.622357, 4.1, -4.1, -0.622357, 39.2, -4.1, -0.622357, 18.5, -4.7, -0.622357, 18.5, -15.5, -0.622357, 39.2, -49.1, -0.622357, 27.5, -38, -0.622357, 39.2, -26.6, -0.622357, 39.2, -4.7, -0.622357, 18.5, -12.2, -0.622357, 10.7, -20.9, -0.622357, 2, -26.6, -0.622357, 39.2, -15.5, -0.622357, 39.2, -4.7, -0.622357, 18.5, -20.9, -0.622357, 2, -49.1, -0.622357, 15.8, -49.1, -0.622357, 27.5, 5.2, -0.622357, 6.2, 4.3, -0.622357, 7.1, 5.8, -0.622357, 8.6, 6.7, -0.622357, 8, 7, -0.622357, 1.4, 7, -0.622357, 2.3, 8.8, -0.622357, 8.3, 10.9, -0.622357, 11, 49, -0.622357, 11, 49, -0.622357, 1.4, 4.6, -0.622357, 4.4, 5.2, -0.622357, 6.2, 6.7, -0.622357, 8, 8.8, -0.622357, 8.3, 7, -0.622357, 2.3, 38.2, -0.622357, 39.2, 49, -0.622357, 39.2, 49, -0.622357, 32, 38.2, -0.622357, 39.2, 49, -0.622357, 32, 49, -0.622357, 25.1, 38.2, -0.622357, 39.2, 49, -0.622357, 25.1, 49, -0.622357, 17.9, 27.7, -0.622357, 39.2, 8.8, -0.622357, 14.6, 6.7, -0.622357, 16.1, 6.7, -0.622357, 39.2, 8.8, -0.622357, 14.6, 6.7, -0.622357, 39.2, 17.2, -0.622357, 39.2, 10.9, -0.622357, 11.9, 10.9, -0.622357, 11, 10.9, -0.622357, 11.9, 17.2, -0.622357, 39.2, 27.7, -0.622357, 39.2, 49, -0.622357, 17.9, 49, -0.622357, 11, -0.499996, -0.622357, 13.1, -1.1, -0.622357, 13.7, -0.499996, -0.622357, 15.8, 1.9, -0.622357, 14.9, -3.2, -0.622357, 18.5, -4.1, -0.622357, 18.5, -4.1, -0.622357, 39.2, 5.8, -0.622357, 16.1, 4, -0.622357, 14.3, 1.9, -0.622357, 14.9, -0.499996, -0.622357, 15.8, -3.2, -0.622357, 18.5, 6.7, -0.622357, 16.1, 5.8, -0.622357, 16.1, -3.2, -0.622357, 18.5, -4.1, -0.622357, 39.2, 6.7, -0.622357, 39.2 )
-polygons = [ PoolIntArray( 4, 0, 3 ), PoolIntArray( 0, 1, 3 ), PoolIntArray( 1, 2, 3 ), PoolIntArray( 8, 5, 7 ), PoolIntArray( 5, 6, 7 ), PoolIntArray( 11, 9, 10 ), PoolIntArray( 14, 12, 13 ), PoolIntArray( 17, 15, 16 ), PoolIntArray( 21, 18, 20 ), PoolIntArray( 18, 19, 20 ), PoolIntArray( 27, 22, 26 ), PoolIntArray( 22, 23, 26 ), PoolIntArray( 23, 24, 26 ), PoolIntArray( 24, 25, 26 ), PoolIntArray( 30, 28, 29 ), PoolIntArray( 33, 31, 32 ), PoolIntArray( 38, 34, 37 ), PoolIntArray( 34, 35, 37 ), PoolIntArray( 35, 36, 37 ), PoolIntArray( 42, 39, 41 ), PoolIntArray( 39, 40, 41 ), PoolIntArray( 45, 43, 44 ), PoolIntArray( 48, 46, 47 ), PoolIntArray( 51, 49, 50 ), PoolIntArray( 54, 52, 53 ), PoolIntArray( 57, 55, 56 ), PoolIntArray( 60, 58, 59 ), PoolIntArray( 64, 61, 63 ), PoolIntArray( 61, 62, 63 ), PoolIntArray( 70, 65, 69 ), PoolIntArray( 65, 66, 69 ), PoolIntArray( 66, 67, 69 ), PoolIntArray( 67, 68, 69 ), PoolIntArray( 76, 71, 75 ), PoolIntArray( 71, 72, 75 ), PoolIntArray( 72, 73, 75 ), PoolIntArray( 73, 74, 75 ), PoolIntArray( 79, 77, 78 ), PoolIntArray( 82, 80, 81 ), PoolIntArray( 85, 83, 84 ), PoolIntArray( 90, 86, 89 ), PoolIntArray( 86, 88, 89 ), PoolIntArray( 86, 87, 88 ), PoolIntArray( 93, 91, 92 ), PoolIntArray( 98, 94, 97 ), PoolIntArray( 94, 95, 97 ), PoolIntArray( 95, 96, 97 ), PoolIntArray( 101, 99, 100 ), PoolIntArray( 106, 102, 105 ), PoolIntArray( 102, 104, 105 ), PoolIntArray( 102, 103, 104 ), PoolIntArray( 109, 107, 108 ), PoolIntArray( 114, 110, 113 ), PoolIntArray( 110, 112, 113 ), PoolIntArray( 110, 111, 112 ), PoolIntArray( 118, 115, 117 ), PoolIntArray( 115, 116, 117 ), PoolIntArray( 122, 119, 121 ), PoolIntArray( 119, 120, 121 ), PoolIntArray( 127, 123, 126 ), PoolIntArray( 123, 125, 126 ), PoolIntArray( 123, 124, 125 ), PoolIntArray( 132, 128, 131 ), PoolIntArray( 128, 130, 131 ), PoolIntArray( 128, 129, 130 ), PoolIntArray( 135, 133, 134 ), PoolIntArray( 140, 136, 139 ), PoolIntArray( 136, 137, 139 ), PoolIntArray( 137, 138, 139 ), PoolIntArray( 143, 141, 142 ), PoolIntArray( 146, 144, 145 ), PoolIntArray( 150, 147, 149 ), PoolIntArray( 147, 148, 149 ), PoolIntArray( 154, 151, 153 ), PoolIntArray( 151, 152, 153 ), PoolIntArray( 157, 155, 156 ), PoolIntArray( 160, 158, 159 ), PoolIntArray( 166, 161, 165 ), PoolIntArray( 161, 162, 165 ), PoolIntArray( 162, 163, 165 ), PoolIntArray( 163, 164, 165 ), PoolIntArray( 170, 167, 169 ), PoolIntArray( 167, 168, 169 ), PoolIntArray( 176, 171, 175 ), PoolIntArray( 171, 172, 175 ), PoolIntArray( 172, 173, 175 ), PoolIntArray( 173, 174, 175 ), PoolIntArray( 181, 177, 180 ), PoolIntArray( 177, 178, 180 ), PoolIntArray( 178, 179, 180 ), PoolIntArray( 184, 182, 183 ), PoolIntArray( 187, 185, 186 ), PoolIntArray( 191, 188, 190 ), PoolIntArray( 188, 189, 190 ), PoolIntArray( 194, 192, 193 ), PoolIntArray( 198, 195, 197 ), PoolIntArray( 195, 196, 197 ), PoolIntArray( 204, 199, 203 ), PoolIntArray( 199, 200, 203 ), PoolIntArray( 200, 202, 203 ), PoolIntArray( 200, 201, 202 ), PoolIntArray( 208, 205, 207 ), PoolIntArray( 205, 206, 207 ), PoolIntArray( 211, 209, 210 ), PoolIntArray( 216, 212, 215 ), PoolIntArray( 212, 214, 215 ), PoolIntArray( 212, 213, 214 ), PoolIntArray( 221, 217, 220 ), PoolIntArray( 217, 218, 220 ), PoolIntArray( 218, 219, 220 ) ]
+vertices = PoolVector3Array( -22.7, -0.601498, -19.6, -21.8, -0.601498, -19.6, -20.3, -0.601498, -20.8, -20.9, -0.601498, -22.6, -33.2, -0.601498, -39.1, -41.3, -0.601498, -39.1, -49.1, -0.601498, -25, -49.1, -0.601498, -17.8, -29, -0.601498, -16.3, -18.8, -0.601498, -24.7, -29, -0.601498, -16.3, -26.3, -0.601498, -15.7, -22.7, -0.601498, -19.6, -20.9, -0.601498, -22.6, -49.1, -0.601498, -17.8, -29.6, -0.601498, -15.7, -29, -0.601498, -16.3, -41.3, -0.601498, -39.1, -49.1, -0.601498, -39.1, -49.1, -0.601498, -32.2, -29, -0.601498, -16.3, -20.9, -0.601498, -22.6, -18.8, -0.601498, -24.7, -18.8, -0.601498, -24.7, -17.3, -0.601498, -25.3, -17.3, -0.601498, -39.1, -25.4, -0.601498, -39.1, -18.8, -0.601498, -24.7, -25.4, -0.601498, -39.1, -33.2, -0.601498, -39.1, -41.3, -0.601498, -39.1, -49.1, -0.601498, -32.2, -49.1, -0.601498, -25, -49.1, -0.601498, -17.8, -49.1, -0.601498, -10.6, -31.1, -0.601498, -10.6, -29.6, -0.601498, -15.7, 4.3, -0.601498, -6.4, 6.4, -0.601498, -8.2, 6.4, -0.601498, -8.8, -5, -0.601498, -12.1, -5, -0.601498, -10.9, 2.2, -0.601498, -3.7, 4.3, -0.601498, -5.2, 4.3, -0.601498, -6.4, -5, -0.601498, -10.9, -15.2, -0.601498, -23.8, -15.2, -0.601498, -23.2, -10.1, -0.601498, -17.8, -11, -0.601498, -39.1, -17.3, -0.601498, -25.3, -15.2, -0.601498, -23.8, -4.7, -0.601498, -39.1, -15.2, -0.601498, -23.8, -10.1, -0.601498, -17.8, -5, -0.601498, -12.1, 7.9, -0.601498, -9.4, 7.9, -0.601498, -39.1, 1.6, -0.601498, -39.1, 1.6, -0.601498, -39.1, -4.7, -0.601498, -39.1, -15.2, -0.601498, -23.8, -5, -0.601498, -12.1, 6.4, -0.601498, -8.8, 7.9, -0.601498, -9.4, -11, -0.601498, -39.1, -17.3, -0.601498, -39.1, -17.3, -0.601498, -25.3, 49, -0.601498, -30.7, 49, -0.601498, -39.1, 38.5, -0.601498, -39.1, 49, -0.601498, -22, 49, -0.601498, -30.7, 38.5, -0.601498, -39.1, 49, -0.601498, -22, 38.5, -0.601498, -39.1, 28.3, -0.601498, -39.1, 49, -0.601498, -13.6, 7.9, -0.601498, -39.1, 7.9, -0.601498, -9.4, 8.5, -0.601498, -9.4, 18.1, -0.601498, -39.1, 18.1, -0.601498, -39.1, 8.5, -0.601498, -9.4, 12.7, -0.601498, -4.9, 49, -0.601498, -4.9, 49, -0.601498, -13.6, 28.3, -0.601498, -39.1, -0.799999, -0.601498, 8.9, 0.100002, -0.601498, 8.3, 0.100002, -0.601498, 7.4, -1.7, -0.601498, 7.1, -10.7, -0.601498, -2.2, -8.6, -0.601498, -1.6, -11.3, -0.601498, -3.7, -14, -0.601498, -5.2, -12.8, -0.601498, -3.1, -15.8, -0.601498, -9.4, -17, -0.601498, -11.5, -18.8, -0.601498, -10.6, -17.6, -0.601498, -8.2, -10.1, -0.601498, -0.699997, -7.7, -0.601498, 0.200001, -8.6, -0.601498, -1.6, -10.7, -0.601498, -2.2, -1.7, -0.601498, 7.1, 0.100002, -0.601498, 7.4, -4.1, -0.601498, 3.8, -4.1, -0.601498, 3.8, -5.3, -0.601498, 1.7, -7.7, -0.601498, 0.200001, -11.9, -0.601498, -5.8, -15.8, -0.601498, -9.4, -17.6, -0.601498, -8.2, -14, -0.601498, -5.2, -11.3, -0.601498, -3.7, -10.1, -0.601498, -0.699997, -1.7, -0.601498, 7.1, -4.1, -0.601498, 3.8, -7.7, -0.601498, 0.200001, -29, -0.601498, -6.7, -28.7, -0.601498, -8.5, -30.5, -0.601498, -9.1, -49.1, -0.601498, -4.6, -49.1, -0.601498, 1.7, -26.9, -0.601498, -4.3, -26.9, -0.601498, -4.9, -29, -0.601498, -6.7, -49.1, -0.601498, 1.7, -49.1, -0.601498, 8, -49.1, -0.601498, 32.9, -49.1, -0.601498, 39.2, -41.3, -0.601498, 39.2, -13.4, -0.601498, 14.9, -11.3, -0.601498, 11.3, -19.1, -0.601498, 3.5, -20.6, -0.601498, 23.9, -25.1, -0.601498, 39.2, -17, -0.601498, 39.2, -17, -0.601498, 27.8, -20.6, -0.601498, 25.4, -26.9, -0.601498, -4.3, -49.1, -0.601498, 8, -49.1, -0.601498, 14.3, -49.1, -0.601498, 26.6, -49.1, -0.601498, 32.9, -41.3, -0.601498, 39.2, -25.1, -0.601498, 39.2, -20.6, -0.601498, 25.4, -20.6, -0.601498, 23.9, -33.2, -0.601498, 39.2, -30.5, -0.601498, -9.1, -31.1, -0.601498, -10.6, -49.1, -0.601498, -10.6, -49.1, -0.601498, -4.6, -49.1, -0.601498, 20.3, -33.2, -0.601498, 39.2, -20.6, -0.601498, 23.9, -19.1, -0.601498, 3.5, -26.9, -0.601498, -4.3, -49.1, -0.601498, 14.3, -49.1, -0.601498, 26.6, -41.3, -0.601498, 39.2, -33.2, -0.601498, 39.2, -49.1, -0.601498, 20.3, 8.5, -0.601498, 1.1, 8.8, -0.601498, 1.4, 10.6, -0.601498, 1.4, 12.7, -0.601498, -4.9, 11.2, -0.601498, 2, 11.5, -0.601498, 3.2, 13.9, -0.601498, 6.2, 49, -0.601498, 1.4, 49, -0.601498, -4.9, 12.7, -0.601498, -4.9, 13.9, -0.601498, 6.2, 13.9, -0.601498, 7.7, 49, -0.601498, 7.7, 49, -0.601498, 1.4, 12.7, -0.601498, -4.9, 10.6, -0.601498, 1.4, 11.2, -0.601498, 2, 5.8, -0.601498, 9.5, 5.5, -0.601498, 8.9, 4.3, -0.601498, 9.2, 8.8, -0.601498, 10.7, 9.4, -0.601498, 11.9, 10, -0.601498, 11.9, 8.2, -0.601498, 3.2, 8.8, -0.601498, 1.4, 8.5, -0.601498, 1.1, 4.6, -0.601498, 4.4, 5.2, -0.601498, 5, 7, -0.601498, 14.9, 8.5, -0.601498, 13.1, 7, -0.601498, 12.5, 4, -0.601498, 13.7, 4.9, -0.601498, 14.9, 5.2, -0.601498, 5, 4.6, -0.601498, 6.8, 5.5, -0.601498, 7.4, 7, -0.601498, 7.1, 8.2, -0.601498, 3.2, 5.2, -0.601498, 5, 7, -0.601498, 7.1, 10.6, -0.601498, 7.7, 11.2, -0.601498, 7.1, 4, -0.601498, 13.7, 7, -0.601498, 12.5, 7, -0.601498, 11.3, 4.3, -0.601498, 9.2, 3.1, -0.601498, 8.3, 1, -0.601498, 11.9, 7.6, -0.601498, 8.9, 5.8, -0.601498, 9.5, 7, -0.601498, 11.3, 8.8, -0.601498, 10.7, 1, -0.601498, 11.9, 3.1, -0.601498, 13.7, 4, -0.601498, 13.7, 7.6, -0.601498, 8.9, 8.8, -0.601498, 10.7, 10, -0.601498, 11.9, 10.6, -0.601498, 7.7, 7, -0.601498, 7.1, 7, -0.601498, 11.3, 5.8, -0.601498, 9.5, 4.3, -0.601498, 9.2, 6.7, -0.601498, 18.5, 5.5, -0.601498, 18.5, 5.5, -0.601498, 19.1, 6.7, -0.601498, 18.5, 5.5, -0.601498, 19.1, 3.7, -0.601498, 20.3, 2.2, -0.601498, 22.7, 2.2, -0.601498, 22.7, -0.799999, -0.601498, 25.4, -1.7, -0.601498, 27.2, 34.9, -0.601498, 39.2, 41.8, -0.601498, 39.2, 49, -0.601498, 31.1, 49, -0.601498, 23.3, -1.7, -0.601498, 27.2, -5, -0.601498, 29.9, -6.2, -0.601498, 32, 0.100002, -0.601498, 39.2, 7, -0.601498, 39.2, -6.2, -0.601498, 32, -6.8, -0.601498, 32, -6.8, -0.601498, 39.2, 0.100002, -0.601498, 39.2, 28, -0.601498, 39.2, 34.9, -0.601498, 39.2, 49, -0.601498, 23.3, 49, -0.601498, 15.5, 41.8, -0.601498, 39.2, 49, -0.601498, 39.2, 49, -0.601498, 31.1, 10.9, -0.601498, 15.2, 6.7, -0.601498, 18.5, 2.2, -0.601498, 22.7, -1.7, -0.601498, 27.2, 7, -0.601498, 39.2, 13.9, -0.601498, 39.2, 12.4, -0.601498, 13.4, 10.9, -0.601498, 15.2, 13.9, -0.601498, 39.2, 21.1, -0.601498, 39.2, 12.4, -0.601498, 13.4, 21.1, -0.601498, 39.2, 28, -0.601498, 39.2, 49, -0.601498, 15.5, 49, -0.601498, 7.7, 13.9, -0.601498, 7.7, 1, -0.601498, 15.5, 2.8, -0.601498, 15.8, 2.5, -0.601498, 14.3, -10.7, -0.601498, 26.3, -12.2, -0.601498, 28.7, -10.4, -0.601498, 28.7, -8, -0.601498, 25.1, -8.6, -0.601498, 24.5, 1, -0.601498, 15.5, 2.5, -0.601498, 14.3, 3.1, -0.601498, 13.7, 1, -0.601498, 11.9, -1.4, -0.601498, 14, -1.4, -0.601498, 14.9, -5.3, -0.601498, 23, -3.8, -0.601498, 20.6, -5, -0.601498, 19.7, -6.8, -0.601498, 21.2, -8.6, -0.601498, 23.6, -8, -0.601498, 25.1, -3.8, -0.601498, 20.6, 1, -0.601498, 15.5, -1.4, -0.601498, 14.9, -3.2, -0.601498, 16.4, -5, -0.601498, 18.8, -5, -0.601498, 19.7, -8.6, -0.601498, 23.6, -8.6, -0.601498, 24.5, -8, -0.601498, 25.1, -13.7, -0.601498, 28.7, -15.5, -0.601498, 26.9, -17, -0.601498, 27.8, -8.3, -0.601498, 31.4, -10.4, -0.601498, 28.7, -12.2, -0.601498, 28.7, -8.3, -0.601498, 31.4, -12.2, -0.601498, 28.7, -13.7, -0.601498, 28.7, -6.8, -0.601498, 39.2, -6.8, -0.601498, 32, -8.3, -0.601498, 31.4, -8.3, -0.601498, 31.4, -13.7, -0.601498, 28.7, -17, -0.601498, 27.8, -17, -0.601498, 39.2, -6.8, -0.601498, 39.2 )
+polygons = [ PoolIntArray( 3, 0, 2 ), PoolIntArray( 0, 1, 2 ), PoolIntArray( 9, 4, 8 ), PoolIntArray( 4, 5, 8 ), PoolIntArray( 5, 6, 8 ), PoolIntArray( 6, 7, 8 ), PoolIntArray( 13, 10, 12 ), PoolIntArray( 10, 11, 12 ), PoolIntArray( 16, 14, 15 ), PoolIntArray( 19, 17, 18 ), PoolIntArray( 22, 20, 21 ), PoolIntArray( 26, 23, 25 ), PoolIntArray( 23, 24, 25 ), PoolIntArray( 29, 27, 28 ), PoolIntArray( 32, 30, 31 ), PoolIntArray( 36, 33, 35 ), PoolIntArray( 33, 34, 35 ), PoolIntArray( 41, 37, 40 ), PoolIntArray( 37, 38, 40 ), PoolIntArray( 38, 39, 40 ), PoolIntArray( 45, 42, 44 ), PoolIntArray( 42, 43, 44 ), PoolIntArray( 48, 46, 47 ), PoolIntArray( 52, 49, 51 ), PoolIntArray( 49, 50, 51 ), PoolIntArray( 58, 53, 57 ), PoolIntArray( 53, 54, 57 ), PoolIntArray( 54, 55, 57 ), PoolIntArray( 55, 56, 57 ), PoolIntArray( 61, 59, 60 ), PoolIntArray( 64, 62, 63 ), PoolIntArray( 67, 65, 66 ), PoolIntArray( 70, 68, 69 ), PoolIntArray( 73, 71, 72 ), PoolIntArray( 77, 74, 76 ), PoolIntArray( 74, 75, 76 ), PoolIntArray( 81, 78, 80 ), PoolIntArray( 78, 79, 80 ), PoolIntArray( 87, 82, 86 ), PoolIntArray( 82, 85, 86 ), PoolIntArray( 82, 84, 85 ), PoolIntArray( 82, 83, 84 ), PoolIntArray( 91, 88, 90 ), PoolIntArray( 88, 89, 90 ), PoolIntArray( 96, 92, 95 ), PoolIntArray( 92, 94, 95 ), PoolIntArray( 92, 93, 94 ), PoolIntArray( 100, 97, 99 ), PoolIntArray( 97, 98, 99 ), PoolIntArray( 104, 101, 103 ), PoolIntArray( 101, 102, 103 ), PoolIntArray( 107, 105, 106 ), PoolIntArray( 110, 108, 109 ), PoolIntArray( 115, 111, 114 ), PoolIntArray( 111, 112, 114 ), PoolIntArray( 112, 113, 114 ), PoolIntArray( 119, 116, 118 ), PoolIntArray( 116, 117, 118 ), PoolIntArray( 124, 120, 123 ), PoolIntArray( 120, 122, 123 ), PoolIntArray( 120, 121, 122 ), PoolIntArray( 129, 125, 128 ), PoolIntArray( 125, 126, 128 ), PoolIntArray( 126, 127, 128 ), PoolIntArray( 132, 130, 131 ), PoolIntArray( 136, 133, 135 ), PoolIntArray( 133, 134, 135 ), PoolIntArray( 140, 137, 139 ), PoolIntArray( 137, 138, 139 ), PoolIntArray( 143, 141, 142 ), PoolIntArray( 146, 144, 145 ), PoolIntArray( 150, 147, 149 ), PoolIntArray( 147, 148, 149 ), PoolIntArray( 154, 151, 153 ), PoolIntArray( 151, 152, 153 ), PoolIntArray( 160, 155, 159 ), PoolIntArray( 155, 158, 159 ), PoolIntArray( 155, 157, 158 ), PoolIntArray( 155, 156, 157 ), PoolIntArray( 164, 161, 163 ), PoolIntArray( 161, 162, 163 ), PoolIntArray( 168, 165, 167 ), PoolIntArray( 165, 166, 167 ), PoolIntArray( 174, 169, 173 ), PoolIntArray( 169, 170, 173 ), PoolIntArray( 170, 171, 173 ), PoolIntArray( 171, 172, 173 ), PoolIntArray( 178, 175, 177 ), PoolIntArray( 175, 176, 177 ), PoolIntArray( 181, 179, 180 ), PoolIntArray( 184, 182, 183 ), PoolIntArray( 187, 185, 186 ), PoolIntArray( 192, 188, 191 ), PoolIntArray( 188, 189, 191 ), PoolIntArray( 189, 190, 191 ), PoolIntArray( 197, 193, 196 ), PoolIntArray( 193, 195, 196 ), PoolIntArray( 193, 194, 195 ), PoolIntArray( 201, 198, 200 ), PoolIntArray( 198, 199, 200 ), PoolIntArray( 206, 202, 205 ), PoolIntArray( 202, 204, 205 ), PoolIntArray( 202, 203, 204 ), PoolIntArray( 212, 207, 211 ), PoolIntArray( 207, 210, 211 ), PoolIntArray( 207, 209, 210 ), PoolIntArray( 207, 208, 209 ), PoolIntArray( 216, 213, 215 ), PoolIntArray( 213, 214, 215 ), PoolIntArray( 219, 217, 218 ), PoolIntArray( 224, 220, 223 ), PoolIntArray( 220, 221, 223 ), PoolIntArray( 221, 222, 223 ), PoolIntArray( 227, 225, 226 ), PoolIntArray( 230, 228, 229 ), PoolIntArray( 234, 231, 233 ), PoolIntArray( 231, 232, 233 ), PoolIntArray( 237, 235, 236 ), PoolIntArray( 241, 238, 240 ), PoolIntArray( 238, 239, 240 ), PoolIntArray( 246, 242, 245 ), PoolIntArray( 242, 243, 245 ), PoolIntArray( 243, 244, 245 ), PoolIntArray( 250, 247, 249 ), PoolIntArray( 247, 248, 249 ), PoolIntArray( 254, 251, 253 ), PoolIntArray( 251, 252, 253 ), PoolIntArray( 257, 255, 256 ), PoolIntArray( 263, 258, 262 ), PoolIntArray( 258, 259, 262 ), PoolIntArray( 259, 260, 262 ), PoolIntArray( 260, 261, 262 ), PoolIntArray( 267, 264, 266 ), PoolIntArray( 264, 265, 266 ), PoolIntArray( 273, 268, 272 ), PoolIntArray( 268, 271, 272 ), PoolIntArray( 268, 270, 271 ), PoolIntArray( 268, 269, 270 ), PoolIntArray( 276, 274, 275 ), PoolIntArray( 281, 277, 280 ), PoolIntArray( 277, 279, 280 ), PoolIntArray( 277, 278, 279 ), PoolIntArray( 287, 282, 286 ), PoolIntArray( 282, 283, 286 ), PoolIntArray( 283, 284, 286 ), PoolIntArray( 284, 285, 286 ), PoolIntArray( 293, 288, 292 ), PoolIntArray( 288, 291, 292 ), PoolIntArray( 288, 290, 291 ), PoolIntArray( 288, 289, 290 ), PoolIntArray( 299, 294, 298 ), PoolIntArray( 294, 297, 298 ), PoolIntArray( 294, 296, 297 ), PoolIntArray( 294, 295, 296 ), PoolIntArray( 302, 300, 301 ), PoolIntArray( 305, 303, 304 ), PoolIntArray( 308, 306, 307 ), PoolIntArray( 311, 309, 310 ), PoolIntArray( 314, 312, 313 ), PoolIntArray( 319, 315, 318 ), PoolIntArray( 315, 316, 318 ), PoolIntArray( 316, 317, 318 ) ]
 sample_partition_type/sample_partition_type = 0
 cell/size = 0.3
 cell/height = 0.2
@@ -50,149 +57,96 @@ extents = Vector3( 2, 1, 1 )
 
 [node name="World" index="0" instance=ExtResource( 1 )]
 
-[node name="Finale Ellis Voice 1" parent="." index="0" instance=ExtResource( 2 )]
-
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.43594, 0, 7.6719 )
-stream = ExtResource( 3 )
-attenuation_model = 0
-bus = "Voice"
-time_between_sounds = 2
-
-[node name="Finale Therapist Voice 1" parent="." index="1" instance=ExtResource( 2 )]
-
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.43968, 0, 0.856774 )
-stream = ExtResource( 4 )
-attenuation_model = 0
-bus = "Voice"
-time_between_sounds = 2
-
-[node name="Finale Lauren Voice 1" parent="." index="2" instance=ExtResource( 2 )]
-
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.79735, 0, 5.32476 )
-stream = ExtResource( 5 )
-attenuation_model = 0
-bus = "Voice"
-time_between_sounds = 2
-
-[node name="Finale Riley Voice 1" parent="." index="3" instance=ExtResource( 2 )]
-
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.59115, 0, 4.56291 )
-stream = ExtResource( 6 )
-attenuation_model = 0
-bus = "Voice"
-time_between_sounds = 2
-
-[node name="Finale Therapist Voice 2" parent="." index="4" instance=ExtResource( 2 )]
-
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -14.5014, 0, -4.44431 )
-stream = ExtResource( 7 )
-attenuation_model = 0
-bus = "Voice"
-time_between_sounds = 2
-
-[node name="Finale Riley Voice 2" parent="." index="5" instance=ExtResource( 2 )]
-
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.1474, 0, -1.42523 )
-stream = ExtResource( 8 )
-attenuation_model = 0
-bus = "Voice"
-time_between_sounds = 2
-
-[node name="Finale Lauren Voice 2" parent="." index="6" instance=ExtResource( 2 )]
-
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.2227, 0, -7.49314 )
-stream = ExtResource( 9 )
-attenuation_model = 0
-bus = "Voice"
-time_between_sounds = 2
-
-[node name="Finale David Voice 1" parent="." index="7" instance=ExtResource( 2 )]
-
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -11.8554, 0, -5.34543 )
-stream = ExtResource( 10 )
-attenuation_model = 0
-bus = "Voice"
-time_between_sounds = 2
-
-[node name="Finale David Voice 2" parent="." index="8" instance=ExtResource( 2 )]
-
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.60708, 0, 1.59128 )
-stream = ExtResource( 11 )
-attenuation_model = 0
-bus = "Voice"
-time_between_sounds = 2
-
-[node name="Finale David Voice 3" parent="." index="9" instance=ExtResource( 2 )]
-
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15.4529, 0, -6.47061 )
-stream = ExtResource( 12 )
-attenuation_model = 0
-bus = "Voice"
-time_between_sounds = 2
-
-[node name="Finale Ellis Voice 2" parent="." index="10" instance=ExtResource( 2 )]
-
-transform = Transform( 0.996046, 0, 0.088843, 0, 1, 0, -0.088843, 0, 0.996046, -8.04518, 0, -1.87317 )
-stream = ExtResource( 13 )
-attenuation_model = 0
-bus = "Voice"
-time_between_sounds = 2
-
-[node name="Finale Riley Help" parent="." index="11" instance=ExtResource( 2 )]
-
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -17.8459, 0, -10.3371 )
-stream = ExtResource( 14 )
-attenuation_model = 0
-unit_db = -5.0
-unit_size = 2.0
-bus = "Voice"
-time_between_sounds = 2
-
 [node name="NavigationMeshInstance" parent="Navigation" index="0"]
 
+transform = Transform( -0.173648, 0, 0.984808, 0, 1, 0, -0.984808, 0, -0.173648, 0, 0, 0 )
 navmesh = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="FloorPlane" parent="Navigation/NavigationMeshInstance" index="0"]
+
+transform = Transform( 1, 0, 2.98023e-008, 0, 1, 0, -2.98023e-008, 0, 1, 0, -1, 0 )
 
 [node name="Trees" type="Spatial" parent="Navigation/NavigationMeshInstance" index="1"]
 
-[node name="BGForestMedium2" parent="Navigation/NavigationMeshInstance/Trees" index="0" instance=ExtResource( 15 )]
+[node name="BGForestMedium2" parent="Navigation/NavigationMeshInstance/Trees" index="0" instance=ExtResource( 2 )]
 
 transform = Transform( 0.661094, 0, -0.750303, 0, 1, 0, 0.750302, 0, 0.661094, -14.8149, 0, -12.8571 )
 
-[node name="BGForestMedium3" parent="Navigation/NavigationMeshInstance/Trees" index="1" instance=ExtResource( 15 )]
+[node name="BGForestMedium3" parent="Navigation/NavigationMeshInstance/Trees" index="1" instance=ExtResource( 2 )]
 
 transform = Transform( 0.694853, 0, -0.719151, 0, 1, 0, 0.719151, 0, 0.694853, -3.01117, 0, 0.534167 )
 
-[node name="BGForestMedium4" parent="Navigation/NavigationMeshInstance/Trees" index="2" instance=ExtResource( 15 )]
+[node name="BGForestMedium4" parent="Navigation/NavigationMeshInstance/Trees" index="2" instance=ExtResource( 2 )]
 
+editor/display_folded = true
 transform = Transform( -0.688698, 0, 0.725048, 0, 1, 0, -0.725047, 0, -0.688699, -19.1621, 0, -6.21882 )
 
-[node name="BGForestMedium5" parent="Navigation/NavigationMeshInstance/Trees" index="3" instance=ExtResource( 15 )]
+[node name="ForestWallExtra" parent="Navigation/NavigationMeshInstance/Trees/BGForestMedium4" index="5" instance=ExtResource( 3 )]
+
+transform = Transform( 0.469905, 0, -0.882718, 0, 1, 0, 0.882716, 0, 0.469905, 10.2827, 0, -2.12685 )
+
+[node name="BGForestSmall4" parent="Navigation/NavigationMeshInstance/Trees" index="3" instance=ExtResource( 4 )]
+
+transform = Transform( -0.691375, 0, 0.722496, 0, 1, 0, -0.722496, 0, -0.691375, -11.1357, 0, 1.80805 )
+
+[node name="BGForestSmall5" parent="Navigation/NavigationMeshInstance/Trees" index="4" instance=ExtResource( 4 )]
 
 transform = Transform( -0.691375, 0, 0.722496, 0, 1, 0, -0.722496, 0, -0.691375, -6.94889, 0, 6.16033 )
 
-[node name="BGForestSmall" parent="Navigation/NavigationMeshInstance/Trees" index="4" instance=ExtResource( 16 )]
+[node name="ForestWall" parent="Navigation/NavigationMeshInstance/Trees" index="5" instance=ExtResource( 5 )]
 
+transform = Transform( -0.691375, 0, 0.722496, 0, 1, 0, -0.722496, 0, -0.691375, -2.8187, 0, 10.4885 )
+
+[node name="ForestWall2" parent="Navigation/NavigationMeshInstance/Trees" index="6" instance=ExtResource( 5 )]
+
+editor/display_folded = true
 transform = Transform( 0.711511, 0, 0.702675, 0, 1, 0, -0.702675, 0, 0.711511, -20.3672, 0, -12.5559 )
 
-[node name="BGForestSmall4" parent="Navigation/NavigationMeshInstance/Trees" index="5" instance=ExtResource( 16 )]
+[node name="ForestWallExtra" parent="Navigation/NavigationMeshInstance/Trees/ForestWall2" index="3" instance=ExtResource( 3 )]
 
-transform = Transform( -0.638932, 0, -0.769263, 0, 1, 0, 0.769263, 0, -0.638932, 2.91021, 0, 10.7937 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.48275, 0, -3.88155 )
+
+[node name="Bedroom End" parent="Navigation/NavigationMeshInstance/Trees" index="7" instance=ExtResource( 6 )]
+
+editor/display_folded = true
+transform = Transform( 0.643523, 0, 0.765427, 0, 1, 0, -0.765427, 0, 0.643523, 6.2666, 0, 10.4742 )
+
+[node name="ForestWall" parent="Navigation/NavigationMeshInstance/Trees/Bedroom End" index="7" instance=ExtResource( 5 )]
+
+editor/display_folded = true
+transform = Transform( -0.0528747, 0, -0.998601, 0, 1, 0, 0.998601, 0, -0.0528747, 9.4789, 0, -8.17004 )
+
+[node name="ForestWallExtra" parent="Navigation/NavigationMeshInstance/Trees/Bedroom End/ForestWall" index="3" instance=ExtResource( 3 )]
+
+transform = Transform( 1, 0, -2.98023e-008, 0, 1, 0, 2.98023e-008, 0, 1, -0.533146, 0, -4.12507 )
+
+[node name="ForestWall2" parent="Navigation/NavigationMeshInstance/Trees/Bedroom End" index="8" instance=ExtResource( 5 )]
+
+transform = Transform( 1, 0, 2.98023e-008, 0, 1, 0, -2.98023e-008, 0, 1, -10.2104, 0, 1.85395 )
+
+[node name="ForestWall3" parent="Navigation/NavigationMeshInstance/Trees/Bedroom End" index="9" instance=ExtResource( 5 )]
+
+transform = Transform( 1, 0, 2.98023e-008, 0, 1, 0, -2.98023e-008, 0, 1, -15.7704, 0, 1.7046 )
+
+[node name="ForestWall4" parent="Navigation/NavigationMeshInstance/Trees/Bedroom End" index="10" instance=ExtResource( 5 )]
+
+transform = Transform( 1, 0, 2.98023e-008, 0, 1, 0, -2.98023e-008, 0, 1, -21.4922, 0, 1.38618 )
 
 [node name="Fires" type="Spatial" parent="Navigation/NavigationMeshInstance" index="2"]
 
-script = ExtResource( 17 )
+script = ExtResource( 7 )
 
-[node name="FireStrip" parent="Navigation/NavigationMeshInstance/Fires" index="0" instance=ExtResource( 18 )]
+[node name="FireStrip" parent="Navigation/NavigationMeshInstance/Fires" index="0" instance=ExtResource( 8 )]
 
 transform = Transform( 0.756325, 0, 0.654196, 0, 1, 0, -0.654196, 0, 0.756325, -19.0371, 0, -12.3129 )
 
-[node name="FireStrip2" parent="Navigation/NavigationMeshInstance/Fires" index="1" instance=ExtResource( 18 )]
+[node name="FireStrip2" parent="Navigation/NavigationMeshInstance/Fires" index="1" instance=ExtResource( 8 )]
 
-transform = Transform( 0.756325, 0, 0.654196, 0, 1, 0, -0.654196, 0, 0.756325, 1.29371, 0, 9.64328 )
+transform = Transform( 0.582811, 0, 0.812608, 0, 1, 0, -0.812608, 0, 0.582811, 0.915211, 0, 9.24323 )
 
 [node name="FireTrigger" type="Area" parent="Navigation/NavigationMeshInstance/Fires" index="2"]
 
-editor/display_folded = true
 transform = Transform( 0.997582, 0, 0.0695051, 0, 1, 0, -0.0695051, 0, 0.997582, -4.73564, 0, 3.53886 )
 input_ray_pickable = false
 input_capture_on_drag = false
@@ -221,19 +175,18 @@ transform = Transform( 0.776779, 0, 0.629773, 0, 1, 0, -0.629773, 0, 0.776779, 0
 shape = SubResource( 2 )
 disabled = false
 
-[node name="FireStrip8" parent="Navigation/NavigationMeshInstance/Fires/FireTrigger" index="1" instance=ExtResource( 18 )]
-
-transform = Transform( 0.604171, 0, -0.796855, 0, 1, 0, 0.796854, 0, 0.604172, -3.99762, 0, 0.919086 )
-visible = false
-
-[node name="FireStrip9" parent="Navigation/NavigationMeshInstance/Fires/FireTrigger" index="2" instance=ExtResource( 18 )]
+[node name="FireStrip" parent="Navigation/NavigationMeshInstance/Fires/FireTrigger" index="1" instance=ExtResource( 9 )]
 
 transform = Transform( 0.604171, 0, -0.796854, 0, 1, 0, 0.796854, 0, 0.604171, 1.24701, 0, -3.4984 )
 visible = false
 
+[node name="FireStrip2" parent="Navigation/NavigationMeshInstance/Fires/FireTrigger" index="2" instance=ExtResource( 9 )]
+
+transform = Transform( 0.604171, 0, -0.796855, 0, 1, 0, 0.796854, 0, 0.604172, -3.99762, 0, 0.919086 )
+visible = false
+
 [node name="FireTrigger2" type="Area" parent="Navigation/NavigationMeshInstance/Fires" index="3"]
 
-editor/display_folded = true
 transform = Transform( 0.997582, 0, 0.0695051, 0, 1, 0, -0.0695051, 0, 0.997582, -8.2141, 0, -0.605472 )
 input_ray_pickable = false
 input_capture_on_drag = false
@@ -262,19 +215,18 @@ transform = Transform( 0.776779, 0, 0.629773, 0, 1, 0, -0.629773, 0, 0.776779, 0
 shape = SubResource( 2 )
 disabled = false
 
-[node name="FireStrip8" parent="Navigation/NavigationMeshInstance/Fires/FireTrigger2" index="1" instance=ExtResource( 18 )]
+[node name="FireStrip" parent="Navigation/NavigationMeshInstance/Fires/FireTrigger2" index="1" instance=ExtResource( 9 )]
 
 transform = Transform( 0.604171, 0, -0.796855, 0, 1, 0, 0.796854, 0, 0.604172, -3.99762, 0, 0.919086 )
 visible = false
 
-[node name="FireStrip9" parent="Navigation/NavigationMeshInstance/Fires/FireTrigger2" index="2" instance=ExtResource( 18 )]
+[node name="FireStrip2" parent="Navigation/NavigationMeshInstance/Fires/FireTrigger2" index="2" instance=ExtResource( 9 )]
 
 transform = Transform( 0.604171, 0, -0.796854, 0, 1, 0, 0.796854, 0, 0.604171, 1.24701, 0, -3.4984 )
 visible = false
 
 [node name="FireTrigger3" type="Area" parent="Navigation/NavigationMeshInstance/Fires" index="4"]
 
-editor/display_folded = true
 transform = Transform( 0.997582, 0, 0.0695051, 0, 1, 0, -0.0695051, 0, 0.997582, -11.5908, 0, -4.57611 )
 input_ray_pickable = false
 input_capture_on_drag = false
@@ -303,19 +255,18 @@ transform = Transform( 0.776779, 0, 0.629773, 0, 1, 0, -0.629773, 0, 0.776779, 0
 shape = SubResource( 2 )
 disabled = false
 
-[node name="FireStrip8" parent="Navigation/NavigationMeshInstance/Fires/FireTrigger3" index="1" instance=ExtResource( 18 )]
+[node name="FireStrip" parent="Navigation/NavigationMeshInstance/Fires/FireTrigger3" index="1" instance=ExtResource( 9 )]
 
 transform = Transform( 0.604171, 0, -0.796855, 0, 1, 0, 0.796854, 0, 0.604172, -3.99762, 0, 0.919086 )
 visible = false
 
-[node name="FireStrip9" parent="Navigation/NavigationMeshInstance/Fires/FireTrigger3" index="2" instance=ExtResource( 18 )]
+[node name="FireStrip2" parent="Navigation/NavigationMeshInstance/Fires/FireTrigger3" index="2" instance=ExtResource( 9 )]
 
 transform = Transform( 0.604171, 0, -0.796854, 0, 1, 0, 0.796854, 0, 0.604171, 1.24701, 0, -3.4984 )
 visible = false
 
 [node name="FireTrigger4" type="Area" parent="Navigation/NavigationMeshInstance/Fires" index="5"]
 
-editor/display_folded = true
 transform = Transform( 0.997462, 0, 0.0712005, 0, 1, 0, -0.0712005, 0, 0.997462, -15.5099, 0, -8.96564 )
 input_ray_pickable = false
 input_capture_on_drag = false
@@ -344,29 +295,189 @@ transform = Transform( 0.776779, 0, 0.629773, 0, 1, 0, -0.629773, 0, 0.776779, 0
 shape = SubResource( 2 )
 disabled = false
 
-[node name="FireStrip8" parent="Navigation/NavigationMeshInstance/Fires/FireTrigger4" index="1" instance=ExtResource( 18 )]
+[node name="FireStrip8" parent="Navigation/NavigationMeshInstance/Fires/FireTrigger4" index="1" instance=ExtResource( 8 )]
 
 transform = Transform( 0.604171, 0, -0.796855, 0, 1, 0, 0.796854, 0, 0.604172, -3.99762, 0, 0.919086 )
 visible = false
 
-[node name="FireStrip9" parent="Navigation/NavigationMeshInstance/Fires/FireTrigger4" index="2" instance=ExtResource( 18 )]
+[node name="FireStrip9" parent="Navigation/NavigationMeshInstance/Fires/FireTrigger4" index="2" instance=ExtResource( 8 )]
 
 transform = Transform( 0.604171, 0, -0.796854, 0, 1, 0, 0.796854, 0, 0.604171, 1.24701, 0, -3.4984 )
 visible = false
 
-[node name="ItemFlamingo" parent="." index="13" instance=ExtResource( 19 )]
+[node name="Voices" type="Spatial" parent="Navigation/NavigationMeshInstance" index="3"]
 
-transform = Transform( -0.689677, 0, 0.724116, 0, 1, 0, -0.724116, 0, -0.689677, -2.17645, 0, 6.53915 )
-burning = true
+editor/display_folded = true
+transform = Transform( 0.997462, 0, 0.0712005, 0, 1, 0, -0.0712005, 0, 0.997462, -15.5099, 0, -8.96564 )
 
-[node name="Player" parent="." index="14"]
+[node name="Finale Riley Voice 1" parent="Navigation/NavigationMeshInstance/Voices" index="0" instance=ExtResource( 10 )]
 
-transform = Transform( 0.724116, 0, 0.689677, 0, 1, 0, -0.689677, 0, 0.724116, -1.83261, 0, 6.88669 )
-in_finale = true
+transform = Transform( 0.997462, 0, -0.0712006, 0, 1, 0, 0.0712006, 0, 0.997462, 12.0485, 0, 16.7595 )
+stream = ExtResource( 11 )
+attenuation_model = 0
+bus = "Voice"
+time_between_sounds = 2
 
-[node name="The Door" parent="." index="17" instance=ExtResource( 20 )]
+[node name="Finale David Voice 1" parent="Navigation/NavigationMeshInstance/Voices" index="1" instance=ExtResource( 10 )]
+
+transform = Transform( 0.997462, 0, -0.0712006, 0, 1, 0, 0.0712006, 0, 0.997462, 12.3082, 0, 15.1422 )
+stream = ExtResource( 12 )
+attenuation_model = 0
+bus = "Voice"
+time_between_sounds = 2
+
+[node name="Finale Therapist Voice 2" parent="Navigation/NavigationMeshInstance/Voices" index="2" instance=ExtResource( 10 )]
+
+transform = Transform( 0.997462, 0, -0.0712006, 0, 1, 0, 0.0712006, 0, 0.997462, 9.10953, 0, 13.4861 )
+stream = ExtResource( 13 )
+attenuation_model = 0
+bus = "Voice"
+time_between_sounds = 4
+
+[node name="Finale Lauren Voice 1" parent="Navigation/NavigationMeshInstance/Voices" index="3" instance=ExtResource( 10 )]
+
+transform = Transform( 0.997462, 0, -0.0712006, 0, 1, 0, 0.0712006, 0, 0.997462, 9.17737, 0, 11.1839 )
+stream = ExtResource( 14 )
+attenuation_model = 0
+bus = "Voice"
+time_between_sounds = 2
+
+[node name="Finale David Voice 2" parent="Navigation/NavigationMeshInstance/Voices" index="4" instance=ExtResource( 10 )]
+
+transform = Transform( 0.997462, 0, -0.0712006, 0, 1, 0, 0.0712006, 0, 0.997462, 6.74323, 0, 11.3933 )
+stream = ExtResource( 15 )
+attenuation_model = 0
+bus = "Voice"
+time_between_sounds = 2
+
+[node name="Finale Ellis Voice 1" parent="Navigation/NavigationMeshInstance/Voices" index="5" instance=ExtResource( 10 )]
+
+transform = Transform( 0.997462, 0, -0.0712006, 0, 1, 0, 0.0712006, 0, 0.997462, 6.57688, 0, 9.05657 )
+stream = ExtResource( 16 )
+attenuation_model = 0
+bus = "Voice"
+time_between_sounds = 2
+
+[node name="Finale Riley Voice 2" parent="Navigation/NavigationMeshInstance/Voices" index="6" instance=ExtResource( 10 )]
+
+transform = Transform( 0.997462, 0, -0.0712006, 0, 1, 0, 0.0712006, 0, 0.997462, 3.07251, 0, 6.7425 )
+stream = ExtResource( 17 )
+attenuation_model = 0
+bus = "Voice"
+time_between_sounds = 2
+
+[node name="Finale Therapist Voice 1" parent="Navigation/NavigationMeshInstance/Voices" index="7" instance=ExtResource( 10 )]
+
+transform = Transform( 0.997462, 0, -0.0712006, 0, 1, 0, 0.0712006, 0, 0.997462, 3.33102, 0, 4.09621 )
+stream = ExtResource( 18 )
+attenuation_model = 0
+bus = "Voice"
+time_between_sounds = 2
+
+[node name="Finale Ellis Voice 2" parent="Navigation/NavigationMeshInstance/Voices" index="8" instance=ExtResource( 10 )]
+
+transform = Transform( 0.999844, 0, 0.0176984, 0, 1, 0, -0.0176984, 0, 0.999844, 1.06459, 0, 3.06465 )
+stream = ExtResource( 19 )
+attenuation_model = 0
+bus = "Voice"
+time_between_sounds = 2
+
+[node name="Finale Lauren Voice 2" parent="Navigation/NavigationMeshInstance/Voices" index="9" instance=ExtResource( 10 )]
+
+transform = Transform( 0.997462, 0, -0.0712006, 0, 1, 0, 0.0712006, 0, 0.997462, 1.62653, 1.14877, 1.61846 )
+stream = ExtResource( 20 )
+attenuation_model = 0
+bus = "Voice"
+time_between_sounds = 2
+
+[node name="Finale David Voice 3" parent="Navigation/NavigationMeshInstance/Voices" index="10" instance=ExtResource( 10 )]
+
+transform = Transform( 0.997462, 0, -0.0712006, 0, 1, 0, 0.0712006, 0, 0.997462, -1.25296, 0, 2.30231 )
+stream = ExtResource( 21 )
+attenuation_model = 0
+bus = "Voice"
+time_between_sounds = 2
+
+[node name="Finale Riley Help" parent="Navigation/NavigationMeshInstance/Voices" index="11" instance=ExtResource( 10 )]
+
+transform = Transform( 0.997462, 0, -0.0712006, 0, 1, 0, 0.0712006, 0, 0.997462, -2.23242, 0, -1.5343 )
+stream = ExtResource( 22 )
+attenuation_model = 0
+unit_db = -5.0
+unit_size = 2.0
+bus = "Voice"
+time_between_sounds = 2
+
+[node name="The Door" parent="Navigation/NavigationMeshInstance" index="4" instance=ExtResource( 23 )]
 
 transform = Transform( 0.753107, 0, 0.657897, 0, 1, 0, -0.657897, 0, 0.753107, -16.966, 0, -9.23353 )
+
+[node name="Monster" parent="." index="1" instance=ExtResource( 24 )]
+
+editor/display_folded = true
+transform = Transform( -0.865545, 0, 0.500831, 0, 1, 0, -0.500831, 0, -0.865545, 19.7095, 0, 0.532902 )
+quiet_boi = true
+
+[node name="Waypoint" parent="Monster" index="12" instance=ExtResource( 25 )]
+
+transform = Transform( -0.901808, 0, 0.432136, 0, 1, 0, -0.432136, 0, -0.901808, 10.7131, 0, -0.174182 )
+wait_time = 0
+
+[node name="Waypoint2" parent="Monster" index="13" instance=ExtResource( 25 )]
+
+transform = Transform( -0.901808, 0, 0.432136, 0, 1, 0, -0.432136, 0, -0.901808, 10.9167, 0, -1.17243 )
+wait_time = 5000
+
+[node name="Monster3" parent="." index="2" instance=ExtResource( 24 )]
+
+editor/display_folded = true
+transform = Transform( -0.865545, 0, 0.500831, 0, 1, 0, -0.500831, 0, -0.865545, 22.8484, 0, 1.98965 )
+quiet_boi = true
+
+[node name="Waypoint3" parent="Monster3" index="0" instance=ExtResource( 25 )]
+
+transform = Transform( 1, 0, 2.98023e-008, 0, 1, 0, -2.98023e-008, 0, 1, 0.454018, 0, 0.11747 )
+wait_time = 15
+
+[node name="Waypoint" parent="Monster3" index="13" instance=ExtResource( 25 )]
+
+transform = Transform( -0.901808, 0, 0.432136, 0, 1, 0, -0.432136, 0, -0.901808, 11.9171, 0, 1.30855 )
+wait_time = 0
+
+[node name="Waypoint2" parent="Monster3" index="14" instance=ExtResource( 25 )]
+
+transform = Transform( -0.901808, 0, 0.432136, 0, 1, 0, -0.432136, 0, -0.901808, 12.4986, 0, 0.695363 )
+wait_time = 5000
+
+[node name="Monster2" parent="." index="3" instance=ExtResource( 24 )]
+
+editor/display_folded = true
+transform = Transform( -0.173648, 0, 0.984808, 0, 1, 0, -0.984808, 0, -0.173648, -2.99136, 0, -11.8071 )
+quiet_boi = true
+
+[node name="Waypoint2" parent="Monster2" index="12" instance=ExtResource( 25 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.229242, 0, 0.443035 )
+wait_time = 5
+
+[node name="Waypoint" parent="Monster2" index="13" instance=ExtResource( 25 )]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7.92116, 0, 10.2905 )
+wait_time = 5000
+
+[node name="NoodleBoi" parent="." index="4" instance=ExtResource( 26 )]
+
+transform = Transform( -0.173648, 0, 0.984808, 0, 1, 0, -0.984808, 0, -0.173648, -14.0483, 0.35, 22.2808 )
+
+[node name="ItemFlamingo" parent="." index="5" instance=ExtResource( 27 )]
+
+transform = Transform( -0.593354, 0, -0.804941, 0, 1, 0, 0.804941, 0, -0.593354, 6.81774, 0, 1.00787 )
+burning = true
+
+[node name="Player" parent="." index="6"]
+
+transform = Transform( -0.804941, 0, 0.593354, 0, 1, 0, -0.593354, 0, -0.804941, 7.1003, 0, 0.608907 )
+in_finale = true
 
 [connection signal="body_entered" from="Navigation/NavigationMeshInstance/Fires/FireTrigger" to="Navigation/NavigationMeshInstance/Fires" method="_on_FireTrigger_body_entered"]
 

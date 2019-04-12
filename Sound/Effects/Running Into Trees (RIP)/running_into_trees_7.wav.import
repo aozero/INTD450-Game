@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/running_into_trees_7.wav-2f4c233a2e7b039aac895408e4daa269.sample"
+
+[deps]
+
+source_file="res://Sound/Effects/Running Into Trees (RIP)/running_into_trees_7.wav"
+dest_files=[ "res://.import/running_into_trees_7.wav-2f4c233a2e7b039aac895408e4daa269.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -39,6 +39,7 @@ var game_over = false
 var dying = false
 var moving = false
 var running = false
+var changing_match_state = false
 
 # Return "Player" instead of "KinematicBody" 
 # This is so we can check if an object is the player
@@ -52,7 +53,8 @@ func _ready():
 		memory_controller.return_from_death()
 	
 	set_torch(false)
-		
+	anim_hand.play("idle_off")
+	
 	yield(get_tree(), "idle_frame")
 
 func _input(event):	
@@ -67,7 +69,11 @@ func _input(event):
 		# Vertical camera
 		rotation_degrees.x -= mouse_sens * event.relative.y
 		rotation_degrees.x = max(min(rotation_degrees.x, 85), -85)
-		
+	
+	# Check for torch toggling
+	if !in_finale and event.is_action_pressed("shoot"):
+		toggle_torch()
+	
 	# DEBUG: Teleport to level
 	if event.is_action_pressed("teleport_kitchen"):
 		get_tree().change_scene("res://Scenes/Worlds/Kitchen.tscn")
@@ -130,11 +136,6 @@ func _physics_process(delta):
 	move_and_slide(move_vec * move_speed)
 	translation.y = 0 # Stop player from climbing over some objects
 	
-	# Check for torch toggling
-	# TODO: Minor, but this would be better in an event based input system rather than checking constantly
-	if !in_finale and Input.is_action_pressed("shoot") and anim_hand.current_animation != "light":
-		toggle_torch()
-	
 	# Check if player is looking at anything interactable that is within range
 	var coll = raycast.get_collider()
 	if raycast.is_colliding() and coll != null and coll.has_method("interact"): 
@@ -153,30 +154,43 @@ func _physics_process(delta):
 		disable_prompt()
 
 func toggle_torch():
-	set_torch(!torch.visible)
+	if anim_hand.current_animation != "light_on" and anim_hand.current_animation != "light_off":
+		set_torch(!torch.visible)
 
 func set_torch(on):
 	if on && !torch.visible:
+		changing_match_state = true
 		match_burning_audio.play()
 		audio_fader.play("fade in burning")
 		play_audio(SOUND_MATCH_ON)
+		
+		anim_hand.playback_speed = 1.0
 		anim_hand.play("light_on")
 	elif !on && torch.visible:
+		changing_match_state = true
 		match_burning_audio.stop()
 		play_audio(SOUND_MATCH_OFF)
-		anim_hand.play_backwards("light_off")
+		
+		anim_hand.playback_speed = 1.25
+		anim_hand.play("light_off")
 
 # When finishing lighting or unlighting match, 
 # play the correct idle anim (match flicker or nothing) and change light
 func _on_HandAnimator_animation_finished(anim_name):
 	if anim_name == "light_on":
-		torch.visible = true
-		torch_collision_shape.disabled = false
+		anim_hand.playback_speed = 1.0
 		anim_hand.play("idle_on")
+		changing_match_state = false
 	elif anim_name == "light_off":
 		torch.visible = false
 		torch_collision_shape.disabled = true
 		anim_hand.play("idle_off")
+		changing_match_state = false
+
+# Called by the animation at the exact moment when the match is lit
+func anim_match_lit():
+	torch.visible = true
+	torch_collision_shape.disabled = false
 
 func get_torch_visible():
 	return torch.visible
@@ -203,9 +217,13 @@ func disable_prompt():
 func start_final_memory(final_item):
 	memory_controller.start_final_memory(final_item)
 
-# Plays sound and displays text 
-func play_dialogue(dialogue):
-	memory_controller.play_dialogue(dialogue)
+# If not playing another memory, plays sound and displays text 
+func start_minor_memory(item_dialogue):
+	memory_controller.start_minor_memory(item_dialogue)
+
+# Always plays sound and displays text 
+func play_dialogue(item_dialogue):
+	memory_controller.play_dialogue(item_dialogue)
 
 # When timer finishes
 func _on_Timer_timeout():
