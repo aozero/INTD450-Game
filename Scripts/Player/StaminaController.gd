@@ -9,14 +9,16 @@ extends Node
 
 const MAX_STAMINA = 2400
 const EXHAUSTION_MIN = 600
-const SHADER_MAX = 1200
 const STAMINA_STILL = 4
 const STAMINA_WALKING = 2
 const STAMINA_RUNNING = -6
+const SHADER_MAX = 1200
+const EXHAUSTION_MAX_VOLUME = -20
 var stamina = MAX_STAMINA
 onready var stamina_container = $StaminaContainer
 onready var stamina_bar = $StaminaContainer/StaminaBar
 onready var disappear_timer = $StaminaContainer/DisappearTimer
+onready var exhaustion_audio = $ExhaustionAudio
 onready var exhaustion_shader = $ExhaustionShader
 onready var NORMAL_COLOR = stamina_bar.color
 const EXHAUSTED_COLOR = Color(0.5, 0, 0)
@@ -57,9 +59,16 @@ func update_stamina(moving, running):
 	
 	# Exhaustion shader appears when below SHADER_MAX
 	if stamina < SHADER_MAX:
-		exhaustion_shader.modulate.a = float(SHADER_MAX - stamina) / SHADER_MAX
+		var percent = float(SHADER_MAX - stamina) / SHADER_MAX
+		exhaustion_shader.modulate.a = percent
+		
+		if percent == 0:
+			exhaustion_audio.volume_db = EXHAUSTION_MAX_VOLUME
+		else:
+			exhaustion_audio.volume_db = EXHAUSTION_MAX_VOLUME / percent
 	else:
 		exhaustion_shader.modulate.a = 0
+		exhaustion_audio.volume_db = -80
 
 func increase_stamina(amount):
 	if stamina < MAX_STAMINA:

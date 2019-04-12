@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/jamie_running_loop.wav-30f40bfb513fbf8fd78f1b16f3c77d62.sample"
+
+[deps]
+
+source_file="res://Sound/Effects/jamie_running_loop.wav"
+dest_files=[ "res://.import/jamie_running_loop.wav-30f40bfb513fbf8fd78f1b16f3c77d62.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=true
+compress/mode=0
