@@ -6,7 +6,6 @@ extends "res://Scripts/Monster/NoodleBoi.gd"
 onready var globals = get_node("/root/Globals")
 
 func _ready():
-	print("0")
 	activated = globals.noodle_boi_activated[0]
 	._ready()
 
