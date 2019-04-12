@@ -9,7 +9,7 @@
 [sub_resource type="Animation" id=1]
 
 resource_name = "start"
-length = 130.0
+length = 128.0
 loop = false
 step = 0.1
 tracks/0/type = "value"
