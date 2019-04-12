@@ -391,7 +391,7 @@ tracks/0/keys = {
 
 radius = 50.0
 
-[node name="Player" type="KinematicBody"]
+[node name="Player" type="KinematicBody" index="0"]
 
 input_ray_pickable = true
 input_capture_on_drag = false
@@ -715,7 +715,7 @@ volume_db = -80.0
 pitch_scale = 1.0
 autoplay = true
 mix_target = 0
-bus = "Master"
+bus = "Effects"
 
 [node name="StaminaContainer" type="ColorRect" parent="CanvasLayer/StaminaController" index="2"]
 
