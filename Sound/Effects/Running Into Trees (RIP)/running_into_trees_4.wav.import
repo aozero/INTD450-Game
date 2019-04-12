@@ -2,12 +2,12 @@
 
 importer="wav"
 type="AudioStreamSample"
-path="res://.import/running_into_trees_4.wav-38773c7e63a93864d928743d06d002ee.sample"
+path="res://.import/running_into_trees_4.wav-7f9ad74dbf0389364cee83a8f4c7debf.sample"
 
 [deps]
 
-source_file="res://Sound/Effects/Running Into Trees/running_into_trees_4.wav"
-dest_files=[ "res://.import/running_into_trees_4.wav-38773c7e63a93864d928743d06d002ee.sample" ]
+source_file="res://Sound/Effects/Running Into Trees (RIP)/running_into_trees_4.wav"
+dest_files=[ "res://.import/running_into_trees_4.wav-7f9ad74dbf0389364cee83a8f4c7debf.sample" ]
 
 [params]
 
