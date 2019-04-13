@@ -70,7 +70,7 @@ func _ready():
 	INTRO_2["Français"] = "Non, mais je pense que je dois y retourner. Je savais que je devrais le faire un jour."
 	
 	INTRO_3["None"] = "Yeah maybe it was inevitable but you just seemed like really skittish at the funeral, like more than usual"
-	INTRO_3["Español"] = "Sí, posiblemente fue inevitable \npero parecías muy nerviosa en la funeral, \nmás que normal."
+	INTRO_3["Español"] = "Sí, posiblemente fue inevitable \npero parecías muy nerviosa en la funeral, más que normal."
 	INTRO_3["Français"] = "Oui, peut-être que c’était inévitable, mais tu semblais vraiment plus nerveux aux funérailles, comme plus que d’habitude."
 	
 	INTRO_4["None"] = "I guess it’s just weird to grasp."

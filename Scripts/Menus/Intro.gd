@@ -1,6 +1,7 @@
 extends ColorRect
 
 const LINE_SPACING = 20
+const LINE_SPACING_SPANISH = 10
 const LINE_SPACING_FRENCH = 5
 
 onready var resizer_1 = $Left/resizer1
@@ -49,6 +50,8 @@ func _ready():
 	
 	if dialogue.SUBTITLES_SUPPORTED[dialogue.subtitles_language] == "Français":
 		line_spacing = LINE_SPACING_FRENCH
+	elif dialogue.SUBTITLES_SUPPORTED[dialogue.subtitles_language] == "Español":
+		line_spacing = LINE_SPACING_SPANISH
 
 func _process(delta):	
 	# Labels don't resize until it starts really running (so here, in _process)

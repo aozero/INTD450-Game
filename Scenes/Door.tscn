@@ -236,7 +236,6 @@ _sections_unfolded = [ "Collision", "Transform" ]
 
 [node name="Door" type="Spatial" parent="." index="0"]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="MeshInstance" type="MeshInstance" parent="Door" index="0"]
@@ -272,7 +271,7 @@ material/0 = null
 
 [node name="MeshInstance3" type="MeshInstance" parent="." index="1"]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0145894, 0 )
 layers = 1
 material_override = null
 cast_shadow = 1
