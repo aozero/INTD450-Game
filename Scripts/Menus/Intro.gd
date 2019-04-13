@@ -1,7 +1,7 @@
 extends ColorRect
 
 const LINE_SPACING = 20
-const LINE_SPACING_SPANISH = 20
+const LINE_SPACING_SPANISH = 10
 const LINE_SPACING_FRENCH = 5
 
 onready var resizer_1 = $Left/resizer1
