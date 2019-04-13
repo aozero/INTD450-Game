@@ -90,6 +90,7 @@ func start_final_memory(final_item):
 	
 	# Set up and play memory sequence
 	item_sprite.texture = curr_final_item.sprite.texture
+	player.stamina_controller.exhaustion_audio.stop()
 	music_player.play_melody(curr_final_item.DIALOGUE.MUSIC)
 	screen_animator.play("Fade To Memory")
 
