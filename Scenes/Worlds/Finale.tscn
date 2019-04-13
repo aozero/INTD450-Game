@@ -410,7 +410,7 @@ time_between_sounds = 2
 
 [node name="The Door" parent="Navigation/NavigationMeshInstance" index="4" instance=ExtResource( 23 )]
 
-transform = Transform( 0.753107, 0, 0.657897, 0, 1, 0, -0.657897, 0, 0.753107, -16.966, 0, -9.23353 )
+transform = Transform( 0.753107, 0, 0.657897, 0, 1, 0, -0.657897, 0, 0.753107, -16.966, -0.089157, -9.23353 )
 
 [node name="Monster" parent="." index="1" instance=ExtResource( 24 )]
 
