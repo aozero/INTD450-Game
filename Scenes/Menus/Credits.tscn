@@ -1323,7 +1323,6 @@ _sections_unfolded = [ "Rect" ]
 
 [node name="Translators" type="VBoxContainer" parent="VBoxContainer" index="7"]
 
-editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -1525,7 +1524,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = SubResource( 5 )
-text = "OG Laurie Standing"
+text = "Laurie Standing"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
