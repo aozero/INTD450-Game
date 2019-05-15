@@ -139,8 +139,8 @@ func return_from_death():
 func _on_ScreenAnimator_animation_finished(anim_name):
 	if anim_name == "Fade To Black":
 		if player.game_over == true:
-			# Finished the game
-			get_tree().quit()
+			# Finished the demo
+			get_tree().change_scene("res://Scenes/Menus/DemoEnd.tscn")
 		elif player.dying == true:
 			# We died, restart
 			get_tree().reload_current_scene()

@@ -229,3 +229,5 @@ func play_dialogue(item_dialogue):
 func _on_Timer_timeout():
 	game_over = true
 	memory_controller.screen_animator.play("Fade To Black")
+	
+	
