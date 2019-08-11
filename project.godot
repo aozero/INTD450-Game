@@ -11,7 +11,7 @@ config_version=3
 [application]
 
 config/name="Where The Flame Took You"
-run/main_scene="res://Scenes/Menus/DarkAdvisory.tscn"
+run/main_scene="res://Scenes/Menus/Logo.tscn"
 boot_splash/image="res://Sprites/boot_splash.png"
 boot_splash/bg_color=Color( 0, 0, 0, 1 )
 config/icon="res://icon.png"
